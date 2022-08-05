@@ -1,0 +1,30 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - 咸蛋超人</title>
+        <link>http://example.org/posts/</link>
+        <description>All Posts | 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 04 Aug 2022 20:29:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>使用emacs写hugo博客</title>
+    <link>http://example.org/posts/02_hugo_with_emacs/</link>
+    <pubDate>Thu, 04 Aug 2022 20:29:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://example.org/posts/02_hugo_with_emacs/</guid>
+    <description><![CDATA[emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
+ox-hugo的安装  M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置  (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox) 这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:
+ 如果按以上操作, 有这一项出来, 那么ox-hugo才算成功, 没有就排查错误, 比如ox-hugo有没有安装上, 配置信息有没有加对地方
+ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能导出到正确的位置.我参考这个配置:
+#+OPTIONS: author:nil ^:{} #+HUGO_FRONT_MATTER_FORMAT: YAML #+HUGO_BASE_DIR: 博客的根目录 #+HUGO_SECTION: posts/ #+HUGO_CUSTOM_FRONT_MATTER: :toc true #+HUGO_AUTO_SET_LASTMOD: t #+HUGO_TAGS: 标签1 标签2 #+HUGO_CATEGORIES: 类别 #+HUGO_DRAFT: false #+TITLE: 博客名字 这其实是一个重复性的工作, 因此使用Yasnippet模板]]></description>
+</item><item>
+    <title>hugo安装与入门</title>
+    <link>http://example.org/posts/01_hugo_install/</link>
+    <pubDate>Thu, 04 Aug 2022 00:52:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://example.org/posts/01_hugo_install/</guid>
+    <description><![CDATA[ubuntu 18.04安装hugo最新稳定版  在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本  创建hugo站 hugo new site hello-world 这个命令会创建一个hello-world文件夹
+进入 hello-world文件夹 cd hello-world sudo hugo 即可显示提示信息, 若不这样显示, 就是出错了, 网上查别的教程吧
+ 至此安装完成
+选择主题 hugo这个博客是需要配合现有的主题的, 我这里使用的是DoIt主题
+主题下载 在这个网址下臷主题网址,我选择的是DoIt. DoIt的使用教程在这里
+主题使用  下载主题并放到./hello-world/themes文件夹里 修改配置文件,就是根目录下的config.toml, 这里使用的是DoIt网站上提供的默认配置 baseURL = &#34;http://example.org/&#34; # [en, zh-cn, fr, ...] determines default content language defaultContentLanguage = &#34;en&#34; # language code languageCode = &#34;en&#34; title = &#34;My New Hugo Site&#34; # Change the default theme to be use when building the site with Hugo theme = &#34;DoIt&#34; [params] # DoIt theme version version = &#34;0.]]></description>
+</item></channel>
+</rss>
