@@ -14,7 +14,7 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/02_hugo_with_emacs/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-04T20:29:00+08:00" />
-<meta property="article:modified_time" content="2022-08-05T09:47:33+08:00" />
+<meta property="article:modified_time" content="2022-08-05T11:47:48+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用emacs写hugo博客"/>
@@ -39,8 +39,8 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/posts\/02_hugo_with_emacs\/"
-        },"genre": "posts","keywords": "博客","wordcount":  161 ,
-        "url": "http:\/\/example.org\/posts\/02_hugo_with_emacs\/","datePublished": "2022-08-04T20:29:00+08:00","dateModified": "2022-08-05T09:47:33+08:00","publisher": {
+        },"genre": "posts","keywords": "博客","wordcount":  211 ,
+        "url": "http:\/\/example.org\/posts\/02_hugo_with_emacs\/","datePublished": "2022-08-04T20:29:00+08:00","dateModified": "2022-08-05T11:47:48+08:00","publisher": {
             "@type": "Organization",
             "name": "Author"},"author": {
                 "@type": "Person",
@@ -98,7 +98,7 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">Author</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-04">2022-08-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-05">2022-08-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;161 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-04">2022-08-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-05">2022-08-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;211 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -110,6 +110,7 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
     <li><a href="#emacs-ox-hugo">emacs: ox-hugo</a></li>
     <li><a href="#ox-hugo的安装">ox-hugo的安装</a></li>
     <li><a href="#ox-hugo的使用">ox-hugo的使用</a></li>
+    <li><a href="#部署博客到github">部署博客到github</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="emacs-ox-hugo">emacs: ox-hugo</h2>
@@ -180,6 +181,57 @@ C-c C-e时会多一个导出选项:</p>
 </span></span><span class="line"><span class="cl"><span class="cs">#+TITLE</span><span class="c">:</span>
 </span></span></code></pre></div></li>
 </ul>
+<h2 id="部署博客到github">部署博客到github</h2>
+<ul>
+<li>
+<p>在博客目录下运行 hugo 命令, 这是会更新根目录下public文件夹里的内容</p>
+</li>
+<li>
+<p>申请一个仓库, 这个仓库是需要与用户名同名的:your_name.github.io</p>
+</li>
+<li>
+<p>申请完后会有一些提示教你怎么去将本地仓库提交到github上</p>
+</li>
+<li>
+<p>在本地的public目录下创建git目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add *
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;commit 1st&#34;</span>
+</span></span><span class="line"><span class="cl">git remote add origin https://github.com/your_name/your_name.github.io.git
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></div></li>
+<li>
+<p>在提交的时候可能需要用到用户名your_name与密码,密码改为申请密钥</p>
+</li>
+<li>
+<p>密钥申请:
+<img
+        class="lazyload"
+        data-src="/ox-hugo/NaZSrm.png"
+        data-srcset="/ox-hugo/NaZSrm.png, /ox-hugo/NaZSrm.png 1.5x, /ox-hugo/NaZSrm.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/NaZSrm.png"
+        title="/ox-hugo/NaZSrm.png"
+    /></p>
+<p>点setting</p>
+<figure><img src="/ox-hugo/OYNoN9.png"/>
+</figure>
+
+<p>选择developer settings</p>
+<figure><img src="/ox-hugo/qtNAxh.png"/>
+</figure>
+
+<p>选择第三个 personal access tokens</p>
+<figure><img src="/ox-hugo/q9XEQ8.png"/>
+</figure>
+
+<p>点generate new token</p>
+<figure><img src="/ox-hugo/8RKdMQ.png"/>
+</figure>
+
+</li>
+</ul>
+<p>对note, expiration 和 scopes进行设置即可. note是你这个token的名字, expiration是这个token的有效时间, select scopes是这个token的作用范围, 如果都不选这个token就一点用都没有</p>
 </div>
 
         <div class="post-footer" id="post-footer">
