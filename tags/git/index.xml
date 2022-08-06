@@ -1,0 +1,36 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>git - Tag - 咸蛋超人</title>
+        <link>http://example.org/tags/git/</link>
+        <description>git - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 06 Aug 2022 19:28:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/git/" rel="self" type="application/rss+xml" /><item>
+    <title>Git的基本使用</title>
+    <link>http://example.org/posts/git_usage_02/</link>
+    <pubDate>Sat, 06 Aug 2022 19:28:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>http://example.org/posts/git_usage_02/</guid>
+    <description><![CDATA[基础(最常用的命令) git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志 版本回退 前一个版本:
+I&rsquo;m a little tired!!!
+当前版本:
+I&rsquo;m not tired!!!
+这时使用 git add 和 git commit 提交了, 但是想回退过去的操作办法如下:
+  git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset &ndash;hard HEAD^
+未回退命令时日志显示: 有两个版本: first 和 not tired
+ 使用回退命令后日志显示: 只有 first 了]]></description>
+</item><item>
+    <title>Git 与 Magit 初始篇</title>
+    <link>http://example.org/posts/git_get_started_01/</link>
+    <pubDate>Sat, 06 Aug 2022 15:17:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>http://example.org/posts/git_get_started_01/</guid>
+    <description><![CDATA[系列目的 介绍Git的基础配置及基础使用
+介绍Magit的使用, 因为Magti相比与Git方便很多, 配合Emacs效率更高
+使用命令行 windows 中使用bash, linux或Mac下使用terminal, 总之要开使用Git, 就要用命令行
+要做的第一件事是检查电脑上是否安装了Git, 使用命令: git &ndash;version查看, 安装了则会返回版本号
+ 没安装就去官网安装下
+配置Git的名字和邮箱 让Git知道你是谁, 两条命令:
+git config --global user.name &#34;your_name&#34; git config --global user.email &#34;your_email&#34; git config --list: #列出配置信息 git config --unset --global user.name # 取消名称设置 不使用 global 参数,则设置的是本仓库的信息
+配置Git代理 # 设置当前代理 git config http.proxy http://127.0.0.1:2334 # 取消当前代理 git config --unset http.proxy #设置socks5代理 git config http.proxy socks5://127.0.0.1 #取消全局代理 git config --global --unset http.proxy 初始化Git仓库 在需要使用Git管理的仓库中运行 git init即可]]></description>
+</item></channel>
+</rss>

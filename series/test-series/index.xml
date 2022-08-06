@@ -5,6 +5,8 @@
     <link>http://example.org/series/test-series/</link>
     <description>Recent content in Test Series on 咸蛋超人</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="http://example.org/series/test-series/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+    <webMaster>hb_688@163.com (SuperEgg)</webMaster><atom:link href="http://example.org/series/test-series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
