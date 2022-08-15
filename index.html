@@ -84,17 +84,28 @@
         title="/images/avatar.jpg" height="6rem" width="6rem"
     /></a></div><h1 class="home-title">咸蛋超人的心情小屋</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/forrestk3" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https://scholar.google.com/citations?aa" title="Google Scholar" target="_blank" rel="noopener noreffer me"><i data-svg-src="/lib/simple-icons/icons/googlescholar.min.svg"></i></a><a href="mailto:hb_688@163.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/magit_usage_03/">Magit的基本使用</a>
+    </h1><div class="post-meta">
+        <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+        </span>&nbsp;<span class="post-publish">published on <time datetime="2022-08-15">2022-08-15</time></span></div><div class="content">Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更加地emacs化. 本人的emacs 能力有限, 因此只介绍magit中的一些最常用的命令, 方便日常使用够用即可. 要更加全面地研究可以看它的原网站.
+Magit的基本介绍 打开Magit窗口: 使用Emacs打开任一由git管理的文件, 再使用快捷键 C-x g (M-x magit-status) 即可打开.
+基本上第一次需要使用M-x magit-status打开, 后面才能用C-x g快捷键, 不知道是不是什么bug.
+打开后会有一个窗口(这里我事先建好了一个 git 仓库)
+ 分析下magit 窗口每部分的意思:
+ Head: 当前HEAD指向 Untracked files: 未追踪的文件 (也就是没使用 git add 命令添加的文件) Unstaged changes: 由git管理, 进行了修改, 但未添加到暂存区的文件 Recent commits: 最近的提交记录, 第一列就是提交ID  如果常使用git, 以上解释应该一遍就能记住
+常用的一些快捷键   g &amp; G: g可以刷新当前buffer, G刷新全部buffer. 什么意思呢, 比如当前你在查看magit面板, 但是突发奇想往工程里添加了个文件, 这时magit面板的Untracked files里应该要多一个刚添加的文件的, 但是并没有, 此时需要按一下g, 这时这个新加的文件就会出现然Untracked files里了.</div><div class="post-footer">
+        <a href="/posts/magit_usage_03/">Read more...</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git/">git</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/git_usage_02/">Git的基本使用</a>
     </h1><div class="post-meta">
         <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
-        </span>&nbsp;<span class="post-publish">published on <time datetime="2022-08-06">2022-08-06</time></span></div><div class="content">基础(最常用的命令) git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志 版本回退 前一个版本:
+        </span>&nbsp;<span class="post-publish">published on <time datetime="2022-08-06">2022-08-06</time></span></div><div class="content">基础(最常用的命令) 1 2 3 4 5 6 7 8  git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志   版本回退 前一个版本:
 I&rsquo;m a little tired!!!
 当前版本:
 I&rsquo;m not tired!!!
-这时使用 git add和 git commit提交了, 但是想回退过去的操作办法如下:
-  git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset --hard HEAD^未回退命令时日志显示: 有两个版本: first 和 not tired
- 使用回退命令后日志显示: 只有 first 了
-   当知道commit ID时, 使用 commit ID直接跳到想要的版本.</div><div class="post-footer">
+这时使用 git add 和 git commit 提交了, 但是想回退过去的操作办法如下:
+  git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset --hard HEAD^</div><div class="post-footer">
         <a href="/posts/git_usage_02/">Read more...</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git/">git</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -107,8 +118,8 @@ I&rsquo;m not tired!!!
 要做的第一件事是检查电脑上是否安装了Git, 使用命令: git &ndash;version查看, 安装了则会返回版本号
  没安装就去官网安装下
 配置Git的名字和邮箱 让Git知道你是谁, 两条命令:
-git config --global user.name &#34;your_name&#34; git config --global user.email &#34;your_email&#34; git config --list: #列出配置信息 git config --unset --global user.name # 取消名称设置 不使用 global 参数,则设置的是本仓库的信息
-配置Git代理 # 设置当前代理 git config http.proxy http://127.0.0.1:2334 # 取消当前代理 git config --unset http.proxy #设置socks5代理 git config http.proxy socks5://127.0.0.1 #取消全局代理 git config --global --unset http.proxy 初始化Git仓库 在需要使用Git管理的仓库中运行 git init即可</div><div class="post-footer">
+1 2 3 4  git config --global user.name &#34;your_name&#34; git config --global user.email &#34;your_email&#34; git config --list: #列出配置信息 git config --unset --global user.name # 取消名称设置   不使用 global 参数,则设置的是本仓库的信息
+配置Git代理 1 2 3 4 5 6 7 8 9 10 11  # 设置当前代理 git config http.proxy http://127.</div><div class="post-footer">
         <a href="/posts/git_get_started_01/">Read more...</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git/">git</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -116,22 +127,22 @@ git config --global user.name &#34;your_name&#34; git config --global user.email
     </h1><div class="post-meta">
         <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
         </span>&nbsp;<span class="post-publish">published on <time datetime="2022-08-04">2022-08-04</time></span></div><div class="content">emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
-ox-hugo的安装  M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置  (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox) 这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:
+ox-hugo的安装  M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置   1 2 3 4  (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox)   这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:
  如果按以上操作, 有这一项出来, 那么ox-hugo才算成功, 没有就排查错误, 比如ox-hugo有没有安装上, 配置信息有没有加对地方
 ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能导出到正确的位置.我参考这个配置:
-#+OPTIONS: author:nil ^:{} #+HUGO_FRONT_MATTER_FORMAT: YAML #+HUGO_BASE_DIR: 博客的根目录 #+HUGO_SECTION: posts/ #+HUGO_CUSTOM_FRONT_MATTER: :toc true #+HUGO_AUTO_SET_LASTMOD: t #+HUGO_TAGS: 标签1 标签2 #+HUGO_CATEGORIES: 类别 #+HUGO_DRAFT: false #+TITLE: 博客名字 这其实是一个重复性的工作, 因此使用Yasnippet模板</div><div class="post-footer">
+1 2 3 4 5 6 7 8 9 10  #+OPTIONS: author:nil ^:{} #+HUGO_FRONT_MATTER_FORMAT: YAML #+HUGO_BASE_DIR: 博客的根目录 #+HUGO_SECTION: posts/ #+HUGO_CUSTOM_FRONT_MATTER: :toc true #+HUGO_AUTO_SET_LASTMOD: t #+HUGO_TAGS: 标签1 标签2 #+HUGO_CATEGORIES: 类别 #+HUGO_DRAFT: false #+TITLE: 博客名字   这其实是一个重复性的工作, 因此使用Yasnippet模板</div><div class="post-footer">
         <a href="/posts/02_hugo_with_emacs/">Read more...</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/01_hugo_install/">hugo安装与入门</a>
     </h1><div class="post-meta">
         <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
-        </span>&nbsp;<span class="post-publish">published on <time datetime="2022-08-04">2022-08-04</time></span></div><div class="content">ubuntu 18.04安装hugo最新稳定版  在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本  创建hugo站 hugo new site hello-world 这个命令会创建一个hello-world文件夹
-进入 hello-world文件夹 cd hello-world sudo hugo 即可显示提示信息, 若不这样显示, 就是出错了, 网上查别的教程吧
+        </span>&nbsp;<span class="post-publish">published on <time datetime="2022-08-04">2022-08-04</time></span></div><div class="content">ubuntu 18.04安装hugo最新稳定版  在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本  创建hugo站 1  hugo new site hello-world   这个命令会创建一个hello-world文件夹
+进入 hello-world文件夹 1 2  cd hello-world sudo hugo   即可显示提示信息, 若不这样显示, 就是出错了, 网上查别的教程吧
  至此安装完成
 选择主题 hugo这个博客是需要配合现有的主题的, 我这里使用的是DoIt主题
 主题下载 在这个网址下臷主题网址,我选择的是DoIt. DoIt的使用教程在这里
-主题使用  下载主题并放到./hello-world/themes文件夹里 修改配置文件,就是根目录下的config.toml, 这里使用的是DoIt网站上提供的默认配置 baseURL = &#34;http://example.org/&#34; # [en, zh-cn, fr, ...] determines default content language defaultContentLanguage = &#34;en&#34; # language code languageCode = &#34;en&#34; title = &#34;My New Hugo Site&#34; # Change the default theme to be use when building the site with Hugo theme = &#34;DoIt&#34; [params] # DoIt theme version version = &#34;0.</div><div class="post-footer">
+主题使用  下载主题并放到./hello-world/themes文件夹里 修改配置文件,就是根目录下的config.toml, 这里使用的是DoIt网站上提供的默认配置 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  baseURL = &#34;http://example.</div><div class="post-footer">
         <a href="/posts/01_hugo_install/">Read more...</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a></div></div>
 </article></div></div>
@@ -147,7 +158,9 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
         </a>
     </div><div class="assets"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
 
-<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"data":{"id-1":"Now or Never"},"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"]},"duration":null,"speed":null}};</script></div>
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"data":{"id-1":"Now or Never"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"sharerjs":true,"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"]},"duration":null,"speed":null}};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
 </body>
 
 </html>

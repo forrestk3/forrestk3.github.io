@@ -6,35 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
     <title class="pjax-title">Git的基本使用 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Git的基本使用" />
-<meta property="og:description" content="基础(最常用的命令) git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志 版本回退 前一个版本:
+<meta property="og:description" content="基础(最常用的命令) 1 2 3 4 5 6 7 8  git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志   版本回退 前一个版本:
 I&rsquo;m a little tired!!!
 当前版本:
 I&rsquo;m not tired!!!
-这时使用 git add和 git commit提交了, 但是想回退过去的操作办法如下:
-  git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset --hard HEAD^未回退命令时日志显示: 有两个版本: first 和 not tired
- 使用回退命令后日志显示: 只有 first 了
-   当知道commit ID时, 使用 commit ID直接跳到想要的版本." />
+这时使用 git add 和 git commit 提交了, 但是想回退过去的操作办法如下:
+  git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset --hard HEAD^" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/git_usage_02/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-06T19:28:00+08:00" />
-<meta property="article:modified_time" content="2022-08-15T16:34:01+08:00" />
+<meta property="article:modified_time" content="2022-08-15T19:43:47+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git的基本使用"/>
-<meta name="twitter:description" content="基础(最常用的命令) git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志 版本回退 前一个版本:
+<meta name="twitter:description" content="基础(最常用的命令) 1 2 3 4 5 6 7 8  git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志   版本回退 前一个版本:
 I&rsquo;m a little tired!!!
 当前版本:
 I&rsquo;m not tired!!!
-这时使用 git add和 git commit提交了, 但是想回退过去的操作办法如下:
-  git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset --hard HEAD^未回退命令时日志显示: 有两个版本: first 和 not tired
- 使用回退命令后日志显示: 只有 first 了
-   当知道commit ID时, 使用 commit ID直接跳到想要的版本."/>
+这时使用 git add 和 git commit 提交了, 但是想回退过去的操作办法如下:
+  git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset --hard HEAD^"/>
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
 <meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://example.org/posts/git_usage_02/" /><link rel="prev" href="http://example.org/posts/git_get_started_01/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://example.org/posts/git_usage_02/" /><link rel="prev" href="http://example.org/posts/git_get_started_01/" /><link rel="next" href="http://example.org/posts/magit_usage_03/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -45,8 +41,8 @@ I&rsquo;m not tired!!!
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/posts\/git_usage_02\/"
-        },"genre": "posts","keywords": "git","wordcount":  629 ,
-        "url": "http:\/\/example.org\/posts\/git_usage_02\/","datePublished": "2022-08-06T19:28:00+08:00","dateModified": "2022-08-15T16:34:01+08:00","publisher": {
+        },"genre": "posts","keywords": "git","wordcount":  669 ,
+        "url": "http:\/\/example.org\/posts\/git_usage_02\/","datePublished": "2022-08-06T19:28:00+08:00","dateModified": "2022-08-15T19:43:47+08:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
                 "@type": "Person",
@@ -100,12 +96,12 @@ I&rsquo;m not tired!!!
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">Contents</h2>
         <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git的基本使用</h1><div class="post-meta">
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git的基本使用</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-06">2022-08-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-15">2022-08-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;629 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-06">2022-08-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-15">2022-08-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;669 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -147,7 +143,12 @@ I&rsquo;m not tired!!!
         <li><a href="#分离head">分离HEAD</a></li>
         <li><a href="#相对引用">相对引用(^)</a></li>
         <li><a href="#撤销变更--reset-and-revert">撤销变更 (reset &amp; revert)</a></li>
-        <li><a href="#提交树的节点移动--rebase-and-cherry-pick">提交树的节点移动 (rebase &amp; cherry-pick)</a></li>
+        <li><a href="#提交树的节点移动--rebase-and-cherry-pick">提交树的节点移动 (rebase &amp; cherry-pick)</a>
+          <ul>
+            <li><a href="#场景一-当前出了一些问题-可此需要新建一些分支来解决-最终解决了当前的问题">场景一: 当前出了一些问题, 可此需要新建一些分支来解决, 最终解决了当前的问题:</a></li>
+            <li><a href="#场景二-更新历史提交节点中的信息">场景二: 更新历史提交节点中的信息</a></li>
+          </ul>
+        </li>
         <li><a href="#tag">tag</a></li>
         <li><a href="#describe">describe</a></li>
       </ul>
@@ -155,7 +156,19 @@ I&rsquo;m not tired!!!
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="基础--最常用的命令">基础(最常用的命令)</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git init <span class="c1">#初始化Git仓库</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git init <span class="c1">#初始化Git仓库</span>
 </span></span><span class="line"><span class="cl">git add . <span class="c1">#添加所有未追踪文件或修改</span>
 </span></span><span class="line"><span class="cl">git add filename <span class="c1">#添加指定文件</span>
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;commit information&#34;</span> <span class="c1"># 提交</span>
@@ -163,15 +176,17 @@ I&rsquo;m not tired!!!
 </span></span><span class="line"><span class="cl">git pull <span class="c1">#从远程拉取</span>
 </span></span><span class="line"><span class="cl">git status <span class="c1"># 查看当前状态</span>
 </span></span><span class="line"><span class="cl">git log <span class="c1"># 查看提交日志</span>
-</span></span></code></pre></div><h2 id="版本回退">版本回退</h2>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="版本回退">版本回退</h2>
 <p>前一个版本:</p>
 <p>I&rsquo;m a little tired!!!</p>
 <p>当前版本:</p>
 <p>I&rsquo;m not tired!!!</p>
-<p>这时使用 <!-- raw HTML omitted --><code>git add</code><!-- raw HTML omitted --> 和 <!-- raw HTML omitted --><code>git commit</code><!-- raw HTML omitted --> 提交了, 但是想回退过去的操作办法如下:</p>
+<p>这时使用 <span class="inline-src language-sh" data-lang="sh"><code>git add</code></span> 和 <span class="inline-src language-sh" data-lang="sh"><code>git commit</code></span> 提交了, 但是想回退过去的操作办法如下:</p>
 <ol>
 <li>
-<p>git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: <!-- raw HTML omitted --><code>git reset --hard HEAD^</code><!-- raw HTML omitted --></p>
+<p>git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: <span class="inline-src language-sh" data-lang="sh"><code>git reset --hard HEAD^</code></span></p>
 <p>未回退命令时日志显示: 有两个版本: first 和 not tired</p>
 <figure><img src="/ox-hugo/w9ia1T.png"/>
 </figure>
@@ -183,7 +198,7 @@ I&rsquo;m not tired!!!
 </li>
 <li>
 <p>当知道commit ID时, 使用 commit ID直接跳到想要的版本.</p>
-<p>比如现在想再返回 not tired, 操作命令为: <!-- raw HTML omitted --><code>git reset --hard commit_id</code><!-- raw HTML omitted --></p>
+<p>比如现在想再返回 not tired, 操作命令为: <span class="inline-src language-sh" data-lang="sh"><code>git reset --hard commit_id</code></span></p>
 <p>这时再查看log结果为:</p>
 <figure><img src="/ox-hugo/xbNFyu.png"/>
 </figure>
@@ -192,7 +207,7 @@ I&rsquo;m not tired!!!
 </li>
 <li>
 <p>当不知道commit ID时也是有办法的</p>
-<p>git提供了 <!-- raw HTML omitted --><code>git reflog</code><!-- raw HTML omitted -->  命令, 这个命令的输出结果是记录你的每一次命令, 使用 <!-- raw HTML omitted --><code>git reflog</code><!-- raw HTML omitted --> 命令查看历史命令:</p>
+<p>git提供了 <span class="inline-src language-sh" data-lang="sh"><code>git reflog</code></span>  命令, 这个命令的输出结果是记录你的每一次命令, 使用 <span class="inline-src language-sh" data-lang="sh"><code>git reflog</code></span> 命令查看历史命令:</p>
 <figure><img src="/ox-hugo/yoXAyX.png"/>
 </figure>
 
@@ -208,11 +223,11 @@ I&rsquo;m not tired!!!
 <h3 id="回退总结">回退总结:</h3>
 <ul>
 <li>
-<p>HEAD 为当前版本, 使<!-- raw HTML omitted --><code>git reset --hard commit_id</code><!-- raw HTML omitted -->
+<p>HEAD 为当前版本, 使<span class="inline-src language-sh" data-lang="sh"><code>git reset --hard commit_id</code></span>
 可以跳到对应的版本</p>
 </li>
 <li>
-<p><!-- raw HTML omitted --><code>git reflog</code><!-- raw HTML omitted --> 命令可以查看所有操作的记录, 可以用于查找所需要的版本号</p>
+<p><span class="inline-src language-sh" data-lang="sh"><code>git reflog</code></span> 命令可以查看所有操作的记录, 可以用于查找所需要的版本号</p>
 </li>
 <li>
 <p>tip: HEAD表示当前版本, HEAD^表示前一个提交版本, HEAD^^为前2个提交的版本, HEAD~100 为第前100个版本</p>
@@ -227,40 +242,40 @@ I&rsquo;m not tired!!!
 <h3 id="git-基本逻辑">git 基本逻辑</h3>
 <p>git仓库其实分为工作区(working tree), 暂存区(stage), 和 仓库()</p>
 <p>工作区就是我们看到和使用的部分</p>
-<p>暂存区是我们使用 <!-- raw HTML omitted --><code>git add filename</code><!-- raw HTML omitted --> 后文件所到达的部分</p>
-<p>仓库是我们使用 <!-- raw HTML omitted --><code>git commit</code><!-- raw HTML omitted --> 后文件所在的部分</p>
-<p>在使用 <!-- raw HTML omitted --><code>git commit</code><!-- raw HTML omitted --> 命令时, 只会将暂存区部分的内容保存到仓库</p>
+<p>暂存区是我们使用 <span class="inline-src language-sh" data-lang="sh"><code>git add filename</code></span> 后文件所到达的部分</p>
+<p>仓库是我们使用 <span class="inline-src language-sh" data-lang="sh"><code>git commit</code></span> 后文件所在的部分</p>
+<p>在使用 <span class="inline-src language-sh" data-lang="sh"><code>git commit</code></span> 命令时, 只会将暂存区部分的内容保存到仓库</p>
 <h3 id="文件修改的撤销">文件修改的撤销</h3>
 <ol>
 <li>在上一次提交后, 本次我们对某个文件进行了修改, 发现修改后程序运行出错了.</li>
 </ol>
-<p>现在删除对文件的修改, 应该怎么做(并未使用 <!-- raw HTML omitted --><code>git add</code><!-- raw HTML omitted -->命令)?</p>
-<p>这时需要的命令为 <!-- raw HTML omitted --><code>git checkout -- filename</code><!-- raw HTML omitted -->.</p>
+<p>现在删除对文件的修改, 应该怎么做(并未使用 <span class="inline-src language-sh" data-lang="sh"><code>git add</code></span>命令)?</p>
+<p>这时需要的命令为 <span class="inline-src language-sh" data-lang="sh"><code>git checkout -- filename</code></span>.</p>
 <p>对文件修改后查看工作区状态:</p>
 <figure><img src="/ox-hugo/wgzKkV.png"/>
 </figure>
 
-<p>可以看到有修改, 这时使用 <!-- raw HTML omitted --><code>git checkout filename</code><!-- raw HTML omitted --> 后结果为:</p>
+<p>可以看到有修改, 这时使用 <span class="inline-src language-sh" data-lang="sh"><code>git checkout filename</code></span> 后结果为:</p>
 <figure><img src="/ox-hugo/WFnHaa.png"/>
 </figure>
 
 <p>再次查看文件, 修改己经没有了</p>
 <ol>
-<li>假设这次我们对文件进行了修改, 且已经使用了 <!-- raw HTML omitted --><code>git add filename</code><!-- raw HTML omitted -->了该怎么办呢?</li>
+<li>假设这次我们对文件进行了修改, 且已经使用了 <span class="inline-src language-sh" data-lang="sh"><code>git add filename</code></span>了该怎么办呢?</li>
 </ol>
-<p>办法是使用 <!-- raw HTML omitted --><code>git reset HEAD filename</code><!-- raw HTML omitted --> 记其回到未 add 的情况.</p>
+<p>办法是使用 <span class="inline-src language-sh" data-lang="sh"><code>git reset HEAD filename</code></span> 记其回到未 add 的情况.</p>
 <p>我们将修改添加到暂存区, 并查看状态:</p>
 <figure><img src="/ox-hugo/mEZNH4.png"/>
 </figure>
 
 <p>先看一下与前面的区别, 未add时, 字是红色的, 提示信息是&quot;尚未暂存以备提交的变更&quot;</p>
-<p>使用 <!-- raw HTML omitted --><code>git add filename</code><!-- raw HTML omitted --> 后提示信息是&quot;要提交的变更&quot;</p>
-<p>此时使用 <!-- raw HTML omitted --><code>git reset HEAD filename</code><!-- raw HTML omitted --> 后的状态为:</p>
+<p>使用 <span class="inline-src language-sh" data-lang="sh"><code>git add filename</code></span> 后提示信息是&quot;要提交的变更&quot;</p>
+<p>此时使用 <span class="inline-src language-sh" data-lang="sh"><code>git reset HEAD filename</code></span> 后的状态为:</p>
 <figure><img src="/ox-hugo/KCUntl.png"/>
 </figure>
 
 <p>可以看到取消了暂存的变更, 这时查看状态则又到了修改未提交的状态了.</p>
-<p>此时再使用 <!-- raw HTML omitted --><code>git checkout -- filename</code><!-- raw HTML omitted --> 命令即可以撤销修改了.</p>
+<p>此时再使用 <span class="inline-src language-sh" data-lang="sh"><code>git checkout -- filename</code></span> 命令即可以撤销修改了.</p>
 <h3 id="撤销问题">撤销问题</h3>
 <ul>
 <li>有修改, 但是未添加到暂存区, 如何撤销?</li>
@@ -268,8 +283,8 @@ I&rsquo;m not tired!!!
 </ul>
 <h3 id="撤销总结">撤销总结</h3>
 <ul>
-<li><!-- raw HTML omitted --><code>git checkout -- filename</code><!-- raw HTML omitted --> 撤销对工作区文件的修改</li>
-<li><!-- raw HTML omitted --><code>git reset HEAD filename</code><!-- raw HTML omitted --> 撤销对文件的暂存操作</li>
+<li><span class="inline-src language-sh" data-lang="sh"><code>git checkout -- filename</code></span> 撤销对工作区文件的修改</li>
+<li><span class="inline-src language-sh" data-lang="sh"><code>git reset HEAD filename</code></span> 撤销对文件的暂存操作</li>
 </ul>
 <h2 id="文件删除">文件删除</h2>
 <p>git仓库的文件删除和正常文件夹的删除不大一样, 因为git将删除也视为了一个操作, 因此删除也需要提交.
@@ -277,17 +292,17 @@ I&rsquo;m not tired!!!
 <figure><img src="/ox-hugo/mbERgz.png"/>
 </figure>
 
-<p>同样, 使用 <!-- raw HTML omitted --><code>git checkout -- filename</code><!-- raw HTML omitted -->也可以取消该操作.</p>
+<p>同样, 使用 <span class="inline-src language-sh" data-lang="sh"><code>git checkout -- filename</code></span>也可以取消该操作.</p>
 <figure><img src="/ox-hugo/zl1Gmn.png"/>
 </figure>
 
-<p>使用 <!-- raw HTML omitted --><code>git rm filename</code><!-- raw HTML omitted --> 删除文件后查看状态:</p>
+<p>使用 <span class="inline-src language-sh" data-lang="sh"><code>git rm filename</code></span> 删除文件后查看状态:</p>
 <figure><img src="/ox-hugo/HTRJOe.png"/>
 </figure>
 
 <p>可以看到, 直接删除后提示信息是红色的, 且提示信息是&quot;修改尚未加入提交&quot;.</p>
-<p>也就是说, 这时还需要使用 <!-- raw HTML omitted --><code>git add</code><!-- raw HTML omitted -->命令才可以使用 <!-- raw HTML omitted --><code>git commit</code><!-- raw HTML omitted -->将删除操作提交到仓库.</p>
-<p>而 <!-- raw HTML omitted --><code>git rm filename</code><!-- raw HTML omitted -->则可以直接将删除提交到仓库.</p>
+<p>也就是说, 这时还需要使用 <span class="inline-src language-sh" data-lang="sh"><code>git add</code></span>命令才可以使用 <span class="inline-src language-sh" data-lang="sh"><code>git commit</code></span>将删除操作提交到仓库.</p>
+<p>而 <span class="inline-src language-sh" data-lang="sh"><code>git rm filename</code></span>则可以直接将删除提交到仓库.</p>
 <p>对于已添加,未添加的修改如何撤销可见上一节.</p>
 <h3 id="删除问题">删除问题</h3>
 <ol>
@@ -305,20 +320,20 @@ I&rsquo;m not tired!!!
 <h3 id="创建与合并">创建与合并</h3>
 <ol>
 <li>
-<p>分支的创建与删除: <!-- raw HTML omitted --><code>git branch branch_name</code><!-- raw HTML omitted --></p>
+<p>分支的创建与删除: <span class="inline-src language-sh" data-lang="sh"><code>git branch branch_name</code></span></p>
 <p>创建新分支前:</p>
 <figure><img src="/ox-hugo/RlYsKB.png"/>
 </figure>
 
-<p>创建新分支后: <!-- raw HTML omitted --><code>git branch newBranch</code><!-- raw HTML omitted --> (* 表示当前HEAD所在的分析, 即当前工作区的分支)</p>
+<p>创建新分支后: <span class="inline-src language-sh" data-lang="sh"><code>git branch newBranch</code></span> (* 表示当前HEAD所在的分析, 即当前工作区的分支)</p>
 <figure><img src="/ox-hugo/k7pjsa.png"/>
 </figure>
 
-<p>切换分支: <!-- raw HTML omitted --><code>git checkout newBranch</code><!-- raw HTML omitted --> 可以看到 * 从main到了newBranch</p>
+<p>切换分支: <span class="inline-src language-sh" data-lang="sh"><code>git checkout newBranch</code></span> 可以看到 * 从main到了newBranch</p>
 <figure><img src="/ox-hugo/HRQps3.png"/>
 </figure>
 
-<p>分支删除: <!-- raw HTML omitted --><code>git branch -d newBranch</code><!-- raw HTML omitted -->
+<p>分支删除: <span class="inline-src language-sh" data-lang="sh"><code>git branch -d newBranch</code></span>
 (不能删除当前所在分支, 因此要先切回main分支才可执行该操作)</p>
 <figure><img src="/ox-hugo/DtLHUp.png"/>
 </figure>
@@ -329,7 +344,7 @@ I&rsquo;m not tired!!!
 <figure><img src="/ox-hugo/Xgr0JH.png"/>
 </figure>
 
-<p>将HEAD放在main分支上, 并执行 <!-- raw HTML omitted --><code>git merge bugFix</code><!-- raw HTML omitted -->:</p>
+<p>将HEAD放在main分支上, 并执行 <span class="inline-src language-sh" data-lang="sh"><code>git merge bugFix</code></span>:</p>
 <figure><img src="/ox-hugo/NbBBBn.png"/>
 </figure>
 
@@ -345,7 +360,7 @@ I&rsquo;m not tired!!!
 
 <p>这里master分支中我们添加的内容是&quot;Creating a new branch!!!&ldquo;并提交了.</p>
 <p>在newBranch分支中我们添加的内容是&quot;Create a new branch!!!&rdquo;.</p>
-<p>所以在HEAD处于master分支, 并运行 <!-- raw HTML omitted --><code>git merge newBranch</code><!-- raw HTML omitted -->时会出现冲突.</p>
+<p>所以在HEAD处于master分支, 并运行 <span class="inline-src language-sh" data-lang="sh"><code>git merge newBranch</code></span>时会出现冲突.</p>
 <p>我们打开提示的冲突文件, 文件内容如下:</p>
 <figure><img src="/ox-hugo/wTslN6.png"/>
 </figure>
@@ -375,10 +390,10 @@ I&rsquo;m not tired!!!
 </ol>
 <h3 id="分支总结">分支总结</h3>
 <ol>
-<li>分支创建: <!-- raw HTML omitted --><code>git branch branch_name</code><!-- raw HTML omitted --></li>
-<li>分支删除: <!-- raw HTML omitted --><code>git branch -d branch_name</code><!-- raw HTML omitted --></li>
-<li>将其他分支合并到当前分支: <!-- raw HTML omitted --><code>git merge other_branch</code><!-- raw HTML omitted --></li>
-<li>分支切换: <!-- raw HTML omitted --><code>git checkout branch_name</code><!-- raw HTML omitted --></li>
+<li>分支创建: <span class="inline-src language-sh" data-lang="sh"><code>git branch branch_name</code></span></li>
+<li>分支删除: <span class="inline-src language-sh" data-lang="sh"><code>git branch -d branch_name</code></span></li>
+<li>将其他分支合并到当前分支: <span class="inline-src language-sh" data-lang="sh"><code>git merge other_branch</code></span></li>
+<li>分支切换: <span class="inline-src language-sh" data-lang="sh"><code>git checkout branch_name</code></span></li>
 <li>冲突解决: 修正冲突的文件并添加到暂存区, 然后提交</li>
 </ol>
 <h2 id="高级篇-命令详解">高级篇:命令详解</h2>
@@ -392,7 +407,7 @@ I&rsquo;m not tired!!!
 <figure><img src="/ox-hugo/M9hgtM.png"/>
 </figure>
 
-<p>可以看到*在bugFix这个分支上, 这也表示HEAD指向bugFix, 我们可以直接让它指向C4 <!-- raw HTML omitted --><code>git checkout C4</code><!-- raw HTML omitted --> (这里的C4是提交id):</p>
+<p>可以看到*在bugFix这个分支上, 这也表示HEAD指向bugFix, 我们可以直接让它指向C4 <span class="inline-src language-sh" data-lang="sh"><code>git checkout C4</code></span> (这里的C4是提交id):</p>
 <figure><img src="/ox-hugo/Wx4zBM.png"/>
 </figure>
 
@@ -408,7 +423,7 @@ I&rsquo;m not tired!!!
 <ol>
 <li>
 <p>在不同的仓库进行切换时, 使用commit id十分麻烦, 因为id需要使用git log命令查找, git提供了相对引用, 即^表示上一个, ^^表示上2个, ~10 表示前10个.</p>
-<p>如使用 <!-- raw HTML omitted --><code>git checkout main^</code><!-- raw HTML omitted --> 效果为:</p>
+<p>如使用 <span class="inline-src language-sh" data-lang="sh"><code>git checkout main^</code></span> 效果为:</p>
 <p><img
         class="lazyload"
         data-src="/ox-hugo/k7l8fp.png"
@@ -425,7 +440,7 @@ I&rsquo;m not tired!!!
         title="/ox-hugo/Vopopj.png"
     /></p>
 <p>可以看到当HAED指向main时, HEAD^和main^都是指向C5的.</p>
-<p>再次使用 <!-- raw HTML omitted --><code>git checkout HEAD~3</code><!-- raw HTML omitted --> 结果为:</p>
+<p>再次使用 <span class="inline-src language-sh" data-lang="sh"><code>git checkout HEAD~3</code></span> 结果为:</p>
 <figure><img src="/ox-hugo/fbSQSq.png"/>
 </figure>
 
@@ -439,12 +454,12 @@ I&rsquo;m not tired!!!
 <figure><img src="/ox-hugo/dIjvRu.png"/>
 </figure>
 
-<p>原本提交树是这样, 使用 <!-- raw HTML omitted --><code>git reset HEAD^</code><!-- raw HTML omitted --> 后:</p>
+<p>原本提交树是这样, 使用 <span class="inline-src language-sh" data-lang="sh"><code>git reset HEAD^</code></span> 后:</p>
 <figure><img src="/ox-hugo/DA3wQF.png"/>
 </figure>
 
 <p>可以看到, 这个命令让分支放弃了当前节点而指向了父节点.</p>
-<p>若对原本的提交树使用 <!-- raw HTML omitted --><code>git revert HEAD^</code><!-- raw HTML omitted --> 命令后的提交树为:</p>
+<p>若对原本的提交树使用 <span class="inline-src language-sh" data-lang="sh"><code>git revert HEAD^</code></span> 命令后的提交树为:</p>
 <figure><img src="/ox-hugo/RgrX6M.png"/>
 </figure>
 
@@ -457,7 +472,7 @@ I&rsquo;m not tired!!!
 <figure><img src="/ox-hugo/PNMENq.png"/>
 </figure>
 
-<p>我们使用 <!-- raw HTML omitted --><code>git rebase main</code><!-- raw HTML omitted -->后提交树变化为:</p>
+<p>我们使用 <span class="inline-src language-sh" data-lang="sh"><code>git rebase main</code></span>后提交树变化为:</p>
 <figure><img src="/ox-hugo/nwkPME.png"/>
 </figure>
 
@@ -473,7 +488,7 @@ I&rsquo;m not tired!!!
 <ul>
 <li>
 <p>rebase 的另一个功能: 提交记录排序与删除.</p>
-<p><!-- raw HTML omitted --><code>git rebase -i HEAD~4</code><!-- raw HTML omitted -->: 这个命令会弹出一个交互式的创口, 让你调整最新4个提交节点的顺序或者删除提交节点. 下面是一个例子:</p>
+<p><span class="inline-src language-sh" data-lang="sh"><code>git rebase -i HEAD~4</code></span>: 这个命令会弹出一个交互式的创口, 让你调整最新4个提交节点的顺序或者删除提交节点. 下面是一个例子:</p>
 <p><img
         class="lazyload"
         data-src="/ox-hugo/Xy3uNG.png"
@@ -497,7 +512,7 @@ I&rsquo;m not tired!!!
 <figure><img src="/ox-hugo/ZwNIwd.png"/>
 </figure>
 
-<p>使用 <!-- raw HTML omitted --><code>git cherry-pick C2 C4 C6</code><!-- raw HTML omitted --> 后结果为:</p>
+<p>使用 <span class="inline-src language-sh" data-lang="sh"><code>git cherry-pick C2 C4 C6</code></span> 后结果为:</p>
 <figure><img src="/ox-hugo/th4ZK3.png"/>
 </figure>
 
@@ -510,7 +525,7 @@ I&rsquo;m not tired!!!
 </figure>
 
 <p>但是此时, 我们只想要收录解决问题的提交到当前的main下, 此时就可以使用 rebase -i 和 cherry-pick 这两个命令来实现.</p>
-<p>将HEAD调整到main分支上, 再使用 <!-- raw HTML omitted --><code>git cherry-pick C4</code><!-- raw HTML omitted --> (左) 或者使用 <!-- raw HTML omitted --><code>git rebase -i HEAD~3</code><!-- raw HTML omitted --> 后调整提交 (右) 即可获得:</p>
+<p>将HEAD调整到main分支上, 再使用 <span class="inline-src language-sh" data-lang="sh"><code>git cherry-pick C4</code></span> (左) 或者使用 <span class="inline-src language-sh" data-lang="sh"><code>git rebase -i HEAD~3</code></span> 后调整提交 (右) 即可获得:</p>
 <p><img
         class="lazyload"
         data-src="/ox-hugo/ZJ9rxO.png"
@@ -531,20 +546,20 @@ I&rsquo;m not tired!!!
 <figure><img src="/ox-hugo/6Qk8bS.png"/>
 </figure>
 
-<p>口述使用 rebase -i 命令过程: 先调整C2和C3顺序,将C2提交节点放到最前, 再使用 <!-- raw HTML omitted --><code>git commit --amend</code><!-- raw HTML omitted --> 来提交列新C2中的信息, 最后使用 rebase -i 命令将C3节点放到最前.</p>
-<p>详细说明 cherry-pick 过程 (因为不用交互, 易于博客中展示). 首先调整HEAD到main: <!-- raw HTML omitted --><code>git checkout main</code><!-- raw HTML omitted --></p>
+<p>口述使用 rebase -i 命令过程: 先调整C2和C3顺序,将C2提交节点放到最前, 再使用 <span class="inline-src language-sh" data-lang="sh"><code>git commit --amend</code></span> 来提交列新C2中的信息, 最后使用 rebase -i 命令将C3节点放到最前.</p>
+<p>详细说明 cherry-pick 过程 (因为不用交互, 易于博客中展示). 首先调整HEAD到main: <span class="inline-src language-sh" data-lang="sh"><code>git checkout main</code></span></p>
 <figure><img src="/ox-hugo/jpy5A2.png"/>
 </figure>
 
-<p>其次, 将C2 拿到最前: <!-- raw HTML omitted --><code>git cherry-pick C2</code><!-- raw HTML omitted --></p>
+<p>其次, 将C2 拿到最前: <span class="inline-src language-sh" data-lang="sh"><code>git cherry-pick C2</code></span></p>
 <figure><img src="/ox-hugo/odNTKf.png"/>
 </figure>
 
-<p>然后, 修改C2中的内容并提交: <!-- raw HTML omitted --><code>git commit --amend</code><!-- raw HTML omitted --></p>
+<p>然后, 修改C2中的内容并提交: <span class="inline-src language-sh" data-lang="sh"><code>git commit --amend</code></span></p>
 <figure><img src="/ox-hugo/0tYSy8.png"/>
 </figure>
 
-<p>最后, 将C3节点放到最前: <!-- raw HTML omitted --><code>git cherry-pick C3</code><!-- raw HTML omitted --></p>
+<p>最后, 将C3节点放到最前: <span class="inline-src language-sh" data-lang="sh"><code>git cherry-pick C3</code></span></p>
 <figure><img src="/ox-hugo/jFWrjx.png"/>
 </figure>
 
@@ -554,36 +569,25 @@ I&rsquo;m not tired!!!
 <figure><img src="/ox-hugo/CVhCSx.png"/>
 </figure>
 
-<p>为不同的提交节点添加tag, 如运行命令: <!-- raw HTML omitted --><code>git tag V1 C1, git tag V2 C2</code><!-- raw HTML omitted -->, 这时的提交树为:</p>
+<p>为不同的提交节点添加tag, 如运行命令: <span class="inline-src language-sh" data-lang="sh"><code>git tag V1 C1, git tag V2 C2</code></span>, 这时的提交树为:</p>
 <figure><img src="/ox-hugo/XThrHE.png"/>
 </figure>
 
-<p>同时, 可以直接利用tag名称来移动HEAD: <!-- raw HTML omitted --><code>git checkout V1</code><!-- raw HTML omitted --></p>
+<p>同时, 可以直接利用tag名称来移动HEAD: <span class="inline-src language-sh" data-lang="sh"><code>git checkout V1</code></span></p>
 <figure><img src="/ox-hugo/4fBhAY.png"/>
 </figure>
 
 <p>可以看到这时HEAD指向了C1. 为什么不是V1* 呢, 这是因为无支对某个tag直接提交, 所以才会发生这种分离HEAD的现象.</p>
 <h3 id="describe">describe</h3>
-<p><!-- raw HTML omitted --><code>git describe &lt;ref&gt;</code><!-- raw HTML omitted -->: &lt;ref&gt; 为提交树中的引用, 默认为HEAD.</p>
+<p><span class="inline-src language-sh" data-lang="sh"><code>git describe &lt;ref&gt;</code></span>: &lt;ref&gt; 为提交树中的引用, 默认为HEAD.</p>
 <p>该命令的输出结果为: &lt;tag&gt;_&lt;num&gt;_g&lt;hash&gt;, tag为与该引用最近的标签, num 为 该引用与最近标签的间隔提交数, &lt;hash&gt;为&lt;ref&gt;的提交ID.</p>
-<p>对于以下的提交树, 使用 <!-- raw HTML omitted --><code>git describe, git describe main, git describe side</code><!-- raw HTML omitted --> 的结果分别为:</p>
-<p><img
-        class="lazyload"
-        data-src="/ox-hugo/dWzKw3.png"
-        data-srcset="/ox-hugo/dWzKw3.png, /ox-hugo/dWzKw3.png 1.5x, /ox-hugo/dWzKw3.png 2x"
-        data-sizes="auto"
-        alt="/ox-hugo/dWzKw3.png"
-        title="/ox-hugo/dWzKw3.png"
-    />
-<img
-        class="lazyload"
-        data-src="/ox-hugo/ZObRUN.png"
-        data-srcset="/ox-hugo/ZObRUN.png, /ox-hugo/ZObRUN.png 1.5x, /ox-hugo/ZObRUN.png 2x"
-        data-sizes="auto"
-        alt="/ox-hugo/ZObRUN.png"
-        title="/ox-hugo/ZObRUN.png"
-    /></p>
-<p>$$a$$</p>
+<p>对于以下的提交树, 使用 <span class="inline-src language-sh" data-lang="sh"><code>git describe, git describe main, git describe side</code></span> 的结果分别为:</p>
+<figure><img src="/ox-hugo/dWzKw3.png"/>
+</figure>
+
+<figure><img src="/ox-hugo/ZObRUN.png"/>
+</figure>
+
 </div>
 
         <div class="post-footer" id="post-footer">
@@ -597,7 +601,7 @@ I&rsquo;m not tired!!!
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span></span>
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/git_usage_02/" data-title="Git的基本使用" data-hashtags="git"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/git_usage_02/" data-title="Git的基本使用"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/posts/git_usage_02/" data-title="Git的基本使用" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/posts/git_usage_02/" data-title="Git的基本使用"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -609,9 +613,10 @@ I&rsquo;m not tired!!!
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/git_get_started_01/" class="prev" rel="prev" title="Git 与 Magit 初始篇"><i class="fas fa-angle-left fa-fw"></i>Git 与 Magit 初始篇</a></div>
+    <div class="post-nav"><a href="/posts/git_get_started_01/" class="prev" rel="prev" title="Git 与 Magit 初始篇"><i class="fas fa-angle-left fa-fw"></i>Git 与 Magit 初始篇</a>
+            <a href="/posts/magit_usage_03/" class="next" rel="next" title="Magit的基本使用">Magit的基本使用<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-</article></div>
+<div id="comments"></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
@@ -624,7 +629,9 @@ I&rsquo;m not tired!!!
         </a>
     </div><div class="assets"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
 
-<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script></div>
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
 </body>
 
 </html>

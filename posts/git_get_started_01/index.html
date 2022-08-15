@@ -12,8 +12,8 @@
 要做的第一件事是检查电脑上是否安装了Git, 使用命令: git &ndash;version查看, 安装了则会返回版本号
  没安装就去官网安装下
 配置Git的名字和邮箱 让Git知道你是谁, 两条命令:
-git config --global user.name &#34;your_name&#34; git config --global user.email &#34;your_email&#34; git config --list: #列出配置信息 git config --unset --global user.name # 取消名称设置 不使用 global 参数,则设置的是本仓库的信息
-配置Git代理 # 设置当前代理 git config http.proxy http://127.0.0.1:2334 # 取消当前代理 git config --unset http.proxy #设置socks5代理 git config http.proxy socks5://127.0.0.1 #取消全局代理 git config --global --unset http.proxy 初始化Git仓库 在需要使用Git管理的仓库中运行 git init即可" />
+1 2 3 4  git config --global user.name &#34;your_name&#34; git config --global user.email &#34;your_email&#34; git config --list: #列出配置信息 git config --unset --global user.name # 取消名称设置   不使用 global 参数,则设置的是本仓库的信息
+配置Git代理 1 2 3 4 5 6 7 8 9 10 11  # 设置当前代理 git config http.proxy http://127." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/git_get_started_01/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-06T15:17:00+08:00" />
@@ -27,8 +27,8 @@ git config --global user.name &#34;your_name&#34; git config --global user.email
 要做的第一件事是检查电脑上是否安装了Git, 使用命令: git &ndash;version查看, 安装了则会返回版本号
  没安装就去官网安装下
 配置Git的名字和邮箱 让Git知道你是谁, 两条命令:
-git config --global user.name &#34;your_name&#34; git config --global user.email &#34;your_email&#34; git config --list: #列出配置信息 git config --unset --global user.name # 取消名称设置 不使用 global 参数,则设置的是本仓库的信息
-配置Git代理 # 设置当前代理 git config http.proxy http://127.0.0.1:2334 # 取消当前代理 git config --unset http.proxy #设置socks5代理 git config http.proxy socks5://127.0.0.1 #取消全局代理 git config --global --unset http.proxy 初始化Git仓库 在需要使用Git管理的仓库中运行 git init即可"/>
+1 2 3 4  git config --global user.name &#34;your_name&#34; git config --global user.email &#34;your_email&#34; git config --list: #列出配置信息 git config --unset --global user.name # 取消名称设置   不使用 global 参数,则设置的是本仓库的信息
+配置Git代理 1 2 3 4 5 6 7 8 9 10 11  # 设置当前代理 git config http.proxy http://127."/>
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -45,7 +45,7 @@ git config --global user.name &#34;your_name&#34; git config --global user.email
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/posts\/git_get_started_01\/"
-        },"genre": "posts","keywords": "git","wordcount":  82 ,
+        },"genre": "posts","keywords": "git","wordcount":  98 ,
         "url": "http:\/\/example.org\/posts\/git_get_started_01\/","datePublished": "2022-08-06T15:17:00+08:00","dateModified": "2022-08-07T00:10:45+08:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
@@ -100,11 +100,11 @@ git config --global user.name &#34;your_name&#34; git config --global user.email
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">Contents</h2>
         <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git 与 Magit 初始篇</h1><div class="post-meta">
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git 与 Magit 初始篇</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-06">2022-08-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-07">2022-08-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;82 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-06">2022-08-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-07">2022-08-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;98 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -134,13 +134,38 @@ git config --global user.name &#34;your_name&#34; git config --global user.email
 <p>没安装就去官网安装下</p>
 <h2 id="配置git的名字和邮箱">配置Git的名字和邮箱</h2>
 <p>让Git知道你是谁, 两条命令:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;your_name&#34;</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;your_name&#34;</span>
 </span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;your_email&#34;</span>
 </span></span><span class="line"><span class="cl">git config --list: <span class="c1">#列出配置信息</span>
 </span></span><span class="line"><span class="cl">git config --unset --global user.name <span class="c1"># 取消名称设置</span>
-</span></span></code></pre></div><p>不使用 global 参数,则设置的是本仓库的信息</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不使用 global 参数,则设置的是本仓库的信息</p>
 <h2 id="配置git代理">配置Git代理</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 设置当前代理</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 设置当前代理</span>
 </span></span><span class="line"><span class="cl">git config http.proxy http://127.0.0.1:2334
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 取消当前代理</span>
@@ -151,8 +176,10 @@ git config --global user.name &#34;your_name&#34; git config --global user.email
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">#取消全局代理</span>
 </span></span><span class="line"><span class="cl">git config --global --unset http.proxy
-</span></span></code></pre></div><h2 id="初始化git仓库">初始化Git仓库</h2>
-<p>在需要使用Git管理的仓库中运行 <!-- raw HTML omitted -->git init<!-- raw HTML omitted --> 即可</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="初始化git仓库">初始化Git仓库</h2>
+<p>在需要使用Git管理的仓库中运行 <span class="underline">git init</span> 即可</p>
 <h2 id="magit">Magit</h2>
 <p>这是Emacs下的一个Git工具, 直接在Emacs下安装该包即可, 一般现有的Emacs工具都被作者安装好了.</p>
 <p>Emacsh下Magit的打开方式: M-x magit-status</p>
@@ -172,7 +199,7 @@ git config --global user.name &#34;your_name&#34; git config --global user.email
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span></span>
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/git_get_started_01/" data-title="Git 与 Magit 初始篇" data-hashtags="git"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/git_get_started_01/" data-title="Git 与 Magit 初始篇"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/posts/git_get_started_01/" data-title="Git 与 Magit 初始篇" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/posts/git_get_started_01/" data-title="Git 与 Magit 初始篇"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -187,7 +214,7 @@ git config --global user.name &#34;your_name&#34; git config --global user.email
     <div class="post-nav"><a href="/posts/02_hugo_with_emacs/" class="prev" rel="prev" title="使用emacs写hugo博客"><i class="fas fa-angle-left fa-fw"></i>使用emacs写hugo博客</a>
             <a href="/posts/git_usage_02/" class="next" rel="next" title="Git的基本使用">Git的基本使用<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-</article></div>
+<div id="comments"></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
@@ -200,7 +227,9 @@ git config --global user.name &#34;your_name&#34; git config --global user.email
         </a>
     </div><div class="assets"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
 
-<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script></div>
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
 </body>
 
 </html>

@@ -7,10 +7,10 @@
     <meta name="robots" content="noodp" />
     <title class="pjax-title">使用emacs写hugo博客 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="使用emacs写hugo博客" />
 <meta property="og:description" content="emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
-ox-hugo的安装  M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置  (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox) 这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:
+ox-hugo的安装  M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置   1 2 3 4  (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox)   这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:
  如果按以上操作, 有这一项出来, 那么ox-hugo才算成功, 没有就排查错误, 比如ox-hugo有没有安装上, 配置信息有没有加对地方
 ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能导出到正确的位置.我参考这个配置:
-#&#43;OPTIONS: author:nil ^:{} #&#43;HUGO_FRONT_MATTER_FORMAT: YAML #&#43;HUGO_BASE_DIR: 博客的根目录 #&#43;HUGO_SECTION: posts/ #&#43;HUGO_CUSTOM_FRONT_MATTER: :toc true #&#43;HUGO_AUTO_SET_LASTMOD: t #&#43;HUGO_TAGS: 标签1 标签2 #&#43;HUGO_CATEGORIES: 类别 #&#43;HUGO_DRAFT: false #&#43;TITLE: 博客名字 这其实是一个重复性的工作, 因此使用Yasnippet模板" />
+1 2 3 4 5 6 7 8 9 10  #&#43;OPTIONS: author:nil ^:{} #&#43;HUGO_FRONT_MATTER_FORMAT: YAML #&#43;HUGO_BASE_DIR: 博客的根目录 #&#43;HUGO_SECTION: posts/ #&#43;HUGO_CUSTOM_FRONT_MATTER: :toc true #&#43;HUGO_AUTO_SET_LASTMOD: t #&#43;HUGO_TAGS: 标签1 标签2 #&#43;HUGO_CATEGORIES: 类别 #&#43;HUGO_DRAFT: false #&#43;TITLE: 博客名字   这其实是一个重复性的工作, 因此使用Yasnippet模板" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/02_hugo_with_emacs/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-04T20:29:00+08:00" />
@@ -19,10 +19,10 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用emacs写hugo博客"/>
 <meta name="twitter:description" content="emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
-ox-hugo的安装  M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置  (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox) 这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:
+ox-hugo的安装  M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置   1 2 3 4  (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox)   这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:
  如果按以上操作, 有这一项出来, 那么ox-hugo才算成功, 没有就排查错误, 比如ox-hugo有没有安装上, 配置信息有没有加对地方
 ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能导出到正确的位置.我参考这个配置:
-#&#43;OPTIONS: author:nil ^:{} #&#43;HUGO_FRONT_MATTER_FORMAT: YAML #&#43;HUGO_BASE_DIR: 博客的根目录 #&#43;HUGO_SECTION: posts/ #&#43;HUGO_CUSTOM_FRONT_MATTER: :toc true #&#43;HUGO_AUTO_SET_LASTMOD: t #&#43;HUGO_TAGS: 标签1 标签2 #&#43;HUGO_CATEGORIES: 类别 #&#43;HUGO_DRAFT: false #&#43;TITLE: 博客名字 这其实是一个重复性的工作, 因此使用Yasnippet模板"/>
+1 2 3 4 5 6 7 8 9 10  #&#43;OPTIONS: author:nil ^:{} #&#43;HUGO_FRONT_MATTER_FORMAT: YAML #&#43;HUGO_BASE_DIR: 博客的根目录 #&#43;HUGO_SECTION: posts/ #&#43;HUGO_CUSTOM_FRONT_MATTER: :toc true #&#43;HUGO_AUTO_SET_LASTMOD: t #&#43;HUGO_TAGS: 标签1 标签2 #&#43;HUGO_CATEGORIES: 类别 #&#43;HUGO_DRAFT: false #&#43;TITLE: 博客名字   这其实是一个重复性的工作, 因此使用Yasnippet模板"/>
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -39,7 +39,7 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/posts\/02_hugo_with_emacs\/"
-        },"genre": "posts","keywords": "博客","wordcount":  241 ,
+        },"genre": "posts","keywords": "博客","wordcount":  297 ,
         "url": "http:\/\/example.org\/posts\/02_hugo_with_emacs\/","datePublished": "2022-08-04T20:29:00+08:00","dateModified": "2022-08-05T22:10:35+08:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
@@ -94,11 +94,11 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">Contents</h2>
         <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用emacs写hugo博客</h1><div class="post-meta">
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用emacs写hugo博客</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-04">2022-08-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-05">2022-08-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;241 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-04">2022-08-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-05">2022-08-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;297 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -123,12 +123,22 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
 <li>操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute.</li>
 <li>在配置文件中添加ox-hugo配置</li>
 </ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">use-package</span> <span class="nv">ox-hugo</span>
+<!--listend-->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">use-package</span> <span class="nv">ox-hugo</span>
 </span></span><span class="line"><span class="cl">  <span class="ss">:ensure</span> <span class="no">t</span>   <span class="c1">;Auto-install the package from Melpa</span>
 </span></span><span class="line"><span class="cl">  <span class="ss">:pin</span> <span class="nv">melpa</span>  <span class="c1">;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;)</span>
 </span></span><span class="line"><span class="cl">  <span class="ss">:after</span> <span class="nv">ox</span><span class="p">)</span>
-</span></span></code></pre></div><p><strong>这时在org模式里就可以使用hugo了</strong>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>这时在org模式里就可以使用hugo了</strong>
 C-c C-e时会多一个导出选项:</p>
 <figure><img src="/ox-hugo/L34IX7.png"/>
 </figure>
@@ -136,7 +146,21 @@ C-c C-e时会多一个导出选项:</p>
 <p>如果按以上操作, 有这一项出来, 那么ox-hugo才算成功, 没有就排查错误, 比如ox-hugo有没有安装上, 配置信息有没有加对地方</p>
 <h2 id="ox-hugo的使用">ox-hugo的使用</h2>
 <p>将org文件使用ox-hugo导出时,需要加一些配置才能导出到正确的位置.我参考<a href="https://wowow005.github.io/posts/2022/04/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E5%92%8Corg-mode%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener noreffer">这个</a>配置:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="cs">#+OPTIONS</span><span class="c">: author:nil ^:{}</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="cs">#+OPTIONS</span><span class="c">: author:nil ^:{}</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_FRONT_MATTER_FORMAT</span><span class="c">: YAML</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_BASE_DIR</span><span class="c">: 博客的根目录</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_SECTION</span><span class="c">: posts/</span>
@@ -146,12 +170,33 @@ C-c C-e时会多一个导出选项:</p>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_CATEGORIES</span><span class="c">: 类别</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+TITLE</span><span class="c">: 博客名字</span>
-</span></span></code></pre></div><p>这其实是一个重复性的工作, 因此使用Yasnippet模板</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这其实是一个重复性的工作, 因此使用Yasnippet模板</p>
 <ul>
 <li>配置Yasnippet模版(安装使用部分略, 使用的Centaur Emacs贡献者已安装配置好了)</li>
 <li>使用: M-x yas-new-snippet (C-c &amp; C-n) 调出添加模板界面</li>
 <li>添加以下内容, 再保存(起个名字:hugo, 这默认保存在~/.emacs.d/snippets/org-mode/hugo中)
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="c"># -*- mode: snippet -*-</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="c"># -*- mode: snippet -*-</span>
 </span></span><span class="line"><span class="cl"><span class="c"># name: hugo_blog</span>
 </span></span><span class="line"><span class="cl"><span class="c"># key: &gt;hugo</span>
 </span></span><span class="line"><span class="cl"><span class="c"># --</span>
@@ -166,10 +211,27 @@ C-c C-e时会多一个导出选项:</p>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_CATEGORIES</span><span class="c">: $2</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+TITLE</span><span class="c">: $3</span>
-</span></span></code></pre></div></li>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>模板解释: 1. key: 后面部分, 这个是所使用的快捷键；2. #&ndash;: 后面的部分是模板</li>
 <li>这时输入在文中 &gt;hugo, 再按TAB后就可以弹出模板内容
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="cs">#+OPTIONS</span><span class="c">: author:nil ^:{}</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="cs">#+OPTIONS</span><span class="c">: author:nil ^:{}</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+hugo_front_matter_format</span><span class="c">: yaml</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_BASE_DIR</span><span class="c">: ../</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_SECTION</span><span class="c">: posts/</span>
@@ -180,7 +242,9 @@ C-c C-e时会多一个导出选项:</p>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_CATEGORIES</span><span class="c">:</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span>
 </span></span><span class="line"><span class="cl"><span class="cs">#+TITLE</span><span class="c">:</span>
-</span></span></code></pre></div></li>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <h2 id="部署博客到github">部署博客到github</h2>
 <ul>
@@ -195,12 +259,23 @@ C-c C-e时会多一个导出选项:</p>
 </li>
 <li>
 <p>在本地的public目录下创建git目录</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git init
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git init
 </span></span><span class="line"><span class="cl">git add *
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;commit 1st&#34;</span>
 </span></span><span class="line"><span class="cl">git remote add origin https://github.com/your_name/your_name.github.io.git
 </span></span><span class="line"><span class="cl">git push -u origin main
-</span></span></code></pre></div></li>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>在提交的时候可能需要用到用户名your_name与密码,密码改为申请密钥</p>
 </li>
@@ -234,7 +309,22 @@ C-c C-e时会多一个导出选项:</p>
 </ul>
 <p>对note, expiration 和 scopes进行设置即可. note是你这个token的名字, expiration是这个token的有效时间, select scopes是这个token的作用范围, 如果都不选这个token就一点用都没有</p>
 <h2 id="自动推送脚本">自动推送脚本</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hugo
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> public
 </span></span><span class="line"><span class="cl">git add .
 </span></span><span class="line"><span class="cl"><span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;rebuilding site `date`&#34;</span>
@@ -245,7 +335,9 @@ C-c C-e时会多一个导出选项:</p>
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">git push
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> ..
-</span></span></code></pre></div><p>这里会需要输入github的用户名和密码,密码是前面创建的token
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里会需要输入github的用户名和密码,密码是前面创建的token
 最后等仓库的action页面build完成就行了, 一般就是等一会</p>
 <figure><img src="/ox-hugo/DQj4wI.png"/>
 </figure>
@@ -263,7 +355,7 @@ C-c C-e时会多一个导出选项:</p>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span></span>
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/02_hugo_with_emacs/" data-title="使用emacs写hugo博客" data-hashtags="博客"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/02_hugo_with_emacs/" data-title="使用emacs写hugo博客"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/posts/02_hugo_with_emacs/" data-title="使用emacs写hugo博客" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/posts/02_hugo_with_emacs/" data-title="使用emacs写hugo博客"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -278,7 +370,7 @@ C-c C-e时会多一个导出选项:</p>
     <div class="post-nav"><a href="/posts/01_hugo_install/" class="prev" rel="prev" title="hugo安装与入门"><i class="fas fa-angle-left fa-fw"></i>hugo安装与入门</a>
             <a href="/posts/git_get_started_01/" class="next" rel="next" title="Git 与 Magit 初始篇">Git 与 Magit 初始篇<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-</article></div>
+<div id="comments"></div></article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
@@ -291,7 +383,9 @@ C-c C-e时会多一个导出选项:</p>
         </a>
     </div><div class="assets"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
 
-<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script></div>
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
 </body>
 
 </html>
