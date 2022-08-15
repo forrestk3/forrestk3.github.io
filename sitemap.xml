@@ -2,11 +2,11 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/tags/git/</loc><lastmod>2022-08-15T16:10:42&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/git_usage_02/</loc><lastmod>2022-08-15T16:10:42&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2022-08-15T16:10:42&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/tags/</loc><lastmod>2022-08-15T16:10:42&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/</loc><lastmod>2022-08-15T16:10:42&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/tags/git/</loc><lastmod>2022-08-15T16:34:01&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/posts/git_usage_02/</loc><lastmod>2022-08-15T16:34:01&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/posts/</loc><lastmod>2022-08-15T16:34:01&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/tags/</loc><lastmod>2022-08-15T16:34:01&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/</loc><lastmod>2022-08-15T16:34:01&#43;08:00</lastmod></url><url>
             <loc>http://example.org/posts/git_get_started_01/</loc><lastmod>2022-08-07T00:10:45&#43;08:00</lastmod></url><url>
             <loc>http://example.org/posts/02_hugo_with_emacs/</loc><lastmod>2022-08-05T22:10:35&#43;08:00</lastmod></url><url>
             <loc>http://example.org/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2022-08-05T22:10:35&#43;08:00</lastmod></url><url>
