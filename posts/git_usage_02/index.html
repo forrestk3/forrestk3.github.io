@@ -17,7 +17,7 @@ I&rsquo;m not tired!!!
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/git_usage_02/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-06T19:28:00+08:00" />
-<meta property="article:modified_time" content="2022-08-12T21:53:57+08:00" />
+<meta property="article:modified_time" content="2022-08-15T16:10:42+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git的基本使用"/>
@@ -45,8 +45,8 @@ I&rsquo;m not tired!!!
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/posts\/git_usage_02\/"
-        },"genre": "posts","keywords": "git","wordcount":  361 ,
-        "url": "http:\/\/example.org\/posts\/git_usage_02\/","datePublished": "2022-08-06T19:28:00+08:00","dateModified": "2022-08-12T21:53:57+08:00","publisher": {
+        },"genre": "posts","keywords": "git","wordcount":  628 ,
+        "url": "http:\/\/example.org\/posts\/git_usage_02\/","datePublished": "2022-08-06T19:28:00+08:00","dateModified": "2022-08-15T16:10:42+08:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
                 "@type": "Person",
@@ -104,8 +104,8 @@ I&rsquo;m not tired!!!
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
                 </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-06">2022-08-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-12">2022-08-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;361 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-06">2022-08-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-15">2022-08-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;628 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -140,6 +140,16 @@ I&rsquo;m not tired!!!
         <li><a href="#冲突的修正">冲突的修正</a></li>
         <li><a href="#分支问题">分支问题</a></li>
         <li><a href="#分支总结">分支总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#高级篇-命令详解">高级篇:命令详解</a>
+      <ul>
+        <li><a href="#分离head">分离HEAD</a></li>
+        <li><a href="#相对引用">相对引用(^)</a></li>
+        <li><a href="#撤销变更--reset-and-revert">撤销变更 (reset &amp; revert)</a></li>
+        <li><a href="#提交树的节点移动--rebase-and-cherry-pick">提交树的节点移动 (rebase &amp; cherry-pick)</a></li>
+        <li><a href="#tag">tag</a></li>
+        <li><a href="#describe">describe</a></li>
       </ul>
     </li>
   </ul>
@@ -371,13 +381,215 @@ I&rsquo;m not tired!!!
 <li>分支切换: <!-- raw HTML omitted --><code>git checkout branch_name</code><!-- raw HTML omitted --></li>
 <li>冲突解决: 修正冲突的文件并添加到暂存区, 然后提交</li>
 </ol>
+<h2 id="高级篇-命令详解">高级篇:命令详解</h2>
+<h3 id="分离head">分离HEAD</h3>
+<p>这是一个很小的概念, 单独说它, 就是因为它很重要.</p>
+<p>其实git是由不同的提交组成, 每个提交都可以看成一个树中的节点.</p>
+<p>所有的提交在一起组成了一个提交树.</p>
+<p>而当前的工作区(也就是我们能看到并修改的那些文件), 就是HEAD所指向的.</p>
+<p>其实HEAD并不是非要指向具体的分支, 它也可以直接指向某个提交.</p>
+<p>比如当前的提交树为:</p>
+<figure><img src="/ox-hugo/M9hgtM.png"/>
+</figure>
+
+<p>可以看到*在bugFix这个分支上, 这也表示HEAD指向bugFix, 我们可以直接让它指向C4 <!-- raw HTML omitted --><code>git checkout C4</code><!-- raw HTML omitted --> (这里的C4是提交id):</p>
+<figure><img src="/ox-hugo/Wx4zBM.png"/>
+</figure>
+
+<p>同样, 也可以使用这个命令让它指向 main, 或者 C0:</p>
+<figure><img src="/ox-hugo/fI2krA.png"/>
+</figure>
+
+<figure><img src="/ox-hugo/czULVl.png"/>
+</figure>
+
+<p><strong>其实checkout这个命令用来切换HEAD的指向并不准确, 新版的git使用switch命令</strong></p>
+<h3 id="相对引用">相对引用(^)</h3>
+<ol>
+<li>
+<p>在不同的仓库进行切换时, 使用commit id十分麻烦, 因为id需要使用git log命令查找, git提供了相对引用, 即^表示上一个, ^^表示上2个, ~10 表示前10个.</p>
+<p>如使用 <!-- raw HTML omitted --><code>git checkout main^</code><!-- raw HTML omitted --> 效果为:</p>
+<p><img
+        class="lazyload"
+        data-src="/ox-hugo/k7l8fp.png"
+        data-srcset="/ox-hugo/k7l8fp.png, /ox-hugo/k7l8fp.png 1.5x, /ox-hugo/k7l8fp.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/k7l8fp.png"
+        title="/ox-hugo/k7l8fp.png"
+    /><img
+        class="lazyload"
+        data-src="/ox-hugo/Vopopj.png"
+        data-srcset="/ox-hugo/Vopopj.png, /ox-hugo/Vopopj.png 1.5x, /ox-hugo/Vopopj.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/Vopopj.png"
+        title="/ox-hugo/Vopopj.png"
+    /></p>
+<p>可以看到当HAED指向main时, HEAD^和main^都是指向C5的.</p>
+<p>再次使用 <!-- raw HTML omitted --><code>git checkout HEAD~3</code><!-- raw HTML omitted --> 结果为:</p>
+<figure><img src="/ox-hugo/fbSQSq.png"/>
+</figure>
+
+</li>
+</ol>
+<h3 id="撤销变更--reset-and-revert">撤销变更 (reset &amp; revert)</h3>
+<p>当本地出错要回退时, 有2个命令可用.</p>
+<ol>
+<li>reset可将当前分支回退到指定提交. 可看执行结果:</li>
+</ol>
+<figure><img src="/ox-hugo/dIjvRu.png"/>
+</figure>
+
+<p>原本提交树是这样, 使用 <!-- raw HTML omitted --><code>git reset HEAD^</code><!-- raw HTML omitted --> 后:</p>
+<figure><img src="/ox-hugo/DA3wQF.png"/>
+</figure>
+
+<p>可以看到, 这个命令让分支放弃了当前节点而指向了父节点.</p>
+<p>若对原本的提交树使用 <!-- raw HTML omitted --><code>git revert HEAD^</code><!-- raw HTML omitted --> 命令后的提交树为:</p>
+<figure><img src="/ox-hugo/RgrX6M.png"/>
+</figure>
+
+<p>可以看到, 现在这人分支指向了C1&rsquo;这个提交, 其实C1&rsquo;与C1是相同的, 但是 git 将回退作为一个操作然后提交到仓库.</p>
+<p>这样做的好处: 在本地其实是没有什么区别的, 但是如果推送到远程, 使用git reset后若要与远程同步, 需要将远程的最新提交删除, 这个操作难以实现, 因此将回退作为一个新的提交可以方便远程与本地的同步, 方便多人合作.</p>
+<h3 id="提交树的节点移动--rebase-and-cherry-pick">提交树的节点移动 (rebase &amp; cherry-pick)</h3>
+<ul>
+<li>
+<p>rebase: 它的主要作用是创建线性提交记录, 方便工程修改脉路整理. 比如对于当前提交树:</p>
+<figure><img src="/ox-hugo/PNMENq.png"/>
+</figure>
+
+<p>我们使用 <!-- raw HTML omitted --><code>git rebase main</code><!-- raw HTML omitted -->后提交树变化为:</p>
+<figure><img src="/ox-hugo/nwkPME.png"/>
+</figure>
+
+<p>现在分析一下这个结果. feature 和 main 分支的公共父节点是C1, 我在的HEAD指向feature, 此时运行以上命令后, git 将C2,C4 提交接到了main所指向的C3上, 也就是说: <strong>这个命令会将当前分支的所有提交接到指定的分支上</strong></p>
+<p>因此 rebase 可以表象地理解为 剪枝 + 嫁接</p>
+<p>如果使用merge命令的话提交树会变为:</p>
+</li>
+</ul>
+<figure><img src="/ox-hugo/RSAjyP.png"/>
+</figure>
+
+<p>这时提交记录则不够线性, 不方便查看对工程的修改历史</p>
+<ul>
+<li>
+<p>rebase 的另一个功能: 提交记录排序与删除.</p>
+<p><!-- raw HTML omitted --><code>git rebase -i HEAD~4</code><!-- raw HTML omitted -->: 这个命令会弹出一个交互式的创口, 让你调整最新4个提交节点的顺序或者删除提交节点. 下面是一个例子:</p>
+<p><img
+        class="lazyload"
+        data-src="/ox-hugo/Xy3uNG.png"
+        data-srcset="/ox-hugo/Xy3uNG.png, /ox-hugo/Xy3uNG.png 1.5x, /ox-hugo/Xy3uNG.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/Xy3uNG.png"
+        title="/ox-hugo/Xy3uNG.png"
+    /> <img
+        class="lazyload"
+        data-src="/ox-hugo/HwlFsT.png"
+        data-srcset="/ox-hugo/HwlFsT.png, /ox-hugo/HwlFsT.png 1.5x, /ox-hugo/HwlFsT.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/HwlFsT.png"
+        title="/ox-hugo/HwlFsT.png"
+    /></p>
+<p>知道这个功能即可, 不具体说明了</p>
+</li>
+<li>
+<p>cherry-pick: 这个命令允许我们随意地移动提交树中的节点, 将指定的提交节点移动到当前的HEAD所指定的节点下.</p>
+<p>对以下提交树:</p>
+<figure><img src="/ox-hugo/ZwNIwd.png"/>
+</figure>
+
+<p>使用 <!-- raw HTML omitted --><code>git cherry-pick C2 C4 C6</code><!-- raw HTML omitted --> 后结果为:</p>
+<figure><img src="/ox-hugo/th4ZK3.png"/>
+</figure>
+
+</li>
+</ul>
+<p>可以看到, 选中的提交节点都添加到了当前分支 main 所指向的节点下.</p>
+<p>这样的命令有什么作用呢?</p>
+<h4 id="场景一-当前出了一些问题-可此需要新建一些分支来解决-最终解决了当前的问题">场景一: 当前出了一些问题, 可此需要新建一些分支来解决, 最终解决了当前的问题:</h4>
+<figure><img src="/ox-hugo/fnM15C.png"/>
+</figure>
+
+<p>但是此时, 我们只想要收录解决问题的提交到当前的main下, 此时就可以使用 rebase -i 和 cherry-pick 这两个命令来实现.</p>
+<p>将HEAD调整到main分支上, 再使用 <!-- raw HTML omitted --><code>git cherry-pick C4</code><!-- raw HTML omitted --> (左) 或者使用 <!-- raw HTML omitted --><code>git rebase -i HEAD~3</code><!-- raw HTML omitted --> 后调整提交 (右) 即可获得:</p>
+<p><img
+        class="lazyload"
+        data-src="/ox-hugo/ZJ9rxO.png"
+        data-srcset="/ox-hugo/ZJ9rxO.png, /ox-hugo/ZJ9rxO.png 1.5x, /ox-hugo/ZJ9rxO.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/ZJ9rxO.png"
+        title="/ox-hugo/ZJ9rxO.png"
+    /> <img
+        class="lazyload"
+        data-src="/ox-hugo/n0IeTw.png"
+        data-srcset="/ox-hugo/n0IeTw.png, /ox-hugo/n0IeTw.png 1.5x, /ox-hugo/n0IeTw.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/n0IeTw.png"
+        title="/ox-hugo/n0IeTw.png"
+    /></p>
+<h4 id="场景二-更新历史提交节点中的信息">场景二: 更新历史提交节点中的信息</h4>
+<p>下面的提交树中, 我想更新newImage提交中的信息, 且是只更新它的信息, 可使用 rebase -i 和 cherry-pick 这两种方式来实现.</p>
+<figure><img src="/ox-hugo/6Qk8bS.png"/>
+</figure>
+
+<p>口述使用 rebase -i 命令过程: 先调整C2和C3顺序,将C2提交节点放到最前, 再使用 <!-- raw HTML omitted --><code>git commit --amend</code><!-- raw HTML omitted --> 来提交列新C2中的信息, 最后使用 rebase -i 命令将C3节点放到最前.</p>
+<p>详细说明 cherry-pick 过程 (因为不用交互, 易于博客中展示). 首先调整HEAD到main: <!-- raw HTML omitted --><code>git checkout main</code><!-- raw HTML omitted --></p>
+<figure><img src="/ox-hugo/jpy5A2.png"/>
+</figure>
+
+<p>其次, 将C2 拿到最前: <!-- raw HTML omitted --><code>git cherry-pick C2</code><!-- raw HTML omitted --></p>
+<figure><img src="/ox-hugo/odNTKf.png"/>
+</figure>
+
+<p>然后, 修改C2中的内容并提交: <!-- raw HTML omitted --><code>git commit --amend</code><!-- raw HTML omitted --></p>
+<figure><img src="/ox-hugo/0tYSy8.png"/>
+</figure>
+
+<p>最后, 将C3节点放到最前: <!-- raw HTML omitted --><code>git cherry-pick C3</code><!-- raw HTML omitted --></p>
+<figure><img src="/ox-hugo/jFWrjx.png"/>
+</figure>
+
+<h3 id="tag">tag</h3>
+<p>前文中提交节点要么是使用提交ID标识的, 要么是使用分支名子标识的.</p>
+<p>分支名字会被移动, 且有新的提交时分支名字也会移动到新的提交节点中, 提交ID太长,难记.因此需要一个为某个提交节点进行永久命各的办法: 它就是tag. 对于以下的提交树:</p>
+<figure><img src="/ox-hugo/CVhCSx.png"/>
+</figure>
+
+<p>为不同的提交节点添加tag, 如运行命令: <!-- raw HTML omitted --><code>git tag V1 C1, git tag V2 C2</code><!-- raw HTML omitted -->, 这时的提交树为:</p>
+<figure><img src="/ox-hugo/XThrHE.png"/>
+</figure>
+
+<p>同时, 可以直接利用tag名称来移动HEAD: <!-- raw HTML omitted --><code>git checkout V1</code><!-- raw HTML omitted --></p>
+<figure><img src="/ox-hugo/4fBhAY.png"/>
+</figure>
+
+<p>可以看到这时HEAD指向了C1. 为什么不是V1* 呢, 这是因为无支对某个tag直接提交, 所以才会发生这种分离HEAD的现象.</p>
+<h3 id="describe">describe</h3>
+<p><!-- raw HTML omitted --><code>git describe &lt;ref&gt;</code><!-- raw HTML omitted -->: &lt;ref&gt; 为提交树中的引用, 默认为HEAD.</p>
+<p>该命令的输出结果为: &lt;tag&gt;_&lt;num&gt;_g&lt;hash&gt;, tag为与该引用最近的标签, num 为 该引用与最近标签的间隔提交数, &lt;hash&gt;为&lt;ref&gt;的提交ID.</p>
+<p>对于以下的提交树, 使用 <!-- raw HTML omitted --><code>git describe, git describe main, git describe side</code><!-- raw HTML omitted --> 的结果分别为:</p>
+<p><img
+        class="lazyload"
+        data-src="/ox-hugo/dWzKw3.png"
+        data-srcset="/ox-hugo/dWzKw3.png, /ox-hugo/dWzKw3.png 1.5x, /ox-hugo/dWzKw3.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/dWzKw3.png"
+        title="/ox-hugo/dWzKw3.png"
+    />
+<img
+        class="lazyload"
+        data-src="/ox-hugo/ZObRUN.png"
+        data-srcset="/ox-hugo/ZObRUN.png, /ox-hugo/ZObRUN.png 1.5x, /ox-hugo/ZObRUN.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/ZObRUN.png"
+        title="/ox-hugo/ZObRUN.png"
+    /></p>
 </div>
 
         <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-08-12</span>
+                <span>Updated on 2022-08-15</span>
             </div>
             <div class="post-info-license"></div>
         </div>
