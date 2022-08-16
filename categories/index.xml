@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - 咸蛋超人</title>
-        <link>https://forrestk3.github.io/categories/</link>
+        <link>/categories/</link>
         <description>Categories - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><atom:link href="https://forrestk3.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><atom:link href="/categories/" rel="self" type="application/rss+xml" /><item>
     <title>Documentation</title>
-    <link>https://forrestk3.github.io/categories/documentation/</link>
+    <link>/categories/documentation/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>https://forrestk3.github.io/categories/documentation/</guid>
+    </author><guid>/categories/documentation/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>git - Tag - 咸蛋超人</title>
-        <link>https://forrestk3.github.io/tags/git/</link>
+        <link>/tags/git/</link>
         <description>git - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate><atom:link href="https://forrestk3.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate><atom:link href="/tags/git/" rel="self" type="application/rss+xml" /><item>
     <title>Magit的基本使用</title>
-    <link>https://forrestk3.github.io/posts/magit_usage_03/</link>
+    <link>/posts/magit_usage_03/</link>
     <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>https://forrestk3.github.io/posts/magit_usage_03/</guid>
+    </author><guid>/posts/magit_usage_03/</guid>
     <description><![CDATA[Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更加地emacs化. 本人的emacs 能力有限, 因此只介绍magit中的一些最常用的命令, 方便日常使用够用即可. 要更加全面地研究可以看它的原网站.
 Magit的基本介绍 打开Magit窗口: 使用Emacs打开任一由git管理的文件, 再使用快捷键 C-x g (M-x magit-status) 即可打开.
 基本上第一次需要使用M-x magit-status打开, 后面才能用C-x g快捷键, 不知道是不是什么bug.
@@ -19,10 +19,10 @@ Magit的基本介绍 打开Magit窗口: 使用Emacs打开任一由git管理的�
 常用的一些快捷键   g &amp; G: g可以刷新当前buffer, G刷新全部buffer. 什么意思呢, 比如当前你在查看magit面板, 但是突发奇想往工程里添加了个文件, 这时magit面板的Untracked files里应该要多一个刚添加的文件的, 但是并没有, 此时需要按一下g, 这时这个新加的文件就会出现然Untracked files里了.]]></description>
 </item><item>
     <title>Git的基本使用</title>
-    <link>https://forrestk3.github.io/posts/git_usage_02/</link>
+    <link>/posts/git_usage_02/</link>
     <pubDate>Sat, 06 Aug 2022 19:28:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>https://forrestk3.github.io/posts/git_usage_02/</guid>
+    </author><guid>/posts/git_usage_02/</guid>
     <description><![CDATA[基础(最常用的命令) 1 2 3 4 5 6 7 8  git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志   版本回退 前一个版本:
 I&rsquo;m a little tired!!!
 当前版本:
@@ -31,10 +31,10 @@ I&rsquo;m not tired!!!
   git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset --hard HEAD^]]></description>
 </item><item>
     <title>Git 与 Magit 初始篇</title>
-    <link>https://forrestk3.github.io/posts/git_get_started_01/</link>
+    <link>/posts/git_get_started_01/</link>
     <pubDate>Sat, 06 Aug 2022 15:17:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>https://forrestk3.github.io/posts/git_get_started_01/</guid>
+    </author><guid>/posts/git_get_started_01/</guid>
     <description><![CDATA[系列目的 介绍Git的基础配置及基础使用
 介绍Magit的使用, 因为Magti相比与Git方便很多, 配合Emacs效率更高
 使用命令行 windows 中使用bash, linux或Mac下使用terminal, 总之要开使用Git, 就要用命令行

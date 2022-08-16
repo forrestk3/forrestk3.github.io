@@ -1,17 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>咸蛋超人</title>
-        <link>https://forrestk3.github.io/</link>
+        <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
             <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate>
-            <atom:link href="https://forrestk3.github.io/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Magit的基本使用</title>
-    <link>https://forrestk3.github.io/posts/magit_usage_03/</link>
+    <link>/posts/magit_usage_03/</link>
     <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>https://forrestk3.github.io/posts/magit_usage_03/</guid>
+    </author><guid>/posts/magit_usage_03/</guid>
     <description><![CDATA[Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更加地emacs化. 本人的emacs 能力有限, 因此只介绍magit中的一些最常用的命令, 方便日常使用够用即可. 要更加全面地研究可以看它的原网站.
 Magit的基本介绍 打开Magit窗口: 使用Emacs打开任一由git管理的文件, 再使用快捷键 C-x g (M-x magit-status) 即可打开.
 基本上第一次需要使用M-x magit-status打开, 后面才能用C-x g快捷键, 不知道是不是什么bug.
@@ -21,10 +21,10 @@ Magit的基本介绍 打开Magit窗口: 使用Emacs打开任一由git管理的�
 常用的一些快捷键   g &amp; G: g可以刷新当前buffer, G刷新全部buffer. 什么意思呢, 比如当前你在查看magit面板, 但是突发奇想往工程里添加了个文件, 这时magit面板的Untracked files里应该要多一个刚添加的文件的, 但是并没有, 此时需要按一下g, 这时这个新加的文件就会出现然Untracked files里了.]]></description>
 </item><item>
     <title>Git的基本使用</title>
-    <link>https://forrestk3.github.io/posts/git_usage_02/</link>
+    <link>/posts/git_usage_02/</link>
     <pubDate>Sat, 06 Aug 2022 19:28:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>https://forrestk3.github.io/posts/git_usage_02/</guid>
+    </author><guid>/posts/git_usage_02/</guid>
     <description><![CDATA[基础(最常用的命令) 1 2 3 4 5 6 7 8  git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志   版本回退 前一个版本:
 I&rsquo;m a little tired!!!
 当前版本:
@@ -33,10 +33,10 @@ I&rsquo;m not tired!!!
   git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset --hard HEAD^]]></description>
 </item><item>
     <title>Git 与 Magit 初始篇</title>
-    <link>https://forrestk3.github.io/posts/git_get_started_01/</link>
+    <link>/posts/git_get_started_01/</link>
     <pubDate>Sat, 06 Aug 2022 15:17:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>https://forrestk3.github.io/posts/git_get_started_01/</guid>
+    </author><guid>/posts/git_get_started_01/</guid>
     <description><![CDATA[系列目的 介绍Git的基础配置及基础使用
 介绍Magit的使用, 因为Magti相比与Git方便很多, 配合Emacs效率更高
 使用命令行 windows 中使用bash, linux或Mac下使用terminal, 总之要开使用Git, 就要用命令行
@@ -47,10 +47,10 @@ I&rsquo;m not tired!!!
 配置Git代理 1 2 3 4 5 6 7 8 9 10 11  # 设置当前代理 git config http.proxy http://127.]]></description>
 </item><item>
     <title>使用emacs写hugo博客</title>
-    <link>https://forrestk3.github.io/posts/02_hugo_with_emacs/</link>
+    <link>/posts/02_hugo_with_emacs/</link>
     <pubDate>Thu, 04 Aug 2022 20:29:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>https://forrestk3.github.io/posts/02_hugo_with_emacs/</guid>
+    </author><guid>/posts/02_hugo_with_emacs/</guid>
     <description><![CDATA[emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
 ox-hugo的安装  M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置   1 2 3 4  (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox)   这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:
  如果按以上操作, 有这一项出来, 那么ox-hugo才算成功, 没有就排查错误, 比如ox-hugo有没有安装上, 配置信息有没有加对地方
@@ -58,10 +58,10 @@ ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能�
 1 2 3 4 5 6 7 8 9 10  #+OPTIONS: author:nil ^:{} #+HUGO_FRONT_MATTER_FORMAT: YAML #+HUGO_BASE_DIR: 博客的根目录 #+HUGO_SECTION: posts/ #+HUGO_CUSTOM_FRONT_MATTER: :toc true #+HUGO_AUTO_SET_LASTMOD: t #+HUGO_TAGS: 标签1 标签2 #+HUGO_CATEGORIES: 类别 #+HUGO_DRAFT: false #+TITLE: 博客名字   这其实是一个重复性的工作, 因此使用Yasnippet模板]]></description>
 </item><item>
     <title>hugo安装与入门</title>
-    <link>https://forrestk3.github.io/posts/01_hugo_install/</link>
+    <link>/posts/01_hugo_install/</link>
     <pubDate>Thu, 04 Aug 2022 00:52:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>https://forrestk3.github.io/posts/01_hugo_install/</guid>
+    </author><guid>/posts/01_hugo_install/</guid>
     <description><![CDATA[ubuntu 18.04安装hugo最新稳定版  在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本  创建hugo站 1  hugo new site hello-world   这个命令会创建一个hello-world文件夹
 进入 hello-world文件夹 1 2  cd hello-world sudo hugo   即可显示提示信息, 若不这样显示, 就是出错了, 网上查别的教程吧
  至此安装完成
