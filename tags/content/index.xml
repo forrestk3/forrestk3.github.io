@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>content - Tag - 咸蛋超人</title>
-        <link>http://example.org/tags/content/</link>
+        <link>https://forrestk3.github.io/tags/content/</link>
         <description>content - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><atom:link href="http://example.org/tags/content/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><atom:link href="https://forrestk3.github.io/tags/content/" rel="self" type="application/rss+xml" /></channel>
 </rss>

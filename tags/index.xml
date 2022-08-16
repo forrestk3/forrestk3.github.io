@@ -1,43 +1,43 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Tag - 咸蛋超人</title>
-        <link>http://example.org/tags/</link>
+        <link>https://forrestk3.github.io/tags/</link>
         <description>Tags - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate><atom:link href="https://forrestk3.github.io/tags/" rel="self" type="application/rss+xml" /><item>
     <title>git</title>
-    <link>http://example.org/tags/git/</link>
+    <link>https://forrestk3.github.io/tags/git/</link>
     <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>http://example.org/tags/git/</guid>
+    </author><guid>https://forrestk3.github.io/tags/git/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>博客</title>
-    <link>http://example.org/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <link>https://forrestk3.github.io/tags/%E5%8D%9A%E5%AE%A2/</link>
     <pubDate>Thu, 04 Aug 2022 20:29:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>http://example.org/tags/%E5%8D%9A%E5%AE%A2/</guid>
+    </author><guid>https://forrestk3.github.io/tags/%E5%8D%9A%E5%AE%A2/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>configuration</title>
-    <link>http://example.org/tags/configuration/</link>
+    <link>https://forrestk3.github.io/tags/configuration/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>http://example.org/tags/configuration/</guid>
+    </author><guid>https://forrestk3.github.io/tags/configuration/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>content</title>
-    <link>http://example.org/tags/content/</link>
+    <link>https://forrestk3.github.io/tags/content/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>http://example.org/tags/content/</guid>
+    </author><guid>https://forrestk3.github.io/tags/content/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>installation</title>
-    <link>http://example.org/tags/installation/</link>
+    <link>https://forrestk3.github.io/tags/installation/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>http://example.org/tags/installation/</guid>
+    </author><guid>https://forrestk3.github.io/tags/installation/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

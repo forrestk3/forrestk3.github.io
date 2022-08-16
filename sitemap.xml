@@ -2,25 +2,25 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/tags/git/</loc><lastmod>2022-08-16T14:10:36&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/magit_usage_03/</loc><lastmod>2022-08-16T14:10:36&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2022-08-16T14:10:36&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/tags/</loc><lastmod>2022-08-16T14:10:36&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/</loc><lastmod>2022-08-16T14:10:36&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/git_usage_02/</loc><lastmod>2022-08-15T19:43:47&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/git_get_started_01/</loc><lastmod>2022-08-07T00:10:45&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/02_hugo_with_emacs/</loc><lastmod>2022-08-05T22:10:35&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2022-08-05T22:10:35&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/posts/01_hugo_install/</loc><lastmod>2022-08-05T00:52:50&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/showcase/</loc><lastmod>2021-11-01T20:08:29&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/authors/</loc></url><url>
-            <loc>http://example.org/categories/</loc></url><url>
-            <loc>http://example.org/tags/configuration/</loc></url><url>
-            <loc>http://example.org/tags/content/</loc></url><url>
-            <loc>http://example.org/categories/documentation/</loc></url><url>
-            <loc>http://example.org/series/getting-start/</loc></url><url>
-            <loc>http://example.org/tags/installation/</loc></url><url>
-            <loc>http://example.org/offline/</loc></url><url>
-            <loc>http://example.org/series/</loc></url><url>
-            <loc>http://example.org/series/test-series/</loc></url></urlset>
+            <loc>https://forrestk3.github.io/tags/git/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/posts/magit_usage_03/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/posts/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/tags/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/posts/git_usage_02/</loc><lastmod>2022-08-15T19:43:47&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/posts/git_get_started_01/</loc><lastmod>2022-08-07T00:10:45&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/posts/02_hugo_with_emacs/</loc><lastmod>2022-08-05T22:10:35&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2022-08-05T22:10:35&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/posts/01_hugo_install/</loc><lastmod>2022-08-05T00:52:50&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/showcase/</loc><lastmod>2021-11-01T20:08:29&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod></url><url>
+            <loc>https://forrestk3.github.io/authors/</loc></url><url>
+            <loc>https://forrestk3.github.io/categories/</loc></url><url>
+            <loc>https://forrestk3.github.io/tags/configuration/</loc></url><url>
+            <loc>https://forrestk3.github.io/tags/content/</loc></url><url>
+            <loc>https://forrestk3.github.io/categories/documentation/</loc></url><url>
+            <loc>https://forrestk3.github.io/series/getting-start/</loc></url><url>
+            <loc>https://forrestk3.github.io/tags/installation/</loc></url><url>
+            <loc>https://forrestk3.github.io/offline/</loc></url><url>
+            <loc>https://forrestk3.github.io/series/</loc></url><url>
+            <loc>https://forrestk3.github.io/series/test-series/</loc></url></urlset>
