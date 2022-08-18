@@ -6,65 +6,52 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
             <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
     <title>Magit的基本使用</title>
-    <link>/posts/magit_usage_03/</link>
+    <link>/posts/org_05_magit_usage/</link>
     <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/magit_usage_03/</guid>
-    <description><![CDATA[Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更加地emacs化. 本人的emacs 能力有限, 因此只介绍magit中的一些最常用的命令, 方便日常使用够用即可. 要更加全面地研究可以看它的原网站.
-Magit的基本介绍 打开Magit窗口: 使用Emacs打开任一由git管理的文件, 再使用快捷键 C-x g (M-x magit-status) 即可打开.
-基本上第一次需要使用M-x magit-status打开, 后面才能用C-x g快捷键, 不知道是不是什么bug.
-打开后会有一个窗口(这里我事先建好了一个 git 仓库)
- 分析下magit 窗口每部分的意思:
- Head: 当前HEAD指向 Untracked files: 未追踪的文件 (也就是没使用 git add 命令添加的文件) Unstaged changes: 由git管理, 进行了修改, 但未添加到暂存区的文件 Recent commits: 最近的提交记录, 第一列就是提交ID  如果常使用git, 以上解释应该一遍就能记住
-常用的一些快捷键   g &amp; G: g可以刷新当前buffer, G刷新全部buffer. 什么意思呢, 比如当前你在查看magit面板, 但是突发奇想往工程里添加了个文件, 这时magit面板的Untracked files里应该要多一个刚添加的文件的, 但是并没有, 此时需要按一下g, 这时这个新加的文件就会出现然Untracked files里了.]]></description>
+    </author><guid>/posts/org_05_magit_usage/</guid>
+    <description><![CDATA[Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更]]></description>
 </item><item>
     <title>Git的基本使用</title>
-    <link>/posts/git_usage_02/</link>
+    <link>/posts/org_04_git_usage/</link>
     <pubDate>Sat, 06 Aug 2022 19:28:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/git_usage_02/</guid>
-    <description><![CDATA[基础(最常用的命令) 1 2 3 4 5 6 7 8  git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远程 git pull #从远程拉取 git status # 查看当前状态 git log # 查看提交日志   版本回退 前一个版本:
-I&rsquo;m a little tired!!!
-当前版本:
-I&rsquo;m not tired!!!
-这时使用 git add 和 git commit 提交了, 但是想回退过去的操作办法如下:
-  git中HEAD表示当前的提交版本, HEAD^表示前一个提交版本,所以想回退的操作为: git reset --hard HEAD^]]></description>
+    </author><guid>/posts/org_04_git_usage/</guid>
+    <description><![CDATA[基础(最常用的命令) 1 2 3 4 5 6 7 8 git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远]]></description>
 </item><item>
     <title>Git 与 Magit 初始篇</title>
-    <link>/posts/git_get_started_01/</link>
+    <link>/posts/org_03_git_get_started/</link>
     <pubDate>Sat, 06 Aug 2022 15:17:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/git_get_started_01/</guid>
-    <description><![CDATA[系列目的 介绍Git的基础配置及基础使用
-介绍Magit的使用, 因为Magti相比与Git方便很多, 配合Emacs效率更高
-使用命令行 windows 中使用bash, linux或Mac下使用terminal, 总之要开使用Git, 就要用命令行
-要做的第一件事是检查电脑上是否安装了Git, 使用命令: git &ndash;version查看, 安装了则会返回版本号
- 没安装就去官网安装下
-配置Git的名字和邮箱 让Git知道你是谁, 两条命令:
-1 2 3 4  git config --global user.name &#34;your_name&#34; git config --global user.email &#34;your_email&#34; git config --list: #列出配置信息 git config --unset --global user.name # 取消名称设置   不使用 global 参数,则设置的是本仓库的信息
-配置Git代理 1 2 3 4 5 6 7 8 9 10 11  # 设置当前代理 git config http.proxy http://127.]]></description>
+    </author><guid>/posts/org_03_git_get_started/</guid>
+    <description><![CDATA[系列目的 介绍Git的基础配置及基础使用 介绍Magit的使用, 因为Magti相比与Git方便很多, 配合Emacs效率更高 使用命令行 windows 中使用ba]]></description>
 </item><item>
     <title>使用emacs写hugo博客</title>
-    <link>/posts/02_hugo_with_emacs/</link>
+    <link>/posts/org_02_hugo_with_emacs/</link>
     <pubDate>Thu, 04 Aug 2022 20:29:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/02_hugo_with_emacs/</guid>
-    <description><![CDATA[emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
-ox-hugo的安装  M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置   1 2 3 4  (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox)   这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:
- 如果按以上操作, 有这一项出来, 那么ox-hugo才算成功, 没有就排查错误, 比如ox-hugo有没有安装上, 配置信息有没有加对地方
-ox-hugo的使用 将org文件使用ox-hugo导出时,需要加一些配置才能导出到正确的位置.我参考这个配置:
-1 2 3 4 5 6 7 8 9 10  #+OPTIONS: author:nil ^:{} #+HUGO_FRONT_MATTER_FORMAT: YAML #+HUGO_BASE_DIR: 博客的根目录 #+HUGO_SECTION: posts/ #+HUGO_CUSTOM_FRONT_MATTER: :toc true #+HUGO_AUTO_SET_LASTMOD: t #+HUGO_TAGS: 标签1 标签2 #+HUGO_CATEGORIES: 类别 #+HUGO_DRAFT: false #+TITLE: 博客名字   这其实是一个重复性的工作, 因此使用Yasnippet模板]]></description>
+    </author><guid>/posts/org_02_hugo_with_emacs/</guid>
+    <description><![CDATA[emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用. ox-hugo的]]></description>
 </item><item>
     <title>hugo安装与入门</title>
-    <link>/posts/01_hugo_install/</link>
+    <link>/posts/org_01_hugo_install/</link>
     <pubDate>Thu, 04 Aug 2022 00:52:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/01_hugo_install/</guid>
-    <description><![CDATA[ubuntu 18.04安装hugo最新稳定版  在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本  创建hugo站 1  hugo new site hello-world   这个命令会创建一个hello-world文件夹
-进入 hello-world文件夹 1 2  cd hello-world sudo hugo   即可显示提示信息, 若不这样显示, 就是出错了, 网上查别的教程吧
- 至此安装完成
-选择主题 hugo这个博客是需要配合现有的主题的, 我这里使用的是DoIt主题
-主题下载 在这个网址下臷主题网址,我选择的是DoIt. DoIt的使用教程在这里
-主题使用  下载主题并放到./hello-world/themes文件夹里 修改配置文件,就是根目录下的config.toml, 这里使用的是DoIt网站上提供的默认配置 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  baseURL = &#34;http://example.]]></description>
+    </author><guid>/posts/org_01_hugo_install/</guid>
+    <description><![CDATA[ubuntu 18.04安装hugo最新稳定版 在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本 创建hugo站 1 hugo new site hello-world 这个命令会创建一个hello]]></description>
+</item><item>
+    <title>A distributed filtering mechanism against DDoS attacks: ScoreForCore</title>
+    <link>/posts/01_scoreforcore/</link>
+    <pubDate>Sat, 17 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/01_scoreforcore/</guid>
+    <description><![CDATA[A distributed filtering mechanism against DDoS attacks: ScoreForCore Kalkan K, Alagöz F. A distributed filtering mechanism against DDoS attacks: ScoreForCore[J]. Computer Networks, 2016, 108: 199-209. 本文提出ScoreForCore基于主动和协作过滤的防御机制，特点为：在当前的攻]]></description>
+</item><item>
+    <title>Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks</title>
+    <link>/posts/02_crowd-gps-sec/</link>
+    <pubDate>Fri, 16 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/02_crowd-gps-sec/</guid>
+    <description><![CDATA[Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks Jansen K, Schäfer M, Moser D, et al. Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks[C] IEEE Symposium on Security and&gt; Privacy (S&amp;P). 2018. Introduction GPS A. GPS Usage in avaition 非常广泛 B. GPS Spoofing Attacks 依赖GPS的航空工具都是攻]]></description>
 </item></channel>
 </rss>

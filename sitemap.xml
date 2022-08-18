@@ -2,17 +2,22 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>/tags/git/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
-            <loc>/posts/magit_usage_03/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
-            <loc>/posts/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
-            <loc>/tags/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
-            <loc>/</loc><lastmod>2022-08-16T21:23:43&#43;08:00</lastmod></url><url>
-            <loc>/posts/git_usage_02/</loc><lastmod>2022-08-15T19:43:47&#43;08:00</lastmod></url><url>
-            <loc>/posts/git_get_started_01/</loc><lastmod>2022-08-07T00:10:45&#43;08:00</lastmod></url><url>
-            <loc>/posts/02_hugo_with_emacs/</loc><lastmod>2022-08-05T22:10:35&#43;08:00</lastmod></url><url>
-            <loc>/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2022-08-05T22:10:35&#43;08:00</lastmod></url><url>
-            <loc>/posts/01_hugo_install/</loc><lastmod>2022-08-05T00:52:50&#43;08:00</lastmod></url><url>
+            <loc>/tags/git/</loc><lastmod>2022-08-17T18:33:13&#43;08:00</lastmod></url><url>
+            <loc>/hide/</loc><lastmod>2022-08-17T18:33:13&#43;08:00</lastmod></url><url>
+            <loc>/hide/org_05_magit_usage/</loc><lastmod>2022-08-17T18:33:13&#43;08:00</lastmod></url><url>
+            <loc>/posts/org_05_magit_usage/</loc><lastmod>2022-08-17T18:33:13&#43;08:00</lastmod></url><url>
+            <loc>/posts/</loc><lastmod>2022-08-17T18:33:13&#43;08:00</lastmod></url><url>
+            <loc>/tags/</loc><lastmod>2022-08-17T18:33:13&#43;08:00</lastmod></url><url>
+            <loc>/</loc><lastmod>2022-08-17T18:33:13&#43;08:00</lastmod></url><url>
+            <loc>/posts/org_04_git_usage/</loc><lastmod>2022-08-17T18:33:07&#43;08:00</lastmod></url><url>
+            <loc>/posts/org_03_git_get_started/</loc><lastmod>2022-08-17T18:33:00&#43;08:00</lastmod></url><url>
+            <loc>/posts/org_02_hugo_with_emacs/</loc><lastmod>2022-08-17T18:32:47&#43;08:00</lastmod></url><url>
+            <loc>/tags/%E5%8D%9A%E5%AE%A2/</loc><lastmod>2022-08-17T18:32:47&#43;08:00</lastmod></url><url>
+            <loc>/posts/org_01_hugo_install/</loc><lastmod>2022-08-17T18:32:36&#43;08:00</lastmod></url><url>
             <loc>/showcase/</loc><lastmod>2021-11-01T20:08:29&#43;08:00</lastmod></url><url>
+            <loc>/posts/01_scoreforcore/</loc><lastmod>2022-08-17T18:32:36&#43;08:00</lastmod></url><url>
+            <loc>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc><lastmod>2022-08-17T18:32:36&#43;08:00</lastmod></url><url>
+            <loc>/posts/02_crowd-gps-sec/</loc><lastmod>2022-08-16T18:32:36&#43;08:00</lastmod></url><url>
             <loc>/about/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod></url><url>
             <loc>/authors/</loc></url><url>
             <loc>/categories/</loc></url><url>

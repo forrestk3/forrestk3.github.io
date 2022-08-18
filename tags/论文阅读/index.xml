@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>论文阅读 - Tag - 咸蛋超人</title>
+        <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+        <description>论文阅读 - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 17 Aug 2019 18:32:36 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+    <title>A distributed filtering mechanism against DDoS attacks: ScoreForCore</title>
+    <link>/posts/01_scoreforcore/</link>
+    <pubDate>Sat, 17 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/01_scoreforcore/</guid>
+    <description><![CDATA[A distributed filtering mechanism against DDoS attacks: ScoreForCore Kalkan K, Alagöz F. A distributed filtering mechanism against DDoS attacks: ScoreForCore[J]. Computer Networks, 2016, 108: 199-209. 本文提出ScoreForCore基于主动和协作过滤的防御机制，特点为：在当前的攻]]></description>
+</item><item>
+    <title>Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks</title>
+    <link>/posts/02_crowd-gps-sec/</link>
+    <pubDate>Fri, 16 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/02_crowd-gps-sec/</guid>
+    <description><![CDATA[Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks Jansen K, Schäfer M, Moser D, et al. Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks[C] IEEE Symposium on Security and&gt; Privacy (S&amp;P). 2018. Introduction GPS A. GPS Usage in avaition 非常广泛 B. GPS Spoofing Attacks 依赖GPS的航空工具都是攻]]></description>
+</item></channel>
+</rss>
