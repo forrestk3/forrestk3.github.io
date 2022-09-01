@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  JESS: Joint Entropy-Based DDoS Defense Scheme in SDN · 咸蛋超人
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="description" content="Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction Link to heading SDN存在安全问题，如D">
+<meta name="keywords" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN"/>
+<meta name="twitter:description" content="Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction Link to heading SDN存在安全问题，如D"/>
+
+<meta property="og:title" content="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN" />
+<meta property="og:description" content="Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction Link to heading SDN存在安全问题，如D" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/04_jess/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-19T18:32:36+08:00" />
+<meta property="article:modified_time" content="2022-08-17T18:32:36+08:00" />
+
+
+
+
+
+<link rel="canonical" href="/posts/04_jess/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css" integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.94.2" />
+
+
+
+
+
+  </head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      咸蛋超人
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">博文</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">类别</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/">其他</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="/posts/04_jess/">
+              JESS: Joint Entropy-Based DDoS Defense Scheme in SDN
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2019-08-19T18:32:36&#43;08:00">
+                August 19, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/">科研学习</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <blockquote>
+<p>Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1.</p>
+</blockquote>
+<p>该文提出了一种基于熵的DDoS攻击的检测与缓解办法。</p>
+<h1 id="introduction">
+  introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>SDN存在安全问题，如DDoS攻击，解决办法有:</p>
+<ul>
+<li>内在：structural attributes of SDN enviroment on the properties of traffic flows</li>
+<li>外在：statistical and ml
+Entropy shows randomness,DDoS decraese randomness.</li>
+</ul>
+<h1 id="related-work">
+  related work
+  <a class="heading-link" href="#related-work">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>网络虚拟化及其安全</li>
+<li>SDN安全相关研究</li>
+</ul>
+<h1 id="join-entropy-based-ddos-defense-scheme-in-sdnjess">
+  Join Entropy Based DDoS Defense Scheme In SDN(JESS)
+  <a class="heading-link" href="#join-entropy-based-ddos-defense-scheme-in-sdnjess">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>分为三个小步：</p>
+<ul>
+<li>nominal stage:switch sends headers of all packets to controller,controller calculates joint entropies of each pair</li>
+<li>preparatory stage:controller generate current pair profiles and calculates joint entropies,difference exceeds $\theta_j$,DDoS attack is detected,maximum difference is <em>SuspiciousPair</em> and send to switch</li>
+<li>active mitigation stage:switch creates SC of <em>SuspiciousPair</em> and send to controller,controller calculates correspoinding score and generates scoretable ST,rule table $RT_C$ with a designated $\theta_s$,if score of entry under $\theta_s$ forward, otherwise drop.</li>
+</ul>
+<p>剩下的是算法的细则，太多了建议看原文</p>
+<h2 id="nominal-stage">
+  Nominal Stage
+  <a class="heading-link" href="#nominal-stage">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>
+<p>Nominal Profile Generation
+收集一些重要的参数，表示成：$\mathbb{P}={IP_{src},IP_{dst},P_{src},P_{dst},PROT,PKT_{size},TTC,TCP_{flag}}$,记$\left(\begin{aligned}\mathbb{P}\k\end{aligned}\right)$k个元组组成的集合，如$\left(\begin{aligned}\mathbb{P}\2\end{aligned}\right)={{IP_{src},IP_{dst}},\dots,{TTL,TCP_{flag}}}$记$\mathbb{A}<em>i$是$\left(\begin{aligned}\mathbb{P}\2\end{aligned}\right)$的第i个元组，例$\mathbb{A}<em>1={IP</em>{src},IP</em>{dst}}$,它有$2^{32}*2^{32}$个可能。$\mathbb{A}<em>2={IP</em>{src},P_{src}}$有$2^{32}*2^{16}$个可能。switch收集包头并发送给controller，收集到指定个数即可停。在指定包数被处理后假设有$\alpha$个包对，则组成$\alpha * k$矩阵，记为$E^{\mathbb{A}_i}$,$E^{\mathbb{A}_i}_j$表示为第j个元组，它的值为$E^{\mathbb{A}_i}_j=（a_j,b_j）$。$E^{\mathbb{A}_i}$可表示为：
+<img src="https://s2.ax1x.com/2019/03/27/Aab7QO.png" alt="Aab7QO.png">
+基于$E^{\mathbb{A}_i}$创建$N^{\mathbb{A}_i}$，记为：<a href="https://imgchr.com/i/AaXdXT"><img src="https://s2.ax1x.com/2019/03/27/AaXdXT.png" alt="AaXdXT.png"></a>
+这里的$m_i$取决于这个阶段收集到不同属性的个数，这是一个$m \times (k+1)$的矩阵。这里的建$N^{\mathbb{A}_i}$就是Pair Nominal Profile，由controller形成。这里的$PAC^{\mathbb{A}_i}$指的是${\mathbb{A}_i}$的产生个数。</p>
+</li>
+<li>
+<p>Nominal Profile of Order p
+即p个历史阶段的Nominal Profile
+第p个记为:<a href="https://imgchr.com/i/AavVzt"><img src="https://s2.ax1x.com/2019/03/27/AavVzt.png" alt="AavVzt.png"></a>
+分阶段时，生成的profile为不同段的并集。用图表示如图4：
+<a href="https://imgchr.com/i/AddHgO"><img src="https://s2.ax1x.com/2019/03/27/AddHgO.md.png" alt="AddHgO.md.png"></a></p>
+</li>
+<li>
+<p>Joint Entropy Calculation for Nominal Profiles
+在生成profile阶段计算出该阶段的熵，并存入profile中，当检测时，将当时的流量计算出来的熵与profile中的熵比较，超出$\theta_j$即可认定有DDoS发生，选相差最大的那个对作为主导对(determinant pair)。熵计算公式为：
+$$JN_{N^{A_i}}=-\sum_{n=1}^{m_i}(\frac{PAC^{A_i^n}}{\alpha})\log{(\frac{PAC^{A_i^n}}{\alpha})} \tag{4}$$
+简记：
+$$PN_{A_i^n}=PAC^{A_i^n}/\alpha \tag{5}$$
+而式（4）变为：
+$$JN_{N^{A_i}}=-\sum_{n=1}^{m_i}PN_{A_i^n}\log{(PN_{A_i^n})} \tag{6}$$
+归一化后最终得到的公式为：
+$$\bar{JN}<em>{N^{A_i}}=JN</em>{N^{A_i}}/\log[\alpha] \tag{7}$$
+使用时均用归一化的熵</p>
+</li>
+</ul>
+<h2 id="preparatory-stage">
+  Preparatory Stage
+  <a class="heading-link" href="#preparatory-stage">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>本阶段检测攻击，并决定最适合的pair(这个对即用来识别异常的对)，分为三个阶段：</p>
+<ul>
+<li>
+<p>Current Profile Generation
+第i个当前的profile表示为：<img src="https://s2.ax1x.com/2019/03/27/AdMbwD.png" alt="AdMbwD.png"></p>
+</li>
+<li>
+<p>Joint Entropy Calculation for current profile
+对当前profile而言，
+$$PC_{A_i^n}=PAC^{A_i^n}/\alpha \tag{9}$$
+则当前的熵JC表示为：
+$$JC_{N^{A_i}}=-\sum_{n=1}^{m_i}PC_{A^n_i}\log{(PC_{A_i^n})} \tag{10}$$</p>
+</li>
+<li>
+<p>Comparison
+$$\Delta J_{N^{A_i}}=JC_{N^{A_i}}-JN_{N^{A_i}} \tag{11}$$
+当这个值超过一个$\theta_j$，则认为检测到了DDoS攻击，
+对所有的差值，JESS找到差值最大的对，将其标为SuspiciousPair。
+如：对$\arrowvert\mathbb{P}\arrowvert = 8，k=2$时，$\Delta J_{MAX}=\max{\Delta J_{N^{A_1}},\Delta J_{N^{A_2}},\cdots,\Delta J_{N^{A_28}}}$,假设$\Delta J_{N^{A_2}}$是最大的，就将其标为suspiciousPair，Controller便将这个SuspiciousPair发送给switch。</p>
+</li>
+</ul>
+<h2 id="active-mitigation-stage">
+  Active Mitigation Stage
+  <a class="heading-link" href="#active-mitigation-stage">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>这个过程有五个步骤</p>
+<ul>
+<li>
+<p>SuspiciousPair Profile Generation
+switch已知SuspiciousPair，则在本地生成Profile SC，并将其发送到controller</p>
+</li>
+<li>
+<p>Score Calculation:
+对每个流计算$\beta$:
+$$\beta = \frac{PC_{A_i^n}}{PN_{A_i^n}} \tag{12}$$
+将计算所得的$\beta$存于表ST中。</p>
+</li>
+<li>
+<p>决定阈值
+利用load shedding alporithm来决定，阈值$\theta_S$由当前阈值$\theta_C$和之前阈值$\theta_P$共同决定
+$$\theta_S=\frac{\theta_C+\theta_P}{2} \tag{13}$$</p>
+</li>
+<li>
+<p>Rule Generation
+对每个SC中的entry进行计算，若打分超过阈值，drop it! otherwise,forwarded to the destination!</p>
+</li>
+<li>
+<p>Differing Rules($\Delta - Rules$) determination
+更新规则时，将当前规则与之前规则作对比，只发送不一样的那部分。</p>
+</li>
+</ul>
+<h1 id="模拟与性能评估">
+  模拟与性能评估
+  <a class="heading-link" href="#%e6%a8%a1%e6%8b%9f%e4%b8%8e%e6%80%a7%e8%83%bd%e8%af%84%e4%bc%b0">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<ul>
+<li>
+<p>数据集：MAWI</p>
+</li>
+<li>
+<p>环境：RYU，8G RAM，Core i7-3610QM 2.3GHz CPU,Ubuntu 14.04 OS。</p>
+</li>
+<li>
+<p>拓扑结构（图5）：
+<img src="https://s2.ax1x.com/2019/03/27/Addr40.png" alt="Addr40.png">
+（这个拓扑也太简单了点吧。。。）</p>
+</li>
+<li>
+<p>packet analysis in Mininet
+利用mininet统计各种头信息，如表5
+<a href="https://imgchr.com/i/AdwydA"><img src="https://s2.ax1x.com/2019/03/27/AdwydA.md.png" alt="AdwydA.md.png"></a></p>
+</li>
+<li>
+<p>攻击种类
+<img src="https://s2.ax1x.com/2019/03/27/AdwhQS.png" alt="AdwhQS.png"></p>
+</li>
+<li>
+<p>Performance Metrics
+即评价标准：$FPR=\frac{FP}{FP+TN}$
+$ACC=\frac{TP+TN}{TP+TN+FP+FN}$</p>
+</li>
+<li>
+<p>Exprimental Results
+<strong>结果分析</strong>
+<img src="https://s2.ax1x.com/2019/03/28/AdhxdP.png" alt="AdhxdP.png">
+<img src="https://s2.ax1x.com/2019/03/28/Ad4pi8.png" alt="Ad4pi8.png">
+分析：误报率有时候会提高，原因是许多包有和攻击包一样的特征。为了提高效果，引入滑动窗口。
+<strong>引入滑动窗口</strong>
+网络拓扑为如图8
+<img src="https://s2.ax1x.com/2019/03/28/Ad40QH.png" alt="Ad40QH.png">
+使用previous periods,也即意味着要存储这么多periods的所有的头值，如TCP滑动窗口般。（作 者经过计算，发现浪费不多 ）结果如图10,结论为：效果确实提高了不少！<img src="https://s2.ax1x.com/2019/03/28/Ad5OEt.png" alt="Ad5OEt.png">
+<strong>在不同攻击强度下效果对比</strong>
+结果如图11所示：
+<img src="https://s2.ax1x.com/2019/03/28/Ad5xC8.png" alt="Ad5xC8.png">
+结论：当攻击包与正常包数量相同时，难以区分。</p>
+</li>
+<li>
+<p>算法分析
+结论：时间复杂度：$O(n^2)$，处理加载过程不需要额外缓存；所需空间少，对controller负担小，通信代价几乎可勿略不计。</p>
+</li>
+</ul>
+<p>问题：为什么先择两个特征而不是更多个，没有做对比！</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2022
+    
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.617ac1196e51a8e5820c29ea3f349ae87be7db1242a5a91f3afa569275213d0f.js" integrity="sha256-YXrBGW5RqOWCDCnqPzSa6Hvn2xJCpakfOvpWknUhPQ8="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  Solving Minimum Path Cover on a DAG · 咸蛋超人
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="description" content="文章目的 Link to heading 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问">
+<meta name="keywords" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Solving Minimum Path Cover on a DAG"/>
+<meta name="twitter:description" content="文章目的 Link to heading 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问"/>
+
+<meta property="og:title" content="Solving Minimum Path Cover on a DAG" />
+<meta property="og:description" content="文章目的 Link to heading 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/org_06_mpc/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-21T22:01:00+08:00" />
+<meta property="article:modified_time" content="2022-08-23T00:18:30+08:00" />
+
+
+
+
+
+<link rel="canonical" href="/posts/org_06_mpc/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css" integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.94.2" />
+
+
+
+
+
+  </head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      咸蛋超人
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">博文</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/categories/">类别</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/">其他</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="/posts/org_06_mpc/">
+              Solving Minimum Path Cover on a DAG
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-08-21T22:01:00&#43;08:00">
+                August 21, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/">科研学习</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h2 id="文章目的">
+  文章目的
+  <a class="heading-link" href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e7%9a%84">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），并将这个场景建模成MPC问题，最后给出了求解方法。</p>
+<h2 id="情景样例">
+  情景样例
+  <a class="heading-link" href="#%e6%83%85%e6%99%af%e6%a0%b7%e4%be%8b">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>假设一个交通运输系统中有4个地铁站，站与站之间可达，交通时间表可确定。你需要做的是购买车票从而实现所有的运输。时间表如下：</p>
+<figure><img src="/ox-hugo/IdiIqU.png"/>
+</figure>
+
+<p>最坏的情况是每辆车都买一个票，需要7张。但其实有的运输任务可被同一个车完成，如T1和T2。我们需要做的是最大化运输效率，即最小化所构买的车票数，此时，找到了一个目标函数。</p>
+<p>最优情况是一列车走过所有的站，这时只要买一张票即足够，这种情况不存在，因此我们把问题定义为：</p>
+<p><span class="underline">最大化车所到达的站数的同时，保证所有的站点均到达。</span></p>
+<p>首先根据传输时间表构造交通图，因为车辆到达时间是不同的且有先后的，所以车辆换乘是有时间依赖的，据此构造图如下:</p>
+<figure><img src="/ox-hugo/bbpTDk.png"/>
+</figure>
+
+<p>因此，现在问题转变为:</p>
+<p>在以上构造的图上找到MPC。</p>
+<h2 id="解决办法">
+  解决办法
+  <a class="heading-link" href="#%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>在通用的图上找MPC是一个NP-hard问题，但在DAG中找MPC可转换为找二部图的最大匹配问题，这可以在多项式时间内完成。</p>
+<p>为解决以上问题，首先构造一个辅助图，在辅助图中，将原始图中的每个节点分为两个，一个节点保留原始节点的出度，另一个节点保留原始图的入度。举个例子，将节点$t$划分为\(t_1, t_2\). 对于t的邻居，从$t_1$画边连出去，对于将$t$作为邻居的其他节点，将该节点画边连到\(t_2\)。如此构造的图其实是一个二部图，结果如下:</p>
+<figure><img src="/ox-hugo/N1svY0.png"/>
+</figure>
+
+<p>在以上二部图中查找匹配，假如找完最大匹配后某一个节点未到达，则需要单独为该节点购买一个车次的票以完成运输。因此最小化未到达节点的问题即是上图中的查找最大匹配的问题。而二部图的最大匹配问题是可以在多项式时间内完成的。</p>
+<p>其中的一个匹配结果为：</p>
+<figure><img src="/ox-hugo/t5dFNp.png"/>
+</figure>
+
+<h2 id="二部图最大匹配">
+  二部图最大匹配
+  <a class="heading-link" href="#%e4%ba%8c%e9%83%a8%e5%9b%be%e6%9c%80%e5%a4%a7%e5%8c%b9%e9%85%8d">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>对于二部图的匹配问题其是就是用匈牙利算法来解决的。这里简单介绍一下。参考自<a href="https://zhuanlan.zhihu.com/p/96229700">这里</a>，这个作者还有其他算法的讲解以及代码实现。</p>
+<p>对于现有的二部图</p>
+<figure><img src="/ox-hugo/1srNJY.png"/>
+</figure>
+
+<p>要找到它的最大匹配，是需要遍历它所有的节点的:</p>
+<ul>
+<li>
+<p>对于B1, 它与G2和G4都有连接，这里先将它与G2相连。</p>
+</li>
+<li>
+<p>对于B2，它只与G2相连，这时再返回去看与G2相连的B1是否有别的相连的，可见G4可选，因此就将G2与B2相连，B1与G4相连；</p>
+<figure><img src="/ox-hugo/JPY19u.png"/>
+</figure>
+
+</li>
+<li>
+<p>对于B3，它与G1和G3相连，G1和G3都均未与其他节点相连，可将它连上G1</p>
+</li>
+</ul>
+<figure><img src="/ox-hugo/qbBuAF.png"/>
+</figure>
+
+<ul>
+<li>对于B4, 它只能与G4相连，但G4已与B1相连。B1除了G4，还可以与G2相连，但G2已与B2相连了，因此如果B4与G4相连了，B1就无法与别的节点相加，所以B4就无法匹配了。</li>
+<li>至此，最大匹配结束。上述过程可见计算的复杂度是二部图两边节点之积。</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2022
+    
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.617ac1196e51a8e5820c29ea3f349ae87be7db1242a5a91f3afa569275213d0f.js" integrity="sha256-YXrBGW5RqOWCDCnqPzSa6Hvn2xJCpakfOvpWknUhPQ8="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
