@@ -1,202 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>
-  JESS: Joint Entropy-Based DDoS Defense Scheme in SDN · 咸蛋超人
-</title>
+
+<head>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
-
-
-
-
-<meta name="description" content="Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction Link to heading SDN存在安全问题，如D">
-<meta name="keywords" content="">
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN"/>
-<meta name="twitter:description" content="Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction Link to heading SDN存在安全问题，如D"/>
-
-<meta property="og:title" content="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN" />
-<meta property="og:description" content="Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction Link to heading SDN存在安全问题，如D" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">JESS: Joint Entropy-Based DDoS Defense Scheme in SDN - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN" />
+<meta property="og:description" content="Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction SDN存在安全问题，如DDoS" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/04_jess/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-08-19T18:32:36+08:00" />
 <meta property="article:modified_time" content="2022-08-17T18:32:36+08:00" />
 
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN"/>
+<meta name="twitter:description" content="Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction SDN存在安全问题，如DDoS"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/04_jess/" /><link rel="prev" href="/posts/03_sdn_ad/" /><link rel="next" href="/posts/org_01_hugo_install/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "JESS: Joint Entropy-Based DDoS Defense Scheme in SDN",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/04_jess\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  2288 ,
+        "url": "\/posts\/04_jess\/","datePublished": "2019-08-19T18:32:36+08:00","dateModified": "2022-08-17T18:32:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
 
-
-
-<link rel="canonical" href="/posts/04_jess/">
-
-
-<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
-
-
-  
-  
-  <link rel="stylesheet" href="/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css" integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin="anonymous" media="screen" />
-
-
-
-
-
-
-
-
- 
-
-
-
-
-<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
-
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-
-<meta name="generator" content="Hugo 0.94.2" />
-
-
-
-
-
-  </head>
-
-
-
-
-<body class="preload-transitions colorscheme-light">
-  
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
 </div>
-
-
-  <main class="wrapper">
-    <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">
-      咸蛋超人
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">博文</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/tags/">标签</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/categories/">类别</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/">其他</a>
-            </li>
-          
-        
-        
-      </ul>
-    
-  </section>
-</nav>
-
-
-    <div class="content">
-      
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">
-            <a class="title-link" href="/posts/04_jess/">
-              JESS: Joint Entropy-Based DDoS Defense Scheme in SDN
-            </a>
-          </h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime="2019-08-19T18:32:36&#43;08:00">
-                August 19, 2019
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fa fa-clock-o" aria-hidden="true"></i>
-              5-minute read
-            </span>
-          </div>
-          
-          <div class="categories">
-  <i class="fa fa-folder" aria-hidden="true"></i>
-    <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/">科研学习</a></div>
-
-          <div class="tags">
-  <i class="fa fa-tag" aria-hidden="true"></i>
-    <span class="tag">
-      <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a>
-    </span></div>
-
-        </div>
-      </header>
-
-      <div>
-        
-        <blockquote>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">JESS: Joint Entropy-Based DDoS Defense Scheme in SDN</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-08-19">2019-08-19</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-17">2022-08-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2288 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#nominal-stage">Nominal Stage</a></li>
+    <li><a href="#preparatory-stage">Preparatory Stage</a></li>
+    <li><a href="#active-mitigation-stage">Active Mitigation Stage</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
 <p>Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1.</p>
 </blockquote>
 <p>该文提出了一种基于熵的DDoS攻击的检测与缓解办法。</p>
-<h1 id="introduction">
-  introduction
-  <a class="heading-link" href="#introduction">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
+<h1 id="introduction">introduction</h1>
 <p>SDN存在安全问题，如DDoS攻击，解决办法有:</p>
 <ul>
 <li>内在：structural attributes of SDN enviroment on the properties of traffic flows</li>
 <li>外在：statistical and ml
 Entropy shows randomness,DDoS decraese randomness.</li>
 </ul>
-<h1 id="related-work">
-  related work
-  <a class="heading-link" href="#related-work">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
+<h1 id="related-work">related work</h1>
 <ul>
 <li>网络虚拟化及其安全</li>
 <li>SDN安全相关研究</li>
 </ul>
-<h1 id="join-entropy-based-ddos-defense-scheme-in-sdnjess">
-  Join Entropy Based DDoS Defense Scheme In SDN(JESS)
-  <a class="heading-link" href="#join-entropy-based-ddos-defense-scheme-in-sdnjess">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
+<h1 id="join-entropy-based-ddos-defense-scheme-in-sdnjess">Join Entropy Based DDoS Defense Scheme In SDN(JESS)</h1>
 <p>分为三个小步：</p>
 <ul>
 <li>nominal stage:switch sends headers of all packets to controller,controller calculates joint entropies of each pair</li>
@@ -204,27 +155,49 @@ Entropy shows randomness,DDoS decraese randomness.</li>
 <li>active mitigation stage:switch creates SC of <em>SuspiciousPair</em> and send to controller,controller calculates correspoinding score and generates scoretable ST,rule table $RT_C$ with a designated $\theta_s$,if score of entry under $\theta_s$ forward, otherwise drop.</li>
 </ul>
 <p>剩下的是算法的细则，太多了建议看原文</p>
-<h2 id="nominal-stage">
-  Nominal Stage
-  <a class="heading-link" href="#nominal-stage">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+<h2 id="nominal-stage">Nominal Stage</h2>
 <ul>
 <li>
 <p>Nominal Profile Generation
 收集一些重要的参数，表示成：$\mathbb{P}={IP_{src},IP_{dst},P_{src},P_{dst},PROT,PKT_{size},TTC,TCP_{flag}}$,记$\left(\begin{aligned}\mathbb{P}\k\end{aligned}\right)$k个元组组成的集合，如$\left(\begin{aligned}\mathbb{P}\2\end{aligned}\right)={{IP_{src},IP_{dst}},\dots,{TTL,TCP_{flag}}}$记$\mathbb{A}<em>i$是$\left(\begin{aligned}\mathbb{P}\2\end{aligned}\right)$的第i个元组，例$\mathbb{A}<em>1={IP</em>{src},IP</em>{dst}}$,它有$2^{32}*2^{32}$个可能。$\mathbb{A}<em>2={IP</em>{src},P_{src}}$有$2^{32}*2^{16}$个可能。switch收集包头并发送给controller，收集到指定个数即可停。在指定包数被处理后假设有$\alpha$个包对，则组成$\alpha * k$矩阵，记为$E^{\mathbb{A}_i}$,$E^{\mathbb{A}_i}_j$表示为第j个元组，它的值为$E^{\mathbb{A}_i}_j=（a_j,b_j）$。$E^{\mathbb{A}_i}$可表示为：
-<img src="https://s2.ax1x.com/2019/03/27/Aab7QO.png" alt="Aab7QO.png">
-基于$E^{\mathbb{A}_i}$创建$N^{\mathbb{A}_i}$，记为：<a href="https://imgchr.com/i/AaXdXT"><img src="https://s2.ax1x.com/2019/03/27/AaXdXT.png" alt="AaXdXT.png"></a>
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/27/Aab7QO.png"
+        data-srcset="https://s2.ax1x.com/2019/03/27/Aab7QO.png, https://s2.ax1x.com/2019/03/27/Aab7QO.png 1.5x, https://s2.ax1x.com/2019/03/27/Aab7QO.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/27/Aab7QO.png"
+        title="Aab7QO.png"
+    />
+基于$E^{\mathbb{A}_i}$创建$N^{\mathbb{A}_i}$，记为：<a href="https://imgchr.com/i/AaXdXT" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/27/AaXdXT.png"
+        data-srcset="https://s2.ax1x.com/2019/03/27/AaXdXT.png, https://s2.ax1x.com/2019/03/27/AaXdXT.png 1.5x, https://s2.ax1x.com/2019/03/27/AaXdXT.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/27/AaXdXT.png"
+        title="AaXdXT.png"
+    /></a>
 这里的$m_i$取决于这个阶段收集到不同属性的个数，这是一个$m \times (k+1)$的矩阵。这里的建$N^{\mathbb{A}_i}$就是Pair Nominal Profile，由controller形成。这里的$PAC^{\mathbb{A}_i}$指的是${\mathbb{A}_i}$的产生个数。</p>
 </li>
 <li>
 <p>Nominal Profile of Order p
 即p个历史阶段的Nominal Profile
-第p个记为:<a href="https://imgchr.com/i/AavVzt"><img src="https://s2.ax1x.com/2019/03/27/AavVzt.png" alt="AavVzt.png"></a>
+第p个记为:<a href="https://imgchr.com/i/AavVzt" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/27/AavVzt.png"
+        data-srcset="https://s2.ax1x.com/2019/03/27/AavVzt.png, https://s2.ax1x.com/2019/03/27/AavVzt.png 1.5x, https://s2.ax1x.com/2019/03/27/AavVzt.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/27/AavVzt.png"
+        title="AavVzt.png"
+    /></a>
 分阶段时，生成的profile为不同段的并集。用图表示如图4：
-<a href="https://imgchr.com/i/AddHgO"><img src="https://s2.ax1x.com/2019/03/27/AddHgO.md.png" alt="AddHgO.md.png"></a></p>
+<a href="https://imgchr.com/i/AddHgO" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/27/AddHgO.md.png"
+        data-srcset="https://s2.ax1x.com/2019/03/27/AddHgO.md.png, https://s2.ax1x.com/2019/03/27/AddHgO.md.png 1.5x, https://s2.ax1x.com/2019/03/27/AddHgO.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/27/AddHgO.md.png"
+        title="AddHgO.md.png"
+    /></a></p>
 </li>
 <li>
 <p>Joint Entropy Calculation for Nominal Profiles
@@ -239,18 +212,19 @@ $$\bar{JN}<em>{N^{A_i}}=JN</em>{N^{A_i}}/\log[\alpha] \tag{7}$$
 使用时均用归一化的熵</p>
 </li>
 </ul>
-<h2 id="preparatory-stage">
-  Preparatory Stage
-  <a class="heading-link" href="#preparatory-stage">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+<h2 id="preparatory-stage">Preparatory Stage</h2>
 <p>本阶段检测攻击，并决定最适合的pair(这个对即用来识别异常的对)，分为三个阶段：</p>
 <ul>
 <li>
 <p>Current Profile Generation
-第i个当前的profile表示为：<img src="https://s2.ax1x.com/2019/03/27/AdMbwD.png" alt="AdMbwD.png"></p>
+第i个当前的profile表示为：<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/27/AdMbwD.png"
+        data-srcset="https://s2.ax1x.com/2019/03/27/AdMbwD.png, https://s2.ax1x.com/2019/03/27/AdMbwD.png 1.5x, https://s2.ax1x.com/2019/03/27/AdMbwD.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/27/AdMbwD.png"
+        title="AdMbwD.png"
+    /></p>
 </li>
 <li>
 <p>Joint Entropy Calculation for current profile
@@ -267,13 +241,7 @@ $$\Delta J_{N^{A_i}}=JC_{N^{A_i}}-JN_{N^{A_i}} \tag{11}$$
 如：对$\arrowvert\mathbb{P}\arrowvert = 8，k=2$时，$\Delta J_{MAX}=\max{\Delta J_{N^{A_1}},\Delta J_{N^{A_2}},\cdots,\Delta J_{N^{A_28}}}$,假设$\Delta J_{N^{A_2}}$是最大的，就将其标为suspiciousPair，Controller便将这个SuspiciousPair发送给switch。</p>
 </li>
 </ul>
-<h2 id="active-mitigation-stage">
-  Active Mitigation Stage
-  <a class="heading-link" href="#active-mitigation-stage">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+<h2 id="active-mitigation-stage">Active Mitigation Stage</h2>
 <p>这个过程有五个步骤</p>
 <ul>
 <li>
@@ -300,13 +268,7 @@ $$\theta_S=\frac{\theta_C+\theta_P}{2} \tag{13}$$</p>
 更新规则时，将当前规则与之前规则作对比，只发送不一样的那部分。</p>
 </li>
 </ul>
-<h1 id="模拟与性能评估">
-  模拟与性能评估
-  <a class="heading-link" href="#%e6%a8%a1%e6%8b%9f%e4%b8%8e%e6%80%a7%e8%83%bd%e8%af%84%e4%bc%b0">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
+<h1 id="模拟与性能评估">模拟与性能评估</h1>
 <ul>
 <li>
 <p>数据集：MAWI</p>
@@ -316,17 +278,38 @@ $$\theta_S=\frac{\theta_C+\theta_P}{2} \tag{13}$$</p>
 </li>
 <li>
 <p>拓扑结构（图5）：
-<img src="https://s2.ax1x.com/2019/03/27/Addr40.png" alt="Addr40.png">
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/27/Addr40.png"
+        data-srcset="https://s2.ax1x.com/2019/03/27/Addr40.png, https://s2.ax1x.com/2019/03/27/Addr40.png 1.5x, https://s2.ax1x.com/2019/03/27/Addr40.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/27/Addr40.png"
+        title="Addr40.png"
+    />
 （这个拓扑也太简单了点吧。。。）</p>
 </li>
 <li>
 <p>packet analysis in Mininet
 利用mininet统计各种头信息，如表5
-<a href="https://imgchr.com/i/AdwydA"><img src="https://s2.ax1x.com/2019/03/27/AdwydA.md.png" alt="AdwydA.md.png"></a></p>
+<a href="https://imgchr.com/i/AdwydA" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/27/AdwydA.md.png"
+        data-srcset="https://s2.ax1x.com/2019/03/27/AdwydA.md.png, https://s2.ax1x.com/2019/03/27/AdwydA.md.png 1.5x, https://s2.ax1x.com/2019/03/27/AdwydA.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/27/AdwydA.md.png"
+        title="AdwydA.md.png"
+    /></a></p>
 </li>
 <li>
 <p>攻击种类
-<img src="https://s2.ax1x.com/2019/03/27/AdwhQS.png" alt="AdwhQS.png"></p>
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/27/AdwhQS.png"
+        data-srcset="https://s2.ax1x.com/2019/03/27/AdwhQS.png, https://s2.ax1x.com/2019/03/27/AdwhQS.png 1.5x, https://s2.ax1x.com/2019/03/27/AdwhQS.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/27/AdwhQS.png"
+        title="AdwhQS.png"
+    /></p>
 </li>
 <li>
 <p>Performance Metrics
@@ -336,16 +319,51 @@ $ACC=\frac{TP+TN}{TP+TN+FP+FN}$</p>
 <li>
 <p>Exprimental Results
 <strong>结果分析</strong>
-<img src="https://s2.ax1x.com/2019/03/28/AdhxdP.png" alt="AdhxdP.png">
-<img src="https://s2.ax1x.com/2019/03/28/Ad4pi8.png" alt="Ad4pi8.png">
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/28/AdhxdP.png"
+        data-srcset="https://s2.ax1x.com/2019/03/28/AdhxdP.png, https://s2.ax1x.com/2019/03/28/AdhxdP.png 1.5x, https://s2.ax1x.com/2019/03/28/AdhxdP.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/28/AdhxdP.png"
+        title="AdhxdP.png"
+    />
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/28/Ad4pi8.png"
+        data-srcset="https://s2.ax1x.com/2019/03/28/Ad4pi8.png, https://s2.ax1x.com/2019/03/28/Ad4pi8.png 1.5x, https://s2.ax1x.com/2019/03/28/Ad4pi8.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/28/Ad4pi8.png"
+        title="Ad4pi8.png"
+    />
 分析：误报率有时候会提高，原因是许多包有和攻击包一样的特征。为了提高效果，引入滑动窗口。
 <strong>引入滑动窗口</strong>
 网络拓扑为如图8
-<img src="https://s2.ax1x.com/2019/03/28/Ad40QH.png" alt="Ad40QH.png">
-使用previous periods,也即意味着要存储这么多periods的所有的头值，如TCP滑动窗口般。（作 者经过计算，发现浪费不多 ）结果如图10,结论为：效果确实提高了不少！<img src="https://s2.ax1x.com/2019/03/28/Ad5OEt.png" alt="Ad5OEt.png">
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/28/Ad40QH.png"
+        data-srcset="https://s2.ax1x.com/2019/03/28/Ad40QH.png, https://s2.ax1x.com/2019/03/28/Ad40QH.png 1.5x, https://s2.ax1x.com/2019/03/28/Ad40QH.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/28/Ad40QH.png"
+        title="Ad40QH.png"
+    />
+使用previous periods,也即意味着要存储这么多periods的所有的头值，如TCP滑动窗口般。（作 者经过计算，发现浪费不多 ）结果如图10,结论为：效果确实提高了不少！<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/28/Ad5OEt.png"
+        data-srcset="https://s2.ax1x.com/2019/03/28/Ad5OEt.png, https://s2.ax1x.com/2019/03/28/Ad5OEt.png 1.5x, https://s2.ax1x.com/2019/03/28/Ad5OEt.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/28/Ad5OEt.png"
+        title="Ad5OEt.png"
+    />
 <strong>在不同攻击强度下效果对比</strong>
 结果如图11所示：
-<img src="https://s2.ax1x.com/2019/03/28/Ad5xC8.png" alt="Ad5xC8.png">
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/28/Ad5xC8.png"
+        data-srcset="https://s2.ax1x.com/2019/03/28/Ad5xC8.png, https://s2.ax1x.com/2019/03/28/Ad5xC8.png 1.5x, https://s2.ax1x.com/2019/03/28/Ad5xC8.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/28/Ad5xC8.png"
+        title="Ad5xC8.png"
+    />
 结论：当攻击包与正常包数量相同时，难以区分。</p>
 </li>
 <li>
@@ -354,64 +372,56 @@ $ACC=\frac{TP+TN}{TP+TN+FP+FN}$</p>
 </li>
 </ul>
 <p>问题：为什么先择两个特征而不是更多个，没有做对比！</p>
+</div>
 
-      </div>
-
-
-      <footer>
-        
-
-
-        
-        
-        
-      </footer>
-    </article>
-
-    
-  </section>
-
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/04_jess/" data-title="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/04_jess/" data-title="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/04_jess/" data-title="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/04_jess/" data-title="JESS: Joint Entropy-Based DDoS Defense Scheme in SDN"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
     </div>
 
-    <footer class="footer">
-  <section class="container">
-    ©
-    
-    2022
-    
-    ·
-    
-    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
-  </section>
-</footer>
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
 
-  </main>
+    <div class="post-nav"><a href="/posts/03_sdn_ad/" class="prev" rel="prev" title="Leveraging SDN for Efficient Anomaly Detection and Mitigation on Legacy Networks"><i class="fas fa-angle-left fa-fw"></i>Leveraging SDN for Efficient Anomaly Detection and Mitigation on Legacy Networks</a>
+            <a href="/posts/org_01_hugo_install/" class="next" rel="next" title="hugo安装与入门">hugo安装与入门<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
 
-  
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
 
-  
-  
-  <script src="/js/coder.min.617ac1196e51a8e5820c29ea3f349ae87be7db1242a5a91f3afa569275213d0f.js" integrity="sha256-YXrBGW5RqOWCDCnqPzSa6Hvn2xJCpakfOvpWknUhPQ8="></script>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
 </body>
 
 </html>

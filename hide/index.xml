@@ -8,14 +8,23 @@
     <language>en</language>
     <managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
     <webMaster>hb_688@163.com (SuperEgg)</webMaster>
-    <lastBuildDate>Mon, 15 Aug 2022 21:01:00 +0800</lastBuildDate><atom:link href="/hide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Aug 2022 22:08:00 +0800</lastBuildDate><atom:link href="/hide/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Magit的基本使用</title>
-      <link>/hide/org_05_magit_usage/</link>
-      <pubDate>Mon, 15 Aug 2022 21:01:00 +0800</pubDate>
+      <title>DO-IDS汉语版</title>
+      <link>/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/</link>
+      <pubDate>Tue, 23 Aug 2022 22:08:00 +0800</pubDate>
       <author>hb_688@163.com (SuperEgg)</author>
-      <guid>/hide/org_05_magit_usage/</guid>
-      <description>Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更</description>
+      <guid>/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/</guid>
+      <description>摘要 随着智能工厂的空前发展，工业网络中需要更加频繁更改网络流量的转发策略。软件定义网络具有高灵活性和可编程性的优点，可动态地管理网络流量转发</description>
+    </item>
+    
+    <item>
+      <title>记录在数据平面选择流的过程</title>
+      <link>/hide/org_08_rule_selection/</link>
+      <pubDate>Tue, 23 Aug 2022 16:09:00 +0800</pubDate>
+      <author>hb_688@163.com (SuperEgg)</author>
+      <guid>/hide/org_08_rule_selection/</guid>
+      <description>选择的流经过所有的交换机 控制器实时构造rule graph 获取所有的ingress rule（入度为0的规则），并依长度降序排序 对每一个ingress rule</description>
     </item>
     
   </channel>

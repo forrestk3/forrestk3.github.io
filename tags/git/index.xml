@@ -6,13 +6,6 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
             <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate><atom:link href="/tags/git/" rel="self" type="application/rss+xml" /><item>
     <title>Magit的基本使用</title>
-    <link>/hide/org_05_magit_usage/</link>
-    <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/hide/org_05_magit_usage/</guid>
-    <description><![CDATA[Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更]]></description>
-</item><item>
-    <title>Magit的基本使用</title>
     <link>/posts/org_05_magit_usage/</link>
     <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>

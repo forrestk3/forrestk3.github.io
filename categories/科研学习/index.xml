@@ -1,10 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>论文阅读 - Tag - 咸蛋超人</title>
-        <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
-        <description>论文阅读 - Tag - 咸蛋超人</description>
+        <title>科研学习 - Category - 咸蛋超人</title>
+        <link>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</link>
+        <description>科研学习 - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 21 Aug 2022 22:01:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>记录在数据平面选择流的过程</title>
+    <link>/hide/org_08_rule_selection/</link>
+    <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/hide/org_08_rule_selection/</guid>
+    <description><![CDATA[选择的流经过所有的交换机 控制器实时构造rule graph 获取所有的ingress rule（入度为0的规则），并依长度降序排序 对每一个ingress rule]]></description>
+</item><item>
     <title>Solving Minimum Path Cover on a DAG</title>
     <link>/posts/org_06_mpc/</link>
     <pubDate>Sun, 21 Aug 2022 22:01:00 &#43;0800</pubDate><author>

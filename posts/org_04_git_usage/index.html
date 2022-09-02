@@ -1,171 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>
-  Git的基本使用 · 咸蛋超人
-</title>
+
+<head>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
-
-
-
-
-<meta name="description" content="基础(最常用的命令) Link to heading 1 2 3 4 5 6 7 8 git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推">
-<meta name="keywords" content="">
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Git的基本使用"/>
-<meta name="twitter:description" content="基础(最常用的命令) Link to heading 1 2 3 4 5 6 7 8 git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推"/>
-
-<meta property="og:title" content="Git的基本使用" />
-<meta property="og:description" content="基础(最常用的命令) Link to heading 1 2 3 4 5 6 7 8 git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Git的基本使用 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Git的基本使用" />
+<meta property="og:description" content="基础(最常用的命令) 1 2 3 4 5 6 7 8 git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/org_04_git_usage/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-06T19:28:00+08:00" />
 <meta property="article:modified_time" content="2022-08-17T18:33:07+08:00" />
 
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git的基本使用"/>
+<meta name="twitter:description" content="基础(最常用的命令) 1 2 3 4 5 6 7 8 git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/org_04_git_usage/" /><link rel="prev" href="/posts/org_03_git_get_started/" /><link rel="next" href="/posts/org_05_magit_usage/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Git的基本使用",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/org_04_git_usage\/"
+        },"genre": "posts","keywords": "git","wordcount":  4309 ,
+        "url": "\/posts\/org_04_git_usage\/","datePublished": "2022-08-06T19:28:00+08:00","dateModified": "2022-08-17T18:33:07+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
 
-
-
-<link rel="canonical" href="/posts/org_04_git_usage/">
-
-
-<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
-
-
-  
-  
-  <link rel="stylesheet" href="/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css" integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin="anonymous" media="screen" />
-
-
-
-
-
-
-
-
- 
-
-
-
-
-<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
-
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-
-<meta name="generator" content="Hugo 0.94.2" />
-
-
-
-
-
-  </head>
-
-
-
-
-<body class="preload-transitions colorscheme-light">
-  
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
 </div>
-
-
-  <main class="wrapper">
-    <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">
-      咸蛋超人
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">博文</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/tags/">标签</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/categories/">类别</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/">其他</a>
-            </li>
-          
-        
-        
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git的基本使用</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-06">2022-08-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-17">2022-08-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4309 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#基础--最常用的命令">基础(最常用的命令)</a></li>
+    <li><a href="#版本回退">版本回退</a>
+      <ul>
+        <li><a href="#回退问题">回退问题:</a></li>
+        <li><a href="#回退总结">回退总结:</a></li>
       </ul>
-    
-  </section>
-</nav>
-
-
-    <div class="content">
-      
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">
-            <a class="title-link" href="/posts/org_04_git_usage/">
-              Git的基本使用
-            </a>
-          </h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime="2022-08-06T19:28:00&#43;08:00">
-                August 6, 2022
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fa fa-clock-o" aria-hidden="true"></i>
-              9-minute read
-            </span>
-          </div>
-          
-          
-          <div class="tags">
-  <i class="fa fa-tag" aria-hidden="true"></i>
-    <span class="tag">
-      <a href="/tags/git/">git</a>
-    </span></div>
-
-        </div>
-      </header>
-
-      <div>
-        
-        <h2 id="基础--最常用的命令">
-  基础(最常用的命令)
-  <a class="heading-link" href="#%e5%9f%ba%e7%a1%80--%e6%9c%80%e5%b8%b8%e7%94%a8%e7%9a%84%e5%91%bd%e4%bb%a4">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+    </li>
+    <li><a href="#撤销修改">撤销修改</a>
+      <ul>
+        <li><a href="#git-基本逻辑">git 基本逻辑</a></li>
+        <li><a href="#文件修改的撤销">文件修改的撤销</a></li>
+        <li><a href="#撤销问题">撤销问题</a></li>
+        <li><a href="#撤销总结">撤销总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#文件删除">文件删除</a>
+      <ul>
+        <li><a href="#删除问题">删除问题</a></li>
+        <li><a href="#删除总结">删除总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#分支">分支</a>
+      <ul>
+        <li><a href="#创建与合并">创建与合并</a></li>
+        <li><a href="#冲突的修正">冲突的修正</a></li>
+        <li><a href="#分支问题">分支问题</a></li>
+        <li><a href="#分支总结">分支总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#高级篇-命令详解">高级篇:命令详解</a>
+      <ul>
+        <li><a href="#分离head">分离HEAD</a></li>
+        <li><a href="#相对引用">相对引用(^)</a></li>
+        <li><a href="#撤销变更--reset-and-revert">撤销变更 (reset &amp; revert)</a></li>
+        <li><a href="#提交树的节点移动--rebase-and-cherry-pick">提交树的节点移动 (rebase &amp; cherry-pick)</a>
+          <ul>
+            <li><a href="#场景一-当前出了一些问题-可此需要新建一些分支来解决-最终解决了当前的问题">场景一: 当前出了一些问题, 可此需要新建一些分支来解决, 最终解决了当前的问题:</a></li>
+            <li><a href="#场景二-更新历史提交节点中的信息">场景二: 更新历史提交节点中的信息</a></li>
+          </ul>
+        </li>
+        <li><a href="#tag">tag</a></li>
+        <li><a href="#describe">describe</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="基础--最常用的命令">基础(最常用的命令)</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -188,13 +195,7 @@
 </span></span><span class="line"><span class="cl">git log <span class="c1"># 查看提交日志</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="版本回退">
-  版本回退
-  <a class="heading-link" href="#%e7%89%88%e6%9c%ac%e5%9b%9e%e9%80%80">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+</div><h2 id="版本回退">版本回退</h2>
 <p>前一个版本:</p>
 <p>I&rsquo;m a little tired!!!</p>
 <p>当前版本:</p>
@@ -230,25 +231,13 @@
 <p>可以看到第一列记录了所有的commit ID, 最后一列记录了执行的操作, 根据最后一列信息找到对应的ID号即可</p>
 </li>
 </ol>
-<h3 id="回退问题">
-  回退问题:
-  <a class="heading-link" href="#%e5%9b%9e%e9%80%80%e9%97%ae%e9%a2%98">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="回退问题">回退问题:</h3>
 <ul>
 <li>如何跳到某个指定commit_id的版本?</li>
 <li>假如你刚提交了一个版本, 现在后悔了想返回到前一个版本, 应该使用什么命令?</li>
 <li>假如你回退到前某个版本, 现在后悔了, 想返回到最近的某个版本, 但是 commit_id 不记得, 该怎么办?</li>
 </ul>
-<h3 id="回退总结">
-  回退总结:
-  <a class="heading-link" href="#%e5%9b%9e%e9%80%80%e6%80%bb%e7%bb%93">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="回退总结">回退总结:</h3>
 <ul>
 <li>
 <p>HEAD 为当前版本, 使<span class="inline-src language-sh" data-lang="sh"><code>git reset --hard commit_id</code></span>
@@ -261,37 +250,19 @@
 <p>tip: HEAD表示当前版本, HEAD^表示前一个提交版本, HEAD^^为前2个提交的版本, HEAD~100 为第前100个版本</p>
 </li>
 </ul>
-<h2 id="撤销修改">
-  撤销修改
-  <a class="heading-link" href="#%e6%92%a4%e9%94%80%e4%bf%ae%e6%94%b9">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+<h2 id="撤销修改">撤销修改</h2>
 <p>前一节所说的版本回退有个缺点,</p>
 <p>那就是, 回退到前一个版本, 所有相关文件的最新修改均会丢失.</p>
 <p>并且版本回退是针对已提交的内容的.</p>
 <p>现在有个新问题: 在git管理的版本下, 撤销对某个文件的修改.</p>
 <p>这之前要了解一下git管理的基本逻辑.</p>
-<h3 id="git-基本逻辑">
-  git 基本逻辑
-  <a class="heading-link" href="#git-%e5%9f%ba%e6%9c%ac%e9%80%bb%e8%be%91">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="git-基本逻辑">git 基本逻辑</h3>
 <p>git仓库其实分为工作区(working tree), 暂存区(stage), 和 仓库()</p>
 <p>工作区就是我们看到和使用的部分</p>
 <p>暂存区是我们使用 <span class="inline-src language-sh" data-lang="sh"><code>git add filename</code></span> 后文件所到达的部分</p>
 <p>仓库是我们使用 <span class="inline-src language-sh" data-lang="sh"><code>git commit</code></span> 后文件所在的部分</p>
 <p>在使用 <span class="inline-src language-sh" data-lang="sh"><code>git commit</code></span> 命令时, 只会将暂存区部分的内容保存到仓库</p>
-<h3 id="文件修改的撤销">
-  文件修改的撤销
-  <a class="heading-link" href="#%e6%96%87%e4%bb%b6%e4%bf%ae%e6%94%b9%e7%9a%84%e6%92%a4%e9%94%80">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="文件修改的撤销">文件修改的撤销</h3>
 <ol>
 <li>在上一次提交后, 本次我们对某个文件进行了修改, 发现修改后程序运行出错了.</li>
 </ol>
@@ -322,35 +293,17 @@
 
 <p>可以看到取消了暂存的变更, 这时查看状态则又到了修改未提交的状态了.</p>
 <p>此时再使用 <span class="inline-src language-sh" data-lang="sh"><code>git checkout -- filename</code></span> 命令即可以撤销修改了.</p>
-<h3 id="撤销问题">
-  撤销问题
-  <a class="heading-link" href="#%e6%92%a4%e9%94%80%e9%97%ae%e9%a2%98">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="撤销问题">撤销问题</h3>
 <ul>
 <li>有修改, 但是未添加到暂存区, 如何撤销?</li>
 <li>有修改, 已添加到暂存区, 如何撤销?</li>
 </ul>
-<h3 id="撤销总结">
-  撤销总结
-  <a class="heading-link" href="#%e6%92%a4%e9%94%80%e6%80%bb%e7%bb%93">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="撤销总结">撤销总结</h3>
 <ul>
 <li><span class="inline-src language-sh" data-lang="sh"><code>git checkout -- filename</code></span> 撤销对工作区文件的修改</li>
 <li><span class="inline-src language-sh" data-lang="sh"><code>git reset HEAD filename</code></span> 撤销对文件的暂存操作</li>
 </ul>
-<h2 id="文件删除">
-  文件删除
-  <a class="heading-link" href="#%e6%96%87%e4%bb%b6%e5%88%a0%e9%99%a4">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+<h2 id="文件删除">文件删除</h2>
 <p>git仓库的文件删除和正常文件夹的删除不大一样, 因为git将删除也视为了一个操作, 因此删除也需要提交.
 正常删除文件后查看仓库状态:</p>
 <figure><img src="/ox-hugo/mbERgz.png"/>
@@ -368,44 +321,20 @@
 <p>也就是说, 这时还需要使用 <span class="inline-src language-sh" data-lang="sh"><code>git add</code></span>命令才可以使用 <span class="inline-src language-sh" data-lang="sh"><code>git commit</code></span>将删除操作提交到仓库.</p>
 <p>而 <span class="inline-src language-sh" data-lang="sh"><code>git rm filename</code></span>则可以直接将删除提交到仓库.</p>
 <p>对于已添加,未添加的修改如何撤销可见上一节.</p>
-<h3 id="删除问题">
-  删除问题
-  <a class="heading-link" href="#%e5%88%a0%e9%99%a4%e9%97%ae%e9%a2%98">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="删除问题">删除问题</h3>
 <ol>
 <li>若要删除仓库中的文件应如何操作?</li>
 <li>直接删除与使用 git rm 命令删除有何不同?</li>
 <li>删除后如何撤销?</li>
 </ol>
-<h3 id="删除总结">
-  删除总结
-  <a class="heading-link" href="#%e5%88%a0%e9%99%a4%e6%80%bb%e7%bb%93">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="删除总结">删除总结</h3>
 <ol>
 <li>删除与修改一样, 都是要提交到仓库的</li>
 <li>使用 git rm 操作相当于使用 直接删除并使用了 git add 命令</li>
 <li>删除的撤销可根据是否添加到暂存区同修改一样操作</li>
 </ol>
-<h2 id="分支">
-  分支
-  <a class="heading-link" href="#%e5%88%86%e6%94%af">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h3 id="创建与合并">
-  创建与合并
-  <a class="heading-link" href="#%e5%88%9b%e5%bb%ba%e4%b8%8e%e5%90%88%e5%b9%b6">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h2 id="分支">分支</h2>
+<h3 id="创建与合并">创建与合并</h3>
 <ol>
 <li>
 <p>分支的创建与删除: <span class="inline-src language-sh" data-lang="sh"><code>git branch branch_name</code></span></p>
@@ -440,13 +369,7 @@
 <p><strong>这里其实可以更深入理解下git checkout这个命令, 它的真实作用是切换当前工作区在git这个仓库树中的位置.即, HEAD可以指向main或者bugFix这种具体的分支名, 也可以指向某一个commit_id(每一个commit_id即是工作区的一个版本)</strong></p>
 </li>
 </ol>
-<h3 id="冲突的修正">
-  冲突的修正
-  <a class="heading-link" href="#%e5%86%b2%e7%aa%81%e7%9a%84%e4%bf%ae%e6%ad%a3">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="冲突的修正">冲突的修正</h3>
 <p>假如我们现在有2个分支: master和newBranch, 在这两个分支中我们都对一个文件进行了修改.
 这时, 将newBranch分支合并到master分支时就会出现冲突:</p>
 <figure><img src="/ox-hugo/Irdghd.png"/>
@@ -475,26 +398,14 @@
 <figure><img src="/ox-hugo/53BVr8.png"/>
 </figure>
 
-<h3 id="分支问题">
-  分支问题
-  <a class="heading-link" href="#%e5%88%86%e6%94%af%e9%97%ae%e9%a2%98">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="分支问题">分支问题</h3>
 <ol>
 <li>如何创建分支与删除分支?</li>
 <li>如何在不同分支中进行切换?</li>
 <li>如何合并不同的分支?</li>
 <li>合并分支后有冲突了该怎么办?</li>
 </ol>
-<h3 id="分支总结">
-  分支总结
-  <a class="heading-link" href="#%e5%88%86%e6%94%af%e6%80%bb%e7%bb%93">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="分支总结">分支总结</h3>
 <ol>
 <li>分支创建: <span class="inline-src language-sh" data-lang="sh"><code>git branch branch_name</code></span></li>
 <li>分支删除: <span class="inline-src language-sh" data-lang="sh"><code>git branch -d branch_name</code></span></li>
@@ -502,20 +413,8 @@
 <li>分支切换: <span class="inline-src language-sh" data-lang="sh"><code>git checkout branch_name</code></span></li>
 <li>冲突解决: 修正冲突的文件并添加到暂存区, 然后提交</li>
 </ol>
-<h2 id="高级篇-命令详解">
-  高级篇:命令详解
-  <a class="heading-link" href="#%e9%ab%98%e7%ba%a7%e7%af%87-%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h3 id="分离head">
-  分离HEAD
-  <a class="heading-link" href="#%e5%88%86%e7%a6%bbhead">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h2 id="高级篇-命令详解">高级篇:命令详解</h2>
+<h3 id="分离head">分离HEAD</h3>
 <p>这是一个很小的概念, 单独说它, 就是因为它很重要.</p>
 <p>其实git是由不同的提交组成, 每个提交都可以看成一个树中的节点.</p>
 <p>所有的提交在一起组成了一个提交树.</p>
@@ -537,18 +436,26 @@
 </figure>
 
 <p><strong>其实checkout这个命令用来切换HEAD的指向并不准确, 新版的git使用switch命令</strong></p>
-<h3 id="相对引用">
-  相对引用(^)
-  <a class="heading-link" href="#%e7%9b%b8%e5%af%b9%e5%bc%95%e7%94%a8">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="相对引用">相对引用(^)</h3>
 <ol>
 <li>
 <p>在不同的仓库进行切换时, 使用commit id十分麻烦, 因为id需要使用git log命令查找, git提供了相对引用, 即^表示上一个, ^^表示上2个, ~10 表示前10个.</p>
 <p>如使用 <span class="inline-src language-sh" data-lang="sh"><code>git checkout main^</code></span> 效果为:</p>
-<p><img src="/ox-hugo/k7l8fp.png" alt=""><img src="/ox-hugo/Vopopj.png" alt=""></p>
+<p><img
+        class="lazyload"
+        data-src="/ox-hugo/k7l8fp.png"
+        data-srcset="/ox-hugo/k7l8fp.png, /ox-hugo/k7l8fp.png 1.5x, /ox-hugo/k7l8fp.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/k7l8fp.png"
+        title="/ox-hugo/k7l8fp.png"
+    /><img
+        class="lazyload"
+        data-src="/ox-hugo/Vopopj.png"
+        data-srcset="/ox-hugo/Vopopj.png, /ox-hugo/Vopopj.png 1.5x, /ox-hugo/Vopopj.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/Vopopj.png"
+        title="/ox-hugo/Vopopj.png"
+    /></p>
 <p>可以看到当HAED指向main时, HEAD^和main^都是指向C5的.</p>
 <p>再次使用 <span class="inline-src language-sh" data-lang="sh"><code>git checkout HEAD~3</code></span> 结果为:</p>
 <figure><img src="/ox-hugo/fbSQSq.png"/>
@@ -556,13 +463,7 @@
 
 </li>
 </ol>
-<h3 id="撤销变更--reset-and-revert">
-  撤销变更 (reset &amp; revert)
-  <a class="heading-link" href="#%e6%92%a4%e9%94%80%e5%8f%98%e6%9b%b4--reset-and-revert">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="撤销变更--reset-and-revert">撤销变更 (reset &amp; revert)</h3>
 <p>当本地出错要回退时, 有2个命令可用.</p>
 <ol>
 <li>reset可将当前分支回退到指定提交. 可看执行结果:</li>
@@ -581,13 +482,7 @@
 
 <p>可以看到, 现在这人分支指向了C1&rsquo;这个提交, 其实C1&rsquo;与C1是相同的, 但是 git 将回退作为一个操作然后提交到仓库.</p>
 <p>这样做的好处: 在本地其实是没有什么区别的, 但是如果推送到远程, 使用git reset后若要与远程同步, 需要将远程的最新提交删除, 这个操作难以实现, 因此将回退作为一个新的提交可以方便远程与本地的同步, 方便多人合作.</p>
-<h3 id="提交树的节点移动--rebase-and-cherry-pick">
-  提交树的节点移动 (rebase &amp; cherry-pick)
-  <a class="heading-link" href="#%e6%8f%90%e4%ba%a4%e6%a0%91%e7%9a%84%e8%8a%82%e7%82%b9%e7%a7%bb%e5%8a%a8--rebase-and-cherry-pick">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="提交树的节点移动--rebase-and-cherry-pick">提交树的节点移动 (rebase &amp; cherry-pick)</h3>
 <ul>
 <li>
 <p>rebase: 它的主要作用是创建线性提交记录, 方便工程修改脉路整理. 比如对于当前提交树:</p>
@@ -611,7 +506,21 @@
 <li>
 <p>rebase 的另一个功能: 提交记录排序与删除.</p>
 <p><span class="inline-src language-sh" data-lang="sh"><code>git rebase -i HEAD~4</code></span>: 这个命令会弹出一个交互式的创口, 让你调整最新4个提交节点的顺序或者删除提交节点. 下面是一个例子:</p>
-<p><img src="/ox-hugo/Xy3uNG.png" alt=""> <img src="/ox-hugo/HwlFsT.png" alt=""></p>
+<p><img
+        class="lazyload"
+        data-src="/ox-hugo/Xy3uNG.png"
+        data-srcset="/ox-hugo/Xy3uNG.png, /ox-hugo/Xy3uNG.png 1.5x, /ox-hugo/Xy3uNG.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/Xy3uNG.png"
+        title="/ox-hugo/Xy3uNG.png"
+    /> <img
+        class="lazyload"
+        data-src="/ox-hugo/HwlFsT.png"
+        data-srcset="/ox-hugo/HwlFsT.png, /ox-hugo/HwlFsT.png 1.5x, /ox-hugo/HwlFsT.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/HwlFsT.png"
+        title="/ox-hugo/HwlFsT.png"
+    /></p>
 <p>知道这个功能即可, 不具体说明了</p>
 </li>
 <li>
@@ -628,26 +537,28 @@
 </ul>
 <p>可以看到, 选中的提交节点都添加到了当前分支 main 所指向的节点下.</p>
 <p>这样的命令有什么作用呢?</p>
-<h4 id="场景一-当前出了一些问题-可此需要新建一些分支来解决-最终解决了当前的问题">
-  场景一: 当前出了一些问题, 可此需要新建一些分支来解决, 最终解决了当前的问题:
-  <a class="heading-link" href="#%e5%9c%ba%e6%99%af%e4%b8%80-%e5%bd%93%e5%89%8d%e5%87%ba%e4%ba%86%e4%b8%80%e4%ba%9b%e9%97%ae%e9%a2%98-%e5%8f%af%e6%ad%a4%e9%9c%80%e8%a6%81%e6%96%b0%e5%bb%ba%e4%b8%80%e4%ba%9b%e5%88%86%e6%94%af%e6%9d%a5%e8%a7%a3%e5%86%b3-%e6%9c%80%e7%bb%88%e8%a7%a3%e5%86%b3%e4%ba%86%e5%bd%93%e5%89%8d%e7%9a%84%e9%97%ae%e9%a2%98">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="场景一-当前出了一些问题-可此需要新建一些分支来解决-最终解决了当前的问题">场景一: 当前出了一些问题, 可此需要新建一些分支来解决, 最终解决了当前的问题:</h4>
 <figure><img src="/ox-hugo/fnM15C.png"/>
 </figure>
 
 <p>但是此时, 我们只想要收录解决问题的提交到当前的main下, 此时就可以使用 rebase -i 和 cherry-pick 这两个命令来实现.</p>
 <p>将HEAD调整到main分支上, 再使用 <span class="inline-src language-sh" data-lang="sh"><code>git cherry-pick C4</code></span> (左) 或者使用 <span class="inline-src language-sh" data-lang="sh"><code>git rebase -i HEAD~3</code></span> 后调整提交 (右) 即可获得:</p>
-<p><img src="/ox-hugo/ZJ9rxO.png" alt=""> <img src="/ox-hugo/n0IeTw.png" alt=""></p>
-<h4 id="场景二-更新历史提交节点中的信息">
-  场景二: 更新历史提交节点中的信息
-  <a class="heading-link" href="#%e5%9c%ba%e6%99%af%e4%ba%8c-%e6%9b%b4%e6%96%b0%e5%8e%86%e5%8f%b2%e6%8f%90%e4%ba%a4%e8%8a%82%e7%82%b9%e4%b8%ad%e7%9a%84%e4%bf%a1%e6%81%af">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<p><img
+        class="lazyload"
+        data-src="/ox-hugo/ZJ9rxO.png"
+        data-srcset="/ox-hugo/ZJ9rxO.png, /ox-hugo/ZJ9rxO.png 1.5x, /ox-hugo/ZJ9rxO.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/ZJ9rxO.png"
+        title="/ox-hugo/ZJ9rxO.png"
+    /> <img
+        class="lazyload"
+        data-src="/ox-hugo/n0IeTw.png"
+        data-srcset="/ox-hugo/n0IeTw.png, /ox-hugo/n0IeTw.png 1.5x, /ox-hugo/n0IeTw.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/n0IeTw.png"
+        title="/ox-hugo/n0IeTw.png"
+    /></p>
+<h4 id="场景二-更新历史提交节点中的信息">场景二: 更新历史提交节点中的信息</h4>
 <p>下面的提交树中, 我想更新newImage提交中的信息, 且是只更新它的信息, 可使用 rebase -i 和 cherry-pick 这两种方式来实现.</p>
 <figure><img src="/ox-hugo/6Qk8bS.png"/>
 </figure>
@@ -669,13 +580,7 @@
 <figure><img src="/ox-hugo/jFWrjx.png"/>
 </figure>
 
-<h3 id="tag">
-  tag
-  <a class="heading-link" href="#tag">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="tag">tag</h3>
 <p>前文中提交节点要么是使用提交ID标识的, 要么是使用分支名子标识的.</p>
 <p>分支名字会被移动, 且有新的提交时分支名字也会移动到新的提交节点中, 提交ID太长,难记.因此需要一个为某个提交节点进行永久命各的办法: 它就是tag. 对于以下的提交树:</p>
 <figure><img src="/ox-hugo/CVhCSx.png"/>
@@ -690,13 +595,7 @@
 </figure>
 
 <p>可以看到这时HEAD指向了C1. 为什么不是V1* 呢, 这是因为无支对某个tag直接提交, 所以才会发生这种分离HEAD的现象.</p>
-<h3 id="describe">
-  describe
-  <a class="heading-link" href="#describe">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="describe">describe</h3>
 <p><span class="inline-src language-sh" data-lang="sh"><code>git describe &lt;ref&gt;</code></span>: &lt;ref&gt; 为提交树中的引用, 默认为HEAD.</p>
 <p>该命令的输出结果为: &lt;tag&gt;_&lt;num&gt;_g&lt;hash&gt;, tag为与该引用最近的标签, num 为 该引用与最近标签的间隔提交数, &lt;hash&gt;为&lt;ref&gt;的提交ID.</p>
 <p>对于以下的提交树, 使用 <span class="inline-src language-sh" data-lang="sh"><code>git describe, git describe main, git describe side</code></span> 的结果分别为:</p>
@@ -706,64 +605,56 @@
 <figure><img src="/ox-hugo/ZObRUN.png"/>
 </figure>
 
+</div>
 
-      </div>
-
-
-      <footer>
-        
-
-
-        
-        
-        
-      </footer>
-    </article>
-
-    
-  </section>
-
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/org_04_git_usage/" data-title="Git的基本使用" data-hashtags="git"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/org_04_git_usage/" data-title="Git的基本使用"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/org_04_git_usage/" data-title="Git的基本使用" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/org_04_git_usage/" data-title="Git的基本使用"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
     </div>
 
-    <footer class="footer">
-  <section class="container">
-    ©
-    
-    2022
-    
-    ·
-    
-    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-    
-  </section>
-</footer>
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git/">git</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
 
-  </main>
+    <div class="post-nav"><a href="/posts/org_03_git_get_started/" class="prev" rel="prev" title="Git 与 Magit 初始篇"><i class="fas fa-angle-left fa-fw"></i>Git 与 Magit 初始篇</a>
+            <a href="/posts/org_05_magit_usage/" class="next" rel="next" title="Magit的基本使用">Magit的基本使用<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
 
-  
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
 
-  
-  
-  <script src="/js/coder.min.617ac1196e51a8e5820c29ea3f349ae87be7db1242a5a91f3afa569275213d0f.js" integrity="sha256-YXrBGW5RqOWCDCnqPzSa6Hvn2xJCpakfOvpWknUhPQ8="></script>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
 </body>
 
 </html>

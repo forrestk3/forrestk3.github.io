@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>idea - Tag - 咸蛋超人</title>
+        <link>/tags/idea/</link>
+        <description>idea - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</lastBuildDate><atom:link href="/tags/idea/" rel="self" type="application/rss+xml" /><item>
+    <title>记录在数据平面选择流的过程</title>
+    <link>/hide/org_08_rule_selection/</link>
+    <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/hide/org_08_rule_selection/</guid>
+    <description><![CDATA[选择的流经过所有的交换机 控制器实时构造rule graph 获取所有的ingress rule（入度为0的规则），并依长度降序排序 对每一个ingress rule]]></description>
+</item></channel>
+</rss>

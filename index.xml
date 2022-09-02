@@ -4,9 +4,23 @@
         <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>mininet , ovs , ryu 分别进行源码安装</title>
+    <link>/posts/05_ovs_install/</link>
+    <pubDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/05_ovs_install/</guid>
+    <description><![CDATA[OVS安装 ovs与linux内核版本对应 OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。]]></description>
+</item><item>
+    <title>Solving Minimum Path Cover on a DAG</title>
+    <link>/posts/org_06_mpc/</link>
+    <pubDate>Sun, 21 Aug 2022 22:01:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_06_mpc/</guid>
+    <description><![CDATA[文章目的 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），]]></description>
+</item><item>
     <title>Magit的基本使用</title>
     <link>/posts/org_05_magit_usage/</link>
     <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
@@ -42,18 +56,25 @@
     </author><guid>/posts/org_01_hugo_install/</guid>
     <description><![CDATA[ubuntu 18.04安装hugo最新稳定版 在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本 创建hugo站 1 hugo new site hello-world 这个命令会创建一个hello]]></description>
 </item><item>
+    <title>JESS: Joint Entropy-Based DDoS Defense Scheme in SDN</title>
+    <link>/posts/04_jess/</link>
+    <pubDate>Mon, 19 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/04_jess/</guid>
+    <description><![CDATA[Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction SDN存在安全问题，如DDoS]]></description>
+</item><item>
+    <title>Leveraging SDN for Efficient Anomaly Detection and Mitigation on Legacy Networks</title>
+    <link>/posts/03_sdn_ad/</link>
+    <pubDate>Sun, 18 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/03_sdn_ad/</guid>
+    <description><![CDATA[Giotis K , Androulidakis G , Maglaris V . Leveraging SDN for Efficient Anomaly Detection and Mitigation on Legacy Networks[C]// Third European Workshop on Software Defined Networks. IEEE Computer Society, 2014. 本文主要提出一种架构：利用SDN中的Controller改进现有的网络体系中进]]></description>
+</item><item>
     <title>A distributed filtering mechanism against DDoS attacks: ScoreForCore</title>
     <link>/posts/01_scoreforcore/</link>
     <pubDate>Sat, 17 Aug 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/01_scoreforcore/</guid>
     <description><![CDATA[A distributed filtering mechanism against DDoS attacks: ScoreForCore Kalkan K, Alagöz F. A distributed filtering mechanism against DDoS attacks: ScoreForCore[J]. Computer Networks, 2016, 108: 199-209. 本文提出ScoreForCore基于主动和协作过滤的防御机制，特点为：在当前的攻]]></description>
-</item><item>
-    <title>Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks</title>
-    <link>/posts/02_crowd-gps-sec/</link>
-    <pubDate>Fri, 16 Aug 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/02_crowd-gps-sec/</guid>
-    <description><![CDATA[Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks Jansen K, Schäfer M, Moser D, et al. Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks[C] IEEE Symposium on Security and&gt; Privacy (S&amp;P). 2018. Introduction GPS A. GPS Usage in avaition 非常广泛 B. GPS Spoofing Attacks 依赖GPS的航空工具都是攻]]></description>
 </item></channel>
 </rss>
