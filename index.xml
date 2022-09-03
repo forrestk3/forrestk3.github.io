@@ -56,25 +56,25 @@
     </author><guid>/posts/org_01_hugo_install/</guid>
     <description><![CDATA[ubuntu 18.04安装hugo最新稳定版 在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本 创建hugo站 1 hugo new site hello-world 这个命令会创建一个hello]]></description>
 </item><item>
+    <title>A detection method for anomaly flow in software defined network</title>
+    <link>/posts/07_ad_sdn_acess/</link>
+    <pubDate>Wed, 21 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/07_ad_sdn_acess/</guid>
+    <description><![CDATA[Huijun P , Zhe S , Xuejian Z , et al. [J]. IEEE Access, 2018:1-1. 本文件基于knn的一个改进算法提出了一个异常检测算法。 一些概念： 欧几里德距离：$D_{ij}^y = \sqrt{\sum_{a=1}^{t}({X_{ia} - X_{ja}})^2}$ str]]></description>
+</item><item>
+    <title>An Analysis of Using Reflectors for Distributed Denial-of-Service Attacks</title>
+    <link>/posts/06_reflector_sigcomm/</link>
+    <pubDate>Tue, 20 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/06_reflector_sigcomm/</guid>
+    <description><![CDATA[Paxson, Vern. An analysis of using reflectors for distributed denial-of-service attacks[J]. ACM SIGCOMM Computer Communication Review, 2001, 31(3):38. 本文先讲解了DDoS攻击，再讲解基于reflector的DDoS攻击，最后基于各种网络协议的字段进行挨个]]></description>
+</item><item>
     <title>JESS: Joint Entropy-Based DDoS Defense Scheme in SDN</title>
     <link>/posts/04_jess/</link>
     <pubDate>Mon, 19 Aug 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/04_jess/</guid>
     <description><![CDATA[Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1. 该文提出了一种基于熵的DDoS攻击的检测与缓解办法。 introduction SDN存在安全问题，如DDoS]]></description>
-</item><item>
-    <title>Leveraging SDN for Efficient Anomaly Detection and Mitigation on Legacy Networks</title>
-    <link>/posts/03_sdn_ad/</link>
-    <pubDate>Sun, 18 Aug 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/03_sdn_ad/</guid>
-    <description><![CDATA[Giotis K , Androulidakis G , Maglaris V . Leveraging SDN for Efficient Anomaly Detection and Mitigation on Legacy Networks[C]// Third European Workshop on Software Defined Networks. IEEE Computer Society, 2014. 本文主要提出一种架构：利用SDN中的Controller改进现有的网络体系中进]]></description>
-</item><item>
-    <title>A distributed filtering mechanism against DDoS attacks: ScoreForCore</title>
-    <link>/posts/01_scoreforcore/</link>
-    <pubDate>Sat, 17 Aug 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/01_scoreforcore/</guid>
-    <description><![CDATA[A distributed filtering mechanism against DDoS attacks: ScoreForCore Kalkan K, Alagöz F. A distributed filtering mechanism against DDoS attacks: ScoreForCore[J]. Computer Networks, 2016, 108: 199-209. 本文提出ScoreForCore基于主动和协作过滤的防御机制，特点为：在当前的攻]]></description>
 </item></channel>
 </rss>

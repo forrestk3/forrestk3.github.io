@@ -12,6 +12,20 @@
     </author><guid>/posts/org_06_mpc/</guid>
     <description><![CDATA[文章目的 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），]]></description>
 </item><item>
+    <title>A detection method for anomaly flow in software defined network</title>
+    <link>/posts/07_ad_sdn_acess/</link>
+    <pubDate>Wed, 21 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/07_ad_sdn_acess/</guid>
+    <description><![CDATA[Huijun P , Zhe S , Xuejian Z , et al. [J]. IEEE Access, 2018:1-1. 本文件基于knn的一个改进算法提出了一个异常检测算法。 一些概念： 欧几里德距离：$D_{ij}^y = \sqrt{\sum_{a=1}^{t}({X_{ia} - X_{ja}})^2}$ str]]></description>
+</item><item>
+    <title>An Analysis of Using Reflectors for Distributed Denial-of-Service Attacks</title>
+    <link>/posts/06_reflector_sigcomm/</link>
+    <pubDate>Tue, 20 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/06_reflector_sigcomm/</guid>
+    <description><![CDATA[Paxson, Vern. An analysis of using reflectors for distributed denial-of-service attacks[J]. ACM SIGCOMM Computer Communication Review, 2001, 31(3):38. 本文先讲解了DDoS攻击，再讲解基于reflector的DDoS攻击，最后基于各种网络协议的字段进行挨个]]></description>
+</item><item>
     <title>JESS: Joint Entropy-Based DDoS Defense Scheme in SDN</title>
     <link>/posts/04_jess/</link>
     <pubDate>Mon, 19 Aug 2019 18:32:36 &#43;0800</pubDate><author>
