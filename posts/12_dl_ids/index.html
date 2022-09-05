@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">A Deep Learning Approach to Network Intrusion Detection - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="A Deep Learning Approach to Network Intrusion Detection" />
+<meta property="og:description" content="Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50. 本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/12_dl_ids/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-26T18:32:36+08:00" />
+<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Deep Learning Approach to Network Intrusion Detection"/>
+<meta name="twitter:description" content="Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50. 本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/12_dl_ids/" /><link rel="prev" href="/posts/11_dl_ad/" /><link rel="next" href="/posts/org_01_hugo_install/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A Deep Learning Approach to Network Intrusion Detection",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/12_dl_ids\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  879 ,
+        "url": "\/posts\/12_dl_ids\/","datePublished": "2019-08-26T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A Deep Learning Approach to Network Intrusion Detection</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-08-26">2019-08-26</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;879 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#当前网络安全的主要挑战">当前网络安全的主要挑战</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#原算法">原算法</a></li>
+    <li><a href="#本文的non-symmetric-deep-auto-envoder">本文的Non-Symmetric Deep Auto-Envoder</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#kdd-cup99测试">KDD CUP'99测试</a></li>
+    <li><a href="#nsl-kdd测试">NSL-KDD测试</a></li>
+    <li><a href="#未来工作处理zero-day-attack">未来工作：处理zero-day attack</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50.</p>
+</blockquote>
+<p>本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行分类的一种入侵检测方法。</p>
+<h1 id="基本知识介绍">基本知识介绍</h1>
+<h2 id="当前网络安全的主要挑战">当前网络安全的主要挑战</h2>
+<ul>
+<li>网络流量的激增</li>
+<li>更深入和更细粒度监控的需求</li>
+<li>协议的多种多样和数据的多元化</li>
+</ul>
+<p>本文提出一种深度和浅度学习结合的方法：NDAE+RF，使用的测试数据集为KDD Cup'99和NSL-KDD。</p>
+<h1 id="auto-encoder算法">Auto-Encoder算法</h1>
+<h2 id="原算法">原算法</h2>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AANxQf.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AANxQf.png, https://s2.ax1x.com/2019/03/14/AANxQf.png 1.5x, https://s2.ax1x.com/2019/03/14/AANxQf.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AANxQf.png"
+        title="AANxQf.png"
+    /></p>
+<p>该算法有两个过程：Encoder和Decoder，Encoder过程为了让高维数据在低维中表示出来，Decoder过程将低维数据重新在高维中表示出来。
+即它尝试去学习：
+$$h_{W,b} \approx x \tag{1}$$
+h是非线性假设，W和b是权重和偏置。它的学习过程就是最小化损失函数：
+$$L(x,d(f(x))) \tag{2}$$
+其中，L是损失函数，d是解码函数，f是编码函数</p>
+<h2 id="本文的non-symmetric-deep-auto-envoder">本文的Non-Symmetric Deep Auto-Envoder</h2>
+<p>多个隐藏层，且只有编码，没有解码</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AAdCPs.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AAdCPs.png, https://s2.ax1x.com/2019/03/14/AAdCPs.png 1.5x, https://s2.ax1x.com/2019/03/14/AAdCPs.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AAdCPs.png"
+        title="AAdCPs.png"
+    /></p>
+<p>假设输入向量$x\in R^d$,它将一步一步匹配隐藏层$h_i \in R^{d_i}$，使用确定性函数表示如下：
+$$h_i=\sigma(W_ih_{i-1}+b_i);i=1,\dots,n \tag{3}$$
+这里$h_0=x,\sigma$是挤压函数，n是隐藏层数目。
+NDAE没有decoder,它的输出向量类似于如下函数，
+$$y=\sigma(W_{n+1}h_n+b_n+1) \tag{4}$$
+模型可通过最小重构误差获得：
+$$E(\theta)=\sum_{i=1}^{m}(x^{(i)}-y^{(i)})^2 \tag{5}$$</p>
+<p><strong>这里有个东西它没讲请楚隐藏层的结点数与输入层不一样就没法算误差，如果一样就失去降维意义了</strong></p>
+<p>本文件所使用的stack-NDAE,结构如下，它是将两个NDAE接起来，并将结果传给RF进行分类。</p>
+<p><a href="https://imgchr.com/i/AA0IVU" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AA0IVU.md.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AA0IVU.md.png, https://s2.ax1x.com/2019/03/14/AA0IVU.md.png 1.5x, https://s2.ax1x.com/2019/03/14/AA0IVU.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AA0IVU.md.png"
+        title="AA0IVU.md.png"
+    /></a></p>
+<h1 id="评估和结果">评估和结果</h1>
+<ul>
+<li>实现：GPU Tensorflow,64-bit Ubuntu 16.04,Intel Xeon 3.60GH,16GB RAM,NVIDIA GTX 750 GPU
+##数据集
+KDD Cup'99和NSL-KDD,数据集组成情况如下表</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AADT39.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AADT39.png, https://s2.ax1x.com/2019/03/14/AADT39.png 1.5x, https://s2.ax1x.com/2019/03/14/AADT39.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AADT39.png"
+        title="AADT39.png"
+    /></p>
+<p>高亮表示训练样例小于20个，在实验中被省略。</p>
+<h2 id="kdd-cup99测试">KDD CUP'99测试</h2>
+<p>评估5类分类性能，结果在表2中展示，可见我们的算法比DBN要好的多。</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AAHRDf.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AAHRDf.png, https://s2.ax1x.com/2019/03/14/AAHRDf.png 1.5x, https://s2.ax1x.com/2019/03/14/AAHRDf.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AAHRDf.png"
+        title="AAHRDf.png"
+    /></p>
+<p>在我们的方法中，整体准确率为85.42%，优于DBN。对于R2L和U2R，由于测试集太少，因此准确率低。
+性能比较在表3中：</p>
+<p><a href="https://imgchr.com/i/AAHT8s" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AAHT8s.md.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AAHT8s.md.png, https://s2.ax1x.com/2019/03/14/AAHT8s.md.png 1.5x, https://s2.ax1x.com/2019/03/14/AAHT8s.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AAHT8s.md.png"
+        title="AAHT8s.md.png"
+    /></a></p>
+<p>我们的方法比DBN节省了78.19%的时间。</p>
+<h2 id="nsl-kdd测试">NSL-KDD测试</h2>
+<ul>
+<li>5类分类，结果比较在表4中，ROC曲线比较在图5中</li>
+</ul>
+<p><a href="https://imgchr.com/i/AAbNGj" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AAbNGj.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AAbNGj.png, https://s2.ax1x.com/2019/03/14/AAbNGj.png 1.5x, https://s2.ax1x.com/2019/03/14/AAbNGj.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AAbNGj.png"
+        title="AAbNGj.png"
+    /></a></p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AAbazn.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AAbazn.png, https://s2.ax1x.com/2019/03/14/AAbazn.png 1.5x, https://s2.ax1x.com/2019/03/14/AAbazn.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AAbazn.png"
+        title="AAbazn.png"
+    /></p>
+<ul>
+<li>13类分类结果比较见表5，训练时间比较见表6</li>
+</ul>
+<p><a href="https://imgchr.com/i/AAqQfJ" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AAqQfJ.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AAqQfJ.png, https://s2.ax1x.com/2019/03/14/AAqQfJ.png 1.5x, https://s2.ax1x.com/2019/03/14/AAqQfJ.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AAqQfJ.png"
+        title="AAqQfJ.png"
+    /></a></p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/14/AAq861.png"
+        data-srcset="https://s2.ax1x.com/2019/03/14/AAq861.png, https://s2.ax1x.com/2019/03/14/AAq861.png 1.5x, https://s2.ax1x.com/2019/03/14/AAq861.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/14/AAq861.png"
+        title="AAq861.png"
+    /></p>
+<h2 id="未来工作处理zero-day-attack">未来工作：处理zero-day attack</h2>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/11_dl_ad/" class="prev" rel="prev" title="Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective"><i class="fas fa-angle-left fa-fw"></i>Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective</a>
+            <a href="/posts/org_01_hugo_install/" class="next" rel="next" title="hugo安装与入门">hugo安装与入门<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

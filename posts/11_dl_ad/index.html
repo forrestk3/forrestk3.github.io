@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective" />
+<meta property="og:description" content="Garg S , Kaur K , Kumar N , et al. Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective[J]. IEEE Transactions on Multimedia, 2019, 21(3):566-578. 本文利用受限波尔兹曼机进行异常检测。 异常检测模型 controller请求流统" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/11_dl_ad/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-25T18:32:36+08:00" />
+<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective"/>
+<meta name="twitter:description" content="Garg S , Kaur K , Kumar N , et al. Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective[J]. IEEE Transactions on Multimedia, 2019, 21(3):566-578. 本文利用受限波尔兹曼机进行异常检测。 异常检测模型 controller请求流统"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/11_dl_ad/" /><link rel="prev" href="/posts/10_packet_generation/" /><link rel="next" href="/posts/12_dl_ids/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/11_dl_ad\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  1615 ,
+        "url": "\/posts\/11_dl_ad\/","datePublished": "2019-08-25T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-08-25">2019-08-25</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1615 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#a-降维受限玻尔兹曼机rbm">A 降维：受限玻尔兹曼机（RBM）</a></li>
+    <li><a href="#b-分类svm">B. 分类：SVM</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#多对象流路由框架mofr">多对象流路由框架（MoFR)</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>Garg S , Kaur K , Kumar N , et al. Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective[J]. IEEE Transactions on Multimedia, 2019, 21(3):566-578.</p>
+</blockquote>
+<p>本文利用受限波尔兹曼机进行异常检测。</p>
+<h1 id="异常检测模型">异常检测模型</h1>
+<p>controller请求流统计信息，流收集模型收集并抽取特征，基于抽取的物征，利用改进的Restricted Boltzmann Machines进行降维，将结果交给本文提出的SVM算法中进行特征和行为分类，异常检测架构进行报告并通过安全通道发送给controller,controller根据报告进行更改流表和配置。
+下图是本框架的方法论：</p>
+<p><a href="https://imgchr.com/i/AiBh4A" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/12/AiBh4A.md.png"
+        data-srcset="https://s2.ax1x.com/2019/03/12/AiBh4A.md.png, https://s2.ax1x.com/2019/03/12/AiBh4A.md.png 1.5x, https://s2.ax1x.com/2019/03/12/AiBh4A.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/12/AiBh4A.md.png"
+        title="AiBh4A.md.png"
+    /></a></p>
+<h2 id="a-降维受限玻尔兹曼机rbm">A 降维：受限玻尔兹曼机（RBM）</h2>
+<p>设RBM有m个可见单元$v_i:[v_1,\dots,v_m]$和n个隐藏单元$h_j:h=[h_1,\dots,h_n]$。RBM的标准概率分布可表示为：
+$$P(h,v:\theta)=\frac{1}{Z(\theta)}exp(a^Th+b^Tv+v^TWh) \tag{1}$$
+W表示权重，a,b表示偏置值，Z区分函数（也叫归一化因子）$\theta=(W,a,b)$为模型参数。
+改进：随机进行Dropout,实现方法：向量$r \in {0,1}^n$p概率将其置1,将$r_j$关联到隐藏层的$h_j$,这时的联合概念分布为：
+$$P(r,h,v:p,\theta)=P(r;p)\mathcal{P}(h,v|r;\theta) \tag{2}$$
+where.
+$$P(r;p)=\sum_{j=1}^{n}p^{rj}(1-p)^{1-r_j} \tag{3}$$
+$$\mathcal{P}=\frac{1}{Z&rsquo;(\theta,r)}exp(a^Th+b^Tv+v^TWh) \times \sum_{j=1}^{n}g(h_j,r_j) \tag{4}$$
+其中
+$$f(x)=\left{
+\begin{aligned}
+h_j=1;if\ r_j = 1\
+h_j = 0;if\ r_j=0
+\end{aligned}
+\right. \tag{5}
+$$</p>
+<p>Z是归一化函数。经过Dropout后的RBM中h的激活概率：
+$$P(h|r,v)=\sum_{j=1}^{n}P(h_j|r,v) \tag{6}$$
+$$P(h_j=1|r,v)=\sigma(b_j+\sum_{i=1}^{m}w_{i,j}v_i);if\ r_j = 1 \tag{7}$$
+v的激活概率：
+$$P(v|h)=\sum_{i=1}^{m}P(v_i|h) \tag{8}$$
+$$P(v_i=1|h)=\sigma(a_i+\sum_{j=1}^{n}w_{i,j}h_j) \tag{9}$$
+当RBM训练完成后，它将输入向量转换为结果向量并传给SVM来进行更进一步的分类。
+使用RBM进行降维算法：</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkpBh8.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkpBh8.png, https://s2.ax1x.com/2019/03/13/AkpBh8.png 1.5x, https://s2.ax1x.com/2019/03/13/AkpBh8.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkpBh8.png"
+        title="AkpBh8.png"
+    /></p>
+<h2 id="b-分类svm">B. 分类：SVM</h2>
+<ul>
+<li>本SVM算法采用的核函数：
+$$k(x_j,x_k&rsquo;)=w_1exp[\frac{-||x_j-x&rsquo;_k||^2}{2\sigma ^2}]+w_2(1+x_j^Tx_k&rsquo;)^d \tag{10}$$
+该核函数结合了高斯核的局部性能和多项式核的合局性能。</li>
+<li>随机梯度下降算法：利用该算法最小化损失函数$C(\omega)$
+$$\omega_{t+1} \leftarrow \eta_t\Delta_{\omega}C(\omega_t) \tag{11}$$
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkiwrQ.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkiwrQ.png, https://s2.ax1x.com/2019/03/13/AkiwrQ.png 1.5x, https://s2.ax1x.com/2019/03/13/AkiwrQ.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkiwrQ.png"
+        title="AkiwrQ.png"
+    /></li>
+<li>模型参数
+使用Chaotic Differential Evolution处罚参数$C$,核函数中的$\sigma$,权重系数$w_1,w_2$进行优化。</li>
+</ul>
+<h1 id="数据传送模型">数据传送模型</h1>
+<p>分四个步骤：</p>
+<ul>
+<li>数据提取</li>
+<li>分类</li>
+<li>报告</li>
+<li>中继
+控制平面利用异常检测模型将流量分为良性和恶性，将结果报告到控制平面，对恶性流量进行丢弃，良性流量进行继续中继。</li>
+</ul>
+<h2 id="多对象流路由框架mofr">多对象流路由框架（MoFR)</h2>
+<p>MoFR提供了一个资源分布的最优化权衡</p>
+<ul>
+<li>
+<ol>
+<li>延迟最小化目标函数
+$$\mathbb{L}(\delta_{k,v}(t))=\left{
+\begin{aligned}
+&amp;(\sum_j \frac{d_{vi,vl}\times \delta_{k,vi}(t)\times \delta_{k,vl}(t)\times a_{i,l}}{\mathbb{P}r(t)})\
+&amp;+(\sum_{i \in w}\sum_{j\in|P(i)|}\frac{\mathcal{P}<em>{i,j}(t)}{B</em>{i,j}\times O_{i,j}(t)})\
+&amp;+(\sum_{i \in w}\sum_{j \in |P(i)|}\frac{|\mathbb{Q}<em>{ready}(t)|}{B</em>{i,j} \times O_{i,j}(t)})\
+&amp;+(\sum_{i \in w}\mathbb{P}<em>i(t)\times \sum_k(t_k^{end-t_k^{start}})\times \delta</em>{k,vi(t)})
+\end{aligned}
+\right.$$</li>
+</ol>
+</li>
+</ul>
+<p>$\delta_{k,v}(t)$是一个二元值，表示switch v是否在第$l$个流中被使用，是则值为1,否则为0。
+式中第一部分为传输时延，$d_{vi,vl}$表示第i和第l个switch距离(<strong>这里没讲清楚距离怎么计算</strong>),$\mathbb{P}r(t)$表示传输时延中位数。
+式中第二部分表示转换时延，$\mathcal{P}<em>{i,j}(t)$表示包大小，$O</em>{i,j}(t)$表示占有率
+式中第三部分表示查询时延，$|\mathbb{Q}_{ready}(t)|$表示队列中的流数量
+式中第四部分表示处理时延，$\mathbb{P}_i(t)$表示由第i个节点的处理时延，$t_k^{start}$表示开始时间</p>
+<ul>
+<li>
+<p>2）带宽最大化函数
+$$\mathbb{B}(\delta_{k,v}(t))=(\sum_{i \in w}\sum_{j \in |P(i)|}\sum_k B_{i,j} \times (t_k^{end} - t_k^{start})\times \delta_{k,vi}(t) \times \delta_{k,vl}(t)\times a_{i,l})$$</p>
+</li>
+<li>
+<ol start="3">
+<li>耗能最小化目标标函数
+$$\mathbb{E}(\delta_{k,v}(t))=(F\times \sum_k(t_k^{end}-t_k^{start})\times \delta_{k,vi}(t))+(D\times \sum_k(t_k^{end}-t_k^{start})\times \delta_{k,vi}(t)\times\delta_{k,vl}(t)\times a_{i,l})$$
+能耗由固定部分（风扇等）和动态部分组成（活动的端口数）F和D表示固定部分和静态部分所占的比例。</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>MoFR
+$$min\mathbb{F}(\delta_{k,v}(t))=f(-\mathbb{B}(\delta_{k,i}(t)),\mathbb{L}(\delta_{k,i}(t)),\mathbb{E}(\delta_{k,i}(t)))$$
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/Aku41A.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/Aku41A.png, https://s2.ax1x.com/2019/03/13/Aku41A.png 1.5x, https://s2.ax1x.com/2019/03/13/Aku41A.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/Aku41A.png"
+        title="Aku41A.png"
+    /></li>
+</ol>
+</li>
+</ul>
+<h1 id="实现">实现</h1>
+<p>（这里它并没有说是怎么实现的，只是说这么做，然后就给了个图）</p>
+<ul>
+<li>1）实时数据集
+该数据集是从Thapar Insitute of Engineering &amp; Technology处获得。
+观察异常流量所占比例图4a，比较RBM在使用Dropout和不使用的错误率图4b。</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkJ41O.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkJ41O.png, https://s2.ax1x.com/2019/03/13/AkJ41O.png 1.5x, https://s2.ax1x.com/2019/03/13/AkJ41O.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkJ41O.png"
+        title="AkJ41O.png"
+    /></p>
+<p>比较本文提出的方法，DRBM+GDSVM，RBM+GDSVM，RBM+SVM的侦测率图4c，正确率图4d，AUC图4e</p>
+<p><a href="https://imgchr.com/i/AkJj9f" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkJj9f.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkJj9f.png, https://s2.ax1x.com/2019/03/13/AkJj9f.png 1.5x, https://s2.ax1x.com/2019/03/13/AkJj9f.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkJj9f.png"
+        title="AkJj9f.png"
+    /></a></p>
+<p><a href="https://imgchr.com/i/AkJzjg" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkJzjg.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkJzjg.png, https://s2.ax1x.com/2019/03/13/AkJzjg.png 1.5x, https://s2.ax1x.com/2019/03/13/AkJzjg.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkJzjg.png"
+        title="AkJzjg.png"
+    /></a></p>
+<p>比较SDN和传统网中延迟图4f，带宽图4g，能耗图4h</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkYiEn.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkYiEn.png, https://s2.ax1x.com/2019/03/13/AkYiEn.png 1.5x, https://s2.ax1x.com/2019/03/13/AkYiEn.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkYiEn.png"
+        title="AkYiEn.png"
+    /></p>
+<ul>
+<li>2）标准数据集KDD'99
+比较我们的方法和其他人的方法的侦测率(DR),FPR,准确率，精确率，F值。</li>
+</ul>
+<p><a href="https://imgchr.com/i/AkY14x" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkY14x.md.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkY14x.md.png, https://s2.ax1x.com/2019/03/13/AkY14x.md.png 1.5x, https://s2.ax1x.com/2019/03/13/AkY14x.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkY14x.md.png"
+        title="AkY14x.md.png"
+    /></a></p>
+<p>本文中方法对各种攻击的侦测率图5a，误判率图5b,准确率图5c，精确率图5d，F值图5e</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkN43V.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkN43V.png, https://s2.ax1x.com/2019/03/13/AkN43V.png 1.5x, https://s2.ax1x.com/2019/03/13/AkN43V.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkN43V.png"
+        title="AkN43V.png"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkNj9x.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkNj9x.png, https://s2.ax1x.com/2019/03/13/AkNj9x.png 1.5x, https://s2.ax1x.com/2019/03/13/AkNj9x.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkNj9x.png"
+        title="AkNj9x.png"
+    /></p>
+<ul>
+<li>
+<ol start="3">
+<li>CMU insider threat dataset
+对三个场景下与Deep Autoencoder进行性能比较
+场景1：uncharacteristic behavior
+场景2：steals confidential data
+场景3:install keylogger to obtain the password</li>
+</ol>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/03/13/AkaisU.png"
+        data-srcset="https://s2.ax1x.com/2019/03/13/AkaisU.png, https://s2.ax1x.com/2019/03/13/AkaisU.png 1.5x, https://s2.ax1x.com/2019/03/13/AkaisU.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/03/13/AkaisU.png"
+        title="AkaisU.png"
+    /></p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/11_dl_ad/" data-title="Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/11_dl_ad/" data-title="Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/11_dl_ad/" data-title="Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/11_dl_ad/" data-title="Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/10_packet_generation/" class="prev" rel="prev" title="Automatic test packet generation"><i class="fas fa-angle-left fa-fw"></i>Automatic test packet generation</a>
+            <a href="/posts/12_dl_ids/" class="next" rel="next" title="A Deep Learning Approach to Network Intrusion Detection">A Deep Learning Approach to Network Intrusion Detection<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>
