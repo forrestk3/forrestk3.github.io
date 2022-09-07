@@ -5,34 +5,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">A Deep Learning Approach to Network Intrusion Detection - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="A Deep Learning Approach to Network Intrusion Detection" />
-<meta property="og:description" content="Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50. 本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行" />
+    <title class="pjax-title">Tool support for the evaluation of anomaly traffic classification for network resilience - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Tool support for the evaluation of anomaly traffic classification for network resilience" />
+<meta property="og:description" content="Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp; Communication. 2015. Tool support for the evaluation of anomaly traffic classification for network resilience 标签（空格分隔）： security Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/12_dl_ids/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-08-26T18:32:36+08:00" />
+<meta property="og:url" content="/posts/20_ad_classification/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-02T18:32:36+08:00" />
 <meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A Deep Learning Approach to Network Intrusion Detection"/>
-<meta name="twitter:description" content="Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50. 本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行"/>
+<meta name="twitter:title" content="Tool support for the evaluation of anomaly traffic classification for network resilience"/>
+<meta name="twitter:description" content="Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp; Communication. 2015. Tool support for the evaluation of anomaly traffic classification for network resilience 标签（空格分隔）： security Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for"/>
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
 <meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/12_dl_ids/" /><link rel="prev" href="/posts/11_dl_ad/" /><link rel="next" href="/posts/13_ad_svm_tdsc/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/20_ad_classification/" /><link rel="prev" href="/posts/19_sphinx/" /><link rel="next" href="/posts/org_01_hugo_install/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "A Deep Learning Approach to Network Intrusion Detection",
+        "headline": "Tool support for the evaluation of anomaly traffic classification for network resilience",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "\/posts\/12_dl_ids\/"
-        },"genre": "posts","keywords": "论文阅读","wordcount":  879 ,
-        "url": "\/posts\/12_dl_ids\/","datePublished": "2019-08-26T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@id": "\/posts\/20_ad_classification\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  1088 ,
+        "url": "\/posts\/20_ad_classification\/","datePublished": "2019-09-02T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
                 "@type": "Person",
@@ -113,12 +113,12 @@
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">Contents</h2>
         <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A Deep Learning Approach to Network Intrusion Detection</h1><div class="post-meta">
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Tool support for the evaluation of anomaly traffic classification for network resilience</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
                 </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-08-26">2019-08-26</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;879 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-02">2019-09-02</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1088 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -126,151 +126,113 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#当前网络安全的主要挑战">当前网络安全的主要挑战</a></li>
+    <li><a href="#silva-a-s-d-wickboldt-j-a-schaefferfilho-a-et-al-tool-support-for-the-evaluation-of-anomaly-traffic-classification-for-network-resiliencec-computers--communication-2015">标签（空格分隔）： security
+Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp; Communication. 2015.</a></li>
   </ul>
 
   <ul>
-    <li><a href="#原算法">原算法</a></li>
-    <li><a href="#本文的non-symmetric-deep-auto-envoder">本文的Non-Symmetric Deep Auto-Envoder</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#kdd-cup99测试">KDD CUP'99测试</a></li>
-    <li><a href="#nsl-kdd测试">NSL-KDD测试</a></li>
-    <li><a href="#未来工作处理zero-day-attack">未来工作：处理zero-day attack</a></li>
+    <li><a href="#prototype-implementation-and-evaluation-set-up">Prototype implementation and evaluation set-up</a></li>
+    <li><a href="#preliminary-analysis-and-feature-selection">Preliminary analysis and feature selection</a></li>
+    <li><a href="#k-means分析">K-means分析</a></li>
+    <li><a href="#naive-bayes-analysis">Naive Bayes analysis</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
-<p>Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50.</p>
+<p>Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp; Communication. 2015.</p>
 </blockquote>
-<p>本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行分类的一种入侵检测方法。</p>
-<h1 id="基本知识介绍">基本知识介绍</h1>
-<h2 id="当前网络安全的主要挑战">当前网络安全的主要挑战</h2>
-<ul>
-<li>网络流量的激增</li>
-<li>更深入和更细粒度监控的需求</li>
-<li>协议的多种多样和数据的多元化</li>
-</ul>
-<p>本文提出一种深度和浅度学习结合的方法：NDAE+RF，使用的测试数据集为KDD Cup'99和NSL-KDD。</p>
-<h1 id="auto-encoder算法">Auto-Encoder算法</h1>
-<h2 id="原算法">原算法</h2>
-<p><img
+<h1 id="tool-support-for-the-evaluation-of-anomaly-traffic-classification-for-network-resilience">Tool support for the evaluation of anomaly traffic classification for network resilience</h1>
+<h2 id="silva-a-s-d-wickboldt-j-a-schaefferfilho-a-et-al-tool-support-for-the-evaluation-of-anomaly-traffic-classification-for-network-resiliencec-computers--communication-2015">标签（空格分隔）： security
+Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp; Communication. 2015.</h2>
+<p>觉得本文一般，作者对PReSET这篇论文提出的工具进行修改。PReSET是一个对网络可恢复力评估的一个工具，本文利用它来进行流量分类算法的评估。</p>
+<h1 id="introduction">Introduction</h1>
+<p>PReSET是一个可以离线评估的工具，网络管理员可以据此对网络配置进行优化，本文对PReSET进行拓展，将其作为工具，并使其可以分析多个异常分类的算法。（意思就是他对别人的东西稍稍加了点东本。）</p>
+<h1 id="preseta-network-resilience-simulator">PRESET:A network resilience simulator</h1>
+<p>PRESET是基于OMNeT++网络模拟器和Ponder2策略框架的一个整合，支持网络攻击的模拟和对相应恢复策略的评估。PReSET可以找到最优策略并找出最优配置参数。在OMNeT++中运行的策略程序产生事件，这些事件指的是一个观测条件，如检测到一个异常。事件可触发条事件行为，这个行为决定哪个策力应该被重新配置和如何配置，XML-RPL 服务器对每个策力提供管理接口。Ponder2使用这些接口进行管理以及适应当前网络，如：调整参数。本文使用K-means和NaiveBayes进行测试。</p>
+<h1 id="实现和实验结果">实现和实验结果</h1>
+<h2 id="prototype-implementation-and-evaluation-set-up">Prototype implementation and evaluation set-up</h2>
+<p><a href="https://imgchr.com/i/AoncFS" target="_blank" rel="noopener noreffer"><img
         class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AANxQf.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AANxQf.png, https://s2.ax1x.com/2019/03/14/AANxQf.png 1.5x, https://s2.ax1x.com/2019/03/14/AANxQf.png 2x"
+        data-src="https://s2.ax1x.com/2019/04/09/AoncFS.png"
+        data-srcset="https://s2.ax1x.com/2019/04/09/AoncFS.png, https://s2.ax1x.com/2019/04/09/AoncFS.png 1.5x, https://s2.ax1x.com/2019/04/09/AoncFS.png 2x"
         data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AANxQf.png"
-        title="AANxQf.png"
-    /></p>
-<p>该算法有两个过程：Encoder和Decoder，Encoder过程为了让高维数据在低维中表示出来，Decoder过程将低维数据重新在高维中表示出来。
-即它尝试去学习：
-$$h_{W,b} \approx x \tag{1}$$
-h是非线性假设，W和b是权重和偏置。它的学习过程就是最小化损失函数：
-$$L(x,d(f(x))) \tag{2}$$
-其中，L是损失函数，d是解码函数，f是编码函数</p>
-<h2 id="本文的non-symmetric-deep-auto-envoder">本文的Non-Symmetric Deep Auto-Envoder</h2>
-<p>多个隐藏层，且只有编码，没有解码</p>
-<p><img
+        alt="https://s2.ax1x.com/2019/04/09/AoncFS.png"
+        title="AoncFS.png"
+    /></a>
+图1是分类器和PReSET整合的整体视图，Classifier与FlowExporter共同运作，Classifier(可以是多个)定期从FlowExporter抽取流特征的统计并进行分类，当有恶意流出现时，一个事件就会发送给Ponder2,ECA policies就会决定如何修改网络配置，这里XMLRPC就是交互接口。本实验中模拟的DDoS，其基本信息在表1中。<img
         class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAdCPs.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAdCPs.png, https://s2.ax1x.com/2019/03/14/AAdCPs.png 1.5x, https://s2.ax1x.com/2019/03/14/AAdCPs.png 2x"
+        data-src="https://s2.ax1x.com/2019/04/09/Aourc9.png"
+        data-srcset="https://s2.ax1x.com/2019/04/09/Aourc9.png, https://s2.ax1x.com/2019/04/09/Aourc9.png 1.5x, https://s2.ax1x.com/2019/04/09/Aourc9.png 2x"
         data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAdCPs.png"
-        title="AAdCPs.png"
-    /></p>
-<p>假设输入向量$x\in R^d$,它将一步一步匹配隐藏层$h_i \in R^{d_i}$，使用确定性函数表示如下：
-$$h_i=\sigma(W_ih_{i-1}+b_i);i=1,\dots,n \tag{3}$$
-这里$h_0=x,\sigma$是挤压函数，n是隐藏层数目。
-NDAE没有decoder,它的输出向量类似于如下函数，
-$$y=\sigma(W_{n+1}h_n+b_n+1) \tag{4}$$
-模型可通过最小重构误差获得：
-$$E(\theta)=\sum_{i=1}^{m}(x^{(i)}-y^{(i)})^2 \tag{5}$$</p>
-<p><strong>这里有个东西它没讲请楚隐藏层的结点数与输入层不一样就没法算误差，如果一样就失去降维意义了</strong></p>
-<p>本文件所使用的stack-NDAE,结构如下，它是将两个NDAE接起来，并将结果传给RF进行分类。</p>
-<p><a href="https://imgchr.com/i/AA0IVU" target="_blank" rel="noopener noreffer"><img
+        alt="https://s2.ax1x.com/2019/04/09/Aourc9.png"
+        title="Aourc9.png"
+    />
+模拟实验中有912个主机和82个网络服务器，188个routers，流量参数见表2。
+<img
         class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AA0IVU.md.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AA0IVU.md.png, https://s2.ax1x.com/2019/03/14/AA0IVU.md.png 1.5x, https://s2.ax1x.com/2019/03/14/AA0IVU.md.png 2x"
+        data-src="https://s2.ax1x.com/2019/04/09/AoubHP.png"
+        data-srcset="https://s2.ax1x.com/2019/04/09/AoubHP.png, https://s2.ax1x.com/2019/04/09/AoubHP.png 1.5x, https://s2.ax1x.com/2019/04/09/AoubHP.png 2x"
         data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AA0IVU.md.png"
-        title="AA0IVU.md.png"
+        alt="https://s2.ax1x.com/2019/04/09/AoubHP.png"
+        title="AoubHP.png"
+    />
+843个流中有32个恶意流，已被标记每个都是单向的。</p>
+<h2 id="preliminary-analysis-and-feature-selection">Preliminary analysis and feature selection</h2>
+<p>每个流都由5元组表示（dIP,sIP,dPORT,sPORT,prot），收集特征为：packet count,byte count,flow duration,mean packet inter-arrival-time。每个特征的二组分布图见图2.
+<a href="https://imgchr.com/i/AoK0VP" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/09/AoK0VP.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/09/AoK0VP.md.png, https://s2.ax1x.com/2019/04/09/AoK0VP.md.png 1.5x, https://s2.ax1x.com/2019/04/09/AoK0VP.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/09/AoK0VP.md.png"
+        title="AoK0VP.md.png"
+    /></a>
+由图可见，packet count和 byte count可以更好地区分流。</p>
+<h2 id="k-means分析">K-means分析</h2>
+<p>当设置k=2时结果如图3,恶意流都被区分，但也有部分良性流被区分为恶意流。当k=3时，之前被误分的流现在被分为一个新类，结果见图4,这就很好地将流区分开了。图6是分类结果评估，
+<a href="https://imgchr.com/i/AoKva6" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/09/AoKva6.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/09/AoKva6.md.png, https://s2.ax1x.com/2019/04/09/AoKva6.md.png 1.5x, https://s2.ax1x.com/2019/04/09/AoKva6.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/09/AoKva6.md.png"
+        title="AoKva6.md.png"
+    /></a>
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/09/AoMpGD.png"
+        data-srcset="https://s2.ax1x.com/2019/04/09/AoMpGD.png, https://s2.ax1x.com/2019/04/09/AoMpGD.png 1.5x, https://s2.ax1x.com/2019/04/09/AoMpGD.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/09/AoMpGD.png"
+        title="AoMpGD.png"
+    />
+该算法的缺点是确定中心点个数比较困 难，如图5中k=5，这时恶性流被强行分为了两类，也就是过拟合。
+<a href="https://imgchr.com/i/AoMkqI" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/09/AoMkqI.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/09/AoMkqI.md.png, https://s2.ax1x.com/2019/04/09/AoMkqI.md.png 1.5x, https://s2.ax1x.com/2019/04/09/AoMkqI.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/09/AoMkqI.md.png"
+        title="AoMkqI.md.png"
     /></a></p>
-<h1 id="评估和结果">评估和结果</h1>
-<ul>
-<li>实现：GPU Tensorflow,64-bit Ubuntu 16.04,Intel Xeon 3.60GH,16GB RAM,NVIDIA GTX 750 GPU
-##数据集
-KDD Cup'99和NSL-KDD,数据集组成情况如下表</li>
-</ul>
-<p><img
+<h2 id="naive-bayes-analysis">Naive Bayes analysis</h2>
+<p>该方法作为一个补充方法，单独提供训练集，上一节的流作为测试集，结果见图7,当结果为0时这里将其处理为良性流。
+<img
         class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AADT39.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AADT39.png, https://s2.ax1x.com/2019/03/14/AADT39.png 1.5x, https://s2.ax1x.com/2019/03/14/AADT39.png 2x"
+        data-src="https://s2.ax1x.com/2019/04/09/AoMowt.png"
+        data-srcset="https://s2.ax1x.com/2019/04/09/AoMowt.png, https://s2.ax1x.com/2019/04/09/AoMowt.png 1.5x, https://s2.ax1x.com/2019/04/09/AoMowt.png 2x"
         data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AADT39.png"
-        title="AADT39.png"
+        alt="https://s2.ax1x.com/2019/04/09/AoMowt.png"
+        title="AoMowt.png"
+    />
+结果评估见图8
+<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/09/AoQm01.png"
+        data-srcset="https://s2.ax1x.com/2019/04/09/AoQm01.png, https://s2.ax1x.com/2019/04/09/AoQm01.png 1.5x, https://s2.ax1x.com/2019/04/09/AoQm01.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/09/AoQm01.png"
+        title="AoQm01.png"
     /></p>
-<p>高亮表示训练样例小于20个，在实验中被省略。</p>
-<h2 id="kdd-cup99测试">KDD CUP'99测试</h2>
-<p>评估5类分类性能，结果在表2中展示，可见我们的算法比DBN要好的多。</p>
-<p><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAHRDf.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAHRDf.png, https://s2.ax1x.com/2019/03/14/AAHRDf.png 1.5x, https://s2.ax1x.com/2019/03/14/AAHRDf.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAHRDf.png"
-        title="AAHRDf.png"
-    /></p>
-<p>在我们的方法中，整体准确率为85.42%，优于DBN。对于R2L和U2R，由于测试集太少，因此准确率低。
-性能比较在表3中：</p>
-<p><a href="https://imgchr.com/i/AAHT8s" target="_blank" rel="noopener noreffer"><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAHT8s.md.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAHT8s.md.png, https://s2.ax1x.com/2019/03/14/AAHT8s.md.png 1.5x, https://s2.ax1x.com/2019/03/14/AAHT8s.md.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAHT8s.md.png"
-        title="AAHT8s.md.png"
-    /></a></p>
-<p>我们的方法比DBN节省了78.19%的时间。</p>
-<h2 id="nsl-kdd测试">NSL-KDD测试</h2>
-<ul>
-<li>5类分类，结果比较在表4中，ROC曲线比较在图5中</li>
-</ul>
-<p><a href="https://imgchr.com/i/AAbNGj" target="_blank" rel="noopener noreffer"><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAbNGj.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAbNGj.png, https://s2.ax1x.com/2019/03/14/AAbNGj.png 1.5x, https://s2.ax1x.com/2019/03/14/AAbNGj.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAbNGj.png"
-        title="AAbNGj.png"
-    /></a></p>
-<p><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAbazn.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAbazn.png, https://s2.ax1x.com/2019/03/14/AAbazn.png 1.5x, https://s2.ax1x.com/2019/03/14/AAbazn.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAbazn.png"
-        title="AAbazn.png"
-    /></p>
-<ul>
-<li>13类分类结果比较见表5，训练时间比较见表6</li>
-</ul>
-<p><a href="https://imgchr.com/i/AAqQfJ" target="_blank" rel="noopener noreffer"><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAqQfJ.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAqQfJ.png, https://s2.ax1x.com/2019/03/14/AAqQfJ.png 1.5x, https://s2.ax1x.com/2019/03/14/AAqQfJ.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAqQfJ.png"
-        title="AAqQfJ.png"
-    /></a></p>
-<p><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAq861.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAq861.png, https://s2.ax1x.com/2019/03/14/AAq861.png 1.5x, https://s2.ax1x.com/2019/03/14/AAq861.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAq861.png"
-        title="AAq861.png"
-    /></p>
-<h2 id="未来工作处理zero-day-attack">未来工作：处理zero-day attack</h2>
 </div>
 
         <div class="sponsor">
@@ -288,7 +250,7 @@ KDD Cup'99和NSL-KDD,数据集组成情况如下表</li>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/20_ad_classification/" data-title="Tool support for the evaluation of anomaly traffic classification for network resilience" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/20_ad_classification/" data-title="Tool support for the evaluation of anomaly traffic classification for network resilience"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/20_ad_classification/" data-title="Tool support for the evaluation of anomaly traffic classification for network resilience" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/20_ad_classification/" data-title="Tool support for the evaluation of anomaly traffic classification for network resilience"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -300,8 +262,8 @@ KDD Cup'99和NSL-KDD,数据集组成情况如下表</li>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/11_dl_ad/" class="prev" rel="prev" title="Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective"><i class="fas fa-angle-left fa-fw"></i>Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective</a>
-            <a href="/posts/13_ad_svm_tdsc/" class="next" rel="next" title="Adaptive Performance Anomaly Detection in Distributed Systems Using Online SVMs">Adaptive Performance Anomaly Detection in Distributed Systems Using Online SVMs<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/posts/19_sphinx/" class="prev" rel="prev" title="SPHINX: Detecting Security Attacks in Software-Defined Networks"><i class="fas fa-angle-left fa-fw"></i>SPHINX: Detecting Security Attacks in Software-Defined Networks</a>
+            <a href="/posts/org_01_hugo_install/" class="next" rel="next" title="hugo安装与入门">hugo安装与入门<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="utterances"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.

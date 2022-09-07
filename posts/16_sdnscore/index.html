@@ -5,34 +5,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">A Deep Learning Approach to Network Intrusion Detection - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="A Deep Learning Approach to Network Intrusion Detection" />
-<meta property="og:description" content="Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50. 本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行" />
+    <title class="pjax-title">SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment" />
+<meta property="og:description" content="Kalkan K , Gur G , Alagoz F . SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment[C]// 2017 IEEE Symposium on Computers and Communications (ISCC). IEEE, 2017. 本文是JESS那篇对应的会议文章，记一下主要思想。 SDNScore Mechanism 本机制由switch中的p" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/12_dl_ids/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-08-26T18:32:36+08:00" />
+<meta property="og:url" content="/posts/16_sdnscore/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-29T18:32:36+08:00" />
 <meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A Deep Learning Approach to Network Intrusion Detection"/>
-<meta name="twitter:description" content="Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50. 本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行"/>
+<meta name="twitter:title" content="SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment"/>
+<meta name="twitter:description" content="Kalkan K , Gur G , Alagoz F . SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment[C]// 2017 IEEE Symposium on Computers and Communications (ISCC). IEEE, 2017. 本文是JESS那篇对应的会议文章，记一下主要思想。 SDNScore Mechanism 本机制由switch中的p"/>
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
 <meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/12_dl_ids/" /><link rel="prev" href="/posts/11_dl_ad/" /><link rel="next" href="/posts/13_ad_svm_tdsc/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/16_sdnscore/" /><link rel="prev" href="/posts/15_atlantic/" /><link rel="next" href="/posts/17_sdn-rdcd_ton/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "A Deep Learning Approach to Network Intrusion Detection",
+        "headline": "SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "\/posts\/12_dl_ids\/"
-        },"genre": "posts","keywords": "论文阅读","wordcount":  879 ,
-        "url": "\/posts\/12_dl_ids\/","datePublished": "2019-08-26T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@id": "\/posts\/16_sdnscore\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  1545 ,
+        "url": "\/posts\/16_sdnscore\/","datePublished": "2019-08-29T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
                 "@type": "Person",
@@ -113,12 +113,12 @@
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">Contents</h2>
         <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A Deep Learning Approach to Network Intrusion Detection</h1><div class="post-meta">
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
                 </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-08-26">2019-08-26</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;879 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-08-29">2019-08-29</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1545 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -126,151 +126,91 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#当前网络安全的主要挑战">当前网络安全的主要挑战</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#原算法">原算法</a></li>
-    <li><a href="#本文的non-symmetric-deep-auto-envoder">本文的Non-Symmetric Deep Auto-Envoder</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#kdd-cup99测试">KDD CUP'99测试</a></li>
-    <li><a href="#nsl-kdd测试">NSL-KDD测试</a></li>
-    <li><a href="#未来工作处理zero-day-attack">未来工作：处理zero-day attack</a></li>
+    <li><a href="#switch中的机制">Switch中的机制</a></li>
+    <li><a href="#controller中的机制pairprofiler">Controller中的机制：PairProfiler</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
-<p>Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50.</p>
+<p>Kalkan K , Gur G , Alagoz F . SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment[C]// 2017 IEEE Symposium on Computers and Communications (ISCC). IEEE, 2017.</p>
 </blockquote>
-<p>本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行分类的一种入侵检测方法。</p>
-<h1 id="基本知识介绍">基本知识介绍</h1>
-<h2 id="当前网络安全的主要挑战">当前网络安全的主要挑战</h2>
-<ul>
-<li>网络流量的激增</li>
-<li>更深入和更细粒度监控的需求</li>
-<li>协议的多种多样和数据的多元化</li>
-</ul>
-<p>本文提出一种深度和浅度学习结合的方法：NDAE+RF，使用的测试数据集为KDD Cup'99和NSL-KDD。</p>
-<h1 id="auto-encoder算法">Auto-Encoder算法</h1>
-<h2 id="原算法">原算法</h2>
-<p><img
+<p>本文是JESS那篇对应的会议文章，记一下主要思想。</p>
+<h1 id="sdnscore-mechanism">SDNScore Mechanism</h1>
+<p>本机制由switch中的profiler,actuator,comparator,scorer和controller中的PairProfiler组成，用于检测DDoS及其缓解。整个机制图解见图1.</p>
+<p><a href="https://imgchr.com/i/AwGeH0" target="_blank" rel="noopener noreffer"><img
         class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AANxQf.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AANxQf.png, https://s2.ax1x.com/2019/03/14/AANxQf.png 1.5x, https://s2.ax1x.com/2019/03/14/AANxQf.png 2x"
+        data-src="https://s2.ax1x.com/2019/03/28/AwGeH0.md.png"
+        data-srcset="https://s2.ax1x.com/2019/03/28/AwGeH0.md.png, https://s2.ax1x.com/2019/03/28/AwGeH0.md.png 1.5x, https://s2.ax1x.com/2019/03/28/AwGeH0.md.png 2x"
         data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AANxQf.png"
-        title="AANxQf.png"
-    /></p>
-<p>该算法有两个过程：Encoder和Decoder，Encoder过程为了让高维数据在低维中表示出来，Decoder过程将低维数据重新在高维中表示出来。
-即它尝试去学习：
-$$h_{W,b} \approx x \tag{1}$$
-h是非线性假设，W和b是权重和偏置。它的学习过程就是最小化损失函数：
-$$L(x,d(f(x))) \tag{2}$$
-其中，L是损失函数，d是解码函数，f是编码函数</p>
-<h2 id="本文的non-symmetric-deep-auto-envoder">本文的Non-Symmetric Deep Auto-Envoder</h2>
-<p>多个隐藏层，且只有编码，没有解码</p>
-<p><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAdCPs.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAdCPs.png, https://s2.ax1x.com/2019/03/14/AAdCPs.png 1.5x, https://s2.ax1x.com/2019/03/14/AAdCPs.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAdCPs.png"
-        title="AAdCPs.png"
-    /></p>
-<p>假设输入向量$x\in R^d$,它将一步一步匹配隐藏层$h_i \in R^{d_i}$，使用确定性函数表示如下：
-$$h_i=\sigma(W_ih_{i-1}+b_i);i=1,\dots,n \tag{3}$$
-这里$h_0=x,\sigma$是挤压函数，n是隐藏层数目。
-NDAE没有decoder,它的输出向量类似于如下函数，
-$$y=\sigma(W_{n+1}h_n+b_n+1) \tag{4}$$
-模型可通过最小重构误差获得：
-$$E(\theta)=\sum_{i=1}^{m}(x^{(i)}-y^{(i)})^2 \tag{5}$$</p>
-<p><strong>这里有个东西它没讲请楚隐藏层的结点数与输入层不一样就没法算误差，如果一样就失去降维意义了</strong></p>
-<p>本文件所使用的stack-NDAE,结构如下，它是将两个NDAE接起来，并将结果传给RF进行分类。</p>
-<p><a href="https://imgchr.com/i/AA0IVU" target="_blank" rel="noopener noreffer"><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AA0IVU.md.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AA0IVU.md.png, https://s2.ax1x.com/2019/03/14/AA0IVU.md.png 1.5x, https://s2.ax1x.com/2019/03/14/AA0IVU.md.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AA0IVU.md.png"
-        title="AA0IVU.md.png"
+        alt="https://s2.ax1x.com/2019/03/28/AwGeH0.md.png"
+        title="AwGeH0.md.png"
     /></a></p>
-<h1 id="评估和结果">评估和结果</h1>
+<h2 id="switch中的机制">Switch中的机制</h2>
 <ul>
-<li>实现：GPU Tensorflow,64-bit Ubuntu 16.04,Intel Xeon 3.60GH,16GB RAM,NVIDIA GTX 750 GPU
-##数据集
-KDD Cup'99和NSL-KDD,数据集组成情况如下表</li>
+<li>
+<p><em>Profiler</em>
+在无攻击期间switch会有一个统计period,作为正常阶段一个时间间隔的特征统计参考值，本文中switch中的profile存储8个特征的统计：source IP,destination IP,source port,destination port,proto-col type,packet size,TTL valueand，TCP flag.与此同时，该期间Profiler会将收到的所有包头发给controller,controller会根据收到的headers形成pairProfile，如以上8个特征，controller会存储$\left( \begin{aligned} 8\2 \end{aligned}\right)=28$个表，而每个switch而要存储8个表。Profiler会在整个阶段都要运行，如<em>acturator</em>阶段会用来形成当前的profile。PariProfile用来进行流量分析和被其他模块使用，profile用来进行选择最适合的属性。</p>
+</li>
+<li>
+<p><em>Acturator:<em>监控网络带宽，当带宽超过一个阈值时，即激活</em>comparator</em>和<em>profiler</em>，<em>profiler</em>形成当前的profile.当流量强度回归正常时，它便让其他模块进入备用状态，系统停在基于流的监控状态。</p>
+</li>
+<li>
+<p><em>Comparator:<em>当发生拥塞时，<em>acturator</em>激活这个模块，它通过比较nominal profile和current profile来决定可疑属性对：与nominal profile偏移地最远的那个，记为SuspiciousPair。然后向controller请求这个属性对的nominal profile（controller中是以属性对的形式存储的），然后</em>scorer</em>进行面向包的检察和选择性攻击。</p>
+</li>
+<li>
+<p><em>Scorer:</em> 本部分由三个小模块组成：计算打分，计算阈值，选择性丢弃包。、
+**计算打分：**假设SuspiciousPair属性对$A=a_p,B=b_p$，而打分$S_p$计算为：
+$$S_p=\frac{PNP_{(A=a_p,B=b_p)}/TPNP}{PCP_{(A=a_p,B=b_p,\dots)}/TPCP} \tag{1}$$
+**计算阈值：**本部分利用load shedding algorithm算法计算。阈值Th，使$CDF(Th)=\Phi$,$\Phi$是被丢弃的比例，$\phi$是需要接受的流量，$\varphi$是当前进入的流量，可通过 流量可表示成：$1-\Phi=\frac{\phi}{\varphi}$
+**选择性丢弃：**如果打分超过阈值，则丢弃。
+符号对应讲解：</p>
+</li>
 </ul>
 <p><img
         class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AADT39.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AADT39.png, https://s2.ax1x.com/2019/03/14/AADT39.png 1.5x, https://s2.ax1x.com/2019/03/14/AADT39.png 2x"
+        data-src="https://s2.ax1x.com/2019/07/27/eKT7rt.png"
+        data-srcset="https://s2.ax1x.com/2019/07/27/eKT7rt.png, https://s2.ax1x.com/2019/07/27/eKT7rt.png 1.5x, https://s2.ax1x.com/2019/07/27/eKT7rt.png 2x"
         data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AADT39.png"
-        title="AADT39.png"
+        alt="https://s2.ax1x.com/2019/07/27/eKT7rt.png"
+        title="eKT7rt.png"
     /></p>
-<p>高亮表示训练样例小于20个，在实验中被省略。</p>
-<h2 id="kdd-cup99测试">KDD CUP'99测试</h2>
-<p>评估5类分类性能，结果在表2中展示，可见我们的算法比DBN要好的多。</p>
+<h2 id="controller中的机制pairprofiler">Controller中的机制：PairProfiler</h2>
+<p>计算PairProfile会使Controller有额外负担，但只在nominal period这样，当comparator请求 某个SuspiciousPair时，再将相应的信息发给他。</p>
+<h1 id="开销计算">开销计算</h1>
+<p>在假设通信协议为IPv6，在TPNP=5000时经计算总开销为：920KB，可以忽略不计。</p>
+<p>#实现
+网络拓扑如图2，数据集MAWI，与JESS里用的一样。</p>
 <p><img
         class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAHRDf.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAHRDf.png, https://s2.ax1x.com/2019/03/14/AAHRDf.png 1.5x, https://s2.ax1x.com/2019/03/14/AAHRDf.png 2x"
+        data-src="https://s2.ax1x.com/2019/03/28/AwyA0O.png"
+        data-srcset="https://s2.ax1x.com/2019/03/28/AwyA0O.png, https://s2.ax1x.com/2019/03/28/AwyA0O.png 1.5x, https://s2.ax1x.com/2019/03/28/AwyA0O.png 2x"
         data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAHRDf.png"
-        title="AAHRDf.png"
+        alt="https://s2.ax1x.com/2019/03/28/AwyA0O.png"
+        title="AwyA0O.png"
     /></p>
-<p>在我们的方法中，整体准确率为85.42%，优于DBN。对于R2L和U2R，由于测试集太少，因此准确率低。
-性能比较在表3中：</p>
-<p><a href="https://imgchr.com/i/AAHT8s" target="_blank" rel="noopener noreffer"><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAHT8s.md.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAHT8s.md.png, https://s2.ax1x.com/2019/03/14/AAHT8s.md.png 1.5x, https://s2.ax1x.com/2019/03/14/AAHT8s.md.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAHT8s.md.png"
-        title="AAHT8s.md.png"
-    /></a></p>
-<p>我们的方法比DBN节省了78.19%的时间。</p>
-<h2 id="nsl-kdd测试">NSL-KDD测试</h2>
-<ul>
-<li>5类分类，结果比较在表4中，ROC曲线比较在图5中</li>
-</ul>
-<p><a href="https://imgchr.com/i/AAbNGj" target="_blank" rel="noopener noreffer"><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAbNGj.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAbNGj.png, https://s2.ax1x.com/2019/03/14/AAbNGj.png 1.5x, https://s2.ax1x.com/2019/03/14/AAbNGj.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAbNGj.png"
-        title="AAbNGj.png"
-    /></a></p>
+<p>结果对比见表2：</p>
 <p><img
         class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAbazn.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAbazn.png, https://s2.ax1x.com/2019/03/14/AAbazn.png 1.5x, https://s2.ax1x.com/2019/03/14/AAbazn.png 2x"
+        data-src="https://s2.ax1x.com/2019/03/28/AwyetH.png"
+        data-srcset="https://s2.ax1x.com/2019/03/28/AwyetH.png, https://s2.ax1x.com/2019/03/28/AwyetH.png 1.5x, https://s2.ax1x.com/2019/03/28/AwyetH.png 2x"
         data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAbazn.png"
-        title="AAbazn.png"
+        alt="https://s2.ax1x.com/2019/03/28/AwyetH.png"
+        title="AwyetH.png"
     /></p>
-<ul>
-<li>13类分类结果比较见表5，训练时间比较见表6</li>
-</ul>
-<p><a href="https://imgchr.com/i/AAqQfJ" target="_blank" rel="noopener noreffer"><img
-        class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAqQfJ.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAqQfJ.png, https://s2.ax1x.com/2019/03/14/AAqQfJ.png 1.5x, https://s2.ax1x.com/2019/03/14/AAqQfJ.png 2x"
-        data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAqQfJ.png"
-        title="AAqQfJ.png"
-    /></a></p>
+<p>PN：precision
+RL:Recall
+AY:Accuracy
+FM:F1值</p>
+<p>对未知攻击的预测结果比较：</p>
 <p><img
         class="lazyload"
-        data-src="https://s2.ax1x.com/2019/03/14/AAq861.png"
-        data-srcset="https://s2.ax1x.com/2019/03/14/AAq861.png, https://s2.ax1x.com/2019/03/14/AAq861.png 1.5x, https://s2.ax1x.com/2019/03/14/AAq861.png 2x"
+        data-src="https://s2.ax1x.com/2019/03/28/AwyDBT.png"
+        data-srcset="https://s2.ax1x.com/2019/03/28/AwyDBT.png, https://s2.ax1x.com/2019/03/28/AwyDBT.png 1.5x, https://s2.ax1x.com/2019/03/28/AwyDBT.png 2x"
         data-sizes="auto"
-        alt="https://s2.ax1x.com/2019/03/14/AAq861.png"
-        title="AAq861.png"
+        alt="https://s2.ax1x.com/2019/03/28/AwyDBT.png"
+        title="AwyDBT.png"
     /></p>
-<h2 id="未来工作处理zero-day-attack">未来工作：处理zero-day attack</h2>
+<p>这个表讲的是假设攻击者将包的某些字段设成正常流量字段的结果比较，2个，3个，4个，发现2个时本算法交果较差，但也和当前算法差不多，3个和4个时本算法都能很好地检测出来。
+JESS与本文的不同：添加了发生攻击时的补救策略，添加了多个period以增加准确率，算法的过程以公式的方式和图（f4）的方式显示，有对算法的时间，空间，通信复杂度的分析，对整个架构以流程图的方式表达出来，在讲算法时举了例子加以说明，对字段以表的方式展示，是本算法的一个拓展与完善。</p>
 </div>
 
         <div class="sponsor">
@@ -288,7 +228,7 @@ KDD Cup'99和NSL-KDD,数据集组成情况如下表</li>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/12_dl_ids/" data-title="A Deep Learning Approach to Network Intrusion Detection"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/16_sdnscore/" data-title="SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/16_sdnscore/" data-title="SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/16_sdnscore/" data-title="SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/16_sdnscore/" data-title="SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -300,8 +240,8 @@ KDD Cup'99和NSL-KDD,数据集组成情况如下表</li>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/11_dl_ad/" class="prev" rel="prev" title="Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective"><i class="fas fa-angle-left fa-fw"></i>Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective</a>
-            <a href="/posts/13_ad_svm_tdsc/" class="next" rel="next" title="Adaptive Performance Anomaly Detection in Distributed Systems Using Online SVMs">Adaptive Performance Anomaly Detection in Distributed Systems Using Online SVMs<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/posts/15_atlantic/" class="prev" rel="prev" title="Atlantic : a framework for anomaly traffic detection, classification, and mitigation in SDN"><i class="fas fa-angle-left fa-fw"></i>Atlantic : a framework for anomaly traffic detection, classification, and mitigation in SDN</a>
+            <a href="/posts/17_sdn-rdcd_ton/" class="next" rel="next" title="SDN-RDCD: A Real-Time and Reliable Method for Detecting Compromised SDN Devices">SDN-RDCD: A Real-Time and Reliable Method for Detecting Compromised SDN Devices<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="utterances"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.

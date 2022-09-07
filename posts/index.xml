@@ -54,25 +54,25 @@
     </author><guid>/posts/org_01_hugo_install/</guid>
     <description><![CDATA[ubuntu 18.04安装hugo最新稳定版 在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本 创建hugo站 1 hugo new site hello-world 这个命令会创建一个hello]]></description>
 </item><item>
-    <title>A Deep Learning Approach to Network Intrusion Detection</title>
-    <link>/posts/12_dl_ids/</link>
-    <pubDate>Mon, 26 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>Tool support for the evaluation of anomaly traffic classification for network resilience</title>
+    <link>/posts/20_ad_classification/</link>
+    <pubDate>Mon, 02 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/12_dl_ids/</guid>
-    <description><![CDATA[Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50. 本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行]]></description>
+    </author><guid>/posts/20_ad_classification/</guid>
+    <description><![CDATA[Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp; Communication. 2015. Tool support for the evaluation of anomaly traffic classification for network resilience 标签（空格分隔）： security Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for]]></description>
 </item><item>
-    <title>Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective</title>
-    <link>/posts/11_dl_ad/</link>
-    <pubDate>Sun, 25 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>SPHINX: Detecting Security Attacks in Software-Defined Networks</title>
+    <link>/posts/19_sphinx/</link>
+    <pubDate>Sun, 01 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/11_dl_ad/</guid>
-    <description><![CDATA[Garg S , Kaur K , Kumar N , et al. Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective[J]. IEEE Transactions on Multimedia, 2019, 21(3):566-578. 本文利用受限波尔兹曼机进行异常检测。 异常检测模型 controller请求流统]]></description>
+    </author><guid>/posts/19_sphinx/</guid>
+    <description><![CDATA[Dhawan M, Poddar R, Mahajan K, et al. SPHINX: Detecting Security Attacks in Software-Defined Networks[C]//NDSS. 2015, 15: 8-11. 本文很不错，写得十分详细，很贴近实用，作者是精通OF协议的。 本文目的提出一种检测已知和未知网络攻击并可实]]></description>
 </item><item>
-    <title>Automatic test packet generation</title>
-    <link>/posts/10_packet_generation/</link>
-    <pubDate>Sat, 24 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>AVANT-GUARD: scalable and vigilant switch flow management in software-defined networks</title>
+    <link>/posts/18_avant-guard/</link>
+    <pubDate>Sat, 31 Aug 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/10_packet_generation/</guid>
-    <description><![CDATA[Zeng H , Kazemian P , Varghese G , et al. Automatic test packet generation[C]// International Conference on Emerging Networking Experiments &amp; Technologies. IEEE, 2012. 背景分析 当前特别需要自动化的网络测试工具 概念 packets Switch Rules：defines how header space at ingress is transformed into]]></description>
+    </author><guid>/posts/18_avant-guard/</guid>
+    <description><![CDATA[Shin S , Yegneswaran V , Porras P , et al. AVANT-GUARD: scalable and vigilant switch flow management in software-defined networks[C]// Acm Sigsac Conference on Computer &amp; Communications Security. ACM, 2013. 本文对of作两个改进：1,利用Connection Migration对TCP连]]></description>
 </item></channel>
 </rss>
