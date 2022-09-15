@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks  - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks " />
+<meta property="og:description" content="S. Lee, J. Kim, S. Shin, P. Porras and V. Yegneswaran, &ldquo;Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks,&rdquo; 2017 47th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN), Denver, CO, 2017, pp. 249-260. 本文相当于一个框架手册，该框架作用为：一个分布式SDN弹性异常检" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/21_athena/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-03T18:32:36+08:00" />
+<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks "/>
+<meta name="twitter:description" content="S. Lee, J. Kim, S. Shin, P. Porras and V. Yegneswaran, &ldquo;Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks,&rdquo; 2017 47th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN), Denver, CO, 2017, pp. 249-260. 本文相当于一个框架手册，该框架作用为：一个分布式SDN弹性异常检"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/21_athena/" /><link rel="prev" href="/posts/20_ad_classification/" /><link rel="next" href="/posts/22_misuse_attack/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks ",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/21_athena\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  2729 ,
+        "url": "\/posts\/21_athena\/","datePublished": "2019-09-03T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks </h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-03">2019-09-03</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2729 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#athena-system-design">Athena System Design</a>
+      <ul>
+        <li><a href="#southboundsb-element">Southbound(SB) Element</a>
+          <ul>
+            <li><a href="#sb-interface">SB interface</a></li>
+            <li><a href="#feature-generator">Feature Generator</a></li>
+            <li><a href="#attack-detector">Attack Detector</a></li>
+            <li><a href="#attack-reactor">Attack Reactor</a></li>
+          </ul>
+        </li>
+        <li><a href="#the-athena-northboundnb-element">The Athena Northbound(NB) element</a>
+          <ul>
+            <li><a href="#feature-management-manager">Feature Management Manager</a></li>
+            <li><a href="#detector-manager">Detector Manager</a></li>
+            <li><a href="#reaction-manager">Reaction Manager</a></li>
+            <li><a href="#resource-manager">Resource Manager</a></li>
+            <li><a href="#ui-manager">UI Manager</a></li>
+          </ul>
+        </li>
+        <li><a href="#athena-off-the-shelf-strategioes">Athena Off-The-Shelf Strategioes</a>
+          <ul>
+            <li><a href="#athena-features">Athena Features</a></li>
+            <li><a href="#athena-detection-algorithms">Athena Detection Algorithms</a></li>
+            <li><a href="#athena-reactions">Athena Reactions</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#athena-northbound-api">Athena Northbound API</a></li>
+    <li><a href="#athena-application">Athena Application</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#情景1a-large-scale-ddos-attack-detector">情景1：A Large-scale DDoS attack Detector</a></li>
+    <li><a href="#情景2link-flooding-attackslfa-mitigation">情景2：Link Flooding Attacks(LFA) Mitigation</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#usability">usability</a></li>
+    <li><a href="#scalability">Scalability</a></li>
+    <li><a href="#overhead">overhead</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>S. Lee, J. Kim, S. Shin, P. Porras and V. Yegneswaran, &ldquo;Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks,&rdquo; 2017 47th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN), Denver, CO, 2017, pp. 249-260.</p>
+</blockquote>
+<p>本文相当于一个框架手册，该框架作用为：一个分布式SDN弹性异常检测应用，它提供高抽象的API，可以使管理员以最小的编程代价布署异常检测应用。</p>
+<h1 id="challenges">challenges</h1>
+<ul>
+<li>大多数威胁检测器未对分布式数据平面进行数据抽取和管理</li>
+<li>大多数研究只侧重于具体的某一个异常检测</li>
+<li>目前对网络异常特征和异常检测算法的研究很有限
+传统的网络异常检测应用如图1</li>
+</ul>
+<p><a href="https://imgchr.com/i/AOKCf1" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AOKCf1.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AOKCf1.md.png, https://s2.ax1x.com/2019/04/14/AOKCf1.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AOKCf1.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AOKCf1.md.png"
+        title="AOKCf1.md.png"
+    /></a></p>
+<h1 id="athena-design">Athena Design</h1>
+<ul>
+<li>设计目标：
+提供可扩展特征抽取架构；抽象数据获得过程并简化异常检测服务实现；布署检测服务不需要修改SDN基础设施。</li>
+</ul>
+<hr>
+<p>图2为Athena的一个实例，其他布式l地布署在3个Controller上。
+其中，Feature Generator通过收集本地控制器和数据平面的控制信息来生成特征并放入DB cluster，Attack Detector通过指定算法进行网络检测，Attack Reactor 通过下发缓解行为到data plane来对检测到的威胁进行响应。</p>
+<p><a href="https://imgchr.com/i/AOMr8I" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AOMr8I.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AOMr8I.md.png, https://s2.ax1x.com/2019/04/14/AOMr8I.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AOMr8I.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AOMr8I.md.png"
+        title="AOMr8I.md.png"
+    /></a></p>
+<h2 id="athena-system-design">Athena System Design</h2>
+<p>Athena由：southbound element,distributed DB,computing cluster,northbound element组成。<strong>Southbound element</strong>负责对网络进行监控，从SDN控制信息中提取特征，实现检测算法，触发缓解行为。<strong>Northbound element</strong>负责提供API给应用，从而编写异常检测任务。<strong>DB cluster</strong>提供特征授权，<strong>Computing cluster</strong>提供分布式Athena 应用实例的运行。框架图如图3.</p>
+<p><a href="https://imgchr.com/i/AO3aQI" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AO3aQI.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AO3aQI.md.png, https://s2.ax1x.com/2019/04/14/AO3aQI.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AO3aQI.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AO3aQI.md.png"
+        title="AO3aQI.md.png"
+    /></a></p>
+<h3 id="southboundsb-element">Southbound(SB) Element</h3>
+<p>该部分目标为隔离控制信息，抽取特征来驱动分析算法，并缓解检测到的问题。它由以下四部分组成：</p>
+<h4 id="sb-interface">SB interface</h4>
+<p>检测由数据平面和控制平面发出的控制信息，并通过Athena proxy传递由Attack Reactor发出的管理命令。当Athena Proxy发流表规则到date plane时，controller也自动更新它的状状。</p>
+<h4 id="feature-generator">Feature Generator</h4>
+<p>根据进入控制信息抽取特征和根据控制平面状态抽取行为特征特征类别可见表1</p>
+<p><a href="https://imgchr.com/i/AO0Xw9" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AO0Xw9.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AO0Xw9.md.png, https://s2.ax1x.com/2019/04/14/AO0Xw9.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AO0Xw9.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AO0Xw9.md.png"
+        title="AO0Xw9.md.png"
+    /></a></p>
+<h4 id="attack-detector">Attack Detector</h4>
+<p>根据Athena NB的要求生成检测模型，根据Feature Generator的特征进行分析，使用检测算法来发现潜在威胁，可以是在线或者批处理模式。当其收到tasks时，将其转成functions和jobs,并根据情况single或分布式方式处理。</p>
+<h4 id="attack-reactor">Attack Reactor</h4>
+<p>当其从Detector Manager收到缓解策略时，将其转成messages并通过Athena Proxy发送到数据平面。</p>
+<h3 id="the-athena-northboundnb-element">The Athena Northbound(NB) element</h3>
+<p>提供API，以便开发人员实现功能。</p>
+<h4 id="feature-management-manager">Feature Management Manager</h4>
+<p>提供一个让应用根据用户限制索取或接收网络特征的机制（它维护一个event deliver table，并以此维护应用限制）。它从应用接收特征请求并将其转为queries，通过DB cluster查询，并将从DB cluster获得的结果传给由Detector Manager管理的compute cluster</p>
+<h4 id="detector-manager">Detector Manager</h4>
+<p>提供ML算法生成模型，并与Feature Manager一起动态验证进入的网络特征。它提供统一API使具体算法对operator透明，自动配置算法参数(如使用k-means或DT在表2中是使用想同的API的)。</p>
+<h4 id="reaction-manager">Reaction Manager</h4>
+<p>提供缓解策略，使用应用发布策略请求到SB Attack Reactor，而Attack Reactor会自动将其转成flow rules</p>
+<h4 id="resource-manager">Resource Manager</h4>
+<p>导出函数以便于管理与特征收集有关的资源。它可以动态调整监控的网络实体数并根据应用的请求生成网络特征。</p>
+<h4 id="ui-manager">UI Manager</h4>
+<p>展示Athena 应用结果并提供交互机制。</p>
+<h3 id="athena-off-the-shelf-strategioes">Athena Off-The-Shelf Strategioes</h3>
+<h4 id="athena-features">Athena Features</h4>
+<p>特征类型可见表1,Athena有超过100个网络监控特征。特征格式见图4.</p>
+<p><a href="https://imgchr.com/i/AO4kgH" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AO4kgH.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AO4kgH.md.png, https://s2.ax1x.com/2019/04/14/AO4kgH.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AO4kgH.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AO4kgH.md.png"
+        title="AO4kgH.md.png"
+    /></a></p>
+<p>分为index fields和feature fields，index fields分为index和meta data，index是特征来源信息如：switch ID,port ID，OF match field.meta data 表示额外信息如时间戳等。feature fields就是网络的具体行为。</p>
+<h4 id="athena-detection-algorithms">Athena Detection Algorithms</h4>
+<p>见表4</p>
+<h4 id="athena-reactions">Athena Reactions</h4>
+<p>根据网络状态改变管理数据平面，方法有两种：block和quarantine。</p>
+<h1 id="the-athena-development-enviromentde">The Athena Development Enviroment(DE)</h1>
+<p>DE提供允许使operator以抽象的方式设计和定义检测器。</p>
+<h2 id="athena-northbound-api">Athena Northbound API</h2>
+<p>可以通过以下步骤生成一个检测模型：
+1.定义检测参数
+2.定义特征
+3.选择想要的算法
+表2提供核心函数，表3提供NB API 参数，表4列出每个参数支持的功能。</p>
+<p><a href="https://imgchr.com/i/AOIvuj" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AOIvuj.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AOIvuj.md.png, https://s2.ax1x.com/2019/04/14/AOIvuj.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AOIvuj.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AOIvuj.md.png"
+        title="AOIvuj.md.png"
+    /></a></p>
+<p><a href="https://imgchr.com/i/AOoC5V" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AOoC5V.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AOoC5V.md.png, https://s2.ax1x.com/2019/04/14/AOoC5V.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AOoC5V.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AOoC5V.md.png"
+        title="AOoC5V.md.png"
+    /></a></p>
+<p><a href="https://imgchr.com/i/AOoF8U" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AOoF8U.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AOoF8U.md.png, https://s2.ax1x.com/2019/04/14/AOoF8U.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AOoF8U.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AOoF8U.md.png"
+        title="AOoF8U.md.png"
+    /></a></p>
+<h2 id="athena-application">Athena Application</h2>
+<p>图5给出实现一个异常检测器步骤的说明</p>
+<p><a href="https://imgchr.com/i/AOo6qs" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AOo6qs.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AOo6qs.md.png, https://s2.ax1x.com/2019/04/14/AOo6qs.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AOo6qs.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AOo6qs.md.png"
+        title="AOo6qs.md.png"
+    /></a></p>
+<p>开发人员选择off-the-shelf策略并使用NB API构建异常检测器，Athena自动进行检测任务执行并报告结果给application，application根据结果再配置新的任务。Athena提供GUI接口进行警告和管理Athena application。</p>
+<h1 id="athena-use-case">Athena USE CASE</h1>
+<p>以DDoS为例。</p>
+<h2 id="情景1a-large-scale-ddos-attack-detector">情景1：A Large-scale DDoS attack Detector</h2>
+<p>表5为DDoS发生时可能的特征</p>
+<p><a href="https://imgchr.com/i/AO7McD" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AO7McD.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AO7McD.md.png, https://s2.ax1x.com/2019/04/14/AO7McD.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AO7McD.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AO7McD.md.png"
+        title="AO7McD.md.png"
+    /></a></p>
+<p>1.创建DDoS检测模型：定义特征，设定参数来归一化表5中的特征。
+2.DDoS特征验证
+3.DDoS测试环境和结果
+可见算法1伪代码</p>
+<p><a href="https://imgchr.com/i/AO72CV" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AO72CV.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AO72CV.md.png, https://s2.ax1x.com/2019/04/14/AO72CV.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AO72CV.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AO72CV.md.png"
+        title="AO72CV.md.png"
+    /></a></p>
+<p>与[10]比较见表6,测试结果见图6</p>
+<p><a href="https://imgchr.com/i/AO74u4" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AO74u4.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AO74u4.md.png, https://s2.ax1x.com/2019/04/14/AO74u4.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AO74u4.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AO74u4.md.png"
+        title="AO74u4.md.png"
+    /></a>
+<a href="https://imgchr.com/i/AO7XvD" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AO7XvD.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AO7XvD.md.png, https://s2.ax1x.com/2019/04/14/AO7XvD.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AO7XvD.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AO7XvD.md.png"
+        title="AO7XvD.md.png"
+    /></a></p>
+<h2 id="情景2link-flooding-attackslfa-mitigation">情景2：Link Flooding Attacks(LFA) Mitigation</h2>
+<p>值得注意的一点：Athena布署检测应用而不需要更改网络基础设施，而Spiffy就不能满足。</p>
+<ul>
+<li>
+<p>LFA Mitigation Service using Athena:
+需求：链接阻寒检测，识别per-flow rate changes，实现flow alteration</p>
+</li>
+<li>
+<p>LFA Event Handler Registration:
+检测器通过link usage计算link utilization和per-flow changes来区分攻击者。Athena支持多个基于流体积的特征，可以当作候选特征。最后，调用AddEventHandler API 来检测和缓解事件。</p>
+</li>
+<li>
+<p>LFA Detection Logic:
+开发人员在Event_handler实现自定义检测逻辑，缓解逻辑通过基于检测结果激发Reactor来阻塞可疑主机。使用Athena，这些只要25行java代码即可实现。</p>
+</li>
+<li>
+<p>Comparing Athena-based LFA mitigaiton with Spiffy:
+spiffy需要配置SNMP-based 网络switch,需要布署OpenSketch-enable switch，Athena而很简单，不需要更改基础设施。</p>
+</li>
+</ul>
+<h1 id="实现">实现</h1>
+<p>Controller:ONOS,MongoDB,Spark,JfreeChart，15000行java code。</p>
+<h1 id="评估">评估</h1>
+<p>评价 usability，network scalablity,overhead。
+环境：5 servers（64GB RAM,Inter I5 quad-core I5-4690）,7个物理交换机。</p>
+<h2 id="usability">usability</h2>
+<p>这里就比实现同一功能所花的代码量，见图8</p>
+<p><a href="https://imgchr.com/i/AXpqPg" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AXpqPg.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AXpqPg.md.png, https://s2.ax1x.com/2019/04/14/AXpqPg.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AXpqPg.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AXpqPg.md.png"
+        title="AXpqPg.md.png"
+    /></a></p>
+<p>Athena所花代码量最小。</p>
+<h2 id="scalability">Scalability</h2>
+<p>见图10</p>
+<p><a href="https://imgchr.com/i/AX9KIO" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AX9KIO.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AX9KIO.md.png, https://s2.ax1x.com/2019/04/14/AX9KIO.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AX9KIO.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AX9KIO.md.png"
+        title="AX9KIO.md.png"
+    /></a></p>
+<p>从图可见，基本跟spark应用差不多</p>
+<h2 id="overhead">overhead</h2>
+<p>Cbench（controller benchmarker）是一款OpenFlow控制器性能测试工具，通过模拟一定数量的交换机连接到控制器，发送packet-in消息，并等待控制器下发flow-mods消息来衡量控制器的性能。</p>
+<ul>
+<li>Cbench测试见表9</li>
+</ul>
+<p><a href="https://imgchr.com/i/AX9bex" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AX9bex.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AX9bex.md.png, https://s2.ax1x.com/2019/04/14/AX9bex.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AX9bex.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AX9bex.md.png"
+        title="AX9bex.md.png"
+    /></a></p>
+<p>可见Athena将吞吐量降低了50%</p>
+<ul>
+<li>CPU usage
+见图11</li>
+</ul>
+<p><a href="https://imgchr.com/i/AX9vfe" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AX9vfe.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AX9vfe.md.png, https://s2.ax1x.com/2019/04/14/AX9vfe.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AX9vfe.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AX9vfe.md.png"
+        title="AX9vfe.md.png"
+    /></a></p>
+<p>Athena的CPU消耗较高，原因可能是Mongo-DB使用的。</p>
+<h1 id="相关工作">相关工作</h1>
+<p>表10</p>
+<p><a href="https://imgchr.com/i/AXP6aV" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/14/AXP6aV.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/14/AXP6aV.md.png, https://s2.ax1x.com/2019/04/14/AXP6aV.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AXP6aV.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/14/AXP6aV.md.png"
+        title="AXP6aV.md.png"
+    /></a>                                                         <br>
+本篇有源码！</p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/21_athena/" data-title="Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks " data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/21_athena/" data-title="Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks "><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/21_athena/" data-title="Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks " data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/21_athena/" data-title="Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks "><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/20_ad_classification/" class="prev" rel="prev" title="Tool support for the evaluation of anomaly traffic classification for network resilience"><i class="fas fa-angle-left fa-fw"></i>Tool support for the evaluation of anomaly traffic classification for network resilience</a>
+            <a href="/posts/22_misuse_attack/" class="next" rel="next" title="An Overview of Misuse/Attack Cases in SDN">An Overview of Misuse/Attack Cases in SDN<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

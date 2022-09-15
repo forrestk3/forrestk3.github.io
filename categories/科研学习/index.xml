@@ -19,6 +19,34 @@
     </author><guid>/posts/org_06_mpc/</guid>
     <description><![CDATA[文章目的 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），]]></description>
 </item><item>
+    <title>dFence: Transparent Network-based Denial of Service Mitigation</title>
+    <link>/posts/24_dfence/</link>
+    <pubDate>Sat, 07 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/24_dfence/</guid>
+    <description><![CDATA[Mahimkar A , Dange J , Shmatikov V , et al. dFence: Transparent Network-based Denial of Service Mitigation[J]. Nsdi ’, 2007:24-24.， 本文通过添加dFence中间设备，实现透明的DoS防御。图1架构图，将中间]]></description>
+</item><item>
+    <title>Header Space Analysis: Static Checking For Networks</title>
+    <link>/posts/23_header_space_analysis/</link>
+    <pubDate>Fri, 06 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/23_header_space_analysis/</guid>
+    <description><![CDATA[Kazemian P, Varghese G, McKeown N. Header space analysis: Static checking for networks[C]//Presented as part of the 9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12). 2012: 113-126. 看本文原因：好多文章中的参考文献，且作者Nick是OF提出者。本文提出Heade]]></description>
+</item><item>
+    <title>An Overview of Misuse/Attack Cases in SDN</title>
+    <link>/posts/22_misuse_attack/</link>
+    <pubDate>Wed, 04 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/22_misuse_attack/</guid>
+    <description><![CDATA[An Overview of Misuse/Attack Cases in SDN 标签（空格分隔）： security A-01-A:大量packet_in会导致SDN controller不可预期状态，例如，恶意主机生成大量p]]></description>
+</item><item>
+    <title>Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks </title>
+    <link>/posts/21_athena/</link>
+    <pubDate>Tue, 03 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/21_athena/</guid>
+    <description><![CDATA[S. Lee, J. Kim, S. Shin, P. Porras and V. Yegneswaran, &ldquo;Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks,&rdquo; 2017 47th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN), Denver, CO, 2017, pp. 249-260. 本文相当于一个框架手册，该框架作用为：一个分布式SDN弹性异常检]]></description>
+</item><item>
     <title>Tool support for the evaluation of anomaly traffic classification for network resilience</title>
     <link>/posts/20_ad_classification/</link>
     <pubDate>Mon, 02 Sep 2019 18:32:36 &#43;0800</pubDate><author>
@@ -46,33 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/17_sdn-rdcd_ton/</guid>
     <description><![CDATA[Zhou H , Wu C , Yang C , et al. SDN-RDCD: A Real-Time and Reliable Method for Detecting Compromised SDN Devices[J]. IEEE/ACM Transactions on Networking, 2018, PP(99). 本文目标是通过一个审计器检测被挟持的SDN设备，实验结果并未与其他进行比较，因为他声]]></description>
-</item><item>
-    <title>SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment</title>
-    <link>/posts/16_sdnscore/</link>
-    <pubDate>Thu, 29 Aug 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/16_sdnscore/</guid>
-    <description><![CDATA[Kalkan K , Gur G , Alagoz F . SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment[C]// 2017 IEEE Symposium on Computers and Communications (ISCC). IEEE, 2017. 本文是JESS那篇对应的会议文章，记一下主要思想。 SDNScore Mechanism 本机制由switch中的p]]></description>
-</item><item>
-    <title>Atlantic : a framework for anomaly traffic detection, classification, and mitigation in SDN</title>
-    <link>/posts/15_atlantic/</link>
-    <pubDate>Wed, 28 Aug 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/15_atlantic/</guid>
-    <description><![CDATA[Silva A S D . Atlantic : a framework for anomaly traffic detection, classification, and mitigation in SDN[C]// Network Operations &amp; Management Symposium. IEEE, 2016. 本文提出一个架构用于在SDN中的异常检测与缓解，架构分为两个阶段：检测异常（利用Entro]]></description>
-</item><item>
-    <title>A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)</title>
-    <link>/posts/14_dl_ddos_sdn/</link>
-    <pubDate>Tue, 27 Aug 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/14_dl_ddos_sdn/</guid>
-    <description><![CDATA[Niyaz Q , Sun W , Javaid A Y . A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)[J]. Security &amp; Safety, 2016, 4(12). 没有看的价值，跟深度学习完全扯不上关系，被标题和页码骗了。。 DDoS Detection System的实现 分为三]]></description>
-</item><item>
-    <title>Adaptive Performance Anomaly Detection in Distributed Systems Using Online SVMs</title>
-    <link>/posts/13_ad_svm_tdsc/</link>
-    <pubDate>Tue, 27 Aug 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/13_ad_svm_tdsc/</guid>
-    <description><![CDATA[Alvarez Cid-Fuentes J , Szabo C , Falkner K . Adaptive Performance Anomaly Detection in Distributed Systems Using Online SVMs[J]. IEEE Transactions on Dependable and Secure Computing, 2018:1-1. 本文提出框架，通过周期地收集系统矩阵来提取特征，并采用在线SVM法训练和对特征进行分]]></description>
 </item></channel>
 </rss>

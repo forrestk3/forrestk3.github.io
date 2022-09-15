@@ -54,25 +54,25 @@
     </author><guid>/posts/org_01_hugo_install/</guid>
     <description><![CDATA[ubuntu 18.04安装hugo最新稳定版 在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本 创建hugo站 1 hugo new site hello-world 这个命令会创建一个hello]]></description>
 </item><item>
-    <title>Tool support for the evaluation of anomaly traffic classification for network resilience</title>
-    <link>/posts/20_ad_classification/</link>
-    <pubDate>Mon, 02 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>dFence: Transparent Network-based Denial of Service Mitigation</title>
+    <link>/posts/24_dfence/</link>
+    <pubDate>Sat, 07 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/20_ad_classification/</guid>
-    <description><![CDATA[Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp; Communication. 2015. Tool support for the evaluation of anomaly traffic classification for network resilience 标签（空格分隔）： security Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for]]></description>
+    </author><guid>/posts/24_dfence/</guid>
+    <description><![CDATA[Mahimkar A , Dange J , Shmatikov V , et al. dFence: Transparent Network-based Denial of Service Mitigation[J]. Nsdi ’, 2007:24-24.， 本文通过添加dFence中间设备，实现透明的DoS防御。图1架构图，将中间]]></description>
 </item><item>
-    <title>SPHINX: Detecting Security Attacks in Software-Defined Networks</title>
-    <link>/posts/19_sphinx/</link>
-    <pubDate>Sun, 01 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>Header Space Analysis: Static Checking For Networks</title>
+    <link>/posts/23_header_space_analysis/</link>
+    <pubDate>Fri, 06 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/19_sphinx/</guid>
-    <description><![CDATA[Dhawan M, Poddar R, Mahajan K, et al. SPHINX: Detecting Security Attacks in Software-Defined Networks[C]//NDSS. 2015, 15: 8-11. 本文很不错，写得十分详细，很贴近实用，作者是精通OF协议的。 本文目的提出一种检测已知和未知网络攻击并可实]]></description>
+    </author><guid>/posts/23_header_space_analysis/</guid>
+    <description><![CDATA[Kazemian P, Varghese G, McKeown N. Header space analysis: Static checking for networks[C]//Presented as part of the 9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12). 2012: 113-126. 看本文原因：好多文章中的参考文献，且作者Nick是OF提出者。本文提出Heade]]></description>
 </item><item>
-    <title>AVANT-GUARD: scalable and vigilant switch flow management in software-defined networks</title>
-    <link>/posts/18_avant-guard/</link>
-    <pubDate>Sat, 31 Aug 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>An Overview of Misuse/Attack Cases in SDN</title>
+    <link>/posts/22_misuse_attack/</link>
+    <pubDate>Wed, 04 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/18_avant-guard/</guid>
-    <description><![CDATA[Shin S , Yegneswaran V , Porras P , et al. AVANT-GUARD: scalable and vigilant switch flow management in software-defined networks[C]// Acm Sigsac Conference on Computer &amp; Communications Security. ACM, 2013. 本文对of作两个改进：1,利用Connection Migration对TCP连]]></description>
+    </author><guid>/posts/22_misuse_attack/</guid>
+    <description><![CDATA[An Overview of Misuse/Attack Cases in SDN 标签（空格分隔）： security A-01-A:大量packet_in会导致SDN controller不可预期状态，例如，恶意主机生成大量p]]></description>
 </item></channel>
 </rss>

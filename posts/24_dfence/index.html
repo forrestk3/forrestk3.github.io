@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">dFence: Transparent Network-based Denial of Service Mitigation - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="dFence: Transparent Network-based Denial of Service Mitigation" />
+<meta property="og:description" content="Mahimkar A , Dange J , Shmatikov V , et al. dFence: Transparent Network-based Denial of Service Mitigation[J]. Nsdi ’, 2007:24-24.， 本文通过添加dFence中间设备，实现透明的DoS防御。图1架构图，将中间" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/24_dfence/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-07T18:32:36+08:00" />
+<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="dFence: Transparent Network-based Denial of Service Mitigation"/>
+<meta name="twitter:description" content="Mahimkar A , Dange J , Shmatikov V , et al. dFence: Transparent Network-based Denial of Service Mitigation[J]. Nsdi ’, 2007:24-24.， 本文通过添加dFence中间设备，实现透明的DoS防御。图1架构图，将中间"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/24_dfence/" /><link rel="prev" href="/posts/23_header_space_analysis/" /><link rel="next" href="/posts/org_01_hugo_install/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "dFence: Transparent Network-based Denial of Service Mitigation",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/24_dfence\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  2355 ,
+        "url": "\/posts\/24_dfence\/","datePublished": "2019-09-07T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">dFence: Transparent Network-based Denial of Service Mitigation</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-07">2019-09-07</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2355 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#dynamic-traffic-interception">Dynamic Traffic Interception</a>
+      <ul>
+        <li><a href="#inbound-traffic-interception">Inbound traffic interception</a></li>
+        <li><a href="#outbound-traffic-interception">Outbound traffic interception</a></li>
+      </ul>
+    </li>
+    <li><a href="#dynamic-state-management">Dynamic State Management</a></li>
+    <li><a href="#falure-recovery-and-load-balancing">Falure Recovery and load balancing</a>
+      <ul>
+        <li><a href="#failure-rcovery">Failure rcovery</a></li>
+        <li><a href="#load-balancing">Load balancing</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#mitigation-policies">Mitigation Policies</a>
+      <ul>
+        <li><a href="#mitigation-spoofed-attacks">Mitigation spoofed attacks</a></li>
+        <li><a href="#mitigation-unspoofed-attacks">Mitigation unspoofed attacks</a></li>
+      </ul>
+    </li>
+    <li><a href="#evasions-and-attacks-on-middlebos">Evasions and Attacks on Middlebos</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#micro-benchmarks">Micro benchmarks</a></li>
+    <li><a href="#end-to-end-benchmarks">end-to-end benchmarks</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>Mahimkar A , Dange J , Shmatikov V , et al. dFence: Transparent Network-based Denial of Service Mitigation[J]. Nsdi ’, 2007:24-24.，</p>
+</blockquote>
+<p>本文通过添加dFence中间设备，实现透明的DoS防御。图1架构图，将中间设备透明插入可能受攻击的主机前并拦截所有流量。</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/19/EptP10.png"
+        data-srcset="https://s2.ax1x.com/2019/04/19/EptP10.png, https://s2.ax1x.com/2019/04/19/EptP10.png 1.5x, https://s2.ax1x.com/2019/04/19/EptP10.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/19/EptP10.png"
+        title="EptP10.png"
+    /></p>
+<h1 id="transparent-middlebox-invocation">Transparent Middlebox Invocation</h1>
+<p>本部分讲如何透明调用中间设备，网络不用了解中间设备存在于否。要解决的问题有：<strong>1.双向流拦截，指定流固定到中间设备；2.动态状态管理；3.中间设务错误恢复</strong>。</p>
+<h2 id="dynamic-traffic-interception">Dynamic Traffic Interception</h2>
+<p>当前存在的方法无法满足我们的需要。</p>
+<h3 id="inbound-traffic-interception">Inbound traffic interception</h3>
+<p>通过使用iBGP和隧道技术来拦截inbound流量，iBGP在本在AS发路由表到所有的S，这样所有的目标主机的流量都被定位到一个固定的（dFence Middle box）M上。具体步骤:
+见图2a</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/19/EpNmqS.png"
+        data-srcset="https://s2.ax1x.com/2019/04/19/EpNmqS.png, https://s2.ax1x.com/2019/04/19/EpNmqS.png 1.5x, https://s2.ax1x.com/2019/04/19/EpNmqS.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/19/EpNmqS.png"
+        title="EpNmqS.png"
+    /></p>
+<ol>
+<li>找M。在a中，IGP找的M是M1,但它不是HM。（home middle box,即该M是否是处理某流的M）</li>
+<li>不是HM，而由M找HM，图a中由M1找M3,M3为HM。（某个特定的目标主机需要由一个M处理。）用流的hash来确认是不是HM。
+3.HM通过隧道技术将包发给出口路由Rn，这里这们做是避免环。隧道技术声明：（ACLs-to-S和ACLs-from-S）</li>
+</ol>
+<h3 id="outbound-traffic-interception">Outbound traffic interception</h3>
+<p>为达到这样的目的，hash函灵敏定义为：更换sIP和dIP计算得到的Hash值不变。
+$h_{1}\left(\operatorname{src} a d d r, \operatorname{src}<em>{-} p o r t\right) \oplus h</em>{2}\left(d s t_{-} a d d r, d s t_{-} p o r t\right)$
+使用PBR交付所有目的主机流量到M。如图2b</p>
+<ol>
+<li>若满足ACL-from-S而交付到一个M上，这里是M4</li>
+<li>M找HM，这里是M3</li>
+<li>处理后正常交付即可。</li>
+</ol>
+<h2 id="dynamic-state-management">Dynamic State Management</h2>
+<p>当M介入或移除时，分别引入启动时间$T_b$和移除时间$T_r$。</p>
+<ol>
+<li>state bootstrapping:在$T_b$内，所有已有的双向连接都视为合理。</li>
+<li>state removal:在$T_r$内，对新来的连接不应用策略。
+经过分析，启动时间设为5或10秒较合理，移除时间稍长以处理完连接。移除决策只能由M自己作出。</li>
+</ol>
+<h2 id="falure-recovery-and-load-balancing">Falure Recovery and load balancing</h2>
+<p>可能的出错原因有：power outage,hardware malfunciton,software errors,network outages,..。
+解决办法：优雅地流转移。即通过转移处理流的HM来解决出错和负载平衡。
+所有的M都维护一个全局home Hash表，对于某个流识别f，计算hash:h(f)，再通过HM（h(f)）找到它的HM。</p>
+<h3 id="failure-rcovery">Failure rcovery</h3>
+<p>所有的dF设备连成一个逻辑环，可通过R.next(Mi)递归找到每一个设备。当Mi失效时，则R.next(Mi)接替Mi的工作。</p>
+<h3 id="load-balancing">Load balancing</h3>
+<p>与上面相似，假如M1过载，而通过 HM（e）=M2将e从M1转到M2.</p>
+<h1 id="middlebox-disign">Middlebox Disign.</h1>
+<p>M维护的TCP连接主要分两类：M引进前和M引进后。
+M主要维护连接的一个Connection Hash表，表项由FlowID(sIP,dIP,sP,dP)作键，表项组成：</p>
+<ul>
+<li>flow definition</li>
+<li>offset:C和S的序列号差值，后面会讲到。</li>
+<li>Timestamp:连接最近一次的包到达时间</li>
+<li>service bits：</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/19/EpdFPJ.png"
+        data-srcset="https://s2.ax1x.com/2019/04/19/EpdFPJ.png, https://s2.ax1x.com/2019/04/19/EpdFPJ.png 1.5x, https://s2.ax1x.com/2019/04/19/EpdFPJ.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/19/EpdFPJ.png"
+        title="EpdFPJ.png"
+    /></p>
+<ul>
+<li>inboundPacketRate:每个时间间隔到达的包数。</li>
+</ul>
+<p>另个还有个Src-Dest表，记录同样sIP-dIP的连接数，超过阈值就禁止建立新的连接。
+再另外，对于目的主机S主动发送的连接使用Bloom filter来维护。</p>
+<h2 id="mitigation-policies">Mitigation Policies</h2>
+<p>本文要实现的目标是透明实现DoS防御，攻击形式：SYN flood,Smurf-type,reflection attacks。</p>
+<h3 id="mitigation-spoofed-attacks">Mitigation spoofed attacks</h3>
+<ul>
+<li>network-based SYN cookie generation
+过程图见图4</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/19/EpB3RJ.png"
+        data-srcset="https://s2.ax1x.com/2019/04/19/EpB3RJ.png, https://s2.ax1x.com/2019/04/19/EpB3RJ.png 1.5x, https://s2.ax1x.com/2019/04/19/EpB3RJ.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/19/EpB3RJ.png"
+        title="EpB3RJ.png"
+    /></p>
+<p>当C发送SYN，M通过计算SYN cookies，并以此作为SYN-ACK序列号。此时为无状态。M与C连接阶段通过设置window=0来chock防止C发数据，这很重要，若C未完成连接即可丢弃。
+M与C握后完成，创建Connection和Src-Dest表项，此时，M与S握手，序列号为C的SYN序列号。
+当M与S完成shake，就不再chock，此时要维扩展护一个序列号偏移offset。
+当要中继时，可通过offset来进行序列号转换，该如何处理可以通过service bit来决定。</p>
+<ul>
+<li>Spoofed data floods and reflector attacks
+也可用上面的机制解决。</li>
+</ul>
+<h3 id="mitigation-unspoofed-attacks">Mitigation unspoofed attacks</h3>
+<ul>
+<li>Unspoofed data floods:过于占用带宽，M拦截S的ACK，使C减速，项不减速则弃包。</li>
+<li>Too many unspoofed connection:控制Zombie完成握手，控制src-dst连接数在一个合理的范围。</li>
+<li>NAPTHA attacks:攻击都关闭TCP并不发送FIN，M通过时间，是就RST</li>
+<li>Botnet attack:黑客控制上些机器对victim进行HTTP或其他请求轰炸，通过流量统计或ISP的/24前缀白名单优化。因为zombie 机器通常sparsely distributed，因此有效。</li>
+</ul>
+<h2 id="evasions-and-attacks-on-middlebos">Evasions and Attacks on Middlebos</h2>
+<ul>
+<li>exhausting the connection state。即填满Connection表。限制单主机连接数量，只保留未欺骗源的状态。</li>
+<li>Adaptive traffic variation:你on 我off,你off 我on。避免快速加入或退出M。</li>
+<li>werewolf attack:先正常连接，连上后再攻击你。定期检查流发送率和白名单。</li>
+<li>Multiple attacks：增加MiddleBox数据
+policy desion tree见图5,这个和Avant-guard有点像。</li>
+</ul>
+<p><a href="https://imgchr.com/i/Epynl4" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/19/Epynl4.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/19/Epynl4.md.png, https://s2.ax1x.com/2019/04/19/Epynl4.md.png 1.5x, https://s2.ax1x.com/2019/04/19/Epynl4.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/19/Epynl4.md.png"
+        title="Epynl4.md.png"
+    /></a></p>
+<h1 id="implementation">implementation</h1>
+<p>控制平面流量截取XOPR，数据平面攻击缓解IXP（这个并不是SDN里的那个。）完整设计可见图6a，控制平面利用BGP和IGP来进行路由决策并更新交付表。</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/19/EpyoNV.png"
+        data-srcset="https://s2.ax1x.com/2019/04/19/EpyoNV.png, https://s2.ax1x.com/2019/04/19/EpyoNV.png 1.5x, https://s2.ax1x.com/2019/04/19/EpyoNV.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/19/EpyoNV.png"
+        title="EpyoNV.png"
+    /></p>
+<ul>
+<li>Control plane interception: 当有攻击时，M拦截，利用iBGP使所有的victim的流量通向M，并设定隧道和ACL规则来配置egress以防止环路。</li>
+<li>Data plane mitigation:使用Shangri-La framework 实现IXP,将攻击缓解实现成一个包处理函数映射。如图6b。</li>
+<li>Control-data planes interaction: XORP和IXP之间使用ioctl()和系统调用来交流。XORP运行BGP/IGP并在数据平面上映射MAC/IP下一跳IP，PORT等信息。</li>
+</ul>
+<h1 id="评估">评估</h1>
+<h2 id="micro-benchmarks">Micro benchmarks</h2>
+<ul>
+<li>lantency：各个功能的处理时间见到表1.</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/19/Ep6EDA.png"
+        data-srcset="https://s2.ax1x.com/2019/04/19/Ep6EDA.png, https://s2.ax1x.com/2019/04/19/Ep6EDA.png 1.5x, https://s2.ax1x.com/2019/04/19/Ep6EDA.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/19/Ep6EDA.png"
+        title="Ep6EDA.png"
+    /></p>
+<ul>
+<li>吞吐量：见表2,单位为：Kpps （kilo packets per second）。</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/19/Ep6M8S.png"
+        data-srcset="https://s2.ax1x.com/2019/04/19/Ep6M8S.png, https://s2.ax1x.com/2019/04/19/Ep6M8S.png 1.5x, https://s2.ax1x.com/2019/04/19/Ep6M8S.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/19/Ep6M8S.png"
+        title="Ep6M8S.png"
+    /></p>
+<h2 id="end-to-end-benchmarks">end-to-end benchmarks</h2>
+<p>服务器：1GHz Intel P-3 processor 256MB RAM,256KB cache,Apache Web Server Linux 2.4.20 kernel。评估：连接时间和最大TCP吞吐量。结果见图7</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/19/Ep6sbR.png"
+        data-srcset="https://s2.ax1x.com/2019/04/19/Ep6sbR.png, https://s2.ax1x.com/2019/04/19/Ep6sbR.png 1.5x, https://s2.ax1x.com/2019/04/19/Ep6sbR.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/19/Ep6sbR.png"
+        title="Ep6sbR.png"
+    /></p>
+<ul>
+<li>Lantency:7a，x轴为攻击率，y轴为连接时间。</li>
+<li>吞吐量：10s时加入M，可见加入M后吞吐量随之恢复正常。</li>
+</ul>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/24_dfence/" data-title="dFence: Transparent Network-based Denial of Service Mitigation" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/24_dfence/" data-title="dFence: Transparent Network-based Denial of Service Mitigation"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/24_dfence/" data-title="dFence: Transparent Network-based Denial of Service Mitigation" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/24_dfence/" data-title="dFence: Transparent Network-based Denial of Service Mitigation"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/23_header_space_analysis/" class="prev" rel="prev" title="Header Space Analysis: Static Checking For Networks"><i class="fas fa-angle-left fa-fw"></i>Header Space Analysis: Static Checking For Networks</a>
+            <a href="/posts/org_01_hugo_install/" class="next" rel="next" title="hugo安装与入门">hugo安装与入门<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>
