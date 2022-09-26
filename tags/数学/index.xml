@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>数学 - Tag - 咸蛋超人</title>
+        <link>/tags/%E6%95%B0%E5%AD%A6/</link>
+        <description>数学 - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E6%95%B0%E5%AD%A6/" rel="self" type="application/rss+xml" /><item>
+    <title>Hoeffding&#39;s inequality (霍夫丁不等式讲解)</title>
+    <link>/posts/org_12_hoeffding_ineq/</link>
+    <pubDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_12_hoeffding_ineq/</guid>
+    <description><![CDATA[霍夫丁不等式表达 下面的这个式子是我们常用的 Markov inequality 一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\). 这个不等式的证明: 过程中使用了微积分和一些]]></description>
+</item></channel>
+</rss>

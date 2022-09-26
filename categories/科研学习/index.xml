@@ -4,7 +4,21 @@
         <link>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</link>
         <description>科研学习 - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Fri, 16 Sep 2022 23:43:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>Current Trends of Discovery Topology in SDN</title>
+    <link>/posts/org_10_topo_discover/</link>
+    <pubDate>Fri, 16 Sep 2022 23:43:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_10_topo_discover/</guid>
+    <description><![CDATA[affliation and publication author: publication: 本文主要 SDN 中详细调研当前拓扑发现服务的解决办法和缺点 Abstract Intro Preliminary Knowledge LLDP 协议 Link Layer Discovery Protocal,详细解释了LLDP包每个字段的作用,但我]]></description>
+</item><item>
+    <title>Dynamic Packet Forwarding Verification in SDN</title>
+    <link>/posts/org_09_dyna/</link>
+    <pubDate>Fri, 16 Sep 2022 22:27:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_09_dyna/</guid>
+    <description><![CDATA[affliation and publication author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee publication: IEEE Transactions on Dependable and secure computing, 2019 abs 传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来]]></description>
+</item><item>
     <title>记录在数据平面选择流的过程</title>
     <link>/hide/org_08_rule_selection/</link>
     <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
@@ -19,60 +33,46 @@
     </author><guid>/posts/org_06_mpc/</guid>
     <description><![CDATA[文章目的 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），]]></description>
 </item><item>
-    <title>dFence: Transparent Network-based Denial of Service Mitigation</title>
-    <link>/posts/24_dfence/</link>
-    <pubDate>Sat, 07 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>Amplification Hell: Revisiting Network Protocols for DDoS Abuse.</title>
+    <link>/posts/31_amplification_hell/</link>
+    <pubDate>Sat, 14 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/24_dfence/</guid>
-    <description><![CDATA[Mahimkar A , Dange J , Shmatikov V , et al. dFence: Transparent Network-based Denial of Service Mitigation[J]. Nsdi ’, 2007:24-24.， 本文通过添加dFence中间设备，实现透明的DoS防御。图1架构图，将中间]]></description>
+    </author><guid>/posts/31_amplification_hell/</guid>
+    <description><![CDATA[Rossow C. Amplification Hell: Revisiting Network Protocols for DDoS Abuse[C]//NDSS. 2014. 本文重审各种基于UDP的协议，并分析哪些易用于RDOS，总结目前已被用作的RDOS和应对措施分析。本文主要有三总分组成]]></description>
 </item><item>
-    <title>Header Space Analysis: Static Checking For Networks</title>
-    <link>/posts/23_header_space_analysis/</link>
-    <pubDate>Fri, 06 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>LADS: large-scale automated DDOS detection system</title>
+    <link>/posts/30_lads/</link>
+    <pubDate>Fri, 13 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/23_header_space_analysis/</guid>
-    <description><![CDATA[Kazemian P, Varghese G, McKeown N. Header space analysis: Static checking for networks[C]//Presented as part of the 9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12). 2012: 113-126. 看本文原因：好多文章中的参考文献，且作者Nick是OF提出者。本文提出Heade]]></description>
+    </author><guid>/posts/30_lads/</guid>
+    <description><![CDATA[Sekar V, Duffield N G, Spatscheck O, et al. LADS: Large-scale Automated DDoS Detection System[C]//USENIX Annual Technical Conference, General Track. 2006: 171-184. 本文提出LADS，根据轻量级和重量级DDoS检测优缺点进行分析提出两阶段检测法。首先检测是可能有]]></description>
 </item><item>
-    <title>An Overview of Misuse/Attack Cases in SDN</title>
-    <link>/posts/22_misuse_attack/</link>
-    <pubDate>Wed, 04 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>A taxonomy of DDoS attack and DDoS defense mechanisms</title>
+    <link>/posts/29_taxonomy/</link>
+    <pubDate>Thu, 12 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/22_misuse_attack/</guid>
-    <description><![CDATA[An Overview of Misuse/Attack Cases in SDN 标签（空格分隔）： security A-01-A:大量packet_in会导致SDN controller不可预期状态，例如，恶意主机生成大量p]]></description>
+    </author><guid>/posts/29_taxonomy/</guid>
+    <description><![CDATA[Mirkovic J, Reiher P. A taxonomy of DDoS attack and DDoS defense mechanisms[J]. ACM SIGCOMM Computer Communication Review, 2004, 34(2): 39-53. 本文不错，就是老了点，对DDoS攻击和防御做了总结和分类，而不是提供个具体的方法。 DDoS攻击总结]]></description>
 </item><item>
-    <title>Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks </title>
-    <link>/posts/21_athena/</link>
-    <pubDate>Tue, 03 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>DDoS Attack Protection in the Era of Cloud Computing and Software-Defined Networking</title>
+    <link>/posts/28_ddos_cloud_computing/</link>
+    <pubDate>Wed, 11 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/21_athena/</guid>
-    <description><![CDATA[S. Lee, J. Kim, S. Shin, P. Porras and V. Yegneswaran, &ldquo;Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks,&rdquo; 2017 47th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN), Denver, CO, 2017, pp. 249-260. 本文相当于一个框架手册，该框架作用为：一个分布式SDN弹性异常检]]></description>
+    </author><guid>/posts/28_ddos_cloud_computing/</guid>
+    <description><![CDATA[B. Wang, Y. Zheng, W. Lou and Y. T. Hou, &ldquo;DDoS Attack Protection in the Era of Cloud Computing and Software-Defined Networking,&rdquo; 2014 IEEE 22nd International Conference on Network Protocols, Raleigh, NC, 2014, pp. 624-629. 这篇不怎么样，CCF B类计算机网络会议。本文提出一个用于云防御DDoS]]></description>
 </item><item>
-    <title>Tool support for the evaluation of anomaly traffic classification for network resilience</title>
-    <link>/posts/20_ad_classification/</link>
-    <pubDate>Mon, 02 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>Bohatei: Flexible and elastic ddos defense</title>
+    <link>/posts/27_bohatei/</link>
+    <pubDate>Tue, 10 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/20_ad_classification/</guid>
-    <description><![CDATA[Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp; Communication. 2015. Tool support for the evaluation of anomaly traffic classification for network resilience 标签（空格分隔）： security Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for]]></description>
+    </author><guid>/posts/27_bohatei/</guid>
+    <description><![CDATA[Fayaz S K, Tobioka Y, Sekar V, et al. Bohatei: Flexible and elastic ddos defense[C]//24th {USENIX} Security Symposium ({USENIX} Security 15). 2015: 817-832. 本文提出一种针对新型网络的DDoS的防御系统，通过SDN，将可疑流量通过VM以达到保护主机的目]]></description>
 </item><item>
-    <title>SPHINX: Detecting Security Attacks in Software-Defined Networks</title>
-    <link>/posts/19_sphinx/</link>
-    <pubDate>Sun, 01 Sep 2019 18:32:36 &#43;0800</pubDate><author>
+    <title>SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks</title>
+    <link>/posts/26_sd-anti-ddos/</link>
+    <pubDate>Mon, 09 Sep 2019 18:32:36 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
-    </author><guid>/posts/19_sphinx/</guid>
-    <description><![CDATA[Dhawan M, Poddar R, Mahajan K, et al. SPHINX: Detecting Security Attacks in Software-Defined Networks[C]//NDSS. 2015, 15: 8-11. 本文很不错，写得十分详细，很贴近实用，作者是精通OF协议的。 本文目的提出一种检测已知和未知网络攻击并可实]]></description>
-</item><item>
-    <title>AVANT-GUARD: scalable and vigilant switch flow management in software-defined networks</title>
-    <link>/posts/18_avant-guard/</link>
-    <pubDate>Sat, 31 Aug 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/18_avant-guard/</guid>
-    <description><![CDATA[Shin S , Yegneswaran V , Porras P , et al. AVANT-GUARD: scalable and vigilant switch flow management in software-defined networks[C]// Acm Sigsac Conference on Computer &amp; Communications Security. ACM, 2013. 本文对of作两个改进：1,利用Connection Migration对TCP连]]></description>
-</item><item>
-    <title>SDN-RDCD: A Real-Time and Reliable Method for Detecting Compromised SDN Devices</title>
-    <link>/posts/17_sdn-rdcd_ton/</link>
-    <pubDate>Fri, 30 Aug 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/17_sdn-rdcd_ton/</guid>
-    <description><![CDATA[Zhou H , Wu C , Yang C , et al. SDN-RDCD: A Real-Time and Reliable Method for Detecting Compromised SDN Devices[J]. IEEE/ACM Transactions on Networking, 2018, PP(99). 本文目标是通过一个审计器检测被挟持的SDN设备，实验结果并未与其他进行比较，因为他声]]></description>
+    </author><guid>/posts/26_sd-anti-ddos/</guid>
+    <description><![CDATA[Cui Y, Yan L, Li S, et al. SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks[J]. Journal of Network and Computer Applications, 2016, 68: 65-79. 本文提出一种针对DDoS攻击的检测与缓解机制，由四部份组成：attack detection trigger,attack detection,attack traceback,attack miti]]></description>
 </item></channel>
 </rss>

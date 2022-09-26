@@ -4,7 +4,14 @@
         <link>/tags/ovs/</link>
         <description>ovs - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</lastBuildDate><atom:link href="/tags/ovs/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</lastBuildDate><atom:link href="/tags/ovs/" rel="self" type="application/rss+xml" /><item>
+    <title>OVS添加自定义action</title>
+    <link>/posts/org_11_ovs_add_action/</link>
+    <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_11_ovs_add_action/</guid>
+    <description><![CDATA[版本及环境 ovs 2.13.7 ubuntu 18.04 与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到 看这篇需要有一定的OVS基础，基本概念必须要了解。 基本概念 这里讲]]></description>
+</item><item>
     <title>mininet , ovs , ryu 分别进行源码安装</title>
     <link>/posts/05_ovs_install/</link>
     <pubDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</pubDate><author>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks" />
+<meta property="og:description" content="Cui Y, Yan L, Li S, et al. SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks[J]. Journal of Network and Computer Applications, 2016, 68: 65-79. 本文提出一种针对DDoS攻击的检测与缓解机制，由四部份组成：attack detection trigger,attack detection,attack traceback,attack miti" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/26_sd-anti-ddos/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-09T18:32:36+08:00" />
+<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks"/>
+<meta name="twitter:description" content="Cui Y, Yan L, Li S, et al. SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks[J]. Journal of Network and Computer Applications, 2016, 68: 65-79. 本文提出一种针对DDoS攻击的检测与缓解机制，由四部份组成：attack detection trigger,attack detection,attack traceback,attack miti"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/26_sd-anti-ddos/" /><link rel="prev" href="/posts/25_fresco/" /><link rel="next" href="/posts/27_bohatei/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/26_sd-anti-ddos\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  1341 ,
+        "url": "\/posts\/26_sd-anti-ddos\/","datePublished": "2019-09-09T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-09">2019-09-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1341 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#attack-detection-trigger">Attack detection trigger</a></li>
+    <li><a href="#attack-detection">Attack detection</a></li>
+    <li><a href="#attack-traceback">attack traceback</a></li>
+    <li><a href="#attack-mitigation">attack mitigation</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#整体性能评估">整体性能评估</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>Cui Y, Yan L, Li S, et al. SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks[J]. Journal of Network and Computer Applications, 2016, 68: 65-79.</p>
+</blockquote>
+<p>本文提出一种针对DDoS攻击的检测与缓解机制，由四部份组成：attack detection trigger,attack detection,attack traceback,attack mitigation。本文质量一般，不过packet_in trigger提出觉得有点创新。</p>
+<h1 id="introduction">introduction</h1>
+<p>本文通过trigger来触发检测算法进行检测，检测到后再分析switch是否为恶意攻击的路径，再结合全局拓扑和受攻击者IP找到恶意流的源switch，从源进行缓解。
+整体架构如图4：</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVIjL4.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVIjL4.png, https://s2.ax1x.com/2019/04/24/EVIjL4.png 1.5x, https://s2.ax1x.com/2019/04/24/EVIjL4.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVIjL4.png"
+        title="EVIjL4.png"
+    /></p>
+<p>init state:检测packet_in是否有异常。
+detecxtion state:检测DDoS是否发生。
+Traceback State:检测包攻击路径
+Mitigation state:根据找到的source switch进行缓解。</p>
+<ul>
+<li>1.发生异常</li>
+<li>2.没检测到DDoS攻击</li>
+<li>3.检测到DDoS攻击</li>
+<li>4.没找到攻击包路径</li>
+<li>5.path,source switch被找到</li>
+<li>6.清理完成。</li>
+</ul>
+<p>图5为组件和工作流程图</p>
+<p>[<img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVorXF.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVorXF.md.png, https://s2.ax1x.com/2019/04/24/EVorXF.md.png 1.5x, https://s2.ax1x.com/2019/04/24/EVorXF.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVorXF.md.png"
+        title="EVorXF.md.png"
+    />]</p>
+<p>由图可见本机制的4部分合作关系下面分别介绍这四部份。</p>
+<h2 id="attack-detection-trigger">Attack detection trigger</h2>
+<p>本部份主要检测packet_in是否有异常的数据量峰值包括两部份：<strong>消息容量计算，消息容量异常检测</strong>，使用的是exact-STORM算法，它使用的一种Indexed Trream Buffer(ISB)的数据结构，ISB以节点的形式存储信息，主要结构为：</p>
+<ul>
+<li>n.obj: packet_in消息的velocity，其实就是时间间隔到达的包数除以时间间隔。</li>
+<li>n.id</li>
+<li>n.count_after: buffer中其他点与当前点的V在一定范围内的个数。</li>
+<li>n.nn_before: 最相近的指定个节点id组成的列表。</li>
+</ul>
+<p>packet_in消息异常检测流程和算法如图6和A1：</p>
+<p><a href="https://imgchr.com/i/EV7NR0" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EV7NR0.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EV7NR0.md.png, https://s2.ax1x.com/2019/04/24/EV7NR0.md.png 1.5x, https://s2.ax1x.com/2019/04/24/EV7NR0.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EV7NR0.md.png"
+        title="EV7NR0.md.png"
+    /></a></p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EV7UzV.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EV7UzV.png, https://s2.ax1x.com/2019/04/24/EV7UzV.png 1.5x, https://s2.ax1x.com/2019/04/24/EV7UzV.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EV7UzV.png"
+        title="EV7UzV.png"
+    /></p>
+<p>算法和流程图讲的是一个东西。当指定数据的packet_in包到达后计算该时间间隔的包体积V（就是包数除以时间），并使用exact-STORM来检测是否异常。
+exact-STORM算法如A2：</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EV7jOS.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EV7jOS.png, https://s2.ax1x.com/2019/04/24/EV7jOS.png 1.5x, https://s2.ax1x.com/2019/04/24/EV7jOS.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EV7jOS.png"
+        title="EV7jOS.png"
+    /></p>
+<p>本算法中，如果buffer中包与本包的V差值在R之内的个数+与本包V值最近的几个包数(没说几个)&lt;某个值，则本包被视为游离包，返回异常。
+使用本触发方法比定期触发更节省资源。</p>
+<h2 id="attack-detection">Attack detection</h2>
+<p>本文使用的检测算法：BPNN（没具体讲算法怎么用。）输入层5,隐藏层10,输出层1.输入特征为：流项的包数，流项的字节数，流项的包率，流项的字节率，流项的生存时间。具体流程见图7：</p>
+<p><a href="https://imgchr.com/i/EVO8Cd" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVO8Cd.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVO8Cd.md.png, https://s2.ax1x.com/2019/04/24/EVO8Cd.md.png 1.5x, https://s2.ax1x.com/2019/04/24/EVO8Cd.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVO8Cd.md.png"
+        title="EVO8Cd.md.png"
+    /></a></p>
+<p>解释：对每个流抽取特征并检测，如果是恶意流：存dIP，如果恶意流数量超过一定值：找到最可能的dIP，停止分析。</p>
+<h2 id="attack-traceback">attack traceback</h2>
+<p>利用前一阶段获得的信息进行路径发现和路径源头。具体流程见图8</p>
+<p><a href="https://imgchr.com/i/EVORbT" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVORbT.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVORbT.md.png, https://s2.ax1x.com/2019/04/24/EVORbT.md.png 1.5x, https://s2.ax1x.com/2019/04/24/EVORbT.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVORbT.md.png"
+        title="EVORbT.md.png"
+    /></a></p>
+<p>这里再次使用BPNN算法，计算S中的每个流，如果恶意流数量超过一定值而将该S定为恶意S，再根据dIP，恶意S和全局拓扑找到source。</p>
+<h2 id="attack-mitigation">attack mitigation</h2>
+<p>目的：阻寒攻击流量。
+在source给恶意流量以最高优先级插入丢弃策略，流项见图9</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVXVIg.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVXVIg.png, https://s2.ax1x.com/2019/04/24/EVXVIg.png 1.5x, https://s2.ax1x.com/2019/04/24/EVXVIg.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVXVIg.png"
+        title="EVXVIg.png"
+    /></p>
+<h1 id="评价">评价</h1>
+<p>RYU中，使用25个S，200个host，重要参数设置见表2</p>
+<p><a href="https://imgchr.com/i/EVX0L6" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVX0L6.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVX0L6.md.png, https://s2.ax1x.com/2019/04/24/EVX0L6.md.png 1.5x, https://s2.ax1x.com/2019/04/24/EVX0L6.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVX0L6.md.png"
+        title="EVX0L6.md.png"
+    /></a></p>
+<h2 id="整体性能评估">整体性能评估</h2>
+<p>表3各模块启动时间，图10：CPU使用率，图11控制器网络负载</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVXWQI.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVXWQI.png, https://s2.ax1x.com/2019/04/24/EVXWQI.png 1.5x, https://s2.ax1x.com/2019/04/24/EVXWQI.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVXWQI.png"
+        title="EVXWQI.png"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVXfyt.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVXfyt.png, https://s2.ax1x.com/2019/04/24/EVXfyt.png 1.5x, https://s2.ax1x.com/2019/04/24/EVXfyt.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVXfyt.png"
+        title="EVXfyt.png"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVX5ef.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVX5ef.png, https://s2.ax1x.com/2019/04/24/EVX5ef.png 1.5x, https://s2.ax1x.com/2019/04/24/EVX5ef.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVX5ef.png"
+        title="EVX5ef.png"
+    /></p>
+<p>表4为寻找路径结果</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVXHYQ.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVXHYQ.png, https://s2.ax1x.com/2019/04/24/EVXHYQ.png 1.5x, https://s2.ax1x.com/2019/04/24/EVXHYQ.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVXHYQ.png"
+        title="EVXHYQ.png"
+    /></p>
+<p>找到两条路径：e11-a3-c1-a2-e6和e16-a4-c1-a2-e6
+表5为在block前后controller接收率的变化</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVXzwT.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVXzwT.png, https://s2.ax1x.com/2019/04/24/EVXzwT.png 1.5x, https://s2.ax1x.com/2019/04/24/EVXzwT.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVXzwT.png"
+        title="EVXzwT.png"
+    /></p>
+<p>##结果性能对比</p>
+<ol>
+<li>本文的优点：触发型检测，可删除S中的entries（没有具体的性能对比），对比见表6</li>
+</ol>
+<p><a href="https://imgchr.com/i/EVjklR" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVjklR.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVjklR.md.png, https://s2.ax1x.com/2019/04/24/EVjklR.md.png 1.5x, https://s2.ax1x.com/2019/04/24/EVjklR.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVjklR.md.png"
+        title="EVjklR.md.png"
+    /></a></p>
+<ol start="2">
+<li>比较trigger和periodic的性对，本文只是自己跟自己比，没有跟别人比。</li>
+</ol>
+<p><a href="https://imgchr.com/i/EVjUAS" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/24/EVjUAS.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/24/EVjUAS.md.png, https://s2.ax1x.com/2019/04/24/EVjUAS.md.png 1.5x, https://s2.ax1x.com/2019/04/24/EVjUAS.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/24/EVjUAS.md.png"
+        title="EVjUAS.md.png"
+    /></a></p>
+<p>Comput.NetW.这个怎么样？</p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/26_sd-anti-ddos/" data-title="SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/26_sd-anti-ddos/" data-title="SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/26_sd-anti-ddos/" data-title="SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/26_sd-anti-ddos/" data-title="SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/25_fresco/" class="prev" rel="prev" title="FRESCO:Modular Composable Security Services for Software-Defined Networks"><i class="fas fa-angle-left fa-fw"></i>FRESCO:Modular Composable Security Services for Software-Defined Networks</a>
+            <a href="/posts/27_bohatei/" class="next" rel="next" title="Bohatei: Flexible and elastic ddos defense">Bohatei: Flexible and elastic ddos defense<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

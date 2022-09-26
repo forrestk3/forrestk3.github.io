@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">A taxonomy of DDoS attack and DDoS defense mechanisms - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="A taxonomy of DDoS attack and DDoS defense mechanisms" />
+<meta property="og:description" content="Mirkovic J, Reiher P. A taxonomy of DDoS attack and DDoS defense mechanisms[J]. ACM SIGCOMM Computer Communication Review, 2004, 34(2): 39-53. 本文不错，就是老了点，对DDoS攻击和防御做了总结和分类，而不是提供个具体的方法。 DDoS攻击总结" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/29_taxonomy/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-12T18:32:36+08:00" />
+<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A taxonomy of DDoS attack and DDoS defense mechanisms"/>
+<meta name="twitter:description" content="Mirkovic J, Reiher P. A taxonomy of DDoS attack and DDoS defense mechanisms[J]. ACM SIGCOMM Computer Communication Review, 2004, 34(2): 39-53. 本文不错，就是老了点，对DDoS攻击和防御做了总结和分类，而不是提供个具体的方法。 DDoS攻击总结"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/29_taxonomy/" /><link rel="prev" href="/posts/28_ddos_cloud_computing/" /><link rel="next" href="/posts/30_lads/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A taxonomy of DDoS attack and DDoS defense mechanisms",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/29_taxonomy\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  3676 ,
+        "url": "\/posts\/29_taxonomy\/","datePublished": "2019-09-12T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A taxonomy of DDoS attack and DDoS defense mechanisms</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-12">2019-09-12</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3676 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#攻击overview">攻击overview</a>
+      <ul>
+        <li><a href="#网络架构的缺点">网络架构的缺点：</a></li>
+        <li><a href="#攻击策略">攻击策略</a></li>
+        <li><a href="#ddos目的">DDoS目的</a></li>
+      </ul>
+    </li>
+    <li><a href="#taxonomy-of-ddos-attack">Taxonomy of ddos attack</a>
+      <ul>
+        <li><a href="#da自动化程度">DA:自动化程度</a>
+          <ul>
+            <li><a href="#da-1手动">DA-1：手动</a></li>
+            <li><a href="#da-2半自动">DA-2：半自动</a></li>
+            <li><a href="#da-2cm交流机制">DA-2：CM：交流机制</a></li>
+            <li><a href="#da-2cm-1直接">DA-2：CM-1：直接</a></li>
+            <li><a href="#da-2cm-2间接">DA-2：CM-2：间接</a></li>
+            <li><a href="#da-3自动">DA-3：自动</a></li>
+            <li><a href="#da-2-da-3ss扫描策略">DA-2 DA-3：SS：扫描策略</a>
+              <ul>
+                <li><a href="#da-2-da-3ss-1随机扫描">DA-2 DA-3：SS-1：随机扫描</a></li>
+                <li><a href="#da-2-da-3ss-2命中表检测">DA-2 DA-3：SS-2：命中表检测</a></li>
+                <li><a href="#da-2-da-3ss-3路标检测">DA-2 DA-3：SS-3：路标检测</a></li>
+                <li><a href="#da-2-da-3ss-4置换扫描">DA-2 DA-3：SS-4：置换扫描</a></li>
+                <li><a href="#da-2-da-3ss5本地子网扫描">DA-2 DA-3：SS5：本地子网扫描</a></li>
+              </ul>
+            </li>
+            <li><a href="#da-2-da-3pm传播机制">DA-2 DA-3：PM：传播机制</a>
+              <ul>
+                <li><a href="#da-2-da-3pm-1中心源传播">DA-2 DA-3：PM-1：中心源传播</a></li>
+                <li><a href="#da-2-da-3pm-2连式传播">DA-2 DA-3：PM-2：连式传播</a></li>
+                <li><a href="#da-2-da-3pm-3自治传播">DA-2 DA-3：PM-3：自治传播</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#ev探索可攻击的弱点">EV：探索可攻击的弱点</a>
+          <ul>
+            <li><a href="#ev-1语义法">EV-1：语义法</a></li>
+            <li><a href="#ev-2brute-force">EV-2：Brute-Force</a></li>
+          </ul>
+        </li>
+        <li><a href="#sav源地址验证">SAV：源地址验证</a>
+          <ul>
+            <li><a href="#sav-1源地址欺骗">SAV-1:源地址欺骗</a></li>
+            <li><a href="#sav-1ar地址是否可路由">SAV-1：AR：地址是否可路由</a>
+              <ul>
+                <li><a href="#sav-1ar-1可路由">SAV-1：AR-1：可路由</a></li>
+                <li><a href="#sav-1ar-2不可路由">SAV-1:AR-2:不可路由</a></li>
+              </ul>
+            </li>
+            <li><a href="#sav-1st欺骗策略">SAV-1：ST：欺骗策略</a>
+              <ul>
+                <li><a href="#sav-1st-1随机源地址">SAV-1:ST-1:随机源地址</a></li>
+                <li><a href="#sav-1st-2子网欺骗地址">SAV-1：ST-2：子网欺骗地址</a></li>
+                <li><a href="#sav-1st-3使用agent出口路由地址">SAV-1：ST-3：使用agent出口路由地址</a></li>
+              </ul>
+            </li>
+            <li><a href="#sav-2验证源地址">SAV-2：验证源地址</a></li>
+          </ul>
+        </li>
+        <li><a href="#ard攻击频率">ARD：攻击频率</a>
+          <ul>
+            <li><a href="#ard-1持续攻击">ARD-1：持续攻击</a></li>
+            <li><a href="#ard-2变频攻击">ARD-2：变频攻击</a></li>
+            <li><a href="#ard-2rcm变频机制">ARD-2：RCM：变频机制</a>
+              <ul>
+                <li><a href="#ard-2rcm-1逐增">ARD-2:RCM-1：逐增</a></li>
+                <li><a href="#ard-2rcm-2跳频">ARD-2：RCM-2：跳频</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#pc是否定制">PC：是否定制</a>
+          <ul>
+            <li><a href="#pc-1characterizable">PC-1：Characterizable</a></li>
+            <li><a href="#pc-1ravs基于attack和victim服务的关系">PC-1：RAVS：基于attack和victim服务的关系</a>
+              <ul>
+                <li><a href="#pc-1ravs-1可过滤">PC-1：RAVS-1：可过滤</a></li>
+                <li><a href="#pc-2ravs-2non-filterable">PC-2：RAVS-2：Non-Filterable</a></li>
+              </ul>
+            </li>
+            <li><a href="#pc-2non-characterizable">PC-2：Non-characterizable</a></li>
+          </ul>
+        </li>
+        <li><a href="#pasagent的持续性">PAS：Agent的持续性</a>
+          <ul>
+            <li><a href="#pas-1constant-agent-set">PAS-1：Constant Agent Set</a></li>
+            <li><a href="#pas-2variable-agent-set">PAS-2：Variable Agent Set</a></li>
+          </ul>
+        </li>
+        <li><a href="#vtvictim类别">VT:victim类别</a>
+          <ul>
+            <li><a href="#vt-1应用">VT-1:应用</a></li>
+            <li><a href="#vt-2主机">VT-2：主机</a></li>
+            <li><a href="#vt-3-网络">VT-3 网络</a></li>
+            <li><a href="#vt-4-基础设施">VT-4 基础设施</a></li>
+          </ul>
+        </li>
+        <li><a href="#iv对victim的影响">IV：对victim的影响</a>
+          <ul>
+            <li><a href="#iv-1disruptive">IV-1:Disruptive</a></li>
+            <li><a href="#iv-1pdr被攻击后是否可恢复">IV-1：PDR:被攻击后是否可恢复</a>
+              <ul>
+                <li><a href="#iv-1pdr-1可恢复">IV-1:PDR-1:可恢复</a></li>
+                <li><a href="#iv-1pdr-2不可恢复">IV-1:PDR-2:不可恢复</a></li>
+              </ul>
+            </li>
+            <li><a href="#iv-2degrading">IV-2：degrading</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#防御challenge">防御challenge</a></li>
+    <li><a href="#taxonomy-of-ddos-defenses">Taxonomy of DDoS Defenses</a>
+      <ul>
+        <li><a href="#al防御机制活跃等级">AL：防御机制活跃等级</a>
+          <ul>
+            <li><a href="#al-1阻止">AL-1：阻止</a></li>
+            <li><a href="#al-1pg阻止目标">AL-1:PG：阻止目标</a>
+              <ul>
+                <li><a href="#al-1pg-1attack-prevention">AL-1:PG-1:attack prevention</a></li>
+                <li><a href="#al-1pg-1st保护目标">AL-1：PG-1：ST：保护目标</a>
+                  <ul>
+                    <li><a href="#al-1pg-1st-1系统安全">AL-1：PG-1：ST-1：系统安全</a></li>
+                    <li><a href="#al-1pg-1st-2协议安全">AL-1：PG-1：ST-2：协议安全</a></li>
+                  </ul>
+                </li>
+                <li><a href="#al-1pg-2dos-prevertion">AL-1：PG-2：Dos Prevertion</a></li>
+                <li><a href="#al-1pg-2pm防御手段">AL-1:PG-2:PM:防御手段</a>
+                  <ul>
+                    <li><a href="#al-1pg-2pm-1资源审计">AL-1:PG-2:PM-1:资源审计</a></li>
+                    <li><a href="#al-1pg-2pm-1资源增加">AL-1：PG-2：PM-1：资源增加</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#al-2被动响应">AL-2：被动响应</a></li>
+            <li><a href="#al-2ads攻击检测策略">AL-2：ADS：攻击检测策略</a>
+              <ul>
+                <li><a href="#al-2ads-1模式匹配">AL-2:ADS-1:模式匹配</a></li>
+                <li><a href="#al-2ads-2异常检测">AL-2：ADS-2：异常检测</a></li>
+                <li><a href="#al-2ads-2nbsnormal-behavior-specification">AL-2：ADS-2:NBS：normal behavior specification</a>
+                  <ul>
+                    <li><a href="#al-2ads-2nbs-1standard">AL-2:ADS-2:NBS-1:standard</a></li>
+                    <li><a href="#al-2ads-2nbs-1trained">AL-2：ADS-2：NBS-1：trained</a></li>
+                  </ul>
+                </li>
+                <li><a href="#al-2ads-3第三方检测">AL-2：ADS-3：第三方检测</a></li>
+              </ul>
+            </li>
+            <li><a href="#al-2ars攻击响应策略">AL-2：ARS：攻击响应策略</a>
+              <ul>
+                <li><a href="#al-2ars-1agent识别">AL-2:ARS-1:Agent识别</a></li>
+                <li><a href="#al-2ars-2rate限制">AL-2：ARS-2：rate限制</a></li>
+                <li><a href="#al-2ars-3过滤">AL-2：ARS-3：过滤</a></li>
+                <li><a href="#al-2ars-4重配置">AL-2：ARS-4:重配置</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#cd协作程度">CD：协作程度</a>
+          <ul>
+            <li><a href="#cd-1autonomous">CD-1:Autonomous</a></li>
+            <li><a href="#cd-2cooperative">CD-2：Cooperative</a></li>
+            <li><a href="#cd-3interdependent">CD-3:Interdependent</a></li>
+          </ul>
+        </li>
+        <li><a href="#dl布署位置">DL：布署位置</a>
+          <ul>
+            <li><a href="#dl-1victim-network">DL-1:Victim Network</a></li>
+            <li><a href="#dl-2intermediate-network">DL-2：Intermediate network</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>Mirkovic J, Reiher P. A taxonomy of DDoS attack and DDoS defense mechanisms[J]. ACM SIGCOMM Computer Communication Review, 2004, 34(2): 39-53.</p>
+</blockquote>
+<p>本文不错，就是老了点，对DDoS攻击和防御做了总结和分类，而不是提供个具体的方法。</p>
+<h1 id="ddos攻击总结">DDoS攻击总结</h1>
+<h2 id="攻击overview">攻击overview</h2>
+<h3 id="网络架构的缺点">网络架构的缺点：</h3>
+<ol>
+<li>网络安全性高度独立</li>
+<li>网络资源有限</li>
+<li>攻击者协调工作</li>
+<li>实体与网络带宽不一致，使攻击者有大量的资源可使用。</li>
+<li>没有强制审计</li>
+<li>网络是分布式</li>
+<li>分布式管理，每个网络在本地管理下运行。</li>
+</ol>
+<h3 id="攻击策略">攻击策略</h3>
+<p>找slave,slave再找slave,进行spoof攻击。</p>
+<h3 id="ddos目的">DDoS目的</h3>
+<p>威望，钱，斗争，仇。</p>
+<h2 id="taxonomy-of-ddos-attack">Taxonomy of ddos attack</h2>
+<p>贴上攻击分类图：</p>
+<p><a href="https://imgchr.com/i/EJ7Zk9" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/01/EJ7Zk9.md.png"
+        data-srcset="https://s2.ax1x.com/2019/05/01/EJ7Zk9.md.png, https://s2.ax1x.com/2019/05/01/EJ7Zk9.md.png 1.5x, https://s2.ax1x.com/2019/05/01/EJ7Zk9.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/01/EJ7Zk9.md.png"
+        title="EJ7Zk9.md.png"
+    /></a></p>
+<h3 id="da自动化程度">DA:自动化程度</h3>
+<p>分为手动，自动，半自动。</p>
+<h4 id="da-1手动">DA-1：手动</h4>
+<p>攻击手动扫描主机，黑它，插入恶意代码，启动，现在基本没有了。</p>
+<h4 id="da-2半自动">DA-2：半自动</h4>
+<p>使用handler控制agent来进行攻击。</p>
+<h4 id="da-2cm交流机制">DA-2：CM：交流机制</h4>
+<p>handler与agent交流手段分：直接，间接。</p>
+<h4 id="da-2cm-1直接">DA-2：CM-1：直接</h4>
+<p>需要将handler的IP写死在攻击代码中，因此一个agent被发现可能导致整个攻击的失败</p>
+<h4 id="da-2cm-2间接">DA-2：CM-2：间接</h4>
+<p>间接通信，handler与agent通过IRC[19]进行交流，DDoS更稳定，攻击代码可更新，还可以定期更换IRC使其更难被发现。</p>
+<h4 id="da-3自动">DA-3：自动</h4>
+<p>全自动化，handler与agent之间不需要通信，攻击属性写死在攻击代码里。handler要做的就是启动攻击脚本。缺点：攻击系统不够灵活。</p>
+<h4 id="da-2-da-3ss扫描策略">DA-2 DA-3：SS：扫描策略</h4>
+<p>一般使用worm自动感染主机，扫描方式分很多种，下面介绍</p>
+<h5 id="da-2-da-3ss-1随机扫描">DA-2 DA-3：SS-1：随机扫描</h5>
+<p>被感染的主机使用种子随机扫描IP。这会导致大量流量，触发攻击检测系统。</p>
+<h5 id="da-2-da-3ss-2命中表检测">DA-2 DA-3：SS-2：命中表检测</h5>
+<p>每感染一个就给被感染者发送一部分感染列表。优：快速，无碰撞；劣：列表可能太长，传输流量大；列表需要事先收集。</p>
+<h5 id="da-2-da-3ss-3路标检测">DA-2 DA-3：SS-3：路标检测</h5>
+<p>使用被感染的主机信息对新的主机进行扫描；优：流量小；缺：慢。</p>
+<h5 id="da-2-da-3ss-4置换扫描">DA-2 DA-3：SS-4：置换扫描</h5>
+<p>所有被感染者有共同的IP表，IP对应下标。agent从随机下标开始，遇到被感染的再从随机下标开始。速度一般，有可能导致攻击检测。</p>
+<h5 id="da-2-da-3ss5本地子网扫描">DA-2 DA-3：SS5：本地子网扫描</h5>
+<p>该方法可附加到前面各扫描方法中，可以防炎墙内找弱机。</p>
+<h4 id="da-2-da-3pm传播机制">DA-2 DA-3：PM：传播机制</h4>
+<p>基于感染阶段的传播机制可分为：central source propagation,back-chaining propagation,autonomous propogation.</p>
+<h5 id="da-2-da-3pm-1中心源传播">DA-2 DA-3：PM-1：中心源传播</h5>
+<p>感染机器从中心服务器下载代码。缺：会有单点失败问题。</p>
+<h5 id="da-2-da-3pm-2连式传播">DA-2 DA-3：PM-2：连式传播</h5>
+<p>当前感染的机器将代码传给下一个。优：稳定。</p>
+<h5 id="da-2-da-3pm-3自治传播">DA-2 DA-3：PM-3：自治传播</h5>
+<p>在探索阶段注入攻击指令。优：流量小。</p>
+<h3 id="ev探索可攻击的弱点">EV：探索可攻击的弱点</h3>
+<h4 id="ev-1语义法">EV-1：语义法</h4>
+<p>利用弱机已安装的协议或应用的缺点，如：TCP SYN，CGI请求攻击，NAPTHA 攻击。</p>
+<h4 id="ev-2brute-force">EV-2：Brute-Force</h4>
+<p>发送超过弱机处理能力的大量流量。</p>
+<h3 id="sav源地址验证">SAV：源地址验证</h3>
+<p>安源地址验证类型的攻击可分：spoofed source address,valid source address</p>
+<h4 id="sav-1源地址欺骗">SAV-1:源地址欺骗</h4>
+<p>这个方法很流行</p>
+<h4 id="sav-1ar地址是否可路由">SAV-1：AR：地址是否可路由</h4>
+<p>这个可以再分：routable source sdress,non-routable source address</p>
+<h5 id="sav-1ar-1可路由">SAV-1：AR-1：可路由</h5>
+<p>反射攻击，如：Smurf attack</p>
+<h5 id="sav-1ar-2不可路由">SAV-1:AR-2:不可路由</h5>
+<p>一般使用网络空间中被分配却未被使用的地址</p>
+<h4 id="sav-1st欺骗策略">SAV-1：ST：欺骗策略</h4>
+<p>按选欺骗地址的技术可分：random,subnet,enroute</p>
+<h5 id="sav-1st-1随机源地址">SAV-1:ST-1:随机源地址</h5>
+<p>使用随机生成的地址。缺：容易被入口过滤器丢弃。</p>
+<h5 id="sav-1st-2子网欺骗地址">SAV-1：ST-2：子网欺骗地址</h5>
+<p>使用agent的子网地址</p>
+<h5 id="sav-1st-3使用agent出口路由地址">SAV-1：ST-3：使用agent出口路由地址</h5>
+<h4 id="sav-2验证源地址">SAV-2：验证源地址</h4>
+<p>有的攻击需要请求/响应，所以需要用真实的地址。</p>
+<h3 id="ard攻击频率">ARD：攻击频率</h3>
+<p>可以分为：constant rate,variable rate</p>
+<h4 id="ard-1持续攻击">ARD-1：持续攻击</h4>
+<p>agent以固定频率发包，通常是最大。缺：触发攻击检测</p>
+<h4 id="ard-2变频攻击">ARD-2：变频攻击</h4>
+<p>通过改变攻击频率的方式避免触发攻击检测</p>
+<h4 id="ard-2rcm变频机制">ARD-2：RCM：变频机制</h4>
+<p>可分为：increasing rate,fluctuating rate</p>
+<h5 id="ard-2rcm-1逐增">ARD-2:RCM-1：逐增</h5>
+<p>慢慢提高，逐渐增加耗victim的资源。可以延迟被检测</p>
+<h5 id="ard-2rcm-2跳频">ARD-2：RCM-2：跳频</h5>
+<p>跳动攻击，可多组协作，保持有一组活跃攻击。优：难以被发现。</p>
+<h3 id="pc是否定制">PC：是否定制</h3>
+<p>根据是否定制包头包内容可分：characterizable and non-characterizable attacks.</p>
+<h4 id="pc-1characterizable">PC-1：Characterizable</h4>
+<p>定制攻击一般用于特定主机或协议</p>
+<h4 id="pc-1ravs基于attack和victim服务的关系">PC-1：RAVS：基于attack和victim服务的关系</h4>
+<p>可分：filterable and non-filterable</p>
+<h5 id="pc-1ravs-1可过滤">PC-1：RAVS-1：可过滤</h5>
+<p>发畸形包给victim的非标准服务，如UDP flood,ICMP ECHO flood。缺：可由防火墙拦截。</p>
+<h5 id="pc-2ravs-2non-filterable">PC-2：RAVS-2：Non-Filterable</h5>
+<p>向victim请求合法服务的攻击，如：HTTP request flood,DNS request flood。优：难解决。</p>
+<h4 id="pc-2non-characterizable">PC-2：Non-characterizable</h4>
+<p>使用随机生成的包。缺：攻击效果不行。</p>
+<h3 id="pasagent的持续性">PAS：Agent的持续性</h3>
+<p>一直活跃会被检测，按Agent的持续性分：constant agent set,attack with variable agent set.</p>
+<h4 id="pas-1constant-agent-set">PAS-1：Constant Agent Set</h4>
+<p>所有Agent收到的指令一致，一起开一起关。</p>
+<h4 id="pas-2variable-agent-set">PAS-2：Variable Agent Set</h4>
+<p>Agent分组，组内同步，如ARD-2 RCM-2</p>
+<h3 id="vtvictim类别">VT:victim类别</h3>
+<p>可分为：application,host,network,infrastructure</p>
+<h4 id="vt-1应用">VT-1:应用</h4>
+<p>攻击机器上的某个应用，耗尽其资源使合法用户无法使用。优：难检测</p>
+<h4 id="vt-2主机">VT-2：主机</h4>
+<p>针对主机，耗尽资源使其不可用。如：TCP SYN。一般通过防火墙防御。</p>
+<h4 id="vt-3-网络">VT-3 网络</h4>
+<p>耗网络带宽。用防火墙容易防御。</p>
+<h4 id="vt-4-基础设施">VT-4 基础设施</h4>
+<p>攻击一些服务，如：DNS，ROUTER等。</p>
+<h3 id="iv对victim的影响">IV：对victim的影响</h3>
+<p>可分为：disruptive,degrading</p>
+<h4 id="iv-1disruptive">IV-1:Disruptive</h4>
+<p>使服务不可用</p>
+<h4 id="iv-1pdr被攻击后是否可恢复">IV-1：PDR:被攻击后是否可恢复</h4>
+<p>可分为：revoverable,non-recoverable</p>
+<h5 id="iv-1pdr-1可恢复">IV-1:PDR-1:可恢复</h5>
+<p>当攻击停止，victim就恢复，如UDP flooding</p>
+<h5 id="iv-1pdr-2不可恢复">IV-1:PDR-2:不可恢复</h5>
+<p>攻击停止victim无法恢复如使其死机等</p>
+<h4 id="iv-2degrading">IV-2：degrading</h4>
+<p>攻击只降低服务质量。这种攻击难以检测，威害巨大。</p>
+<h1 id="ddos防御总结">DDoS防御总结</h1>
+<h2 id="防御challenge">防御challenge</h2>
+<ol>
+<li>布署</li>
+<li>成效不好</li>
+<li>攻击意图了解少</li>
+<li>没有防御标准</li>
+<li>无法进行大范围测试</li>
+</ol>
+<h2 id="taxonomy-of-ddos-defenses">Taxonomy of DDoS Defenses</h2>
+<p>贴上防御分类图</p>
+<p><a href="https://imgchr.com/i/EJ79S0" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/01/EJ79S0.md.png"
+        data-srcset="https://s2.ax1x.com/2019/05/01/EJ79S0.md.png, https://s2.ax1x.com/2019/05/01/EJ79S0.md.png 1.5x, https://s2.ax1x.com/2019/05/01/EJ79S0.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/01/EJ79S0.md.png"
+        title="EJ79S0.md.png"
+    /></a></p>
+<h3 id="al防御机制活跃等级">AL：防御机制活跃等级</h3>
+<p>可分为：preventive,reactive</p>
+<h4 id="al-1阻止">AL-1：阻止</h4>
+<p>通过避免攻击发生，保护主机不受攻击</p>
+<h4 id="al-1pg阻止目标">AL-1:PG：阻止目标</h4>
+<p>可分为：attack prevention,denial of service prevention</p>
+<h5 id="al-1pg-1attack-prevention">AL-1:PG-1:attack prevention</h5>
+<p>修改系统和协议以避免攻击发生。</p>
+<h5 id="al-1pg-1st保护目标">AL-1：PG-1：ST：保护目标</h5>
+<p>根据保护目标可再分为：system security,protocol security</p>
+<h6 id="al-1pg-1st-1系统安全">AL-1：PG-1：ST-1：系统安全</h6>
+<p>保护主机和router使他们成为强机。</p>
+<h6 id="al-1pg-1st-2协议安全">AL-1：PG-1：ST-2：协议安全</h6>
+<p>完善协议，不好的协议使Server易受攻击，如TCP-SYN</p>
+<h5 id="al-1pg-2dos-prevertion">AL-1：PG-2：Dos Prevertion</h5>
+<h5 id="al-1pg-2pm防御手段">AL-1:PG-2:PM:防御手段</h5>
+<p>可分为：resource accounting,resource multiplication</p>
+<h6 id="al-1pg-2pm-1资源审计">AL-1:PG-2:PM-1:资源审计</h6>
+<p>user需要验证才会被分配资源。</p>
+<h6 id="al-1pg-2pm-1资源增加">AL-1：PG-2：PM-1：资源增加</h6>
+<p>用大量资源进行负载均衡，让attack耗不完。</p>
+<h4 id="al-2被动响应">AL-2：被动响应</h4>
+<p>致力于攻击发生时减小攻击的影响</p>
+<h4 id="al-2ads攻击检测策略">AL-2：ADS：攻击检测策略</h4>
+<p>可分为：pattern detection,anomaly dettection,third-party detection</p>
+<h5 id="al-2ads-1模式匹配">AL-2:ADS-1:模式匹配</h5>
+<p>将模式存于数据库，对新包匹配。缺：新的攻击不会检测到。优：FP低。</p>
+<h5 id="al-2ads-2异常检测">AL-2：ADS-2：异常检测</h5>
+<p>定期与正常系统行为模型比较来发现异常。</p>
+<h5 id="al-2ads-2nbsnormal-behavior-specification">AL-2：ADS-2:NBS：normal behavior specification</h5>
+<p>可分为：standard,trained</p>
+<h6 id="al-2ads-2nbs-1standard">AL-2:ADS-2:NBS-1:standard</h6>
+<p>依靠协议标准特征进行检测，没有FP，但复杂攻击可以伪装成标准特征。</p>
+<h6 id="al-2ads-2nbs-1trained">AL-2：ADS-2：NBS-1：trained</h6>
+<p>训练正常特征生成阈值来区分。缺：阈值不好定；模型更新可能会误训练。</p>
+<h5 id="al-2ads-3第三方检测">AL-2：ADS-3：第三方检测</h5>
+<p>不自已检测。</p>
+<h4 id="al-2ars攻击响应策略">AL-2：ARS：攻击响应策略</h4>
+<p>可分为：agent identification,rate-limiting,filtering,reconfiguration</p>
+<h5 id="al-2ars-1agent识别">AL-2:ARS-1:Agent识别</h5>
+<p>使victim可以识别出Agent，结合其他策略降低攻击影响。</p>
+<h5 id="al-2ars-2rate限制">AL-2：ARS-2：rate限制</h5>
+<p>给恶意流限速，通常用于FP高的情况</p>
+<h5 id="al-2ars-3过滤">AL-2：ARS-3：过滤</h5>
+<p>将恶意流完全过滤。缺：攻击者可以利用它误判性来达到dos目的。</p>
+<h5 id="al-2ars-4重配置">AL-2：ARS-4:重配置</h5>
+<p>重配置TOPO，境加资源或隔离attacker.</p>
+<h3 id="cd协作程度">CD：协作程度</h3>
+<p>可分为：autonomous,cooperative,interdependent</p>
+<h4 id="cd-1autonomous">CD-1:Autonomous</h4>
+<p>防御机制与其他实体不合作。</p>
+<h4 id="cd-2cooperative">CD-2：Cooperative</h4>
+<p>防御机制与其他实体协作，如：将防御决策发给router</p>
+<h4 id="cd-3interdependent">CD-3:Interdependent</h4>
+<p>防御机制需要依靠其他实体进行攻击阻止，攻击检测，高效响应。</p>
+<h3 id="dl布署位置">DL：布署位置</h3>
+<p>可分为：victim,intermediate,source network</p>
+<h4 id="dl-1victim-network">DL-1:Victim Network</h4>
+<p>在victim网络布署来保护这个网络</p>
+<h4 id="dl-2intermediate-network">DL-2：Intermediate network</h4>
+<p>以中件设备形式存在，保护大量主机，victim可以向其请求保护服务。
+####DL-3：Source network
+在源头阻止攻击的产生。缺：谁来付错布署这个？</p>
+<h1 id="总结">总结</h1>
+<p>本文是一篇不错的总结，被引用了1943次，许多参文献中都出更本文，有的文章里推荐阅读本文。本文的参考文献中有很多关于攻击的网站和资料。</p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/29_taxonomy/" data-title="A taxonomy of DDoS attack and DDoS defense mechanisms" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/29_taxonomy/" data-title="A taxonomy of DDoS attack and DDoS defense mechanisms"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/29_taxonomy/" data-title="A taxonomy of DDoS attack and DDoS defense mechanisms" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/29_taxonomy/" data-title="A taxonomy of DDoS attack and DDoS defense mechanisms"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/28_ddos_cloud_computing/" class="prev" rel="prev" title="DDoS Attack Protection in the Era of Cloud Computing and Software-Defined Networking"><i class="fas fa-angle-left fa-fw"></i>DDoS Attack Protection in the Era of Cloud Computing and Software-Defined Networking</a>
+            <a href="/posts/30_lads/" class="next" rel="next" title="LADS: large-scale automated DDOS detection system">LADS: large-scale automated DDOS detection system<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

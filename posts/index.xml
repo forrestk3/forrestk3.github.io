@@ -4,7 +4,35 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Hoeffding&#39;s inequality (霍夫丁不等式讲解)</title>
+    <link>/posts/org_12_hoeffding_ineq/</link>
+    <pubDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_12_hoeffding_ineq/</guid>
+    <description><![CDATA[霍夫丁不等式表达 下面的这个式子是我们常用的 Markov inequality 一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\). 这个不等式的证明: 过程中使用了微积分和一些]]></description>
+</item><item>
+    <title>OVS添加自定义action</title>
+    <link>/posts/org_11_ovs_add_action/</link>
+    <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_11_ovs_add_action/</guid>
+    <description><![CDATA[版本及环境 ovs 2.13.7 ubuntu 18.04 与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到 看这篇需要有一定的OVS基础，基本概念必须要了解。 基本概念 这里讲]]></description>
+</item><item>
+    <title>Current Trends of Discovery Topology in SDN</title>
+    <link>/posts/org_10_topo_discover/</link>
+    <pubDate>Fri, 16 Sep 2022 23:43:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_10_topo_discover/</guid>
+    <description><![CDATA[affliation and publication author: publication: 本文主要 SDN 中详细调研当前拓扑发现服务的解决办法和缺点 Abstract Intro Preliminary Knowledge LLDP 协议 Link Layer Discovery Protocal,详细解释了LLDP包每个字段的作用,但我]]></description>
+</item><item>
+    <title>Dynamic Packet Forwarding Verification in SDN</title>
+    <link>/posts/org_09_dyna/</link>
+    <pubDate>Fri, 16 Sep 2022 22:27:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_09_dyna/</guid>
+    <description><![CDATA[affliation and publication author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee publication: IEEE Transactions on Dependable and secure computing, 2019 abs 传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来]]></description>
+</item><item>
     <title>mininet , ovs , ryu 分别进行源码安装</title>
     <link>/posts/05_ovs_install/</link>
     <pubDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</pubDate><author>
@@ -46,33 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_02_hugo_with_emacs/</guid>
     <description><![CDATA[emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用. ox-hugo的]]></description>
-</item><item>
-    <title>hugo安装与入门</title>
-    <link>/posts/org_01_hugo_install/</link>
-    <pubDate>Thu, 04 Aug 2022 00:52:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_01_hugo_install/</guid>
-    <description><![CDATA[ubuntu 18.04安装hugo最新稳定版 在站上下载安装包 https://github.com/gohugoio/hugo/releases 安装即可 `sudo hugo version`查看版本 创建hugo站 1 hugo new site hello-world 这个命令会创建一个hello]]></description>
-</item><item>
-    <title>dFence: Transparent Network-based Denial of Service Mitigation</title>
-    <link>/posts/24_dfence/</link>
-    <pubDate>Sat, 07 Sep 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/24_dfence/</guid>
-    <description><![CDATA[Mahimkar A , Dange J , Shmatikov V , et al. dFence: Transparent Network-based Denial of Service Mitigation[J]. Nsdi ’, 2007:24-24.， 本文通过添加dFence中间设备，实现透明的DoS防御。图1架构图，将中间]]></description>
-</item><item>
-    <title>Header Space Analysis: Static Checking For Networks</title>
-    <link>/posts/23_header_space_analysis/</link>
-    <pubDate>Fri, 06 Sep 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/23_header_space_analysis/</guid>
-    <description><![CDATA[Kazemian P, Varghese G, McKeown N. Header space analysis: Static checking for networks[C]//Presented as part of the 9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12). 2012: 113-126. 看本文原因：好多文章中的参考文献，且作者Nick是OF提出者。本文提出Heade]]></description>
-</item><item>
-    <title>An Overview of Misuse/Attack Cases in SDN</title>
-    <link>/posts/22_misuse_attack/</link>
-    <pubDate>Wed, 04 Sep 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/22_misuse_attack/</guid>
-    <description><![CDATA[An Overview of Misuse/Attack Cases in SDN 标签（空格分隔）： security A-01-A:大量packet_in会导致SDN controller不可预期状态，例如，恶意主机生成大量p]]></description>
 </item></channel>
 </rss>

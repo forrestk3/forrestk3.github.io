@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Header Space Analysis: Static Checking For Networks - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Header Space Analysis: Static Checking For Networks" />
+<meta property="og:description" content="Kazemian P, Varghese G, McKeown N. Header space analysis: Static checking for networks[C]//Presented as part of the 9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12). 2012: 113-126. 看本文原因：好多文章中的参考文献，且作者Nick是OF提出者。本文提出Heade" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/23_header-space-analysis/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-06T18:32:36+08:00" />
+<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Header Space Analysis: Static Checking For Networks"/>
+<meta name="twitter:description" content="Kazemian P, Varghese G, McKeown N. Header space analysis: Static checking for networks[C]//Presented as part of the 9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12). 2012: 113-126. 看本文原因：好多文章中的参考文献，且作者Nick是OF提出者。本文提出Heade"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/23_header-space-analysis/" /><link rel="prev" href="/posts/23_header_space_analysis/" /><link rel="next" href="/posts/24_dfence/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Header Space Analysis: Static Checking For Networks",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/23_header-space-analysis\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  4047 ,
+        "url": "\/posts\/23_header-space-analysis\/","datePublished": "2019-09-06T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Header Space Analysis: Static Checking For Networks</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-06">2019-09-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4047 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mathcalh操作">$\mathcal{H}操作$</a></li>
+    <li><a href="#domainrangerange-inverse">Domain,Range,Range Inverse</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#reachability-analysis">Reachability Analysis</a></li>
+    <li><a href="#loop-detection">Loop Detection</a></li>
+    <li><a href="#slice-isolation">Slice Isolation</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#verfication-of-an-enterprise-network">Verfication of an enterprise Network</a>
+      <ul>
+        <li><a href="#测试环路">测试环路</a></li>
+        <li><a href="#测试可能的配置错误">测试可能的配置错误</a></li>
+      </ul>
+    </li>
+    <li><a href="#checking-slice-isolation">checking slice isolation</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>Kazemian P, Varghese G, McKeown N. Header space analysis: Static checking for networks[C]//Presented as part of the 9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12). 2012: 113-126.</p>
+</blockquote>
+<p>看本文原因：好多文章中的参考文献，且作者Nick是OF提出者。本文提出Header Space Analysis来分析错误类别如：Reachability Failure,Forwarding Loops,Traffic Isolation,Leakage problems。我们装将包头视作一系列位的连接,每个都是一个${0,1}^L$点，L是包头最大长度，而网络box的转换视作将点空间中的一个点转换为另一个（或一些）。</p>
+<h1 id="introduction">Introduction</h1>
+<p>我们的目标是：1.帮助风络管理员静态分析网络；2.保证不同集的主机，用户，流量的隔离；3.使用更通用的方式对网络切片进行静态分析。我们的关键是使用几何应用进行包分类。
+首先：每个包都可以用${0,1}^L$空间中的点进行表示。
+其次：将中间设备模型化为进行L维空间与子空间转换的box transfer function。如图1中的$T_A()和T_B()$。</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/15/AjnvGR.png"
+        data-srcset="https://s2.ax1x.com/2019/04/15/AjnvGR.png, https://s2.ax1x.com/2019/04/15/AjnvGR.png 1.5x, https://s2.ax1x.com/2019/04/15/AjnvGR.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/15/AjnvGR.png"
+        title="AjnvGR.png"
+    /></p>
+<p>最后：使用$\Psi$作为T的总和，$\Gamma$作为topology transfer function，至此网络行为可以用$\Psi$和$\Gamma$表示。</p>
+<h1 id="几何模型基本介绍">几何模型基本介绍</h1>
+<p><strong>header space</strong> $\mathcal{H}$:将包头视作为0和1组成的平坦序列，而其可视为${0,1}^L$中的一个点，L为包头长度上限，将该空间称作<strong>header space</strong> $\mathcal{H}$。
+$\mathcal{H}$不包括数据，因为假高数据不影响包的处理(如果是一个入侵检测的box，那么L就是整个包的长度)，注意：不同的协议对相同的包头位具有不同的解读。</p>
+<p><strong>Network Space</strong> $\mathcal{N}$:表示为：${0,1}^{L} \times{1, \ldots, P}$，这里${1, \dots, P}$指的是网络端口，这种所有可能的头空间对应上所有可能的端口称为网络空间$\mathcal{N}$</p>
+<p><strong>Network Transfer Function</strong> $\Psi()$:当包在网络中传输时，它将包从一个point转换到另一个point(s)。所有的网络boxes可以视作为Transfer Function T，而T作用是将从端口p到达的头h映射：$T(h, p) : \quad(h, p) \rightarrow\left{\left(h_{1}, p_{1}\right),\left(h_{2}, p_{2}\right), \ldots\right}$，而$\Psi(.)$就是所有T组成的一个组合函数，表示为：
+$\Psi(h, p)=\left{\begin{array}{ll}{T_{1}(h, p)} &amp; {\text { if } p \in \text { switch }<em>{1}} \ {\cdots} &amp; {\cdots} \ {T</em>{n}(h, p)} &amp; {\text { if } p \in \text { switch }_{n}}\end{array}\right.$</p>
+<p><strong>Topology Transfer Function</strong> $\Gamma()$:它就是一表示网络连接的函数，在一端接收包并将其发送到另一端（不作修改），这里的连接是单向的，定义为：
+$\Gamma(h, p)=\left{\begin{array}{ll}{\left{\left(h, p^{<em>}\right)\right}} &amp; {\text { if } p \text { connected to } p^{</em>}} \ {{ }} &amp; {\text { if } p \text { is not connected }}\end{array}\right.$</p>
+<p><strong>Multihop Packet
+Traversal</strong>:使用$\Phi(.)=\Psi(\Gamma(.))$表示,k跳可以被表示为：$\Psi(\Gamma(\ldots(\Gamma(h, p) \dots)$或$\Phi^{k}(h, p)$,，意为$\Gamma$往链路上交付包，每个$\Psi$在box里对包进行传递。</p>
+<p><strong>Slice</strong>:可分为对网络空间，权限，转换函 数的切片。例如：将目的子网为192.168.1.0/24的包限制为port:1,2,3，可被表示为：$((ip_dist(h)=192.168.1.x,p\in{1,2,3}),rw,\Psi_s)$</p>
+<h1 id="modeling-networking-boxes">modeling Networking Boxes</h1>
+<p>本部分是对转换函数的一个说明。例：$ip_src(h)$指的是对源IP，$\mathcal{R}(h,fields,values)$指将h的fields字段重写为values。在IPv4 router中处理包分为四步：1.重写源和目的MAC。2.减TTL。3.更新校验值。4.交付到出端口。</p>
+<p>可表示为：$T_{I P v 4}( .)=T_{f w d}\left(T_{c h k s u m}\left(T_{t t l}\left(T_{m a c}( .)\right)\right)\right)$。一个一个解释：$T_{fwd}(h,p)$表示寻找$ip_dst(h)$并返回output port，类似的，$T_{mac}(.)$表示寻找next hop MAC，更新源MAC和目的MAC。$T_{ttl}(.)$对ttl的处理，为0丢弃，否则减一。也可以简化模型表示如：$T_{I P v 4}( .)=T_{f w d}\left(T_{t t l}( .)\right)$ or even $T_{I P v 4}( .)=T_{f w d}( )$，例如一个简化转换函数将子网S1,S2,S3的包分别交付到端口P1,P2，P3表示为：
+$T_{r}(h, p)=\left{\begin{array}{ll}{\left{\left(h, p_{1}\right)\right}} &amp; {\text { if } i p_{-} d s t(h) \in S_{1}} \ {\left{\left(h, p_{2}\right)\right}} &amp; {\text { if } i p_{-} d s t(h) \in S_{2}} \ {\left{\left(h, p_{3}\right)\right}} &amp; {\text { if } i p_{-} d s t(h) \in S_{3}} \ {{ }} &amp; {\text { otherwise. }}\end{array}\right.$</p>
+<p><strong>firewall</strong>可模型化为：抽取IP和TCP头，匹配通配符并依匹配规则进行丢弃和交付。</p>
+<p><strong>NAT</strong>可模型化为：一个重写操作。
+模型的详细程度取决于应用需要，可以使用工具对路由配置和交付表进行自动模型建立。</p>
+<h1 id="header-space-algebra">Header Space Algebra</h1>
+<p>对头空间定义集合操作：intersection,union,coplementation,defference，对转换函数定义：Domaain,Range,Range Inverse。</p>
+<h2 id="mathcalh操作">$\mathcal{H}操作$</h2>
+<ul>
+<li>intersection
+可表解为交</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/AvUreH.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/AvUreH.png, https://s2.ax1x.com/2019/04/16/AvUreH.png 1.5x, https://s2.ax1x.com/2019/04/16/AvUreH.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/AvUreH.png"
+        title="AvUreH.png"
+    /></p>
+<p>如上图，z表示空，如果有任一位为空，则结果为$\phi$。例：$1100\mathrm{xxxx} \cap \mathrm{xx}00010\mathrm{x}=1100010\mathrm{x} $,$1100\mathrm{xxxx}\cap 111001\mathrm{xx}=11\mathrm{z}001\mathrm{xx}=\phi$。这里，对每一位进行编码：0：01,1：10,x:11,z:00，这就可以用集合操作AND对头空间进行操作了。</p>
+<ul>
+<li>union 正常的并操用</li>
+<li>complementation:补或非，不知道该翻译为哪一个，具体操作规则为：</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/AvaB90.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/AvaB90.png, https://s2.ax1x.com/2019/04/16/AvaB90.png 1.5x, https://s2.ax1x.com/2019/04/16/AvaB90.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/AvaB90.png"
+        title="AvaB90.png"
+    /></p>
+<p>例：$(100\mathrm{xxxxx})&rsquo;=0\mathrm{xxxxxxx} \cup \mathrm{x}1\mathrm{xxxxxx} \cup \mathrm{xx}1\mathrm{xxxxx}$</p>
+<ul>
+<li>Difference:差，$A-B=A\cap B&rsquo;$
+例：</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/AvasjU.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/AvasjU.png, https://s2.ax1x.com/2019/04/16/AvasjU.png 1.5x, https://s2.ax1x.com/2019/04/16/AvasjU.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/AvasjU.png"
+        title="AvasjU.png"
+    /></p>
+<h2 id="domainrangerange-inverse">Domain,Range,Range Inverse</h2>
+<ul>
+<li>Domain:是转换函数可接收的所有的(header,port)对的集合，even output is empty</li>
+<li>Range:所有转换函数可能输出的(header,port)对的集合。</li>
+<li>Range Inverse:给定一个对S:(header,port)，找到所有可能产生该对的对集合X:{（header,port）}$_n$,即：T（X）=S,X=T$^{-1}$S,可称为逆</li>
+</ul>
+<h1 id="使用">使用</h1>
+<h2 id="reachability-analysis">Reachability Analysis</h2>
+<p>假设a到b，考虑所有可能离开a的包，跟踪它到b的所有路径并转换，到达b后看是否还有,若有，则根据路径求逆找可能的包，否则认为不可达。
+用一个例子来说明：定义a到b的可达函数：
+$R_{a \rightarrow b}=\bigcup_{a \rightarrow b \text { paths }}\left{T_{n}\left(\Gamma\left(T_{n-1}\left(\ldots \ldots .\left(\Gamma\left(T_{1}(h, p) \ldots\right)\right)\right}\right.\right.\right.$所有可能的路径可表示为：$a \rightarrow S_{1} \rightarrow \ldots \rightarrow S_{n-1} \rightarrow S_{n} \rightarrow b$
+该可达函数的range即可从a到b的所有可能的包，可通过求逆函数来根据到达的包求从a出发的原始包：$h_{a}=T_{1}^{-1}\left(\Gamma\left(\ldots\left(T_{n-1}^{-1}\left(\Gamma\left(T_{n}^{-1}((h, b)) \dots\right)\right)\right.\right.\right.$
+这里的$\Gamma=\Gamma^{-1}$
+图2是一个可达性测试例子。</p>
+<p><a href="https://imgchr.com/i/AvwbtA" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/AvwbtA.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/AvwbtA.md.png, https://s2.ax1x.com/2019/04/16/AvwbtA.md.png 1.5x, https://s2.ax1x.com/2019/04/16/AvwbtA.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/AvwbtA.md.png"
+        title="AvwbtA.md.png"
+    /></a></p>
+<p>最后获得的结果为：10010x10 ∪ 01011x10
+复杂度分析：$O(dR^2)$,d为包需要经历的最多路由个数，R为交付规则最多的路由的规则数。</p>
+<h2 id="loop-detection">Loop Detection</h2>
+<ul>
+<li>普能循环：对于一个给定的网络转换函数，通过往每个端口中注入all-x测试包并跟踪以达到测试环路目的。以下情况停止跟踪：1.包离开网络。2.包到达了之前到达过的端口。3.包到达了注入端口。仅3报告有环。图3为注入测试包示例图，图4为包跟踪图。</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/Av053q.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/Av053q.png, https://s2.ax1x.com/2019/04/16/Av053q.png 1.5x, https://s2.ax1x.com/2019/04/16/Av053q.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/Av053q.png"
+        title="Av053q.png"
+    /></p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/Av0ovV.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/Av0ovV.png, https://s2.ax1x.com/2019/04/16/Av0ovV.png 1.5x, https://s2.ax1x.com/2019/04/16/Av0ovV.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/Av0ovV.png"
+        title="Av0ovV.png"
+    /></p>
+<p>图4中，Hdr为当前包头，Port为当前端口，Visits:已访端口，按序。当Port中的值到Visits中每一个值相同则找到loop。
+复杂度：$O(dPR^2)$，P是需要注入包的端口数。</p>
+<ul>
+<li>finding single infinete loops:在图3中的环：A-C-B-D-A，假设$h_{ret}$表示返回$A_1$的部分头部，$h_{orig}$定义为：$h_{\text {orig}}=\Phi^{-1}\left(\Phi^{-1}\left(\Phi^{-1}\left(\Phi^{-1}\left(h_{\text {ret}}, A_{1}\right)\right)\right)\right)$。则，它两有三种相关：1.$h_{r e t} \cap h_{o r i g}=\phi$，该环是有尽环。2.$h_{r e t} \subseteq h_{o r i g} :$该环是无尽环。3.不在以上两种：让包继续包，直到以上两种之一发生。</li>
+</ul>
+<h2 id="slice-isolation">Slice Isolation</h2>
+<p>本文方法可以：1.创建新切片并保证隔离性。2.当切片流量泄露时可检测。</p>
+<ul>
+<li>
+<p>创建新切片。两个切片的例子：a和b为网络空间的域：$N_a,N_b \in \mathcal{N}$,其中：$N_{a}=\left{\left(\alpha_{i}, p_{i}\right)\right]<em>{p</em>{i} \in \mathcal{S}} } \quad, \quad N_{b}=\left{\left(\beta_{i}, p_{i}\right)\right]<em>{p</em>{i} \in \mathcal{S}} }$，$\alpha,\beta$为headers.
+当两个切片无重叠时，$\alpha_i \cap \beta_i = \phi$。当有重叠时，可以通过$N_{a} \cap N_{b}=\left{\left(\alpha_{i} \cap \beta_{i}, p_{i}\right)\right]<em>{p</em>{i} \in N_{a} &amp; p_{i} \in N_{b}} }$找到。</p>
+</li>
+<li>
+<p>Data leakage:即使两个切片无重叠，也有可能发生数据泄露，因为包在任何端口都有可能被重写。因此在<strong>每一个</strong>端口使用网络转换函数计算切片a头空间的逆，记为：output header set。如果这个集在任何端口与其他切片重叠，则有可能会发生数据泄露。图5为检测的图形表示。</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/AvrCAe.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/AvrCAe.png, https://s2.ax1x.com/2019/04/16/AvrCAe.png 1.5x, https://s2.ax1x.com/2019/04/16/AvrCAe.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/AvrCAe.png"
+        title="AvrCAe.png"
+    /></p>
+<p>复杂度：$O(W^2N)$,W是描述切片的通配符最大表达式，N是切片网络个数。</p>
+<h1 id="实现">实现</h1>
+<p>本文有源码（找了，没找到），使用python2.6编写实现称为：Hassel。图6为Hassel的block diagram。表1为5个关键优化及其影响。</p>
+<p><a href="https://imgchr.com/i/AvIoFI" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/AvIoFI.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/AvIoFI.md.png, https://s2.ax1x.com/2019/04/16/AvIoFI.md.png 1.5x, https://s2.ax1x.com/2019/04/16/AvIoFI.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/AvIoFI.md.png"
+        title="AvIoFI.md.png"
+    /></a></p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/AvITYt.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/AvITYt.png, https://s2.ax1x.com/2019/04/16/AvITYt.png 1.5x, https://s2.ax1x.com/2019/04/16/AvITYt.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/AvITYt.png"
+        title="AvITYt.png"
+    /></p>
+<h1 id="评估">评估</h1>
+<h2 id="verfication-of-an-enterprise-network">Verfication of an enterprise Network</h2>
+<p>拓扑图如图7。这个图之前见过，好多论文都出现过，原来是斯坦福大学的网络拓扑。</p>
+<p><a href="https://imgchr.com/i/AvoUht" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/AvoUht.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/AvoUht.md.png, https://s2.ax1x.com/2019/04/16/AvoUht.md.png 1.5x, https://s2.ax1x.com/2019/04/16/AvoUht.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/AvoUht.md.png"
+        title="AvoUht.md.png"
+    /></a>
+运行Hassel,测量性能。</p>
+<h3 id="测试环路">测试环路</h3>
+<p>在图7中共找到12个环路，性能总结在表中。</p>
+<p><a href="https://imgchr.com/i/Av7BwQ" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/Av7BwQ.md.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/Av7BwQ.md.png, https://s2.ax1x.com/2019/04/16/Av7BwQ.md.png 1.5x, https://s2.ax1x.com/2019/04/16/Av7BwQ.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/Av7BwQ.md.png"
+        title="Av7BwQ.md.png"
+    /></a></p>
+<h3 id="测试可能的配置错误">测试可能的配置错误</h3>
+<p>Stnaford 拥有IP：171.64.0.0/14,斯坦福丢弃所有无规则匹配的包，假设这条配置手误出错配成：171.64.0.0/16,那么就有可能在斯坦福和ISP之间来回循环包，在表2中可见这样的错误可以在10分钏之内测出。</p>
+<h2 id="checking-slice-isolation">checking slice isolation</h2>
+<p>本节创建新节片需要验证：1.不能与已存在的切片重叠；2.不能有数据泄露。图8可见切片隔离性测试结果。</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/Av7xTH.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/Av7xTH.png, https://s2.ax1x.com/2019/04/16/Av7xTH.png 1.5x, https://s2.ax1x.com/2019/04/16/Av7xTH.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/Av7xTH.png"
+        title="Av7xTH.png"
+    /></p>
+<p>图9为切片数据泄露性能测试结果</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/04/16/AvHW9I.png"
+        data-srcset="https://s2.ax1x.com/2019/04/16/AvHW9I.png, https://s2.ax1x.com/2019/04/16/AvHW9I.png 1.5x, https://s2.ax1x.com/2019/04/16/AvHW9I.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/04/16/AvHW9I.png"
+        title="AvHW9I.png"
+    /></p>
+<p>性能测试结果与复杂性分析类似，程线性，并且性能优。</p>
+<p>结语：除此之处，该方法还适用于对新协议的测试但也有不足之处：1.可以测试出路由表不一致，但无法告诉我们原因；2.可以定位到导致问题的具体流，但无法告诉我们how or why；3.只能测试也持续时间很长的问题。</p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/23_header-space-analysis/" data-title="Header Space Analysis: Static Checking For Networks" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/23_header-space-analysis/" data-title="Header Space Analysis: Static Checking For Networks"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/23_header-space-analysis/" data-title="Header Space Analysis: Static Checking For Networks" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/23_header-space-analysis/" data-title="Header Space Analysis: Static Checking For Networks"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/23_header_space_analysis/" class="prev" rel="prev" title="Header Space Analysis: Static Checking For Networks"><i class="fas fa-angle-left fa-fw"></i>Header Space Analysis: Static Checking For Networks</a>
+            <a href="/posts/24_dfence/" class="next" rel="next" title="dFence: Transparent Network-based Denial of Service Mitigation">dFence: Transparent Network-based Denial of Service Mitigation<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

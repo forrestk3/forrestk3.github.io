@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Dynamic Packet Forwarding Verification in SDN - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Dynamic Packet Forwarding Verification in SDN" />
+<meta property="og:description" content="affliation and publication author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee publication: IEEE Transactions on Dependable and secure computing, 2019 abs 传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/org_09_dyna/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-16T22:27:00+08:00" />
+<meta property="article:modified_time" content="2022-09-21T12:15:02+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dynamic Packet Forwarding Verification in SDN"/>
+<meta name="twitter:description" content="affliation and publication author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee publication: IEEE Transactions on Dependable and secure computing, 2019 abs 传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/org_09_dyna/" /><link rel="prev" href="/posts/05_ovs_install/" /><link rel="next" href="/posts/org_10_topo_discover/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Dynamic Packet Forwarding Verification in SDN",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/org_09_dyna\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  3442 ,
+        "url": "\/posts\/org_09_dyna\/","datePublished": "2022-09-16T22:27:00+08:00","dateModified": "2022-09-21T12:15:02+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Dynamic Packet Forwarding Verification in SDN</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-09-16">2022-09-16</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-09-21">2022-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3442 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#problem-statement">Problem Statement</a>
+      <ul>
+        <li><a href="#basic-of-sdn">Basic of SDN</a></li>
+        <li><a href="#threat-model">Threat Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#packet-forwarding-verification">Packet Forwarding verification</a>
+      <ul>
+        <li><a href="#design-goals">Design goals</a></li>
+        <li><a href="#novel-packet-forwarding-verification--mathcal-n-pfv">Novel Packet Forwarding Verification (\(\mathcal{N}\)-PFV)</a></li>
+        <li><a href="#discussion">Discussion</a></li>
+      </ul>
+    </li>
+    <li><a href="#enhanced-pfv-dpfv">Enhanced PFV: D<sub>yna</sub>PFV</a>
+      <ul>
+        <li><a href="#dynamic-packet-verific">Dynamic Packet Verific</a></li>
+        <li><a href="#dynamic-behavior-verification">Dynamic Behavior Verification</a></li>
+      </ul>
+    </li>
+    <li><a href="#analysis">Analysis</a>
+      <ul>
+        <li><a href="#detection-effectiveness-analysis">Detection Effectiveness Analysis</a></li>
+        <li><a href="#security-analysis">Security Analysis</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance-evaluation">Performance Evaluation</a>
+      <ul>
+        <li><a href="#implementation">Implementation</a></li>
+        <li><a href="#experiment-setup">Experiment Setup</a></li>
+        <li><a href="#mininet-experiment-results">Mininet Experiment Results</a></li>
+        <li><a href="#hardware-testbed-experiment-results">Hardware Testbed Experiment Results</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>affliation and publication</strong></p>
+<ul>
+<li>
+<p>author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee</p>
+</li>
+<li>
+<p>publication: IEEE Transactions on Dependable and secure computing, 2019</p>
+</li>
+<li>
+<p>abs</p>
+</li>
+</ul>
+<p>传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少.
+作者提出: 使用控制器收集包和流的统计来判定包是否被修改, 交付路径是否正常; 并对该方法加以改进</p>
+<ol>
+<li>与我的不同点:
+<ul>
+<li>N-pfv中每一个包都要利用packetIn送到控制器进行完整性检测, 应该不可取</li>
+<li>每个rule 都有一个timer, 如何在数据平面利用过期的包触发控制平面对path的完整性检测呢?</li>
+<li>每个rule结束时都会有一个统计请求.</li>
+<li>对每个流都要有一个hash表(\(P_i\)表).</li>
+<li>抽样检测中如何使egress对ingress相同的抽样出来的包进行packetIn?
+<ul>
+<li>若使用流表的过期时间控制, 那就得不停地下发流表.</li>
+<li>(是我当时没看懂, 使用流表控制packetIn, 用概率参数\(\lambda\)确定当前是否下发流表, 不下发就会有packetIn, 下发就没有)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用的工具,或许有用:
+<ul>
+<li><a href="http://www.caida.org/data/passive/trace_stats/chicago-B/2015/?monitor=2%200150219-130000.UTC" target="_blank" rel="noopener noreffer">CAIDA数据集</a></li>
+<li><a href="http://www.internet2.edu/" target="_blank" rel="noopener noreffer">拓扑</a></li>
+<li>用于模仿dropping攻击的<a href="http://openvswitch.org" target="_blank" rel="noopener noreffer">ovs-ofctl tool</a></li>
+<li>用于模仿injection攻击的<a href="http://tcpreplay.appneta.com" target="_blank" rel="noopener noreffer">TCPreply</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li>p1: 指出交付异常检测的重要性</li>
+<li>p2: IP网的解决办法,不足及为何不可用于SDN</li>
+<li>p3: 提出一个方法, 并用其有可行性引出challenge</li>
+<li>p4: 本文的方法及贡献</li>
+</ul>
+<h2 id="problem-statement">Problem Statement</h2>
+<h3 id="basic-of-sdn">Basic of SDN</h3>
+<h3 id="threat-model">Threat Model</h3>
+<ul>
+<li><em>packet hijacking attacks.</em> 对包改路</li>
+<li><em>packet delaying attacks.</em> 延迟</li>
+<li><em>packet injection attacks.</em> 攻击者向流中加入包</li>
+<li><em>packet dropping attacks.</em> 丢流流的包</li>
+<li><em>packet tempering attacks.</em> 修改包</li>
+<li><em>hybrid attacks.</em> 丢一些包再复制或注入同等数量的包</li>
+</ul>
+<p>表1 是对当前研究方法对这些问题的解决情况:</p>
+<figure><img src="/ox-hugo/18868vhE.png"/>
+</figure>
+
+<p>本段剩余内容: 分析已存在方法且无法用于SDN; 本文要解决的问题及假设.</p>
+<h2 id="packet-forwarding-verification">Packet Forwarding verification</h2>
+<h3 id="design-goals">Design goals</h3>
+<h3 id="novel-packet-forwarding-verification--mathcal-n-pfv">Novel Packet Forwarding Verification (\(\mathcal{N}\)-PFV)</h3>
+<p>当包在进和出交换机时都生成 packetIn 包以确定交有没有修改；控制器定时检查包的统计信息以确定包是否交付异常. 因此产生了2个问题:</p>
+<ol>
+<li>如何交付包到控制器</li>
+<li>中间节点何时报告统计信息</li>
+</ol>
+<p>文中使用的标记见表2</p>
+<figure><img src="/ox-hugo/18868jKd.png"/>
+</figure>
+
+<p>PFV的整体overview见图2:</p>
+<figure><img src="/ox-hugo/188688rK.png"/>
+</figure>
+
+<p>PFV 算法见算法1</p>
+<figure><img src="/ox-hugo/18868J2Q.png"/>
+</figure>
+
+<p>\(N\)-PFV作为NOS的一个模块运行在控制器中, 算法 1 中1-12行为NFV验证包的完整性.</p>
+<ol>
+<li>对每个从ingress来的包计算它的Message Authentication Code (MAC), 并将其存入一个hash表中(每个项都有超期时间)</li>
+<li>对从egress来的包计算它的MAC, 并从hash表中将对应的删除并增加已验证包的计数\(\delta_i\)</li>
+<li>如果从egress的MAC无法与hash表中的匹配,定位这个交换机 7-9</li>
+<li>若被匹配的包与总的hash个数之比小于\(\theta\), 验证失败, 定位恶意交换机 10-19</li>
+<li>当rule过期, 就检查数据平面这个rule对应所有流表的连续性, 以确定当前攻击. <strong>不同: 每个rule都有一个timer; 每个rule最终都会触发一次流状态请求</strong></li>
+</ol>
+<p>图2中的例子中,从A中进入的包会触发packetIn, 从C中出去的包也会.若最后2个PacketIn包相等则通过验证,否则让B生成PacketIn, 若此时相等则证明链路B-C安全.
+若控制器中有rule过期则收集ABC的流表并比较. 如图2中可见B有恶意行为因为他的统计信息比A少. 若此时控制器中没有MAC过期则 <em>packet hyjacking</em>, 否则 <em>dropping</em>. 可见PFV可以有效地定位恶意交换机.</p>
+<h3 id="discussion">Discussion</h3>
+<h2 id="enhanced-pfv-dpfv">Enhanced PFV: D<sub>yna</sub>PFV</h2>
+<p>DynaPFV 通过随机抽取flow中的包并生成packetIn来降低检测代价。当收到packetIn包时以概率\(\lambda\)确定下一个包是继续检测完整性还是下发流表.
+DynaPFV过程见算法2， 若收到packetIn包或所保存的hash中有过期的，则以一定的概率进行包完整性检查。若检查，下发检查流表（会触发packetIn）否则下发随机过期时间的流表（流表过期会触发行为检查）。</p>
+<figure><img src="/ox-hugo/6438sVT.png"/>
+</figure>
+
+<h3 id="dynamic-packet-verific">Dynamic Packet Verific</h3>
+<p>ation
+具体算法过程可见算法3.</p>
+<figure><img src="/ox-hugo/64385fZ.png"/>
+</figure>
+
+<p>当从ingress中收到某个流\(f_i\)的PacketIn包时, 就为它计算MAC并将其存入hash表\(\mathcal{P}_i\)中. 当从egress中收到时就计算MAC并从对应的hash表中移除并增加验证成功包的计数. 每次移除都降低抽样概率\(\lambda = \lambda * \alpha\), 若有MAC过期则增加抽样概率\(\lambda = \frac{\lambda + 1}{2}\). 若匹配包数与总包数之比小于\(\theta\)则认为异常从而定位异常交换机. 此外初始值设定\(\lambda = 1, \alpha = 0.99\).
+最后用图3来说明对上述过程举例.</p>
+<figure><img src="/ox-hugo/6438Gqf.png"/>
+</figure>
+
+<h3 id="dynamic-behavior-verification">Dynamic Behavior Verification</h3>
+<p>下发流表的过期时间是随机的,流表过期会触发行为检查,因此检查的间隔也是随机的.检查过程如算法4所示:</p>
+<figure><img src="/ox-hugo/6438T0l.png"/>
+</figure>
+
+<p>对path上的交换机处理的包进行统计, 并都与ingress交换机的统计结果求比值, 中间交换机直接统计, egress交换机则为统计结果加检查的包数\(S_i[0] + sizeof(\mathcal{P}_i + \sigma _i)\). 比值大于\(\theta\)但小于1则提高抽样概率\(\lambda\), 否则减小\(\lambda\). 最后清空\(\delta_i\)和hash表, 并更新\(\sigma_i\)</p>
+<h2 id="analysis">Analysis</h2>
+<h3 id="detection-effectiveness-analysis">Detection Effectiveness Analysis</h3>
+<p>检测效果与\(\lambda\)有关, 未检测到的包序列取决与一个过期时间, 通过离散包序列, 未检测包序列的长度有限,可记为{1,2,&hellip;,n}, 因此我们可以将未检测的包序列建模为马尔可夫链, 未检测到的包序列升序服从于{1,2,&hellip;,n}中的一个正态分布.
+本节将数据包与其剩余未检测序列的包数相对应, 当一个包被随机选中检测则认为剩余未检测序列的包数为0. 记\(X(t)\)为:当第t个包到达时该序列剩余的包数, 因此\(X(t)\)是一个随机变量. 我们可发现:</p>
+<ol>
+<li>\(X(t+1)\)只取决于\(X(t)\)</li>
+<li>若\(X(t)\)非0, 则\(X(t+1)=X(t)-1\)</li>
+<li>\(X(t+1)\)以\(\lambda\)的概率为0, 或以\(1-\lambda\)的概率服从均匀分布:{1,2,&hellip;,n}</li>
+</ol>
+<p>由一, \(\{X(t)\}\)形成一个有n+1个状态{0,1,&hellip;,n}的马尔可夫链.</p>
+<p>记\(p_{k}(t)\)为\(X(t) = k\)的概率, 则\(X(t+1)=0\)的概率为\(X(t)\)为0且以\(\lambda\)触发或\(X(t)=1\), 因此可得:</p>
+<p>\begin{equation}
+p_0(t+1) = \lambda p_0(t) + p_1(t) \tag{1}
+\end{equation}</p>
+<p>同理,\(X(t+1)=k\)时(1). \(X(t)=0\), 下一个阶段不检测且新的不检测序列触发的是k个, 此时概率为\(\frac{1-\lambda}{n}p_{0}(t)\)；(2). \(X(t)=k+1\), 此时概率为 \(p_{k+1}(t)\), 所以:</p>
+<p>\begin{equation}
+p_k(t-1) = \frac{1-\lambda}{n}p_{0}(t) + p_{k+1}(t), 1 \le k &lt; n. \tag{2}
+\end{equation}</p>
+<p>再同理, 当\(X(t+1)=n\), 则\(X(t)\)一定等于0, 因此:</p>
+<p>\begin{equation}
+p_n(t+1) = \frac{1-\lambda}{n}p_0(t). \tag{3}
+\end{equation}</p>
+<p>此时, 第t个包被检测即\(X(t)\)为0, 概率为\(p_{0}(t)\). 因为\(p_{0}(t)\)无法被直接求得, 但它可被拓展:\(  p_0(t+1) = \lambda p_0(t) + p_1(t) \tag{1}\), 再迭代替换\(p_{k} (t+1-k)\), \(1 \le k \le n\) , 就可以得到:</p>
+<p>\begin{equation}
+p_0(t+1) =\lambda p_0(t) + \frac{1-\lambda}{n} \sum_{k=1}^np_0(t-k) \tag{4}
+\end{equation}</p>
+<p>这个式子是不平凡的, 但仍可得到平稳概率:</p>
+<p>\begin{equation}
+\lim_{t\rightarrow \infty} p_0(t) = \frac{2}{(1+n)(1-\lambda)+2}
+\end{equation}</p>
+<p>图4展示了在不同的\(\lambda\)时每个包的检测概率</p>
+<figure><img src="/ox-hugo/6438g-r.png"/>
+</figure>
+
+<p>对\(\lambda\)的选择 不能太大,否则有太多的PacketIn包, 也不能太小,因为每个包的检测概率\(\frac{2}{(1+n)(1-\lambda)+2}\) 不能低于0.2. 因此在本文的算法中使用动态的\(\lambda\)选择法, 让其增长时不会超过1. 本文选择的初始值\(\lambda = 1, \alpha = 0.99\)</p>
+<h3 id="security-analysis">Security Analysis</h3>
+<p>主要讲了每种攻击是如何被检测到的, 可看原文</p>
+<h2 id="performance-evaluation">Performance Evaluation</h2>
+<p>在mininet和真实硬件上测试,所使用的trace从CAIDA\[2\]上获得</p>
+<h3 id="implementation">Implementation</h3>
+<ul>
+<li>DynaPFV Mode
+实现MAC及其定时功能</li>
+<li>Kernel Model
+修改Floodlight, 使数据平面可以只接收packetOut而不接收修改流表操作</li>
+</ul>
+<h3 id="experiment-setup">Experiment Setup</h3>
+<ul>
+<li>实验平台</li>
+<li>攻击的实现
+<ul>
+<li>丢包: 使用ovs-ofctl工具<a href="http://openvswitch.org" target="_blank" rel="noopener noreffer">在这</a>.</li>
+<li>包注入: 使用<a href="http://tcpreplay.appneta.com/" target="_blank" rel="noopener noreffer">TCPreply</a>.</li>
+<li>\(\theta\): 设为98.9</li>
+</ul>
+</li>
+</ul>
+<h3 id="mininet-experiment-results">Mininet Experiment Results</h3>
+<p>每个主机生成250个流并每秒共生成1000个包
+<em>Experiment A1: Detection Accuracy</em> 见图6a:不同的触发概率, 不同的攻击, 不同的篡改间隔, 不同的篡改持续时间</p>
+<figure><img src="/ox-hugo/28563pkD.png"/>
+</figure>
+
+<p>图6a是检测性能对不同\(\lambda\)的检测效果, 动态的效果更好.</p>
+<p><em>Experiment A.2: Selection of \(\tau\)</em>: 实验结果如下:</p>
+<figure><img src="/ox-hugo/285632uJ.png"/>
+</figure>
+
+<p>结果表明可以在6秒内检测出大多数攻击.</p>
+<p><em>Experiment A.3: Detection Delay</em>: 检测不同\(\lambda\)时的检测时延和流数与检测时延的关系, 结果见图8</p>
+<figure><img src="/ox-hugo/28563D5P.png"/>
+</figure>
+
+<p><em>Experiment A.4: Overhead</em>: 比较不同\(\lambda\)时packetIn的触发概率,导致的延迟和吞吐量的变化, 比较不同path长度时包的将会延迟, 检测结果如图9. 再没通信代价, 结果见图10</p>
+<figure><img src="/ox-hugo/28563QDW.png"/>
+</figure>
+
+<figure><img src="/ox-hugo/28563dNc.png"/>
+</figure>
+
+<h3 id="hardware-testbed-experiment-results">Hardware Testbed Experiment Results</h3>
+<p>使用4个EdgeCore AS4610-54T交换机, 使用 <a href="http://www.caida.org/data/passive/trace_stats/chicago-B/2015/?monitor=2%200150219-130000.UTC" target="_blank" rel="noopener noreffer">CAIDE数据集</a>.
+<em>Experiment B.1: Detection Delays</em>: 不同的包率和不同攻击的检测延迟,CDF见图11:</p>
+<figure><img src="/ox-hugo/28563qXi.png"/>
+</figure>
+
+<p><em>Experiment B.2: Overhead</em>: 对包传输时迟的影响和吞吐量随\(\lambda\)的变化见图12:</p>
+<figure><img src="/ox-hugo/285633ho.png"/>
+</figure>
+
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-09-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/org_09_dyna/" data-title="Dynamic Packet Forwarding Verification in SDN" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/org_09_dyna/" data-title="Dynamic Packet Forwarding Verification in SDN"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/org_09_dyna/" data-title="Dynamic Packet Forwarding Verification in SDN" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/org_09_dyna/" data-title="Dynamic Packet Forwarding Verification in SDN"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/05_ovs_install/" class="prev" rel="prev" title="mininet , ovs , ryu 分别进行源码安装"><i class="fas fa-angle-left fa-fw"></i>mininet , ovs , ryu 分别进行源码安装</a>
+            <a href="/posts/org_10_topo_discover/" class="next" rel="next" title="Current Trends of Discovery Topology in SDN">Current Trends of Discovery Topology in SDN<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

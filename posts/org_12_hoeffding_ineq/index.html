@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Hoeffding&#39;s inequality (霍夫丁不等式讲解) - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Hoeffding&#39;s inequality (霍夫丁不等式讲解)" />
+<meta property="og:description" content="霍夫丁不等式表达 下面的这个式子是我们常用的 Markov inequality 一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\). 这个不等式的证明: 过程中使用了微积分和一些" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/org_12_hoeffding_ineq/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-26T23:02:00+08:00" />
+<meta property="article:modified_time" content="2022-09-27T00:32:34+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hoeffding&#39;s inequality (霍夫丁不等式讲解)"/>
+<meta name="twitter:description" content="霍夫丁不等式表达 下面的这个式子是我们常用的 Markov inequality 一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\). 这个不等式的证明: 过程中使用了微积分和一些"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/org_12_hoeffding_ineq/" /><link rel="prev" href="/posts/org_11_ovs_add_action/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hoeffding's inequality (霍夫丁不等式讲解)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/org_12_hoeffding_ineq\/"
+        },"genre": "posts","keywords": "数学","wordcount":  761 ,
+        "url": "\/posts\/org_12_hoeffding_ineq\/","datePublished": "2022-09-26T23:02:00+08:00","dateModified": "2022-09-27T00:32:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hoeffding&#39;s inequality (霍夫丁不等式讲解)</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>额外学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-09-26">2022-09-26</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-09-27">2022-09-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;761 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#霍夫丁不等式表达">霍夫丁不等式表达</a></li>
+    <li><a href="#markov-inequality">Markov inequality</a></li>
+    <li><a href="#jesen-inequality">Jesen inequality</a></li>
+    <li><a href="#均值不等式">均值不等式</a></li>
+    <li><a href="#霍夫丁不等式的证明">霍夫丁不等式的证明</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="霍夫丁不等式表达">霍夫丁不等式表达</h2>
+<figure><img src="/ox-hugo/xO47Lh.png"/>
+</figure>
+
+<p>下面的这个式子是我们常用的</p>
+<h2 id="markov-inequality">Markov inequality</h2>
+<p>一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\).</p>
+<p>这个不等式的证明:</p>
+<figure><img src="/ox-hugo/rCbCCP.png"/>
+</figure>
+
+<p>过程中使用了微积分和一些不等式的基础, 不了解了.</p>
+<h2 id="jesen-inequality">Jesen inequality</h2>
+<p>对于突函数而言的一个不等式</p>
+<h2 id="均值不等式">均值不等式</h2>
+<h2 id="霍夫丁不等式的证明">霍夫丁不等式的证明</h2>
+<p>首先使用\(Y_i = X_i - \mathbb{E}_i\) 来替换原不等式, 得到新的需要证明的式子:
+这里变换后\(Y_i\)的聚会范围变了, 我们设它的聚会范围为: \(a_i \le Y_i \le b_i\)</p>
+<figure><img src="/ox-hugo/upnbOL.png"/>
+</figure>
+
+<p>这里要对上面方框中的式子使用马尔可夫不等式来放缩,但由于我们并不能保证 \(\sum Y_i \ge 0\), 因此使用e的指数对原式进行变换, 结果如下:</p>
+<figure><img src="/ox-hugo/lu1wLQ.png"/>
+</figure>
+
+<p>这里由于\(Y_i\) 是独立同分布的, 因此可以做变换 \(e^{-t\epsilon} \cdot \mathbb{E}[e^{t \sum Y_i}] = e^{-t \epsilon} \cdot \prod \mathbb{E}[e^{t Y_i}]\)</p>
+<p>根据\(Y_i\)的取值范围, 我们利用\(\alpha\)来修改\(Y_i\)的表达:</p>
+<figure><img src="/ox-hugo/r4jQn6.png"/>
+</figure>
+
+<p>再将修改后的表达带入\(e^{tY_i}\) 得:</p>
+<figure><img src="/ox-hugo/fygViB.png"/>
+</figure>
+
+<p>这里使用了杰森不等式进行了缩放</p>
+<p>所以利用杰森不等式和\(\alpha\)的绽放, 我们可以对\(\mathbb{E}[e^{tY_i}]\)进行缩放得下式(记为*):</p>
+<figure><img src="/ox-hugo/uc8fHy.png"/>
+</figure>
+
+<p>这里引入两个变量\(\mu, \gamma\)</p>
+<figure><img src="/ox-hugo/xoUp3b.png"/>
+</figure>
+
+<p>再将这两个变量带t主(*)式得:</p>
+<figure><img src="/ox-hugo/3fU1tO.png"/>
+</figure>
+
+<p>此时再将变换后的(*)式取对数,并记为\(g(u)\)得如下式:</p>
+<figure><img src="/ox-hugo/hotwOP.png"/>
+</figure>
+
+<p>此时我们想对\(g(u)\)在0处进行泰勒展开, 所以我们对它进行求导再计算其自变量为0时的值, 在其二次导入使用均值不等式进行缩放,计算如下:</p>
+<figure><img src="/ox-hugo/mXQcMB.png"/>
+</figure>
+
+<p>此时对\(g(u)\)进行泰勒展开,借助拉格朗日余项得:</p>
+<figure><img src="/ox-hugo/ia9vJd.png"/>
+</figure>
+
+<p>这里的缩放利用了上面二次导的缩放.</p>
+<p>我们获得了\(g(u)\)的界, 根据\(g(u)\)的定义以及(*)式, 我们可以得到:</p>
+<figure><img src="/ox-hugo/HNZJnX.png"/>
+</figure>
+
+<p>此时再带入最被的式子可以得到\(P(\sum Y_i \ge \epsilon)\)的一个不等式:</p>
+<figure><img src="/ox-hugo/KHyZkh.png"/>
+</figure>
+
+<p>上式的右侧是一个关于t的二次函数, 因此对右侧取\(t &gt; 0\)时的最小值可得:</p>
+<figure><img src="/ox-hugo/tXRKzL.png"/>
+</figure>
+
+<p>得证.</p>
+<p>将上式还原成\(X_i\)的形式即可得到最原始的霍夫丁不等式.</p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-09-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/org_12_hoeffding_ineq/" data-title="Hoeffding&#39;s inequality (霍夫丁不等式讲解)" data-hashtags="数学"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/org_12_hoeffding_ineq/" data-title="Hoeffding&#39;s inequality (霍夫丁不等式讲解)"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/org_12_hoeffding_ineq/" data-title="Hoeffding&#39;s inequality (霍夫丁不等式讲解)" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/org_12_hoeffding_ineq/" data-title="Hoeffding&#39;s inequality (霍夫丁不等式讲解)"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/org_11_ovs_add_action/" class="prev" rel="prev" title="OVS添加自定义action"><i class="fas fa-angle-left fa-fw"></i>OVS添加自定义action</a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

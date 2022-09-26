@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">LADS: large-scale automated DDOS detection system - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="LADS: large-scale automated DDOS detection system" />
+<meta property="og:description" content="Sekar V, Duffield N G, Spatscheck O, et al. LADS: Large-scale Automated DDoS Detection System[C]//USENIX Annual Technical Conference, General Track. 2006: 171-184. 本文提出LADS，根据轻量级和重量级DDoS检测优缺点进行分析提出两阶段检测法。首先检测是可能有" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/30_lads/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-13T18:32:36+08:00" />
+<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LADS: large-scale automated DDOS detection system"/>
+<meta name="twitter:description" content="Sekar V, Duffield N G, Spatscheck O, et al. LADS: Large-scale Automated DDoS Detection System[C]//USENIX Annual Technical Conference, General Track. 2006: 171-184. 本文提出LADS，根据轻量级和重量级DDoS检测优缺点进行分析提出两阶段检测法。首先检测是可能有"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/30_lads/" /><link rel="prev" href="/posts/29_taxonomy/" /><link rel="next" href="/posts/31_amplification_hell/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "LADS: large-scale automated DDOS detection system",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/30_lads\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  1577 ,
+        "url": "\/posts\/30_lads\/","datePublished": "2019-09-13T18:32:36+08:00","dateModified": "2022-08-22T18:32:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">LADS: large-scale automated DDOS detection system</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-13">2019-09-13</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-08-22">2022-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1577 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本概念">基本概念</a>
+      <ul>
+        <li><a href="#lightweight-anomaly-detection">Lightweight Anomaly Detection</a></li>
+        <li><a href="#focused-anomaly-detection">Focused Anomaly Detection</a></li>
+      </ul>
+    </li>
+    <li><a href="#lightweight-anomaly-detection-1">Lightweight Anomaly Detection</a></li>
+    <li><a href="#focused-anomaly-detection-1">Focused Anomaly Detection</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#基本介绍">基本介绍</a></li>
+    <li><a href="#系统配置">系统配置</a></li>
+    <li><a href="#实验结果">实验结果</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>Sekar V, Duffield N G, Spatscheck O, et al. LADS: Large-scale Automated DDoS Detection System[C]//USENIX Annual Technical Conference, General Track. 2006: 171-184.</p>
+</blockquote>
+<p>本文提出LADS，根据轻量级和重量级DDoS检测优缺点进行分析提出两阶段检测法。首先检测是可能有异常，再通过流收集器进一步检测以决定是否发出警告。</p>
+<h1 id="lads">LADS</h1>
+<h2 id="基本概念">基本概念</h2>
+<p>###系统目标：</p>
+<ol>
+<li>正确率</li>
+<li>实时性</li>
+<li>对所有的客户有效</li>
+</ol>
+<h3 id="lightweight-anomaly-detection">Lightweight Anomaly Detection</h3>
+<p>轻量级检测阶段不太关心FP，因为它只会误触下一阶段检测，但关心FN，因为会漏检测。</p>
+<ol>
+<li>Volumn anomaly detection:建立预测模型预测流体积是否异常</li>
+<li>检测流量分布是否异常，可用于进一不分析。</li>
+</ol>
+<h3 id="focused-anomaly-detection">Focused Anomaly Detection</h3>
+<p>重量级检测需要注意解决计算代价和正确率。</p>
+<ol>
+<li>Rule-based detection:有些攻击有时显特征，可以用rule匹配检测。</li>
+<li>Uni-dimensional aggregation:单维层次收集算法，使用源/目的IP前缀发现可能的攻击者。</li>
+<li>Multi-dimensional culstering:利用IP5元组分析。</li>
+</ol>
+<h2 id="lightweight-anomaly-detection-1">Lightweight Anomaly Detection</h2>
+<p>利用SNMP出口包计数判断体积异常，根据已存的数据获得要预测进间段的历史数据的模型(均值，方差)根据过去k周的历史数据，每个时间段以这k个数据预测mean和噪声，如图4.再利用历史数据和当前观察数据计算偏移值，（如果偏移值过大，就进行触发检测事件）如图5。</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/03/EN5QhR.png"
+        data-srcset="https://s2.ax1x.com/2019/05/03/EN5QhR.png, https://s2.ax1x.com/2019/05/03/EN5QhR.png 1.5x, https://s2.ax1x.com/2019/05/03/EN5QhR.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/03/EN5QhR.png"
+        title="EN5QhR.png"
+    /></p>
+<p>以上，计算好后进行临时聚类，如图6.</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/03/EN5D3t.png"
+        data-srcset="https://s2.ax1x.com/2019/05/03/EN5D3t.png, https://s2.ax1x.com/2019/05/03/EN5D3t.png 1.5x, https://s2.ax1x.com/2019/05/03/EN5D3t.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/03/EN5D3t.png"
+        title="EN5D3t.png"
+    /></p>
+<p>$\alpha_{add}:event扩展阈值，\alpha_{trigger}：event触发阈值，keepalive：持续时间$
+当偏移值超过$\alpha_{add}$时，有event就扩展该event，没有就创建event。可以设定阈值移除所有低于它的警告，移除一些连接重置或SNMP bug警告。
+异常以egress接口，start time，end time标记发往下一阶段。</p>
+<h2 id="focused-anomaly-detection-1">Focused Anomaly Detection</h2>
+<ol>
+<li>收集netflow record 信息</li>
+<li>构造如下数据集：</li>
+</ol>
+<ul>
+<li>TCP SYN flag set(SYN set)</li>
+<li>TCP RST flag set(RST set)</li>
+<li>ICMP flows(ICMP set)</li>
+<li>All flow record(All set)</li>
+</ul>
+<ol start="3">
+<li>对每个数据集报告体积并附带IP目的前缀，使用F8算法计算并产生攻击警告，警告条件：All set的前缀小于/28但流量大于bandwidth Attack Threshold，或SYN/ICMP/RST集中观察的前缀IP范围大于相应配置值。</li>
+</ol>
+<p><a href="https://imgchr.com/i/ENIyGR" target="_blank" rel="noopener noreffer"><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/03/ENIyGR.md.png"
+        data-srcset="https://s2.ax1x.com/2019/05/03/ENIyGR.md.png, https://s2.ax1x.com/2019/05/03/ENIyGR.md.png 1.5x, https://s2.ax1x.com/2019/05/03/ENIyGR.md.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/03/ENIyGR.md.png"
+        title="ENIyGR.md.png"
+    /></a></p>
+<p>这里的阈值是更新的，更新公式：$Rate(Duartion)=Rate(BaseDuration)*DecreaseFactor^{\frac{Duration}{BaseDuration}}$.BaseDuration定为300s,DecreaseFactor定为0.95。
+图8有算法由两个步骤组成：</p>
+<ul>
+<li>aggregation:计数总体规定前缀流量中大于最小规定前缀流量的数。</li>
+<li>reprot:根据前一步计算决定报告某前缀是否为潜在的攻击目标，前缀大小对应的流量阈值固定。
+根据实验，本方法更高效。</li>
+</ul>
+<h1 id="exprement">Exprement</h1>
+<h2 id="基本介绍">基本介绍</h2>
+<ol>
+<li>SNMP feeds:SNMP每5分钏报告一次如下信息：</li>
+</ol>
+<ul>
+<li>total traffic volume per interface</li>
+<li>router utilization information</li>
+</ul>
+<ol start="2">
+<li>Netflow Feeds:以1：500抽样收集网络包</li>
+<li>Alarms from commercial system:利用商业系统做基准并比较。</li>
+</ol>
+<h2 id="系统配置">系统配置</h2>
+<ul>
+<li>SNMP training period:k=5</li>
+<li>Absolute Volume Threshold:250kbps</li>
+<li>Event score threshold：$\alpha_{trigger}$=5</li>
+<li>Temporal Clustering Parameter:$\alpha_{add=2.5},keepalive=15 min$</li>
+<li>bandwidth attack threshold:26Mbps</li>
+<li>SYN/RST/ICMP Threshold:2.6bps</li>
+</ul>
+<h2 id="实验结果">实验结果</h2>
+<p>这部分简单看了下，因为这篇确实有点老了。
+图10 FN率与阈值以及异常包数的关系</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/03/ENxjm9.png"
+        data-srcset="https://s2.ax1x.com/2019/05/03/ENxjm9.png, https://s2.ax1x.com/2019/05/03/ENxjm9.png 1.5x, https://s2.ax1x.com/2019/05/03/ENxjm9.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/03/ENxjm9.png"
+        title="ENxjm9.png"
+    /></p>
+<p>图11：sensitivity与scalability的关系：
+sensitivity:触发event的可能性。scalability:event触发后的需要收集数据的大小；</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/03/EUSEgU.png"
+        data-srcset="https://s2.ax1x.com/2019/05/03/EUSEgU.png, https://s2.ax1x.com/2019/05/03/EUSEgU.png 1.5x, https://s2.ax1x.com/2019/05/03/EUSEgU.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/03/EUSEgU.png"
+        title="EUSEgU.png"
+    /></p>
+<p>图12:在使用过滤器前后SNMP异常事件触发数的对比。</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/03/ENzzuQ.png"
+        data-srcset="https://s2.ax1x.com/2019/05/03/ENzzuQ.png, https://s2.ax1x.com/2019/05/03/ENzzuQ.png 1.5x, https://s2.ax1x.com/2019/05/03/ENzzuQ.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/03/ENzzuQ.png"
+        title="ENzzuQ.png"
+    /></p>
+<p>图13：在测试的11天中异常报告占比情况（每小时约有15个event生成）</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/03/EUStDH.png"
+        data-srcset="https://s2.ax1x.com/2019/05/03/EUStDH.png, https://s2.ax1x.com/2019/05/03/EUStDH.png 1.5x, https://s2.ax1x.com/2019/05/03/EUStDH.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/03/EUStDH.png"
+        title="EUStDH.png"
+    /></p>
+<p>与商业检测系统对比如图14,图15</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/03/EUSOaR.png"
+        data-srcset="https://s2.ax1x.com/2019/05/03/EUSOaR.png, https://s2.ax1x.com/2019/05/03/EUSOaR.png 1.5x, https://s2.ax1x.com/2019/05/03/EUSOaR.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/03/EUSOaR.png"
+        title="EUSOaR.png"
+    /></p>
+<ul>
+<li>success:我们的和商业的几乎结果一致</li>
+<li>Found early incidents:我们发现地更早</li>
+<li>Found late incidents:我们发现地更晚</li>
+<li>Anomaly detection misses:商业有警告，但我们的没有</li>
+<li>Potential commercial-alarm false positive:商业有警告，我们有event,但进一步检测我们没有警告。</li>
+<li>Threshold misses:对某IP有大量的flow，但是我没有警告。</li>
+</ul>
+<p>F15：我们的和商业的都失败的事件占比情况</p>
+<p><img
+        class="lazyload"
+        data-src="https://s2.ax1x.com/2019/05/03/EUpOOg.png"
+        data-srcset="https://s2.ax1x.com/2019/05/03/EUpOOg.png, https://s2.ax1x.com/2019/05/03/EUpOOg.png 1.5x, https://s2.ax1x.com/2019/05/03/EUpOOg.png 2x"
+        data-sizes="auto"
+        alt="https://s2.ax1x.com/2019/05/03/EUpOOg.png"
+        title="EUpOOg.png"
+    /></p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-08-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/30_lads/" data-title="LADS: large-scale automated DDOS detection system" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/30_lads/" data-title="LADS: large-scale automated DDOS detection system"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/30_lads/" data-title="LADS: large-scale automated DDOS detection system" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/30_lads/" data-title="LADS: large-scale automated DDOS detection system"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/29_taxonomy/" class="prev" rel="prev" title="A taxonomy of DDoS attack and DDoS defense mechanisms"><i class="fas fa-angle-left fa-fw"></i>A taxonomy of DDoS attack and DDoS defense mechanisms</a>
+            <a href="/posts/31_amplification_hell/" class="next" rel="next" title="Amplification Hell: Revisiting Network Protocols for DDoS Abuse.">Amplification Hell: Revisiting Network Protocols for DDoS Abuse.<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>
