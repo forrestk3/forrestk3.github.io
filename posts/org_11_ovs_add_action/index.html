@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/org_11_ovs_add_action/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-19T21:27:00+08:00" />
-<meta property="article:modified_time" content="2022-09-20T21:17:34+08:00" />
+<meta property="article:modified_time" content="2022-09-28T16:47:43+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OVS添加自定义action"/>
@@ -31,8 +31,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/posts\/org_11_ovs_add_action\/"
-        },"genre": "posts","keywords": "ovs","wordcount":  1587 ,
-        "url": "\/posts\/org_11_ovs_add_action\/","datePublished": "2022-09-19T21:27:00+08:00","dateModified": "2022-09-20T21:17:34+08:00","publisher": {
+        },"genre": "posts","keywords": "ovs","wordcount":  1750 ,
+        "url": "\/posts\/org_11_ovs_add_action\/","datePublished": "2022-09-19T21:27:00+08:00","dateModified": "2022-09-28T16:47:43+08:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
                 "@type": "Person",
@@ -117,7 +117,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
                 </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E5%AE%9E%E9%AA%8C/"><i class="far fa-folder fa-fw"></i>实验</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-09-19">2022-09-19</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-09-20">2022-09-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1587 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-09-19">2022-09-19</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-09-28">2022-09-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1750 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -252,7 +252,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这里的注释  <em><strong>* OF1.0+(30): uint32_t. *</strong></em>   是必要的，它声明了OF消息的类型，序号以及构造消息所需要的参数，在编译过程中会用到这个注释，因此未按指定格式注释会出错.</p>
+</div><p>这里的注释  <em><strong>* OF1.0+(30): uint32_t. *</strong></em>   是必要的，它声明了OF消息的类型，序号以及构造OF消息所需要的参数，ovs会根据这里声明的类型在编译时会在/lib/ofp-actions.inc2这个文件里按put_OFAT_##ENUM的形式自动生成函数,这里生成的函数名为put_OFAT_PVL, 这个函数的第一个参数是 ofpbuf *, 其他的参数为注释中指定的参数(指定为void时则只有一个参数),因此未按指定格式注释会出错.</p>
 <h4 id="include-openvswitch-ofp-actions-dot-h-中添加定义">include/openvswitch/ofp-actions.h 中添加定义</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -317,6 +317,7 @@
 </div><p>这里需要对新添加的类型定义显式的值，否则可能会出错</p>
 <p>这部份代码是内核层的定义，这个枚举类型里有所有的action,当datapath要执行哪个action时,会有for循环轮每个action, 再用switch case语句直接跳到对应的action中进行执行.</p>
 <h3 id="二-parse-encode和decode">二、parse，encode和decode</h3>
+<p>这步的目的是为了ovs-ofctl和控制器能够使用我们新添加的action</p>
 </div>
 
         <div class="sponsor">
@@ -327,7 +328,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-09-20</span>
+                <span>Updated on 2022-09-28</span>
             </div>
             <div class="post-info-license"></div>
         </div>
