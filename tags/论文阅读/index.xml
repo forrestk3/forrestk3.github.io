@@ -4,7 +4,21 @@
         <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
         <description>论文阅读 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Fri, 16 Sep 2022 23:43:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+    <title>PROOFS OF WORK AND BREAD PUDDING PROTOCOLS (EXTENDED ABSTRACT)</title>
+    <link>/posts/org_15_pow/</link>
+    <pubDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_15_pow/</guid>
+    <description><![CDATA[简单介绍 这一篇是讲PoW基础的论文,没有具体说明PoW是什么,但给出了与PoW相关的一些定义和例子, 用于理解PoW还可. 整篇文章看完还是云里]]></description>
+</item><item>
+    <title>EPIC: Every packet is checked in the data plane of a path-aware internet</title>
+    <link>/posts/org_14_epic/</link>
+    <pubDate>Sat, 26 Nov 2022 19:43:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_14_epic/</guid>
+    <description><![CDATA[简单介绍 这是一篇最近NSDI上路径验证相关的论文.看了好几遍但还是没进脑子,因此在此总结一遍. 路径构建 终端主机如何根据AS的信息构造包的传输]]></description>
+</item><item>
     <title>Current Trends of Discovery Topology in SDN</title>
     <link>/posts/org_10_topo_discover/</link>
     <pubDate>Fri, 16 Sep 2022 23:43:00 &#43;0800</pubDate><author>
@@ -60,19 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/27_bohatei/</guid>
     <description><![CDATA[Fayaz S K, Tobioka Y, Sekar V, et al. Bohatei: Flexible and elastic ddos defense[C]//24th {USENIX} Security Symposium ({USENIX} Security 15). 2015: 817-832. 本文提出一种针对新型网络的DDoS的防御系统，通过SDN，将可疑流量通过VM以达到保护主机的目]]></description>
-</item><item>
-    <title>SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks</title>
-    <link>/posts/26_sd-anti-ddos/</link>
-    <pubDate>Mon, 09 Sep 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/26_sd-anti-ddos/</guid>
-    <description><![CDATA[Cui Y, Yan L, Li S, et al. SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks[J]. Journal of Network and Computer Applications, 2016, 68: 65-79. 本文提出一种针对DDoS攻击的检测与缓解机制，由四部份组成：attack detection trigger,attack detection,attack traceback,attack miti]]></description>
-</item><item>
-    <title>FRESCO:Modular Composable Security Services for Software-Defined Networks</title>
-    <link>/posts/25_fresco/</link>
-    <pubDate>Sun, 08 Sep 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/25_fresco/</guid>
-    <description><![CDATA[Shin S W, Porras P, Yegneswara V, et al. Fresco: Modular composable security services for software-defined networks[C]//20th Annual Network &amp; Distributed System Security Symposium. NDSS, 2013. 本文提供了一个应用框架FRESCO，可供研究人员和开发代人员更简单地实现各种检测、缓解模]]></description>
 </item></channel>
 </rss>

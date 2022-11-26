@@ -4,7 +4,28 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>PROOFS OF WORK AND BREAD PUDDING PROTOCOLS (EXTENDED ABSTRACT)</title>
+    <link>/posts/org_15_pow/</link>
+    <pubDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_15_pow/</guid>
+    <description><![CDATA[简单介绍 这一篇是讲PoW基础的论文,没有具体说明PoW是什么,但给出了与PoW相关的一些定义和例子, 用于理解PoW还可. 整篇文章看完还是云里]]></description>
+</item><item>
+    <title>EPIC: Every packet is checked in the data plane of a path-aware internet</title>
+    <link>/posts/org_14_epic/</link>
+    <pubDate>Sat, 26 Nov 2022 19:43:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_14_epic/</guid>
+    <description><![CDATA[简单介绍 这是一篇最近NSDI上路径验证相关的论文.看了好几遍但还是没进脑子,因此在此总结一遍. 路径构建 终端主机如何根据AS的信息构造包的传输]]></description>
+</item><item>
+    <title>马尔可夫决策过程 (Markov decision processes,MDP)</title>
+    <link>/posts/org_13_markon_decision/</link>
+    <pubDate>Tue, 04 Oct 2022 21:44:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_13_markon_decision/</guid>
+    <description><![CDATA[马尔可夫过程 参考自这里 性质(Markov Property) 马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义: 可以从这个式子里面看到, 下]]></description>
+</item><item>
     <title>Hoeffding&#39;s inequality (霍夫丁不等式讲解)</title>
     <link>/posts/org_12_hoeffding_ineq/</link>
     <pubDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</pubDate><author>
@@ -53,26 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_05_magit_usage/</guid>
     <description><![CDATA[Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更]]></description>
-</item><item>
-    <title>Git的基本使用</title>
-    <link>/posts/org_04_git_usage/</link>
-    <pubDate>Sat, 06 Aug 2022 19:28:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_04_git_usage/</guid>
-    <description><![CDATA[基础(最常用的命令) 1 2 3 4 5 6 7 8 git init #初始化Git仓库 git add . #添加所有未追踪文件或修改 git add filename #添加指定文件 git commit -m &#34;commit information&#34; # 提交 git push #推送到远]]></description>
-</item><item>
-    <title>Git 与 Magit 初始篇</title>
-    <link>/posts/org_03_git_get_started/</link>
-    <pubDate>Sat, 06 Aug 2022 15:17:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_03_git_get_started/</guid>
-    <description><![CDATA[系列目的 介绍Git的基础配置及基础使用 介绍Magit的使用, 因为Magti相比与Git方便很多, 配合Emacs效率更高 使用命令行 windows 中使用ba]]></description>
-</item><item>
-    <title>使用emacs写hugo博客</title>
-    <link>/posts/org_02_hugo_with_emacs/</link>
-    <pubDate>Thu, 04 Aug 2022 20:29:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_02_hugo_with_emacs/</guid>
-    <description><![CDATA[emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用. ox-hugo的]]></description>
 </item></channel>
 </rss>

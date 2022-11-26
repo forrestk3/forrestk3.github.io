@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">马尔可夫决策过程 (Markov decision processes,MDP) - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="马尔可夫决策过程 (Markov decision processes,MDP)" />
+<meta property="og:description" content="马尔可夫过程 参考自这里 性质(Markov Property) 马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义: 可以从这个式子里面看到, 下" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/org_13_markon_decision/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-04T21:44:00+08:00" />
+<meta property="article:modified_time" content="2022-10-05T15:31:57+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="马尔可夫决策过程 (Markov decision processes,MDP)"/>
+<meta name="twitter:description" content="马尔可夫过程 参考自这里 性质(Markov Property) 马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义: 可以从这个式子里面看到, 下"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/org_13_markon_decision/" /><link rel="prev" href="/posts/org_12_hoeffding_ineq/" /><link rel="next" href="/posts/org_14_epic/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "马尔可夫决策过程 (Markov decision processes,MDP)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/org_13_markon_decision\/"
+        },"genre": "posts","keywords": "数学","wordcount":  2017 ,
+        "url": "\/posts\/org_13_markon_decision\/","datePublished": "2022-10-04T21:44:00+08:00","dateModified": "2022-10-05T15:31:57+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">马尔可夫决策过程 (Markov decision processes,MDP)</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>额外学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-10-04">2022-10-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-10-05">2022-10-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2017 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#马尔可夫过程">马尔可夫过程</a>
+      <ul>
+        <li><a href="#性质--markov-property">性质(Markov Property)</a></li>
+        <li><a href="#马尔可夫过程--markov-process">马尔可夫过程 (Markov Process)</a></li>
+        <li><a href="#马尔可夫奖励过程--markov-reward-process">马尔可夫奖励过程(Markov reward process)</a></li>
+        <li><a href="#奖励函数">奖励函数</a></li>
+        <li><a href="#折扣因子">折扣因子</a></li>
+        <li><a href="#收益--return">收益 (Return)</a></li>
+        <li><a href="#价值函数--state-value-function">价值函数(state-value function)</a></li>
+        <li><a href="#mrp的贝尔曼方程-bellman-equation-for-mrps">MRP的贝尔曼方程（Bellman Equation for MRPs）</a></li>
+        <li><a href="#马尔可夫决策过程-markov-decision-process">马尔可夫决策过程（Markov decision process）</a></li>
+        <li><a href="#策略--policy">策略 (Policy)</a></li>
+        <li><a href="#价值函数-value-function">价值函数 (Value Function）</a></li>
+        <li><a href="#贝尔曼期望方程-bellman-expectation-equation">贝尔曼期望方程（Bellman Expectation Equation）</a></li>
+        <li><a href="#备份图-backup-diagram">备份图（backup diagram）</a></li>
+        <li><a href="#最优价值函数-optimal-value-function">最优价值函数（Optimal Value Function）</a></li>
+        <li><a href="#贝尔曼最优方程-bellman-optimality-equation">贝尔曼最优方程（Bellman Optimality Equation）</a></li>
+        <li><a href="#马尔可夫决策过程的扩展">马尔可夫决策过程的扩展</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="马尔可夫过程">马尔可夫过程</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/494755866" target="_blank" rel="noopener noreffer">参考自这里</a></p>
+<h3 id="性质--markov-property">性质(Markov Property)</h3>
+<p>马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义:</p>
+<figure><img src="/ox-hugo/QUGtYb.png"/>
+</figure>
+
+<p>可以从这个式子里面看到, 下一个状态为\(S_{t+1}\)的概率只于当前状态\(S_t\)有关, 而与更前的状态\(S_1, S_2, &hellip;, S_{t-1}\)都无关.</p>
+<p>我们对当前状态和后续状态分别记为\(s, s&rsquo;\), 从当前状态转移到后续状态的转移概率定义为:</p>
+<figure><img src="/ox-hugo/uojT9P.png"/>
+</figure>
+
+<p>对于一个马尔可夫过程如果有n个状态, 那这些状态互相转换则共有\(n^2\)种转移, 将这些转移过程记为一个转q称矩阵:</p>
+<figure><img src="/ox-hugo/FjfFbO.png"/>
+</figure>
+
+<h3 id="马尔可夫过程--markov-process">马尔可夫过程 (Markov Process)</h3>
+<p>记一个随机过程中:</p>
+<ul>
+<li>
+<p>S是有限数量的状态集</p>
+</li>
+<li>
+<p>P是状态转移概率矩阵</p>
+</li>
+<li>
+<p>它具有马尔可夫性质</p>
+</li>
+<li>
+<p>转移概率不会随时间变化</p>
+</li>
+</ul>
+<p>则它是一个马尔可夫过程, 表示为\(&lt;S,P&gt;\).</p>
+<p>以下例子: 一个学生所处状态的随机过程</p>
+<figure><img src="/ox-hugo/ImP1yw.png"/>
+</figure>
+
+<p>这里每一个球就是随机过程中的一个状态, 箭头表示状态转移, 箭头上的数字表示转移概率.
+比如学生在Facebook这个状态, 那他有10%的概率会去Class 1 学习, 90%的概率会继续玩Facebook.</p>
+<p>以下是可能的状态转移过程:</p>
+<p>C1 - C2 - C3 - Pass - Sleep</p>
+<p>C1 - FB - FB - C1 - C2 - Sleep</p>
+<p>C1 - C2 - C3 - Pub - C2 - C3 - Pass - Sleep</p>
+<p>C1 - FB - FB - C1 - C2 - C3 - Pub - C1 - FB - FB - FB - C1 - C2 - C3 - Pub - C2 - Sleep</p>
+<p>这个随机过程的转移概率矩阵为:</p>
+<figure><img src="/ox-hugo/qsQiYB.png"/>
+</figure>
+
+<h3 id="马尔可夫奖励过程--markov-reward-process">马尔可夫奖励过程(Markov reward process)</h3>
+<p>这部分的题目比上部分多了一个奖励, 因此内容上也一下, 和马尔可夫随机过程相比,我们在每一个状态上添加一个奖励.</p>
+<p>先摆上给每个状态添加奖励后的随机过程的一个图示:</p>
+<figure><img src="/ox-hugo/xtQYHO.png"/>
+</figure>
+
+<p>马尔可夫奖励过程表示为: \(&lt;S,P,R,\gamma&gt;\)</p>
+<ul>
+<li>S是有限数量的状态集</li>
+<li>P是状态转移概率矩阵</li>
+<li>R是一个奖励函数，\( R_{s} = E[R_{t+1} | S_{t} = s] \)</li>
+<li>\(\gamma\)是一个折扣因子， 其取值范围为: [0, 1]</li>
+</ul>
+<h3 id="奖励函数">奖励函数</h3>
+<p>离开当前状态所获得的奖励,记为\(R\).</p>
+<p>用上面的图举个例子, 假如学生当前在状态Class 1, 此时他即可能进入Class 2, 也可能进入facebook, 不管他下一个状态进入的是哪个, 他离开Class 1状态都会获得 -2 的奖励, 也就是进入下一个状态时, 会获得本状态的奖励.</p>
+<h3 id="折扣因子">折扣因子</h3>
+<p>折扣因子记为 \(\gamma \in [0,1]\), 当我们用它来计算未来收益时会乘以折扣因子, 比如在Class 1 进入facebook和进入 Class 2后虽然当前的收益是相同的, 但未来收益是不同的. 引入折扣因子的原因:</p>
+<ul>
+<li>首先，数学上的方便表示，在带环的马尔可夫过程中，可以避免陷入无限循环，达到收敛。</li>
+<li>其次，随着时间的推移，远期利益的不确定性越来越大，符合人类对于眼前利益的追求。</li>
+<li>再次，在金融上，近期的奖励可能比远期的奖励获得更多的利息，越早获得奖励，收益越高.</li>
+</ul>
+<h3 id="收益--return">收益 (Return)</h3>
+<p>定义为: 从当前时刻起经达 k+1 时间步骤后获得的带折扣奖励总和, 即:</p>
+<figure><img src="/ox-hugo/3JJhlY.png"/>
+</figure>
+
+<p>例个例子:</p>
+<figure><img src="/ox-hugo/5Flr9j.png"/>
+</figure>
+
+<p>在这个马尔可夫过程中, 各状态奖励为:</p>
+<figure><img src="/ox-hugo/91WiJX.png"/>
+</figure>
+
+<p>因此对于采样获得的马尔可夫链能获得的收益为:</p>
+<figure><img src="/ox-hugo/Z8AHH5.png"/>
+</figure>
+
+<h3 id="价值函数--state-value-function">价值函数(state-value function)</h3>
+<p>从该状态s开始的回报的期望, 它表达的是某一状态的长期价值, 记为\(V(s)\), 表达式为:</p>
+<figure><img src="/ox-hugo/7Ax6qL.png"/>
+</figure>
+
+<p>比如对于如下马尔可夫过程:</p>
+<figure><img src="/ox-hugo/eCZI3d.png"/>
+</figure>
+
+<p>我们将每个状态价值函数的初始值设为0</p>
+<p>FB状态时，有0.9的概率进入FB,0.1的概率进入到C1，因此</p>
+<figure><img src="/ox-hugo/hGdm6R.png"/>
+</figure>
+
+<p>Pub状态时，有0.2的概率进入C1,0.4的概率进入到C2，0.4概率进入C3，因此</p>
+<figure><img src="/ox-hugo/Lhc1CY.png"/>
+</figure>
+
+<p>同理,其他状态价值函数:</p>
+<figure><img src="/ox-hugo/ZkNks3.png"/>
+</figure>
+
+<p>根据上面公式，进行迭代计算V值。各状态的初始V值都设0，算出各状态的后续状态的V(S&rsquo;)值, 再将算得的V(S&rsquo;) 作为下一个状态的初始值V(S).</p>
+<p>因此可得:</p>
+<figure><img src="/ox-hugo/tyJJOf.png"/>
+</figure>
+
+<figure><img src="/ox-hugo/hv1vww.png"/>
+</figure>
+
+<figure><img src="/ox-hugo/S21oG0.png"/>
+</figure>
+
+<p>如此下去,直到稳定.</p>
+<h3 id="mrp的贝尔曼方程-bellman-equation-for-mrps">MRP的贝尔曼方程（Bellman Equation for MRPs）</h3>
+<p>推导过程就不列了, 涉及到了不大懂的知识, 将最终的方程列一下:</p>
+<figure><img src="/ox-hugo/3265Ep.png"/>
+</figure>
+
+<p>这个式子还是很好理解的,结合前面的例子,当前状态的收益为当前状态的价值+\(\sum\)下一个状态的转移概率X下一个状态的价值 X \(\gamma\). 可以用下面这个图形来解释:</p>
+<figure><img src="/ox-hugo/3yEAt7.png"/>
+</figure>
+
+<figure><img src="/ox-hugo/IRwJLn.png"/>
+</figure>
+
+<p>它还有矩阵形式, 就不列了, 这里的用处不大, 原博客上都有</p>
+<h3 id="马尔可夫决策过程-markov-decision-process">马尔可夫决策过程（Markov decision process）</h3>
+<p>马尔可夫决策过程是在马尔可夫奖励过程的基础上加入了动作, 定义为: \(&lt;S,A,P,R,\gamma&gt;\)</p>
+<figure><img src="/ox-hugo/fe5bsM.png"/>
+</figure>
+
+<p>马尔可夫决策过程的状态转移概率和奖励函数不仅取决于智能体当前状体，还取决于智能体选取的动作, 而马尔可夫奖励过程仅取决于当前状态。</p>
+<h3 id="策略--policy">策略 (Policy)</h3>
+<p>它是一个对于给定状态s时, 其动作a的分布, 记为:</p>
+<figure><img src="/ox-hugo/qY9uDS.png"/>
+</figure>
+
+<p>它定义了智能体的行为方式, 即各种状态下采取各种动作的概率(采取不同的动作即会转移到不同的状态)</p>
+<p>MDP的策略仅与当前的状态有关，与历史信息无关；同时某一确定的策略是静态的，与时间无关；但是个体可以随着时间更新策略。</p>
+<p>由于状态转移会与不同的策略有关, 因此某个状态的收益也与策略有关.</p>
+<h3 id="价值函数-value-function">价值函数 (Value Function）</h3>
+<h3 id="贝尔曼期望方程-bellman-expectation-equation">贝尔曼期望方程（Bellman Expectation Equation）</h3>
+<h3 id="备份图-backup-diagram">备份图（backup diagram）</h3>
+<h3 id="最优价值函数-optimal-value-function">最优价值函数（Optimal Value Function）</h3>
+<h3 id="贝尔曼最优方程-bellman-optimality-equation">贝尔曼最优方程（Bellman Optimality Equation）</h3>
+<h3 id="马尔可夫决策过程的扩展">马尔可夫决策过程的扩展</h3>
+<p>其他类别的MDP有：无限状态和连续MDP；部分可观测MDP；不带折扣的、平均奖励MDP等</p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-10-05</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/org_13_markon_decision/" data-title="马尔可夫决策过程 (Markov decision processes,MDP)" data-hashtags="数学"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/org_13_markon_decision/" data-title="马尔可夫决策过程 (Markov decision processes,MDP)"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/org_13_markon_decision/" data-title="马尔可夫决策过程 (Markov decision processes,MDP)" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/org_13_markon_decision/" data-title="马尔可夫决策过程 (Markov decision processes,MDP)"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/org_12_hoeffding_ineq/" class="prev" rel="prev" title="Hoeffding&#39;s inequality (霍夫丁不等式讲解)"><i class="fas fa-angle-left fa-fw"></i>Hoeffding&#39;s inequality (霍夫丁不等式讲解)</a>
+            <a href="/posts/org_14_epic/" class="next" rel="next" title="EPIC: Every packet is checked in the data plane of a path-aware internet">EPIC: Every packet is checked in the data plane of a path-aware internet<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

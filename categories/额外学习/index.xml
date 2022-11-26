@@ -4,7 +4,14 @@
         <link>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</link>
         <description>额外学习 - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 04 Oct 2022 21:44:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>马尔可夫决策过程 (Markov decision processes,MDP)</title>
+    <link>/posts/org_13_markon_decision/</link>
+    <pubDate>Tue, 04 Oct 2022 21:44:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_13_markon_decision/</guid>
+    <description><![CDATA[马尔可夫过程 参考自这里 性质(Markov Property) 马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义: 可以从这个式子里面看到, 下]]></description>
+</item><item>
     <title>Hoeffding&#39;s inequality (霍夫丁不等式讲解)</title>
     <link>/posts/org_12_hoeffding_ineq/</link>
     <pubDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</pubDate><author>
