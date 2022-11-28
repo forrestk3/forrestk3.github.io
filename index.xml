@@ -4,9 +4,16 @@
         <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</lastBuildDate>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>High-Speed Inter-domain Fault Localization</title>
+    <link>/posts/org_16_fault_localization/</link>
+    <pubDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_16_fault_localization/</guid>
+    <description><![CDATA[&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &ldquo;High-Speed Inter-Domain Fault Localization,&rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56. 文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的]]></description>
+</item><item>
     <title>PROOFS OF WORK AND BREAD PUDDING PROTOCOLS (EXTENDED ABSTRACT)</title>
     <link>/posts/org_15_pow/</link>
     <pubDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</pubDate><author>
@@ -69,12 +76,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_06_mpc/</guid>
     <description><![CDATA[文章目的 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），]]></description>
-</item><item>
-    <title>Magit的基本使用</title>
-    <link>/posts/org_05_magit_usage/</link>
-    <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_05_magit_usage/</guid>
-    <description><![CDATA[Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更]]></description>
 </item></channel>
 </rss>

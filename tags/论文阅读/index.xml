@@ -4,7 +4,14 @@
         <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
         <description>论文阅读 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+    <title>High-Speed Inter-domain Fault Localization</title>
+    <link>/posts/org_16_fault_localization/</link>
+    <pubDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_16_fault_localization/</guid>
+    <description><![CDATA[&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &ldquo;High-Speed Inter-Domain Fault Localization,&rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56. 文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的]]></description>
+</item><item>
     <title>PROOFS OF WORK AND BREAD PUDDING PROTOCOLS (EXTENDED ABSTRACT)</title>
     <link>/posts/org_15_pow/</link>
     <pubDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</pubDate><author>
@@ -67,12 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/28_ddos_cloud_computing/</guid>
     <description><![CDATA[B. Wang, Y. Zheng, W. Lou and Y. T. Hou, &ldquo;DDoS Attack Protection in the Era of Cloud Computing and Software-Defined Networking,&rdquo; 2014 IEEE 22nd International Conference on Network Protocols, Raleigh, NC, 2014, pp. 624-629. 这篇不怎么样，CCF B类计算机网络会议。本文提出一个用于云防御DDoS]]></description>
-</item><item>
-    <title>Bohatei: Flexible and elastic ddos defense</title>
-    <link>/posts/27_bohatei/</link>
-    <pubDate>Tue, 10 Sep 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/27_bohatei/</guid>
-    <description><![CDATA[Fayaz S K, Tobioka Y, Sekar V, et al. Bohatei: Flexible and elastic ddos defense[C]//24th {USENIX} Security Symposium ({USENIX} Security 15). 2015: 817-832. 本文提出一种针对新型网络的DDoS的防御系统，通过SDN，将可疑流量通过VM以达到保护主机的目]]></description>
 </item></channel>
 </rss>
