@@ -4,9 +4,16 @@
         <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</lastBuildDate>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Efficient Forwarding Anomaly Detection in Software-Defined Networks</title>
+    <link>/posts/org_17_ifade/</link>
+    <pubDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_17_ifade/</guid>
+    <description><![CDATA[affliation and publication author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang publication: TPDS abs 本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通]]></description>
+</item><item>
     <title>High-Speed Inter-domain Fault Localization</title>
     <link>/posts/org_16_fault_localization/</link>
     <pubDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</pubDate><author>
@@ -69,12 +76,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/05_ovs_install/</guid>
     <description><![CDATA[OVS安装 ovs与linux内核版本对应 OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。]]></description>
-</item><item>
-    <title>Solving Minimum Path Cover on a DAG</title>
-    <link>/posts/org_06_mpc/</link>
-    <pubDate>Sun, 21 Aug 2022 22:01:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_06_mpc/</guid>
-    <description><![CDATA[文章目的 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），]]></description>
 </item></channel>
 </rss>

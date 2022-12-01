@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Efficient Forwarding Anomaly Detection in Software-Defined Networks - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Efficient Forwarding Anomaly Detection in Software-Defined Networks" />
+<meta property="og:description" content="affliation and publication author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang publication: TPDS abs 本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/org_17_ifade/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-01T22:12:00+08:00" />
+<meta property="article:modified_time" content="2022-12-01T22:49:05+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Efficient Forwarding Anomaly Detection in Software-Defined Networks"/>
+<meta name="twitter:description" content="affliation and publication author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang publication: TPDS abs 本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/org_17_ifade/" /><link rel="prev" href="/posts/org_16_fault_localization/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Efficient Forwarding Anomaly Detection in Software-Defined Networks",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/org_17_ifade\/"
+        },"genre": "posts","keywords": "论文阅读","wordcount":  2164 ,
+        "url": "\/posts\/org_17_ifade\/","datePublished": "2022-12-01T22:12:00+08:00","dateModified": "2022-12-01T22:49:05+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Efficient Forwarding Anomaly Detection in Software-Defined Networks</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/"><i class="far fa-folder fa-fw"></i>科研学习</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-12-01">2022-12-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-12-01">2022-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2164 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#related-work">Related Work</a></li>
+    <li><a href="#problem-statement">Problem Statement</a>
+      <ul>
+        <li><a href="#background">Background</a>
+          <ul>
+            <li><a href="#an-inductory-example">An Inductory Example</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#fade设计">FADE设计</a>
+      <ul>
+        <li><a href="#design-overview">Design Overview</a></li>
+        <li><a href="#flow-selection">Flow Selection</a></li>
+        <li><a href="#probe-selection">Probe Selection</a></li>
+        <li><a href="#rule-generation">Rule Generation</a></li>
+        <li><a href="#anomaly-identification-and-location">Anomaly Identification and Location</a></li>
+      </ul>
+    </li>
+    <li><a href="#ifade-design">iFADE Design</a>
+      <ul>
+        <li><a href="#rule-computation-under-flow-aggregation">Rule computation under Flow Aggregation</a>
+          <ul>
+            <li><a href="#flow-selection">Flow Selection</a></li>
+            <li><a href="#dedicated-rule-generation">Dedicated Rule Generation</a></li>
+            <li><a href="#anomaly-identification">Anomaly Identification</a></li>
+            <li><a href="#scheduling-detection">Scheduling Detection</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#implementation">Implementation</a></li>
+    <li><a href="#evaluation">Evaluation</a>
+      <ul>
+        <li><a href="#experiment-setup">Experiment Setup</a></li>
+        <li><a href="#detection-accuracy-and-efficiency">Detection Accuracy and Efficiency</a></li>
+        <li><a href="#the-control-plane-overhead">The Control Plane Overhead</a></li>
+        <li><a href="#the-data-plane-overhead">The Data Plane Overhead</a></li>
+        <li><a href="#effectiveness-of-heuristics-in-large-scale-topology">Effectiveness of Heuristics in Large-scale Topology</a></li>
+        <li><a href="#experimental-comparison-with-sphinx">Experimental Comparison With SPHINX</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>affliation and publication</p>
+<ul>
+<li>author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang</li>
+<li>publication: TPDS</li>
+<li>abs
+本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通过所有这些path的最小流,并用专用rule覆盖指定的rule path中的一些rule,再生成探针包并对专用rule统计从而得到当前是否有异常.</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>它将大数据背景引入本文</p>
+<h2 id="related-work">Related Work</h2>
+<h2 id="problem-statement">Problem Statement</h2>
+<h3 id="background">Background</h3>
+<p>SDN本身的不足,问题的重要性,问题的广泛性
+<img
+        class="lazyload"
+        data-src="/ox-hugo/DoswBk.png"
+        data-srcset="/ox-hugo/DoswBk.png, /ox-hugo/DoswBk.png 1.5x, /ox-hugo/DoswBk.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/DoswBk.png"
+        title="/ox-hugo/DoswBk.png"
+    /></p>
+<h4 id="an-inductory-example">An Inductory Example</h4>
+<figure><img src="/ox-hugo/SBHnRo.png"/>
+</figure>
+
+<ul>
+<li>说明什么是rule path: 包在网络中所有匹配的规则序列记为rule path</li>
+<li>攻击类型
+<ul>
+<li>Traffic hijacking: 将流丢弃,重定向到错误的path中,并不会返回原来的rule path</li>
+<li>traffic interception: 流被导到错path上,但还会回到正确的path.</li>
+</ul>
+</li>
+</ul>
+<h2 id="fade设计">FADE设计</h2>
+<h3 id="design-overview">Design Overview</h3>
+<p><img
+        class="lazyload"
+        data-src="/ox-hugo/7cPhv3.png"
+        data-srcset="/ox-hugo/7cPhv3.png, /ox-hugo/7cPhv3.png 1.5x, /ox-hugo/7cPhv3.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/7cPhv3.png"
+        title="/ox-hugo/7cPhv3.png"
+    />
+由四个组件组成</p>
+<ul>
+<li>Flow selection model:
+生成网络将会图,选择能够覆盖所有rule paths的最小flow 集</li>
+<li>决定生成的rule数</li>
+<li>下发专用流表</li>
+<li>统计并检测异常</li>
+</ul>
+<h3 id="flow-selection">Flow Selection</h3>
+<ol>
+<li>构建flow rules graph(利用HSA[39])</li>
+<li>利用算法1选择时最小流集:对每个egress rule, 反向深度找rule path的每个rule,直到ingress gule,如此找到所有的rule path.</li>
+</ol>
+<figure><img src="/ox-hugo/xsQq4V.png"/>
+</figure>
+
+<h3 id="probe-selection">Probe Selection</h3>
+<p>对于给定的流,对它经过的rule path中选择一些rule,这些rule称为probe.
+rule path的第一个rule和最后一个rule一定要选择; 对于其他的rule选择,则通过一个概率计算的方式来选择.
+过程略,因第链路通常长度不会超过32,最终最优选择结果如表2:
+<img
+        class="lazyload"
+        data-src="/ox-hugo/dmRFje.png"
+        data-srcset="/ox-hugo/dmRFje.png, /ox-hugo/dmRFje.png 1.5x, /ox-hugo/dmRFje.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/dmRFje.png"
+        title="/ox-hugo/dmRFje.png"
+    /></p>
+<h3 id="rule-generation">Rule Generation</h3>
+<p>下发的rule分为两种记为\(\mathcal{R}_1, \mathcal{R}_2\).
+\(\mathcal{R}_1\)覆盖第一个probe,负责匹配包并向其插入一个可识别的label.
+\(\mathcal{R}_2\)覆盖其他的probe,负责对插入label的包进行计数.</p>
+<p>这两个规则也插入数据平面时要注意时间,
+在\(\mathcal{R}_\)生效之前\(\mathcal{R}_2\)应该已经生效
+\(\mathcal{R}_1\)失效前\(\mathcal{R}_2\)应该继续存在一段时间记\(i_1,i_2\)分别为它们的下发时间,\(t_1,t_2\)分别为它们的有效时间,
+作者对下发时间和有效时间作了些约束,可见原语言</p>
+<h3 id="anomaly-identification-and-location">Anomaly Identification and Location</h3>
+<p>对于第一个rule的匹配包数计为\(p_1\),假设共有k个rule, 若出现,\(p_1 \neq p_k\),在\(s_1,s_{k}\)之间发生了hijack攻击.则可定位有问题的交换机发生在所有不相等中下标最小的交换机与\(s_1\)之间 当\(p_1=p_k\)时,此时仍可发生interception攻击,因此需要进一步判定:对于\(2 \le u \le v \le k-1\),\(i \in [u,v], j \notin [u,v], j \in (1,k)\),若\(p_i \neq p_j\), 则可定位在\(s_{u-1},s_v\)之间发生了异常这部分算法如算法2:
+<img
+        class="lazyload"
+        data-src="/ox-hugo/vxP1bv.png"
+        data-srcset="/ox-hugo/vxP1bv.png, /ox-hugo/vxP1bv.png 1.5x, /ox-hugo/vxP1bv.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/vxP1bv.png"
+        title="/ox-hugo/vxP1bv.png"
+    /></p>
+<h2 id="ifade-design">iFADE Design</h2>
+<p>对FADE改进从而降低rule数量</p>
+<h3 id="rule-computation-under-flow-aggregation">Rule computation under Flow Aggregation</h3>
+<p>iFADE同样由flow selection, probe selection, rule generation, anomaly identification组成.</p>
+<h4 id="flow-selection">Flow Selection</h4>
+<ol>
+<li>在同一个switch中,具有相同action的所有的egress rule组成一个rule category,</li>
+<li>这个category执行DFT向前查找其上行rule,若它们的上行rule行为不同(这里我理解为来自不同的switch),则这个category分割,</li>
+<li>直到找到ingress rule为止.</li>
+</ol>
+<p>过程见算法3</p>
+<figure><img src="/ox-hugo/KfcKSC.png"/>
+</figure>
+
+<h4 id="dedicated-rule-generation">Dedicated Rule Generation</h4>
+<p>这部分讲怎么成生\(R_1,R_2\),具体的没怎么看懂,大概意思是\(R_1\)可能对多个流添加相同的label.</p>
+<h4 id="anomaly-identification">Anomaly Identification</h4>
+<h4 id="scheduling-detection">Scheduling Detection</h4>
+<p>又来了个看不懂的操作
+<span class="org-target" id="org-target--round"></span></p>
+<h2 id="implementation">Implementation</h2>
+<ul>
+<li>floodlight 实现</li>
+<li>组成:
+<ul>
+<li>storage module</li>
+<li>rule graph module</li>
+<li>anomaly detection module</li>
+</ul>
+</li>
+<li>源码
+<a href="https://github.com/chunhui-pang/fade" target="_blank" rel="noopener noreffer">在这里</a></li>
+</ul>
+<h2 id="evaluation">Evaluation</h2>
+<h3 id="experiment-setup">Experiment Setup</h3>
+<p>使用了两个工具:</p>
+<ol>
+<li>iperf</li>
+<li>Cbench <a href="http://ctuning.org/wiki/index.php?title=CTools:CBench" target="_blank" rel="noopener noreffer">http://ctuning.org/wiki/index.php?title=CTools:CBench</a></li>
+<li>ovs-ofctl</li>
+</ol>
+<p>将配置信息放在表6中:</p>
+<figure><img src="/ox-hugo/77dSh4.png"/>
+</figure>
+
+<p>将实验中使用的不同拓扑信息放在表7中:</p>
+<figure><img src="/ox-hugo/Q1v1Su.png"/>
+</figure>
+
+<h3 id="detection-accuracy-and-efficiency">Detection Accuracy and Efficiency</h3>
+<p>基本设定: 4个现实网络, 每个网络拓扑生成200个网络流, 4个异常流规则, 每个流统计2秒, 每个实验进行5分钟. 结果见5a和5b. 1. TPR和TNR都最终收敛到1；2. FADE需要几秒定位第一个异常, 需要十几秒定位所有的异常.
+图6a和6b是对iFADE的实验结果, 作者对不同的结果原因进行了分析(锅都甩给了OVS).</p>
+<p>对不同数量网络流以及不同数量异常流的情形进行实验, 流的设定如表8所示. 实验结果的TPR和TNR见图7a, 7b所示.
+结论: 1. FADE很健壮, 流的数量对它的影响较小. 2. iFADE不大好的原因怪在OVS的统计不准上.
+对流的统计时间影响评估, 分别测量统计时间为1,2,4,8的TPR和TNR, 结果在图5c和图6c中.  结论: 1. FADE很健壮, 但统计时间越长, 检测延迟也越长；2.  由于OVS的统计不准, 统计时间琥长, iFADE的结果就越好. 因此要均衡检测准确率与效率没介绍图8a与图8b是什么鬼.</p>
+<p>FADE和iFADE在不同拓扑上,检测的TPR,TNR随检测时间的变化,感觉它这个检测时间还挺长,几十秒,图5,6
+检测当存在大量的网络流和大量的异常rule时,TPR和TNR的变化,图7.
+评估TNR随\(R_1\)的存在时间的变化,如图8,TPR的变化如图5,6的c
+<img
+        class="lazyload"
+        data-src="/ox-hugo/0uJ1I8.png"
+        data-srcset="/ox-hugo/0uJ1I8.png, /ox-hugo/0uJ1I8.png 1.5x, /ox-hugo/0uJ1I8.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/0uJ1I8.png"
+        title="/ox-hugo/0uJ1I8.png"
+    /></p>
+<figure><img src="/ox-hugo/3tMbpn.png"/>
+</figure>
+
+<h3 id="the-control-plane-overhead">The Control Plane Overhead</h3>
+<p>latency:平均延迟随网络流数增长的变化见图9a,这个延迟指的是重构交付图,重选择probes,重生成特定规则的时间.
+PacketIn throughput: 比较FADE和iFADE运行时packetIn的产生量,图9b</p>
+<figure><img src="/ox-hugo/ysCnPt.png"/>
+</figure>
+
+<h3 id="the-data-plane-overhead">The Data Plane Overhead</h3>
+<p>专用规则数和数据平面吞吐量随网络流数的变化.图10
+<img
+        class="lazyload"
+        data-src="/ox-hugo/ix7LKl.png"
+        data-srcset="/ox-hugo/ix7LKl.png, /ox-hugo/ix7LKl.png 1.5x, /ox-hugo/ix7LKl.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/ix7LKl.png"
+        title="/ox-hugo/ix7LKl.png"
+    /></p>
+<h3 id="effectiveness-of-heuristics-in-large-scale-topology">Effectiveness of Heuristics in Large-scale Topology</h3>
+<p>对的测试,比较他的解法和最优解的区别
+<img
+        class="lazyload"
+        data-src="/ox-hugo/0cn3sn.png"
+        data-srcset="/ox-hugo/0cn3sn.png, /ox-hugo/0cn3sn.png 1.5x, /ox-hugo/0cn3sn.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/0cn3sn.png"
+        title="/ox-hugo/0cn3sn.png"
+    /></p>
+<h3 id="experimental-comparison-with-sphinx">Experimental Comparison With SPHINX</h3>
+<p>与其他算法的比较
+<img
+        class="lazyload"
+        data-src="/ox-hugo/Mwst6Z.png"
+        data-srcset="/ox-hugo/Mwst6Z.png, /ox-hugo/Mwst6Z.png 1.5x, /ox-hugo/Mwst6Z.png 2x"
+        data-sizes="auto"
+        alt="/ox-hugo/Mwst6Z.png"
+        title="/ox-hugo/Mwst6Z.png"
+    /></p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-12-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/org_17_ifade/" data-title="Efficient Forwarding Anomaly Detection in Software-Defined Networks" data-hashtags="论文阅读"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/org_17_ifade/" data-title="Efficient Forwarding Anomaly Detection in Software-Defined Networks"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/org_17_ifade/" data-title="Efficient Forwarding Anomaly Detection in Software-Defined Networks" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/org_17_ifade/" data-title="Efficient Forwarding Anomaly Detection in Software-Defined Networks"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">论文阅读</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/org_16_fault_localization/" class="prev" rel="prev" title="High-Speed Inter-domain Fault Localization"><i class="fas fa-angle-left fa-fw"></i>High-Speed Inter-domain Fault Localization</a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

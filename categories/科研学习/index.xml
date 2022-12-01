@@ -4,7 +4,14 @@
         <link>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</link>
         <description>科研学习 - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>Efficient Forwarding Anomaly Detection in Software-Defined Networks</title>
+    <link>/posts/org_17_ifade/</link>
+    <pubDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_17_ifade/</guid>
+    <description><![CDATA[affliation and publication author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang publication: TPDS abs 本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通]]></description>
+</item><item>
     <title>High-Speed Inter-domain Fault Localization</title>
     <link>/posts/org_16_fault_localization/</link>
     <pubDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</pubDate><author>
@@ -67,12 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/30_lads/</guid>
     <description><![CDATA[Sekar V, Duffield N G, Spatscheck O, et al. LADS: Large-scale Automated DDoS Detection System[C]//USENIX Annual Technical Conference, General Track. 2006: 171-184. 本文提出LADS，根据轻量级和重量级DDoS检测优缺点进行分析提出两阶段检测法。首先检测是可能有]]></description>
-</item><item>
-    <title>A taxonomy of DDoS attack and DDoS defense mechanisms</title>
-    <link>/posts/29_taxonomy/</link>
-    <pubDate>Thu, 12 Sep 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/29_taxonomy/</guid>
-    <description><![CDATA[Mirkovic J, Reiher P. A taxonomy of DDoS attack and DDoS defense mechanisms[J]. ACM SIGCOMM Computer Communication Review, 2004, 34(2): 39-53. 本文不错，就是老了点，对DDoS攻击和防御做了总结和分类，而不是提供个具体的方法。 DDoS攻击总结]]></description>
 </item></channel>
 </rss>

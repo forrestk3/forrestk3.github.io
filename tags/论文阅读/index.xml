@@ -4,7 +4,14 @@
         <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
         <description>论文阅读 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+    <title>Efficient Forwarding Anomaly Detection in Software-Defined Networks</title>
+    <link>/posts/org_17_ifade/</link>
+    <pubDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_17_ifade/</guid>
+    <description><![CDATA[affliation and publication author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang publication: TPDS abs 本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通]]></description>
+</item><item>
     <title>High-Speed Inter-domain Fault Localization</title>
     <link>/posts/org_16_fault_localization/</link>
     <pubDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</pubDate><author>
@@ -67,12 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/29_taxonomy/</guid>
     <description><![CDATA[Mirkovic J, Reiher P. A taxonomy of DDoS attack and DDoS defense mechanisms[J]. ACM SIGCOMM Computer Communication Review, 2004, 34(2): 39-53. 本文不错，就是老了点，对DDoS攻击和防御做了总结和分类，而不是提供个具体的方法。 DDoS攻击总结]]></description>
-</item><item>
-    <title>DDoS Attack Protection in the Era of Cloud Computing and Software-Defined Networking</title>
-    <link>/posts/28_ddos_cloud_computing/</link>
-    <pubDate>Wed, 11 Sep 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/28_ddos_cloud_computing/</guid>
-    <description><![CDATA[B. Wang, Y. Zheng, W. Lou and Y. T. Hou, &ldquo;DDoS Attack Protection in the Era of Cloud Computing and Software-Defined Networking,&rdquo; 2014 IEEE 22nd International Conference on Network Protocols, Raleigh, NC, 2014, pp. 624-629. 这篇不怎么样，CCF B类计算机网络会议。本文提出一个用于云防御DDoS]]></description>
 </item></channel>
 </rss>
