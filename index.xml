@@ -4,9 +4,16 @@
         <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</lastBuildDate>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 08 Dec 2022 19:44:00 &#43;0800</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense</title>
+    <link>/posts/org_18_stackpi/</link>
+    <pubDate>Tue, 06 Dec 2022 13:14:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_18_stackpi/</guid>
+    <description><![CDATA[论文信息 发在JSAC上, 作者: 把与我相关的部分做总结 摘要 本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成]]></description>
+</item><item>
     <title>Efficient Forwarding Anomaly Detection in Software-Defined Networks</title>
     <link>/posts/org_17_ifade/</link>
     <pubDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</pubDate><author>
@@ -69,12 +76,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_09_dyna/</guid>
     <description><![CDATA[affliation and publication author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee publication: IEEE Transactions on Dependable and secure computing, 2019 abs 传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来]]></description>
-</item><item>
-    <title>mininet , ovs , ryu 分别进行源码安装</title>
-    <link>/posts/05_ovs_install/</link>
-    <pubDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/05_ovs_install/</guid>
-    <description><![CDATA[OVS安装 ovs与linux内核版本对应 OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。]]></description>
 </item></channel>
 </rss>
