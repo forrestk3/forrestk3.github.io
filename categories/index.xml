@@ -4,7 +4,14 @@
         <link>/categories/</link>
         <description>Categories - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 06 Dec 2022 13:14:00 &#43;0800</lastBuildDate><atom:link href="/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</lastBuildDate><atom:link href="/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>实验</title>
+    <link>/categories/%E5%AE%9E%E9%AA%8C/</link>
+    <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/categories/%E5%AE%9E%E9%AA%8C/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>科研学习</title>
     <link>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</link>
     <pubDate>Tue, 06 Dec 2022 13:14:00 &#43;0800</pubDate><author>
@@ -17,13 +24,6 @@
     <pubDate>Tue, 04 Oct 2022 21:44:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>实验</title>
-    <link>/categories/%E5%AE%9E%E9%AA%8C/</link>
-    <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/categories/%E5%AE%9E%E9%AA%8C/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Documentation</title>

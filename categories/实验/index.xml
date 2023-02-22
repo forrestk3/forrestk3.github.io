@@ -4,7 +4,14 @@
         <link>/categories/%E5%AE%9E%E9%AA%8C/</link>
         <description>实验 - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E5%AE%9E%E9%AA%8C/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E5%AE%9E%E9%AA%8C/" rel="self" type="application/rss+xml" /><item>
+    <title>openssl 安装与第一个demo</title>
+    <link>/posts/org_20_openssl1/</link>
+    <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_20_openssl1/</guid>
+    <description><![CDATA[openssl的安装 在使用c语言库调用openssl的时候要先安装,因为安装的时候才会将库放到系统中供程序调用. 下载:https://git]]></description>
+</item><item>
     <title>OVS添加自定义action</title>
     <link>/posts/org_11_ovs_add_action/</link>
     <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
