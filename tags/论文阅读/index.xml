@@ -4,7 +4,14 @@
         <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
         <description>论文阅读 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 06 Dec 2022 13:14:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Wed, 22 Feb 2023 14:27:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
+    <title>On a Multi-criteria Clustering Approachfor Attack Attribution</title>
+    <link>/posts/org_21_multi_clustering/</link>
+    <pubDate>Wed, 22 Feb 2023 14:27:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_21_multi_clustering/</guid>
+    <description><![CDATA[论文信息 SigKDD, 2010 阅读目的: 了解攻击溯源相关知识, 主要是为了扩充知识面. 结论: 这个文章中提供的是一个数据挖掘的方法, 针对已有的数据样本通过找它们的]]></description>
+</item><item>
     <title>StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense</title>
     <link>/posts/org_18_stackpi/</link>
     <pubDate>Tue, 06 Dec 2022 13:14:00 &#43;0800</pubDate><author>
@@ -67,12 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/31_amplification_hell/</guid>
     <description><![CDATA[Rossow C. Amplification Hell: Revisiting Network Protocols for DDoS Abuse[C]//NDSS. 2014. 本文重审各种基于UDP的协议，并分析哪些易用于RDOS，总结目前已被用作的RDOS和应对措施分析。本文主要有三总分组成]]></description>
-</item><item>
-    <title>LADS: large-scale automated DDOS detection system</title>
-    <link>/posts/30_lads/</link>
-    <pubDate>Fri, 13 Sep 2019 18:32:36 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/30_lads/</guid>
-    <description><![CDATA[Sekar V, Duffield N G, Spatscheck O, et al. LADS: Large-scale Automated DDoS Detection System[C]//USENIX Annual Technical Conference, General Track. 2006: 171-184. 本文提出LADS，根据轻量级和重量级DDoS检测优缺点进行分析提出两阶段检测法。首先检测是可能有]]></description>
 </item></channel>
 </rss>

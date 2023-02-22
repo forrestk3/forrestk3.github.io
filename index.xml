@@ -4,9 +4,16 @@
         <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</lastBuildDate>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Wed, 22 Feb 2023 14:27:00 &#43;0800</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>On a Multi-criteria Clustering Approachfor Attack Attribution</title>
+    <link>/posts/org_21_multi_clustering/</link>
+    <pubDate>Wed, 22 Feb 2023 14:27:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_21_multi_clustering/</guid>
+    <description><![CDATA[论文信息 SigKDD, 2010 阅读目的: 了解攻击溯源相关知识, 主要是为了扩充知识面. 结论: 这个文章中提供的是一个数据挖掘的方法, 针对已有的数据样本通过找它们的]]></description>
+</item><item>
     <title>openssl 安装与第一个demo</title>
     <link>/posts/org_20_openssl1/</link>
     <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
@@ -69,12 +76,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_11_ovs_add_action/</guid>
     <description><![CDATA[版本及环境 ovs 2.13.7 ubuntu 18.04 与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到 看这篇需要有一定的OVS基础，基本概念必须要了解。 基本概念 这里讲]]></description>
-</item><item>
-    <title>Current Trends of Discovery Topology in SDN</title>
-    <link>/posts/org_10_topo_discover/</link>
-    <pubDate>Fri, 16 Sep 2022 23:43:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_10_topo_discover/</guid>
-    <description><![CDATA[affliation and publication author: publication: 本文主要 SDN 中详细调研当前拓扑发现服务的解决办法和缺点 Abstract Intro Preliminary Knowledge LLDP 协议 Link Layer Discovery Protocal,详细解释了LLDP包每个字段的作用,但我]]></description>
 </item></channel>
 </rss>
