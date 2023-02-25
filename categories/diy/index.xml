@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>DIY - Category - 咸蛋超人</title>
+        <link>/categories/diy/</link>
+        <description>DIY - Category - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</lastBuildDate><atom:link href="/categories/diy/" rel="self" type="application/rss+xml" /><item>
+    <title>DIY一个dactyl键盘,很喜欢这个,希望能成功</title>
+    <link>/posts/org_22_dactyl/</link>
+    <pubDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_22_dactyl/</guid>
+    <description><![CDATA[资料调研 我想要的特征: 轨迹球+键盘+无线+人体工学设计 1. https://github.com/AlaaSaadAbdo/battoota 这个项目长这样,是我想要的把轨迹球融合到键盘上,但是没有人体工学设计. 尽管如此这个]]></description>
+</item></channel>
+</rss>

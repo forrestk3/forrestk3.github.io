@@ -2,11 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>/categories/</loc><lastmod>2023-02-22T22:20:13&#43;08:00</lastmod></url><url>
+            <loc>/categories/</loc><lastmod>2023-02-25T19:36:31&#43;08:00</lastmod></url><url>
+            <loc>/tags/dactyl/</loc><lastmod>2023-02-25T19:36:31&#43;08:00</lastmod></url><url>
+            <loc>/categories/diy/</loc><lastmod>2023-02-25T19:36:31&#43;08:00</lastmod></url><url>
+            <loc>/posts/org_22_dactyl/</loc><lastmod>2023-02-25T19:36:31&#43;08:00</lastmod></url><url>
+            <loc>/posts/</loc><lastmod>2023-02-25T19:36:31&#43;08:00</lastmod></url><url>
+            <loc>/tags/</loc><lastmod>2023-02-25T19:36:31&#43;08:00</lastmod></url><url>
+            <loc>/</loc><lastmod>2023-02-25T19:36:31&#43;08:00</lastmod></url><url>
             <loc>/posts/org_21_multi_clustering/</loc><lastmod>2023-02-22T15:24:49&#43;08:00</lastmod></url><url>
-            <loc>/posts/</loc><lastmod>2023-02-22T22:20:13&#43;08:00</lastmod></url><url>
-            <loc>/tags/</loc><lastmod>2023-02-22T22:20:13&#43;08:00</lastmod></url><url>
-            <loc>/</loc><lastmod>2023-02-22T22:20:13&#43;08:00</lastmod></url><url>
             <loc>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</loc><lastmod>2023-02-22T15:24:49&#43;08:00</lastmod></url><url>
             <loc>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc><lastmod>2023-02-22T15:24:49&#43;08:00</lastmod></url><url>
             <loc>/tags/openssl/</loc><lastmod>2023-02-22T22:20:13&#43;08:00</lastmod></url><url>
