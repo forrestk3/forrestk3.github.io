@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/org_20_openssl1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-09T12:35:00+08:00" />
-<meta property="article:modified_time" content="2023-02-22T22:20:13+08:00" />
+<meta property="article:modified_time" content="2023-03-02T10:38:11+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="openssl 安装与第一个demo"/>
@@ -31,8 +31,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/posts\/org_20_openssl1\/"
-        },"genre": "posts","keywords": "openssl","wordcount":  1099 ,
-        "url": "\/posts\/org_20_openssl1\/","datePublished": "2023-02-09T12:35:00+08:00","dateModified": "2023-02-22T22:20:13+08:00","publisher": {
+        },"genre": "posts","keywords": "openssl","wordcount":  1144 ,
+        "url": "\/posts\/org_20_openssl1\/","datePublished": "2023-02-09T12:35:00+08:00","dateModified": "2023-03-02T10:38:11+08:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
                 "@type": "Person",
@@ -117,7 +117,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
                 </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E5%AE%9E%E9%AA%8C/"><i class="far fa-folder fa-fw"></i>实验</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-02-09">2023-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-02-22">2023-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1099 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-02-09">2023-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-03-02">2023-03-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1144 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -380,8 +380,19 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">openssl: error <span class="k">while</span> loading shared libraries: libcrypto.so.3: cannot open shared object file: No such file or directory
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>需要在/etc/ld.so.conf.d/libc.conf 文件中添加 /usr/local/lib64,  因为在安装的时候一些动态库都放入了这个文件夹中,但它并不在可搜索的库列表中,因此</p>
+</div><p>需要在/etc/ld.so.conf.d/libc.conf 文件中添加 /usr/local/lib64,  因为在安装的时候一些动态库都放入了这个文件夹中,但它并不在可搜索的库列表中. 添加完该命令后还要更新一下: /sbin/ldconfig -v 才能生效</p>
+<p>命令总结:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/etc/ld.so.conf.d/libc.conf <span class="c1">#在这个文中添加: /usr/local/lib64</span>
+</span></span><span class="line"><span class="cl">/sbin/ldconfig -v <span class="c1"># 更新搜索列表</span>
+</span></span></code></pre></td></tr></table>
 </div>
+</div></div>
 
         <div class="sponsor">
         <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
@@ -391,7 +402,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2023-02-22</span>
+                <span>Updated on 2023-03-02</span>
             </div>
             <div class="post-info-license"></div>
         </div>

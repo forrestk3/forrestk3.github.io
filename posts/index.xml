@@ -4,7 +4,14 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>ovs-dpdk系列配置实验-—1. 安装</title>
+    <link>/posts/org_22_ovs_dpdk_install/</link>
+    <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_22_ovs_dpdk_install/</guid>
+    <description><![CDATA[构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:]]></description>
+</item><item>
     <title>DIY一个dactyl键盘,很喜欢这个,希望能成功</title>
     <link>/posts/org_22_dactyl/</link>
     <pubDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</pubDate><author>
@@ -67,12 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_13_markon_decision/</guid>
     <description><![CDATA[马尔可夫过程 参考自这里 性质(Markov Property) 马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义: 可以从这个式子里面看到, 下]]></description>
-</item><item>
-    <title>Hoeffding&#39;s inequality (霍夫丁不等式讲解)</title>
-    <link>/posts/org_12_hoeffding_ineq/</link>
-    <pubDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_12_hoeffding_ineq/</guid>
-    <description><![CDATA[霍夫丁不等式表达 下面的这个式子是我们常用的 Markov inequality 一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\). 这个不等式的证明: 过程中使用了微积分和一些]]></description>
 </item></channel>
 </rss>

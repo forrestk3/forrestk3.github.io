@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">ovs-dpdk系列配置实验-—1. 安装 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="ovs-dpdk系列配置实验-—1. 安装" />
+<meta property="og:description" content="构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/org_22_ovs_dpdk_install/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-03T13:25:00+08:00" />
+<meta property="article:modified_time" content="2023-04-24T14:25:35+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ovs-dpdk系列配置实验-—1. 安装"/>
+<meta name="twitter:description" content="构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:"/>
+<meta name="application-name" content="咸蛋超人">
+<meta name="apple-mobile-web-app-title" content="咸蛋超人">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/posts/org_22_ovs_dpdk_install/" /><link rel="prev" href="/posts/org_22_dactyl/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ovs-dpdk系列配置实验-—1. 安装",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/posts\/org_22_ovs_dpdk_install\/"
+        },"genre": "posts","keywords": "ovs-dpdk","wordcount":  3235 ,
+        "url": "\/posts\/org_22_ovs_dpdk_install\/","datePublished": "2023-04-03T13:25:00+08:00","dateModified": "2023-04-24T14:25:35+08:00","publisher": {
+            "@type": "Organization",
+            "name": "SuperEgg"},"author": {
+                "@type": "Person",
+                "name": "SuperEgg"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="咸蛋超人">咸蛋超人</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="咸蛋超人">咸蛋超人</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ovs-dpdk系列配置实验-—1. 安装</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E5%AE%9E%E9%AA%8C/"><i class="far fa-folder fa-fw"></i>实验</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-04-03">2023-04-03</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-04-24">2023-04-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3235 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#构建要求">构建要求</a></li>
+    <li><a href="#dpdk安装">DPDK安装</a>
+      <ul>
+        <li><a href="#下载">下载</a></li>
+        <li><a href="#配置与安装dpdk">配置与安装DPDK</a></li>
+      </ul>
+    </li>
+    <li><a href="#ovs安装">OVS安装</a>
+      <ul>
+        <li><a href="#安装脚本">安装脚本</a></li>
+        <li><a href="#卸载脚本">卸载脚本</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置">配置</a>
+      <ul>
+        <li><a href="#配置大页内存">配置大页内存</a></li>
+        <li><a href="#使用vfio配置dpdk设备">使用VFIO配置DPDK设备</a></li>
+        <li><a href="#配置ovs">配置OVS</a></li>
+        <li><a href="#验证">验证</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="构建要求">构建要求</h2>
+<ul>
+<li>dpdk 22.11.1</li>
+<li>支持dpdk的网卡</li>
+<li>合适的内核</li>
+<li>ovs下载:<a href="http://www.openvswitch.org//download/" target="_blank" rel="noopener noreffer">http://www.openvswitch.org//download/</a></li>
+<li>dpdk下载:<a href="http://core.dpdk.org/download/" target="_blank" rel="noopener noreffer">http://core.dpdk.org/download/</a></li>
+<li>ovs版本对应:<a href="https://docs.openvswitch.org/en/latest/faq/releases/" target="_blank" rel="noopener noreffer">https://docs.openvswitch.org/en/latest/faq/releases/</a></li>
+<li>dpdk安装:<a href="https://docs.openvswitch.org/en/latest/intro/install/dpdk/" target="_blank" rel="noopener noreffer">https://docs.openvswitch.org/en/latest/intro/install/dpdk/</a></li>
+<li>我的成功的版本对应: dpdk22.11.1+OVS3.1.1</li>
+<li>如果版本不对应,安装ovs时会出现各种变量未声明什么的错误.</li>
+</ul>
+<h2 id="dpdk安装">DPDK安装</h2>
+<p>安装过程参考自<a href="https://docs.openvswitch.org/en/latest/intro/install/dpdk/" target="_blank" rel="noopener noreffer">这里</a>,有关于构建软件meson的安装补充</p>
+<h3 id="下载">下载</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/src/
+</span></span><span class="line"><span class="cl">wget https://fast.dpdk.org/rel/dpdk-22.11.1.tar.xz
+</span></span><span class="line"><span class="cl">tar xf dpdk-22.11.1.tar.xz
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DPDK_DIR</span><span class="o">=</span>/usr/src/dpdk-stable-22.11.1
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$DPDK_DIR</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="配置与安装dpdk">配置与安装DPDK</h3>
+<p>注意,这个文件夹里很多命令都需要sudo权限</p>
+<p>此外, meson需要手动安装,我使用的是python3.6, 使用pip安装meson,手动指定版本具体命令:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pip3 install --user <span class="nv">meson</span><span class="o">==</span>0.53.2
+</span></span><span class="line"><span class="cl">meson --version <span class="c1">#查看版本,不一定能行,因为它安装在了本地</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来将meson配置为全局的:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nano ~/.bashrc <span class="c1">#在这个文件末尾加入下行这行,然后保存退出</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.local/bin:<span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc <span class="c1"># 这个命令是使f以bash的更改生效</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来可以编译与安装DPDK了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DPDK_BUILD</span><span class="o">=</span><span class="nv">$DPDK_DIR</span>/build
+</span></span><span class="line"><span class="cl">meson build
+</span></span><span class="line"><span class="cl">ninja -C build
+</span></span><span class="line"><span class="cl">sudo ninja -C build install
+</span></span><span class="line"><span class="cl">sudo ldconfig
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完后看一下版本,若能输出版本号,说明DPDK安装成功</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pkg-config --modversion libdpdk
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><img src="/ox-hugo/pCst0o.png"/>
+</figure>
+
+<h2 id="ovs安装">OVS安装</h2>
+<p>下载好对应的版本安装就行,configure阶段要选用dpdk,不需要安装内核模块,其他的步聚不变,我的一键脚本如下:</p>
+<h3 id="安装脚本">安装脚本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>./configure --with-dpdk
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end configure \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end make \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo make install
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end make install \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo mkdir -p /usr/local/etc/openvswitch
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end sudo mkdir -p /usr/local/etc/openvswitch \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema <span class="c1"># 这里没出现找不到路径的问题,可能是安装了内核版本的原因</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end ovsdb-tool \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo mkdir -p /usr/local/var/run/openvswitch
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end sudo mkdir -p /usr/local/var/run/openvswitch \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">sudo ovsdb-server --remote<span class="o">=</span>punix:/usr/local/var/run/openvswitch/db.sock <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --remote<span class="o">=</span>db:Open_vSwitch,Open_vSwitch,manager_options <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --private-key<span class="o">=</span>db:Open_vSwitch,SSL,private_key <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --certificate<span class="o">=</span>db:Open_vSwitch,SSL,certificate <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --bootstrap-ca-cert<span class="o">=</span>db:Open_vSwitch,SSL,ca_cert <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --pidfile --detach --log-file
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end sudo ovsdb-server \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo ovs-vsctl --no-wait init
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end sudo ovs-vsctl --no-wait init \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo ovs-vswitchd --pidfile --detach --log-file
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end sudo ovs-vswitchd --pidfile --detach --log-file \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo mn --test pingall
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m end sudo mn --test pingall \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> -e <span class="s2">&#34;\033[47;30m show dmesg \033[0m&#34;</span>
+</span></span><span class="line"><span class="cl">dmesg <span class="p">|</span> tail <span class="c1"># 这时能查到我们插入源码的信息</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>把这个脚本放到.sh文件里,文件放到ovs解压后的文件下,再赋运行权限,运行就行</p>
+<p>如果输出信息有如下,代表成功了</p>
+<figure><img src="/ox-hugo/ff8NV7.png"/>
+</figure>
+
+<p>即 mn &ndash;test pingall 的输出结果是通的代表安装成功</p>
+<h3 id="卸载脚本">卸载脚本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># 停止其运行</span>
+</span></span><span class="line"><span class="cl">sudo /usr/local/share/openvswitch/scripts/ovs-ctl stop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sleep <span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 依次删除脚本；还有两个不知道干嘛的</span>
+</span></span><span class="line"><span class="cl">sudo rm -rf /usr/local/share/openvswitch/scripts
+</span></span><span class="line"><span class="cl">sudo rm -rf /usr/local/etc/openvswitch/
+</span></span><span class="line"><span class="cl">sudo rm -rf /usr/local/var/run/openvswitch/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sleep <span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 移除内核模块</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;lsmod | grep openvswitch&#39;</span>
+</span></span><span class="line"><span class="cl">lsmod <span class="p">|</span> grep openvswitch
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;sudo rmmod openvswitch&#39;</span>
+</span></span><span class="line"><span class="cl">sudo rmmod openvswitch
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;lsmod | grep openvswitch&#39;</span>
+</span></span><span class="line"><span class="cl">lsmod <span class="p">|</span> grep openvswitch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 若移除内核失败,执行下面两条命令</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    sudo ovs-dpctl show # 查看是否被占用</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    sudo ovs-dpctl del-dp ovs-system # 删除</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个是带内核的卸载脚本,直接用就行,提示没有内核模块不用管</p>
+<h2 id="配置">配置</h2>
+<h3 id="配置大页内存">配置大页内存</h3>
+<p>两种办法,一种是长久配置,一种是运行时配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;vm.nr_hugepages=2048&#39;</span> &gt; /etc/sysctl.d/hugepages.conf <span class="c1"># 长久配置</span>
+</span></span><span class="line"><span class="cl">sudo sysctl -w vm.nr_hugepages<span class="o">=</span><span class="m">2048</span>  <span class="c1"># where N = No. of 2M huge pages 运行时配置</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>验证是否配置成功: 我使用的是运行时配置,第一种长久配置没成功</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep HugePages_ /proc/meminfo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以上命令输出应该是有结果就算成功, 截图如下:</p>
+<figure><img src="/ox-hugo/84j8Kw.png"/>
+</figure>
+
+<p>挂载大内存:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mount -t hugetlbfs none /dev/hugepages
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>挂载完好像没有提示信息,如下:</p>
+<figure><img src="/ox-hugo/BZ11hB.png"/>
+</figure>
+
+<p>在DPDK中，使用大页内存可以提高包处理的性能和吞吐量，减少CPU和内存的开销。</p>
+<p>在启用大页内存支持后，需要使用内核模块来分配大页内存，然后将其映射到用户空间。</p>
+<p>为了映射大页内存，需要将大页内存挂载到文件系统中。&lsquo;mount -t hugetlbfs none /dev/hugepages&rsquo; 是一条挂载大页内存（Huge Pages Memory）的命令，它的作用是将大页内存挂载到文件系统中，以便用户空间应用程序可以访问大页内存。</p>
+<p>但是如果系统重新启动或者重新挂载文件系统，大页内存会被释放. 所需要的大页h内存影响因素见<a href="https://docs.openvswitch.org/en/latest/topics/dpdk/memory/" target="_blank" rel="noopener noreffer">这里</a>.</p>
+<p>上述命令放在一个脚本里:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo sysctl -w vm.nr_hugepages<span class="o">=</span><span class="m">2048</span>
+</span></span><span class="line"><span class="cl">grep HugePages_ /proc/meminfo
+</span></span><span class="line"><span class="cl">sudo mount -t hugetlbfs none /dev/hugepages
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="使用vfio配置dpdk设备">使用VFIO配置DPDK设备</h3>
+<p>使用VFIO（Virtual Function I/O）技术可以将DPDK设备绑定到用户空间，从而提高DPDK的性能和可扩展性。VFIO技术提供了一种安全的方式，允许用户空间应用程序直接访问设备资源，而不需要通过内核</p>
+<p>要确保系统支持VFIO有两点:内核版本大于3.6, BIOS允许VT-d.</p>
+<p>运行以下命令确定VT-d已在BIOS中被允许:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dmesg <span class="p">|</span> grep -e DMAR -e IOMMU
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><img src="/ox-hugo/UNyTJe.png"/>
+</figure>
+
+<p>有DMAR的相关信息,我的应该是支持VT-d的.(最后一行), 如果不支持,就啥都不输出</p>
+<p>运行以下命令确定VT-d在内核处被允许:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /proc/cmdline <span class="p">|</span> grep <span class="nv">iommu</span><span class="o">=</span>pt
+</span></span><span class="line"><span class="cl">cat /proc/cmdline <span class="p">|</span> grep <span class="nv">intel_iommu</span><span class="o">=</span>on
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我的没有输出, 看来是内核没开启,需要往grub文件里添加开启参数:</p>
+<p>使用命令:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/default/grub
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><img src="/ox-hugo/75Rkyb.png"/>
+</figure>
+
+<p>往文件里的GRUB_CMDLINE_LINUX_DEFAULT行添加 &lsquo;intel_iommu=on iommu=pt&rsquo; 有多个使用空格隔开</p>
+<p>更新grub配置文件:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo update-grub
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><img src="/ox-hugo/J7DRlb.png"/>
+</figure>
+
+<p>完事之后重启系统, 再输入命令看看有没有输出:</p>
+<figure><img src="/ox-hugo/BuB6zp.png"/>
+</figure>
+
+<p>有了,希望开启成功</p>
+<p>确定VT-d开启后加载需要的模块并将VFIO绑定到NIC</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo modprobe vfio-pci
+</span></span><span class="line"><span class="cl">sudo chmod a+x /dev/vfio
+</span></span><span class="line"><span class="cl">sudo chmod <span class="m">0666</span> /dev/vfio/*
+</span></span><span class="line"><span class="cl">sudo /usr/src/dpdk-stable-22.11.1/usertools/dpdk-devbind.py --bind<span class="o">=</span>vfio-pci enp3s0
+</span></span><span class="line"><span class="cl">/usr/src/dpdk-stable-22.11.1/usertools/dpdk-devbind.py --status
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面命令中, dpdk-devbind &ndash;status这一行是用来看驱动状态的,会有Network devices using DPDK-compatible driver 或 Network devices using kernel driver. 没绑定时结果如下:</p>
+<figure><img src="/ox-hugo/qdWa5e.png"/>
+</figure>
+
+<p>绑定完结果如下:</p>
+<figure><img src="/ox-hugo/6hF9rf.png"/>
+</figure>
+
+<p>如果绑定没成功, 就不会没出现DPDK-compatible driver的设备, 而且绑定哪个设备电脑就找不到哪个设备了, 需要重启(别问我怎么知道的)</p>
+<p>绑定时可以使用设备名,也可以使用前面那个数,比如在上面截图中我想绑定有线网卡, 下面两个命令都可以使用:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo /usr/src/dpdk-stable-22.11.1/usertools/dpdk-devbind.py --bind<span class="o">=</span>vfio-pci enp3s0
+</span></span><span class="line"><span class="cl">sudo /usr/src/dpdk-stable-22.11.1/usertools/dpdk-devbind.py --bind<span class="o">=</span>vfio-pci 03:00.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里绑定没成功时的错误提示:(原因是当时不会开启grub部分的iommu, 后来开启了就绑定成功了),绑完网卡就没了,记录下错误:</p>
+<p>错误提示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Error: <span class="nb">bind</span> failed <span class="k">for</span> 0000:03:00.0 - Cannot <span class="nb">bind</span> to driver vfio-pci: <span class="o">[</span>Errno 19<span class="o">]</span> No such device
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>dmesg信息:</p>
+<figure><img src="/ox-hugo/FOZ6jr.png"/>
+</figure>
+
+<p>最后面那个-22那个应该就是我的错误,看不懂.</p>
+<p>绑定成功了就不会有probe of &hellip; 这个错误</p>
+<h3 id="配置ovs">配置OVS</h3>
+<p>命令总结在后面,这里列出每个命令绍其作用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/share/openvswitch/scripts
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DB_SOCK</span><span class="o">=</span>/usr/local/var/run/openvswitch/db.sock <span class="c1"># 这两个是导出路径, 但只对当前命令行起作用, 所以重新打开后要重新执行</span>
+</span></span><span class="line"><span class="cl">sudo ovs-vsctl --no-wait <span class="nb">set</span> Open_vSwitch . other_config:dpdk-init<span class="o">=</span><span class="nb">true</span> <span class="c1">#这里相当于启动vsctl, 但是后面配置了dpdk参数</span>
+</span></span><span class="line"><span class="cl">sudo ovs-ctl --no-ovsdb-server --db-sock<span class="o">=</span><span class="s2">&#34;</span><span class="nv">$DB_SOCK</span><span class="s2">&#34;</span> start <span class="c1"># 这里就是启动ovs-ctl了</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果出现 &lsquo;ovs-ctl command not found&rsquo;类似的错误, 则说明scripts的路径没配置对, 检查安装时scripts的path, 一般就是这个, 注意检查空格什么的, 或者在删除脚本里的路径核对一下. db.sock路径也要检查与安装时的是否相同,否则也会出错.</p>
+<p>命令都成功了,不知道为什么最后验证的时候是false&hellip;难受啊.</p>
+<p>经过几次调试成功开启了dpdk, 截图如下:</p>
+<figure><img src="/ox-hugo/MNBO3f.png"/>
+</figure>
+
+<p>之前是false, 因为安装时我就在脚本里写了要启动它, 没有配上dpdk的信息, 后来配置dpdk信息时已经启动过了, 所以查看的时候就老是false. 将ovs-vswitchd关闭重启一下</p>
+<p>这里的命令总结如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/share/openvswitch/scripts
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DB_SOCK</span><span class="o">=</span>/usr/local/var/run/openvswitch/db.sock
+</span></span><span class="line"><span class="cl"><span class="c1"># 以上是导出path信息, 注意检查不要出错</span>
+</span></span><span class="line"><span class="cl">sudo /usr/local/share/openvswitch/scripts/ovs-ctl stop
+</span></span><span class="line"><span class="cl"><span class="c1"># 先将其关闭, 因为安装ovs时开启过, 这里要重开一下</span>
+</span></span><span class="line"><span class="cl">sudo ovsdb-server --remote<span class="o">=</span>punix:/usr/local/var/run/openvswitch/db.sock <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --remote<span class="o">=</span>db:Open_vSwitch,Open_vSwitch,manager_options <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --private-key<span class="o">=</span>db:Open_vSwitch,SSL,private_key <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --certificate<span class="o">=</span>db:Open_vSwitch,SSL,certificate <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --bootstrap-ca-cert<span class="o">=</span>db:Open_vSwitch,SSL,ca_cert <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>             --pidfile --detach --log-file
+</span></span><span class="line"><span class="cl"><span class="c1"># 关闭后要重新配置一下数据库</span>
+</span></span><span class="line"><span class="cl">sudo ovs-vsctl --no-wait <span class="nb">set</span> Open_vSwitch . other_config:dpdk-init<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">sudo ovs-ctl --no-ovsdb-server --db-sock<span class="o">=</span><span class="s2">&#34;</span><span class="nv">$DB_SOCK</span><span class="s2">&#34;</span> start
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里是按要求正常启动</span>
+</span></span><span class="line"><span class="cl">sudo ovs-vsctl get Open_vSwitch . dpdk_initialized
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里是看有没有启动成功, 如果输出true(如上面截图)就说明成功了</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="验证">验证</h3>
+<p>验证命令如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ovs-vsctl get Open_vSwitch . dpdk_initialized
+</span></span><span class="line"><span class="cl">ovs-vswitchd --version
+</span></span><span class="line"><span class="cl">sudo ovs-vsctl get Open_vSwitch . dpdk_version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果输出如下, 则表示安装成功:</p>
+<figure><img src="/ox-hugo/JzJrFe.png"/>
+</figure>
+
+<p>添加dpdk网桥并向网桥中添加dpdk接口, 命令如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ovs-vsctl add-br br0 -- <span class="nb">set</span> bridge br0 <span class="nv">datapath_type</span><span class="o">=</span>netdev
+</span></span><span class="line"><span class="cl">sudo ovs-vsctl add-port br0 myportnameone -- <span class="nb">set</span> Interface myportnameone <span class="nv">type</span><span class="o">=</span>dpdk options:dpdk-devargs<span class="o">=</span>0000:06:00.0
+</span></span><span class="line"><span class="cl"><span class="c1"># 上面第二个命令的目的是将物理网卡(最后那一串数是网卡的pci地址, 可以作用dpdk-devbind.py -s命令查看)绑定到ovs网桥br0上, myportnameone 这个是绑定的接口</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>出错如下:</p>
+<figure><img src="/ox-hugo/AE1hLP.png"/>
+</figure>
+
+<p>目前尝试解决方法:</p>
+<ol>
+<li>在grup添加&rsquo;pci=realloc=on&rsquo; 未起作用</li>
+<li>安装&rsquo;libdpdk-dev&rsquo;包, 未起作用</li>
+</ol>
+<p>将dpdk物理网卡绑定到ovs端口就一直出错, 未找到原因,到此为止吧. 前面的步骤都没问题.</p>
+<p>在sudo ovs-vsctl add-br br0 &ndash; set bridge br0 datapath_type=netdev 这个命令中设定type为netdev而不是kernel, 即可让数据包的转发在用户态进行而不进入内核态</p>
+</div>
+
+        <div class="sponsor">
+        <div class="sponsor-avatar"></div><p class="sponsor-bio"><em>如果这篇文章帮到了你, 那就赞助我一瓶水吧, 这可以让我有动力去写更多的文章</em></p><a href="https://www.baidu.com" title="Sponsor" target="_blank" class="sponsor-button" rel="noopener noreferrer">
+                <i class="far fa-heart fa-fw icon" style="color: #ec6cb9;"></i>
+                <span>Sponsor</span>
+            </a></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-04-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="Share on Twitter" data-sharer="twitter" data-url="/posts/org_22_ovs_dpdk_install/" data-title="ovs-dpdk系列配置实验-—1. 安装" data-hashtags="ovs-dpdk"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="Share on 微博" data-sharer="weibo" data-url="/posts/org_22_ovs_dpdk_install/" data-title="ovs-dpdk系列配置实验-—1. 安装"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Blogger" data-sharer="blogger" data-url="/posts/org_22_ovs_dpdk_install/" data-title="ovs-dpdk系列配置实验-—1. 安装" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" onclick="return false;" title="Share on Evernote" data-sharer="evernote" data-url="/posts/org_22_ovs_dpdk_install/" data-title="ovs-dpdk系列配置实验-—1. 安装"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ovs-dpdk/">ovs-dpdk</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/org_22_dactyl/" class="prev" rel="prev" title="DIY一个dactyl键盘,很喜欢这个,希望能成功"><i class="fas fa-angle-left fa-fw"></i>DIY一个dactyl键盘,很喜欢这个,希望能成功</a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

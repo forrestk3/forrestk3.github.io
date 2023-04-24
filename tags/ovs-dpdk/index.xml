@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ovs-dpdk - Tag - 咸蛋超人</title>
+        <link>/tags/ovs-dpdk/</link>
+        <description>ovs-dpdk - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</lastBuildDate><atom:link href="/tags/ovs-dpdk/" rel="self" type="application/rss+xml" /><item>
+    <title>ovs-dpdk系列配置实验-—1. 安装</title>
+    <link>/posts/org_22_ovs_dpdk_install/</link>
+    <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_22_ovs_dpdk_install/</guid>
+    <description><![CDATA[构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:]]></description>
+</item></channel>
+</rss>
