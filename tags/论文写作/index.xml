@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>论文写作 - Tag - 咸蛋超人</title>
+        <link>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</link>
+        <description>论文写作 - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/" rel="self" type="application/rss+xml" /><item>
+    <title>IEEE论文的引用怎么弄?</title>
+    <link>/posts/org_25_cite_in_ieee/</link>
+    <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_25_cite_in_ieee/</guid>
+    <description><![CDATA[参考 这里 参考自这里 期刊(人,题,期,卷,(号),月,年,页) bib文件的通用格式如下. 这里的作者要用全名, 如果要用 et al. 的话, 是在.bst配置]]></description>
+</item></channel>
+</rss>

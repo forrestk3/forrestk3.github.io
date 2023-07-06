@@ -4,7 +4,14 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>IEEE论文的引用怎么弄?</title>
+    <link>/posts/org_25_cite_in_ieee/</link>
+    <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_25_cite_in_ieee/</guid>
+    <description><![CDATA[参考 这里 参考自这里 期刊(人,题,期,卷,(号),月,年,页) bib文件的通用格式如下. 这里的作者要用全名, 如果要用 et al. 的话, 是在.bst配置]]></description>
+</item><item>
     <title>Elgamal算法原理总结</title>
     <link>/posts/org_24_elgamal/</link>
     <pubDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</pubDate><author>
@@ -67,12 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_16_fault_localization/</guid>
     <description><![CDATA[&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &ldquo;High-Speed Inter-Domain Fault Localization,&rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56. 文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的]]></description>
-</item><item>
-    <title>PROOFS OF WORK AND BREAD PUDDING PROTOCOLS (EXTENDED ABSTRACT)</title>
-    <link>/posts/org_15_pow/</link>
-    <pubDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_15_pow/</guid>
-    <description><![CDATA[简单介绍 这一篇是讲PoW基础的论文,没有具体说明PoW是什么,但给出了与PoW相关的一些定义和例子, 用于理解PoW还可. 整篇文章看完还是云里]]></description>
 </item></channel>
 </rss>
