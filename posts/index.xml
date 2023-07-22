@@ -4,7 +4,14 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Practical Techniques for Searches on Encrypted Data</title>
+    <link>/posts/org_26_se/</link>
+    <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_26_se/</guid>
+    <description><![CDATA[论文信息 发表: IEEE Symposium on Security and Privacy (CCF A, 2000) 阅读目的: 了解它是怎么在密文中搜索的, 找网络数据包传输过程中如何检测被修改的idea. 作者使用的思想为A XOR B]]></description>
+</item><item>
     <title>IEEE论文的引用怎么弄?</title>
     <link>/posts/org_25_cite_in_ieee/</link>
     <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
@@ -67,12 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_17_ifade/</guid>
     <description><![CDATA[affliation and publication author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang publication: TPDS abs 本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通]]></description>
-</item><item>
-    <title>High-Speed Inter-domain Fault Localization</title>
-    <link>/posts/org_16_fault_localization/</link>
-    <pubDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_16_fault_localization/</guid>
-    <description><![CDATA[&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &ldquo;High-Speed Inter-Domain Fault Localization,&rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56. 文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的]]></description>
 </item></channel>
 </rss>

@@ -4,7 +4,14 @@
         <link>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</link>
         <description>科研学习 - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>Practical Techniques for Searches on Encrypted Data</title>
+    <link>/posts/org_26_se/</link>
+    <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/org_26_se/</guid>
+    <description><![CDATA[论文信息 发表: IEEE Symposium on Security and Privacy (CCF A, 2000) 阅读目的: 了解它是怎么在密文中搜索的, 找网络数据包传输过程中如何检测被修改的idea. 作者使用的思想为A XOR B]]></description>
+</item><item>
     <title>IEEE论文的引用怎么弄?</title>
     <link>/posts/org_25_cite_in_ieee/</link>
     <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
@@ -67,12 +74,5 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_09_dyna/</guid>
     <description><![CDATA[affliation and publication author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee publication: IEEE Transactions on Dependable and secure computing, 2019 abs 传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来]]></description>
-</item><item>
-    <title>记录在数据平面选择流的过程</title>
-    <link>/hide/org_08_rule_selection/</link>
-    <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/hide/org_08_rule_selection/</guid>
-    <description><![CDATA[选择的流经过所有的交换机 控制器实时构造rule graph 获取所有的ingress rule（入度为0的规则），并依长度降序排序 对每一个ingress rule]]></description>
 </item></channel>
 </rss>
