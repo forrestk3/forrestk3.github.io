@@ -11,7 +11,6 @@
 <meta property="og:url" content="/posts/org_20_openssl1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-09T12:35:00+08:00" />
 <meta property="article:modified_time" content="2023-03-02T10:38:11+08:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="openssl 安装与第一个demo"/>
 <meta name="twitter:description" content="openssl的安装 在使用c语言库调用openssl的时候要先安装,因为安装的时候才会将库放到系统中供程序调用. 下载:https://git"/>
@@ -31,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/posts\/org_20_openssl1\/"
-        },"genre": "posts","keywords": "openssl","wordcount":  1144 ,
+        },"genre": "posts","keywords": "openssl","wordcount":  1147 ,
         "url": "\/posts\/org_20_openssl1\/","datePublished": "2023-02-09T12:35:00+08:00","dateModified": "2023-03-02T10:38:11+08:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
@@ -117,7 +116,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreffer author" class="author">SuperEgg</a>
                 </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E5%AE%9E%E9%AA%8C/"><i class="far fa-folder fa-fw"></i>实验</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-02-09">2023-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-03-02">2023-03-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1144 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-02-09">2023-02-09</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-03-02">2023-03-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1147 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -273,13 +272,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">str2hex</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ret</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">str_len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">str_len</span> <span class="o">=</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">//    assert((str_len%2) == 0);
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ret</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">str_len</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ret</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="n">str_len</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">str_len</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span> <span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">sscanf</span><span class="p">(</span><span class="n">str</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="s">&#34;%2hhx&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">sscanf</span><span class="p">(</span><span class="n">str</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="s">&#34;%2hhx&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -292,51 +291,51 @@
 </span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">key</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">stdiv</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">key</span> <span class="o">=</span> <span class="n">str2hex</span><span class="p">(</span><span class="n">AESKEY</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">stdiv</span> <span class="o">=</span> <span class="n">str2hex</span><span class="p">(</span><span class="n">AESIV</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AES_set_encrypt_key</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="o">&amp;</span><span class="n">encryptkey</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AES_set_decrypt_key</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="o">&amp;</span><span class="n">decryptkey</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">key</span> <span class="o">=</span> <span class="nf">str2hex</span><span class="p">(</span><span class="n">AESKEY</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stdiv</span> <span class="o">=</span> <span class="nf">str2hex</span><span class="p">(</span><span class="n">AESIV</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">AES_set_encrypt_key</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="o">&amp;</span><span class="n">encryptkey</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">AES_set_decrypt_key</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="o">&amp;</span><span class="n">decryptkey</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">plain_text</span> <span class="p">[</span><span class="mi">32</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">memcpy</span><span class="p">(</span><span class="n">plain_text</span><span class="p">,</span> <span class="s">&#34;AES encrypt in openssl demo&#34;</span><span class="p">,</span> <span class="mi">27</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">plain_text</span> <span class="o">+</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">memcpy</span><span class="p">(</span><span class="n">plain_text</span><span class="p">,</span> <span class="s">&#34;AES encrypt in openssl demo&#34;</span><span class="p">,</span> <span class="mi">27</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">memset</span><span class="p">(</span><span class="n">plain_text</span> <span class="o">+</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">//需要将加密区块长度填充为16字节整数倍，此处使用zero-padding，即末尾全用0填充
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;plain_text: &#34;</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;plain_text: &#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%02X &#34;</span><span class="p">,</span> <span class="n">plain_text</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%02X &#34;</span><span class="p">,</span> <span class="n">plain_text</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span> <span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">encrypted_text</span> <span class="p">[</span><span class="mi">32</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">encrypted_text</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">memset</span><span class="p">(</span><span class="n">encrypted_text</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">tmpiv</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="n">memcpy</span><span class="p">(</span><span class="n">tmpiv</span><span class="p">,</span> <span class="n">stdiv</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AES_cbc_encrypt</span><span class="p">(</span><span class="n">plain_text</span><span class="p">,</span> <span class="n">encrypted_text</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">encryptkey</span><span class="p">,</span> <span class="n">tmpiv</span><span class="p">,</span> <span class="n">AES_ENCRYPT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">memcpy</span><span class="p">(</span><span class="n">tmpiv</span><span class="p">,</span> <span class="n">stdiv</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">AES_cbc_encrypt</span><span class="p">(</span><span class="n">plain_text</span><span class="p">,</span> <span class="n">encrypted_text</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">encryptkey</span><span class="p">,</span> <span class="n">tmpiv</span><span class="p">,</span> <span class="n">AES_ENCRYPT</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">//初始向量这个参数每次使用都会将其改变，有兴趣的话可以把调用前后这个地址下的内容打印出来。所以如果要多次加密且每次使用固定的初始向量，可以先用tmpiv接收
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;encrypted_text: &#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;encrypted_text: &#34;</span> <span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%02X &#34;</span><span class="p">,</span> <span class="n">encrypted_text</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%02X &#34;</span><span class="p">,</span> <span class="n">encrypted_text</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span> <span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">decrypted_text</span> <span class="p">[</span><span class="mi">32</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">decrypted_text</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">memcpy</span><span class="p">(</span><span class="n">tmpiv</span><span class="p">,</span> <span class="n">stdiv</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">AES_cbc_encrypt</span><span class="p">(</span><span class="n">encrypted_text</span><span class="p">,</span> <span class="n">decrypted_text</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">decryptkey</span><span class="p">,</span> <span class="n">tmpiv</span><span class="p">,</span> <span class="n">AES_DECRYPT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">memset</span><span class="p">(</span><span class="n">decrypted_text</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">memcpy</span><span class="p">(</span><span class="n">tmpiv</span><span class="p">,</span> <span class="n">stdiv</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">AES_cbc_encrypt</span><span class="p">(</span><span class="n">encrypted_text</span><span class="p">,</span> <span class="n">decrypted_text</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">decryptkey</span><span class="p">,</span> <span class="n">tmpiv</span><span class="p">,</span> <span class="n">AES_DECRYPT</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;decrypted_text: &#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;decrypted_text: &#34;</span> <span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%02X &#34;</span><span class="p">,</span> <span class="n">decrypted_text</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%02X &#34;</span><span class="p">,</span> <span class="n">decrypted_text</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span> <span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -428,8 +427,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">

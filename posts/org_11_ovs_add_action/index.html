@@ -11,7 +11,6 @@
 <meta property="og:url" content="/posts/org_11_ovs_add_action/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-19T21:27:00+08:00" />
 <meta property="article:modified_time" content="2022-09-28T16:47:43+08:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OVS添加自定义action"/>
 <meta name="twitter:description" content="版本及环境 ovs 2.13.7 ubuntu 18.04 与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到 看这篇需要有一定的OVS基础，基本概念必须要了解。 基本概念 这里讲"/>
@@ -166,7 +165,7 @@
 <p>match用于匹配到达的数据包，action是对匹配到的数据包执行相应的动作</p>
 <p>下面这个图是流表的例子</p>
 <figure><img src="/ox-hugo/pbzXOr.png"/>
-</figure>
+    </figure>
 
 </li>
 </ul>
@@ -197,7 +196,7 @@
 <li>
 <p>将action翻译到datapath</p>
 <figure><img src="/ox-hugo/g6VGEj.png"/>
-</figure>
+    </figure>
 
 </li>
 </ol>
@@ -260,8 +259,8 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">OFPACT</span><span class="p">(</span><span class="n">GOTO_TABLE</span><span class="p">,</span>      <span class="n">ofpact_goto_table</span><span class="p">,</span>  <span class="n">ofpact</span><span class="p">,</span> <span class="s">&#34;goto_table&#34;</span><span class="p">)</span>   \
-</span></span><span class="line"><span class="cl"><span class="n">OFPACT</span><span class="p">(</span><span class="n">PVL</span><span class="p">,</span>        <span class="n">ofpact_pvl</span><span class="p">,</span>    <span class="n">ofpact</span><span class="p">,</span> <span class="s">&#34;pvl&#34;</span><span class="p">)</span> <span class="c1">//这行是我们的，注释删掉
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">OFPACT</span><span class="p">(</span><span class="n">GOTO_TABLE</span><span class="p">,</span>      <span class="n">ofpact_goto_table</span><span class="p">,</span>  <span class="n">ofpact</span><span class="p">,</span> <span class="s">&#34;goto_table&#34;</span><span class="p">)</span>   \
+</span></span><span class="line"><span class="cl"><span class="nf">OFPACT</span><span class="p">(</span><span class="n">PVL</span><span class="p">,</span>        <span class="n">ofpact_pvl</span><span class="p">,</span>    <span class="n">ofpact</span><span class="p">,</span> <span class="s">&#34;pvl&#34;</span><span class="p">)</span> <span class="c1">//这行是我们的，注释删掉
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>找到文件中代码对应的位置，添加一行我们自定义的pvl</p>
@@ -290,7 +289,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="cm"> *
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * Used for OFPAT_PVL */</span>
 </span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">ofpact_pvl</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">OFPACT_PADDED_MEMBERS</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">OFPACT_PADDED_MEMBERS</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">            <span class="k">struct</span> <span class="n">ofpact</span> <span class="n">ofpact</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">            <span class="kt">uint32_t</span> <span class="n">command</span><span class="p">;</span>           <span class="cm">/* command from the controller */</span>
 </span></span><span class="line"><span class="cl">    <span class="p">);</span>
@@ -354,8 +353,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
