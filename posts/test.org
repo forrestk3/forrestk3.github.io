@@ -1,11 +1,2 @@
-#+HUGO_SECTION: posts/
-#+DATE: <2025-08-08 Fri>
-#+HUGO_CUSTOM_FRONT_MATTER: :toc true
-#+HUGO_AUTO_SET_LASTMOD: t
-#+HUGO_TAGS: 博客
-#+HUGO_CATEGORIES: 
-#+HUGO_DRAFT: false
-#+TITLE: hugo test
 
-* Hello
-* fuck
+* Hi
