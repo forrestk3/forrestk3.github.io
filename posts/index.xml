@@ -3,7 +3,47 @@
         <title>All Posts - 咸蛋超人</title>
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Nov 2025 15:27:00 -0400</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Nov 2025 16:45:00 -0400</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>使用emacs写hugo博客</title>
+    <link>/posts/org_02_hugo_with_emacs/</link>
+    <pubDate>Wed, 12 Nov 2025 16:45:00 -0400</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/org_02_hugo_with_emacs/</guid>
+    <description><![CDATA[<h2 id="当下问题-这是一级标题" class="headerLink">
+    <a href="#%e5%bd%93%e4%b8%8b%e9%97%ae%e9%a2%98-%e8%bf%99%e6%98%af%e4%b8%80%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>当下问题（这是一级标题）</h2><h3 id="多级标题在网页上无法很好显示-这是二级标题" class="headerLink">
+    <a href="#%e5%a4%9a%e7%ba%a7%e6%a0%87%e9%a2%98%e5%9c%a8%e7%bd%91%e9%a1%b5%e4%b8%8a%e6%97%a0%e6%b3%95%e5%be%88%e5%a5%bd%e6%98%be%e7%a4%ba-%e8%bf%99%e6%98%af%e4%ba%8c%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>多级标题在网页上无法很好显示（这是二级标题）</h3><h4 id="不知道是doit主题问题-还是ox-hugo的问题-这是三级标题" class="headerLink">
+    <a href="#%e4%b8%8d%e7%9f%a5%e9%81%93%e6%98%afdoit%e4%b8%bb%e9%a2%98%e9%97%ae%e9%a2%98-%e8%bf%98%e6%98%afox-hugo%e7%9a%84%e9%97%ae%e9%a2%98-%e8%bf%99%e6%98%af%e4%b8%89%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>不知道是DoIt主题问题，还是ox-hugo的问题（这是三级标题）</h4><p>唉（这里没有标题）</p>
+<h2 id="emacs-ox-hugo" class="headerLink">
+    <a href="#emacs-ox-hugo" class="header-mark"></a>emacs: ox-hugo</h2><p>emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.</p>
+<h2 id="ox-hugo的安装" class="headerLink">
+    <a href="#ox-hugo%e7%9a%84%e5%ae%89%e8%a3%85" class="header-mark"></a>ox-hugo的安装</h2><ul>
+<li>M-x list-packages: 这个命令会列出所有的可安装的包</li>
+<li>C-s: 使用搜索找到ox-hugo</li>
+<li>操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute.</li>
+<li>在配置文件中添加ox-hugo配置</li>
+</ul>
+<!--listend-->
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    
+    tw-flex 
+    tw-flex-row
+    tw-flex-1 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        code-block-button
+        tw-mx-2 
+        tw-flex
+        tw-flex-row
+        tw-flex-1"
+      aria-hidden="true">
+          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
+          <p class="tw-select-none !tw-my-1">lisp</p>]]></description>
+</item><item>
     <title>Emacs 常用技巧总结</title>
     <link>/posts/emacs_tip/</link>
     <pubDate>Wed, 12 Nov 2025 15:27:00 -0400</pubDate><author>
@@ -180,16 +220,5 @@
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
           <p class="tw-select-none !tw-my-1">shell</p>]]></description>
-</item><item>
-    <title>StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense</title>
-    <link>/posts/org_18_stackpi/</link>
-    <pubDate>Tue, 06 Dec 2022 13:14:00 &#43;0800</pubDate><author>
-        <name>Author</name>
-    </author><guid>/posts/org_18_stackpi/</guid>
-    <description><![CDATA[<h2 id="论文信息" class="headerLink">
-    <a href="#%e8%ae%ba%e6%96%87%e4%bf%a1%e6%81%af" class="header-mark"></a>论文信息</h2><p>发在JSAC上, 作者: <img class="tw-inline" loading="lazy" src='/ox-hugo/E0EPl1.png'     ></p>
-<p>把与我相关的部分做总结</p>
-<h2 id="摘要" class="headerLink">
-    <a href="#%e6%91%98%e8%a6%81" class="header-mark"></a>摘要</h2><p>本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成：基于栈的标记以及write-ahead标记。过虑机制中我们推导出一个用Pi标记进行过滤的最佳阈值策略。还提出PiIP过度器可用于检测网络协议欺骗攻击。</p>]]></description>
 </item></channel>
 </rss>

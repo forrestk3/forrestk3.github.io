@@ -7,18 +7,20 @@
     <meta name="robots" content="noodp" /><title>使用emacs写hugo博客 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_02_hugo_with_emacs/">
   <meta property="og:site_name" content="咸蛋超人">
   <meta property="og:title" content="使用emacs写hugo博客">
-  <meta property="og:description" content="emacs: ox-hugoemacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
+  <meta property="og:description" content="当下问题（这是一级标题） 多级标题在网页上无法很好显示（这是二级标题） 不知道是DoIt主题问题，还是ox-hugo的问题（这是三级标题）唉（这里没有标题）
+emacs: ox-hugoemacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
 ox-hugo的安装 M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置 lisp">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2022-08-04T20:29:00+08:00">
-    <meta property="article:modified_time" content="2022-08-17T18:32:47+08:00">
+    <meta property="article:published_time" content="2025-11-12T16:45:00-04:00">
+    <meta property="article:modified_time" content="2025-11-12T16:47:31-04:00">
     <meta property="article:tag" content="博客">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="使用emacs写hugo博客">
-  <meta name="twitter:description" content="emacs: ox-hugoemacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
+  <meta name="twitter:description" content="当下问题（这是一级标题） 多级标题在网页上无法很好显示（这是二级标题） 不知道是DoIt主题问题，还是ox-hugo的问题（这是三级标题）唉（这里没有标题）
+emacs: ox-hugoemacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
 ox-hugo的安装 M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置 lisp">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
@@ -27,15 +29,15 @@ ox-hugo的安装 M-x list-packages: 这个命令会列出所有的可安装的�
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<link rel="canonical" href="/posts/org_02_hugo_with_emacs/" /><link rel="prev" href="/posts/org_01_hugo_install/" /><link rel="next" href="/posts/org_03_git_get_started/" />
+<link rel="canonical" href="/posts/org_02_hugo_with_emacs/" /><link rel="prev" href="/posts/emacs_tip/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
         "headline": "使用emacs写hugo博客",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "/posts/org_02_hugo_with_emacs/"
-        },"genre": "posts","keywords":["博客"],"wordcount":  1094 ,
-        "url": "/posts/org_02_hugo_with_emacs/","datePublished": "2022-08-04T20:29:00+08:00","dateModified": "2022-08-17T18:32:47+08:00","publisher": {
+        },"genre": "posts","keywords":["博客"],"wordcount":  1170 ,
+        "url": "/posts/org_02_hugo_with_emacs/","datePublished": "2025-11-12T16:45:00-04:00","dateModified": "2025-11-12T16:47:31-04:00","publisher": {
             "@type": "Organization",
             "name": "Author"},"author": {
                 "@type": "Person",
@@ -159,6 +161,15 @@ ox-hugo的安装 M-x list-packages: 这个命令会列出所有的可安装的�
             <h2 class="tw-mx-0 tw-my-6 tw-uppercase tw-text-2xl">Contents</h2>
             <div class="toc-content"><nav id="TableOfContents">
   <ul>
+    <li><a href="#当下问题-这是一级标题">当下问题（这是一级标题）</a>
+      <ul>
+        <li><a href="#多级标题在网页上无法很好显示-这是二级标题">多级标题在网页上无法很好显示（这是二级标题）</a>
+          <ul>
+            <li><a href="#不知道是doit主题问题-还是ox-hugo的问题-这是三级标题">不知道是DoIt主题问题，还是ox-hugo的问题（这是三级标题）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#emacs-ox-hugo">emacs: ox-hugo</a></li>
     <li><a href="#ox-hugo的安装">ox-hugo的安装</a></li>
     <li><a href="#ox-hugo的使用">ox-hugo的使用</a></li>
@@ -167,17 +178,17 @@ ox-hugo的安装 M-x list-packages: 这个命令会列出所有的可安装的�
   </ul>
 </nav></div>
         </div>
-    </dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class="single-title" data-pagefind-meta="date:2022-08-04" data-pagefind-body>使用emacs写hugo博客</h1><div class="post-meta">
+    </dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class="single-title" data-pagefind-meta="date:2025-11-12" data-pagefind-body>使用emacs写hugo博客</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><a href="/" title="Author" rel=" author" class="author">Author</a>
                 </span></div>
             <div class="post-meta-line"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;<time datetime="2022-08-04">2022-08-04</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2022-08-17">2022-08-17</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1094 words&nbsp;
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;<time datetime="2025-11-12">2025-11-12</time>&nbsp;<svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2025-11-12">2025-11-12</time>&nbsp;<svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1170 words&nbsp;
                     <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;5 minutes&nbsp;</div>
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc print:!tw-block" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -186,6 +197,15 @@ ox-hugo的安装 M-x list-packages: 这个命令会列出所有的可安装的�
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#当下问题-这是一级标题">当下问题（这是一级标题）</a>
+      <ul>
+        <li><a href="#多级标题在网页上无法很好显示-这是二级标题">多级标题在网页上无法很好显示（这是二级标题）</a>
+          <ul>
+            <li><a href="#不知道是doit主题问题-还是ox-hugo的问题-这是三级标题">不知道是DoIt主题问题，还是ox-hugo的问题（这是三级标题）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#emacs-ox-hugo">emacs: ox-hugo</a></li>
     <li><a href="#ox-hugo的安装">ox-hugo的安装</a></li>
     <li><a href="#ox-hugo的使用">ox-hugo的使用</a></li>
@@ -193,7 +213,11 @@ ox-hugo的安装 M-x list-packages: 这个命令会列出所有的可安装的�
     <li><a href="#自动推送脚本">自动推送脚本</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content" data-pagefind-body><h2 id="emacs-ox-hugo" class="headerLink">
+            </div><div class="content" id="content" data-pagefind-body><h2 id="当下问题-这是一级标题" class="headerLink">
+    <a href="#%e5%bd%93%e4%b8%8b%e9%97%ae%e9%a2%98-%e8%bf%99%e6%98%af%e4%b8%80%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>当下问题（这是一级标题）</h2><h3 id="多级标题在网页上无法很好显示-这是二级标题" class="headerLink">
+    <a href="#%e5%a4%9a%e7%ba%a7%e6%a0%87%e9%a2%98%e5%9c%a8%e7%bd%91%e9%a1%b5%e4%b8%8a%e6%97%a0%e6%b3%95%e5%be%88%e5%a5%bd%e6%98%be%e7%a4%ba-%e8%bf%99%e6%98%af%e4%ba%8c%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>多级标题在网页上无法很好显示（这是二级标题）</h3><h4 id="不知道是doit主题问题-还是ox-hugo的问题-这是三级标题" class="headerLink">
+    <a href="#%e4%b8%8d%e7%9f%a5%e9%81%93%e6%98%afdoit%e4%b8%bb%e9%a2%98%e9%97%ae%e9%a2%98-%e8%bf%98%e6%98%afox-hugo%e7%9a%84%e9%97%ae%e9%a2%98-%e8%bf%99%e6%98%af%e4%b8%89%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>不知道是DoIt主题问题，还是ox-hugo的问题（这是三级标题）</h4><p>唉（这里没有标题）</p>
+<h2 id="emacs-ox-hugo" class="headerLink">
     <a href="#emacs-ox-hugo" class="header-mark"></a>emacs: ox-hugo</h2><p>emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.</p>
 <h2 id="ox-hugo的安装" class="headerLink">
     <a href="#ox-hugo%e7%9a%84%e5%ae%89%e8%a3%85" class="header-mark"></a>ox-hugo的安装</h2><ul>
@@ -873,7 +897,7 @@ C-c C-e时会多一个导出选项:</p>
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2022-08-17</span>
+                <span>Updated on 2025-11-12</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -895,10 +919,8 @@ C-c C-e时会多一个导出选项:</p>
         </section>
     </div>
 
-    <div class="post-nav print:tw-hidden"><a href="/posts/org_01_hugo_install/" class="prev" rel="prev" title="hugo安装与入门"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>hugo安装与入门</a>
-            <a href="/posts/org_03_git_get_started/" class="next" rel="next" title="Git 与 Magit 初始篇">Git 与 Magit 初始篇<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div>
+    <div class="post-nav print:tw-hidden"><a href="/posts/emacs_tip/" class="prev" rel="prev" title="Emacs 常用技巧总结"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>Emacs 常用技巧总结</a></div>
 </div>
 <div id="comments" class="print:!tw-hidden tw-pt-32 tw-pb-8"><div id="utterances"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
