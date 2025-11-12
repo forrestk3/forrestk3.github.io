@@ -1,15 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>DIY - Category - 咸蛋超人</title>
-        <link>/categories/diy/</link>
-        <description>DIY - Category - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</lastBuildDate><atom:link href="/categories/diy/" rel="self" type="application/rss+xml" /><item>
-    <title>DIY一个dactyl键盘,很喜欢这个,希望能成功</title>
-    <link>/posts/org_22_dactyl/</link>
-    <pubDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_22_dactyl/</guid>
-    <description><![CDATA[资料调研 我想要的特征: 轨迹球+键盘+无线+人体工学设计 1. https://github.com/AlaaSaadAbdo/battoota 这个项目长这样,是我想要的把轨迹球融合到键盘上,但是没有人体工学设计. 尽管如此这个]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DIY on 咸蛋超人</title>
+    <link>/categories/diy/</link>
+    <description>Recent content in DIY on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 25 Feb 2023 19:36:31 +0800</lastBuildDate>
+    <atom:link href="/categories/diy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DIY一个dactyl键盘,很喜欢这个,希望能成功</title>
+      <link>/posts/org_22_dactyl/</link>
+      <pubDate>Thu, 23 Feb 2023 18:29:00 +0800</pubDate>
+      <guid>/posts/org_22_dactyl/</guid>
+      <description>&lt;h2 id=&#34;资料调研&#34;&gt;资料调研&lt;/h2&gt;&#xA;&lt;p&gt;我想要的特征: 轨迹球+键盘+无线+人体工学设计&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-dot-https-github-dot-com-alaasaadabdo-battoota&#34;&gt;1. &lt;a href=&#34;https://github.com/AlaaSaadAbdo/battoota&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://github.com/AlaaSaadAbdo/battoota&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;/ox-hugo/eXYJR9.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;这个项目长这样,是我想要的把轨迹球融合到键盘上,但是没有人体工学设计.&lt;/p&gt;&#xA;&lt;p&gt;尽管如此这个设计也深得我心.&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

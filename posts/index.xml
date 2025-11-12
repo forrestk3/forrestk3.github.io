@@ -4,75 +4,253 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Wed, 12 Nov 2025 15:27:00 -0400</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Emacs 常用技巧总结</title>
+    <link>/posts/emacs_tip/</link>
+    <pubDate>Wed, 12 Nov 2025 15:27:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/emacs_tip/</guid>
+    <description><![CDATA[<h2 id="bookmark">bookmark</h2>
+<ul>
+<li>C-x r l : 列出书签</li>
+<li>C-x r m : 保存书签</li>
+<li>S-x bookmark-save : 可以在书签保存文件中修修改书签</li>
+<li>S-M: mark set</li>
+</ul>
+<!--listend-->
+<ul>
+<li>Shift-S &gt;: 跳到最后</li>
+</ul>
+<h2 id="org">org</h2>
+<p>Shift-Tab: 循环标题折叠</p>
+<h2 id="ox-hugo-安装-用于导致org文件为hugo适配的markdown格式">ox-hugo 安装，用于导致org文件为hugo适配的markdown格式</h2>
+<h2 id="yasnippet-config">Yasnippet Config</h2>
+<h3 id="调出yasnippet配置">调出yasnippet配置</h3>
+<p>M-x yas-new-snippet</p>]]></description>
+</item><item>
     <title>Practical Techniques for Searches on Encrypted Data</title>
     <link>/posts/org_26_se/</link>
     <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_26_se/</guid>
-    <description><![CDATA[论文信息 发表: IEEE Symposium on Security and Privacy (CCF A, 2000) 阅读目的: 了解它是怎么在密文中搜索的, 找网络数据包传输过程中如何检测被修改的idea. 作者使用的思想为A XOR B]]></description>
+    <description><![CDATA[<h2 id="论文信息">论文信息</h2>
+<ul>
+<li>发表: IEEE Symposium on Security and Privacy (CCF A, 2000)</li>
+<li>阅读目的: 了解它是怎么在密文中搜索的, 找网络数据包传输过程中如何检测被修改的idea.</li>
+<li>作者使用的思想为A XOR B XOR B = A, 但本文是第一篇提出在在密文中搜索. 略过所有数学证明和背景介绍.</li>
+</ul>
+<h2 id="应用场景">应用场景</h2>
+<p>Alice 要存储文档到Bob的服务器中, 此时只能存储密文, 因为Alice 并不放心Bob. 但这时, Alice 想要返回所有包含词&rsquo;W&rsquo;的文档, 这时就需要Bob在加密的文档中搜索.</p>]]></description>
 </item><item>
     <title>IEEE论文的引用怎么弄?</title>
     <link>/posts/org_25_cite_in_ieee/</link>
     <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_25_cite_in_ieee/</guid>
-    <description><![CDATA[参考 这里 参考自这里 期刊(人,题,期,卷,(号),月,年,页) bib文件的通用格式如下. 这里的作者要用全名, 如果要用 et al. 的话, 是在.bst配置]]></description>
+    <description><![CDATA[<h2 id="参考">参考</h2>
+<p><a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" rel="noopener noreffer">这里</a>  <a href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/IEEEtranBST2.zip" target="_blank" rel="noopener noreffer">参考自这里</a></p>
+<h2 id="期刊--人-题-期-卷-号--月-年-页">期刊(人,题,期,卷,(号),月,年,页)</h2>
+<p>bib文件的通用格式如下.</p>
+<figure>
+</figure>
+
+<ol>
+<li>
+<p>这里的作者要用全名, 如果要用 et al. 的话, 是在.bst配置文件里设置的</p>]]></description>
 </item><item>
     <title>Elgamal算法原理总结</title>
     <link>/posts/org_24_elgamal/</link>
     <pubDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_24_elgamal/</guid>
-    <description><![CDATA[算法流程: 密钥生成, 加密, 解密, 正确性正明]]></description>
+    <description><![CDATA[<h2 id="算法流程-密钥生成-加密-解密-正确性正明">算法流程: 密钥生成, 加密, 解密, 正确性正明</h2>
+<figure>
+</figure>]]></description>
 </item><item>
     <title>RSA算法原理总结</title>
     <link>/posts/org_23_rsa/</link>
     <pubDate>Mon, 05 Jun 2023 13:56:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_23_rsa/</guid>
-    <description><![CDATA[rsa算法流程 欧拉定理代码验证: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 &#39;欧拉函数；求比n]]></description>
+    <description><![CDATA[<h2 id="rsa算法流程">rsa算法流程</h2>
+<figure>
+</figure>
+
+<h2 id="欧拉定理代码验证">欧拉定理代码验证:</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">  <span class="s1">&#39;欧拉函数；求比n 小的正整数中与n互质的数有多少个&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">euler_phi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">p</span> <span class="o">*</span> <span class="n">p</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="n">n</span> <span class="o">%</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">n</span> <span class="o">//=</span> <span class="n">p</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span> <span class="o">-=</span> <span class="n">result</span> <span class="o">//</span> <span class="n">p</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">-=</span> <span class="n">result</span> <span class="o">//</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">验证欧拉定理的函数
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">compute_modular_exponentiation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">phi_n</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">phi_n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">验证欧拉定理：若a与n互质，则a^</span><span class="si">{phi_n}</span><span class="s1"> % n 是否等于1
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">compute_modular_exponentiation</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">euler_phi</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="mi">11</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">compute_modular_exponentiation</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">euler_phi</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="mi">11</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">compute_modular_exponentiation</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">euler_phi</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="mi">11</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;验证欧拉函数φ(n)=(p−1)⋅(q−1)&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">euler_phi</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span> <span class="s1">&#39;(3-1)*(5-1)&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">euler_phi</span><span class="p">(</span><span class="mi">55</span><span class="p">),</span> <span class="s1">&#39;(5-1)*(11-1)&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">正如大家所知，代数几何是现代数学的主流。当代大多数一流的数学家都工作在这一领域。因此如果你觉得自己天赋异禀，并在代数，几何与分析各方面都有着扎实的基础，我建议你绝不要浪费自己的天赋：应义无反顾的选择代数几何这一专业。当然把代数，几何与分析这三门基础功课同时学好的人很少。比如有些同学有着很好的分析功底，但代数中的抽象思维能力却相对显得薄弱。如果是这样的话，我建议你选择分析方面的专业，比如：复分析，分形，+调和分析或微分方程。
+</span></span></span><span class="line"><span class="cl"><span class="s1">如果你代数和分析都不怎么样，可却在几何方面有着良好的感觉，要是这样的话，我建议你应和梅加强老师好好探讨一下。让他帮你判断一下看自己是不是可以学习几何。+除以上三部分同学之外，还有这样的一部分同学：他们对代数，分析与几何都不擅长，但却一直坚信自己在数学上仍能有所作为，并幻想有朝一日成为中国数学界的中流砥柱。如果你属于这部分同学中的一位的话，我建议你选择动力系统。动力系统这一学科其实就是专门为这部分同学开设的。
+</span></span></span><span class="line"><span class="cl"><span class="s1">当然即使是动力系统也不是人人都能学的。因为动力系统需要大量的微积分。可总有那么一部分同学还没来得及把极限的概念搞清楚就大学毕业了。如果你不巧就是这样的一位同学，也就是说你大学四年压根儿就没学数学，但仍希望自己将来能在数学上一展宏图的话，我建议你选择组合数学这一专业。这一专业的特点就是它只用到中学的数学。+如果你在中学时参加过数学竞赛并获过奖项的话，这一学科正是你大展身手的地方。
+</span></span></span><span class="line"><span class="cl"><span class="s1">我想大多数同学看到这儿之前已经找到了适合自己的专业了。可若仍有人羞怯的说他在中学时早恋，因此连中学的数学也没学好，我想告诉这部分同学不要怕。在我们系有专门为你们开设的一个专业：统计学。这一学科只要求懂得小学数学中的加减乘除四则运算就够了。+更重要的是，选择这一专业的大多都是女同学。在你准确无误的把成千上万个数据加起来并娴熟的计算出他们的均值时，你也赢得了众多师姐师妹的芳心：短短三年的研究生生活或许能让你再次体会一次那如花美眷，似水流年的往事。。。
+</span></span></span><span class="line"><span class="cl"><span class="s1">最后这一条是专门针对那些悲情人物的。他们连小学的数学也没学好。不要说把上千个数加起来，就是把两个数加起来，对他们来说都是件很吃力的事。然而这一切丝毫没有削弱他们对数学的一片痴情。他们日日夜夜泡在图书馆里。他们翻阅了所有的数学文献，却从未找到一本能读懂的。+但他们仍坚持不懈，+为的就是找到一个适合自己的专业。他们的行为感动了上帝。上世纪的某一天，上帝为他们创造了一台机器帮他们计算。这就是计算机。借助计算机，他们可以很快的进行加减乘除的运算。这就是计算数学。
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
 </item><item>
     <title>ovs-dpdk系列配置实验-—1. 安装</title>
     <link>/posts/org_22_ovs_dpdk_install/</link>
     <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_22_ovs_dpdk_install/</guid>
-    <description><![CDATA[构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:]]></description>
+    <description><![CDATA[<h2 id="构建要求">构建要求</h2>
+<ul>
+<li>dpdk 22.11.1</li>
+<li>支持dpdk的网卡</li>
+<li>合适的内核</li>
+<li>ovs下载:<a href="http://www.openvswitch.org//download/" target="_blank" rel="noopener noreffer">http://www.openvswitch.org//download/</a></li>
+<li>dpdk下载:<a href="http://core.dpdk.org/download/" target="_blank" rel="noopener noreffer">http://core.dpdk.org/download/</a></li>
+<li>ovs版本对应:<a href="https://docs.openvswitch.org/en/latest/faq/releases/" target="_blank" rel="noopener noreffer">https://docs.openvswitch.org/en/latest/faq/releases/</a></li>
+<li>dpdk安装:<a href="https://docs.openvswitch.org/en/latest/intro/install/dpdk/" target="_blank" rel="noopener noreffer">https://docs.openvswitch.org/en/latest/intro/install/dpdk/</a></li>
+<li>我的成功的版本对应: dpdk22.11.1+OVS3.1.1</li>
+<li>如果版本不对应,安装ovs时会出现各种变量未声明什么的错误.</li>
+</ul>
+<h2 id="dpdk安装">DPDK安装</h2>
+<p>安装过程参考自<a href="https://docs.openvswitch.org/en/latest/intro/install/dpdk/" target="_blank" rel="noopener noreffer">这里</a>,有关于构建软件meson的安装补充</p>]]></description>
 </item><item>
     <title>DIY一个dactyl键盘,很喜欢这个,希望能成功</title>
     <link>/posts/org_22_dactyl/</link>
     <pubDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_22_dactyl/</guid>
-    <description><![CDATA[资料调研 我想要的特征: 轨迹球+键盘+无线+人体工学设计 1. https://github.com/AlaaSaadAbdo/battoota 这个项目长这样,是我想要的把轨迹球融合到键盘上,但是没有人体工学设计. 尽管如此这个]]></description>
+    <description><![CDATA[<h2 id="资料调研">资料调研</h2>
+<p>我想要的特征: 轨迹球+键盘+无线+人体工学设计</p>
+<h3 id="1-dot-https-github-dot-com-alaasaadabdo-battoota">1. <a href="https://github.com/AlaaSaadAbdo/battoota" target="_blank" rel="noopener noreffer">https://github.com/AlaaSaadAbdo/battoota</a></h3>
+<figure>
+</figure>
+
+<p>这个项目长这样,是我想要的把轨迹球融合到键盘上,但是没有人体工学设计.</p>
+<p>尽管如此这个设计也深得我心.</p>]]></description>
 </item><item>
     <title>On a Multi-criteria Clustering Approachfor Attack Attribution</title>
     <link>/posts/org_21_multi_clustering/</link>
     <pubDate>Wed, 22 Feb 2023 14:27:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_21_multi_clustering/</guid>
-    <description><![CDATA[论文信息 SigKDD, 2010 阅读目的: 了解攻击溯源相关知识, 主要是为了扩充知识面. 结论: 这个文章中提供的是一个数据挖掘的方法, 针对已有的数据样本通过找它们的]]></description>
+    <description><![CDATA[<h2 id="论文信息">论文信息</h2>
+<p>SigKDD, 2010</p>
+<p>阅读目的: 了解攻击溯源相关知识, 主要是为了扩充知识面.</p>
+<p>结论: 这个文章中提供的是一个数据挖掘的方法, 针对已有的数据样本通过找它们的相似性簇并通过分析来获得结论, 所以这个文章并不是我想要的. 以下总结阅读时做的一些笔记.</p>]]></description>
 </item><item>
     <title>openssl 安装与第一个demo</title>
     <link>/posts/org_20_openssl1/</link>
     <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_20_openssl1/</guid>
-    <description><![CDATA[openssl的安装 在使用c语言库调用openssl的时候要先安装,因为安装的时候才会将库放到系统中供程序调用. 下载:https://git]]></description>
+    <description><![CDATA[<h2 id="openssl的安装">openssl的安装</h2>
+<p>在使用c语言库调用openssl的时候要先安装,因为安装的时候才会将库放到系统中供程序调用.</p>
+<ul>
+<li>
+<p>下载:<a href="https://github.com/openssl/openssl" target="_blank" rel="noopener noreffer">https://github.com/openssl/openssl</a></p>
+</li>
+<li>
+<p>安装:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ ./Configure
+</span></span><span class="line"><span class="cl">$ make
+</span></span><span class="line"><span class="cl">$ make <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">$ make install <span class="o">(</span>这一步需要管理员权限<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安装完成后所在位置:</p>]]></description>
 </item><item>
     <title>StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense</title>
     <link>/posts/org_18_stackpi/</link>
     <pubDate>Tue, 06 Dec 2022 13:14:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_18_stackpi/</guid>
-    <description><![CDATA[论文信息 发在JSAC上, 作者: 把与我相关的部分做总结 摘要 本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成]]></description>
-</item><item>
-    <title>Efficient Forwarding Anomaly Detection in Software-Defined Networks</title>
-    <link>/posts/org_17_ifade/</link>
-    <pubDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_17_ifade/</guid>
-    <description><![CDATA[affliation and publication author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang publication: TPDS abs 本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通]]></description>
+    <description><![CDATA[<h2 id="论文信息">论文信息</h2>
+<p>发在JSAC上, 作者: </p>
+<p>把与我相关的部分做总结</p>
+<h2 id="摘要">摘要</h2>
+<p>本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成：基于栈的标记以及write-ahead标记。过虑机制中我们推导出一个用Pi标记进行过滤的最佳阈值策略。还提出PiIP过度器可用于检测网络协议欺骗攻击。</p>]]></description>
 </item></channel>
 </rss>

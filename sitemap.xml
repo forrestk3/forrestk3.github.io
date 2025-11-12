@@ -2,18 +2,20 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>/categories/</loc><lastmod>2023-07-22T23:04:45&#43;08:00</lastmod></url><url>
-            <loc>/posts/</loc><lastmod>2023-07-22T23:04:45&#43;08:00</lastmod></url><url>
+            <loc>/categories/</loc><lastmod>2025-11-12T15:57:33-04:00</lastmod></url><url>
+            <loc>/tags/emacs/</loc><lastmod>2025-11-12T15:57:33-04:00</lastmod></url><url>
+            <loc>/posts/emacs_tip/</loc><lastmod>2025-11-12T15:57:33-04:00</lastmod></url><url>
+            <loc>/posts/</loc><lastmod>2025-11-12T15:57:33-04:00</lastmod></url><url>
+            <loc>/tags/</loc><lastmod>2025-11-12T15:57:33-04:00</lastmod></url><url>
+            <loc>/</loc><lastmod>2025-11-12T15:57:33-04:00</lastmod></url><url>
+            <loc>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-11-12T15:57:33-04:00</lastmod></url><url>
             <loc>/posts/org_26_se/</loc><lastmod>2023-07-22T23:04:45&#43;08:00</lastmod></url><url>
-            <loc>/tags/</loc><lastmod>2023-07-22T23:04:45&#43;08:00</lastmod></url><url>
-            <loc>/</loc><lastmod>2023-07-22T23:04:45&#43;08:00</lastmod></url><url>
             <loc>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</loc><lastmod>2023-07-22T23:04:45&#43;08:00</lastmod></url><url>
             <loc>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</loc><lastmod>2023-07-22T23:04:45&#43;08:00</lastmod></url><url>
             <loc>/posts/org_25_cite_in_ieee/</loc><lastmod>2023-07-06T15:45:31&#43;08:00</lastmod></url><url>
             <loc>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</loc><lastmod>2023-07-06T15:45:31&#43;08:00</lastmod></url><url>
             <loc>/posts/org_24_elgamal/</loc><lastmod>2023-06-16T13:04:46&#43;08:00</lastmod></url><url>
             <loc>/tags/%E6%95%B0%E5%AD%A6/</loc><lastmod>2023-06-16T13:04:46&#43;08:00</lastmod></url><url>
-            <loc>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2023-06-16T13:04:46&#43;08:00</lastmod></url><url>
             <loc>/posts/org_23_rsa/</loc><lastmod>2023-06-05T14:00:23&#43;08:00</lastmod></url><url>
             <loc>/tags/ovs-dpdk/</loc><lastmod>2023-04-24T14:25:35&#43;08:00</lastmod></url><url>
             <loc>/posts/org_22_ovs_dpdk_install/</loc><lastmod>2023-04-24T14:25:35&#43;08:00</lastmod></url><url>
@@ -89,4 +91,12 @@
             <loc>/tags/installation/</loc></url><url>
             <loc>/offline/</loc></url><url>
             <loc>/series/</loc></url><url>
-            <loc>/series/test-series/</loc></url></urlset>
+            <loc>/series/test-series/</loc></url><url>
+            <loc>/authors/_index.zh-cn/</loc></url><url>
+            <loc>/tags/content/_index.zh-cn/</loc></url><url>
+            <loc>/tags/installation/_index.zh-cn/</loc></url><url>
+            <loc>/series/getting-start/_index.zh-cn/</loc></url><url>
+            <loc>/categories/documentation/_index.zh-cn/</loc></url><url>
+            <loc>/series/test-series/_index.zh-cn/</loc></url><url>
+            <loc>/series/_index.zh-cn/</loc></url><url>
+            <loc>/tags/configuration/_index.zh-cn/</loc></url></urlset>

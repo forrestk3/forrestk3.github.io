@@ -5,15 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">马尔可夫决策过程 (Markov decision processes,MDP) - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="马尔可夫决策过程 (Markov decision processes,MDP)" />
-<meta property="og:description" content="马尔可夫过程 参考自这里 性质(Markov Property) 马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义: 可以从这个式子里面看到, 下" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/org_13_markon_decision/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-04T21:44:00+08:00" />
-<meta property="article:modified_time" content="2022-10-05T15:31:57+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="马尔可夫决策过程 (Markov decision processes,MDP)"/>
-<meta name="twitter:description" content="马尔可夫过程 参考自这里 性质(Markov Property) 马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义: 可以从这个式子里面看到, 下"/>
+    <title class="pjax-title">马尔可夫决策过程 (Markov decision processes,MDP) - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_13_markon_decision/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="马尔可夫决策过程 (Markov decision processes,MDP)">
+  <meta property="og:description" content="马尔可夫过程 参考自这里
+性质(Markov Property) 马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义:
+可以从这个式子里面看到, 下一个状态为\(S_{t&#43;1}\)的概率只于当前状态\(S_t\)有关, 而与更前的状态\(S_1, S_2, …, S_{t-1}\)都无关.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-10-04T21:44:00+08:00">
+    <meta property="article:modified_time" content="2022-10-05T15:31:57+08:00">
+    <meta property="article:tag" content="数学">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="马尔可夫决策过程 (Markov decision processes,MDP)">
+  <meta name="twitter:description" content="马尔可夫过程 参考自这里
+性质(Markov Property) 马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义:
+可以从这个式子里面看到, 下一个状态为\(S_{t&#43;1}\)的概率只于当前状态\(S_t\)有关, 而与更前的状态\(S_1, S_2, …, S_{t-1}\)都无关.">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -151,16 +160,16 @@
 <p><a href="https://zhuanlan.zhihu.com/p/494755866" target="_blank" rel="noopener noreffer">参考自这里</a></p>
 <h3 id="性质--markov-property">性质(Markov Property)</h3>
 <p>马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义:</p>
-<figure><img src="/ox-hugo/QUGtYb.png"/>
+<figure><img src="/ox-hugo/QUGtYb.png">
 </figure>
 
 <p>可以从这个式子里面看到, 下一个状态为\(S_{t+1}\)的概率只于当前状态\(S_t\)有关, 而与更前的状态\(S_1, S_2, &hellip;, S_{t-1}\)都无关.</p>
 <p>我们对当前状态和后续状态分别记为\(s, s&rsquo;\), 从当前状态转移到后续状态的转移概率定义为:</p>
-<figure><img src="/ox-hugo/uojT9P.png"/>
+<figure><img src="/ox-hugo/uojT9P.png">
 </figure>
 
 <p>对于一个马尔可夫过程如果有n个状态, 那这些状态互相转换则共有\(n^2\)种转移, 将这些转移过程记为一个转q称矩阵:</p>
-<figure><img src="/ox-hugo/FjfFbO.png"/>
+<figure><img src="/ox-hugo/FjfFbO.png">
 </figure>
 
 <h3 id="马尔可夫过程--markov-process">马尔可夫过程 (Markov Process)</h3>
@@ -181,7 +190,7 @@
 </ul>
 <p>则它是一个马尔可夫过程, 表示为\(&lt;S,P&gt;\).</p>
 <p>以下例子: 一个学生所处状态的随机过程</p>
-<figure><img src="/ox-hugo/ImP1yw.png"/>
+<figure><img src="/ox-hugo/ImP1yw.png">
 </figure>
 
 <p>这里每一个球就是随机过程中的一个状态, 箭头表示状态转移, 箭头上的数字表示转移概率.
@@ -192,13 +201,13 @@
 <p>C1 - C2 - C3 - Pub - C2 - C3 - Pass - Sleep</p>
 <p>C1 - FB - FB - C1 - C2 - C3 - Pub - C1 - FB - FB - FB - C1 - C2 - C3 - Pub - C2 - Sleep</p>
 <p>这个随机过程的转移概率矩阵为:</p>
-<figure><img src="/ox-hugo/qsQiYB.png"/>
+<figure><img src="/ox-hugo/qsQiYB.png">
 </figure>
 
 <h3 id="马尔可夫奖励过程--markov-reward-process">马尔可夫奖励过程(Markov reward process)</h3>
 <p>这部分的题目比上部分多了一个奖励, 因此内容上也一下, 和马尔可夫随机过程相比,我们在每一个状态上添加一个奖励.</p>
 <p>先摆上给每个状态添加奖励后的随机过程的一个图示:</p>
-<figure><img src="/ox-hugo/xtQYHO.png"/>
+<figure><img src="/ox-hugo/xtQYHO.png">
 </figure>
 
 <p>马尔可夫奖励过程表示为: \(&lt;S,P,R,\gamma&gt;\)</p>
@@ -220,77 +229,77 @@
 </ul>
 <h3 id="收益--return">收益 (Return)</h3>
 <p>定义为: 从当前时刻起经达 k+1 时间步骤后获得的带折扣奖励总和, 即:</p>
-<figure><img src="/ox-hugo/3JJhlY.png"/>
+<figure><img src="/ox-hugo/3JJhlY.png">
 </figure>
 
 <p>例个例子:</p>
-<figure><img src="/ox-hugo/5Flr9j.png"/>
+<figure><img src="/ox-hugo/5Flr9j.png">
 </figure>
 
 <p>在这个马尔可夫过程中, 各状态奖励为:</p>
-<figure><img src="/ox-hugo/91WiJX.png"/>
+<figure><img src="/ox-hugo/91WiJX.png">
 </figure>
 
 <p>因此对于采样获得的马尔可夫链能获得的收益为:</p>
-<figure><img src="/ox-hugo/Z8AHH5.png"/>
+<figure><img src="/ox-hugo/Z8AHH5.png">
 </figure>
 
 <h3 id="价值函数--state-value-function">价值函数(state-value function)</h3>
 <p>从该状态s开始的回报的期望, 它表达的是某一状态的长期价值, 记为\(V(s)\), 表达式为:</p>
-<figure><img src="/ox-hugo/7Ax6qL.png"/>
+<figure><img src="/ox-hugo/7Ax6qL.png">
 </figure>
 
 <p>比如对于如下马尔可夫过程:</p>
-<figure><img src="/ox-hugo/eCZI3d.png"/>
+<figure><img src="/ox-hugo/eCZI3d.png">
 </figure>
 
 <p>我们将每个状态价值函数的初始值设为0</p>
 <p>FB状态时，有0.9的概率进入FB,0.1的概率进入到C1，因此</p>
-<figure><img src="/ox-hugo/hGdm6R.png"/>
+<figure><img src="/ox-hugo/hGdm6R.png">
 </figure>
 
 <p>Pub状态时，有0.2的概率进入C1,0.4的概率进入到C2，0.4概率进入C3，因此</p>
-<figure><img src="/ox-hugo/Lhc1CY.png"/>
+<figure><img src="/ox-hugo/Lhc1CY.png">
 </figure>
 
 <p>同理,其他状态价值函数:</p>
-<figure><img src="/ox-hugo/ZkNks3.png"/>
+<figure><img src="/ox-hugo/ZkNks3.png">
 </figure>
 
 <p>根据上面公式，进行迭代计算V值。各状态的初始V值都设0，算出各状态的后续状态的V(S&rsquo;)值, 再将算得的V(S&rsquo;) 作为下一个状态的初始值V(S).</p>
 <p>因此可得:</p>
-<figure><img src="/ox-hugo/tyJJOf.png"/>
+<figure><img src="/ox-hugo/tyJJOf.png">
 </figure>
 
-<figure><img src="/ox-hugo/hv1vww.png"/>
+<figure><img src="/ox-hugo/hv1vww.png">
 </figure>
 
-<figure><img src="/ox-hugo/S21oG0.png"/>
+<figure><img src="/ox-hugo/S21oG0.png">
 </figure>
 
 <p>如此下去,直到稳定.</p>
 <h3 id="mrp的贝尔曼方程-bellman-equation-for-mrps">MRP的贝尔曼方程（Bellman Equation for MRPs）</h3>
 <p>推导过程就不列了, 涉及到了不大懂的知识, 将最终的方程列一下:</p>
-<figure><img src="/ox-hugo/3265Ep.png"/>
+<figure><img src="/ox-hugo/3265Ep.png">
 </figure>
 
 <p>这个式子还是很好理解的,结合前面的例子,当前状态的收益为当前状态的价值+\(\sum\)下一个状态的转移概率X下一个状态的价值 X \(\gamma\). 可以用下面这个图形来解释:</p>
-<figure><img src="/ox-hugo/3yEAt7.png"/>
+<figure><img src="/ox-hugo/3yEAt7.png">
 </figure>
 
-<figure><img src="/ox-hugo/IRwJLn.png"/>
+<figure><img src="/ox-hugo/IRwJLn.png">
 </figure>
 
 <p>它还有矩阵形式, 就不列了, 这里的用处不大, 原博客上都有</p>
 <h3 id="马尔可夫决策过程-markov-decision-process">马尔可夫决策过程（Markov decision process）</h3>
 <p>马尔可夫决策过程是在马尔可夫奖励过程的基础上加入了动作, 定义为: \(&lt;S,A,P,R,\gamma&gt;\)</p>
-<figure><img src="/ox-hugo/fe5bsM.png"/>
+<figure><img src="/ox-hugo/fe5bsM.png">
 </figure>
 
 <p>马尔可夫决策过程的状态转移概率和奖励函数不仅取决于智能体当前状体，还取决于智能体选取的动作, 而马尔可夫奖励过程仅取决于当前状态。</p>
 <h3 id="策略--policy">策略 (Policy)</h3>
 <p>它是一个对于给定状态s时, 其动作a的分布, 记为:</p>
-<figure><img src="/ox-hugo/qY9uDS.png"/>
+<figure><img src="/ox-hugo/qY9uDS.png">
 </figure>
 
 <p>它定义了智能体的行为方式, 即各种状态下采取各种动作的概率(采取不同的动作即会转移到不同的状态)</p>
@@ -339,7 +348,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

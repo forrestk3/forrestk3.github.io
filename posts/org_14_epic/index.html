@@ -5,15 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">EPIC: Every packet is checked in the data plane of a path-aware internet - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="EPIC: Every packet is checked in the data plane of a path-aware internet" />
-<meta property="og:description" content="简单介绍 这是一篇最近NSDI上路径验证相关的论文.看了好几遍但还是没进脑子,因此在此总结一遍. 路径构建 终端主机如何根据AS的信息构造包的传输" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/org_14_epic/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-11-26T19:43:00+08:00" />
-<meta property="article:modified_time" content="2022-11-27T21:40:31+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="EPIC: Every packet is checked in the data plane of a path-aware internet"/>
-<meta name="twitter:description" content="简单介绍 这是一篇最近NSDI上路径验证相关的论文.看了好几遍但还是没进脑子,因此在此总结一遍. 路径构建 终端主机如何根据AS的信息构造包的传输"/>
+    <title class="pjax-title">EPIC: Every packet is checked in the data plane of a path-aware internet - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_14_epic/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="EPIC: Every packet is checked in the data plane of a path-aware internet">
+  <meta property="og:description" content="简单介绍 这是一篇最近NSDI上路径验证相关的论文.看了好几遍但还是没进脑子,因此在此总结一遍.
+路径构建 终端主机如何根据AS的信息构造包的传输: 终端主机\(H_S\)首先从路径服务器中找到路径path(文中有个beacon的词,翻译为信标,估计跟路径差不多), 并将路径嵌入到数据包中,如下:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-11-26T19:43:00+08:00">
+    <meta property="article:modified_time" content="2022-11-27T21:40:31+08:00">
+    <meta property="article:tag" content="论文阅读">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="EPIC: Every packet is checked in the data plane of a path-aware internet">
+  <meta name="twitter:description" content="简单介绍 这是一篇最近NSDI上路径验证相关的论文.看了好几遍但还是没进脑子,因此在此总结一遍.
+路径构建 终端主机如何根据AS的信息构造包的传输: 终端主机\(H_S\)首先从路径服务器中找到路径path(文中有个beacon的词,翻译为信标,估计跟路径差不多), 并将路径嵌入到数据包中,如下:">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -223,7 +230,7 @@ VALHD中为验证数据包所需要的一些域, \(ts_{pkt}\)为时间戳, \(S_i
 攻击者可以查询这个神喻函数并学习到\(V_i,S_i\).(\(\sigma_i,V_{SD}\)不行).
 这使得攻击者可以构造已有的数据包(无法构造不同的数据包).
 这么作的攻击效果有限.</p>
-<figure><img src="/ox-hugo/EaLS1B.png"/>
+<figure><img src="/ox-hugo/EaLS1B.png">
     </figure>
 
 </li>
@@ -244,34 +251,34 @@ VALHD中为验证数据包所需要的一些域, \(ts_{pkt}\)为时间戳, \(S_i
 <p>图1:单核,不同负载尺寸下,源的吞吐量与路径长度的关系；</p>
 <p>图7:不同的包负载尺寸,不同的核数时,源的性能(吞吐量,产量)</p>
 <p>图8:单核,不同的包负载尺寸,不同的路径长度,源的处理时间.</p>
-<figure><img src="/ox-hugo/ObnsIx.png"/>
+<figure><img src="/ox-hugo/ObnsIx.png">
 </figure>
 
-<figure><img src="/ox-hugo/jA6Mpi.png"/>
+<figure><img src="/ox-hugo/jA6Mpi.png">
 </figure>
 
-<figure><img src="/ox-hugo/CNb19i.png"/>
+<figure><img src="/ox-hugo/CNb19i.png">
 </figure>
 
 <p>图2: 路径长度为8时,不同的核心数的交付性能,可见当负载尺寸&gt;=500B时,4核,可以使40Gbps的链路饱和. 使用16核时可在负载尺寸为100B时使链路饱和.</p>
 <p>图4:不同的交付任务,在不同的跳数情况下,路由的处理时间</p>
 <p>图5: 在不同的跳数时,负载尺寸增加时路由的处理时间</p>
 <p>图6:交付性能随核数的变化(由图4,5知交付性能与跳数和尺寸无关).</p>
-<figure><img src="/ox-hugo/sLkAfZ.png"/>
+<figure><img src="/ox-hugo/sLkAfZ.png">
 </figure>
 
-<figure><img src="/ox-hugo/1r5caM.png"/>
+<figure><img src="/ox-hugo/1r5caM.png">
 </figure>
 
-<figure><img src="/ox-hugo/FcQERP.png"/>
+<figure><img src="/ox-hugo/FcQERP.png">
 </figure>
 
 <p>图3: 不同协议,不同的路径长度下,goodput ratio的变化；</p>
 <p>表4: 不同协议 以及本方法不同等级时,所需要的额外不同头域大小.</p>
-<figure><img src="/ox-hugo/wDMj3E.png"/>
+<figure><img src="/ox-hugo/wDMj3E.png">
 </figure>
 
-<figure><img src="/ox-hugo/Eejbek.png"/>
+<figure><img src="/ox-hugo/Eejbek.png">
 </figure>
 
 </div>
@@ -310,7 +317,7 @@ VALHD中为验证数据包所需要的一些域, \(ts_{pkt}\)为时间戳, \(S_i
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

@@ -1,78 +1,299 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>论文阅读 - Tag - 咸蛋超人</title>
-        <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
-        <description>论文阅读 - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" rel="self" type="application/rss+xml" /><item>
-    <title>Practical Techniques for Searches on Encrypted Data</title>
-    <link>/posts/org_26_se/</link>
-    <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_26_se/</guid>
-    <description><![CDATA[论文信息 发表: IEEE Symposium on Security and Privacy (CCF A, 2000) 阅读目的: 了解它是怎么在密文中搜索的, 找网络数据包传输过程中如何检测被修改的idea. 作者使用的思想为A XOR B]]></description>
-</item><item>
-    <title>On a Multi-criteria Clustering Approachfor Attack Attribution</title>
-    <link>/posts/org_21_multi_clustering/</link>
-    <pubDate>Wed, 22 Feb 2023 14:27:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_21_multi_clustering/</guid>
-    <description><![CDATA[论文信息 SigKDD, 2010 阅读目的: 了解攻击溯源相关知识, 主要是为了扩充知识面. 结论: 这个文章中提供的是一个数据挖掘的方法, 针对已有的数据样本通过找它们的]]></description>
-</item><item>
-    <title>StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense</title>
-    <link>/posts/org_18_stackpi/</link>
-    <pubDate>Tue, 06 Dec 2022 13:14:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_18_stackpi/</guid>
-    <description><![CDATA[论文信息 发在JSAC上, 作者: 把与我相关的部分做总结 摘要 本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成]]></description>
-</item><item>
-    <title>Efficient Forwarding Anomaly Detection in Software-Defined Networks</title>
-    <link>/posts/org_17_ifade/</link>
-    <pubDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_17_ifade/</guid>
-    <description><![CDATA[affliation and publication author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang publication: TPDS abs 本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通]]></description>
-</item><item>
-    <title>High-Speed Inter-domain Fault Localization</title>
-    <link>/posts/org_16_fault_localization/</link>
-    <pubDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_16_fault_localization/</guid>
-    <description><![CDATA[&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &ldquo;High-Speed Inter-Domain Fault Localization,&rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56. 文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的]]></description>
-</item><item>
-    <title>PROOFS OF WORK AND BREAD PUDDING PROTOCOLS (EXTENDED ABSTRACT)</title>
-    <link>/posts/org_15_pow/</link>
-    <pubDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_15_pow/</guid>
-    <description><![CDATA[简单介绍 这一篇是讲PoW基础的论文,没有具体说明PoW是什么,但给出了与PoW相关的一些定义和例子, 用于理解PoW还可. 整篇文章看完还是云里]]></description>
-</item><item>
-    <title>EPIC: Every packet is checked in the data plane of a path-aware internet</title>
-    <link>/posts/org_14_epic/</link>
-    <pubDate>Sat, 26 Nov 2022 19:43:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_14_epic/</guid>
-    <description><![CDATA[简单介绍 这是一篇最近NSDI上路径验证相关的论文.看了好几遍但还是没进脑子,因此在此总结一遍. 路径构建 终端主机如何根据AS的信息构造包的传输]]></description>
-</item><item>
-    <title>Current Trends of Discovery Topology in SDN</title>
-    <link>/posts/org_10_topo_discover/</link>
-    <pubDate>Fri, 16 Sep 2022 23:43:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_10_topo_discover/</guid>
-    <description><![CDATA[affliation and publication author: publication: 本文主要 SDN 中详细调研当前拓扑发现服务的解决办法和缺点 Abstract Intro Preliminary Knowledge LLDP 协议 Link Layer Discovery Protocal,详细解释了LLDP包每个字段的作用,但我]]></description>
-</item><item>
-    <title>Dynamic Packet Forwarding Verification in SDN</title>
-    <link>/posts/org_09_dyna/</link>
-    <pubDate>Fri, 16 Sep 2022 22:27:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_09_dyna/</guid>
-    <description><![CDATA[affliation and publication author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee publication: IEEE Transactions on Dependable and secure computing, 2019 abs 传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来]]></description>
-</item><item>
-    <title>Solving Minimum Path Cover on a DAG</title>
-    <link>/posts/org_06_mpc/</link>
-    <pubDate>Sun, 21 Aug 2022 22:01:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_06_mpc/</guid>
-    <description><![CDATA[文章目的 介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>论文阅读 on 咸蛋超人</title>
+    <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+    <description>Recent content in 论文阅读 on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Jul 2023 23:04:45 +0800</lastBuildDate>
+    <atom:link href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Practical Techniques for Searches on Encrypted Data</title>
+      <link>/posts/org_26_se/</link>
+      <pubDate>Sat, 22 Jul 2023 21:13:00 +0800</pubDate>
+      <guid>/posts/org_26_se/</guid>
+      <description>&lt;h2 id=&#34;论文信息&#34;&gt;论文信息&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;发表: IEEE Symposium on Security and Privacy (CCF A, 2000)&lt;/li&gt;&#xA;&lt;li&gt;阅读目的: 了解它是怎么在密文中搜索的, 找网络数据包传输过程中如何检测被修改的idea.&lt;/li&gt;&#xA;&lt;li&gt;作者使用的思想为A XOR B XOR B = A, 但本文是第一篇提出在在密文中搜索. 略过所有数学证明和背景介绍.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;应用场景&#34;&gt;应用场景&lt;/h2&gt;&#xA;&lt;p&gt;Alice 要存储文档到Bob的服务器中, 此时只能存储密文, 因为Alice 并不放心Bob. 但这时, Alice 想要返回所有包含词&amp;rsquo;W&amp;rsquo;的文档, 这时就需要Bob在加密的文档中搜索.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>On a Multi-criteria Clustering Approachfor Attack Attribution</title>
+      <link>/posts/org_21_multi_clustering/</link>
+      <pubDate>Wed, 22 Feb 2023 14:27:00 +0800</pubDate>
+      <guid>/posts/org_21_multi_clustering/</guid>
+      <description>&lt;h2 id=&#34;论文信息&#34;&gt;论文信息&lt;/h2&gt;&#xA;&lt;p&gt;SigKDD, 2010&lt;/p&gt;&#xA;&lt;p&gt;阅读目的: 了解攻击溯源相关知识, 主要是为了扩充知识面.&lt;/p&gt;&#xA;&lt;p&gt;结论: 这个文章中提供的是一个数据挖掘的方法, 针对已有的数据样本通过找它们的相似性簇并通过分析来获得结论, 所以这个文章并不是我想要的. 以下总结阅读时做的一些笔记.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense</title>
+      <link>/posts/org_18_stackpi/</link>
+      <pubDate>Tue, 06 Dec 2022 13:14:00 +0800</pubDate>
+      <guid>/posts/org_18_stackpi/</guid>
+      <description>&lt;h2 id=&#34;论文信息&#34;&gt;论文信息&lt;/h2&gt;&#xA;&lt;p&gt;发在JSAC上, 作者: &lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        data-src=&#34;/ox-hugo/E0EPl1.png&#34;&#xA;        data-srcset=&#34;/ox-hugo/E0EPl1.png, /ox-hugo/E0EPl1.png 1.5x, /ox-hugo/E0EPl1.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;/ox-hugo/E0EPl1.png&#34;&#xA;        title=&#34;/ox-hugo/E0EPl1.png&#34;&#xA;    /&gt;&lt;/p&gt;&#xA;&lt;p&gt;把与我相关的部分做总结&lt;/p&gt;&#xA;&lt;h2 id=&#34;摘要&#34;&gt;摘要&lt;/h2&gt;&#xA;&lt;p&gt;本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成：基于栈的标记以及write-ahead标记。过虑机制中我们推导出一个用Pi标记进行过滤的最佳阈值策略。还提出PiIP过度器可用于检测网络协议欺骗攻击。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Efficient Forwarding Anomaly Detection in Software-Defined Networks</title>
+      <link>/posts/org_17_ifade/</link>
+      <pubDate>Thu, 01 Dec 2022 22:12:00 +0800</pubDate>
+      <guid>/posts/org_17_ifade/</guid>
+      <description>&lt;p&gt;affliation and publication&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang&lt;/li&gt;&#xA;&lt;li&gt;publication: TPDS&lt;/li&gt;&#xA;&lt;li&gt;abs&#xA;本篇是FADE的翻篇版, 对FADE加强了然后发了个好的,主要思想:收集网络的rule path,并找到可以通过所有这些path的最小流,并用专用rule覆盖指定的rule path中的一些rule,再生成探针包并对专用rule统计从而得到当前是否有异常.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;它将大数据背景引入本文&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>High-Speed Inter-domain Fault Localization</title>
+      <link>/posts/org_16_fault_localization/</link>
+      <pubDate>Mon, 28 Nov 2022 21:24:00 +0800</pubDate>
+      <guid>/posts/org_16_fault_localization/</guid>
+      <description>&lt;p&gt;&amp;gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &amp;ldquo;High-Speed Inter-Domain Fault Localization,&amp;rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56.&lt;/p&gt;&#xA;&lt;p&gt;文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的时候还总给人一种水时长的感觉, 挑与我相关的重点读了一下, 感觉还不错.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PROOFS OF WORK AND BREAD PUDDING PROTOCOLS (EXTENDED ABSTRACT)</title>
+      <link>/posts/org_15_pow/</link>
+      <pubDate>Sat, 26 Nov 2022 21:10:00 +0800</pubDate>
+      <guid>/posts/org_15_pow/</guid>
+      <description>&lt;h2 id=&#34;简单介绍&#34;&gt;简单介绍&lt;/h2&gt;&#xA;&lt;p&gt;这一篇是讲PoW基础的论文,没有具体说明PoW是什么,但给出了与PoW相关的一些定义和例子, 用于理解PoW还可. 整篇文章看完还是云里雾里的, 但大概理解了PoW其实相当于一个证明, 对于给定的一个hash函数, V知道这个函数的计算结果, 而P要做的是向V证明它知道这个计算结果所对应的原象. 因为hash算逆几乎不可能, 因此若原象是n位, P随便猜的几率为1/2^n.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>EPIC: Every packet is checked in the data plane of a path-aware internet</title>
+      <link>/posts/org_14_epic/</link>
+      <pubDate>Sat, 26 Nov 2022 19:43:00 +0800</pubDate>
+      <guid>/posts/org_14_epic/</guid>
+      <description>&lt;h2 id=&#34;简单介绍&#34;&gt;简单介绍&lt;/h2&gt;&#xA;&lt;p&gt;这是一篇最近NSDI上路径验证相关的论文.看了好几遍但还是没进脑子,因此在此总结一遍.&lt;/p&gt;&#xA;&lt;h3 id=&#34;路径构建&#34;&gt;路径构建&lt;/h3&gt;&#xA;&lt;p&gt;终端主机如何根据AS的信息构造包的传输: 终端主机\(H_S\)首先从路径服务器中找到路径path(文中有个beacon的词,翻译为信标,估计跟路径差不多), 并将路径嵌入到数据包中,如下:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Current Trends of Discovery Topology in SDN</title>
+      <link>/posts/org_10_topo_discover/</link>
+      <pubDate>Fri, 16 Sep 2022 23:43:00 +0800</pubDate>
+      <guid>/posts/org_10_topo_discover/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;affliation and publication&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;author:&lt;/li&gt;&#xA;&lt;li&gt;publication:&lt;/li&gt;&#xA;&lt;li&gt;本文主要 SDN 中详细调研当前拓扑发现服务的解决办法和缺点&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;&#xA;&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;h2 id=&#34;preliminary-knowledge&#34;&gt;Preliminary Knowledge&lt;/h2&gt;&#xA;&lt;h3 id=&#34;lldp-协议&#34;&gt;LLDP 协议&lt;/h3&gt;&#xA;&lt;p&gt;Link Layer Discovery Protocal,详细解释了LLDP包每个字段的作用,但我并没有看懂&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dynamic Packet Forwarding Verification in SDN</title>
+      <link>/posts/org_09_dyna/</link>
+      <pubDate>Fri, 16 Sep 2022 22:27:00 +0800</pubDate>
+      <guid>/posts/org_09_dyna/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;affliation and publication&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;publication: IEEE Transactions on Dependable and secure computing, 2019&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;abs&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少.&#xA;作者提出: 使用控制器收集包和流的统计来判定包是否被修改, 交付路径是否正常; 并对该方法加以改进&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Solving Minimum Path Cover on a DAG</title>
+      <link>/posts/org_06_mpc/</link>
+      <pubDate>Sun, 21 Aug 2022 22:01:00 +0800</pubDate>
+      <guid>/posts/org_06_mpc/</guid>
+      <description>&lt;h2 id=&#34;文章目的&#34;&gt;文章目的&lt;/h2&gt;&#xA;&lt;p&gt;介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），并将这个场景建模成MPC问题，最后给出了求解方法。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Amplification Hell: Revisiting Network Protocols for DDoS Abuse.</title>
+      <link>/posts/31_amplification_hell/</link>
+      <pubDate>Sat, 14 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/31_amplification_hell/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Rossow C. Amplification Hell: Revisiting Network Protocols for DDoS Abuse[C]//NDSS. 2014.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文重审各种基于UDP的协议，并分析哪些易用于RDOS，总结目前已被用作的RDOS和应对措施分析。本文主要有三总分组成：threat model,vulnerable protocols,realword attacks countmeasure。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LADS: large-scale automated DDOS detection system</title>
+      <link>/posts/30_lads/</link>
+      <pubDate>Fri, 13 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/30_lads/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Sekar V, Duffield N G, Spatscheck O, et al. LADS: Large-scale Automated DDoS Detection System[C]//USENIX Annual Technical Conference, General Track. 2006: 171-184.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文提出LADS，根据轻量级和重量级DDoS检测优缺点进行分析提出两阶段检测法。首先检测是可能有异常，再通过流收集器进一步检测以决定是否发出警告。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A taxonomy of DDoS attack and DDoS defense mechanisms</title>
+      <link>/posts/29_taxonomy/</link>
+      <pubDate>Thu, 12 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/29_taxonomy/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Mirkovic J, Reiher P. A taxonomy of DDoS attack and DDoS defense mechanisms[J]. ACM SIGCOMM Computer Communication Review, 2004, 34(2): 39-53.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文不错，就是老了点，对DDoS攻击和防御做了总结和分类，而不是提供个具体的方法。&lt;/p&gt;&#xA;&lt;h1 id=&#34;ddos攻击总结&#34;&gt;DDoS攻击总结&lt;/h1&gt;&#xA;&lt;h2 id=&#34;攻击overview&#34;&gt;攻击overview&lt;/h2&gt;&#xA;&lt;h3 id=&#34;网络架构的缺点&#34;&gt;网络架构的缺点：&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;网络安全性高度独立&lt;/li&gt;&#xA;&lt;li&gt;网络资源有限&lt;/li&gt;&#xA;&lt;li&gt;攻击者协调工作&lt;/li&gt;&#xA;&lt;li&gt;实体与网络带宽不一致，使攻击者有大量的资源可使用。&lt;/li&gt;&#xA;&lt;li&gt;没有强制审计&lt;/li&gt;&#xA;&lt;li&gt;网络是分布式&lt;/li&gt;&#xA;&lt;li&gt;分布式管理，每个网络在本地管理下运行。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;攻击策略&#34;&gt;攻击策略&lt;/h3&gt;&#xA;&lt;p&gt;找slave,slave再找slave,进行spoof攻击。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DDoS Attack Protection in the Era of Cloud Computing and Software-Defined Networking</title>
+      <link>/posts/28_ddos_cloud_computing/</link>
+      <pubDate>Wed, 11 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/28_ddos_cloud_computing/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;B. Wang, Y. Zheng, W. Lou and Y. T. Hou, &amp;ldquo;DDoS Attack Protection in the Era of Cloud Computing and Software-Defined Networking,&amp;rdquo; 2014 IEEE 22nd International Conference on Network Protocols, Raleigh, NC, 2014, pp. 624-629.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;这篇不怎么样，CCF B类计算机网络会议。本文提出一个用于云防御DDoS攻击的框架。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bohatei: Flexible and elastic ddos defense</title>
+      <link>/posts/27_bohatei/</link>
+      <pubDate>Tue, 10 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/27_bohatei/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Fayaz S K, Tobioka Y, Sekar V, et al. Bohatei: Flexible and elastic ddos defense[C]//24th {USENIX} Security Symposium ({USENIX} Security 15). 2015: 817-832.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文提出一种针对新型网络的DDoS的防御系统，通过SDN，将可疑流量通过VM以达到保护主机的目的。（本文目的是为特定主机提供保护服务，收费服务那种。）本篇的introduction和background都比别人难懂。。。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks</title>
+      <link>/posts/26_sd-anti-ddos/</link>
+      <pubDate>Mon, 09 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/26_sd-anti-ddos/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Cui Y, Yan L, Li S, et al. SD-Anti-DDoS: Fast and efficient DDoS defense in software-defined networks[J]. Journal of Network and Computer Applications, 2016, 68: 65-79.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文提出一种针对DDoS攻击的检测与缓解机制，由四部份组成：attack detection trigger,attack detection,attack traceback,attack mitigation。本文质量一般，不过packet_in trigger提出觉得有点创新。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FRESCO:Modular Composable Security Services for Software-Defined Networks</title>
+      <link>/posts/25_fresco/</link>
+      <pubDate>Sun, 08 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/25_fresco/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Shin S W, Porras P, Yegneswara V, et al. Fresco: Modular composable security services for software-defined networks[C]//20th Annual Network &amp;amp; Distributed System Security Symposium. NDSS, 2013.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文提供了一个应用框架FRESCO，可供研究人员和开发代人员更简单地实现各种检测、缓解模块。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>dFence: Transparent Network-based Denial of Service Mitigation</title>
+      <link>/posts/24_dfence/</link>
+      <pubDate>Sat, 07 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/24_dfence/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Mahimkar A , Dange J , Shmatikov V , et al. dFence: Transparent Network-based Denial of Service Mitigation[J]. Nsdi ’, 2007:24-24.，&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文通过添加dFence中间设备，实现透明的DoS防御。图1架构图，将中间设备透明插入可能受攻击的主机前并拦截所有流量。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Header Space Analysis: Static Checking For Networks</title>
+      <link>/posts/23_header-space-analysis/</link>
+      <pubDate>Fri, 06 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/23_header-space-analysis/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Kazemian P, Varghese G, McKeown N. Header space analysis: Static checking for networks[C]//Presented as part of the 9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12). 2012: 113-126.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;看本文原因：好多文章中的参考文献，且作者Nick是OF提出者。本文提出Header Space Analysis来分析错误类别如：Reachability Failure,Forwarding Loops,Traffic Isolation,Leakage problems。我们装将包头视作一系列位的连接,每个都是一个${0,1}^L$点，L是包头最大长度，而网络box的转换视作将点空间中的一个点转换为另一个（或一些）。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Header Space Analysis: Static Checking For Networks</title>
+      <link>/posts/23_header_space_analysis/</link>
+      <pubDate>Fri, 06 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/23_header_space_analysis/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Kazemian P, Varghese G, McKeown N. Header space analysis: Static checking for networks[C]//Presented as part of the 9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12). 2012: 113-126.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;看本文原因：好多文章中的参考文献，且作者Nick是OF提出者。本文提出Header Space Analysis来分析错误类别如：Reachability Failure,Forwarding Loops,Traffic Isolation,Leakage problems。我们装将包头视作一系列位的连接,每个都是一个${0,1}^L$点，L是包头最大长度，而网络box的转换视作将点空间中的一个点转换为另一个（或一些）。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>An Overview of Misuse/Attack Cases in SDN</title>
+      <link>/posts/22_misuse_attack/</link>
+      <pubDate>Wed, 04 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/22_misuse_attack/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;an-overview-of-misuseattack-cases-in-sdn&#34;&gt;An Overview of Misuse/Attack Cases in SDN&lt;/h1&gt;&#xA;&lt;p&gt;标签（空格分隔）： security&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://imgchr.com/i/AXVqit&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        data-src=&#34;https://s2.ax1x.com/2019/04/14/AXVqit.md.png&#34;&#xA;        data-srcset=&#34;https://s2.ax1x.com/2019/04/14/AXVqit.md.png, https://s2.ax1x.com/2019/04/14/AXVqit.md.png 1.5x, https://s2.ax1x.com/2019/04/14/AXVqit.md.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://s2.ax1x.com/2019/04/14/AXVqit.md.png&#34;&#xA;        title=&#34;AXVqit.md.png&#34;&#xA;    /&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;A-01-A:大量packet_in会导致SDN controller不可预期状态，例如，恶意主机生成大量packet_in使用controller资源消耗完。&lt;/li&gt;&#xA;&lt;li&gt;A-02-M：应用的链式执行会导致：控制信息丢失（恶意应用may加入服务链，并在其他应用等到控制信息前丢弃它）；无限循环（恶意应用会进行无限循环从而阻止链运行）&lt;/li&gt;&#xA;&lt;li&gt;A-03-MA：controller的内部存为所有的application共享，因此不严格的授权会导致内部数据库的拓扑更改。&lt;/li&gt;&#xA;&lt;li&gt;A-04-MA 控制信息被操控会导致：1.路由表洪泛：一直发假路由表；2.switch标识字段被造假；3.畸形控制信息控制平面发生故障&lt;/li&gt;&#xA;&lt;li&gt;A-05-M： SDN随机发出控制信息导致：1.流表修改；2.流表清除。&lt;/li&gt;&#xA;&lt;li&gt;A-06-M：SDN应用可能会通过滥用poorly designed API来影响其他的API应用。如：1.流表修改；2.流表清除。&lt;/li&gt;&#xA;&lt;li&gt;A-07-MA：SDN应用会排他地使用系统资源从而影响Controller或其他应用的性能如：1.内存耗尽；2.CPU耗尽。&lt;/li&gt;&#xA;&lt;li&gt;A-08-MA：系统状态变量被修改可能会导致出错，如恶意修改Controller系统时间导致其与其他switches断连。&lt;/li&gt;&#xA;&lt;li&gt;A-09-A：SDN应用可能会执行系统退出命令来终结Controller实例。&lt;/li&gt;&#xA;&lt;li&gt;A-10-A：敌人可能通过Controller的 主机跟踪服务或链接发现来修改网络拓扑。1.Host Location Hijacking:通过精心制作的包来随机劫持其他主机的位置。2.Link Fabrication:通过伪造或中继LLDP包给控制器来控制网络拓扑。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;B-01-A：敌人可以监听控制信道来偷敏感信息，如：通过窃取控制信道的输出控制信息获得网络拓扑。&lt;/li&gt;&#xA;&lt;li&gt;B-02-A：敌人可以干涉控制信道，如：修改传输中的流规则信息，使网络行为崩坏。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;C-01-MA： 大量的流规则会导致数据平面状态被破坏，如：敌人修改流规则信息并往指定switch插入大量规则使流表溢出。&lt;/li&gt;&#xA;&lt;li&gt;C-02-M： 某些路由模式的特性可能会被不良使用，如：敌人可能会插入手工流表，而这些流表在某些特征路由模式下不能被固件表处理。&lt;/li&gt;&#xA;&lt;li&gt;C-03-M： 畸形控制信息会破坏数据平面状态。敌人可能会向数据平面注入畸形控制信息来中断控制平面与数据平面的连接。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.sdnsecurity.org/vulnerability/attacks/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks </title>
+      <link>/posts/21_athena/</link>
+      <pubDate>Tue, 03 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/21_athena/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;S. Lee, J. Kim, S. Shin, P. Porras and V. Yegneswaran, &amp;ldquo;Athena: A Framework for Scalable Anomaly Detection in Software-Defined Networks,&amp;rdquo; 2017 47th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN), Denver, CO, 2017, pp. 249-260.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文相当于一个框架手册，该框架作用为：一个分布式SDN弹性异常检测应用，它提供高抽象的API，可以使管理员以最小的编程代价布署异常检测应用。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tool support for the evaluation of anomaly traffic classification for network resilience</title>
+      <link>/posts/20_ad_classification/</link>
+      <pubDate>Mon, 02 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/20_ad_classification/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp;amp; Communication. 2015.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;tool-support-for-the-evaluation-of-anomaly-traffic-classification-for-network-resilience&#34;&gt;Tool support for the evaluation of anomaly traffic classification for network resilience&lt;/h1&gt;&#xA;&lt;h2 id=&#34;silva-a-s-d-wickboldt-j-a-schaefferfilho-a-et-al-tool-support-for-the-evaluation-of-anomaly-traffic-classification-for-network-resiliencec-computers--communication-2015&#34;&gt;标签（空格分隔）： security&#xA;Silva A S D, Wickboldt J A, Schaefferfilho A, et al. Tool support for the evaluation of anomaly traffic classification for network resilience[C]// Computers &amp;amp; Communication. 2015.&lt;/h2&gt;&#xA;&lt;p&gt;觉得本文一般，作者对PReSET这篇论文提出的工具进行修改。PReSET是一个对网络可恢复力评估的一个工具，本文利用它来进行流量分类算法的评估。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPHINX: Detecting Security Attacks in Software-Defined Networks</title>
+      <link>/posts/19_sphinx/</link>
+      <pubDate>Sun, 01 Sep 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/19_sphinx/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Dhawan M, Poddar R, Mahajan K, et al. SPHINX: Detecting Security Attacks in Software-Defined Networks[C]//NDSS. 2015, 15: 8-11.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文很不错，写得十分详细，很贴近实用，作者是精通OF协议的。&#xA;本文目的提出一种检测已知和未知网络攻击并可实时发出警告，自动学习新的网络行为。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AVANT-GUARD: scalable and vigilant switch flow management in software-defined networks</title>
+      <link>/posts/18_avant-guard/</link>
+      <pubDate>Sat, 31 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/18_avant-guard/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Shin S , Yegneswaran V , Porras P , et al. AVANT-GUARD: scalable and vigilant switch flow management in software-defined networks[C]// Acm Sigsac Conference on Computer &amp;amp; Communications Security. ACM, 2013.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文对of作两个改进：1,利用&lt;em&gt;Connection Migration&lt;/em&gt;对TCP连接进行中继，使其可以在data plane过虑掉未完成的TCP连接；2,&lt;em&gt;actuating trigger&lt;/em&gt;改进OF协议，使其支持条件流表，即在某一特定条件下激活流表规则以达到网络监控的目的。&#xA;整体架构见图1&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SDN-RDCD: A Real-Time and Reliable Method for Detecting Compromised SDN Devices</title>
+      <link>/posts/17_sdn-rdcd_ton/</link>
+      <pubDate>Fri, 30 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/17_sdn-rdcd_ton/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Zhou H , Wu C , Yang C , et al. SDN-RDCD: A Real-Time and Reliable Method for Detecting Compromised SDN Devices[J]. IEEE/ACM Transactions on Networking, 2018, PP(99).&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文目标是通过一个审计器检测被挟持的SDN设备，实验结果并未与其他进行比较，因为他声称自己的正确率有100,但是并没有提供检测具体哪个设备被挟持。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment</title>
+      <link>/posts/16_sdnscore/</link>
+      <pubDate>Thu, 29 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/16_sdnscore/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Kalkan K , Gur G , Alagoz F . SDNScore: A statistical defense mechanism against DDoS attacks in SDN environment[C]// 2017 IEEE Symposium on Computers and Communications (ISCC). IEEE, 2017.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文是JESS那篇对应的会议文章，记一下主要思想。&lt;/p&gt;&#xA;&lt;h1 id=&#34;sdnscore-mechanism&#34;&gt;SDNScore Mechanism&lt;/h1&gt;&#xA;&lt;p&gt;本机制由switch中的profiler,actuator,comparator,scorer和controller中的PairProfiler组成，用于检测DDoS及其缓解。整个机制图解见图1.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Atlantic : a framework for anomaly traffic detection, classification, and mitigation in SDN</title>
+      <link>/posts/15_atlantic/</link>
+      <pubDate>Wed, 28 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/15_atlantic/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Silva A S D . Atlantic : a framework for anomaly traffic detection, classification, and mitigation in SDN[C]// Network Operations &amp;amp; Management Symposium. IEEE, 2016.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文提出一个架构用于在SDN中的异常检测与缓解，架构分为两个阶段：检测异常（利用Entropy），分类流（Machine Learning）,并提供了实现的源码。&lt;a href=&#34;https://github.com/AndersonSanSilva/ATLANTIC&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;源码下载&lt;/a&gt;，这个人的github里只有这一个代码项目&amp;hellip;.下面详细记录这篇文章。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)</title>
+      <link>/posts/14_dl_ddos_sdn/</link>
+      <pubDate>Tue, 27 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/14_dl_ddos_sdn/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Niyaz Q , Sun W , Javaid A Y . A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)[J]. Security &amp;amp; Safety, 2016, 4(12).&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;没有看的价值，跟深度学习完全扯不上关系，被标题和页码骗了。。&lt;/p&gt;&#xA;&lt;h1 id=&#34;ddos-detection-system的实现&#34;&gt;DDoS Detection System的实现&lt;/h1&gt;&#xA;&lt;p&gt;分为三个部分：信息收集，特征提取，流量收集，结构图如下：&#xA;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        data-src=&#34;https://s2.ax1x.com/2019/03/20/AKTlJf.png&#34;&#xA;        data-srcset=&#34;https://s2.ax1x.com/2019/03/20/AKTlJf.png, https://s2.ax1x.com/2019/03/20/AKTlJf.png 1.5x, https://s2.ax1x.com/2019/03/20/AKTlJf.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://s2.ax1x.com/2019/03/20/AKTlJf.png&#34;&#xA;        title=&#34;AKTlJf.png&#34;&#xA;    /&gt;&#xA;##信息收集方法命名为TCFI，具体算法流程如Algorithm1:&#xA;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        data-src=&#34;https://s2.ax1x.com/2019/03/20/AKHcI1.png&#34;&#xA;        data-srcset=&#34;https://s2.ax1x.com/2019/03/20/AKHcI1.png, https://s2.ax1x.com/2019/03/20/AKHcI1.png 1.5x, https://s2.ax1x.com/2019/03/20/AKHcI1.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://s2.ax1x.com/2019/03/20/AKHcI1.png&#34;&#xA;        title=&#34;AKHcI1.png&#34;&#xA;    /&gt;&#xA;意思是：抽取所有的包头放到packets_list里，将新产生的流存入flow_list里。&#xA;被抽取的特征有如表1&#xA;&lt;a href=&#34;https://imgchr.com/i/AMFhNV&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        data-src=&#34;https://s2.ax1x.com/2019/03/20/AMFhNV.png&#34;&#xA;        data-srcset=&#34;https://s2.ax1x.com/2019/03/20/AMFhNV.png, https://s2.ax1x.com/2019/03/20/AMFhNV.png 1.5x, https://s2.ax1x.com/2019/03/20/AMFhNV.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://s2.ax1x.com/2019/03/20/AMFhNV.png&#34;&#xA;        title=&#34;AMFhNV.png&#34;&#xA;    /&gt;&lt;/a&gt;&#xA;##特征提取和流量分类&#xA;特征提取设置时间间隔进行，特征提取模块从TCFI中获得统计信息，并计算特征，按流分类，TCFI的特征被提取后重设特征集。&#xA;可抽取的特征总结如下：&#xA;TCP：&#xA;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        data-src=&#34;https://s2.ax1x.com/2019/03/20/AM1aY4.png&#34;&#xA;        data-srcset=&#34;https://s2.ax1x.com/2019/03/20/AM1aY4.png, https://s2.ax1x.com/2019/03/20/AM1aY4.png 1.5x, https://s2.ax1x.com/2019/03/20/AM1aY4.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://s2.ax1x.com/2019/03/20/AM1aY4.png&#34;&#xA;        title=&#34;AM1aY4.png&#34;&#xA;    /&gt;&#xA;UDP：&#xA;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        data-src=&#34;https://s2.ax1x.com/2019/03/20/AM3hUU.png&#34;&#xA;        data-srcset=&#34;https://s2.ax1x.com/2019/03/20/AM3hUU.png, https://s2.ax1x.com/2019/03/20/AM3hUU.png 1.5x, https://s2.ax1x.com/2019/03/20/AM3hUU.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://s2.ax1x.com/2019/03/20/AM3hUU.png&#34;&#xA;        title=&#34;AM3hUU.png&#34;&#xA;    /&gt;&#xA;ICMP：&#xA;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        data-src=&#34;https://s2.ax1x.com/2019/03/20/AM8ws1.png&#34;&#xA;        data-srcset=&#34;https://s2.ax1x.com/2019/03/20/AM8ws1.png, https://s2.ax1x.com/2019/03/20/AM8ws1.png 1.5x, https://s2.ax1x.com/2019/03/20/AM8ws1.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://s2.ax1x.com/2019/03/20/AM8ws1.png&#34;&#xA;        title=&#34;AM8ws1.png&#34;&#xA;    /&gt;&#xA;对9-12,43-46,63-67计算字节数和每个流包数的中位数，对8,14,16,18,20,42,48,50,54,62,68计算熵。&#xA;算法部分就没有了，也没讲怎么分类。&#xA;#实验部分&#xA;从公网中抓正常流量，利用hping3构造异常流量，在构造的SDN中进行实验，计算：Accuracy,Precision,RecallF值，ROC&#xA;本文：主要了解了一些可用于特征提取的特征集，还有一个用于攻模拟攻击的工具：hping3&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adaptive Performance Anomaly Detection in Distributed Systems Using Online SVMs</title>
+      <link>/posts/13_ad_svm_tdsc/</link>
+      <pubDate>Tue, 27 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/13_ad_svm_tdsc/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Alvarez Cid-Fuentes J , Szabo C , Falkner K . Adaptive Performance Anomaly Detection in Distributed Systems Using Online SVMs[J]. IEEE Transactions on Dependable and Secure Computing, 2018:1-1.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文提出框架，通过周期地收集系统矩阵来提取特征，并采用在线SVM法训练和对特征进行分类从而识别异常行为：deadlock,livelock,unwanted synchronization,memory leaks。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Deep Learning Approach to Network Intrusion Detection</title>
+      <link>/posts/12_dl_ids/</link>
+      <pubDate>Mon, 26 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/12_dl_ids/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Shone N , Ngoc T N , Phai V D , et al. A Deep Learning Approach to Network Intrusion Detection[J]. IEEE Transactions on Emerging Topics in Computational Intelligence, 2018, 2(1):41-50.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文提出用stacked Non-Symmetric deep Auto-encoders 方法进行特征抽取，并将提取的特征传给随机森林进行分类的一种入侵检测方法。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective</title>
+      <link>/posts/11_dl_ad/</link>
+      <pubDate>Sun, 25 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/11_dl_ad/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Garg S , Kaur K , Kumar N , et al. Hybrid Deep-Learning-Based Anomaly Detection Scheme for Suspicious Flow Detection in SDN: A Social Multimedia Perspective[J]. IEEE Transactions on Multimedia, 2019, 21(3):566-578.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文利用受限波尔兹曼机进行异常检测。&lt;/p&gt;&#xA;&lt;h1 id=&#34;异常检测模型&#34;&gt;异常检测模型&lt;/h1&gt;&#xA;&lt;p&gt;controller请求流统计信息，流收集模型收集并抽取特征，基于抽取的物征，利用改进的Restricted Boltzmann Machines进行降维，将结果交给本文提出的SVM算法中进行特征和行为分类，异常检测架构进行报告并通过安全通道发送给controller,controller根据报告进行更改流表和配置。&#xA;下图是本框架的方法论：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Automatic test packet generation</title>
+      <link>/posts/10_packet_generation/</link>
+      <pubDate>Sat, 24 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/10_packet_generation/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Zeng H , Kazemian P , Varghese G , et al. Automatic test packet generation[C]// International Conference on Emerging Networking Experiments &amp;amp; Technologies. IEEE, 2012.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;背景分析&#34;&gt;背景分析&lt;/h1&gt;&#xA;&lt;p&gt;当前特别需要自动化的网络测试工具&lt;/p&gt;&#xA;&lt;h1 id=&#34;概念&#34;&gt;概念&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;packets&lt;/li&gt;&#xA;&lt;li&gt;Switch&lt;/li&gt;&#xA;&lt;li&gt;Rules：defines how header space at ingress is transformed into regions of header space of egress.&lt;/li&gt;&#xA;&lt;li&gt;Rule Historyt:包被传送过程中记录自己所经历过的规则。&lt;/li&gt;&#xA;&lt;li&gt;Topology:拓扑结构&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;测试包生成算法过程&#34;&gt;测试包生成算法过程&lt;/h1&gt;&#xA;&lt;p&gt;step1:生成一个all-pairs reachability table&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FOCES: Detecting Forwarding Anomalies in Software Defined Networks</title>
+      <link>/posts/09_foces/</link>
+      <pubDate>Fri, 23 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/09_foces/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Peng Z, Xu S, Yang Z, et al. FOCES: Detecting Forwarding Anomalies in Software Defined Networks[C]// IEEE International Conference on Distributed Computing Systems. 2018.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;B类。本文提供一种在SDN中进行forwarding anomaly 检测方法，（只提供检测，并未提供定位与解决办法）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Novel Anomaly Detection System to Asist Network Management in SDN Enviroment</title>
+      <link>/posts/08_ad_sdn/</link>
+      <pubDate>Thu, 22 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/08_ad_sdn/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Carvalho L F , Fernandes G , Rodrigues J J P C , et al. A novel anomaly detection system to assist network management in SDN environment[C]// IEEE International Conference on Communications. IEEE, 2017.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;C类。本文提出一种辅助网络管理的异常检测系统，算法运行在controller，分为四个模块：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A detection method for anomaly flow in software defined network</title>
+      <link>/posts/06_ad_sdn_acess/</link>
+      <pubDate>Wed, 21 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/06_ad_sdn_acess/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Huijun P , Zhe S , Xuejian Z , et al. [J]. IEEE Access, 2018:1-1.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文件基于knn的一个改进算法提出了一个异常检测算法。&lt;/p&gt;&#xA;&lt;h1 id=&#34;一些概念&#34;&gt;一些概念：&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;欧几里德距离：$D_{ij}^y = \sqrt{\sum_{a=1}^{t}({X_{ia} - X_{ja}})^2}$&lt;/li&gt;&#xA;&lt;li&gt;strangeness(陌生度)：$\alpha_{iy}=\frac{\sum_{j=1}^kD_{ij}^y}{\sum_{j=1}^kD_{ij}^{-y}}$&#xA;i与正例和反例的距离之比，越小越倾向与正例。&lt;/li&gt;&#xA;&lt;li&gt;independence(独立度)：$\theta_{iy}=\sum_{j=1}^kD_{ij}^y $&#xA;i在正例中的距离之和，越小越倾向正例。&lt;/li&gt;&#xA;&lt;li&gt;double p value:$p_1(\alpha_i)=\frac{\#{j=(1,\cdots,n):\alpha_j \ge \alpha_i}}{n+1} $&#xA;越大，则越正常&#xA;$p_2(\theta_i) = \frac{\#{j=(1,\cdots,n):\theta_j \ge\theta_i}}{n+1} $&#xA;越大，则越正常&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;算法步骤&#34;&gt;算法步骤&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;step1&lt;/em&gt; 在训练集样例中进行欧几里德距离计算&#xA;&lt;em&gt;step2&lt;/em&gt; 在训练集样例中进行陌生度和独立度计算&#xA;&lt;em&gt;step3&lt;/em&gt; 计算检测点的陌生度和独立度&#xA;&lt;em&gt;step4&lt;/em&gt; 计算检测点的double p value&#xA;&lt;em&gt;step5&lt;/em&gt; 识别异常点：结点为正常用结点条件为 $p_1(\alpha_i) \ge \tau_1 \quad and \quad p_2(\theta_i) \ge \tau_2$,$\tau$由controller控制。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>An Analysis of Using Reflectors for Distributed Denial-of-Service Attacks</title>
+      <link>/posts/07_reflector_sigcomm/</link>
+      <pubDate>Tue, 20 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/07_reflector_sigcomm/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Paxson, Vern. An analysis of using reflectors for distributed denial-of-service attacks[J]. ACM SIGCOMM Computer Communication Review, 2001, 31(3):38.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文先讲解了DDoS攻击，再讲解基于reflector的DDoS攻击，最后基于各种网络协议的字段进行挨个分析，讲解哪些字段容易受到attacker的利用从而进行攻击。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JESS: Joint Entropy-Based DDoS Defense Scheme in SDN</title>
+      <link>/posts/04_jess/</link>
+      <pubDate>Mon, 19 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/04_jess/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Kalkan K , Altay L , Gur G , et al. JESS: Joint Entropy Based DDoS Defense Scheme in SDN[J]. IEEE Journal on Selected Areas in Communications, 2018:1-1.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;该文提出了一种基于熵的DDoS攻击的检测与缓解办法。&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;introduction&lt;/h1&gt;&#xA;&lt;p&gt;SDN存在安全问题，如DDoS攻击，解决办法有:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Leveraging SDN for Efficient Anomaly Detection and Mitigation on Legacy Networks</title>
+      <link>/posts/03_sdn_ad/</link>
+      <pubDate>Sun, 18 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/03_sdn_ad/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Giotis K , Androulidakis G , Maglaris V . Leveraging SDN for Efficient Anomaly Detection and Mitigation on Legacy Networks[C]// Third European Workshop on Software Defined Networks. IEEE Computer Society, 2014.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;本文主要提出一种架构：利用SDN中的Controller改进现有的网络体系中进行Anomaly Detection(AD)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A distributed filtering mechanism against DDoS attacks: ScoreForCore</title>
+      <link>/posts/01_scoreforcore/</link>
+      <pubDate>Sat, 17 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/01_scoreforcore/</guid>
+      <description>&lt;h1 id=&#34;a-distributed-filtering-mechanism-against-ddos-attacks-scoreforcore&#34;&gt;A distributed filtering mechanism against DDoS attacks: ScoreForCore&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Kalkan K, Alagöz F. A distributed filtering mechanism against DDoS attacks: ScoreForCore[J]. Computer Networks, 2016, 108: 199-209.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;本文提出ScoreForCore基于主动和协作过滤的防御机制，特点为：在当前的攻击流中选择最合适的属性。本文由PackerScore[2]启发，由于[2]中的实时检测没有属性筛选，因此性能较差。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks</title>
+      <link>/posts/02_crowd-gps-sec/</link>
+      <pubDate>Fri, 16 Aug 2019 18:32:36 +0800</pubDate>
+      <guid>/posts/02_crowd-gps-sec/</guid>
+      <description>&lt;h1 id=&#34;crowd-gps-sec-leveraging-crowdsourcing-to-detect-and-localize-gps-spoofing-attacks&#34;&gt;Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Jansen K, Schäfer M, Moser D, et al. Crowd-GPS-Sec: Leveraging Crowdsourcing to Detect and Localize GPS Spoofing Attacks[C] IEEE Symposium on Security and&amp;gt; Privacy (S&amp;amp;P). 2018.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;h1 id=&#34;gps&#34;&gt;GPS&lt;/h1&gt;&#xA;&lt;h2 id=&#34;a-gps-usage-in-avaition&#34;&gt;A. GPS Usage in avaition&lt;/h2&gt;&#xA;&lt;p&gt;非常广泛&lt;/p&gt;&#xA;&lt;h2 id=&#34;b-gps-spoofing-attacks&#34;&gt;B. GPS Spoofing Attacks&lt;/h2&gt;&#xA;&lt;p&gt;依赖GPS的航空工具都是攻击者倾向的目标&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

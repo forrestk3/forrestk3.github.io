@@ -1,22 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>ovs - Tag - 咸蛋超人</title>
-        <link>/tags/ovs/</link>
-        <description>ovs - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</lastBuildDate><atom:link href="/tags/ovs/" rel="self" type="application/rss+xml" /><item>
-    <title>OVS添加自定义action</title>
-    <link>/posts/org_11_ovs_add_action/</link>
-    <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_11_ovs_add_action/</guid>
-    <description><![CDATA[版本及环境 ovs 2.13.7 ubuntu 18.04 与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到 看这篇需要有一定的OVS基础，基本概念必须要了解。 基本概念 这里讲]]></description>
-</item><item>
-    <title>mininet , ovs , ryu 分别进行源码安装</title>
-    <link>/posts/05_ovs_install/</link>
-    <pubDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/05_ovs_install/</guid>
-    <description><![CDATA[OVS安装 ovs与linux内核版本对应 OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ovs on 咸蛋超人</title>
+    <link>/tags/ovs/</link>
+    <description>Recent content in Ovs on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Sep 2022 16:47:43 +0800</lastBuildDate>
+    <atom:link href="/tags/ovs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OVS添加自定义action</title>
+      <link>/posts/org_11_ovs_add_action/</link>
+      <pubDate>Mon, 19 Sep 2022 21:27:00 +0800</pubDate>
+      <guid>/posts/org_11_ovs_add_action/</guid>
+      <description>&lt;h2 id=&#34;版本及环境&#34;&gt;版本及环境&lt;/h2&gt;&#xA;&lt;p&gt;ovs 2.13.7&lt;/p&gt;&#xA;&lt;p&gt;ubuntu 18.04&lt;/p&gt;&#xA;&lt;p&gt;与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到&lt;/p&gt;&#xA;&lt;p&gt;看这篇需要有一定的OVS基础，基本概念必须要了解。&lt;/p&gt;&#xA;&lt;h2 id=&#34;基本概念&#34;&gt;基本概念&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;这里讲的action并不是openflow action, 而是数据平面的执行action&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mininet , ovs , ryu 分别进行源码安装</title>
+      <link>/posts/05_ovs_install/</link>
+      <pubDate>Sun, 28 Aug 2022 22:01:00 +0800</pubDate>
+      <guid>/posts/05_ovs_install/</guid>
+      <description>&lt;h2 id=&#34;ovs安装&#34;&gt;OVS安装&lt;/h2&gt;&#xA;&lt;h3 id=&#34;ovs与linux内核版本对应&#34;&gt;ovs与linux内核版本对应&lt;/h3&gt;&#xA;&lt;p&gt;OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。&#xA;&lt;a href=&#34;https://docs.openvswitch.org/en/latest/faq/releases/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://docs.openvswitch.org/en/latest/faq/releases/&lt;/a&gt;&#xA;linux 内核版本查看&lt;code&gt;uname -r&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;安装过程&#34;&gt;安装过程&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;这里要注意，如果下载的是官网的压缩文件，则不用./boot.sh直接从./configure开始即可， 如果是在github上下载的，则需要./boot.sh再configure&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

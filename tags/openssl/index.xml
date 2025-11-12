@@ -1,15 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>openssl - Tag - 咸蛋超人</title>
-        <link>/tags/openssl/</link>
-        <description>openssl - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</lastBuildDate><atom:link href="/tags/openssl/" rel="self" type="application/rss+xml" /><item>
-    <title>openssl 安装与第一个demo</title>
-    <link>/posts/org_20_openssl1/</link>
-    <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_20_openssl1/</guid>
-    <description><![CDATA[openssl的安装 在使用c语言库调用openssl的时候要先安装,因为安装的时候才会将库放到系统中供程序调用. 下载:https://git]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Openssl on 咸蛋超人</title>
+    <link>/tags/openssl/</link>
+    <description>Recent content in Openssl on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 Mar 2023 10:38:11 +0800</lastBuildDate>
+    <atom:link href="/tags/openssl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>openssl 安装与第一个demo</title>
+      <link>/posts/org_20_openssl1/</link>
+      <pubDate>Thu, 09 Feb 2023 12:35:00 +0800</pubDate>
+      <guid>/posts/org_20_openssl1/</guid>
+      <description>&lt;h2 id=&#34;openssl的安装&#34;&gt;openssl的安装&lt;/h2&gt;&#xA;&lt;p&gt;在使用c语言库调用openssl的时候要先安装,因为安装的时候才会将库放到系统中供程序调用.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;下载:&lt;a href=&#34;https://github.com/openssl/openssl&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://github.com/openssl/openssl&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;安装:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ./Configure&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make install &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;这一步需要管理员权限&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;安装完成后所在位置:&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

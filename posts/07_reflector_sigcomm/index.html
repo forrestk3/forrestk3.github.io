@@ -5,15 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">An Analysis of Using Reflectors for Distributed Denial-of-Service Attacks - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="An Analysis of Using Reflectors for Distributed Denial-of-Service Attacks" />
-<meta property="og:description" content="Paxson, Vern. An analysis of using reflectors for distributed denial-of-service attacks[J]. ACM SIGCOMM Computer Communication Review, 2001, 31(3):38. 本文先讲解了DDoS攻击，再讲解基于reflector的DDoS攻击，最后基于各种网络协议的字段进行挨个" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/07_reflector_sigcomm/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-08-20T18:32:36+08:00" />
-<meta property="article:modified_time" content="2022-08-17T18:32:36+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="An Analysis of Using Reflectors for Distributed Denial-of-Service Attacks"/>
-<meta name="twitter:description" content="Paxson, Vern. An analysis of using reflectors for distributed denial-of-service attacks[J]. ACM SIGCOMM Computer Communication Review, 2001, 31(3):38. 本文先讲解了DDoS攻击，再讲解基于reflector的DDoS攻击，最后基于各种网络协议的字段进行挨个"/>
+    <title class="pjax-title">An Analysis of Using Reflectors for Distributed Denial-of-Service Attacks - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/07_reflector_sigcomm/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="An Analysis of Using Reflectors for Distributed Denial-of-Service Attacks">
+  <meta property="og:description" content="Paxson, Vern. An analysis of using reflectors for distributed denial-of-service attacks[J]. ACM SIGCOMM Computer Communication Review, 2001, 31(3):38.
+本文先讲解了DDoS攻击，再讲解基于reflector的DDoS攻击，最后基于各种网络协议的字段进行挨个分析，讲解哪些字段容易受到attacker的利用从而进行攻击。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-08-20T18:32:36+08:00">
+    <meta property="article:modified_time" content="2022-08-17T18:32:36+08:00">
+    <meta property="article:tag" content="论文阅读">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="An Analysis of Using Reflectors for Distributed Denial-of-Service Attacks">
+  <meta name="twitter:description" content="Paxson, Vern. An analysis of using reflectors for distributed denial-of-service attacks[J]. ACM SIGCOMM Computer Communication Review, 2001, 31(3):38.
+本文先讲解了DDoS攻击，再讲解基于reflector的DDoS攻击，最后基于各种网络协议的字段进行挨个分析，讲解哪些字段容易受到attacker的利用从而进行攻击。">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -191,7 +198,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

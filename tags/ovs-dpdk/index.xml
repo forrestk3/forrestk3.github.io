@@ -1,15 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>ovs-dpdk - Tag - 咸蛋超人</title>
-        <link>/tags/ovs-dpdk/</link>
-        <description>ovs-dpdk - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</lastBuildDate><atom:link href="/tags/ovs-dpdk/" rel="self" type="application/rss+xml" /><item>
-    <title>ovs-dpdk系列配置实验-—1. 安装</title>
-    <link>/posts/org_22_ovs_dpdk_install/</link>
-    <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_22_ovs_dpdk_install/</guid>
-    <description><![CDATA[构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ovs-Dpdk on 咸蛋超人</title>
+    <link>/tags/ovs-dpdk/</link>
+    <description>Recent content in Ovs-Dpdk on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Apr 2023 14:25:35 +0800</lastBuildDate>
+    <atom:link href="/tags/ovs-dpdk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ovs-dpdk系列配置实验-—1. 安装</title>
+      <link>/posts/org_22_ovs_dpdk_install/</link>
+      <pubDate>Mon, 03 Apr 2023 13:25:00 +0800</pubDate>
+      <guid>/posts/org_22_ovs_dpdk_install/</guid>
+      <description>&lt;h2 id=&#34;构建要求&#34;&gt;构建要求&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;dpdk 22.11.1&lt;/li&gt;&#xA;&lt;li&gt;支持dpdk的网卡&lt;/li&gt;&#xA;&lt;li&gt;合适的内核&lt;/li&gt;&#xA;&lt;li&gt;ovs下载:&lt;a href=&#34;http://www.openvswitch.org//download/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;http://www.openvswitch.org//download/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;dpdk下载:&lt;a href=&#34;http://core.dpdk.org/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;http://core.dpdk.org/download/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;ovs版本对应:&lt;a href=&#34;https://docs.openvswitch.org/en/latest/faq/releases/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://docs.openvswitch.org/en/latest/faq/releases/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;dpdk安装:&lt;a href=&#34;https://docs.openvswitch.org/en/latest/intro/install/dpdk/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://docs.openvswitch.org/en/latest/intro/install/dpdk/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;我的成功的版本对应: dpdk22.11.1+OVS3.1.1&lt;/li&gt;&#xA;&lt;li&gt;如果版本不对应,安装ovs时会出现各种变量未声明什么的错误.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;dpdk安装&#34;&gt;DPDK安装&lt;/h2&gt;&#xA;&lt;p&gt;安装过程参考自&lt;a href=&#34;https://docs.openvswitch.org/en/latest/intro/install/dpdk/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;这里&lt;/a&gt;,有关于构建软件meson的安装补充&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

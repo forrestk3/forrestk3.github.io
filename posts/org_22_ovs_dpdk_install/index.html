@@ -5,15 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">ovs-dpdk系列配置实验-—1. 安装 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="ovs-dpdk系列配置实验-—1. 安装" />
-<meta property="og:description" content="构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/org_22_ovs_dpdk_install/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-04-03T13:25:00+08:00" />
-<meta property="article:modified_time" content="2023-04-24T14:25:35+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ovs-dpdk系列配置实验-—1. 安装"/>
-<meta name="twitter:description" content="构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:"/>
+    <title class="pjax-title">ovs-dpdk系列配置实验-—1. 安装 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_22_ovs_dpdk_install/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="ovs-dpdk系列配置实验-—1. 安装">
+  <meta property="og:description" content="构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:http://core.dpdk.org/download/ ovs版本对应:https://docs.openvswitch.org/en/latest/faq/releases/ dpdk安装:https://docs.openvswitch.org/en/latest/intro/install/dpdk/ 我的成功的版本对应: dpdk22.11.1&#43;OVS3.1.1 如果版本不对应,安装ovs时会出现各种变量未声明什么的错误. DPDK安装 安装过程参考自这里,有关于构建软件meson的安装补充">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-04-03T13:25:00+08:00">
+    <meta property="article:modified_time" content="2023-04-24T14:25:35+08:00">
+    <meta property="article:tag" content="Ovs-Dpdk">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ovs-dpdk系列配置实验-—1. 安装">
+  <meta name="twitter:description" content="构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:http://core.dpdk.org/download/ ovs版本对应:https://docs.openvswitch.org/en/latest/faq/releases/ dpdk安装:https://docs.openvswitch.org/en/latest/intro/install/dpdk/ 我的成功的版本对应: dpdk22.11.1&#43;OVS3.1.1 如果版本不对应,安装ovs时会出现各种变量未声明什么的错误. DPDK安装 安装过程参考自这里,有关于构建软件meson的安装补充">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -231,7 +236,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pkg-config --modversion libdpdk
 </span></span></code></pre></td></tr></table>
 </div>
-</div><figure><img src="/ox-hugo/pCst0o.png"/>
+</div><figure><img src="/ox-hugo/pCst0o.png">
 </figure>
 
 <h2 id="ovs安装">OVS安装</h2>
@@ -343,7 +348,7 @@
 </div>
 </div><p>把这个脚本放到.sh文件里,文件放到ovs解压后的文件下,再赋运行权限,运行就行</p>
 <p>如果输出信息有如下,代表成功了</p>
-<figure><img src="/ox-hugo/ff8NV7.png"/>
+<figure><img src="/ox-hugo/ff8NV7.png">
 </figure>
 
 <p>即 mn &ndash;test pingall 的输出结果是通的代表安装成功</p>
@@ -428,7 +433,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>以上命令输出应该是有结果就算成功, 截图如下:</p>
-<figure><img src="/ox-hugo/84j8Kw.png"/>
+<figure><img src="/ox-hugo/84j8Kw.png">
 </figure>
 
 <p>挂载大内存:</p>
@@ -441,7 +446,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>挂载完好像没有提示信息,如下:</p>
-<figure><img src="/ox-hugo/BZ11hB.png"/>
+<figure><img src="/ox-hugo/BZ11hB.png">
 </figure>
 
 <p>在DPDK中，使用大页内存可以提高包处理的性能和吞吐量，减少CPU和内存的开销。</p>
@@ -473,7 +478,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dmesg <span class="p">|</span> grep -e DMAR -e IOMMU
 </span></span></code></pre></td></tr></table>
 </div>
-</div><figure><img src="/ox-hugo/UNyTJe.png"/>
+</div><figure><img src="/ox-hugo/UNyTJe.png">
 </figure>
 
 <p>有DMAR的相关信息,我的应该是支持VT-d的.(最后一行), 如果不支持,就啥都不输出</p>
@@ -498,7 +503,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/default/grub
 </span></span></code></pre></td></tr></table>
 </div>
-</div><figure><img src="/ox-hugo/75Rkyb.png"/>
+</div><figure><img src="/ox-hugo/75Rkyb.png">
 </figure>
 
 <p>往文件里的GRUB_CMDLINE_LINUX_DEFAULT行添加 &lsquo;intel_iommu=on iommu=pt&rsquo; 有多个使用空格隔开</p>
@@ -511,11 +516,11 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo update-grub
 </span></span></code></pre></td></tr></table>
 </div>
-</div><figure><img src="/ox-hugo/J7DRlb.png"/>
+</div><figure><img src="/ox-hugo/J7DRlb.png">
 </figure>
 
 <p>完事之后重启系统, 再输入命令看看有没有输出:</p>
-<figure><img src="/ox-hugo/BuB6zp.png"/>
+<figure><img src="/ox-hugo/BuB6zp.png">
 </figure>
 
 <p>有了,希望开启成功</p>
@@ -537,11 +542,11 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>上面命令中, dpdk-devbind &ndash;status这一行是用来看驱动状态的,会有Network devices using DPDK-compatible driver 或 Network devices using kernel driver. 没绑定时结果如下:</p>
-<figure><img src="/ox-hugo/qdWa5e.png"/>
+<figure><img src="/ox-hugo/qdWa5e.png">
 </figure>
 
 <p>绑定完结果如下:</p>
-<figure><img src="/ox-hugo/6hF9rf.png"/>
+<figure><img src="/ox-hugo/6hF9rf.png">
 </figure>
 
 <p>如果绑定没成功, 就不会没出现DPDK-compatible driver的设备, 而且绑定哪个设备电脑就找不到哪个设备了, 需要重启(别问我怎么知道的)</p>
@@ -567,7 +572,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>dmesg信息:</p>
-<figure><img src="/ox-hugo/FOZ6jr.png"/>
+<figure><img src="/ox-hugo/FOZ6jr.png">
 </figure>
 
 <p>最后面那个-22那个应该就是我的错误,看不懂.</p>
@@ -591,7 +596,7 @@
 </div><p>如果出现 &lsquo;ovs-ctl command not found&rsquo;类似的错误, 则说明scripts的路径没配置对, 检查安装时scripts的path, 一般就是这个, 注意检查空格什么的, 或者在删除脚本里的路径核对一下. db.sock路径也要检查与安装时的是否相同,否则也会出错.</p>
 <p>命令都成功了,不知道为什么最后验证的时候是false&hellip;难受啊.</p>
 <p>经过几次调试成功开启了dpdk, 截图如下:</p>
-<figure><img src="/ox-hugo/MNBO3f.png"/>
+<figure><img src="/ox-hugo/MNBO3f.png">
 </figure>
 
 <p>之前是false, 因为安装时我就在脚本里写了要启动它, 没有配上dpdk的信息, 后来配置dpdk信息时已经启动过了, 所以查看的时候就老是false. 将ovs-vswitchd关闭重启一下</p>
@@ -651,7 +656,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果输出如下, 则表示安装成功:</p>
-<figure><img src="/ox-hugo/JzJrFe.png"/>
+<figure><img src="/ox-hugo/JzJrFe.png">
 </figure>
 
 <p>添加dpdk网桥并向网桥中添加dpdk接口, 命令如下:</p>
@@ -668,7 +673,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>出错如下:</p>
-<figure><img src="/ox-hugo/AE1hLP.png"/>
+<figure><img src="/ox-hugo/AE1hLP.png">
 </figure>
 
 <p>目前尝试解决方法:</p>
@@ -701,7 +706,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ovs-dpdk/">ovs-dpdk</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ovs-dpdk/">Ovs-Dpdk</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
@@ -714,7 +719,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

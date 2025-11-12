@@ -1,36 +1,40 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>实验 - Category - 咸蛋超人</title>
-        <link>/categories/%E5%AE%9E%E9%AA%8C/</link>
-        <description>实验 - Category - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</lastBuildDate><atom:link href="/categories/%E5%AE%9E%E9%AA%8C/" rel="self" type="application/rss+xml" /><item>
-    <title>ovs-dpdk系列配置实验-—1. 安装</title>
-    <link>/posts/org_22_ovs_dpdk_install/</link>
-    <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_22_ovs_dpdk_install/</guid>
-    <description><![CDATA[构建要求 dpdk 22.11.1 支持dpdk的网卡 合适的内核 ovs下载:http://www.openvswitch.org//download/ dpdk下载:]]></description>
-</item><item>
-    <title>openssl 安装与第一个demo</title>
-    <link>/posts/org_20_openssl1/</link>
-    <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_20_openssl1/</guid>
-    <description><![CDATA[openssl的安装 在使用c语言库调用openssl的时候要先安装,因为安装的时候才会将库放到系统中供程序调用. 下载:https://git]]></description>
-</item><item>
-    <title>OVS添加自定义action</title>
-    <link>/posts/org_11_ovs_add_action/</link>
-    <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_11_ovs_add_action/</guid>
-    <description><![CDATA[版本及环境 ovs 2.13.7 ubuntu 18.04 与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到 看这篇需要有一定的OVS基础，基本概念必须要了解。 基本概念 这里讲]]></description>
-</item><item>
-    <title>mininet , ovs , ryu 分别进行源码安装</title>
-    <link>/posts/05_ovs_install/</link>
-    <pubDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/05_ovs_install/</guid>
-    <description><![CDATA[OVS安装 ovs与linux内核版本对应 OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>实验 on 咸蛋超人</title>
+    <link>/categories/%E5%AE%9E%E9%AA%8C/</link>
+    <description>Recent content in 实验 on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Apr 2023 14:25:35 +0800</lastBuildDate>
+    <atom:link href="/categories/%E5%AE%9E%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ovs-dpdk系列配置实验-—1. 安装</title>
+      <link>/posts/org_22_ovs_dpdk_install/</link>
+      <pubDate>Mon, 03 Apr 2023 13:25:00 +0800</pubDate>
+      <guid>/posts/org_22_ovs_dpdk_install/</guid>
+      <description>&lt;h2 id=&#34;构建要求&#34;&gt;构建要求&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;dpdk 22.11.1&lt;/li&gt;&#xA;&lt;li&gt;支持dpdk的网卡&lt;/li&gt;&#xA;&lt;li&gt;合适的内核&lt;/li&gt;&#xA;&lt;li&gt;ovs下载:&lt;a href=&#34;http://www.openvswitch.org//download/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;http://www.openvswitch.org//download/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;dpdk下载:&lt;a href=&#34;http://core.dpdk.org/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;http://core.dpdk.org/download/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;ovs版本对应:&lt;a href=&#34;https://docs.openvswitch.org/en/latest/faq/releases/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://docs.openvswitch.org/en/latest/faq/releases/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;dpdk安装:&lt;a href=&#34;https://docs.openvswitch.org/en/latest/intro/install/dpdk/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://docs.openvswitch.org/en/latest/intro/install/dpdk/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;我的成功的版本对应: dpdk22.11.1+OVS3.1.1&lt;/li&gt;&#xA;&lt;li&gt;如果版本不对应,安装ovs时会出现各种变量未声明什么的错误.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;dpdk安装&#34;&gt;DPDK安装&lt;/h2&gt;&#xA;&lt;p&gt;安装过程参考自&lt;a href=&#34;https://docs.openvswitch.org/en/latest/intro/install/dpdk/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;这里&lt;/a&gt;,有关于构建软件meson的安装补充&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>openssl 安装与第一个demo</title>
+      <link>/posts/org_20_openssl1/</link>
+      <pubDate>Thu, 09 Feb 2023 12:35:00 +0800</pubDate>
+      <guid>/posts/org_20_openssl1/</guid>
+      <description>&lt;h2 id=&#34;openssl的安装&#34;&gt;openssl的安装&lt;/h2&gt;&#xA;&lt;p&gt;在使用c语言库调用openssl的时候要先安装,因为安装的时候才会将库放到系统中供程序调用.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;下载:&lt;a href=&#34;https://github.com/openssl/openssl&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://github.com/openssl/openssl&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;安装:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ./Configure&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make install &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;这一步需要管理员权限&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;安装完成后所在位置:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OVS添加自定义action</title>
+      <link>/posts/org_11_ovs_add_action/</link>
+      <pubDate>Mon, 19 Sep 2022 21:27:00 +0800</pubDate>
+      <guid>/posts/org_11_ovs_add_action/</guid>
+      <description>&lt;h2 id=&#34;版本及环境&#34;&gt;版本及环境&lt;/h2&gt;&#xA;&lt;p&gt;ovs 2.13.7&lt;/p&gt;&#xA;&lt;p&gt;ubuntu 18.04&lt;/p&gt;&#xA;&lt;p&gt;与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到&lt;/p&gt;&#xA;&lt;p&gt;看这篇需要有一定的OVS基础，基本概念必须要了解。&lt;/p&gt;&#xA;&lt;h2 id=&#34;基本概念&#34;&gt;基本概念&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;这里讲的action并不是openflow action, 而是数据平面的执行action&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>mininet , ovs , ryu 分别进行源码安装</title>
+      <link>/posts/05_ovs_install/</link>
+      <pubDate>Sun, 28 Aug 2022 22:01:00 +0800</pubDate>
+      <guid>/posts/05_ovs_install/</guid>
+      <description>&lt;h2 id=&#34;ovs安装&#34;&gt;OVS安装&lt;/h2&gt;&#xA;&lt;h3 id=&#34;ovs与linux内核版本对应&#34;&gt;ovs与linux内核版本对应&lt;/h3&gt;&#xA;&lt;p&gt;OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。&#xA;&lt;a href=&#34;https://docs.openvswitch.org/en/latest/faq/releases/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://docs.openvswitch.org/en/latest/faq/releases/&lt;/a&gt;&#xA;linux 内核版本查看&lt;code&gt;uname -r&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;安装过程&#34;&gt;安装过程&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;这里要注意，如果下载的是官网的压缩文件，则不用./boot.sh直接从./configure开始即可， 如果是在github上下载的，则需要./boot.sh再configure&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

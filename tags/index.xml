@@ -1,78 +1,110 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Tags - Tag - 咸蛋超人</title>
-        <link>/tags/</link>
-        <description>Tags - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>论文阅读</title>
-    <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
-    <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>论文写作</title>
-    <link>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</link>
-    <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>数学</title>
-    <link>/tags/%E6%95%B0%E5%AD%A6/</link>
-    <pubDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/%E6%95%B0%E5%AD%A6/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>ovs-dpdk</title>
-    <link>/tags/ovs-dpdk/</link>
-    <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/ovs-dpdk/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>dactyl</title>
-    <link>/tags/dactyl/</link>
-    <pubDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/dactyl/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>openssl</title>
-    <link>/tags/openssl/</link>
-    <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/openssl/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>ovs</title>
-    <link>/tags/ovs/</link>
-    <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/ovs/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>idea</title>
-    <link>/tags/idea/</link>
-    <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/idea/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>git</title>
-    <link>/tags/git/</link>
-    <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/git/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>博客</title>
-    <link>/tags/%E5%8D%9A%E5%AE%A2/</link>
-    <pubDate>Thu, 04 Aug 2022 20:29:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/%E5%8D%9A%E5%AE%A2/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 咸蛋超人</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 12 Nov 2025 15:57:33 -0400</lastBuildDate>
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs</title>
+      <link>/tags/emacs/</link>
+      <pubDate>Wed, 12 Nov 2025 15:27:00 -0400</pubDate>
+      <guid>/tags/emacs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>论文阅读</title>
+      <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sat, 22 Jul 2023 21:13:00 +0800</pubDate>
+      <guid>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>论文写作</title>
+      <link>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</link>
+      <pubDate>Thu, 06 Jul 2023 15:11:00 +0800</pubDate>
+      <guid>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>数学</title>
+      <link>/tags/%E6%95%B0%E5%AD%A6/</link>
+      <pubDate>Fri, 16 Jun 2023 13:00:00 +0800</pubDate>
+      <guid>/tags/%E6%95%B0%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ovs-Dpdk</title>
+      <link>/tags/ovs-dpdk/</link>
+      <pubDate>Mon, 03 Apr 2023 13:25:00 +0800</pubDate>
+      <guid>/tags/ovs-dpdk/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dactyl</title>
+      <link>/tags/dactyl/</link>
+      <pubDate>Thu, 23 Feb 2023 18:29:00 +0800</pubDate>
+      <guid>/tags/dactyl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Openssl</title>
+      <link>/tags/openssl/</link>
+      <pubDate>Thu, 09 Feb 2023 12:35:00 +0800</pubDate>
+      <guid>/tags/openssl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ovs</title>
+      <link>/tags/ovs/</link>
+      <pubDate>Mon, 19 Sep 2022 21:27:00 +0800</pubDate>
+      <guid>/tags/ovs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Idea</title>
+      <link>/tags/idea/</link>
+      <pubDate>Tue, 23 Aug 2022 16:09:00 +0800</pubDate>
+      <guid>/tags/idea/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>/tags/git/</link>
+      <pubDate>Mon, 15 Aug 2022 21:01:00 +0800</pubDate>
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>博客</title>
+      <link>/tags/%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 04 Aug 2022 20:29:00 +0800</pubDate>
+      <guid>/tags/%E5%8D%9A%E5%AE%A2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>configuration</title>
+      <link>/tags/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/tags/configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>content</title>
+      <link>/tags/content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/tags/content/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>installation</title>
+      <link>/tags/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/tags/installation/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

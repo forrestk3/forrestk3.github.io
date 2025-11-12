@@ -1,15 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>idea - Tag - 咸蛋超人</title>
-        <link>/tags/idea/</link>
-        <description>idea - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</lastBuildDate><atom:link href="/tags/idea/" rel="self" type="application/rss+xml" /><item>
-    <title>记录在数据平面选择流的过程</title>
-    <link>/hide/org_08_rule_selection/</link>
-    <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/hide/org_08_rule_selection/</guid>
-    <description><![CDATA[选择的流经过所有的交换机 控制器实时构造rule graph 获取所有的ingress rule（入度为0的规则），并依长度降序排序 对每一个ingress rule]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Idea on 咸蛋超人</title>
+    <link>/tags/idea/</link>
+    <description>Recent content in Idea on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 31 Aug 2022 12:56:48 +0800</lastBuildDate>
+    <atom:link href="/tags/idea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录在数据平面选择流的过程</title>
+      <link>/hide/org_08_rule_selection/</link>
+      <pubDate>Tue, 23 Aug 2022 16:09:00 +0800</pubDate>
+      <guid>/hide/org_08_rule_selection/</guid>
+      <description>&lt;h2 id=&#34;选择的流经过所有的交换机&#34;&gt;选择的流经过所有的交换机&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;控制器实时构造rule graph&lt;/li&gt;&#xA;&lt;li&gt;获取所有的ingress rule（入度为0的规则），并依长度降序排序&lt;/li&gt;&#xA;&lt;li&gt;对每一个ingress rule \(r_0\): 若该path的节点未在节点集\(\mathbb{S}\)中：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;将$r_0$所属的rule path所经过的节点加入$\mathbb{S}$中；&lt;/li&gt;&#xA;&lt;li&gt;将 \(r_0\) 所属的rule path放到规则集$\mathbb{R}$中。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;若节点集的节点数等于规则图中的节点数（这表明每一个交换机都有经过其的rule），则结束.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;span class=&#34;underline&#34;&gt;只针对交换机的流规则选择办法中，当攻击者对某个流进行恶意交付时，无法被检测。&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

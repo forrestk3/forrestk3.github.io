@@ -5,15 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN) - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)" />
-<meta property="og:description" content="Niyaz Q , Sun W , Javaid A Y . A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)[J]. Security &amp; Safety, 2016, 4(12). 没有看的价值，跟深度学习完全扯不上关系，被标题和页码骗了。。 DDoS Detection System的实现 分为三" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/14_dl_ddos_sdn/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-08-27T18:32:36+08:00" />
-<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)"/>
-<meta name="twitter:description" content="Niyaz Q , Sun W , Javaid A Y . A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)[J]. Security &amp; Safety, 2016, 4(12). 没有看的价值，跟深度学习完全扯不上关系，被标题和页码骗了。。 DDoS Detection System的实现 分为三"/>
+    <title class="pjax-title">A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN) - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/14_dl_ddos_sdn/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)">
+  <meta property="og:description" content="Niyaz Q , Sun W , Javaid A Y . A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)[J]. Security &amp; Safety, 2016, 4(12).
+没有看的价值，跟深度学习完全扯不上关系，被标题和页码骗了。。
+DDoS Detection System的实现 分为三个部分：信息收集，特征提取，流量收集，结构图如下： ##信息收集方法命名为TCFI，具体算法流程如Algorithm1: 意思是：抽取所有的包头放到packets_list里，将新产生的流存入flow_list里。 被抽取的特征有如表1 ##特征提取和流量分类 特征提取设置时间间隔进行，特征提取模块从TCFI中获得统计信息，并计算特征，按流分类，TCFI的特征被提取后重设特征集。 可抽取的特征总结如下： TCP： UDP： ICMP： 对9-12,43-46,63-67计算字节数和每个流包数的中位数，对8,14,16,18,20,42,48,50,54,62,68计算熵。 算法部分就没有了，也没讲怎么分类。 #实验部分 从公网中抓正常流量，利用hping3构造异常流量，在构造的SDN中进行实验，计算：Accuracy,Precision,RecallF值，ROC 本文：主要了解了一些可用于特征提取的特征集，还有一个用于攻模拟攻击的工具：hping3">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-08-27T18:32:36+08:00">
+    <meta property="article:modified_time" content="2022-08-22T18:32:36+08:00">
+    <meta property="article:tag" content="论文阅读">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)">
+  <meta name="twitter:description" content="Niyaz Q , Sun W , Javaid A Y . A Deep Learning Based DDoS Detection System in Software-Defined Networking (SDN)[J]. Security &amp; Safety, 2016, 4(12).
+没有看的价值，跟深度学习完全扯不上关系，被标题和页码骗了。。
+DDoS Detection System的实现 分为三个部分：信息收集，特征提取，流量收集，结构图如下： ##信息收集方法命名为TCFI，具体算法流程如Algorithm1: 意思是：抽取所有的包头放到packets_list里，将新产生的流存入flow_list里。 被抽取的特征有如表1 ##特征提取和流量分类 特征提取设置时间间隔进行，特征提取模块从TCFI中获得统计信息，并计算特征，按流分类，TCFI的特征被提取后重设特征集。 可抽取的特征总结如下： TCP： UDP： ICMP： 对9-12,43-46,63-67计算字节数和每个流包数的中位数，对8,14,16,18,20,42,48,50,54,62,68计算熵。 算法部分就没有了，也没讲怎么分类。 #实验部分 从公网中抓正常流量，利用hping3构造异常流量，在构造的SDN中进行实验，计算：Accuracy,Precision,RecallF值，ROC 本文：主要了解了一些可用于特征提取的特征集，还有一个用于攻模拟攻击的工具：hping3">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -228,7 +237,7 @@ ICMP：
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

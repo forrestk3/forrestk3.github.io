@@ -1,43 +1,47 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Categories - Category - 咸蛋超人</title>
-        <link>/categories/</link>
-        <description>Categories - Category - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</lastBuildDate><atom:link href="/categories/" rel="self" type="application/rss+xml" /><item>
-    <title>科研学习</title>
-    <link>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</link>
-    <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>额外学习</title>
-    <link>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</link>
-    <pubDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>实验</title>
-    <link>/categories/%E5%AE%9E%E9%AA%8C/</link>
-    <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/categories/%E5%AE%9E%E9%AA%8C/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>DIY</title>
-    <link>/categories/diy/</link>
-    <pubDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/categories/diy/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Documentation</title>
-    <link>/categories/documentation/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/categories/documentation/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 咸蛋超人</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 12 Nov 2025 15:57:33 -0400</lastBuildDate>
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>额外学习</title>
+      <link>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Wed, 12 Nov 2025 15:27:00 -0400</pubDate>
+      <guid>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>科研学习</title>
+      <link>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sat, 22 Jul 2023 21:13:00 +0800</pubDate>
+      <guid>/categories/%E7%A7%91%E7%A0%94%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>实验</title>
+      <link>/categories/%E5%AE%9E%E9%AA%8C/</link>
+      <pubDate>Mon, 03 Apr 2023 13:25:00 +0800</pubDate>
+      <guid>/categories/%E5%AE%9E%E9%AA%8C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DIY</title>
+      <link>/categories/diy/</link>
+      <pubDate>Thu, 23 Feb 2023 18:29:00 +0800</pubDate>
+      <guid>/categories/diy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>/categories/documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/categories/documentation/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

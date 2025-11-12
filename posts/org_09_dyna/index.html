@@ -5,15 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">Dynamic Packet Forwarding Verification in SDN - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Dynamic Packet Forwarding Verification in SDN" />
-<meta property="og:description" content="affliation and publication author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee publication: IEEE Transactions on Dependable and secure computing, 2019 abs 传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/org_09_dyna/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-09-16T22:27:00+08:00" />
-<meta property="article:modified_time" content="2022-09-21T12:15:02+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Dynamic Packet Forwarding Verification in SDN"/>
-<meta name="twitter:description" content="affliation and publication author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee publication: IEEE Transactions on Dependable and secure computing, 2019 abs 传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来"/>
+    <title class="pjax-title">Dynamic Packet Forwarding Verification in SDN - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_09_dyna/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="Dynamic Packet Forwarding Verification in SDN">
+  <meta property="og:description" content="affliation and publication
+author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee
+publication: IEEE Transactions on Dependable and secure computing, 2019
+abs
+传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来判定包是否被修改, 交付路径是否正常; 并对该方法加以改进">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-09-16T22:27:00+08:00">
+    <meta property="article:modified_time" content="2022-09-21T12:15:02+08:00">
+    <meta property="article:tag" content="论文阅读">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dynamic Packet Forwarding Verification in SDN">
+  <meta name="twitter:description" content="affliation and publication
+author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee
+publication: IEEE Transactions on Dependable and secure computing, 2019
+abs
+传统方法无法应用到SDN中的原因: SDN 中的交换机功能太少. 作者提出: 使用控制器收集包和流的统计来判定包是否被修改, 交付路径是否正常; 并对该方法加以改进">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -218,7 +231,7 @@
 <li><em>hybrid attacks.</em> 丢一些包再复制或注入同等数量的包</li>
 </ul>
 <p>表1 是对当前研究方法对这些问题的解决情况:</p>
-<figure><img src="/ox-hugo/18868vhE.png"/>
+<figure><img src="/ox-hugo/18868vhE.png">
 </figure>
 
 <p>本段剩余内容: 分析已存在方法且无法用于SDN; 本文要解决的问题及假设.</p>
@@ -231,15 +244,15 @@
 <li>中间节点何时报告统计信息</li>
 </ol>
 <p>文中使用的标记见表2</p>
-<figure><img src="/ox-hugo/18868jKd.png"/>
+<figure><img src="/ox-hugo/18868jKd.png">
 </figure>
 
 <p>PFV的整体overview见图2:</p>
-<figure><img src="/ox-hugo/188688rK.png"/>
+<figure><img src="/ox-hugo/188688rK.png">
 </figure>
 
 <p>PFV 算法见算法1</p>
-<figure><img src="/ox-hugo/18868J2Q.png"/>
+<figure><img src="/ox-hugo/18868J2Q.png">
 </figure>
 
 <p>\(N\)-PFV作为NOS的一个模块运行在控制器中, 算法 1 中1-12行为NFV验证包的完整性.</p>
@@ -256,23 +269,23 @@
 <h2 id="enhanced-pfv-dpfv">Enhanced PFV: D<sub>yna</sub>PFV</h2>
 <p>DynaPFV 通过随机抽取flow中的包并生成packetIn来降低检测代价。当收到packetIn包时以概率\(\lambda\)确定下一个包是继续检测完整性还是下发流表.
 DynaPFV过程见算法2， 若收到packetIn包或所保存的hash中有过期的，则以一定的概率进行包完整性检查。若检查，下发检查流表（会触发packetIn）否则下发随机过期时间的流表（流表过期会触发行为检查）。</p>
-<figure><img src="/ox-hugo/6438sVT.png"/>
+<figure><img src="/ox-hugo/6438sVT.png">
 </figure>
 
 <h3 id="dynamic-packet-verific">Dynamic Packet Verific</h3>
 <p>ation
 具体算法过程可见算法3.</p>
-<figure><img src="/ox-hugo/64385fZ.png"/>
+<figure><img src="/ox-hugo/64385fZ.png">
 </figure>
 
 <p>当从ingress中收到某个流\(f_i\)的PacketIn包时, 就为它计算MAC并将其存入hash表\(\mathcal{P}_i\)中. 当从egress中收到时就计算MAC并从对应的hash表中移除并增加验证成功包的计数. 每次移除都降低抽样概率\(\lambda = \lambda * \alpha\), 若有MAC过期则增加抽样概率\(\lambda = \frac{\lambda + 1}{2}\). 若匹配包数与总包数之比小于\(\theta\)则认为异常从而定位异常交换机. 此外初始值设定\(\lambda = 1, \alpha = 0.99\).
 最后用图3来说明对上述过程举例.</p>
-<figure><img src="/ox-hugo/6438Gqf.png"/>
+<figure><img src="/ox-hugo/6438Gqf.png">
 </figure>
 
 <h3 id="dynamic-behavior-verification">Dynamic Behavior Verification</h3>
 <p>下发流表的过期时间是随机的,流表过期会触发行为检查,因此检查的间隔也是随机的.检查过程如算法4所示:</p>
-<figure><img src="/ox-hugo/6438T0l.png"/>
+<figure><img src="/ox-hugo/6438T0l.png">
 </figure>
 
 <p>对path上的交换机处理的包进行统计, 并都与ingress交换机的统计结果求比值, 中间交换机直接统计, egress交换机则为统计结果加检查的包数\(S_i[0] + sizeof(\mathcal{P}_i + \sigma _i)\). 比值大于\(\theta\)但小于1则提高抽样概率\(\lambda\), 否则减小\(\lambda\). 最后清空\(\delta_i\)和hash表, 并更新\(\sigma_i\)</p>
@@ -307,7 +320,7 @@ p_0(t+1) =\lambda p_0(t) + \frac{1-\lambda}{n} \sum_{k=1}^np_0(t-k) \tag{4}
 \lim_{t\rightarrow \infty} p_0(t) = \frac{2}{(1+n)(1-\lambda)+2}
 \end{equation}</p>
 <p>图4展示了在不同的\(\lambda\)时每个包的检测概率</p>
-<figure><img src="/ox-hugo/6438g-r.png"/>
+<figure><img src="/ox-hugo/6438g-r.png">
 </figure>
 
 <p>对\(\lambda\)的选择 不能太大,否则有太多的PacketIn包, 也不能太小,因为每个包的检测概率\(\frac{2}{(1+n)(1-\lambda)+2}\) 不能低于0.2. 因此在本文的算法中使用动态的\(\lambda\)选择法, 让其增长时不会超过1. 本文选择的初始值\(\lambda = 1, \alpha = 0.99\)</p>
@@ -336,34 +349,34 @@ p_0(t+1) =\lambda p_0(t) + \frac{1-\lambda}{n} \sum_{k=1}^np_0(t-k) \tag{4}
 <h3 id="mininet-experiment-results">Mininet Experiment Results</h3>
 <p>每个主机生成250个流并每秒共生成1000个包
 <em>Experiment A1: Detection Accuracy</em> 见图6a:不同的触发概率, 不同的攻击, 不同的篡改间隔, 不同的篡改持续时间</p>
-<figure><img src="/ox-hugo/28563pkD.png"/>
+<figure><img src="/ox-hugo/28563pkD.png">
 </figure>
 
 <p>图6a是检测性能对不同\(\lambda\)的检测效果, 动态的效果更好.</p>
 <p><em>Experiment A.2: Selection of \(\tau\)</em>: 实验结果如下:</p>
-<figure><img src="/ox-hugo/285632uJ.png"/>
+<figure><img src="/ox-hugo/285632uJ.png">
 </figure>
 
 <p>结果表明可以在6秒内检测出大多数攻击.</p>
 <p><em>Experiment A.3: Detection Delay</em>: 检测不同\(\lambda\)时的检测时延和流数与检测时延的关系, 结果见图8</p>
-<figure><img src="/ox-hugo/28563D5P.png"/>
+<figure><img src="/ox-hugo/28563D5P.png">
 </figure>
 
 <p><em>Experiment A.4: Overhead</em>: 比较不同\(\lambda\)时packetIn的触发概率,导致的延迟和吞吐量的变化, 比较不同path长度时包的将会延迟, 检测结果如图9. 再没通信代价, 结果见图10</p>
-<figure><img src="/ox-hugo/28563QDW.png"/>
+<figure><img src="/ox-hugo/28563QDW.png">
 </figure>
 
-<figure><img src="/ox-hugo/28563dNc.png"/>
+<figure><img src="/ox-hugo/28563dNc.png">
 </figure>
 
 <h3 id="hardware-testbed-experiment-results">Hardware Testbed Experiment Results</h3>
 <p>使用4个EdgeCore AS4610-54T交换机, 使用 <a href="http://www.caida.org/data/passive/trace_stats/chicago-B/2015/?monitor=2%200150219-130000.UTC" target="_blank" rel="noopener noreffer">CAIDE数据集</a>.
 <em>Experiment B.1: Detection Delays</em>: 不同的包率和不同攻击的检测延迟,CDF见图11:</p>
-<figure><img src="/ox-hugo/28563qXi.png"/>
+<figure><img src="/ox-hugo/28563qXi.png">
 </figure>
 
 <p><em>Experiment B.2: Overhead</em>: 对包传输时迟的影响和吞吐量随\(\lambda\)的变化见图12:</p>
-<figure><img src="/ox-hugo/285633ho.png"/>
+<figure><img src="/ox-hugo/285633ho.png">
 </figure>
 
 </div>
@@ -402,7 +415,7 @@ p_0(t+1) =\lambda p_0(t) + \frac{1-\lambda}{n} \sum_{k=1}^np_0(t-k) \tag{4}
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

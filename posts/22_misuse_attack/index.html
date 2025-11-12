@@ -5,15 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">An Overview of Misuse/Attack Cases in SDN - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="An Overview of Misuse/Attack Cases in SDN" />
-<meta property="og:description" content="An Overview of Misuse/Attack Cases in SDN 标签（空格分隔）： security A-01-A:大量packet_in会导致SDN controller不可预期状态，例如，恶意主机生成大量p" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/22_misuse_attack/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-09-04T18:32:36+08:00" />
-<meta property="article:modified_time" content="2022-08-22T18:32:36+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="An Overview of Misuse/Attack Cases in SDN"/>
-<meta name="twitter:description" content="An Overview of Misuse/Attack Cases in SDN 标签（空格分隔）： security A-01-A:大量packet_in会导致SDN controller不可预期状态，例如，恶意主机生成大量p"/>
+    <title class="pjax-title">An Overview of Misuse/Attack Cases in SDN - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/22_misuse_attack/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="An Overview of Misuse/Attack Cases in SDN">
+  <meta property="og:description" content="An Overview of Misuse/Attack Cases in SDN 标签（空格分隔）： security
+A-01-A:大量packet_in会导致SDN controller不可预期状态，例如，恶意主机生成大量packet_in使用controller资源消耗完。 A-02-M：应用的链式执行会导致：控制信息丢失（恶意应用may加入服务链，并在其他应用等到控制信息前丢弃它）；无限循环（恶意应用会进行无限循环从而阻止链运行） A-03-MA：controller的内部存为所有的application共享，因此不严格的授权会导致内部数据库的拓扑更改。 A-04-MA 控制信息被操控会导致：1.路由表洪泛：一直发假路由表；2.switch标识字段被造假；3.畸形控制信息控制平面发生故障 A-05-M： SDN随机发出控制信息导致：1.流表修改；2.流表清除。 A-06-M：SDN应用可能会通过滥用poorly designed API来影响其他的API应用。如：1.流表修改；2.流表清除。 A-07-MA：SDN应用会排他地使用系统资源从而影响Controller或其他应用的性能如：1.内存耗尽；2.CPU耗尽。 A-08-MA：系统状态变量被修改可能会导致出错，如恶意修改Controller系统时间导致其与其他switches断连。 A-09-A：SDN应用可能会执行系统退出命令来终结Controller实例。 A-10-A：敌人可能通过Controller的 主机跟踪服务或链接发现来修改网络拓扑。1.Host Location Hijacking:通过精心制作的包来随机劫持其他主机的位置。2.Link Fabrication:通过伪造或中继LLDP包给控制器来控制网络拓扑。 B-01-A：敌人可以监听控制信道来偷敏感信息，如：通过窃取控制信道的输出控制信息获得网络拓扑。 B-02-A：敌人可以干涉控制信道，如：修改传输中的流规则信息，使网络行为崩坏。 C-01-MA： 大量的流规则会导致数据平面状态被破坏，如：敌人修改流规则信息并往指定switch插入大量规则使流表溢出。 C-02-M： 某些路由模式的特性可能会被不良使用，如：敌人可能会插入手工流表，而这些流表在某些特征路由模式下不能被固件表处理。 C-03-M： 畸形控制信息会破坏数据平面状态。敌人可能会向数据平面注入畸形控制信息来中断控制平面与数据平面的连接。 原文链接">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-09-04T18:32:36+08:00">
+    <meta property="article:modified_time" content="2022-08-22T18:32:36+08:00">
+    <meta property="article:tag" content="论文阅读">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="An Overview of Misuse/Attack Cases in SDN">
+  <meta name="twitter:description" content="An Overview of Misuse/Attack Cases in SDN 标签（空格分隔）： security
+A-01-A:大量packet_in会导致SDN controller不可预期状态，例如，恶意主机生成大量packet_in使用controller资源消耗完。 A-02-M：应用的链式执行会导致：控制信息丢失（恶意应用may加入服务链，并在其他应用等到控制信息前丢弃它）；无限循环（恶意应用会进行无限循环从而阻止链运行） A-03-MA：controller的内部存为所有的application共享，因此不严格的授权会导致内部数据库的拓扑更改。 A-04-MA 控制信息被操控会导致：1.路由表洪泛：一直发假路由表；2.switch标识字段被造假；3.畸形控制信息控制平面发生故障 A-05-M： SDN随机发出控制信息导致：1.流表修改；2.流表清除。 A-06-M：SDN应用可能会通过滥用poorly designed API来影响其他的API应用。如：1.流表修改；2.流表清除。 A-07-MA：SDN应用会排他地使用系统资源从而影响Controller或其他应用的性能如：1.内存耗尽；2.CPU耗尽。 A-08-MA：系统状态变量被修改可能会导致出错，如恶意修改Controller系统时间导致其与其他switches断连。 A-09-A：SDN应用可能会执行系统退出命令来终结Controller实例。 A-10-A：敌人可能通过Controller的 主机跟踪服务或链接发现来修改网络拓扑。1.Host Location Hijacking:通过精心制作的包来随机劫持其他主机的位置。2.Link Fabrication:通过伪造或中继LLDP包给控制器来控制网络拓扑。 B-01-A：敌人可以监听控制信道来偷敏感信息，如：通过窃取控制信道的输出控制信息获得网络拓扑。 B-02-A：敌人可以干涉控制信道，如：修改传输中的流规则信息，使网络行为崩坏。 C-01-MA： 大量的流规则会导致数据平面状态被破坏，如：敌人修改流规则信息并往指定switch插入大量规则使流表溢出。 C-02-M： 某些路由模式的特性可能会被不良使用，如：敌人可能会插入手工流表，而这些流表在某些特征路由模式下不能被固件表处理。 C-03-M： 畸形控制信息会破坏数据平面状态。敌人可能会向数据平面注入畸形控制信息来中断控制平面与数据平面的连接。 原文链接">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -206,7 +213,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

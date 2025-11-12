@@ -5,15 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">Hoeffding&#39;s inequality (霍夫丁不等式讲解) - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Hoeffding&#39;s inequality (霍夫丁不等式讲解)" />
-<meta property="og:description" content="霍夫丁不等式表达 下面的这个式子是我们常用的 Markov inequality 一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\). 这个不等式的证明: 过程中使用了微积分和一些" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/org_12_hoeffding_ineq/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-09-26T23:02:00+08:00" />
-<meta property="article:modified_time" content="2022-09-30T20:07:24+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hoeffding&#39;s inequality (霍夫丁不等式讲解)"/>
-<meta name="twitter:description" content="霍夫丁不等式表达 下面的这个式子是我们常用的 Markov inequality 一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\). 这个不等式的证明: 过程中使用了微积分和一些"/>
+    <title class="pjax-title">Hoeffding&#39;s inequality (霍夫丁不等式讲解) - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_12_hoeffding_ineq/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="Hoeffding&#39;s inequality (霍夫丁不等式讲解)">
+  <meta property="og:description" content="霍夫丁不等式表达 下面的这个式子是我们常用的
+Markov inequality 一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\).
+这个不等式的证明:
+过程中使用了微积分和一些不等式的基础, 不了解了.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-09-26T23:02:00+08:00">
+    <meta property="article:modified_time" content="2022-09-30T20:07:24+08:00">
+    <meta property="article:tag" content="数学">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hoeffding&#39;s inequality (霍夫丁不等式讲解)">
+  <meta name="twitter:description" content="霍夫丁不等式表达 下面的这个式子是我们常用的
+Markov inequality 一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\).
+这个不等式的证明:
+过程中使用了微积分和一些不等式的基础, 不了解了.">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -139,79 +150,79 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="霍夫丁不等式表达">霍夫丁不等式表达</h2>
-<figure><img src="/ox-hugo/xO47Lh.png"/>
+<figure><img src="/ox-hugo/xO47Lh.png">
 </figure>
 
 <p>下面的这个式子是我们常用的</p>
 <h2 id="markov-inequality">Markov inequality</h2>
 <p>一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\).</p>
 <p>这个不等式的证明:</p>
-<figure><img src="/ox-hugo/rCbCCP.png"/>
+<figure><img src="/ox-hugo/rCbCCP.png">
 </figure>
 
 <p>过程中使用了微积分和一些不等式的基础, 不了解了.</p>
 <h2 id="jesen-inequality">Jesen inequality</h2>
 <p>对于突函数而言的一个不等式</p>
 <h2 id="均值不等式">均值不等式</h2>
-<figure><img src="/ox-hugo/d4SAlH.png"/>
+<figure><img src="/ox-hugo/d4SAlH.png">
 </figure>
 
 <p>这里使用的其实是对\((a - b)^2 \ge 0\)的变换, 最终得到\((a+b)^2 \ge 2 \sqrt{ab}\).</p>
 <h2 id="霍夫丁不等式的证明">霍夫丁不等式的证明</h2>
 <p>首先使用\(Y_i = X_i - \mathbb{E}_i\) 来替换原不等式, 得到新的需要证明的式子:
 这里变换后\(Y_i\)的聚会范围变了, 我们设它的聚会范围为: \(a_i \le Y_i \le b_i\)</p>
-<figure><img src="/ox-hugo/upnbOL.png"/>
+<figure><img src="/ox-hugo/upnbOL.png">
 </figure>
 
 <p>这里要对上面方框中的式子使用马尔可夫不等式来放缩,但由于我们并不能保证 \(\sum Y_i \ge 0\), 因此使用e的指数对原式进行变换, 结果如下:</p>
-<figure><img src="/ox-hugo/lu1wLQ.png"/>
+<figure><img src="/ox-hugo/lu1wLQ.png">
 </figure>
 
 <p>这里由于\(Y_i\) 是独立同分布的, 因此可以做变换 \(e^{-t\epsilon} \cdot \mathbb{E}[e^{t \sum Y_i}] = e^{-t \epsilon} \cdot \prod \mathbb{E}[e^{t Y_i}]\)</p>
 <p>根据\(Y_i\)的取值范围, 我们利用\(\alpha\)来修改\(Y_i\)的表达:</p>
-<figure><img src="/ox-hugo/r4jQn6.png"/>
+<figure><img src="/ox-hugo/r4jQn6.png">
 </figure>
 
 <p>再将修改后的表达带入\(e^{tY_i}\) 得:</p>
-<figure><img src="/ox-hugo/fygViB.png"/>
+<figure><img src="/ox-hugo/fygViB.png">
 </figure>
 
 <p>这里使用了杰森不等式进行了缩放</p>
 <p>所以利用杰森不等式和\(\alpha\)的缩放, 我们可以对\(\mathbb{E}[e^{tY_i}]\)进行缩放得下式(记为*):</p>
-<figure><img src="/ox-hugo/uc8fHy.png"/>
+<figure><img src="/ox-hugo/uc8fHy.png">
 </figure>
 
 <p>这里引入两个变量\(\mu, \gamma\)</p>
-<figure><img src="/ox-hugo/xoUp3b.png"/>
+<figure><img src="/ox-hugo/xoUp3b.png">
 </figure>
 
 <p>再将这两个变量带t主(*)式得:</p>
-<figure><img src="/ox-hugo/3fU1tO.png"/>
+<figure><img src="/ox-hugo/3fU1tO.png">
 </figure>
 
 <p>此时再将变换后的(*)式取对数,并记为\(g(u)\)得如下式:</p>
-<figure><img src="/ox-hugo/hotwOP.png"/>
+<figure><img src="/ox-hugo/hotwOP.png">
 </figure>
 
 <p>此时我们想对\(g(u)\)在0处进行泰勒展开, 所以我们对它进行求导再计算其自变量为0时的值, 在其二次导入使用均值不等式进行缩放,计算如下:</p>
-<figure><img src="/ox-hugo/mXQcMB.png"/>
+<figure><img src="/ox-hugo/mXQcMB.png">
 </figure>
 
 <p>此时对\(g(u)\)进行泰勒展开,借助拉格朗日余项得:</p>
-<figure><img src="/ox-hugo/ia9vJd.png"/>
+<figure><img src="/ox-hugo/ia9vJd.png">
 </figure>
 
 <p>这里的缩放利用了上面二次导的缩放.</p>
 <p>我们获得了\(g(u)\)的界, 根据\(g(u)\)的定义以及(*)式, 我们可以得到:</p>
-<figure><img src="/ox-hugo/HNZJnX.png"/>
+<figure><img src="/ox-hugo/HNZJnX.png">
 </figure>
 
 <p>此时再带入最被的式子可以得到\(P(\sum Y_i \ge \epsilon)\)的一个不等式:</p>
-<figure><img src="/ox-hugo/KHyZkh.png"/>
+<figure><img src="/ox-hugo/KHyZkh.png">
 </figure>
 
 <p>上式的右侧是一个关于t的二次函数, 因此对右侧取\(t &gt; 0\)时的最小值可得:</p>
-<figure><img src="/ox-hugo/tXRKzL.png"/>
+<figure><img src="/ox-hugo/tXRKzL.png">
 </figure>
 
 <p>得证.</p>
@@ -219,21 +230,21 @@
 <p>以上参考自: <a href="https://www.bilibili.com/video/BV13X4y1L7em?share_source=copy_web&amp;vd_source=370b4661dbe49ff64b4993e3942f78cb" target="_blank" rel="noopener noreffer">参考链接</a></p>
 <h2 id="将霍夫丁不等式应用在伯努利两点分布的特例">将霍夫丁不等式应用在伯努利两点分布的特例</h2>
 <p>有独立随机变量服从伯努利分布, 即某个变量取1时概率为p, 取0时概率为(1-p), 则它满足的霍夫丁不等式如下:</p>
-<figure><img src="/ox-hugo/mvhfJX.png"/>
+<figure><img src="/ox-hugo/mvhfJX.png">
 </figure>
 
 <p>上式其实表达的是均值依概率收敛于p</p>
-<figure><img src="/ox-hugo/xi7T15.png"/>
+<figure><img src="/ox-hugo/xi7T15.png">
 </figure>
 
 <p>对于不等式中的绝对值展开成两部分</p>
 <p>先看正的部分, 原式展开并带入霍夫丁不等式即得:</p>
-<figure><img src="/ox-hugo/VZj8kg.png"/>
+<figure><img src="/ox-hugo/VZj8kg.png">
 </figure>
 
 <p>再看负的部分:</p>
 <p>令\(Y_i = - X_i\) 并替换原式可得:</p>
-<figure><img src="/ox-hugo/30Xroq.png"/>
+<figure><img src="/ox-hugo/30Xroq.png">
 </figure>
 
 <p>所以将两个式子合在一起就得到了</p>
@@ -241,18 +252,18 @@
 <h2 id="论文中涉及到的">论文中涉及到的</h2>
 <h3 id="shortmac-efficient-data-plane-fault-localization-ndss">ShortMAC: Efficient Data-Plane Fault Localization, NDSS</h3>
 <p>论文中的引理一: 恶意交换机注入一个数据包会被检测到的概率为q, 设一个阈值\(T_{in}\). 若要保证被检测到的包数少于域值\(T_{in}\)的概率不多于\(\delta\), 那么恶意交换机注入的包数不多于:</p>
-<figure><img src="/ox-hugo/TZhnSd.png"/>
+<figure><img src="/ox-hugo/TZhnSd.png">
 </figure>
 
 <p>完整描述如下:</p>
-<figure><img src="/ox-hugo/jcFHim.png"/>
+<figure><img src="/ox-hugo/jcFHim.png">
 </figure>
 
 <p>给定的证明如下:</p>
-<figure><img src="/ox-hugo/aomBUe.png"/>
+<figure><img src="/ox-hugo/aomBUe.png">
 </figure>
 
-<figure><img src="/ox-hugo/gWBUh6.png"/>
+<figure><img src="/ox-hugo/gWBUh6.png">
 </figure>
 
 <p>照原文的说法, FN的概率 \(\mathbb{P}_{fn} = \mathbb{P}(C_{m+1}^{bad} &lt; T_{in})\), 即被检测到的数量未到达阈值.</p>
@@ -305,7 +316,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

@@ -5,15 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">mininet , ovs , ryu 分别进行源码安装 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="mininet , ovs , ryu 分别进行源码安装" />
-<meta property="og:description" content="OVS安装 ovs与linux内核版本对应 OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/05_ovs_install/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-08-28T22:01:00+08:00" />
-<meta property="article:modified_time" content="2022-08-29T00:18:30+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="mininet , ovs , ryu 分别进行源码安装"/>
-<meta name="twitter:description" content="OVS安装 ovs与linux内核版本对应 OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。"/>
+    <title class="pjax-title">mininet , ovs , ryu 分别进行源码安装 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/05_ovs_install/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="mininet , ovs , ryu 分别进行源码安装">
+  <meta property="og:description" content="OVS安装 ovs与linux内核版本对应 OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。 https://docs.openvswitch.org/en/latest/faq/releases/ linux 内核版本查看uname -r
+安装过程 这里要注意，如果下载的是官网的压缩文件，则不用./boot.sh直接从./configure开始即可， 如果是在github上下载的，则需要./boot.sh再configure">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-08-28T22:01:00+08:00">
+    <meta property="article:modified_time" content="2022-08-29T00:18:30+08:00">
+    <meta property="article:tag" content="Ovs">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="mininet , ovs , ryu 分别进行源码安装">
+  <meta name="twitter:description" content="OVS安装 ovs与linux内核版本对应 OVS版本是需要与linux内核版本对应的，否则会导致内核函数与OVS调用的函数不匹配，简称装不上。 https://docs.openvswitch.org/en/latest/faq/releases/ linux 内核版本查看uname -r
+安装过程 这里要注意，如果下载的是官网的压缩文件，则不用./boot.sh直接从./configure开始即可， 如果是在github上下载的，则需要./boot.sh再configure">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -687,7 +694,7 @@ github上的readme里面有相关的安装依赖说明, 直接使用pip安装没
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ovs/">ovs</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ovs/">Ovs</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
@@ -700,7 +707,7 @@ github上的readme里面有相关的安装依赖说明, 直接使用pip安装没
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

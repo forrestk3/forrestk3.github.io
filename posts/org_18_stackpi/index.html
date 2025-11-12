@@ -5,15 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense" />
-<meta property="og:description" content="论文信息 发在JSAC上, 作者: 把与我相关的部分做总结 摘要 本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/org_18_stackpi/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-12-06T13:14:00+08:00" />
-<meta property="article:modified_time" content="2022-12-06T13:37:45+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense"/>
-<meta name="twitter:description" content="论文信息 发在JSAC上, 作者: 把与我相关的部分做总结 摘要 本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成"/>
+    <title class="pjax-title">StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_18_stackpi/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense">
+  <meta property="og:description" content="论文信息 发在JSAC上, 作者: 把与我相关的部分做总结
+摘要 本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成：基于栈的标记以及write-ahead标记。过虑机制中我们推导出一个用Pi标记进行过滤的最佳阈值策略。还提出PiIP过度器可用于检测网络协议欺骗攻击。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-12-06T13:14:00+08:00">
+    <meta property="article:modified_time" content="2022-12-06T13:37:45+08:00">
+    <meta property="article:tag" content="论文阅读">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense">
+  <meta name="twitter:description" content="论文信息 发在JSAC上, 作者: 把与我相关的部分做总结
+摘要 本文提出StackPi, 一种新的数据包标记方案以及一种过滤机制。标记方案由两部分组成：基于栈的标记以及write-ahead标记。过虑机制中我们推导出一个用Pi标记进行过滤的最佳阈值策略。还提出PiIP过度器可用于检测网络协议欺骗攻击。">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -173,7 +180,7 @@
 <p>栈标记在路径长度有限时仍然会有问题，因此本文提出Write-Ahead标记，在此假设每个数据包知道其下一跳的IP， 交换机要做的就是：在计算标记时，使用本IP替代上一跳IP，使用下一跳地址替代本IP。</p>
 <p>当相邻两个路由器一个是Pi-enabled，另一个是legacy路由器时，write-ahead标记可以在计算标记时带上legacy路由器。</p>
 <p>不好的地方：当两个Pi-enabled路由器相邻，第一个路由器在计算标记时已带下了下一个交换机，因此下一个路由器的标记并不需要。因此：在收到数据包时，路由器将最近的标记与自己的标记相比较，若相同，则默认上一跳将本跳的标记已加进去了，因此跳过本路由器的push操作并只push下一跳的标记到栈中。图2为例子。</p>
-<figure><img src="/ox-hugo/BoLH1y.png"/>
+<figure><img src="/ox-hugo/BoLH1y.png">
 </figure>
 
 </div>
@@ -212,7 +219,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

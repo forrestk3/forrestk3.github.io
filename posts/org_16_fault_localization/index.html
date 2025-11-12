@@ -5,15 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">High-Speed Inter-domain Fault Localization - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="High-Speed Inter-domain Fault Localization" />
-<meta property="og:description" content="&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &ldquo;High-Speed Inter-Domain Fault Localization,&rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56. 文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/org_16_fault_localization/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-11-28T21:24:00+08:00" />
-<meta property="article:modified_time" content="2022-11-28T21:59:52+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="High-Speed Inter-domain Fault Localization"/>
-<meta name="twitter:description" content="&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &ldquo;High-Speed Inter-Domain Fault Localization,&rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56. 文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的"/>
+    <title class="pjax-title">High-Speed Inter-domain Fault Localization - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_16_fault_localization/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="High-Speed Inter-domain Fault Localization">
+  <meta property="og:description" content="&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, “High-Speed Inter-Domain Fault Localization,” 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56.
+文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的时候还总给人一种水时长的感觉, 挑与我相关的重点读了一下, 感觉还不错.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-11-28T21:24:00+08:00">
+    <meta property="article:modified_time" content="2022-11-28T21:59:52+08:00">
+    <meta property="article:tag" content="论文阅读">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="High-Speed Inter-domain Fault Localization">
+  <meta name="twitter:description" content="&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, “High-Speed Inter-Domain Fault Localization,” 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56.
+文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的时候还总给人一种水时长的感觉, 挑与我相关的重点读了一下, 感觉还不错.">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -143,7 +150,7 @@
 <h2 id="工作概述">工作概述</h2>
 <p>Faultpints使用 确定性采样来抓捕恶意AS.每个AS都要和源建立一个秘密数据包抽样密钥\(D_{AS_i, S}\), 且规定相应的确认包种类,如DACK. 如图1中所示, 源与目的通信, AS3是恶意的. 当AS抽样包时会存储一个数据包的fingerprint到 Bloom filter中, 这个fingerprint会捕获包的presence 和包的内容. 当包被丢弃那么D则不会发确认包,所以S会为这个数据包发探针, 所有的AS都会响应这个探针, 而源会从探针数据包中获得抽样包的信息.
 源会检查响应包的密钥并对某些AS进行怀疑, 并为每个AS进行怀疑打分, 错误行为的AS的怀疑打分最终会高于其他AS.</p>
-<figure><img src="/ox-hugo/IbGs7H.png"/>
+<figure><img src="/ox-hugo/IbGs7H.png">
 </figure>
 
 <h2 id="其他章节"><span class="org-todo todo TODO">TODO</span> 其他章节</h2>
@@ -154,23 +161,23 @@
 <p>误操作概率:基于不正确响应探针而计算的概率</p>
 <h3 id="corruption-score-computation">Corruption score computation</h3>
 <p>源对比接收到的probe与本地存储bloom filter中的值,若相等则说明\(AS_i\)是诚实的. 若不等, 分两种情况: 若期望接收探针但实际没接收到,则源会去定位哪个数据包丢失了,如图8.源收集所有的正确响应, 并定位到最后一个正确响应的数据包的AS以及第一个响应丢失的AS. 因为响应包是在这两个AS间丢失的, 因此源增加这这条路径上这两个AS间所有AS的崩坏打分.若不期望接收但接收到了响应, 在错误行为概率中讨论.</p>
-<figure><img src="/ox-hugo/UdH5n4.png"/>
+<figure><img src="/ox-hugo/UdH5n4.png">
 </figure>
 
 <h3 id="misbehavior-probability-computation">Misbehavior probability computation</h3>
 <p>式(17)定义了良性AS和恶意AS的概率转移矩阵. \(P_D\)为恶意AS破坏一个响应包的概率. 良性AS破坏一个数据包与自然包率相同, 为\(\rho\). 利用该矩阵,一个正确数据包经过良性AS后保持正确的概率为\(1-\rho\), 经过一个恶意AS后保持正确的概率为\(1-P_D\). 因此当一条长度为r的链路有t个恶意AS时, 响应数据包保持正确的概率如式(18).</p>
-<figure><img src="/ox-hugo/rFdr2Q.png"/>
+<figure><img src="/ox-hugo/rFdr2Q.png">
 </figure>
 
-<figure><img src="/ox-hugo/Wk7S8t.png"/>
+<figure><img src="/ox-hugo/Wk7S8t.png">
 </figure>
 
 <p>\(P_Q\)为恶意AS在交付链路上的概率, 当有f个恶意AS时,响应包被破坏的概率如式(19)</p>
-<figure><img src="/ox-hugo/uatjOb.png"/>
+<figure><img src="/ox-hugo/uatjOb.png">
 </figure>
 
 <p>错误行为概率如式(20). k为中间AS节点个数. \(t_i\)为ASi的返回路径上的AS数, \(r_{j,i}\)为1若ASj在返回路径上. 对于每一个AS, 式(20)都是常量. 因此要算的是\(P(dmg_1, &hellip;, dmg_k | AS_i mal)\). mal表示malicious, n为源期待接收的响应包数.为定位恶意链路, 源最终需要计算所有的 \(P_{i+1}|P_{i}\) 并将最高Pi的ASi-&gt;AS<sub>i+1</sub>链路识别为恶意链路.</p>
-<figure><img src="/ox-hugo/DJX5D9.png"/>
+<figure><img src="/ox-hugo/DJX5D9.png">
 </figure>
 
 </div>
@@ -209,7 +216,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

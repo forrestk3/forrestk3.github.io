@@ -5,15 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">使用emacs写hugo博客 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="使用emacs写hugo博客" />
-<meta property="og:description" content="emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用. ox-hugo的" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/org_02_hugo_with_emacs/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-08-04T20:29:00+08:00" />
-<meta property="article:modified_time" content="2022-08-17T18:32:47+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="使用emacs写hugo博客"/>
-<meta name="twitter:description" content="emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用. ox-hugo的"/>
+    <title class="pjax-title">使用emacs写hugo博客 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_02_hugo_with_emacs/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="使用emacs写hugo博客">
+  <meta property="og:description" content="emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
+ox-hugo的安装 M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置 1 2 3 4 (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox) 这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-08-04T20:29:00+08:00">
+    <meta property="article:modified_time" content="2022-08-17T18:32:47+08:00">
+    <meta property="article:tag" content="博客">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="使用emacs写hugo博客">
+  <meta name="twitter:description" content="emacs: ox-hugo emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.
+ox-hugo的安装 M-x list-packages: 这个命令会列出所有的可安装的包 C-s: 使用搜索找到ox-hugo 操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute. 在配置文件中添加ox-hugo配置 1 2 3 4 (use-package ox-hugo :ensure t ;Auto-install the package from Melpa :pin melpa ;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;) :after ox) 这时在org模式里就可以使用hugo了 C-c C-e时会多一个导出选项:">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -158,7 +165,7 @@
 </div>
 </div><p><strong>这时在org模式里就可以使用hugo了</strong>
 C-c C-e时会多一个导出选项:</p>
-<figure><img src="/ox-hugo/L34IX7.png"/>
+<figure><img src="/ox-hugo/L34IX7.png">
 </figure>
 
 <p>如果按以上操作, 有这一项出来, 那么ox-hugo才算成功, 没有就排查错误, 比如ox-hugo有没有安装上, 配置信息有没有加对地方</p>
@@ -308,19 +315,19 @@ C-c C-e时会多一个导出选项:</p>
         title="/ox-hugo/NaZSrm.png"
     /></p>
 <p>点setting</p>
-<figure><img src="/ox-hugo/OYNoN9.png"/>
+<figure><img src="/ox-hugo/OYNoN9.png">
     </figure>
 
 <p>选择developer settings</p>
-<figure><img src="/ox-hugo/qtNAxh.png"/>
+<figure><img src="/ox-hugo/qtNAxh.png">
     </figure>
 
 <p>选择第三个 personal access tokens</p>
-<figure><img src="/ox-hugo/q9XEQ8.png"/>
+<figure><img src="/ox-hugo/q9XEQ8.png">
     </figure>
 
 <p>点generate new token</p>
-<figure><img src="/ox-hugo/8RKdMQ.png"/>
+<figure><img src="/ox-hugo/8RKdMQ.png">
     </figure>
 
 </li>
@@ -357,7 +364,7 @@ C-c C-e时会多一个导出选项:</p>
 </div>
 </div><p>这里会需要输入github的用户名和密码,密码是前面创建的token
 最后等仓库的action页面build完成就行了, 一般就是等一会</p>
-<figure><img src="/ox-hugo/DQj4wI.png"/>
+<figure><img src="/ox-hugo/DQj4wI.png">
 </figure>
 
 </div>
@@ -396,7 +403,7 @@ C-c C-e时会多一个导出选项:</p>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

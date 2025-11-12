@@ -5,15 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">Magit的基本使用 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:title" content="Magit的基本使用" />
-<meta property="og:description" content="Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/org_05_magit_usage/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-08-15T21:01:00+08:00" />
-<meta property="article:modified_time" content="2022-08-21T00:05:10+08:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Magit的基本使用"/>
-<meta name="twitter:description" content="Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更"/>
+    <title class="pjax-title">Magit的基本使用 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_05_magit_usage/">
+  <meta property="og:site_name" content="咸蛋超人">
+  <meta property="og:title" content="Magit的基本使用">
+  <meta property="og:description" content="Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更加地emacs化. 本人的emacs 能力有限, 因此只介绍magit中的一些最常用的命令, 方便日常使用够用即可. 要更加全面地研究可以看它的原网站.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-08-15T21:01:00+08:00">
+    <meta property="article:modified_time" content="2022-08-21T00:05:10+08:00">
+    <meta property="article:tag" content="Git">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Magit的基本使用">
+  <meta name="twitter:description" content="Magit 的基本介绍 Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更加地emacs化. 本人的emacs 能力有限, 因此只介绍magit中的一些最常用的命令, 方便日常使用够用即可. 要更加全面地研究可以看它的原网站.">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
@@ -142,7 +147,7 @@
 <p>使用Emacs打开任一由git管理的文件, 再使用快捷键 C-x g (M-x magit-status) 即可打开.</p>
 <p>基本上第一次需要使用M-x magit-status打开, 后面才能用C-x g快捷键, 不知道是不是什么bug.</p>
 <p>打开后会有一个窗口(这里我事先建好了一个 git 仓库)</p>
-<figure><img src="/ox-hugo/O4nM1W.png"/>
+<figure><img src="/ox-hugo/O4nM1W.png">
 </figure>
 
 <p>分析下magit 窗口每部分的意思:</p>
@@ -160,7 +165,7 @@
 </li>
 <li>
 <p>TAB: 折叠, 即如果光标在Untracked files这一行, 按TAB, 即可将UnTracked files这个小节给折叠起来, 工程文件多的时候这个功能十分管用. 下面是将Recent commits折叠后的结果.</p>
-<figure><img src="/ox-hugo/RJsYhY.png"/>
+<figure><img src="/ox-hugo/RJsYhY.png">
     </figure>
 
 </li>
@@ -169,7 +174,7 @@
 </li>
 <li>
 <p>d d: 查看diff, 将text.txt文件中的内容修改, 并将光标移动到Unstaged changes中的 modified text.txt 这一行, 按两下d, 即可弹出 diff 相关内容, 弹窗如下:</p>
-<figure><img src="/ox-hugo/M8u5Y1.png"/>
+<figure><img src="/ox-hugo/M8u5Y1.png">
     </figure>
 
 <p>这个弹窗分两部分, Unstaged changes部分是文件名以及其修改的总结. 它的下面是针对每个文件高亮修改的内容.</p>
@@ -179,7 +184,7 @@
 </li>
 <li>
 <p>s &amp; u: s可将文件添加到暂存区, u可将文件移出暂存区. 比如光标调整到new这个文件上, 按s后结果为:</p>
-<figure><img src="/ox-hugo/chBIG4.png"/>
+<figure><img src="/ox-hugo/chBIG4.png">
     </figure>
 
 <p>可以看到new这个文件从Untracked files移到了staged changes这个小节下.</p>
@@ -193,7 +198,7 @@
 </li>
 <li>
 <p>c: 提交弹窗, 如下:</p>
-<figure><img src="/ox-hugo/oy9iuh.png"/>
+<figure><img src="/ox-hugo/oy9iuh.png">
     </figure>
 
 </li>
@@ -228,7 +233,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git/">git</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git/">Git</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
@@ -241,7 +246,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.116.1">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
         </div></footer></div>
 

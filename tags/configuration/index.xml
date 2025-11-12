@@ -1,8 +1,11 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>configuration - Tag - 咸蛋超人</title>
-        <link>/tags/configuration/</link>
-        <description>configuration - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><atom:link href="/tags/configuration/" rel="self" type="application/rss+xml" /></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>configuration on 咸蛋超人</title>
+    <link>/tags/configuration/</link>
+    <description>Recent content in configuration on 咸蛋超人</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
 </rss>
