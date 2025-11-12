@@ -1,19 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>论文写作 on 咸蛋超人</title>
-    <link>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</link>
-    <description>Recent content in 论文写作 on 咸蛋超人</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 06 Jul 2023 15:45:31 +0800</lastBuildDate>
-    <atom:link href="/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>IEEE论文的引用怎么弄?</title>
-      <link>/posts/org_25_cite_in_ieee/</link>
-      <pubDate>Thu, 06 Jul 2023 15:11:00 +0800</pubDate>
-      <guid>/posts/org_25_cite_in_ieee/</guid>
-      <description>&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.ieee.org/conferences/publishing/templates.html&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;这里&lt;/a&gt;  &lt;a href=&#34;https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/IEEEtranBST2.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;参考自这里&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;期刊--人-题-期-卷-号--月-年-页&#34;&gt;期刊(人,题,期,卷,(号),月,年,页)&lt;/h2&gt;&#xA;&lt;p&gt;bib文件的通用格式如下.&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;/ox-hugo/sdD2xt.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;这里的作者要用全名, 如果要用 et al. 的话, 是在.bst配置文件里设置的&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>论文写作 - Tag - 咸蛋超人</title>
+        <link>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</link>
+        <description>论文写作 - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/" rel="self" type="application/rss+xml" /><item>
+    <title>IEEE论文的引用怎么弄?</title>
+    <link>/posts/org_25_cite_in_ieee/</link>
+    <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/org_25_cite_in_ieee/</guid>
+    <description><![CDATA[<h2 id="参考" class="headerLink">
+    <a href="#%e5%8f%82%e8%80%83" class="header-mark"></a>参考</h2><p><a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" rel="noopener noreferrer">这里</a>  <a href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/IEEEtranBST2.zip" target="_blank" rel="noopener noreferrer">参考自这里</a></p>
+<h2 id="期刊--人-题-期-卷-号--月-年-页" class="headerLink">
+    <a href="#%e6%9c%9f%e5%88%8a--%e4%ba%ba-%e9%a2%98-%e6%9c%9f-%e5%8d%b7-%e5%8f%b7--%e6%9c%88-%e5%b9%b4-%e9%a1%b5" class="header-mark"></a>期刊(人,题,期,卷,(号),月,年,页)</h2><p>bib文件的通用格式如下.</p>
+<figure><img src="/ox-hugo/sdD2xt.png">
+</figure>
+
+<ol>
+<li>
+<p>这里的作者要用全名, 如果要用 et al. 的话, 是在.bst配置文件里设置的</p>
+</li>
+<li>
+<p>月是使用三个字母的缩写的；</p>]]></description>
+</item></channel>
 </rss>

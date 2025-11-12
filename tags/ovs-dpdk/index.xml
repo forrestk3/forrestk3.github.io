@@ -1,19 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ovs-Dpdk on 咸蛋超人</title>
-    <link>/tags/ovs-dpdk/</link>
-    <description>Recent content in Ovs-Dpdk on 咸蛋超人</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 24 Apr 2023 14:25:35 +0800</lastBuildDate>
-    <atom:link href="/tags/ovs-dpdk/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ovs-dpdk系列配置实验-—1. 安装</title>
-      <link>/posts/org_22_ovs_dpdk_install/</link>
-      <pubDate>Mon, 03 Apr 2023 13:25:00 +0800</pubDate>
-      <guid>/posts/org_22_ovs_dpdk_install/</guid>
-      <description>&lt;h2 id=&#34;构建要求&#34;&gt;构建要求&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;dpdk 22.11.1&lt;/li&gt;&#xA;&lt;li&gt;支持dpdk的网卡&lt;/li&gt;&#xA;&lt;li&gt;合适的内核&lt;/li&gt;&#xA;&lt;li&gt;ovs下载:&lt;a href=&#34;http://www.openvswitch.org//download/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;http://www.openvswitch.org//download/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;dpdk下载:&lt;a href=&#34;http://core.dpdk.org/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;http://core.dpdk.org/download/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;ovs版本对应:&lt;a href=&#34;https://docs.openvswitch.org/en/latest/faq/releases/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://docs.openvswitch.org/en/latest/faq/releases/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;dpdk安装:&lt;a href=&#34;https://docs.openvswitch.org/en/latest/intro/install/dpdk/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;https://docs.openvswitch.org/en/latest/intro/install/dpdk/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;我的成功的版本对应: dpdk22.11.1+OVS3.1.1&lt;/li&gt;&#xA;&lt;li&gt;如果版本不对应,安装ovs时会出现各种变量未声明什么的错误.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;dpdk安装&#34;&gt;DPDK安装&lt;/h2&gt;&#xA;&lt;p&gt;安装过程参考自&lt;a href=&#34;https://docs.openvswitch.org/en/latest/intro/install/dpdk/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;这里&lt;/a&gt;,有关于构建软件meson的安装补充&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Ovs-Dpdk - Tag - 咸蛋超人</title>
+        <link>/tags/ovs-dpdk/</link>
+        <description>Ovs-Dpdk - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</lastBuildDate><atom:link href="/tags/ovs-dpdk/" rel="self" type="application/rss+xml" /><item>
+    <title>ovs-dpdk系列配置实验-—1. 安装</title>
+    <link>/posts/org_22_ovs_dpdk_install/</link>
+    <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/org_22_ovs_dpdk_install/</guid>
+    <description><![CDATA[<h2 id="构建要求" class="headerLink">
+    <a href="#%e6%9e%84%e5%bb%ba%e8%a6%81%e6%b1%82" class="header-mark"></a>构建要求</h2><ul>
+<li>dpdk 22.11.1</li>
+<li>支持dpdk的网卡</li>
+<li>合适的内核</li>
+<li>ovs下载:<a href="http://www.openvswitch.org//download/" target="_blank" rel="noopener noreferrer">http://www.openvswitch.org//download/</a></li>
+<li>dpdk下载:<a href="http://core.dpdk.org/download/" target="_blank" rel="noopener noreferrer">http://core.dpdk.org/download/</a></li>
+<li>ovs版本对应:<a href="https://docs.openvswitch.org/en/latest/faq/releases/" target="_blank" rel="noopener noreferrer">https://docs.openvswitch.org/en/latest/faq/releases/</a></li>
+<li>dpdk安装:<a href="https://docs.openvswitch.org/en/latest/intro/install/dpdk/" target="_blank" rel="noopener noreferrer">https://docs.openvswitch.org/en/latest/intro/install/dpdk/</a></li>
+<li>我的成功的版本对应: dpdk22.11.1+OVS3.1.1</li>
+<li>如果版本不对应,安装ovs时会出现各种变量未声明什么的错误.</li>
+</ul>
+<h2 id="dpdk安装" class="headerLink">
+    <a href="#dpdk%e5%ae%89%e8%a3%85" class="header-mark"></a>DPDK安装</h2><p>安装过程参考自<a href="https://docs.openvswitch.org/en/latest/intro/install/dpdk/" target="_blank" rel="noopener noreferrer">这里</a>,有关于构建软件meson的安装补充</p>]]></description>
+</item></channel>
 </rss>

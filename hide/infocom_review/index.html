@@ -4,11 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noodp" />
-    <title class="pjax-title">FLPVS 审稿意见 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/hide/infocom_review/">
+    <meta name="robots" content="noodp" /><title>FLPVS 审稿意见 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/hide/infocom_review/">
   <meta property="og:site_name" content="咸蛋超人">
   <meta property="og:title" content="FLPVS 审稿意见">
-  <meta property="og:description" content="审稿人1 弱点: The paper does not describe the attack model clearly other than to state that an adversary can make the traffic violate the network policy … by deleting or adding the forwarding rules of the compromised switches.未描述论文的attack model. (攻击者是怎么让流量违背网络策略的) Section III does not describe the network operation well but rather goes into the details of the path validation approach (using the additive magma operation, which is not clearly motivated). 第三节未描述网络操作而描述路径验证方法(使用additive magma的动机未描述) \(ok\) 写得怎么样 The authors need to present a high level overview of their approach before describing the individual approaches. The paper is difficult to follow. 描述每个方法时要先给出它的整体概念.文章难读懂. (不知道这里他说的&#34;它们的方法&#34;指的是啥) Figure 4 is unreadable due to the small text size used. 图4太小了,看不清 \(ok\) 额外评价 The reader is left with a lot of unanswered questions: How are all the sources programmed to add an extra packet header in the single packet path validation method? How is a flow identified for the network flow path validation method? 读者留下了多未解答的问题, 单包验证算法中所有的源如何被编程到了个额外的包头中的；流路径验证方法中如何去识别一个流. \(ok\) On page 8, the following sentence should be rephrased: “The more complex the topology, the more the network flows paths overlap, and therefore the more greatly reducing storage costs for path validation.” 第8页的一句要重写. \(del\) 我的总结 添加攻击模型；添加sdn网络基本操作 给每部分要讲什么添加个总结性的话 图弄大一点 根据要求修改,详细说明单包验证,多包验证过程 这个作者应该不是这个方向的 审稿人2 论文总结: The authors have proposed a(FLPVS (flexible and lightweight path validation scheme) in the context of SDN. The scheme has two parts. Firstly, there is a validation information storing optimization method. Secondly, a path partition scheme in the controller validates the overlapping sub-paths of different network flows. The idea of the path validation scheme framework is similar to the existing related work and the paper lacks the compaarisons with related work. 和已有的工作有点像,未和已有的工作做对比. 缺点: The scheme framework is very similar to prior work and the basic idea proposed in the paper is not new. Inaction, the experiments are not comprehensive to compare with related work. 与现有的工作很像, 实验部分未与相关工作做对比. 写得怎么样 好 额外评价 没给 我的总结 添加与相关工作对比实验, 添加与相关工作不同地方说明并做强调, 审稿人应该没看懂 基本没给什么意见, 说与现有工作像,没说与哪个像. 审稿人3 缺点 Security-oriented papers need to have a threat model. The paper lacks a clear specification of the adversary and the components that are controlled by the adversary. The paper does not argue what knowledge the adversary receives, how misinformation can be prevented or detected, or at what point the system fails. 没有threat model, 缺少明确的攻击声明以及攻击者能控制的部分,未说明攻击者所能得到的知识,如何防止或检测错误信息,以及在什么情况下系统会失效 Notably, Section V does not describe the results of a security analysis. As an obvious scenario, if adversaries control all switches on the path, they could simply not tell the controller about any packets, allowing communication to occur covertly without the controller’s knowledge. If all switches are legitimate, then the attacks describe in the introduction (“deleting or adding the forwarding rules of the compromised switches”) would not occur and the approach would be unnecessary. Accordingly, this approach works when some malicious switches are present, but some non-compromised switches also exist on the path. An analysis on what proportion that can be malicious would be telling. 第五部分没有进行安全地性分析,比如攻击者掌握了这条path上的每一个交换机,那它就可以不给控制器发任何数据包的信息,在转发包时不需要控制器的任何信息. 如果所有交换机都是良性,这个方法就没有必要. 这个方法只有在一条路径上即有良性交换机又有恶意交换机时有效.因此需要加一条分析说明哪部分可以是恶意的. The packet marking approach is not new and was proposed for preventing of IP source address forgery in the past. Prior work, such as [Yaar, Abraham, Adrian Perrig, and Dawn Song. “StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense.” IEEE Journal on Selected Areas in Communications 24.10 (2006): 1853-1863.] and [Bremler-Barr, Anat, and Hanoch Levy. “Spoofing prevention method.” Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and Communications Societies. Vol. 1. IEEE, 2005.] are not cited, but are seminal works in this area. I am surprised the authors did not compare against those prior marking schemes. 数据包标记方法并不新,有相关文献中已提出但并未引用. 并未与这些方案作比较. The performance section is a simulation, but it does not take into account the actual impact of running this system in hardware. SDN switches can perform elevations, yet be terribly slow at it. Likewise, marking in a general-purpose CPU on those switches can incur real performance costs. To truly understand the efficiency of this approach in practice, the evaluation needs to be done empirically. 实验只模拟了,未在真实交换机上跑, 要我在真实交换机上跑出结果. The paper does a poor job of guiding a reader through its formalism. In Section III, the first equation is not related to the switch information (S_i, s_i, k_i). Instead, it uses a_1, b1_, a_2, b_2, without relating them to the switch information. The best way to reach an audience is via example that simultaneously walks the reader through the example and intuitively explains the results while simultaneously advancing the formalism. As written, many audiences will struggle to glean insight from Section III. 故事讲得不好, 全文符号统一. 第三节难以深刻理解. 写得怎么样 The writing itself is good. The authors’ use of formalism without explanation makes it extremely difficult to understand their contribution. 写得好,但是公式那块没介绍好">
+  <meta property="og:description" content="审稿人1 弱点: The paper does not describe the attack model clearly other than to state that an adversary can make the traffic violate the network policy … by deleting or adding the forwarding rules of the compromised switches.未描述论文的attack model. (攻击者是怎么让流量违背网络策略的) Section III does not describe the network operation well but rather goes into the details of the path validation approach (using the additive magma operation, which is not clearly motivated). 第三节未描述网络操作而描述路径验证方法(使用additive magma的动机未描述) \(ok\) 写得怎么样 The authors need to present a high level overview of their approach before describing the individual approaches. The paper is difficult to follow. 描述每个方法时要先给出它的整体概念.文章难读懂. (不知道这里他说的&#34;它们的方法&#34;指的是啥) Figure 4 is unreadable due to the small text size used. 图4太小了,看不清 \(ok\) 额外评价 The reader is left with a lot of unanswered questions: How are all the sources programmed to add an extra packet header in the single packet path validation method? How is a flow identified for the network flow path validation method? 读者留下了多未解答的问题, 单包验证算法中所有的源如何被编程到了个额外的包头中的；流路径验证方法中如何去识别一个流. \(ok\) On page 8, the following sentence should be rephrased: “The more complex the topology, the more the network flows paths overlap, and therefore the more greatly reducing storage costs for path validation.” 第8页的一句要重写. \(del\) 我的总结 添加攻击模型；添加sdn网络基本操作 给每部分要讲什么添加个总结性的话 图弄大一点 根据要求修改,详细说明单包验证,多包验证过程 这个作者应该不是这个方向的 审稿人2 论文总结: The authors have proposed a(FLPVS (flexible and lightweight path validation scheme) in the context of SDN. The scheme has two parts. Firstly, there is a validation information storing optimization method. Secondly, a path partition scheme in the controller validates the overlapping sub-paths of different network flows. The idea of the path validation scheme framework is similar to the existing related work and the paper lacks the compaarisons with related work. 和已有的工作有点像,未和已有的工作做对比. 缺点: The scheme framework is very similar to prior work and the basic idea proposed in the paper is not new. Inaction, the experiments are not comprehensive to compare with related work. 与现有的工作很像, 实验部分未与相关工作做对比. 写得怎么样 好 额外评价 没给 我的总结 添加与相关工作对比实验, 添加与相关工作不同地方说明并做强调, 审稿人应该没看懂 基本没给什么意见, 说与现有工作像,没说与哪个像. 审稿人3 缺点 Security-oriented papers need to have a threat model. The paper lacks a clear specification of the adversary and the components that are controlled by the adversary. The paper does not argue what knowledge the adversary receives, how misinformation can be prevented or detected, or at what point the system fails. 没有threat model, 缺少明确的攻击声明以及攻击者能控制的部分,未说明攻击者所能得到的知识,如何防止或检测错误信息,以及在什么情况下系统会失效 Notably, Section V does not describe the results of a security analysis. As an obvious scenario, if adversaries control all switches on the path, they could simply not tell the controller about any packets, allowing communication to occur covertly without the controller’s knowledge. If all switches are legitimate, then the attacks describe in the introduction (“deleting or adding the forwarding rules of the compromised switches”) would not occur and the approach would be unnecessary. Accordingly, this approach works when some malicious switches are present, but some non-compromised switches also exist on the path. An analysis on what proportion that can be malicious would be telling. 第五部分没有进行安全地性分析,比如攻击者掌握了这条path上的每一个交换机,那它就可以不给控制器发任何数据包的信息,在转发包时不需要控制器的任何信息. 如果所有交换机都是良性,这个方法就没有必要. 这个方法只有在一条路径上即有良性交换机又有恶意交换机时有效.因此需要加一条分析说明哪部分可以是恶意的. The packet marking approach is not new and was proposed for preventing of IP source address forgery in the past. Prior work, such as [Yaar, Abraham, Adrian Perrig, and Dawn Song. “StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense.” IEEE Journal on Selected Areas in Communications 24.10 (2006): 1853-1863.] and [Bremler-Barr, Anat, and Hanoch Levy. “Spoofing prevention method.” Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and Communications Societies. Vol. 1. IEEE, 2005.] are not cited, but are seminal works in this area. I am surprised the authors did not compare against those prior marking schemes. 数据包标记方法并不新,有相关文献中已提出但并未引用. 并未与这些方案作比较. The performance section is a simulation, but it does not take into account the actual impact of running this system in hardware. SDN switches can perform elevations, yet be terribly slow at it. Likewise, marking in a general-purpose CPU on those switches can incur real performance costs. To truly understand the efficiency of this approach in practice, the evaluation needs to be done empirically. 实验只模拟了,未在真实交换机上跑, 要我在真实交换机上跑出结果. The paper does a poor job of guiding a reader through its formalism. In Section III, the first equation is not related to the switch information (S_i, s_i, k_i). Instead, it uses a_1, b1_, a_2, b_2, without relating them to the switch information. The best way to reach an audience is via example that simultaneously walks the reader through the example and intuitively explains the results while simultaneously advancing the formalism. As written, many audiences will struggle to glean insight from Section III. 故事讲得不好, 全文符号统一. 第三节难以深刻理解. 写得怎么样The writing itself is good. The authors’ use of formalism without explanation makes it extremely difficult to understand their contribution. 写得好,但是公式那块没介绍好">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="hide">
@@ -17,65 +16,100 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="FLPVS 审稿意见">
-  <meta name="twitter:description" content="审稿人1 弱点: The paper does not describe the attack model clearly other than to state that an adversary can make the traffic violate the network policy … by deleting or adding the forwarding rules of the compromised switches.未描述论文的attack model. (攻击者是怎么让流量违背网络策略的) Section III does not describe the network operation well but rather goes into the details of the path validation approach (using the additive magma operation, which is not clearly motivated). 第三节未描述网络操作而描述路径验证方法(使用additive magma的动机未描述) \(ok\) 写得怎么样 The authors need to present a high level overview of their approach before describing the individual approaches. The paper is difficult to follow. 描述每个方法时要先给出它的整体概念.文章难读懂. (不知道这里他说的&#34;它们的方法&#34;指的是啥) Figure 4 is unreadable due to the small text size used. 图4太小了,看不清 \(ok\) 额外评价 The reader is left with a lot of unanswered questions: How are all the sources programmed to add an extra packet header in the single packet path validation method? How is a flow identified for the network flow path validation method? 读者留下了多未解答的问题, 单包验证算法中所有的源如何被编程到了个额外的包头中的；流路径验证方法中如何去识别一个流. \(ok\) On page 8, the following sentence should be rephrased: “The more complex the topology, the more the network flows paths overlap, and therefore the more greatly reducing storage costs for path validation.” 第8页的一句要重写. \(del\) 我的总结 添加攻击模型；添加sdn网络基本操作 给每部分要讲什么添加个总结性的话 图弄大一点 根据要求修改,详细说明单包验证,多包验证过程 这个作者应该不是这个方向的 审稿人2 论文总结: The authors have proposed a(FLPVS (flexible and lightweight path validation scheme) in the context of SDN. The scheme has two parts. Firstly, there is a validation information storing optimization method. Secondly, a path partition scheme in the controller validates the overlapping sub-paths of different network flows. The idea of the path validation scheme framework is similar to the existing related work and the paper lacks the compaarisons with related work. 和已有的工作有点像,未和已有的工作做对比. 缺点: The scheme framework is very similar to prior work and the basic idea proposed in the paper is not new. Inaction, the experiments are not comprehensive to compare with related work. 与现有的工作很像, 实验部分未与相关工作做对比. 写得怎么样 好 额外评价 没给 我的总结 添加与相关工作对比实验, 添加与相关工作不同地方说明并做强调, 审稿人应该没看懂 基本没给什么意见, 说与现有工作像,没说与哪个像. 审稿人3 缺点 Security-oriented papers need to have a threat model. The paper lacks a clear specification of the adversary and the components that are controlled by the adversary. The paper does not argue what knowledge the adversary receives, how misinformation can be prevented or detected, or at what point the system fails. 没有threat model, 缺少明确的攻击声明以及攻击者能控制的部分,未说明攻击者所能得到的知识,如何防止或检测错误信息,以及在什么情况下系统会失效 Notably, Section V does not describe the results of a security analysis. As an obvious scenario, if adversaries control all switches on the path, they could simply not tell the controller about any packets, allowing communication to occur covertly without the controller’s knowledge. If all switches are legitimate, then the attacks describe in the introduction (“deleting or adding the forwarding rules of the compromised switches”) would not occur and the approach would be unnecessary. Accordingly, this approach works when some malicious switches are present, but some non-compromised switches also exist on the path. An analysis on what proportion that can be malicious would be telling. 第五部分没有进行安全地性分析,比如攻击者掌握了这条path上的每一个交换机,那它就可以不给控制器发任何数据包的信息,在转发包时不需要控制器的任何信息. 如果所有交换机都是良性,这个方法就没有必要. 这个方法只有在一条路径上即有良性交换机又有恶意交换机时有效.因此需要加一条分析说明哪部分可以是恶意的. The packet marking approach is not new and was proposed for preventing of IP source address forgery in the past. Prior work, such as [Yaar, Abraham, Adrian Perrig, and Dawn Song. “StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense.” IEEE Journal on Selected Areas in Communications 24.10 (2006): 1853-1863.] and [Bremler-Barr, Anat, and Hanoch Levy. “Spoofing prevention method.” Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and Communications Societies. Vol. 1. IEEE, 2005.] are not cited, but are seminal works in this area. I am surprised the authors did not compare against those prior marking schemes. 数据包标记方法并不新,有相关文献中已提出但并未引用. 并未与这些方案作比较. The performance section is a simulation, but it does not take into account the actual impact of running this system in hardware. SDN switches can perform elevations, yet be terribly slow at it. Likewise, marking in a general-purpose CPU on those switches can incur real performance costs. To truly understand the efficiency of this approach in practice, the evaluation needs to be done empirically. 实验只模拟了,未在真实交换机上跑, 要我在真实交换机上跑出结果. The paper does a poor job of guiding a reader through its formalism. In Section III, the first equation is not related to the switch information (S_i, s_i, k_i). Instead, it uses a_1, b1_, a_2, b_2, without relating them to the switch information. The best way to reach an audience is via example that simultaneously walks the reader through the example and intuitively explains the results while simultaneously advancing the formalism. As written, many audiences will struggle to glean insight from Section III. 故事讲得不好, 全文符号统一. 第三节难以深刻理解. 写得怎么样 The writing itself is good. The authors’ use of formalism without explanation makes it extremely difficult to understand their contribution. 写得好,但是公式那块没介绍好">
+  <meta name="twitter:description" content="审稿人1 弱点: The paper does not describe the attack model clearly other than to state that an adversary can make the traffic violate the network policy … by deleting or adding the forwarding rules of the compromised switches.未描述论文的attack model. (攻击者是怎么让流量违背网络策略的) Section III does not describe the network operation well but rather goes into the details of the path validation approach (using the additive magma operation, which is not clearly motivated). 第三节未描述网络操作而描述路径验证方法(使用additive magma的动机未描述) \(ok\) 写得怎么样 The authors need to present a high level overview of their approach before describing the individual approaches. The paper is difficult to follow. 描述每个方法时要先给出它的整体概念.文章难读懂. (不知道这里他说的&#34;它们的方法&#34;指的是啥) Figure 4 is unreadable due to the small text size used. 图4太小了,看不清 \(ok\) 额外评价 The reader is left with a lot of unanswered questions: How are all the sources programmed to add an extra packet header in the single packet path validation method? How is a flow identified for the network flow path validation method? 读者留下了多未解答的问题, 单包验证算法中所有的源如何被编程到了个额外的包头中的；流路径验证方法中如何去识别一个流. \(ok\) On page 8, the following sentence should be rephrased: “The more complex the topology, the more the network flows paths overlap, and therefore the more greatly reducing storage costs for path validation.” 第8页的一句要重写. \(del\) 我的总结 添加攻击模型；添加sdn网络基本操作 给每部分要讲什么添加个总结性的话 图弄大一点 根据要求修改,详细说明单包验证,多包验证过程 这个作者应该不是这个方向的 审稿人2 论文总结: The authors have proposed a(FLPVS (flexible and lightweight path validation scheme) in the context of SDN. The scheme has two parts. Firstly, there is a validation information storing optimization method. Secondly, a path partition scheme in the controller validates the overlapping sub-paths of different network flows. The idea of the path validation scheme framework is similar to the existing related work and the paper lacks the compaarisons with related work. 和已有的工作有点像,未和已有的工作做对比. 缺点: The scheme framework is very similar to prior work and the basic idea proposed in the paper is not new. Inaction, the experiments are not comprehensive to compare with related work. 与现有的工作很像, 实验部分未与相关工作做对比. 写得怎么样 好 额外评价 没给 我的总结 添加与相关工作对比实验, 添加与相关工作不同地方说明并做强调, 审稿人应该没看懂 基本没给什么意见, 说与现有工作像,没说与哪个像. 审稿人3 缺点 Security-oriented papers need to have a threat model. The paper lacks a clear specification of the adversary and the components that are controlled by the adversary. The paper does not argue what knowledge the adversary receives, how misinformation can be prevented or detected, or at what point the system fails. 没有threat model, 缺少明确的攻击声明以及攻击者能控制的部分,未说明攻击者所能得到的知识,如何防止或检测错误信息,以及在什么情况下系统会失效 Notably, Section V does not describe the results of a security analysis. As an obvious scenario, if adversaries control all switches on the path, they could simply not tell the controller about any packets, allowing communication to occur covertly without the controller’s knowledge. If all switches are legitimate, then the attacks describe in the introduction (“deleting or adding the forwarding rules of the compromised switches”) would not occur and the approach would be unnecessary. Accordingly, this approach works when some malicious switches are present, but some non-compromised switches also exist on the path. An analysis on what proportion that can be malicious would be telling. 第五部分没有进行安全地性分析,比如攻击者掌握了这条path上的每一个交换机,那它就可以不给控制器发任何数据包的信息,在转发包时不需要控制器的任何信息. 如果所有交换机都是良性,这个方法就没有必要. 这个方法只有在一条路径上即有良性交换机又有恶意交换机时有效.因此需要加一条分析说明哪部分可以是恶意的. The packet marking approach is not new and was proposed for preventing of IP source address forgery in the past. Prior work, such as [Yaar, Abraham, Adrian Perrig, and Dawn Song. “StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense.” IEEE Journal on Selected Areas in Communications 24.10 (2006): 1853-1863.] and [Bremler-Barr, Anat, and Hanoch Levy. “Spoofing prevention method.” Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and Communications Societies. Vol. 1. IEEE, 2005.] are not cited, but are seminal works in this area. I am surprised the authors did not compare against those prior marking schemes. 数据包标记方法并不新,有相关文献中已提出但并未引用. 并未与这些方案作比较. The performance section is a simulation, but it does not take into account the actual impact of running this system in hardware. SDN switches can perform elevations, yet be terribly slow at it. Likewise, marking in a general-purpose CPU on those switches can incur real performance costs. To truly understand the efficiency of this approach in practice, the evaluation needs to be done empirically. 实验只模拟了,未在真实交换机上跑, 要我在真实交换机上跑出结果. The paper does a poor job of guiding a reader through its formalism. In Section III, the first equation is not related to the switch information (S_i, s_i, k_i). Instead, it uses a_1, b1_, a_2, b_2, without relating them to the switch information. The best way to reach an audience is via example that simultaneously walks the reader through the example and intuitively explains the results while simultaneously advancing the formalism. As written, many audiences will struggle to glean insight from Section III. 故事讲得不好, 全文符号统一. 第三节难以深刻理解. 写得怎么样The writing itself is good. The authors’ use of formalism without explanation makes it extremely difficult to understand their contribution. 写得好,但是公式那块没介绍好">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
 <meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="/hide/infocom_review/" /><link rel="prev" href="/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
-    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
-    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="canonical" href="/hide/infocom_review/" /><link rel="prev" href="/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/" />
+<link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
         "headline": "FLPVS 审稿意见",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "\/hide\/infocom_review\/"
-        },"genre": "hide","wordcount":  1655 ,
-        "url": "\/hide\/infocom_review\/","datePublished": "2022-12-08T19:44:00+08:00","dateModified": "2022-12-09T10:21:40+08:00","publisher": {
+            "@id": "/hide/infocom_review/"
+        },"genre": "hide","wordcount":  1657 ,
+        "url": "/hide/infocom_review/","datePublished": "2022-12-08T19:44:00+08:00","dateModified": "2022-12-09T10:21:40+08:00","publisher": {
             "@type": "Organization",
-            "name": "SuperEgg"},"author": {
+            "name": "Author"},"author": {
                 "@type": "Person",
-                "name": "SuperEgg"
+                "name": "Author",
+                "url": "/"
             },"description": ""
-    }
-    </script></head>
+    }</script></head>
 
-<body header-desktop="" header-mobile=""><script type="text/javascript">
-        function setTheme(theme) {document.body.setAttribute('theme', theme);}
-        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
-        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
-        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
-        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
-    </script>
-    <div id="back-to-top"></div>
-    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+
+<body data-instant-intensity="viewport" class="tw-flex tw-min-h-screen tw-flex-col"><script>
+    function setTheme(theme) {
+      document.body.setAttribute('theme', theme); 
+      document.documentElement.className = theme;
+      document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');
+      if (theme === 'light') {
+        document.documentElement.classList.remove('tw-dark')
+      } else {
+        document.documentElement.classList.add('tw-dark')
+      }
+      window.theme = theme;   
+      window.isDark = window.theme !== 'light' 
+    }
+    function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+    function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+    if (window.localStorage && localStorage.getItem('theme')) {
+        let theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') {
+        setTheme(theme);
+        } else {
+            if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
+        }
+      } else { 
+        if ('' === 'light' || '' === 'dark') 
+            setTheme(''), saveTheme(''); 
+        else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');
+    }
+    let metaColors = {'light': '#f8f8f8','dark': '#161b22'}
+    getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    window.switchThemeEventSet = new Set()
+</script><div id="back-to-top"></div>
+    <div id="mask"></div><header class="desktop print:!tw-hidden" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
             <a href="/" title="咸蛋超人">咸蛋超人</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"><i class='fa fa-file'></i> 博文 </a><a class="menu-item" href="/tags/"><i class='fa fa-road'></i> 标签 </a><a class="menu-item" href="/categories/"><i class='fa fa-archive'></i> 类别 </a><a class="menu-item" href="/"><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a></div>
+            <div class="menu-inner"><a class="menu-item"
+                    href="/posts/" ><i class='fa fa-file'></i> 博文 </a><a class="menu-item"
+                    href="/tags/" ><i class='fa fa-road'></i> 标签 </a><a class="menu-item"
+                    href="/categories/" ><i class='fa fa-archive'></i> 类别 </a><a class="menu-item"
+                    href="/" ><i class='fa fa-archive'></i> 其他 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-desktop">
+                    <button class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                        <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+                    </button>
+                    <button class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                        <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"/></svg>
+                    </button>
+                    <span class="search-button search-loading tw-animate-spin" id="search-loading-desktop">
+                        <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"/></svg>
+                    </span>
+                </span><button class="menu-item theme-switch" aria-label="Switch Theme">
+                    <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg>
+                </button></div>
         </div>
     </div>
-</header><header class="mobile" id="header-mobile">
+</header><header class="mobile print:!tw-hidden" id="header-mobile">
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
@@ -86,24 +120,30 @@
             </div>
         </div>
         <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title=""><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title=""><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title=""><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title=""><i class='fa fa-archive'></i>其他</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
+                <div class="search mobile" id="search-mobile">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-mobile">
+                    <button class="search-button search-toggle tw-h-10" id="search-toggle-mobile" title="Search">
+                        <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+                    </button>
+                    <button class="search-button search-clear tw-h-fit" id="search-clear-mobile" title="Clear">
+                        <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"/></svg>
+                    </button>
+                    <span class="search-button search-loading tw-animate-spin" id="search-loading-mobile">
+                        <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"/></svg>
+                    </span>
+                </div>
+                <button class="search-cancel" id="search-cancel-mobile">
+                    Cancel
+                </button>
+            </div><a class="menu-item" href="/posts/" title="" ><i class='fa fa-file'></i>博文</a><a class="menu-item" href="/tags/" title="" ><i class='fa fa-road'></i>标签</a><a class="menu-item" href="/categories/" title="" ><i class='fa fa-archive'></i>类别</a><a class="menu-item" href="/" title="" ><i class='fa fa-archive'></i>其他</a><button class="menu-item theme-switch tw-w-full" aria-label="Switch Theme">
+                <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg>
+            </button></div>
     </div>
 </header>
 <div class="search-dropdown desktop">
@@ -111,67 +151,65 @@
 </div>
 <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-            <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster">FLPVS 审稿意见</h1><div class="content" id="content"><h2 id="审稿人1">审稿人1</h2>
-<h3 id="弱点">弱点:</h3>
-<ul>
+</div><main class="tw-mx-4 tw-flex-1"><div class="page single special print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class="single-title">FLPVS 审稿意见</h1><div class="content" id="content"><h2 id="审稿人1" class="headerLink">
+    <a href="#%e5%ae%a1%e7%a8%bf%e4%ba%ba1" class="header-mark"></a>审稿人1</h2><h3 id="弱点" class="headerLink">
+    <a href="#%e5%bc%b1%e7%82%b9" class="header-mark"></a>弱点:</h3><ul>
 <li>The paper does not describe the attack model  clearly other than to state that an adversary can make the traffic violate the network policy &hellip; by deleting or adding the forwarding rules of the compromised switches.未描述论文的attack model. (攻击者是怎么让流量违背网络策略的)</li>
 <li>Section III does not describe the network operation well but rather goes into the details of the path validation approach (using the additive magma operation, which is not clearly motivated). 第三节未描述网络操作而描述路径验证方法(使用additive magma的动机未描述) \(ok\)</li>
 </ul>
-<h3 id="写得怎么样">写得怎么样</h3>
-<ul>
+<h3 id="写得怎么样" class="headerLink">
+    <a href="#%e5%86%99%e5%be%97%e6%80%8e%e4%b9%88%e6%a0%b7" class="header-mark"></a>写得怎么样</h3><ul>
 <li>The authors need to present a high level overview of their approach before describing the individual approaches. The paper is difficult to follow. 描述每个方法时要先给出它的整体概念.文章难读懂. (不知道这里他说的&quot;它们的方法&quot;指的是啥)</li>
 <li>Figure 4 is unreadable due to the small text size used. 图4太小了,看不清 \(ok\)</li>
 </ul>
-<h3 id="额外评价">额外评价</h3>
-<ul>
+<h3 id="额外评价" class="headerLink">
+    <a href="#%e9%a2%9d%e5%a4%96%e8%af%84%e4%bb%b7" class="header-mark"></a>额外评价</h3><ul>
 <li>The reader is left with a lot of unanswered questions: How are all the sources programmed to add an extra packet header in the single packet path validation method? How is a flow identified for the network flow path validation method? 读者留下了多未解答的问题, 单包验证算法中所有的源如何被编程到了个额外的包头中的；流路径验证方法中如何去识别一个流. \(ok\)</li>
 <li>On page 8, the following sentence should be rephrased: &ldquo;The more complex the topology, the more the network flows paths overlap, and therefore the more greatly reducing storage costs for path validation.&rdquo; 第8页的一句要重写. \(del\)</li>
 </ul>
-<h3 id="我的总结">我的总结</h3>
-<ul>
+<h3 id="我的总结" class="headerLink">
+    <a href="#%e6%88%91%e7%9a%84%e6%80%bb%e7%bb%93" class="header-mark"></a>我的总结</h3><ul>
 <li>添加攻击模型；添加sdn网络基本操作</li>
 <li>给每部分要讲什么添加个总结性的话</li>
 <li>图弄大一点</li>
 <li>根据要求修改,详细说明单包验证,多包验证过程</li>
 <li>这个作者应该不是这个方向的</li>
 </ul>
-<h2 id="审稿人2">审稿人2</h2>
-<h3 id="论文总结">论文总结:</h3>
-<ul>
+<h2 id="审稿人2" class="headerLink">
+    <a href="#%e5%ae%a1%e7%a8%bf%e4%ba%ba2" class="header-mark"></a>审稿人2</h2><h3 id="论文总结" class="headerLink">
+    <a href="#%e8%ae%ba%e6%96%87%e6%80%bb%e7%bb%93" class="header-mark"></a>论文总结:</h3><ul>
 <li>The authors have proposed a(FLPVS (flexible and lightweight path validation scheme) in the context of SDN. The scheme has two parts. Firstly, there is a validation information storing optimization method. Secondly, a path partition scheme in the controller validates the overlapping sub-paths of different network flows. The idea of the path validation scheme framework is similar to the existing related work and the paper lacks the compaarisons with   related work. 和已有的工作有点像,未和已有的工作做对比.</li>
 </ul>
-<h3 id="缺点">缺点:</h3>
-<ul>
+<h3 id="缺点" class="headerLink">
+    <a href="#%e7%bc%ba%e7%82%b9" class="header-mark"></a>缺点:</h3><ul>
 <li>The scheme framework is very similar to prior work and the basic idea proposed in the paper is not new. Inaction, the experiments are not comprehensive to compare with related work. 与现有的工作很像, 实验部分未与相关工作做对比.</li>
 </ul>
-<h3 id="写得怎么样">写得怎么样</h3>
-<ul>
+<h3 id="写得怎么样" class="headerLink">
+    <a href="#%e5%86%99%e5%be%97%e6%80%8e%e4%b9%88%e6%a0%b7" class="header-mark"></a>写得怎么样</h3><ul>
 <li>好</li>
 </ul>
-<h3 id="额外评价">额外评价</h3>
-<ul>
+<h3 id="额外评价" class="headerLink">
+    <a href="#%e9%a2%9d%e5%a4%96%e8%af%84%e4%bb%b7" class="header-mark"></a>额外评价</h3><ul>
 <li>没给</li>
 </ul>
-<h3 id="我的总结">我的总结</h3>
-<ul>
+<h3 id="我的总结" class="headerLink">
+    <a href="#%e6%88%91%e7%9a%84%e6%80%bb%e7%bb%93" class="header-mark"></a>我的总结</h3><ul>
 <li>添加与相关工作对比实验, 添加与相关工作不同地方说明并做强调, 审稿人应该没看懂</li>
 <li>基本没给什么意见, 说与现有工作像,没说与哪个像.</li>
 </ul>
-<h2 id="审稿人3">审稿人3</h2>
-<h3 id="缺点">缺点</h3>
-<ul>
+<h2 id="审稿人3" class="headerLink">
+    <a href="#%e5%ae%a1%e7%a8%bf%e4%ba%ba3" class="header-mark"></a>审稿人3</h2><h3 id="缺点" class="headerLink">
+    <a href="#%e7%bc%ba%e7%82%b9" class="header-mark"></a>缺点</h3><ul>
 <li>Security-oriented papers need to have a threat model. The paper lacks a clear specification of the adversary and the components that are controlled by the adversary. The paper does not argue what knowledge the adversary receives, how misinformation can be prevented or detected, or at what point the system fails. 没有threat model, 缺少明确的攻击声明以及攻击者能控制的部分,未说明攻击者所能得到的知识,如何防止或检测错误信息,以及在什么情况下系统会失效</li>
 <li>Notably, Section V does not describe the results of a security analysis. As an obvious scenario, if adversaries control all switches on the path, they could simply not tell the controller about any packets, allowing communication to occur covertly without the controller&rsquo;s knowledge. If all switches are legitimate, then the attacks describe in the introduction (&ldquo;deleting or adding the forwarding rules of the compromised switches&rdquo;) would not occur and the approach would be unnecessary. Accordingly, this approach works when some malicious switches are present, but some non-compromised switches also exist on the path. An analysis on what proportion that can be malicious would be telling. 第五部分没有进行安全地性分析,比如攻击者掌握了这条path上的每一个交换机,那它就可以不给控制器发任何数据包的信息,在转发包时不需要控制器的任何信息. 如果所有交换机都是良性,这个方法就没有必要. 这个方法只有在一条路径上即有良性交换机又有恶意交换机时有效.因此需要加一条分析说明哪部分可以是恶意的.</li>
 <li>The packet marking approach is not new and was proposed for preventing of IP source address forgery in the past. Prior work, such as [Yaar, Abraham, Adrian Perrig, and Dawn Song. &ldquo;StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense.&rdquo; IEEE Journal on Selected Areas in Communications 24.10 (2006): 1853-1863.] and [Bremler-Barr, Anat, and Hanoch Levy. &ldquo;Spoofing prevention method.&rdquo; Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and Communications Societies. Vol. 1. IEEE, 2005.] are not cited, but are seminal works in this area. I am surprised the authors did not compare against those prior marking schemes. 数据包标记方法并不新,有相关文献中已提出但并未引用. 并未与这些方案作比较.</li>
 <li>The performance section is a simulation, but it does not take into account the actual impact of running this system in hardware. SDN switches can perform elevations, yet be terribly slow at it. Likewise, marking in a general-purpose CPU on those switches can incur real performance costs. To truly understand the efficiency of this approach in practice, the evaluation needs to be done empirically. 实验只模拟了,未在真实交换机上跑, 要我在真实交换机上跑出结果.</li>
 <li>The paper does a poor job of guiding a reader through its formalism. In Section III, the first equation is not related to the switch information (S_i, s_i, k_i). Instead, it uses a_1, b1_, a_2, b_2, without relating them to the switch information. The best way to reach an audience is via example that simultaneously walks the reader through the example and intuitively explains the results while simultaneously advancing the formalism. As written, many audiences will struggle to glean insight from Section III. 故事讲得不好, 全文符号统一. 第三节难以深刻理解.</li>
 </ul>
-<h3 id="写得怎么样">写得怎么样</h3>
-<p>The writing itself is good. The authors&rsquo; use of formalism without explanation makes it extremely difficult to understand their contribution. 写得好,但是公式那块没介绍好</p>
-<h3 id="我的总结">我的总结</h3>
-<ul>
+<h3 id="写得怎么样" class="headerLink">
+    <a href="#%e5%86%99%e5%be%97%e6%80%8e%e4%b9%88%e6%a0%b7" class="header-mark"></a>写得怎么样</h3><p>The writing itself is good. The authors&rsquo; use of formalism without explanation makes it extremely difficult to understand their contribution. 写得好,但是公式那块没介绍好</p>
+<h3 id="我的总结" class="headerLink">
+    <a href="#%e6%88%91%e7%9a%84%e6%80%bb%e7%bb%93" class="header-mark"></a>我的总结</h3><ul>
 <li>添加攻击模型</li>
 <li>添加安全性分析(按意见)</li>
 <li>看看他说的这两个已有的论文. (没看到这两个论文)</li>
@@ -179,21 +217,21 @@
 <li>检查第三节逻辑</li>
 <li>作者是懂的,但是他根本不想要我的.</li>
 </ul>
-<h2 id="攻击模型">攻击模型</h2>
-<ol>
+<h2 id="攻击模型" class="headerLink">
+    <a href="#%e6%94%bb%e5%87%bb%e6%a8%a1%e5%9e%8b" class="header-mark"></a>攻击模型</h2><ol>
 <li>攻击者能干嘛</li>
 <li>写本文假设,一条一条的写</li>
 <li>写SDN基本逻辑, 和2一起写</li>
 </ol>
-<h3 id="efficient-forwarding-anomaly-detection-in-software-defined-networks">Efficient Forwarding Anomaly Detection in Software-Defined Networks</h3>
-<figure><img src="/ox-hugo/mXZWlM.png">
+<h3 id="efficient-forwarding-anomaly-detection-in-software-defined-networks" class="headerLink">
+    <a href="#efficient-forwarding-anomaly-detection-in-software-defined-networks" class="header-mark"></a>Efficient Forwarding Anomaly Detection in Software-Defined Networks</h3><figure><img src="/ox-hugo/mXZWlM.png">
 </figure>
 
 <figure><img src="/ox-hugo/YdXTIZ.png">
 </figure>
 
-<h3 id="ppv-enabling-efficient-source-and-path-verification-via-probabilistic-packet-marking">PPV Enabling efficient source and path verification via probabilistic packet marking</h3>
-<figure><img src="/ox-hugo/Wb466I.png">
+<h3 id="ppv-enabling-efficient-source-and-path-verification-via-probabilistic-packet-marking" class="headerLink">
+    <a href="#ppv-enabling-efficient-source-and-path-verification-via-probabilistic-packet-marking" class="header-mark"></a>PPV Enabling efficient source and path verification via probabilistic packet marking</h3><figure><img src="/ox-hugo/Wb466I.png">
 </figure>
 
 <figure><img src="/ox-hugo/BQSxS0.png">
@@ -202,8 +240,8 @@
 <figure><img src="/ox-hugo/4l4WUb.png">
 </figure>
 
-<h3 id="network-wide-forwarding-anomaly-detection-and-localization-in-software-defined-networks">Network-Wide Forwarding Anomaly Detection and Localization in Software Defined Networks</h3>
-<figure><img src="/ox-hugo/hN03wD.png">
+<h3 id="network-wide-forwarding-anomaly-detection-and-localization-in-software-defined-networks" class="headerLink">
+    <a href="#network-wide-forwarding-anomaly-detection-and-localization-in-software-defined-networks" class="header-mark"></a>Network-Wide Forwarding Anomaly Detection and Localization in Software Defined Networks</h3><figure><img src="/ox-hugo/hN03wD.png">
 </figure>
 
 <figure><img src="/ox-hugo/FWdJSq.png">
@@ -212,8 +250,8 @@
 <figure><img src="/ox-hugo/IEFZ2u.png">
 </figure>
 
-<h3 id="verifying-rule-enforcement-in-software-defined-networks-with-rev">Verifying Rule Enforcement in Software Defined Networks with REV</h3>
-<figure><img src="/ox-hugo/j8hgpC.png">
+<h3 id="verifying-rule-enforcement-in-software-defined-networks-with-rev" class="headerLink">
+    <a href="#verifying-rule-enforcement-in-software-defined-networks-with-rev" class="header-mark"></a>Verifying Rule Enforcement in Software Defined Networks with REV</h3><figure><img src="/ox-hugo/j8hgpC.png">
 </figure>
 
 <figure><img src="/ox-hugo/IhKqX7.png">
@@ -225,8 +263,8 @@
 <figure><img src="/ox-hugo/p9x21C.png">
 </figure>
 
-<h3 id="towards-rule-enforcement-verification-forsoftware-defined-networks">Towards Rule Enforcement Verification forSoftware Defined Networks</h3>
-<figure><img src="/ox-hugo/dlosDE.png">
+<h3 id="towards-rule-enforcement-verification-forsoftware-defined-networks" class="headerLink">
+    <a href="#towards-rule-enforcement-verification-forsoftware-defined-networks" class="header-mark"></a>Towards Rule Enforcement Verification forSoftware Defined Networks</h3><figure><img src="/ox-hugo/dlosDE.png">
 </figure>
 
 <figure><img src="/ox-hugo/9f1DlL.png">
@@ -235,8 +273,8 @@
 <figure><img src="/ox-hugo/DSLaHU.png">
 </figure>
 
-<h3 id="dynamic-packet-forwarding-verification-in-sdn">Dynamic Packet Forwarding Verification in SDN</h3>
-<figure><img src="/ox-hugo/XUYLmR.png">
+<h3 id="dynamic-packet-forwarding-verification-in-sdn" class="headerLink">
+    <a href="#dynamic-packet-forwarding-verification-in-sdn" class="header-mark"></a>Dynamic Packet Forwarding Verification in SDN</h3><figure><img src="/ox-hugo/XUYLmR.png">
 </figure>
 
 <figure><img src="/ox-hugo/4zmME6.png">
@@ -254,24 +292,78 @@
 <figure><img src="/ox-hugo/vxMi7O.png">
 </figure>
 
-</div><div id="comments"><div id="utterances"></div><noscript>
+</div><div id="comments" class="print:!tw-hidden tw-pt-32 tw-pb-8"><div id="utterances"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
-            </noscript></div></div></div>
-        </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.152.2">Hugo</a> | Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.13"><i class="far fa-edit fa-fw"></i> DoIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
-        </div></footer></div>
+            </noscript></div></div></main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.152.2">Hugo</a>&nbsp;|&nbsp;Theme - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.4.2"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg> DoIt</a>
+                </div><div class="footer-line"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532 0-200-89.451-200-200 0-110.531 89.451-200 200-200 110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43 0-140.484-61.425-140.484-141.567 0-79.152 60.275-139.401 139.762-139.401 55.531 0 88.738 26.62 97.593 34.779a11.965 11.965 0 0 1 1.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303 0-77.916 35.33-77.916 80.082 0 41.589 26.888 83.692 78.277 83.692 32.657 0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947 0 0 1-1.152 15.518z"/></svg>2025<span class="author">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer><div class="print:!tw-hidden tw-flex tw-flex-col tw-fixed tw-right-4 tw-bottom-4 tw-gap-2"><a href="#back-to-top" id="back-to-top-button" class="tw-transition-opacity tw-opacity-0 tw-block tw-bg-bgColor-secondary tw-rounded-full" style="padding: 0.6rem; line-height: 1.3rem; font-size: 1rem;" title="Back to Top">
+      <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg>
+  </a>
 
-    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="Back to Top">
-            <i class="fas fa-arrow-up fa-fw"></i>
-        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-            <i class="fas fa-comment fa-fw"></i>
-        </a>
-    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+  <a href="#comments" id="view-comments" class="tw-block tw-bg-bgColor-secondary tw-rounded-full" style="padding: 0.6rem; line-height: 1.3rem; font-size: 1rem;" title="View Comments">
+      <svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"/></svg>
+  </a></div>
+<link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript>
+<script>window.config={"autocomplete.min.js":"/lib/autocomplete/autocomplete.min.js","comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"fuse.min.js":"/lib/fuse/fuse.min.js","math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"table":{"sort":true}};</script><script
+    src="/lib/tablesort/tablesort.min.js"
+    
+  ></script><script
+    src="/lib/katex/katex.min.js"
+    
+      defer
+    
+  ></script><script
+    src="/lib/katex/auto-render.min.js"
+    
+      defer
+    
+  ></script><script
+    src="/lib/katex/copy-tex.min.js"
+    
+      defer
+    
+  ></script><script
+    src="/lib/katex/mhchem.min.js"
+    
+      defer
+    
+  ></script><script
+    src="/js/katex.min.js"
+    
+      defer
+    
+  ></script><script
+    src="/js/theme.min.js"
+    
+      defer
+    
+  ></script><script
+    src="/js/utterances.min.js"
+    
+      defer
+    
+  ></script>
 
-<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"","lightTheme":"github-light","repo":"forrestk3/forrestk3.github.io"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/katex.min.css">
-    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
-    <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+<script type="speculationrules">
+  {
+    "prerender": [
+      {
+        "where": { "href_matches": "/*" },
+        "eagerness": "moderate"
+      }
+    ]
+  }
+</script>
 </body>
 
 </html>

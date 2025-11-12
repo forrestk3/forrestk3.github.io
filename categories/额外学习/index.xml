@@ -1,54 +1,108 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>额外学习 on 咸蛋超人</title>
-    <link>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</link>
-    <description>Recent content in 额外学习 on 咸蛋超人</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 12 Nov 2025 15:57:33 -0400</lastBuildDate>
-    <atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Emacs 常用技巧总结</title>
-      <link>/posts/emacs_tip/</link>
-      <pubDate>Wed, 12 Nov 2025 15:27:00 -0400</pubDate>
-      <guid>/posts/emacs_tip/</guid>
-      <description>&lt;h2 id=&#34;bookmark&#34;&gt;bookmark&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;C-x r l : 列出书签&lt;/li&gt;&#xA;&lt;li&gt;C-x r m : 保存书签&lt;/li&gt;&#xA;&lt;li&gt;S-x bookmark-save : 可以在书签保存文件中修修改书签&lt;/li&gt;&#xA;&lt;li&gt;S-M: mark set&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--listend--&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Shift-S &amp;gt;: 跳到最后&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;org&#34;&gt;org&lt;/h2&gt;&#xA;&lt;p&gt;Shift-Tab: 循环标题折叠&lt;/p&gt;&#xA;&lt;h2 id=&#34;ox-hugo-安装-用于导致org文件为hugo适配的markdown格式&#34;&gt;ox-hugo 安装，用于导致org文件为hugo适配的markdown格式&lt;/h2&gt;&#xA;&lt;h2 id=&#34;yasnippet-config&#34;&gt;Yasnippet Config&lt;/h2&gt;&#xA;&lt;h3 id=&#34;调出yasnippet配置&#34;&gt;调出yasnippet配置&lt;/h3&gt;&#xA;&lt;p&gt;M-x yas-new-snippet&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Elgamal算法原理总结</title>
-      <link>/posts/org_24_elgamal/</link>
-      <pubDate>Fri, 16 Jun 2023 13:00:00 +0800</pubDate>
-      <guid>/posts/org_24_elgamal/</guid>
-      <description>&lt;h2 id=&#34;算法流程-密钥生成-加密-解密-正确性正明&#34;&gt;算法流程: 密钥生成, 加密, 解密, 正确性正明&lt;/h2&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;/ox-hugo/Elgamal.jpg&#34;&gt;&#xA;&lt;/figure&gt;</description>
-    </item>
-    <item>
-      <title>RSA算法原理总结</title>
-      <link>/posts/org_23_rsa/</link>
-      <pubDate>Mon, 05 Jun 2023 13:56:00 +0800</pubDate>
-      <guid>/posts/org_23_rsa/</guid>
-      <description>&lt;h2 id=&#34;rsa算法流程&#34;&gt;rsa算法流程&lt;/h2&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;/ox-hugo/rsa_alg.jpg&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;h2 id=&#34;欧拉定理代码验证&#34;&gt;欧拉定理代码验证:&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;欧拉函数；求比n 小的正整数中与n互质的数有多少个&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;euler_phi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;//=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;验证欧拉定理的函数&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;compute_modular_exponentiation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;phi_n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;phi_n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;验证欧拉定理：若a与n互质，则a^&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{phi_n}&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt; % n 是否等于1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;compute_modular_exponentiation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;euler_phi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;compute_modular_exponentiation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;euler_phi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;compute_modular_exponentiation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;euler_phi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;验证欧拉函数φ(n)=(p−1)⋅(q−1)&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;euler_phi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;(3-1)*(5-1)&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;euler_phi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;55&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;(5-1)*(11-1)&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;正如大家所知，代数几何是现代数学的主流。当代大多数一流的数学家都工作在这一领域。因此如果你觉得自己天赋异禀，并在代数，几何与分析各方面都有着扎实的基础，我建议你绝不要浪费自己的天赋：应义无反顾的选择代数几何这一专业。当然把代数，几何与分析这三门基础功课同时学好的人很少。比如有些同学有着很好的分析功底，但代数中的抽象思维能力却相对显得薄弱。如果是这样的话，我建议你选择分析方面的专业，比如：复分析，分形，+调和分析或微分方程。&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;如果你代数和分析都不怎么样，可却在几何方面有着良好的感觉，要是这样的话，我建议你应和梅加强老师好好探讨一下。让他帮你判断一下看自己是不是可以学习几何。+除以上三部分同学之外，还有这样的一部分同学：他们对代数，分析与几何都不擅长，但却一直坚信自己在数学上仍能有所作为，并幻想有朝一日成为中国数学界的中流砥柱。如果你属于这部分同学中的一位的话，我建议你选择动力系统。动力系统这一学科其实就是专门为这部分同学开设的。&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;当然即使是动力系统也不是人人都能学的。因为动力系统需要大量的微积分。可总有那么一部分同学还没来得及把极限的概念搞清楚就大学毕业了。如果你不巧就是这样的一位同学，也就是说你大学四年压根儿就没学数学，但仍希望自己将来能在数学上一展宏图的话，我建议你选择组合数学这一专业。这一专业的特点就是它只用到中学的数学。+如果你在中学时参加过数学竞赛并获过奖项的话，这一学科正是你大展身手的地方。&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;我想大多数同学看到这儿之前已经找到了适合自己的专业了。可若仍有人羞怯的说他在中学时早恋，因此连中学的数学也没学好，我想告诉这部分同学不要怕。在我们系有专门为你们开设的一个专业：统计学。这一学科只要求懂得小学数学中的加减乘除四则运算就够了。+更重要的是，选择这一专业的大多都是女同学。在你准确无误的把成千上万个数据加起来并娴熟的计算出他们的均值时，你也赢得了众多师姐师妹的芳心：短短三年的研究生生活或许能让你再次体会一次那如花美眷，似水流年的往事。。。&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;最后这一条是专门针对那些悲情人物的。他们连小学的数学也没学好。不要说把上千个数加起来，就是把两个数加起来，对他们来说都是件很吃力的事。然而这一切丝毫没有削弱他们对数学的一片痴情。他们日日夜夜泡在图书馆里。他们翻阅了所有的数学文献，却从未找到一本能读懂的。+但他们仍坚持不懈，+为的就是找到一个适合自己的专业。他们的行为感动了上帝。上世纪的某一天，上帝为他们创造了一台机器帮他们计算。这就是计算机。借助计算机，他们可以很快的进行加减乘除的运算。这就是计算数学。&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>马尔可夫决策过程 (Markov decision processes,MDP)</title>
-      <link>/posts/org_13_markon_decision/</link>
-      <pubDate>Tue, 04 Oct 2022 21:44:00 +0800</pubDate>
-      <guid>/posts/org_13_markon_decision/</guid>
-      <description>&lt;h2 id=&#34;马尔可夫过程&#34;&gt;马尔可夫过程&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/494755866&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;参考自这里&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;性质--markov-property&#34;&gt;性质(Markov Property)&lt;/h3&gt;&#xA;&lt;p&gt;马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义:&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;/ox-hugo/QUGtYb.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;可以从这个式子里面看到, 下一个状态为\(S_{t+1}\)的概率只于当前状态\(S_t\)有关, 而与更前的状态\(S_1, S_2, &amp;hellip;, S_{t-1}\)都无关.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hoeffding&#39;s inequality (霍夫丁不等式讲解)</title>
-      <link>/posts/org_12_hoeffding_ineq/</link>
-      <pubDate>Mon, 26 Sep 2022 23:02:00 +0800</pubDate>
-      <guid>/posts/org_12_hoeffding_ineq/</guid>
-      <description>&lt;h2 id=&#34;霍夫丁不等式表达&#34;&gt;霍夫丁不等式表达&lt;/h2&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;/ox-hugo/xO47Lh.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;下面的这个式子是我们常用的&lt;/p&gt;&#xA;&lt;h2 id=&#34;markov-inequality&#34;&gt;Markov inequality&lt;/h2&gt;&#xA;&lt;p&gt;一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\).&lt;/p&gt;&#xA;&lt;p&gt;这个不等式的证明:&lt;/p&gt;&#xA;&lt;figure&gt;&lt;img src=&#34;/ox-hugo/rCbCCP.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;过程中使用了微积分和一些不等式的基础, 不了解了.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Magit的基本使用</title>
-      <link>/posts/org_05_magit_usage/</link>
-      <pubDate>Mon, 15 Aug 2022 21:01:00 +0800</pubDate>
-      <guid>/posts/org_05_magit_usage/</guid>
-      <description>&lt;h2 id=&#34;magit-的基本介绍&#34;&gt;Magit 的基本介绍&lt;/h2&gt;&#xA;&lt;p&gt;Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更加地emacs化. 本人的emacs 能力有限, 因此只介绍magit中的一些最常用的命令, 方便日常使用够用即可. 要更加全面地研究可以看它的&lt;a href=&#34;https://magit.vc/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;原网站&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>额外学习 - Category - 咸蛋超人</title>
+        <link>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</link>
+        <description>额外学习 - Category - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Nov 2025 15:27:00 -0400</lastBuildDate><atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>Emacs 常用技巧总结</title>
+    <link>/posts/emacs_tip/</link>
+    <pubDate>Wed, 12 Nov 2025 15:27:00 -0400</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/emacs_tip/</guid>
+    <description><![CDATA[<h2 id="bookmark" class="headerLink">
+    <a href="#bookmark" class="header-mark"></a>bookmark</h2><ul>
+<li>C-x r l : 列出书签</li>
+<li>C-x r m : 保存书签</li>
+<li>S-x bookmark-save : 可以在书签保存文件中修修改书签</li>
+<li>S-M: mark set</li>
+</ul>
+<!--listend-->
+<ul>
+<li>Shift-S &gt;: 跳到最后</li>
+</ul>
+<h2 id="org" class="headerLink">
+    <a href="#org" class="header-mark"></a>org</h2><p>Shift-Tab: 循环标题折叠</p>
+<h2 id="ox-hugo-安装" class="headerLink">
+    <a href="#ox-hugo-%e5%ae%89%e8%a3%85" class="header-mark"></a>ox-hugo 安装</h2><p>用于导致org文件为hugo适配的markdown格式</p>]]></description>
+</item><item>
+    <title>Elgamal算法原理总结</title>
+    <link>/posts/org_24_elgamal/</link>
+    <pubDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/org_24_elgamal/</guid>
+    <description><![CDATA[<h2 id="算法流程-密钥生成-加密-解密-正确性正明" class="headerLink">
+    <a href="#%e7%ae%97%e6%b3%95%e6%b5%81%e7%a8%8b-%e5%af%86%e9%92%a5%e7%94%9f%e6%88%90-%e5%8a%a0%e5%af%86-%e8%a7%a3%e5%af%86-%e6%ad%a3%e7%a1%ae%e6%80%a7%e6%ad%a3%e6%98%8e" class="header-mark"></a>算法流程: 密钥生成, 加密, 解密, 正确性正明</h2><figure><img src="/ox-hugo/Elgamal.jpg">
+</figure>]]></description>
+</item><item>
+    <title>RSA算法原理总结</title>
+    <link>/posts/org_23_rsa/</link>
+    <pubDate>Mon, 05 Jun 2023 13:56:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/org_23_rsa/</guid>
+    <description><![CDATA[<h2 id="rsa算法流程" class="headerLink">
+    <a href="#rsa%e7%ae%97%e6%b3%95%e6%b5%81%e7%a8%8b" class="header-mark"></a>rsa算法流程</h2><figure><img src="/ox-hugo/rsa_alg.jpg">
+</figure>
+
+<h2 id="欧拉定理代码验证" class="headerLink">
+    <a href="#%e6%ac%a7%e6%8b%89%e5%ae%9a%e7%90%86%e4%bb%a3%e7%a0%81%e9%aa%8c%e8%af%81" class="header-mark"></a>欧拉定理代码验证:</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    
+    tw-flex 
+    tw-flex-row
+    tw-flex-1 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        code-block-button
+        tw-mx-2 
+        tw-flex
+        tw-flex-row
+        tw-flex-1"
+      aria-hidden="true">
+          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
+          <p class="tw-select-none !tw-my-1">python</p>]]></description>
+</item><item>
+    <title>马尔可夫决策过程 (Markov decision processes,MDP)</title>
+    <link>/posts/org_13_markon_decision/</link>
+    <pubDate>Tue, 04 Oct 2022 21:44:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/org_13_markon_decision/</guid>
+    <description><![CDATA[<h2 id="马尔可夫过程" class="headerLink">
+    <a href="#%e9%a9%ac%e5%b0%94%e5%8f%af%e5%a4%ab%e8%bf%87%e7%a8%8b" class="header-mark"></a>马尔可夫过程</h2><p><a href="https://zhuanlan.zhihu.com/p/494755866" target="_blank" rel="noopener noreferrer">参考自这里</a></p>
+<h3 id="性质--markov-property" class="headerLink">
+    <a href="#%e6%80%a7%e8%b4%a8--markov-property" class="header-mark"></a>性质(Markov Property)</h3><p>马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义:</p>
+<figure><img src="/ox-hugo/QUGtYb.png">
+</figure>
+
+<p>可以从这个式子里面看到, 下一个状态为\(S_{t+1}\)的概率只于当前状态\(S_t\)有关, 而与更前的状态\(S_1, S_2, &hellip;, S_{t-1}\)都无关.</p>]]></description>
+</item><item>
+    <title>Hoeffding&#39;s inequality (霍夫丁不等式讲解)</title>
+    <link>/posts/org_12_hoeffding_ineq/</link>
+    <pubDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/org_12_hoeffding_ineq/</guid>
+    <description><![CDATA[<h2 id="霍夫丁不等式表达" class="headerLink">
+    <a href="#%e9%9c%8d%e5%a4%ab%e4%b8%81%e4%b8%8d%e7%ad%89%e5%bc%8f%e8%a1%a8%e8%be%be" class="header-mark"></a>霍夫丁不等式表达</h2><figure><img src="/ox-hugo/xO47Lh.png">
+</figure>
+
+<p>下面的这个式子是我们常用的</p>
+<h2 id="markov-inequality" class="headerLink">
+    <a href="#markov-inequality" class="header-mark"></a>Markov inequality</h2><p>一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\).</p>
+<p>这个不等式的证明:</p>
+<figure><img src="/ox-hugo/rCbCCP.png">
+</figure>
+
+<p>过程中使用了微积分和一些不等式的基础, 不了解了.</p>]]></description>
+</item><item>
+    <title>Magit的基本使用</title>
+    <link>/posts/org_05_magit_usage/</link>
+    <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/org_05_magit_usage/</guid>
+    <description><![CDATA[<h2 id="magit-的基本介绍" class="headerLink">
+    <a href="#magit-%e7%9a%84%e5%9f%ba%e6%9c%ac%e4%bb%8b%e7%bb%8d" class="header-mark"></a>Magit 的基本介绍</h2><p>Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更加地emacs化. 本人的emacs 能力有限, 因此只介绍magit中的一些最常用的命令, 方便日常使用够用即可. 要更加全面地研究可以看它的<a href="https://magit.vc/" target="_blank" rel="noopener noreferrer">原网站</a>.</p>]]></description>
+</item></channel>
 </rss>

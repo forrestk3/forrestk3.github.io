@@ -1,33 +1,97 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hides on 咸蛋超人</title>
-    <link>/hide/</link>
-    <description>Recent content in Hides on 咸蛋超人</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 09 Dec 2022 10:21:40 +0800</lastBuildDate>
-    <atom:link href="/hide/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>FLPVS 审稿意见</title>
-      <link>/hide/infocom_review/</link>
-      <pubDate>Thu, 08 Dec 2022 19:44:00 +0800</pubDate>
-      <guid>/hide/infocom_review/</guid>
-      <description>&lt;h2 id=&#34;审稿人1&#34;&gt;审稿人1&lt;/h2&gt;&#xA;&lt;h3 id=&#34;弱点&#34;&gt;弱点:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The paper does not describe the attack model  clearly other than to state that an adversary can make the traffic violate the network policy &amp;hellip; by deleting or adding the forwarding rules of the compromised switches.未描述论文的attack model. (攻击者是怎么让流量违背网络策略的)&lt;/li&gt;&#xA;&lt;li&gt;Section III does not describe the network operation well but rather goes into the details of the path validation approach (using the additive magma operation, which is not clearly motivated). 第三节未描述网络操作而描述路径验证方法(使用additive magma的动机未描述) \(ok\)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;写得怎么样&#34;&gt;写得怎么样&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The authors need to present a high level overview of their approach before describing the individual approaches. The paper is difficult to follow. 描述每个方法时要先给出它的整体概念.文章难读懂. (不知道这里他说的&amp;quot;它们的方法&amp;quot;指的是啥)&lt;/li&gt;&#xA;&lt;li&gt;Figure 4 is unreadable due to the small text size used. 图4太小了,看不清 \(ok\)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;额外评价&#34;&gt;额外评价&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The reader is left with a lot of unanswered questions: How are all the sources programmed to add an extra packet header in the single packet path validation method? How is a flow identified for the network flow path validation method? 读者留下了多未解答的问题, 单包验证算法中所有的源如何被编程到了个额外的包头中的；流路径验证方法中如何去识别一个流. \(ok\)&lt;/li&gt;&#xA;&lt;li&gt;On page 8, the following sentence should be rephrased: &amp;ldquo;The more complex the topology, the more the network flows paths overlap, and therefore the more greatly reducing storage costs for path validation.&amp;rdquo; 第8页的一句要重写. \(del\)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;我的总结&#34;&gt;我的总结&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;添加攻击模型；添加sdn网络基本操作&lt;/li&gt;&#xA;&lt;li&gt;给每部分要讲什么添加个总结性的话&lt;/li&gt;&#xA;&lt;li&gt;图弄大一点&lt;/li&gt;&#xA;&lt;li&gt;根据要求修改,详细说明单包验证,多包验证过程&lt;/li&gt;&#xA;&lt;li&gt;这个作者应该不是这个方向的&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;审稿人2&#34;&gt;审稿人2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;论文总结&#34;&gt;论文总结:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The authors have proposed a(FLPVS (flexible and lightweight path validation scheme) in the context of SDN. The scheme has two parts. Firstly, there is a validation information storing optimization method. Secondly, a path partition scheme in the controller validates the overlapping sub-paths of different network flows. The idea of the path validation scheme framework is similar to the existing related work and the paper lacks the compaarisons with   related work. 和已有的工作有点像,未和已有的工作做对比.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;缺点&#34;&gt;缺点:&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The scheme framework is very similar to prior work and the basic idea proposed in the paper is not new. Inaction, the experiments are not comprehensive to compare with related work. 与现有的工作很像, 实验部分未与相关工作做对比.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;写得怎么样&#34;&gt;写得怎么样&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;好&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;额外评价&#34;&gt;额外评价&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;没给&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;我的总结&#34;&gt;我的总结&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;添加与相关工作对比实验, 添加与相关工作不同地方说明并做强调, 审稿人应该没看懂&lt;/li&gt;&#xA;&lt;li&gt;基本没给什么意见, 说与现有工作像,没说与哪个像.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;审稿人3&#34;&gt;审稿人3&lt;/h2&gt;&#xA;&lt;h3 id=&#34;缺点&#34;&gt;缺点&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Security-oriented papers need to have a threat model. The paper lacks a clear specification of the adversary and the components that are controlled by the adversary. The paper does not argue what knowledge the adversary receives, how misinformation can be prevented or detected, or at what point the system fails. 没有threat model, 缺少明确的攻击声明以及攻击者能控制的部分,未说明攻击者所能得到的知识,如何防止或检测错误信息,以及在什么情况下系统会失效&lt;/li&gt;&#xA;&lt;li&gt;Notably, Section V does not describe the results of a security analysis. As an obvious scenario, if adversaries control all switches on the path, they could simply not tell the controller about any packets, allowing communication to occur covertly without the controller&amp;rsquo;s knowledge. If all switches are legitimate, then the attacks describe in the introduction (&amp;ldquo;deleting or adding the forwarding rules of the compromised switches&amp;rdquo;) would not occur and the approach would be unnecessary. Accordingly, this approach works when some malicious switches are present, but some non-compromised switches also exist on the path. An analysis on what proportion that can be malicious would be telling. 第五部分没有进行安全地性分析,比如攻击者掌握了这条path上的每一个交换机,那它就可以不给控制器发任何数据包的信息,在转发包时不需要控制器的任何信息. 如果所有交换机都是良性,这个方法就没有必要. 这个方法只有在一条路径上即有良性交换机又有恶意交换机时有效.因此需要加一条分析说明哪部分可以是恶意的.&lt;/li&gt;&#xA;&lt;li&gt;The packet marking approach is not new and was proposed for preventing of IP source address forgery in the past. Prior work, such as [Yaar, Abraham, Adrian Perrig, and Dawn Song. &amp;ldquo;StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense.&amp;rdquo; IEEE Journal on Selected Areas in Communications 24.10 (2006): 1853-1863.] and [Bremler-Barr, Anat, and Hanoch Levy. &amp;ldquo;Spoofing prevention method.&amp;rdquo; Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and Communications Societies. Vol. 1. IEEE, 2005.] are not cited, but are seminal works in this area. I am surprised the authors did not compare against those prior marking schemes. 数据包标记方法并不新,有相关文献中已提出但并未引用. 并未与这些方案作比较.&lt;/li&gt;&#xA;&lt;li&gt;The performance section is a simulation, but it does not take into account the actual impact of running this system in hardware. SDN switches can perform elevations, yet be terribly slow at it. Likewise, marking in a general-purpose CPU on those switches can incur real performance costs. To truly understand the efficiency of this approach in practice, the evaluation needs to be done empirically. 实验只模拟了,未在真实交换机上跑, 要我在真实交换机上跑出结果.&lt;/li&gt;&#xA;&lt;li&gt;The paper does a poor job of guiding a reader through its formalism. In Section III, the first equation is not related to the switch information (S_i, s_i, k_i). Instead, it uses a_1, b1_, a_2, b_2, without relating them to the switch information. The best way to reach an audience is via example that simultaneously walks the reader through the example and intuitively explains the results while simultaneously advancing the formalism. As written, many audiences will struggle to glean insight from Section III. 故事讲得不好, 全文符号统一. 第三节难以深刻理解.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;写得怎么样&#34;&gt;写得怎么样&lt;/h3&gt;&#xA;&lt;p&gt;The writing itself is good. The authors&amp;rsquo; use of formalism without explanation makes it extremely difficult to understand their contribution. 写得好,但是公式那块没介绍好&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DO-IDS汉语版</title>
-      <link>/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/</link>
-      <pubDate>Tue, 23 Aug 2022 22:08:00 +0800</pubDate>
-      <guid>/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/</guid>
-      <description>&lt;h2 id=&#34;摘要&#34;&gt;摘要&lt;/h2&gt;&#xA;&lt;p&gt;随着智能工厂的空前发展，工业网络中需要更加频繁更改网络流量的转发策略。软件定义网络具有高灵活性和可编程性的优点，可动态地管理网络流量转发策略，它对于智能工业网络具有很可观的发展前景。然而，软件定义工业网络十分容易受到网络攻击，网络攻击会导致工业生产效率降低甚至引起工业事故。本文提出一个基于深度学习的单类入侵检测方案（DO-IDS）来提高工业网络的安全性。首先，DO-IDS 定期抽取工业网络流量的流统计信息并据此生成网络状态特征；其次，我们利用一种基于深度学习的降维方法来过滤上述特征中的冗余特征；此外，我们设计一种基于深度学习的单类检测器来计算网络特征的异常打分；最后，我们对所提出的检测方案进行了模拟实验，结果表明 DO-IDS 可以高效率且高准确率地检测出异常流量。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>记录在数据平面选择流的过程</title>
-      <link>/hide/org_08_rule_selection/</link>
-      <pubDate>Tue, 23 Aug 2022 16:09:00 +0800</pubDate>
-      <guid>/hide/org_08_rule_selection/</guid>
-      <description>&lt;h2 id=&#34;选择的流经过所有的交换机&#34;&gt;选择的流经过所有的交换机&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;控制器实时构造rule graph&lt;/li&gt;&#xA;&lt;li&gt;获取所有的ingress rule（入度为0的规则），并依长度降序排序&lt;/li&gt;&#xA;&lt;li&gt;对每一个ingress rule \(r_0\): 若该path的节点未在节点集\(\mathbb{S}\)中：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;将$r_0$所属的rule path所经过的节点加入$\mathbb{S}$中；&lt;/li&gt;&#xA;&lt;li&gt;将 \(r_0\) 所属的rule path放到规则集$\mathbb{R}$中。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;若节点集的节点数等于规则图中的节点数（这表明每一个交换机都有经过其的rule），则结束.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;span class=&#34;underline&#34;&gt;只针对交换机的流规则选择办法中，当攻击者对某个流进行恶意交付时，无法被检测。&lt;/span&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Hides -  - 咸蛋超人</title>
+        <link>/hide/</link>
+        <description>Hides -  - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 08 Dec 2022 19:44:00 &#43;0800</lastBuildDate><atom:link href="/hide/" rel="self" type="application/rss+xml" /><item>
+    <title>FLPVS 审稿意见</title>
+    <link>/hide/infocom_review/</link>
+    <pubDate>Thu, 08 Dec 2022 19:44:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/hide/infocom_review/</guid>
+    <description><![CDATA[<h2 id="审稿人1" class="headerLink">
+    <a href="#%e5%ae%a1%e7%a8%bf%e4%ba%ba1" class="header-mark"></a>审稿人1</h2><h3 id="弱点" class="headerLink">
+    <a href="#%e5%bc%b1%e7%82%b9" class="header-mark"></a>弱点:</h3><ul>
+<li>The paper does not describe the attack model  clearly other than to state that an adversary can make the traffic violate the network policy &hellip; by deleting or adding the forwarding rules of the compromised switches.未描述论文的attack model. (攻击者是怎么让流量违背网络策略的)</li>
+<li>Section III does not describe the network operation well but rather goes into the details of the path validation approach (using the additive magma operation, which is not clearly motivated). 第三节未描述网络操作而描述路径验证方法(使用additive magma的动机未描述) \(ok\)</li>
+</ul>
+<h3 id="写得怎么样" class="headerLink">
+    <a href="#%e5%86%99%e5%be%97%e6%80%8e%e4%b9%88%e6%a0%b7" class="header-mark"></a>写得怎么样</h3><ul>
+<li>The authors need to present a high level overview of their approach before describing the individual approaches. The paper is difficult to follow. 描述每个方法时要先给出它的整体概念.文章难读懂. (不知道这里他说的&quot;它们的方法&quot;指的是啥)</li>
+<li>Figure 4 is unreadable due to the small text size used. 图4太小了,看不清 \(ok\)</li>
+</ul>
+<h3 id="额外评价" class="headerLink">
+    <a href="#%e9%a2%9d%e5%a4%96%e8%af%84%e4%bb%b7" class="header-mark"></a>额外评价</h3><ul>
+<li>The reader is left with a lot of unanswered questions: How are all the sources programmed to add an extra packet header in the single packet path validation method? How is a flow identified for the network flow path validation method? 读者留下了多未解答的问题, 单包验证算法中所有的源如何被编程到了个额外的包头中的；流路径验证方法中如何去识别一个流. \(ok\)</li>
+<li>On page 8, the following sentence should be rephrased: &ldquo;The more complex the topology, the more the network flows paths overlap, and therefore the more greatly reducing storage costs for path validation.&rdquo; 第8页的一句要重写. \(del\)</li>
+</ul>
+<h3 id="我的总结" class="headerLink">
+    <a href="#%e6%88%91%e7%9a%84%e6%80%bb%e7%bb%93" class="header-mark"></a>我的总结</h3><ul>
+<li>添加攻击模型；添加sdn网络基本操作</li>
+<li>给每部分要讲什么添加个总结性的话</li>
+<li>图弄大一点</li>
+<li>根据要求修改,详细说明单包验证,多包验证过程</li>
+<li>这个作者应该不是这个方向的</li>
+</ul>
+<h2 id="审稿人2" class="headerLink">
+    <a href="#%e5%ae%a1%e7%a8%bf%e4%ba%ba2" class="header-mark"></a>审稿人2</h2><h3 id="论文总结" class="headerLink">
+    <a href="#%e8%ae%ba%e6%96%87%e6%80%bb%e7%bb%93" class="header-mark"></a>论文总结:</h3><ul>
+<li>The authors have proposed a(FLPVS (flexible and lightweight path validation scheme) in the context of SDN. The scheme has two parts. Firstly, there is a validation information storing optimization method. Secondly, a path partition scheme in the controller validates the overlapping sub-paths of different network flows. The idea of the path validation scheme framework is similar to the existing related work and the paper lacks the compaarisons with   related work. 和已有的工作有点像,未和已有的工作做对比.</li>
+</ul>
+<h3 id="缺点" class="headerLink">
+    <a href="#%e7%bc%ba%e7%82%b9" class="header-mark"></a>缺点:</h3><ul>
+<li>The scheme framework is very similar to prior work and the basic idea proposed in the paper is not new. Inaction, the experiments are not comprehensive to compare with related work. 与现有的工作很像, 实验部分未与相关工作做对比.</li>
+</ul>
+<h3 id="写得怎么样" class="headerLink">
+    <a href="#%e5%86%99%e5%be%97%e6%80%8e%e4%b9%88%e6%a0%b7" class="header-mark"></a>写得怎么样</h3><ul>
+<li>好</li>
+</ul>
+<h3 id="额外评价" class="headerLink">
+    <a href="#%e9%a2%9d%e5%a4%96%e8%af%84%e4%bb%b7" class="header-mark"></a>额外评价</h3><ul>
+<li>没给</li>
+</ul>
+<h3 id="我的总结" class="headerLink">
+    <a href="#%e6%88%91%e7%9a%84%e6%80%bb%e7%bb%93" class="header-mark"></a>我的总结</h3><ul>
+<li>添加与相关工作对比实验, 添加与相关工作不同地方说明并做强调, 审稿人应该没看懂</li>
+<li>基本没给什么意见, 说与现有工作像,没说与哪个像.</li>
+</ul>
+<h2 id="审稿人3" class="headerLink">
+    <a href="#%e5%ae%a1%e7%a8%bf%e4%ba%ba3" class="header-mark"></a>审稿人3</h2><h3 id="缺点" class="headerLink">
+    <a href="#%e7%bc%ba%e7%82%b9" class="header-mark"></a>缺点</h3><ul>
+<li>Security-oriented papers need to have a threat model. The paper lacks a clear specification of the adversary and the components that are controlled by the adversary. The paper does not argue what knowledge the adversary receives, how misinformation can be prevented or detected, or at what point the system fails. 没有threat model, 缺少明确的攻击声明以及攻击者能控制的部分,未说明攻击者所能得到的知识,如何防止或检测错误信息,以及在什么情况下系统会失效</li>
+<li>Notably, Section V does not describe the results of a security analysis. As an obvious scenario, if adversaries control all switches on the path, they could simply not tell the controller about any packets, allowing communication to occur covertly without the controller&rsquo;s knowledge. If all switches are legitimate, then the attacks describe in the introduction (&ldquo;deleting or adding the forwarding rules of the compromised switches&rdquo;) would not occur and the approach would be unnecessary. Accordingly, this approach works when some malicious switches are present, but some non-compromised switches also exist on the path. An analysis on what proportion that can be malicious would be telling. 第五部分没有进行安全地性分析,比如攻击者掌握了这条path上的每一个交换机,那它就可以不给控制器发任何数据包的信息,在转发包时不需要控制器的任何信息. 如果所有交换机都是良性,这个方法就没有必要. 这个方法只有在一条路径上即有良性交换机又有恶意交换机时有效.因此需要加一条分析说明哪部分可以是恶意的.</li>
+<li>The packet marking approach is not new and was proposed for preventing of IP source address forgery in the past. Prior work, such as [Yaar, Abraham, Adrian Perrig, and Dawn Song. &ldquo;StackPi: New packet marking and filtering mechanisms for DDoS and IP spoofing defense.&rdquo; IEEE Journal on Selected Areas in Communications 24.10 (2006): 1853-1863.] and [Bremler-Barr, Anat, and Hanoch Levy. &ldquo;Spoofing prevention method.&rdquo; Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and Communications Societies. Vol. 1. IEEE, 2005.] are not cited, but are seminal works in this area. I am surprised the authors did not compare against those prior marking schemes. 数据包标记方法并不新,有相关文献中已提出但并未引用. 并未与这些方案作比较.</li>
+<li>The performance section is a simulation, but it does not take into account the actual impact of running this system in hardware. SDN switches can perform elevations, yet be terribly slow at it. Likewise, marking in a general-purpose CPU on those switches can incur real performance costs. To truly understand the efficiency of this approach in practice, the evaluation needs to be done empirically. 实验只模拟了,未在真实交换机上跑, 要我在真实交换机上跑出结果.</li>
+<li>The paper does a poor job of guiding a reader through its formalism. In Section III, the first equation is not related to the switch information (S_i, s_i, k_i). Instead, it uses a_1, b1_, a_2, b_2, without relating them to the switch information. The best way to reach an audience is via example that simultaneously walks the reader through the example and intuitively explains the results while simultaneously advancing the formalism. As written, many audiences will struggle to glean insight from Section III. 故事讲得不好, 全文符号统一. 第三节难以深刻理解.</li>
+</ul>
+<h3 id="写得怎么样" class="headerLink">
+    <a href="#%e5%86%99%e5%be%97%e6%80%8e%e4%b9%88%e6%a0%b7" class="header-mark"></a>写得怎么样</h3><p>The writing itself is good. The authors&rsquo; use of formalism without explanation makes it extremely difficult to understand their contribution. 写得好,但是公式那块没介绍好</p>]]></description>
+</item><item>
+    <title>DO-IDS汉语版</title>
+    <link>/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/</link>
+    <pubDate>Tue, 23 Aug 2022 22:08:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/</guid>
+    <description><![CDATA[<h2 id="摘要" class="headerLink">
+    <a href="#%e6%91%98%e8%a6%81" class="header-mark"></a>摘要</h2><p>随着智能工厂的空前发展，工业网络中需要更加频繁更改网络流量的转发策略。软件定义网络具有高灵活性和可编程性的优点，可动态地管理网络流量转发策略，它对于智能工业网络具有很可观的发展前景。然而，软件定义工业网络十分容易受到网络攻击，网络攻击会导致工业生产效率降低甚至引起工业事故。本文提出一个基于深度学习的单类入侵检测方案（DO-IDS）来提高工业网络的安全性。首先，DO-IDS 定期抽取工业网络流量的流统计信息并据此生成网络状态特征；其次，我们利用一种基于深度学习的降维方法来过滤上述特征中的冗余特征；此外，我们设计一种基于深度学习的单类检测器来计算网络特征的异常打分；最后，我们对所提出的检测方案进行了模拟实验，结果表明 DO-IDS 可以高效率且高准确率地检测出异常流量。</p>]]></description>
+</item><item>
+    <title>记录在数据平面选择流的过程</title>
+    <link>/hide/org_08_rule_selection/</link>
+    <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>/hide/org_08_rule_selection/</guid>
+    <description><![CDATA[<h2 id="选择的流经过所有的交换机" class="headerLink">
+    <a href="#%e9%80%89%e6%8b%a9%e7%9a%84%e6%b5%81%e7%bb%8f%e8%bf%87%e6%89%80%e6%9c%89%e7%9a%84%e4%ba%a4%e6%8d%a2%e6%9c%ba" class="header-mark"></a>选择的流经过所有的交换机</h2><ul>
+<li>控制器实时构造rule graph</li>
+<li>获取所有的ingress rule（入度为0的规则），并依长度降序排序</li>
+<li>对每一个ingress rule \(r_0\): 若该path的节点未在节点集\(\mathbb{S}\)中：
+<ul>
+<li>将$r_0$所属的rule path所经过的节点加入$\mathbb{S}$中；</li>
+<li>将 \(r_0\) 所属的rule path放到规则集$\mathbb{R}$中。</li>
+</ul>
+</li>
+<li>若节点集的节点数等于规则图中的节点数（这表明每一个交换机都有经过其的rule），则结束.</li>
+</ul>
+<p><span class="underline">只针对交换机的流规则选择办法中，当攻击者对某个流进行恶意交付时，无法被检测。</span></p>]]></description>
+</item></channel>
 </rss>

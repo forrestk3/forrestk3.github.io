@@ -1,19 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Emacs on 咸蛋超人</title>
-    <link>/tags/emacs/</link>
-    <description>Recent content in Emacs on 咸蛋超人</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 12 Nov 2025 15:57:33 -0400</lastBuildDate>
-    <atom:link href="/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Emacs 常用技巧总结</title>
-      <link>/posts/emacs_tip/</link>
-      <pubDate>Wed, 12 Nov 2025 15:27:00 -0400</pubDate>
-      <guid>/posts/emacs_tip/</guid>
-      <description>&lt;h2 id=&#34;bookmark&#34;&gt;bookmark&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;C-x r l : 列出书签&lt;/li&gt;&#xA;&lt;li&gt;C-x r m : 保存书签&lt;/li&gt;&#xA;&lt;li&gt;S-x bookmark-save : 可以在书签保存文件中修修改书签&lt;/li&gt;&#xA;&lt;li&gt;S-M: mark set&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!--listend--&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Shift-S &amp;gt;: 跳到最后&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;org&#34;&gt;org&lt;/h2&gt;&#xA;&lt;p&gt;Shift-Tab: 循环标题折叠&lt;/p&gt;&#xA;&lt;h2 id=&#34;ox-hugo-安装-用于导致org文件为hugo适配的markdown格式&#34;&gt;ox-hugo 安装，用于导致org文件为hugo适配的markdown格式&lt;/h2&gt;&#xA;&lt;h2 id=&#34;yasnippet-config&#34;&gt;Yasnippet Config&lt;/h2&gt;&#xA;&lt;h3 id=&#34;调出yasnippet配置&#34;&gt;调出yasnippet配置&lt;/h3&gt;&#xA;&lt;p&gt;M-x yas-new-snippet&lt;/p&gt;</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Emacs - Tag - 咸蛋超人</title>
+        <link>/tags/emacs/</link>
+        <description>Emacs - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Nov 2025 15:27:00 -0400</lastBuildDate><atom:link href="/tags/emacs/" rel="self" type="application/rss+xml" /><item>
+    <title>Emacs 常用技巧总结</title>
+    <link>/posts/emacs_tip/</link>
+    <pubDate>Wed, 12 Nov 2025 15:27:00 -0400</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/emacs_tip/</guid>
+    <description><![CDATA[<h2 id="bookmark" class="headerLink">
+    <a href="#bookmark" class="header-mark"></a>bookmark</h2><ul>
+<li>C-x r l : 列出书签</li>
+<li>C-x r m : 保存书签</li>
+<li>S-x bookmark-save : 可以在书签保存文件中修修改书签</li>
+<li>S-M: mark set</li>
+</ul>
+<!--listend-->
+<ul>
+<li>Shift-S &gt;: 跳到最后</li>
+</ul>
+<h2 id="org" class="headerLink">
+    <a href="#org" class="header-mark"></a>org</h2><p>Shift-Tab: 循环标题折叠</p>
+<h2 id="ox-hugo-安装" class="headerLink">
+    <a href="#ox-hugo-%e5%ae%89%e8%a3%85" class="header-mark"></a>ox-hugo 安装</h2><p>用于导致org文件为hugo适配的markdown格式</p>]]></description>
+</item></channel>
 </rss>
