@@ -13,7 +13,7 @@ ox-hugo 安装用于导致org文件为hugo适配的markdown格式">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-11-12T15:27:00-04:00">
-    <meta property="article:modified_time" content="2025-11-12T16:35:06-04:00">
+    <meta property="article:modified_time" content="2025-11-12T16:41:24-04:00">
     <meta property="article:tag" content="Emacs">
 
   <meta name="twitter:card" content="summary">
@@ -35,7 +35,7 @@ ox-hugo 安装用于导致org文件为hugo适配的markdown格式">
             "@type": "WebPage",
             "@id": "/posts/emacs_tip/"
         },"genre": "posts","keywords":["Emacs"],"wordcount":  540 ,
-        "url": "/posts/emacs_tip/","datePublished": "2025-11-12T15:27:00-04:00","dateModified": "2025-11-12T16:35:06-04:00","publisher": {
+        "url": "/posts/emacs_tip/","datePublished": "2025-11-12T15:27:00-04:00","dateModified": "2025-11-12T16:41:24-04:00","publisher": {
             "@type": "Organization",
             "name": "Author"},"author": {
                 "@type": "Person",
@@ -608,7 +608,7 @@ ox-hugo 安装用于导致org文件为hugo适配的markdown格式">
       aria-hidden="true">
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
-          <p class="tw-select-none !tw-my-1">emacs-lisp</p>
+          <p class="tw-select-none !tw-my-1">nil</p>
       </button>
 
    <div class="tw-flex">
@@ -678,29 +678,29 @@ ox-hugo 安装用于导致org文件为hugo适配的markdown格式">
       tw-overflow-y-hidden
       tw-overflow-x-auto
       tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">org-snipaste</span> <span class="p">()</span>
-</span></span><span class="line"><span class="cl">  <span class="s">&#34;Take a screenshot into a unique-named file in the current buffer file
-</span></span></span><span class="line"><span class="cl"><span class="s">        directory and insert a link to this file.&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">filename</span>
-</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nf">make-temp-name</span> <span class="s">&#34;./images/&#34;</span><span class="p">)</span> <span class="s">&#34;.png&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">dirname</span>
-</span></span><span class="line"><span class="cl">        <span class="s">&#34;./images/&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">file-exists-p</span> <span class="nv">dirname</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">make-directory</span> <span class="nv">dirname</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+      "><span class="line"><span class="cl">(defun org-snipaste ()
+</span></span><span class="line"><span class="cl">  &#34;Take a screenshot into a unique-named file in the current buffer file
+</span></span><span class="line"><span class="cl">        directory and insert a link to this file.&#34;
+</span></span><span class="line"><span class="cl">  (interactive)
+</span></span><span class="line"><span class="cl">  (setq filename
+</span></span><span class="line"><span class="cl">        (concat (make-temp-name &#34;./images/&#34;) &#34;.png&#34;))
+</span></span><span class="line"><span class="cl">  (setq dirname
+</span></span><span class="line"><span class="cl">        &#34;./images/&#34;
+</span></span><span class="line"><span class="cl">        )
+</span></span><span class="line"><span class="cl">  (if (file-exists-p dirname)
+</span></span><span class="line"><span class="cl">      ()
+</span></span><span class="line"><span class="cl">    (make-directory dirname)
+</span></span><span class="line"><span class="cl">    )
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c1">;;(suspend-frame)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">call-process-shell-command</span>
-</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;/Applications/Snipaste.app/Contents/MacOS/Snipaste snip&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;[[&#34;</span> <span class="nv">filename</span> <span class="s">&#34;]]&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-display-inline-images</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  ;;(suspend-frame)
+</span></span><span class="line"><span class="cl">  (call-process-shell-command
+</span></span><span class="line"><span class="cl">   (concat &#34;/Applications/Snipaste.app/Contents/MacOS/Snipaste snip&#34;))
+</span></span><span class="line"><span class="cl">  (insert (concat &#34;[[&#34; filename &#34;]]&#34;))
+</span></span><span class="line"><span class="cl">  (org-display-inline-images)
+</span></span><span class="line"><span class="cl">  )
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C-c y&#34;</span><span class="p">)</span> <span class="ss">&#39;org-snipaste</span><span class="p">)</span></span></span></code></pre>
+</span></span><span class="line"><span class="cl">(global-set-key (kbd &#34;C-c y&#34;) &#39;org-snipaste)</span></span></code></pre>
 </div>
 </div>
 
