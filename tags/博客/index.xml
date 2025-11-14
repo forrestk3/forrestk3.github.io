@@ -3,11 +3,12 @@
         <title>博客 - Tag - 咸蛋超人</title>
         <link>/tags/%E5%8D%9A%E5%AE%A2/</link>
         <description>博客 - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Nov 2025 16:45:00 -0400</lastBuildDate><atom:link href="/tags/%E5%8D%9A%E5%AE%A2/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Wed, 12 Nov 2025 16:45:00 -0400</lastBuildDate><atom:link href="/tags/%E5%8D%9A%E5%AE%A2/" rel="self" type="application/rss+xml" /><item>
     <title>使用emacs写hugo博客</title>
     <link>/posts/org_02_hugo_with_emacs/</link>
     <pubDate>Wed, 12 Nov 2025 16:45:00 -0400</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/posts/org_02_hugo_with_emacs/</guid>
     <description><![CDATA[<h2 id="当下问题-这是一级标题" class="headerLink">
     <a href="#%e5%bd%93%e4%b8%8b%e9%97%ae%e9%a2%98-%e8%bf%99%e6%98%af%e4%b8%80%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>当下问题（这是一级标题）</h2><h3 id="多级标题在网页上无法很好显示-这是二级标题" class="headerLink">
@@ -47,7 +48,7 @@
     <title>hugo安装与入门</title>
     <link>/posts/org_01_hugo_install/</link>
     <pubDate>Thu, 04 Aug 2022 00:52:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/posts/org_01_hugo_install/</guid>
     <description><![CDATA[<h2 id="ubuntu-18-dot-04安装hugo最新稳定版" class="headerLink">
     <a href="#ubuntu-18-dot-04%e5%ae%89%e8%a3%85hugo%e6%9c%80%e6%96%b0%e7%a8%b3%e5%ae%9a%e7%89%88" class="header-mark"></a>ubuntu 18.04安装hugo最新稳定版</h2><ol>

@@ -3,11 +3,12 @@
         <title>Emacs - Tag - 咸蛋超人</title>
         <link>/tags/emacs/</link>
         <description>Emacs - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Nov 2025 00:00:00 -0400</lastBuildDate><atom:link href="/tags/emacs/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 13 Nov 2025 00:00:00 -0400</lastBuildDate><atom:link href="/tags/emacs/" rel="self" type="application/rss+xml" /><item>
     <title>Emacs,git 常用技巧总结</title>
     <link>/posts/emacs_tip/</link>
     <pubDate>Thu, 13 Nov 2025 00:00:00 -0400</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/posts/emacs_tip/</guid>
     <description><![CDATA[<h2 id="bookmark" class="headerLink">
     <a href="#bookmark" class="header-mark"></a>bookmark</h2><ul>

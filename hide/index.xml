@@ -3,11 +3,12 @@
         <title>Hides -  - 咸蛋超人</title>
         <link>/hide/</link>
         <description>Hides -  - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 08 Dec 2022 19:44:00 &#43;0800</lastBuildDate><atom:link href="/hide/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 08 Dec 2022 19:44:00 &#43;0800</lastBuildDate><atom:link href="/hide/" rel="self" type="application/rss+xml" /><item>
     <title>FLPVS 审稿意见</title>
     <link>/hide/infocom_review/</link>
     <pubDate>Thu, 08 Dec 2022 19:44:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/hide/infocom_review/</guid>
     <description><![CDATA[<h2 id="审稿人1" class="headerLink">
     <a href="#%e5%ae%a1%e7%a8%bf%e4%ba%ba1" class="header-mark"></a>审稿人1</h2><h3 id="弱点" class="headerLink">
@@ -70,7 +71,7 @@
     <title>DO-IDS汉语版</title>
     <link>/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/</link>
     <pubDate>Tue, 23 Aug 2022 22:08:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/hide/do-ids%E6%B1%89%E8%AF%AD%E7%89%88/</guid>
     <description><![CDATA[<h2 id="摘要" class="headerLink">
     <a href="#%e6%91%98%e8%a6%81" class="header-mark"></a>摘要</h2><p>随着智能工厂的空前发展，工业网络中需要更加频繁更改网络流量的转发策略。软件定义网络具有高灵活性和可编程性的优点，可动态地管理网络流量转发策略，它对于智能工业网络具有很可观的发展前景。然而，软件定义工业网络十分容易受到网络攻击，网络攻击会导致工业生产效率降低甚至引起工业事故。本文提出一个基于深度学习的单类入侵检测方案（DO-IDS）来提高工业网络的安全性。首先，DO-IDS 定期抽取工业网络流量的流统计信息并据此生成网络状态特征；其次，我们利用一种基于深度学习的降维方法来过滤上述特征中的冗余特征；此外，我们设计一种基于深度学习的单类检测器来计算网络特征的异常打分；最后，我们对所提出的检测方案进行了模拟实验，结果表明 DO-IDS 可以高效率且高准确率地检测出异常流量。</p>]]></description>
@@ -78,7 +79,7 @@
     <title>记录在数据平面选择流的过程</title>
     <link>/hide/org_08_rule_selection/</link>
     <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/hide/org_08_rule_selection/</guid>
     <description><![CDATA[<h2 id="选择的流经过所有的交换机" class="headerLink">
     <a href="#%e9%80%89%e6%8b%a9%e7%9a%84%e6%b5%81%e7%bb%8f%e8%bf%87%e6%89%80%e6%9c%89%e7%9a%84%e4%ba%a4%e6%8d%a2%e6%9c%ba" class="header-mark"></a>选择的流经过所有的交换机</h2><ul>

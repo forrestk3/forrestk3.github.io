@@ -3,11 +3,12 @@
         <title>Ovs - Tag - 咸蛋超人</title>
         <link>/tags/ovs/</link>
         <description>Ovs - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</lastBuildDate><atom:link href="/tags/ovs/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</lastBuildDate><atom:link href="/tags/ovs/" rel="self" type="application/rss+xml" /><item>
     <title>OVS添加自定义action</title>
     <link>/posts/org_11_ovs_add_action/</link>
     <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/posts/org_11_ovs_add_action/</guid>
     <description><![CDATA[<h2 id="版本及环境" class="headerLink">
     <a href="#%e7%89%88%e6%9c%ac%e5%8f%8a%e7%8e%af%e5%a2%83" class="header-mark"></a>版本及环境</h2><p>ovs 2.13.7</p>
@@ -22,7 +23,7 @@
     <title>mininet , ovs , ryu 分别进行源码安装</title>
     <link>/posts/05_ovs_install/</link>
     <pubDate>Sun, 28 Aug 2022 22:01:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/posts/05_ovs_install/</guid>
     <description><![CDATA[<h2 id="ovs安装" class="headerLink">
     <a href="#ovs%e5%ae%89%e8%a3%85" class="header-mark"></a>OVS安装</h2><h3 id="ovs与linux内核版本对应" class="headerLink">

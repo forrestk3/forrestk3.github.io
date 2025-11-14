@@ -3,11 +3,12 @@
         <title>Git - Tag - 咸蛋超人</title>
         <link>/tags/git/</link>
         <description>Git - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate><atom:link href="/tags/git/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</lastBuildDate><atom:link href="/tags/git/" rel="self" type="application/rss+xml" /><item>
     <title>Magit的基本使用</title>
     <link>/posts/org_05_magit_usage/</link>
     <pubDate>Mon, 15 Aug 2022 21:01:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/posts/org_05_magit_usage/</guid>
     <description><![CDATA[<h2 id="magit-的基本介绍" class="headerLink">
     <a href="#magit-%e7%9a%84%e5%9f%ba%e6%9c%ac%e4%bb%8b%e7%bb%8d" class="header-mark"></a>Magit 的基本介绍</h2><p>Magit是在emacs中对git的一种扩展, 它的本质是在emacs中, 利用emacs的方式调用git的命令, 使得git的使用更加地emacs化. 本人的emacs 能力有限, 因此只介绍magit中的一些最常用的命令, 方便日常使用够用即可. 要更加全面地研究可以看它的<a href="https://magit.vc/" target="_blank" rel="noopener noreferrer">原网站</a>.</p>]]></description>
@@ -15,7 +16,7 @@
     <title>Git的基本使用</title>
     <link>/posts/org_04_git_usage/</link>
     <pubDate>Sat, 06 Aug 2022 19:28:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/posts/org_04_git_usage/</guid>
     <description><![CDATA[<h2 id="基础--最常用的命令" class="headerLink">
     <a href="#%e5%9f%ba%e7%a1%80--%e6%9c%80%e5%b8%b8%e7%94%a8%e7%9a%84%e5%91%bd%e4%bb%a4" class="header-mark"></a>基础(最常用的命令)</h2><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
@@ -42,7 +43,7 @@
     <title>Git 与 Magit 初始篇</title>
     <link>/posts/org_03_git_get_started/</link>
     <pubDate>Sat, 06 Aug 2022 15:17:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/posts/org_03_git_get_started/</guid>
     <description><![CDATA[<h2 id="系列目的" class="headerLink">
     <a href="#%e7%b3%bb%e5%88%97%e7%9b%ae%e7%9a%84" class="header-mark"></a>系列目的</h2><p>介绍Git的基础配置及基础使用</p>

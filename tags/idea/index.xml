@@ -3,11 +3,12 @@
         <title>Idea - Tag - 咸蛋超人</title>
         <link>/tags/idea/</link>
         <description>Idea - Tag - 咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</lastBuildDate><atom:link href="/tags/idea/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</lastBuildDate><atom:link href="/tags/idea/" rel="self" type="application/rss+xml" /><item>
     <title>记录在数据平面选择流的过程</title>
     <link>/hide/org_08_rule_selection/</link>
     <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
-        <name>Author</name>
+        <name>SuperEgg</name>
     </author><guid>/hide/org_08_rule_selection/</guid>
     <description><![CDATA[<h2 id="选择的流经过所有的交换机" class="headerLink">
     <a href="#%e9%80%89%e6%8b%a9%e7%9a%84%e6%b5%81%e7%bb%8f%e8%bf%87%e6%89%80%e6%9c%89%e7%9a%84%e4%ba%a4%e6%8d%a2%e6%9c%ba" class="header-mark"></a>选择的流经过所有的交换机</h2><ul>
