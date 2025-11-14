@@ -3,9 +3,31 @@
         <title>咸蛋超人</title>
         <link>/</link>
         <description>咸蛋超人</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Nov 2025 16:45:00 -0400</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Nov 2025 00:00:00 -0400</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Emacs,git 常用技巧总结</title>
+    <link>/posts/emacs_tip/</link>
+    <pubDate>Thu, 13 Nov 2025 00:00:00 -0400</pubDate><author>
+        <name>Author</name>
+    </author><guid>/posts/emacs_tip/</guid>
+    <description><![CDATA[<h2 id="bookmark" class="headerLink">
+    <a href="#bookmark" class="header-mark"></a>bookmark</h2><ul>
+<li>C-x r l : 列出书签</li>
+<li>C-x r m : 保存书签</li>
+<li>S-x bookmark-save : 可以在书签保存文件中修修改书签</li>
+<li>S-M: mark set</li>
+</ul>
+<!--listend-->
+<ul>
+<li>Shift-S &gt;: 跳到最后</li>
+</ul>
+<h2 id="org" class="headerLink">
+    <a href="#org" class="header-mark"></a>org</h2><p>Shift-Tab: 循环标题折叠
+C-c C-e: 导出md文件到hugo</p>
+<h2 id="ox-hugo-安装" class="headerLink">
+    <a href="#ox-hugo-%e5%ae%89%e8%a3%85" class="header-mark"></a>ox-hugo 安装</h2><p>用于导致org文件为hugo适配的markdown格式</p>]]></description>
+</item><item>
     <title>使用emacs写hugo博客</title>
     <link>/posts/org_02_hugo_with_emacs/</link>
     <pubDate>Wed, 12 Nov 2025 16:45:00 -0400</pubDate><author>
@@ -45,28 +67,6 @@
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
           <p class="tw-select-none !tw-my-1">lisp</p>]]></description>
-</item><item>
-    <title>Emacs 常用技巧总结</title>
-    <link>/posts/emacs_tip/</link>
-    <pubDate>Wed, 12 Nov 2025 00:00:00 -0400</pubDate><author>
-        <name>Author</name>
-    </author><guid>/posts/emacs_tip/</guid>
-    <description><![CDATA[<h2 id="bookmark" class="headerLink">
-    <a href="#bookmark" class="header-mark"></a>bookmark</h2><ul>
-<li>C-x r l : 列出书签</li>
-<li>C-x r m : 保存书签</li>
-<li>S-x bookmark-save : 可以在书签保存文件中修修改书签</li>
-<li>S-M: mark set</li>
-</ul>
-<!--listend-->
-<ul>
-<li>Shift-S &gt;: 跳到最后</li>
-</ul>
-<h2 id="org" class="headerLink">
-    <a href="#org" class="header-mark"></a>org</h2><p>Shift-Tab: 循环标题折叠
-C-c C-e: 导出md文件到hugo</p>
-<h2 id="ox-hugo-安装" class="headerLink">
-    <a href="#ox-hugo-%e5%ae%89%e8%a3%85" class="header-mark"></a>ox-hugo 安装</h2><p>用于导致org文件为hugo适配的markdown格式</p>]]></description>
 </item><item>
     <title>Practical Techniques for Searches on Encrypted Data</title>
     <link>/posts/org_26_se/</link>
