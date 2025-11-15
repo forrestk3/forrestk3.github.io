@@ -1,0 +1,30 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Playings -  - 咸蛋超人</title>
+        <link>//localhost:1313/playing/</link>
+        <description>Playings -  - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Wed, 15 Jan 2025 00:00:00 &#43;0800</lastBuildDate><atom:link href="//localhost:1313/playing/" rel="self" type="application/rss+xml" /><item>
+    <title>玩玩</title>
+    <link>//localhost:1313/playing/index.zh-cn/</link>
+    <pubDate>Wed, 15 Jan 2025 00:00:00 &#43;0800</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>//localhost:1313/playing/index.zh-cn/</guid>
+    <description><![CDATA[<p>欢迎来到游戏页面！这里有一些有趣的小游戏可以玩。</p>
+<h2 id="游戏列表" class="headerLink">
+    <a href="#%e6%b8%b8%e6%88%8f%e5%88%97%e8%a1%a8" class="header-mark"></a>游戏列表</h2><h3 id="1-贪吃蛇游戏" class="headerLink">
+    <a href="#1-%e8%b4%aa%e5%90%83%e8%9b%87%e6%b8%b8%e6%88%8f" class="header-mark"></a>1. 贪吃蛇游戏</h3><div style="text-align: center; margin: 20px 0;">
+<iframe src="https://www.addictinggames.com/embed/html5-games/24637" width="600" height="400" frameborder="0" scrolling="no"></iframe>
+</div>
+<h3 id="2-2048-游戏" class="headerLink">
+    <a href="#2-2048-%e6%b8%b8%e6%88%8f" class="header-mark"></a>2. 2048 游戏</h3><div style="text-align: center; margin: 20px 0;">
+<iframe src="https://play2048.co/" width="600" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+<h3 id="3-俄罗斯方块" class="headerLink">
+    <a href="#3-%e4%bf%84%e7%bd%97%e6%96%af%e6%96%b9%e5%9d%97" class="header-mark"></a>3. 俄罗斯方块</h3><div style="text-align: center; margin: 20px 0;">
+<iframe src="https://www.addictinggames.com/embed/html5-games/24637" width="600" height="400" frameborder="0" scrolling="no"></iframe>
+</div>
+<hr>
+<p><strong>提示：</strong> 你可以替换上面的 iframe 链接为你想要嵌入的任何小游戏。确保游戏支持 iframe 嵌入。</p>]]></description>
+</item></channel>
+</rss>
