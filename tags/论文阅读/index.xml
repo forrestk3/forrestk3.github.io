@@ -124,12 +124,6 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_06_mpc/</guid>
     <description><![CDATA[<h2 id="文章目的" class="headerLink">
-    <a href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e7%9a%84" class="header-mark"></a>文章目的</h2><p>介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），并将这个场景建模成MPC问题，最后给出了求解方法。</p>
-<h2 id="情景样例" class="headerLink">
-    <a href="#%e6%83%85%e6%99%af%e6%a0%b7%e4%be%8b" class="header-mark"></a>情景样例</h2><p>假设一个交通运输系统中有4个地铁站，站与站之间可达，交通时间表可确定。你需要做的是购买车票从而实现所有的运输。时间表如下：</p>
-<figure><img src="/ox-hugo/IdiIqU.png">
-</figure>
-
-<p>最坏的情况是每辆车都买一个票，需要7张。但其实有的运输任务可被同一个车完成，如T1和T2。我们需要做的是最大化运输效率，即最小化所构买的车票数，此时，找到了一个目标函数。</p>]]></description>
+    <a href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e7%9a%84" class="header-mark"></a>文章目的</h2><p>介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），并将这个场景建模成MPC问题，最后给出了求解方法。</p>]]></description>
 </item></channel>
 </rss>

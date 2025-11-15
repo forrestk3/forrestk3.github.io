@@ -67,12 +67,7 @@
     <description><![CDATA[<h2 id="版本及环境" class="headerLink">
     <a href="#%e7%89%88%e6%9c%ac%e5%8f%8a%e7%8e%af%e5%a2%83" class="header-mark"></a>版本及环境</h2><p>ovs 2.13.7</p>
 <p>ubuntu 18.04</p>
-<p>与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到</p>
-<p>看这篇需要有一定的OVS基础，基本概念必须要了解。</p>
-<h2 id="基本概念" class="headerLink">
-    <a href="#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" class="header-mark"></a>基本概念</h2><ul>
-<li>
-<p>这里讲的action并不是openflow action, 而是数据平面的执行action</p>]]></description>
+<p>与前一篇ovs安装的环境一致，里面所提及的脚本本篇也会用到</p>]]></description>
 </item><item>
     <title>mininet , ovs , ryu 分别进行源码安装</title>
     <link>/posts/05_ovs_install/</link>
@@ -85,8 +80,6 @@
 <a href="https://docs.openvswitch.org/en/latest/faq/releases/" target="_blank" rel="noopener noreferrer">https://docs.openvswitch.org/en/latest/faq/releases/</a>
 linux 内核版本查看<code>uname -r</code></p>
 <h3 id="安装过程" class="headerLink">
-    <a href="#%e5%ae%89%e8%a3%85%e8%bf%87%e7%a8%8b" class="header-mark"></a>安装过程</h3><p><strong>这里要注意，如果下载的是官网的压缩文件，则不用./boot.sh直接从./configure开始即可， 如果是在github上下载的，则需要./boot.sh再configure</strong></p>
-<p>官方教程: <a href="https://docs.openvswitch.org/en/latest/intro/install/#" target="_blank" rel="noopener noreferrer">https://docs.openvswitch.org/en/latest/intro/install/#</a></p>
-<p>下载链接: <a href="http://www.openvswitch.org/download/" target="_blank" rel="noopener noreferrer">http://www.openvswitch.org/download/</a></p>]]></description>
+    <a href="#%e5%ae%89%e8%a3%85%e8%bf%87%e7%a8%8b" class="header-mark"></a>安装过程</h3><p><strong>这里要注意，如果下载的是官网的压缩文件，则不用./boot.sh直接从./configure开始即可， 如果是在github上下载的，则需要./boot.sh再configure</strong></p>]]></description>
 </item></channel>
 </rss>

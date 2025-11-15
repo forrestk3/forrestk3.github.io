@@ -25,18 +25,7 @@
         <name>SuperEgg</name>
     </author><guid>/posts/org_25_cite_in_ieee/</guid>
     <description><![CDATA[<h2 id="参考" class="headerLink">
-    <a href="#%e5%8f%82%e8%80%83" class="header-mark"></a>参考</h2><p><a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" rel="noopener noreferrer">这里</a>  <a href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/IEEEtranBST2.zip" target="_blank" rel="noopener noreferrer">参考自这里</a></p>
-<h2 id="期刊--人-题-期-卷-号--月-年-页" class="headerLink">
-    <a href="#%e6%9c%9f%e5%88%8a--%e4%ba%ba-%e9%a2%98-%e6%9c%9f-%e5%8d%b7-%e5%8f%b7--%e6%9c%88-%e5%b9%b4-%e9%a1%b5" class="header-mark"></a>期刊(人,题,期,卷,(号),月,年,页)</h2><p>bib文件的通用格式如下.</p>
-<figure><img src="/ox-hugo/sdD2xt.png">
-</figure>
-
-<ol>
-<li>
-<p>这里的作者要用全名, 如果要用 et al. 的话, 是在.bst配置文件里设置的</p>
-</li>
-<li>
-<p>月是使用三个字母的缩写的；</p>]]></description>
+    <a href="#%e5%8f%82%e8%80%83" class="header-mark"></a>参考</h2><p><a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" rel="noopener noreferrer">这里</a>  <a href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/IEEEtranBST2.zip" target="_blank" rel="noopener noreferrer">参考自这里</a></p>]]></description>
 </item><item>
     <title>On a Multi-criteria Clustering Approachfor Attack Attribution</title>
     <link>/posts/org_21_multi_clustering/</link>

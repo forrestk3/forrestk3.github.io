@@ -53,11 +53,7 @@
     <description><![CDATA[<h2 id="马尔可夫过程" class="headerLink">
     <a href="#%e9%a9%ac%e5%b0%94%e5%8f%af%e5%a4%ab%e8%bf%87%e7%a8%8b" class="header-mark"></a>马尔可夫过程</h2><p><a href="https://zhuanlan.zhihu.com/p/494755866" target="_blank" rel="noopener noreferrer">参考自这里</a></p>
 <h3 id="性质--markov-property" class="headerLink">
-    <a href="#%e6%80%a7%e8%b4%a8--markov-property" class="header-mark"></a>性质(Markov Property)</h3><p>马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义:</p>
-<figure><img src="/ox-hugo/QUGtYb.png">
-</figure>
-
-<p>可以从这个式子里面看到, 下一个状态为\(S_{t+1}\)的概率只于当前状态\(S_t\)有关, 而与更前的状态\(S_1, S_2, &hellip;, S_{t-1}\)都无关.</p>]]></description>
+    <a href="#%e6%80%a7%e8%b4%a8--markov-property" class="header-mark"></a>性质(Markov Property)</h3><p>马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义:</p>]]></description>
 </item><item>
     <title>Hoeffding&#39;s inequality (霍夫丁不等式讲解)</title>
     <link>/posts/org_12_hoeffding_ineq/</link>
@@ -70,11 +66,6 @@
 
 <p>下面的这个式子是我们常用的</p>
 <h2 id="markov-inequality" class="headerLink">
-    <a href="#markov-inequality" class="header-mark"></a>Markov inequality</h2><p>一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\).</p>
-<p>这个不等式的证明:</p>
-<figure><img src="/ox-hugo/rCbCCP.png">
-</figure>
-
-<p>过程中使用了微积分和一些不等式的基础, 不了解了.</p>]]></description>
+    <a href="#markov-inequality" class="header-mark"></a>Markov inequality</h2><p>一个取值非负的随机变量\(X \ge 0\), 有不等式 \(P(X \ge \epsilon) \le \frac{1}{\epsilon} \mathbb{E}X\).</p>]]></description>
 </item></channel>
 </rss>

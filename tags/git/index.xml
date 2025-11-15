@@ -47,8 +47,6 @@
     </author><guid>/posts/org_03_git_get_started/</guid>
     <description><![CDATA[<h2 id="系列目的" class="headerLink">
     <a href="#%e7%b3%bb%e5%88%97%e7%9b%ae%e7%9a%84" class="header-mark"></a>系列目的</h2><p>介绍Git的基础配置及基础使用</p>
-<p>介绍Magit的使用, 因为Magti相比与Git方便很多, 配合Emacs效率更高</p>
-<h2 id="使用命令行" class="headerLink">
-    <a href="#%e4%bd%bf%e7%94%a8%e5%91%bd%e4%bb%a4%e8%a1%8c" class="header-mark"></a>使用命令行</h2><p>windows 中使用bash, linux或Mac下使用terminal, 总之要开使用Git, 就要用命令行</p>]]></description>
+<p>介绍Magit的使用, 因为Magti相比与Git方便很多, 配合Emacs效率更高</p>]]></description>
 </item></channel>
 </rss>
