@@ -10,11 +10,7 @@
     <pubDate>Wed, 12 Nov 2025 16:45:00 -0400</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_02_hugo_with_emacs/</guid>
-    <description><![CDATA[<h2 id="当下问题-这是一级标题" class="headerLink">
-    <a href="#%e5%bd%93%e4%b8%8b%e9%97%ae%e9%a2%98-%e8%bf%99%e6%98%af%e4%b8%80%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>当下问题（这是一级标题）</h2><h3 id="多级标题在网页上无法很好显示-这是二级标题" class="headerLink">
-    <a href="#%e5%a4%9a%e7%ba%a7%e6%a0%87%e9%a2%98%e5%9c%a8%e7%bd%91%e9%a1%b5%e4%b8%8a%e6%97%a0%e6%b3%95%e5%be%88%e5%a5%bd%e6%98%be%e7%a4%ba-%e8%bf%99%e6%98%af%e4%ba%8c%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>多级标题在网页上无法很好显示（这是二级标题）</h3><h4 id="不知道是doit主题问题-还是ox-hugo的问题-这是三级标题" class="headerLink">
-    <a href="#%e4%b8%8d%e7%9f%a5%e9%81%93%e6%98%afdoit%e4%b8%bb%e9%a2%98%e9%97%ae%e9%a2%98-%e8%bf%98%e6%98%afox-hugo%e7%9a%84%e9%97%ae%e9%a2%98-%e8%bf%99%e6%98%af%e4%b8%89%e7%ba%a7%e6%a0%87%e9%a2%98" class="header-mark"></a>不知道是DoIt主题问题，还是ox-hugo的问题（这是三级标题）</h4><p>唉（这里没有标题）</p>
-<h2 id="emacs-ox-hugo" class="headerLink">
+    <description><![CDATA[<h2 id="emacs-ox-hugo" class="headerLink">
     <a href="#emacs-ox-hugo" class="header-mark"></a>emacs: ox-hugo</h2><p>emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.</p>]]></description>
 </item><item>
     <title>hugo安装与入门</title>
