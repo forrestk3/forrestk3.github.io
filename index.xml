@@ -4,9 +4,23 @@
         <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 15 Nov 2025 21:06:00 -0400</lastBuildDate>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 16 Nov 2025 17:43:00 -0400</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>配置自己的域名</title>
+    <link>/posts/domain_set/</link>
+    <pubDate>Sun, 16 Nov 2025 17:43:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/domain_set/</guid>
+    <description><![CDATA[<h2 id="域名申请" class="headerLink">
+    <a href="#%e5%9f%9f%e5%90%8d%e7%94%b3%e8%af%b7" class="header-mark"></a>域名申请</h2><p>申请个域名，表示域名属于你了</p>
+<h2 id="域名托管" class="headerLink">
+    <a href="#%e5%9f%9f%e5%90%8d%e6%89%98%e7%ae%a1" class="header-mark"></a>域名托管</h2><h2 id="github设置" class="headerLink">
+    <a href="#github%e8%ae%be%e7%bd%ae" class="header-mark"></a>github设置</h2><p>在github 的pages里面设置你的自定义域名</p>
+<h2 id="dns设置" class="headerLink">
+    <a href="#dns%e8%ae%be%e7%bd%ae" class="header-mark"></a>DNS设置</h2><p>在域名托管里设置你的DNS，配置如下：
+<img class="tw-inline" loading="lazy" src='/ox-hugo/domain_set.png'     ></p>]]></description>
+</item><item>
     <title>Emacs,git 常用技巧总结</title>
     <link>/posts/emacs_tip/</link>
     <pubDate>Thu, 13 Nov 2025 00:00:00 -0400</pubDate><author>
@@ -139,39 +153,5 @@ C-c C-e: 导出md文件到hugo</p>]]></description>
     <a href="#%e8%ae%ba%e6%96%87%e4%bf%a1%e6%81%af" class="header-mark"></a>论文信息</h2><p>SigKDD, 2010</p>
 <p>阅读目的: 了解攻击溯源相关知识, 主要是为了扩充知识面.</p>
 <p>结论: 这个文章中提供的是一个数据挖掘的方法, 针对已有的数据样本通过找它们的相似性簇并通过分析来获得结论, 所以这个文章并不是我想要的. 以下总结阅读时做的一些笔记.</p>]]></description>
-</item><item>
-    <title>openssl 安装与第一个demo</title>
-    <link>/posts/org_20_openssl1/</link>
-    <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_20_openssl1/</guid>
-    <description><![CDATA[<h2 id="openssl的安装" class="headerLink">
-    <a href="#openssl%e7%9a%84%e5%ae%89%e8%a3%85" class="header-mark"></a>openssl的安装</h2><p>在使用c语言库调用openssl的时候要先安装,因为安装的时候才会将库放到系统中供程序调用.</p>
-<ul>
-<li>
-<p>下载:<a href="https://github.com/openssl/openssl" target="_blank" rel="noopener noreferrer">https://github.com/openssl/openssl</a></p>
-</li>
-<li>
-<p>安装:</p>
-<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
-  <div class="
-    
-    tw-flex 
-    tw-flex-row
-    tw-flex-1 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        code-block-button
-        tw-mx-2 
-        tw-flex
-        tw-flex-row
-        tw-flex-1"
-      aria-hidden="true">
-          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
-          <p class="tw-select-none !tw-my-1">shell</p>]]></description>
 </item></channel>
 </rss>
