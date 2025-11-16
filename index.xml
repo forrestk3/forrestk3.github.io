@@ -15,10 +15,11 @@
     <description><![CDATA[<h2 id="域名申请" class="headerLink">
     <a href="#%e5%9f%9f%e5%90%8d%e7%94%b3%e8%af%b7" class="header-mark"></a>域名申请</h2><p>申请个域名，表示域名属于你了</p>
 <h2 id="域名托管" class="headerLink">
-    <a href="#%e5%9f%9f%e5%90%8d%e6%89%98%e7%ae%a1" class="header-mark"></a>域名托管</h2><h2 id="github设置" class="headerLink">
+    <a href="#%e5%9f%9f%e5%90%8d%e6%89%98%e7%ae%a1" class="header-mark"></a>域名托管</h2><p>将你的域名记录在域名服务器中，让你的域名能被别人找到</p>
+<h2 id="github设置" class="headerLink">
     <a href="#github%e8%ae%be%e7%bd%ae" class="header-mark"></a>github设置</h2><p>在github 的pages里面设置你的自定义域名</p>
 <h2 id="dns设置" class="headerLink">
-    <a href="#dns%e8%ae%be%e7%bd%ae" class="header-mark"></a>DNS设置</h2><p>在域名托管里设置你的DNS，配置如下：
+    <a href="#dns%e8%ae%be%e7%bd%ae" class="header-mark"></a>DNS设置</h2><p>在域名托管里设置你的DNS，让别人输入你的域名后可能转到你的主页，github的DNS配置如下：
 <img class="tw-inline" loading="lazy" src='/ox-hugo/domain_set.png'     ></p>]]></description>
 </item><item>
     <title>Emacs,git 常用技巧总结</title>
