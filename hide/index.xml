@@ -6,6 +6,21 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
             <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 16 Nov 2025 22:25:00 -0400</lastBuildDate><atom:link href="/hide/" rel="self" type="application/rss+xml" /><item>
     <title>卫星网络路径验证</title>
+    <link>/hide/dynamic_network/readme/</link>
+    <pubDate>Sun, 16 Nov 2025 22:25:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/hide/dynamic_network/readme/</guid>
+    <description><![CDATA[<h2 id="卫星网络资料" class="headerLink">
+    <a href="#%e5%8d%ab%e6%98%9f%e7%bd%91%e7%bb%9c%e8%b5%84%e6%96%99" class="header-mark"></a>卫星网络资料</h2><ul>
+<li>模拟软件：<a href="https://celestrak.org/software/satellite/sat-trak.php" target="_blank" rel="noopener noreferrer">https://celestrak.org/software/satellite/sat-trak.php</a></li>
+<li>卫星数据（可搜starlink）：<a href="https://celestrak.org/NORAD/elements/table.php?GROUP=active&amp;FORMAT=tle" target="_blank" rel="noopener noreferrer">https://celestrak.org/NORAD/elements/table.php?GROUP=active&FORMAT=tle</a></li>
+<li>实时卫星图：<a href="https://starlink.sx/" target="_blank" rel="noopener noreferrer">https://starlink.sx/</a></li>
+</ul>
+<h2 id="例子图片" class="headerLink">
+    <a href="#%e4%be%8b%e5%ad%90%e5%9b%be%e7%89%87" class="header-mark"></a>例子图片</h2><p>starlink的实时卫星图截图
+<img class="tw-inline" loading="lazy" src='/ox-hugo/R3N8do.png'     ></p>]]></description>
+</item><item>
+    <title>卫星网络路径验证</title>
     <link>/hide/readme/</link>
     <pubDate>Sun, 16 Nov 2025 22:25:00 -0400</pubDate><author>
         <name>SuperEgg</name>
