@@ -15,6 +15,7 @@
 <li>模拟软件：<a href="https://celestrak.org/software/satellite/sat-trak.php" target="_blank" rel="noopener noreferrer">https://celestrak.org/software/satellite/sat-trak.php</a></li>
 <li>卫星数据（可搜starlink）：<a href="https://celestrak.org/NORAD/elements/table.php?GROUP=active&amp;FORMAT=tle" target="_blank" rel="noopener noreferrer">https://celestrak.org/NORAD/elements/table.php?GROUP=active&FORMAT=tle</a></li>
 <li>实时卫星图：<a href="https://starlink.sx/" target="_blank" rel="noopener noreferrer">https://starlink.sx/</a></li>
+<li>leolab的实时卫星图：<a href="https://platform.leolabs.space/visualization" target="_blank" rel="noopener noreferrer">https://platform.leolabs.space/visualization</a></li>
 </ul>
 <h2 id="例子图片" class="headerLink">
     <a href="#%e4%be%8b%e5%ad%90%e5%9b%be%e7%89%87" class="header-mark"></a>例子图片</h2><p>starlink的实时卫星图截图
