@@ -1,0 +1,39 @@
+(function(){"use strict";function t(){const e=document.getElementById("clock-time"),t=document.getElementById("clock-date"),n=document.getElementById("clock-weekday");if(!e||!t||!n)return;const o=["日","一","二","三","四","五","六"];function s(){const s=new Date,i=String(s.getHours()).padStart(2,"0"),a=String(s.getMinutes()).padStart(2,"0"),r=String(s.getSeconds()).padStart(2,"0");e.textContent=`${i}:${a}:${r}`;const c=s.getFullYear(),l=String(s.getMonth()+1).padStart(2,"0"),d=String(s.getDate()).padStart(2,"0");t.textContent=`${c}年${l}月${d}日`;const u=o[s.getDay()];n.textContent=`星期${u}`}s(),setInterval(s,1e3)}function n(){const e=document.getElementById("weather-container"),n=document.querySelector(".home-sidebar");if(!e)return;const t={city:n?.dataset.weatherCity||"Beijing",apiKey:n?.dataset.weatherApiKey||"",apiUrl:n?.dataset.weatherApiUrl||"https://api.openweathermap.org/data/2.5/weather"};if(!t.apiKey){e.innerHTML=`
+                <div class="weather-content">
+                    <div class="weather-desc">请在 config.toml 中配置天气 API</div>
+                    <div class="weather-details">
+                        <div class="weather-detail-item">
+                            <span>推荐使用：</span>
+                            <span>OpenWeatherMap</span>
+                        </div>
+                    </div>
+                </div>
+            `;return}async function s(){try{e.innerHTML='<div class="weather-loading">加载中...</div>';const s=`${t.apiUrl}?q=${t.city}&appid=${t.apiKey}&units=metric&lang=zh_cn`,n=await fetch(s);if(!n.ok)throw new Error("天气数据获取失败");const i=await n.json();o(i)}catch(t){console.error("天气获取错误:",t),e.innerHTML=`
+                    <div class="weather-content">
+                        <div class="weather-desc">天气数据获取失败</div>
+                        <div class="weather-details">
+                            <div class="weather-detail-item">
+                                <span>错误：</span>
+                                <span>${t.message}</span>
+                            </div>
+                        </div>
+                    </div>
+                `}}function o(t){const n=i(t.weather[0].main),s=Math.round(t.main.temp),o=t.weather[0].description,a=t.main.humidity,r=t.wind?.speed||0;e.innerHTML=`
+                <div class="weather-content">
+                    <div class="weather-main">
+                        <div class="weather-temp">${s}°C</div>
+                        <div class="weather-icon">${n}</div>
+                    </div>
+                    <div class="weather-desc">${o}</div>
+                    <div class="weather-details">
+                        <div class="weather-detail-item">
+                            <span>湿度：</span>
+                            <span>${a}%</span>
+                        </div>
+                        <div class="weather-detail-item">
+                            <span>风速：</span>
+                            <span>${r} m/s</span>
+                        </div>
+                    </div>
+                </div>
+            `}function i(e){const t={Clear:"☀️",Clouds:"☁️",Rain:"🌧️",Drizzle:"🌦️",Thunderstorm:"⛈️",Snow:"❄️",Mist:"🌫️",Fog:"🌫️"};return t[e]||"🌤️"}s(),setInterval(s,30*60*1e3)}function s(){const n=[{title:"示例音乐 1",artist:"示例艺术家",url:"https://example.com/music1.mp3"},{title:"示例音乐 2",artist:"示例艺术家",url:"https://example.com/music2.mp3"}],e=new Audio;let o=0,t=!1;const i=document.getElementById("music-title"),a=document.getElementById("music-artist"),r=document.getElementById("music-play-pause"),g=document.getElementById("music-prev"),f=document.getElementById("music-next"),l=document.getElementById("music-progress-bar"),h=document.getElementById("music-progress-fill"),m=document.getElementById("music-current-time"),s=document.getElementById("music-duration"),d=document.getElementById("music-volume"),p=document.getElementById("music-volume-value");if(!e||!r)return;function c(t){if(t<0||t>=n.length)return;o=t;const s=n[t];e.src=s.url,i&&(i.textContent=s.title),a&&(a.textContent=s.artist),e.load()}function b(){t?(e.pause(),r.textContent="▶",t=!1):(e.play().catch(e=>{console.error("播放失败:",e),alert("音乐播放失败，请检查音乐 URL 是否正确")}),r.textContent="⏸",t=!0)}function j(){const s=o-1<0?n.length-1:o-1;c(s),t&&e.play()}function v(){const s=(o+1)%n.length;c(s),t&&e.play()}function y(){if(e.duration){const t=e.currentTime/e.duration*100;h&&(h.style.width=t+"%"),m&&(m.textContent=u(e.currentTime)),s&&(s.textContent=u(e.duration))}}function u(e){if(isNaN(e))return"0:00";const t=Math.floor(e/60),n=Math.floor(e%60);return`${t}:${String(n).padStart(2,"0")}`}r.addEventListener("click",b),g&&g.addEventListener("click",j),f&&f.addEventListener("click",v),l&&l.addEventListener("click",t=>{const n=l.getBoundingClientRect(),s=(t.clientX-n.left)/n.width;e.currentTime=s*e.duration}),d&&(d.addEventListener("input",t=>{const n=t.target.value/100;e.volume=n,p&&(p.textContent=t.target.value+"%")}),e.volume=d.value/100),e.addEventListener("timeupdate",y),e.addEventListener("ended",v),e.addEventListener("loadedmetadata",()=>{s&&(s.textContent=u(e.duration))}),n.length>0?c(0):(i&&(i.textContent="暂无音乐"),a&&(a.textContent="请在配置中添加音乐"))}function e(){document.querySelector(".page.home")&&(t(),n(),s())}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",e):e()})()

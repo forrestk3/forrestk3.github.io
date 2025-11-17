@@ -277,7 +277,7 @@
                 "url": "https://github.com/wlchengg"
             },"description": ""
     }]}
-        </script><link rel="stylesheet" href="/css/click-popup.min.f08a668b64706758e6be2e3d2d60ac3b4bf7846fa870e107db125b6b19079bfc.css" integrity="sha256-8Ipmi2RwZ1jmvi49LWCsO0v3hG&#43;ocOEH2xJbaxkHm/w="><link rel="stylesheet" href="/css/sponsor-modal.min.de42146cfe4ecbf9b93fe143b75db095c567e5cea0711b0aee043d2c52b656b0.css" integrity="sha256-3kIUbP5Oy/m5P&#43;FDt12wlcVn5c6gcRsK7gQ9LFK2VrA="><link rel="stylesheet" href="/css/sponsor-button-fix.min.29a34f32522886b0dc79527d9f9bd34ccb6ae4e48b13c612d791a89a331cc42d.css" integrity="sha256-KaNPMlIohrDceVJ9n5vTTMtq5OSLE8YS15GomjMcxC0="></head>
+        </script><link rel="stylesheet" href="/css/click-popup.min.f08a668b64706758e6be2e3d2d60ac3b4bf7846fa870e107db125b6b19079bfc.css" integrity="sha256-8Ipmi2RwZ1jmvi49LWCsO0v3hG&#43;ocOEH2xJbaxkHm/w="><link rel="stylesheet" href="/css/sponsor-modal.min.de42146cfe4ecbf9b93fe143b75db095c567e5cea0711b0aee043d2c52b656b0.css" integrity="sha256-3kIUbP5Oy/m5P&#43;FDt12wlcVn5c6gcRsK7gQ9LFK2VrA="><link rel="stylesheet" href="/css/sponsor-button-fix.min.29a34f32522886b0dc79527d9f9bd34ccb6ae4e48b13c612d791a89a331cc42d.css" integrity="sha256-KaNPMlIohrDceVJ9n5vTTMtq5OSLE8YS15GomjMcxC0="><link rel="stylesheet" href="/css/summary-limit.min.8fe2696c93c174256509dfb54c306bd87f402068e133c23907420c94d27feef1.css" integrity="sha256-j&#43;JpbJPBdCVlCd&#43;1TDBr2H9AIGjhM8I5B0IMlNJ/7vE="><link rel="stylesheet" href="/css/home-sidebar.min.990ac3c340222b10234024fa51dee489e7d4702e1b499c9d76436a895f44a281.css" integrity="sha256-mQrDw0AiKxAjQCT6Ud7kiefUcC4bSZyddkNqiV9EooE="></head>
 
 
 <body data-instant-intensity="viewport" class="tw-flex tw-min-h-screen tw-flex-col"><script>
@@ -388,7 +388,66 @@
 </div>
 <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
-</div><main class="tw-mx-4 tw-flex-1"><div class="page home" posts><div class="home-profile"><div class="home-avatar"><a href="/posts/"  title="博文" ><img  loading="eager" src='/images/avatar.jpg'   alt="Home avatar" height="100" width="100"></a></div><h1 class="home-title">咸蛋超人的心情小屋</h1><h2 class="home-subtitle"><div id="id-3" class="typeit"></div></h2><div class="links"><a href="https://github.com/forrestk3" title="GitHub" target="_blank" rel="noopener noreferrer me"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreferrer me"><svg class="icon"
+</div><main class="tw-mx-4 tw-flex-1"><div class="page home" posts><div class="home-sidebar" 
+     data-weather-city="Beijing"
+     data-weather-api-key=""
+     data-weather-api-url="https://api.openweathermap.org/data/2.5/weather"><div class="sidebar-widget clock-widget">
+        <h3 class="widget-title">时钟</h3>
+        <div class="clock-container">
+            <div class="clock-time" id="clock-time">--:--:--</div>
+            <div class="clock-date" id="clock-date">----年--月--日</div>
+            <div class="clock-weekday" id="clock-weekday">星期-</div>
+        </div>
+    </div><div class="sidebar-widget weather-widget">
+        <h3 class="widget-title">天气</h3>
+        <div class="weather-container" id="weather-container">
+            <div class="weather-loading">加载中...</div>
+        </div>
+    </div><div class="sidebar-widget music-widget" 
+         data-music-list="[{&#34;artist&#34;:&#34;浅影阿&#34;,&#34;title&#34;:&#34;探故知&#34;,&#34;url&#34;:&#34;/mp3/%E6%8E%A2%E6%95%85%E7%9F%A5-%E6%B5%85%E5%BD%B1%E9%98%BF.mp3&#34;},{&#34;artist&#34;:&#34;一颗狼星&#34;,&#34;title&#34;:&#34;精卫&#34;,&#34;url&#34;:&#34;/mp3/%E7%B2%BE%E5%8D%AB-%20%E4%B8%80%E9%A2%97%E7%8B%BC%E6%98%9F.mp3&#34;}]">
+        <h3 class="widget-title">音乐</h3>
+        <div class="music-container">
+            <div class="music-info">
+                <div class="music-title" id="music-title">暂无播放</div>
+                <div class="music-artist" id="music-artist">--</div>
+            </div>
+            <div class="music-controls">
+                <button class="music-btn prev-btn" id="music-prev" title="上一首">⏮</button>
+                <button class="music-btn play-pause-btn" id="music-play-pause" title="播放/暂停">▶</button>
+                <button class="music-btn next-btn" id="music-next" title="下一首">⏭</button>
+            </div>
+            <div class="music-progress">
+                <div class="progress-bar" id="music-progress-bar">
+                    <div class="progress-fill" id="music-progress-fill"></div>
+                </div>
+                <div class="progress-time">
+                    <span id="music-current-time">0:00</span>
+                    <span id="music-duration">0:00</span>
+                </div>
+            </div>
+            <div class="music-volume">
+                <span>🔊</span>
+                <input type="range" id="music-volume" min="0" max="100" value="50" title="音量">
+                <span id="music-volume-value">50%</span>
+            </div><div class="music-playlist">
+                <div class="playlist-header">
+                    <span>播放列表 (2)</span>
+                    <button class="playlist-toggle" id="playlist-toggle" title="展开/收起">▼</button>
+                </div>
+                <div class="playlist-content" id="playlist-content"><div class="playlist-item" data-index="0">
+                        <span class="playlist-item-icon">🎵</span>
+                        <div class="playlist-item-info">
+                            <div class="playlist-item-title">探故知</div><div class="playlist-item-artist">浅影阿</div></div>
+                    </div><div class="playlist-item" data-index="1">
+                        <span class="playlist-item-icon">🎵</span>
+                        <div class="playlist-item-info">
+                            <div class="playlist-item-title">精卫</div><div class="playlist-item-artist">一颗狼星</div></div>
+                    </div></div>
+            </div></div>
+    </div>
+</div>
+
+<div class="home-main-content"><div class="home-profile"><div class="home-avatar"><a href="/posts/"  title="博文" ><img  loading="eager" src='/images/avatar.jpg'   alt="Home avatar" height="100" width="100"></a></div><h1 class="home-title">咸蛋超人的心情小屋</h1><h2 class="home-subtitle"><div id="id-3" class="typeit"></div></h2><div class="links"><a href="https://github.com/forrestk3" title="GitHub" target="_blank" rel="noopener noreferrer me"><svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreferrer me"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg></a></div></div><article class="single summary"><h1 class="single-title">
         <a href="/posts/19_sphinx/">SPHINX: Detecting Security Attacks in Software-Defined Networks</a>
     </h1><div class="post-meta">
@@ -634,7 +693,8 @@
                     <span class="page-link">
                         <a href="/page/3/">3</a>
                     </span>
-                </li></ul></div></main><footer class="footer">
+                </li></ul></div>
+    </div></main><footer class="footer">
         <div class="footer-container"><div class="footer-line"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532 0-200-89.451-200-200 0-110.531 89.451-200 200-200 110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43 0-140.484-61.425-140.484-141.567 0-79.152 60.275-139.401 139.762-139.401 55.531 0 88.738 26.62 97.593 34.779a11.965 11.965 0 0 1 1.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303 0-77.916 35.33-77.916 80.082 0 41.589 26.888 83.692 78.277 83.692 32.657 0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947 0 0 1-1.152 15.518z"/></svg>2025<span class="author">&nbsp;<a href="https://github.com/wlchengg" target="_blank" rel="noopener noreferrer">SuperEgg</a></span></div>
             <div class="footer-line"></div>
@@ -693,7 +753,7 @@
     ]
   }
 </script>
-<script src="/js/click-popup.min.35b3df524b1ea82cf844bd96079938e4804a0480038f860d4d666108fd4d41f4.js" integrity="sha256-NbPfUkseqCz4RL2WB5k45IBKBIADj4YNTWZhCP1NQfQ=" defer></script><script src="/js/sponsor-modal.min.7bcbdf50bf00e28ae451b6b8968cf54c0cc4de47bd305e1126b7e2df467df134.js" integrity="sha256-e8vfUL8A4orkUba4loz1TAzE3ke9MF4RJrfi30Z98TQ=" defer></script></body>
+<script src="/js/click-popup.min.35b3df524b1ea82cf844bd96079938e4804a0480038f860d4d666108fd4d41f4.js" integrity="sha256-NbPfUkseqCz4RL2WB5k45IBKBIADj4YNTWZhCP1NQfQ=" defer></script><script src="/js/sponsor-modal.min.7bcbdf50bf00e28ae451b6b8968cf54c0cc4de47bd305e1126b7e2df467df134.js" integrity="sha256-e8vfUL8A4orkUba4loz1TAzE3ke9MF4RJrfi30Z98TQ=" defer></script><script src="/js/home-sidebar.min.b445378f578e926f790e5a8d9d652d767ec74b390990197ca3ea40daef548baf.js" integrity="sha256-tEU3j1eOkm95DlqNnWUtdn7HSzkJkBl8o&#43;pA2u9Ui68=" defer></script></body>
 
 </html>
 
