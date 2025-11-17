@@ -4,19 +4,21 @@
         <link>/hide/</link>
         <description>Hides -  - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 15 Nov 2025 21:06:00 -0400</lastBuildDate><atom:link href="/hide/" rel="self" type="application/rss+xml" /><item>
-    <title>安排</title>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 16 Nov 2025 22:25:00 -0400</lastBuildDate><atom:link href="/hide/" rel="self" type="application/rss+xml" /><item>
+    <title>卫星网络路径验证</title>
     <link>/hide/readme/</link>
-    <pubDate>Sat, 15 Nov 2025 21:06:00 -0400</pubDate><author>
+    <pubDate>Sun, 16 Nov 2025 22:25:00 -0400</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/hide/readme/</guid>
-    <description><![CDATA[<h2 id="过年回家" class="headerLink">
-    <a href="#%e8%bf%87%e5%b9%b4%e5%9b%9e%e5%ae%b6" class="header-mark"></a>过年回家</h2><p>到上海后，地铁至上海虹桥站，再转乘高铁
-行程单：<a href="/ox-hugo/ITINERARY_zh.pdf" rel="">中文版</a>，<a href="/ox-hugo/ITINERARY_en.pdf" rel="">英文版</a></p>
-<h2 id="年后回加" class="headerLink">
-    <a href="#%e5%b9%b4%e5%90%8e%e5%9b%9e%e5%8a%a0" class="header-mark"></a>年后回加</h2><p>初8，行程单还没发我</p>
-<h2 id="ginseng" class="headerLink">
-    <a href="#ginseng" class="header-mark"></a>Ginseng</h2><p>可以在<a href="https://www.canadianginsengfarm.com/product-category/super-value-ginseng/" target="_blank" rel="noopener noreferrer">这里</a>买，需要阅读<a href="https://www.canadianginsengfarm.com/customs-entry-guarantee/" target="_blank" rel="noopener noreferrer">入境通知</a>，保证CITES证书有效期内，购买前记得询问</p>]]></description>
+    <description><![CDATA[<h2 id="卫星网络资料" class="headerLink">
+    <a href="#%e5%8d%ab%e6%98%9f%e7%bd%91%e7%bb%9c%e8%b5%84%e6%96%99" class="header-mark"></a>卫星网络资料</h2><ul>
+<li>模拟软件：<a href="https://celestrak.org/software/satellite/sat-trak.php" target="_blank" rel="noopener noreferrer">https://celestrak.org/software/satellite/sat-trak.php</a></li>
+<li>卫星数据（可搜starlink）：<a href="https://celestrak.org/NORAD/elements/table.php?GROUP=active&amp;FORMAT=tle" target="_blank" rel="noopener noreferrer">https://celestrak.org/NORAD/elements/table.php?GROUP=active&FORMAT=tle</a></li>
+<li>实时卫星图：<a href="https://starlink.sx/" target="_blank" rel="noopener noreferrer">https://starlink.sx/</a></li>
+</ul>
+<h2 id="例子图片" class="headerLink">
+    <a href="#%e4%be%8b%e5%ad%90%e5%9b%be%e7%89%87" class="header-mark"></a>例子图片</h2><p>starlink的实时卫星图截图
+<img class="tw-inline" loading="lazy" src='/ox-hugo/R3N8do.png'     ></p>]]></description>
 </item><item>
     <title>FLPVS 审稿意见</title>
     <link>/hide/infocom_review/</link>
