@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="hide">
     <meta property="article:published_time" content="2025-11-16T22:25:00-04:00">
-    <meta property="article:modified_time" content="2025-11-18T16:23:58-04:00">
+    <meta property="article:modified_time" content="2025-11-18T20:35:51-04:00">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="卫星网络路径验证">
@@ -29,8 +29,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "/hide/dynamic_network/readme/"
-        },"genre": "hide","wordcount":  1469 ,
-        "url": "/hide/dynamic_network/readme/","datePublished": "2025-11-16T22:25:00-04:00","dateModified": "2025-11-18T16:23:58-04:00","publisher": {
+        },"genre": "hide","wordcount":  1712 ,
+        "url": "/hide/dynamic_network/readme/","datePublished": "2025-11-16T22:25:00-04:00","dateModified": "2025-11-18T20:35:51-04:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
                 "@type": "Person",
@@ -219,6 +219,41 @@ c^d \% n &amp;= (m^{ed} \% n) \\
 <p>由于\(p,q\)为两个互质的质数，因此\(r^{\lambda} - 1\) 对\(p \cdot q\)取余为0，即：</p>
 <p>\((r^{\lambda} - 1) \% n = 0\), 因此\(r^{\lambda} \% n = 1\)</p>
 <p>可以生成r乘入每一跳中，这里需要做的是，将\(\lambda\)拆成2部分，一部分放在交换机中用于给r，另一部分放在控制器中用于验证。两部分一乘得到完整的\(\lambda\)在r头上即可保证r被约去。</p>
+<h3 id="添加随机数办法" class="headerLink">
+    <a href="#%e6%b7%bb%e5%8a%a0%e9%9a%8f%e6%9c%ba%e6%95%b0%e5%8a%9e%e6%b3%95" class="header-mark"></a>添加随机数办法</h3><h4 id="额外参数" class="headerLink">
+    <a href="#%e9%a2%9d%e5%a4%96%e5%8f%82%e6%95%b0" class="header-mark"></a>额外参数</h4><p>\(\lambda\), 这里还要将\(\lambda\)因式分解一下，记为：\(\lambda = \lambda_s \cdot \lambda_c\)</p>
+<p>\(\lambda_s,\lambda_c\)分别在验证头部更新和控制器验证过程中使用。</p>
+<h4 id="更新案例" class="headerLink">
+    <a href="#%e6%9b%b4%e6%96%b0%e6%a1%88%e4%be%8b" class="header-mark"></a>更新案例</h4>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th style="text-align: ">\(s_1\)</th>
+            <th style="text-align: ">\(s_2\)</th>
+            <th style="text-align: ">\(s_n\)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: ">\(s_1^e \cdot r_1^{\lambda_s}\)</td>
+            <td style="text-align: ">\(s_1^e \cdot r_1^{\lambda_s} \cdot s_2^e \cdot r_2^{\lambda_s}\)</td>
+            <td style="text-align: ">\(\Pi_{i=1}^{n}(s_i^e\cdot r_i^{\lambda_s})\)</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">\(k_1^e \cdot r_1^{\lambda_s}\)</td>
+            <td style="text-align: ">\(s_1^e \cdot r_1^{\lambda_s} \cdot k_1^e \cdot r_1^{\lambda_s} \cdot k_2^e \cdot r_2^{\lambda_s}\)</td>
+            <td style="text-align: ">\(\Pi_{i=1}^{n-1}\Pi_{j=1}^{i}(s_j^e\cdot r_j^{\lambda_s}) \cdot \Pi_{i=1}^{n}(k_i^e \cdot r_i^{\lambda_s})\)</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<h4 id="验证案例" class="headerLink">
+    <a href="#%e9%aa%8c%e8%af%81%e6%a1%88%e4%be%8b" class="header-mark"></a>验证案例</h4><p>对于获得的 \(f_k\),控制器计算：\(f_k^{d\cdot \lambda_c}\), 结果为：\(\Pi_{i=1}^{n-1}\Pi_{j=1}^{i}(s_j^{\lambda_c}) \cdot \Pi_{i=1}^{n}(k_i^{\lambda_c})\)</p>
+<p>过程证明：如下图</p>
+<figure><img src="/ox-hugo/proof_rsa_val.jpeg">
+</figure>
+
 <h2 id="过程-elgma" class="headerLink">
     <a href="#%e8%bf%87%e7%a8%8b-elgma" class="header-mark"></a>过程（Elgma）</h2><p>这个过程还不完善</p>
 <h3 id="准备" class="headerLink">
