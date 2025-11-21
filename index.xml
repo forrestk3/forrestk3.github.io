@@ -27,20 +27,9 @@
     <pubDate>Thu, 13 Nov 2025 00:00:00 -0400</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/emacs_tip/</guid>
-    <description><![CDATA[<h2 id="bookmark" class="headerLink">
-    <a href="#bookmark" class="header-mark"></a>bookmark</h2><ul>
-<li>C-x r l : 列出书签</li>
-<li>C-x r m : 保存书签</li>
-<li>S-x bookmark-save : 可以在书签保存文件中修修改书签</li>
-<li>S-M: mark set</li>
-</ul>
-<!--listend-->
-<ul>
-<li>Shift-S &gt;: 跳到最后</li>
-</ul>
-<h2 id="org" class="headerLink">
-    <a href="#org" class="header-mark"></a>org</h2><p>Shift-Tab: 循环标题折叠
-C-c C-e: 导出md文件到hugo</p>]]></description>
+    <description><![CDATA[<h2 id="canlendar-的使用" class="headerLink">
+    <a href="#canlendar-%e7%9a%84%e4%bd%bf%e7%94%a8" class="header-mark"></a>canlendar 的使用</h2><p>是个管理办法，但是感觉流程不够清晰</p>
+<p>agenda的一个视图如下：</p>]]></description>
 </item><item>
     <title>使用emacs写hugo博客</title>
     <link>/posts/org_02_hugo_with_emacs/</link>
