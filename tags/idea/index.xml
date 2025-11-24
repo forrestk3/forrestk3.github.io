@@ -10,7 +10,8 @@
     <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/hide/org_08_rule_selection/</guid>
-    <description><![CDATA[<h2 id="选择的流经过所有的交换机" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="选择的流经过所有的交换机" class="headerLink">
     <a href="#%e9%80%89%e6%8b%a9%e7%9a%84%e6%b5%81%e7%bb%8f%e8%bf%87%e6%89%80%e6%9c%89%e7%9a%84%e4%ba%a4%e6%8d%a2%e6%9c%ba" class="header-mark"></a>选择的流经过所有的交换机</h2><ul>
 <li>控制器实时构造rule graph</li>
 <li>获取所有的ingress rule（入度为0的规则），并依长度降序排序</li>

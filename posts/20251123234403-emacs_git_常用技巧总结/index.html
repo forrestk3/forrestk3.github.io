@@ -4,38 +4,40 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noodp" /><title>使用emacs写hugo博客 - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/org_02_hugo_with_emacs/">
+    <meta name="robots" content="noodp" /><title>Emacs,git 常用技巧总结  - 咸蛋超人</title><meta name="Description" content=""><meta property="og:url" content="/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/">
   <meta property="og:site_name" content="咸蛋超人">
-  <meta property="og:title" content="使用emacs写hugo博客">
-  <meta property="og:description" content="emacs: ox-hugoemacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.">
+  <meta property="og:title" content="Emacs,git 常用技巧总结 ">
+  <meta property="og:description" content="org-roamorg-roam 常用快捷键记录
+canlendar 的使用是个管理办法，但是感觉流程不够清晰">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-11-12T16:45:00-04:00">
-    <meta property="article:modified_time" content="2025-11-15T13:55:48-04:00">
-    <meta property="article:tag" content="博客">
+    <meta property="article:published_time" content="2025-11-13T00:00:00-04:00">
+    <meta property="article:modified_time" content="2025-11-24T13:04:25-04:00">
+    <meta property="article:tag" content="Emacs">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="使用emacs写hugo博客">
-  <meta name="twitter:description" content="emacs: ox-hugoemacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.">
+  <meta name="twitter:title" content="Emacs,git 常用技巧总结 ">
+  <meta name="twitter:description" content="org-roamorg-roam 常用快捷键记录
+canlendar 的使用是个管理办法，但是感觉流程不够清晰">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
 <meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
-<link rel="canonical" href="/posts/org_02_hugo_with_emacs/" /><link rel="prev" href="/posts/org_26_se/" /><link rel="next" href="/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/" />
+<link rel="canonical" href="/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/" /><link rel="prev" href="/posts/org_02_hugo_with_emacs/" /><link rel="next" href="/posts/emacs_tip/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
-        "headline": "使用emacs写hugo博客",
+        "headline": "Emacs,git 常用技巧总结 ",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "/posts/org_02_hugo_with_emacs/"
-        },"genre": "posts","keywords":["博客"],"wordcount":  1151 ,
-        "url": "/posts/org_02_hugo_with_emacs/","datePublished": "2025-11-12T16:45:00-04:00","dateModified": "2025-11-15T13:55:48-04:00","publisher": {
+            "@id": "/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/"
+        },"genre": "posts","keywords":["Emacs"],"wordcount":  1693 ,
+        "url": "/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/","datePublished": "2025-11-13T00:00:00-04:00","dateModified": "2025-11-24T13:04:25-04:00","publisher": {
             "@type": "Organization",
-            "name": "SuperEgg"},"author": {
+            "name": "胡兵"},"author": {
                 "@type": "Person",
-                "name": "SuperEgg",
+                "name": "胡兵",
                 "url": "https://github.com/wlchengg"
             },"description": ""
     }</script><link rel="stylesheet" href="/css/click-popup.min.f08a668b64706758e6be2e3d2d60ac3b4bf7846fa870e107db125b6b19079bfc.css" integrity="sha256-8Ipmi2RwZ1jmvi49LWCsO0v3hG&#43;ocOEH2xJbaxkHm/w="><link rel="stylesheet" href="/css/sponsor-modal.min.de42146cfe4ecbf9b93fe143b75db095c567e5cea0711b0aee043d2c52b656b0.css" integrity="sha256-3kIUbP5Oy/m5P&#43;FDt12wlcVn5c6gcRsK7gQ9LFK2VrA="><link rel="stylesheet" href="/css/sponsor-button-fix.min.29a34f32522886b0dc79527d9f9bd34ccb6ae4e48b13c612d791a89a331cc42d.css" integrity="sha256-KaNPMlIohrDceVJ9n5vTTMtq5OSLE8YS15GomjMcxC0="><link rel="stylesheet" href="/css/summary-limit.min.8fe2696c93c174256509dfb54c306bd87f402068e133c23907420c94d27feef1.css" integrity="sha256-j&#43;JpbJPBdCVlCd&#43;1TDBr2H9AIGjhM8I5B0IMlNJ/7vE="><link rel="stylesheet" href="/css/home-sidebar.min.dc7a05722d38a52ca2ce1b4f95c97e77f7209331b3789dbd11d1e8ba282286b3.css" integrity="sha256-3HoFci04pSyizhtPlcl&#43;d/cgkzGzeJ29EdHouigihrM="></head>
@@ -154,25 +156,53 @@
             <h2 class="tw-mx-0 tw-my-6 tw-uppercase tw-text-2xl">Contents</h2>
             <div class="toc-content"><nav id="TableOfContents">
   <ul>
-    <li><a href="#emacs-ox-hugo">emacs: ox-hugo</a></li>
-    <li><a href="#ox-hugo的安装">ox-hugo的安装</a></li>
-    <li><a href="#ox-hugo的使用">ox-hugo的使用</a></li>
-    <li><a href="#部署博客到github">部署博客到github</a></li>
-    <li><a href="#自动推送脚本">自动推送脚本</a></li>
+    <li><a href="#org-roam">org-roam</a></li>
+    <li><a href="#canlendar-的使用">canlendar 的使用</a></li>
+    <li><a href="#重装时备份文件">重装时备份文件</a>
+      <ul>
+        <li><a href="#重装办法">重装办法</a></li>
+        <li><a href="#配置保存">配置保存</a></li>
+        <li><a href="#解决org中多级标题显示问题">解决org中多级标题显示问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#bookmark">bookmark</a></li>
+    <li><a href="#org">org</a></li>
+    <li><a href="#打开shell">打开shell</a></li>
+    <li><a href="#ox-hugo-安装">ox-hugo 安装</a></li>
+    <li><a href="#yasnippet-config">Yasnippet Config</a>
+      <ul>
+        <li><a href="#调出yasnippet配置">调出yasnippet配置</a></li>
+        <li><a href="#写配置文件">写配置文件</a></li>
+        <li><a href="#在-dot-emacs-dot-d-custom-dot-el中添加配置">在.emacs.d/custom.el中添加配置</a></li>
+        <li><a href="#使用说明">使用说明</a></li>
+        <li><a href="#hugo-的yasnippet配置">hugo 的YASnippet配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#自定义配置文件修改汇总--centaur-emacs">自定义配置文件修改汇总 (centaur-emacs)</a>
+      <ul>
+        <li><a href="#弃用配置">弃用配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#git-区">Git 区</a>
+      <ul>
+        <li><a href="#git推送到新的github账号">Git推送到新的github账号</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
         </div>
-    </dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class="single-title" data-pagefind-meta="date:2025-11-12" data-pagefind-body>使用emacs写hugo博客</h1><div class="post-meta">
+    </dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class="single-title" data-pagefind-meta="date:2025-11-13" data-pagefind-body>Emacs,git 常用技巧总结 </h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreferrer author" class="author">SuperEgg</a>
-                </span></div>
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreferrer author" class="author">胡兵</a>
+                </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>额外学习</a></span></div>
             <div class="post-meta-line"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;<time datetime="2025-11-12">2025-11-12</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2025-11-15">2025-11-15</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1151 words&nbsp;
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;<time datetime="2025-11-13">2025-11-13</time>&nbsp;<svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2025-11-24">2025-11-24</time>&nbsp;<svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1693 words&nbsp;
                     <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;6 minutes&nbsp;</div>
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc print:!tw-block" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -181,23 +211,83 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#emacs-ox-hugo">emacs: ox-hugo</a></li>
-    <li><a href="#ox-hugo的安装">ox-hugo的安装</a></li>
-    <li><a href="#ox-hugo的使用">ox-hugo的使用</a></li>
-    <li><a href="#部署博客到github">部署博客到github</a></li>
-    <li><a href="#自动推送脚本">自动推送脚本</a></li>
+    <li><a href="#org-roam">org-roam</a></li>
+    <li><a href="#canlendar-的使用">canlendar 的使用</a></li>
+    <li><a href="#重装时备份文件">重装时备份文件</a>
+      <ul>
+        <li><a href="#重装办法">重装办法</a></li>
+        <li><a href="#配置保存">配置保存</a></li>
+        <li><a href="#解决org中多级标题显示问题">解决org中多级标题显示问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#bookmark">bookmark</a></li>
+    <li><a href="#org">org</a></li>
+    <li><a href="#打开shell">打开shell</a></li>
+    <li><a href="#ox-hugo-安装">ox-hugo 安装</a></li>
+    <li><a href="#yasnippet-config">Yasnippet Config</a>
+      <ul>
+        <li><a href="#调出yasnippet配置">调出yasnippet配置</a></li>
+        <li><a href="#写配置文件">写配置文件</a></li>
+        <li><a href="#在-dot-emacs-dot-d-custom-dot-el中添加配置">在.emacs.d/custom.el中添加配置</a></li>
+        <li><a href="#使用说明">使用说明</a></li>
+        <li><a href="#hugo-的yasnippet配置">hugo 的YASnippet配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#自定义配置文件修改汇总--centaur-emacs">自定义配置文件修改汇总 (centaur-emacs)</a>
+      <ul>
+        <li><a href="#弃用配置">弃用配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#git-区">Git 区</a>
+      <ul>
+        <li><a href="#git推送到新的github账号">Git推送到新的github账号</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content" data-pagefind-body><h2 id="emacs-ox-hugo" class="headerLink">
-    <a href="#emacs-ox-hugo" class="header-mark"></a>emacs: ox-hugo</h2><p>emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.</p>
-<h2 id="ox-hugo的安装" class="headerLink">
-    <a href="#ox-hugo%e7%9a%84%e5%ae%89%e8%a3%85" class="header-mark"></a>ox-hugo的安装</h2><ul>
-<li>M-x list-packages: 这个命令会列出所有的可安装的包</li>
-<li>C-s: 使用搜索找到ox-hugo</li>
-<li>操控高亮到ox-hugo, 按i x 这两个字母, i表示Install, x表示eXecute.</li>
-<li>在配置文件中添加ox-hugo配置</li>
+            </div><div class="content" id="content" data-pagefind-body><h2 id="org-roam" class="headerLink">
+    <a href="#org-roam" class="header-mark"></a>org-roam</h2><p><a href="/posts/20251123222632-new_dir_test/" rel="">org-roam 常用快捷键记录</a></p>
+<h2 id="canlendar-的使用" class="headerLink">
+    <a href="#canlendar-%e7%9a%84%e4%bd%bf%e7%94%a8" class="header-mark"></a>canlendar 的使用</h2><p>是个管理办法，但是感觉流程不够清晰</p>
+<p>agenda的一个视图如下：</p>
+<figure><img src="/ox-hugo/Gxgrug.png">
+</figure>
+
+<p>每次显示一周的，如果有计划，会显示计划，我感觉像日历那样的会更好</p>
+<ul>
+<li>C-c . : 调出日历，插入当下时间</li>
+<li>C-c C-s : schedule 的开始时间</li>
+<li>C-c C-d : schedule 的结束时间</li>
+<li>C-c C-x C-i : 任务开始（in）</li>
+<li>C-c C-x C-o : 任务结束（out）</li>
+<li>M-x org-clock-report: 生成时间统计表</li>
+<li>C-c a : 查看agenda</li>
 </ul>
-<!--listend-->
+<h2 id="重装时备份文件" class="headerLink">
+    <a href="#%e9%87%8d%e8%a3%85%e6%97%b6%e5%a4%87%e4%bb%bd%e6%96%87%e4%bb%b6" class="header-mark"></a>重装时备份文件</h2><p>(更新包时包之间的依赖很复杂，重装更简单)</p>
+<h3 id="重装办法" class="headerLink">
+    <a href="#%e9%87%8d%e8%a3%85%e5%8a%9e%e6%b3%95" class="header-mark"></a>重装办法</h3><ol>
+<li>
+<p>mv ~/.emacs.d ~/.emacs.d.bak</p>
+</li>
+<li>
+<p>git clone &ndash;depth 1 <a href="https://github.com/seagle0128/.emacs.d.git" target="_blank" rel="noopener noreferrer">https://github.com/seagle0128/.emacs.d.git</a> ~/.emacs.d</p>
+</li>
+<li>
+<p>打开emacs，等自动更新即可</p>
+<p>因为我用的是Centaur Emacs,如是操作即可</p>
+</li>
+</ol>
+<h3 id="配置保存" class="headerLink">
+    <a href="#%e9%85%8d%e7%bd%ae%e4%bf%9d%e5%ad%98" class="header-mark"></a>配置保存</h3><p>将在原.emacs.d文件夹里的相关备份文件放到新的.emacs.d文件夹里</p>
+<ol>
+<li>bookmark文件（所有书签归位）</li>
+<li>custom.el文件（所有的自定义快捷键）</li>
+<li>snippets文件夹（所有的快捷模板）</li>
+</ol>
+<h3 id="解决org中多级标题显示问题" class="headerLink">
+    <a href="#%e8%a7%a3%e5%86%b3org%e4%b8%ad%e5%a4%9a%e7%ba%a7%e6%a0%87%e9%a2%98%e6%98%be%e7%a4%ba%e9%97%ae%e9%a2%98" class="header-mark"></a>解决org中多级标题显示问题</h3><p>作者的ui使用了org-modern的配置，而org-modern里面使用的特殊字符需要电脑装相应的字体（没搜到，所以应该并不常用的字体），因此修改多级标题的图标显示为自定义显示。</p>
+<p>原代码 .emacs.d/lisp/init-org.el 文件中</p>
 <div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
@@ -217,7 +307,7 @@
       aria-hidden="true">
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
-          <p class="tw-select-none !tw-my-1">lisp</p>
+          <p class="tw-select-none !tw-my-1">emacs-lisp</p>
       </button>
 
    <div class="tw-flex">
@@ -287,20 +377,14 @@
       tw-overflow-y-hidden
       tw-overflow-x-auto
       tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="p">(</span><span class="nf">use-package</span> <span class="nv">ox-hugo</span>
-</span></span><span class="line"><span class="cl">  <span class="ss">:ensure</span> <span class="no">t</span>   <span class="c1">;Auto-install the package from Melpa</span>
-</span></span><span class="line"><span class="cl">  <span class="ss">:pin</span> <span class="nv">melpa</span>  <span class="c1">;`package-archives&#39; should already have (&#34;melpa&#34; . &#34;https://melpa.org/packages/&#34;)</span>
-</span></span><span class="line"><span class="cl">  <span class="ss">:after</span> <span class="nv">ox</span><span class="p">)</span></span></span></code></pre>
+      "><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">org-modern</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:after</span> <span class="nv">org</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:diminish</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:autoload</span> <span class="nv">global-org-modern-mode</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:init</span> <span class="p">(</span><span class="nv">global-org-modern-mode</span> <span class="mi">1</span><span class="p">))</span></span></span></code></pre>
 </div>
-<p><strong>这时在org模式里就可以使用hugo了</strong>
-C-c C-e时会多一个导出选项:</p>
-<figure><img src="/ox-hugo/L34IX7.png">
-</figure>
-
-<p>如果按以上操作, 有这一项出来, 那么ox-hugo才算成功, 没有就排查错误, 比如ox-hugo有没有安装上, 配置信息有没有加对地方</p>
-<h2 id="ox-hugo的使用" class="headerLink">
-    <a href="#ox-hugo%e7%9a%84%e4%bd%bf%e7%94%a8" class="header-mark"></a>ox-hugo的使用</h2><p>将org文件使用ox-hugo导出时,需要加一些配置才能导出到正确的位置.我参考<a href="https://wowow005.github.io/posts/2022/04/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E5%92%8Corg-mode%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener noreferrer">这个</a>配置:</p>
-<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+<p>将其改成：新代码中加了2行自定义的层级图标</p>
+<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
   <div class="
     
     tw-flex 
@@ -319,7 +403,7 @@ C-c C-e时会多一个导出选项:</p>
       aria-hidden="true">
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
-          <p class="tw-select-none !tw-my-1">org</p>
+          <p class="tw-select-none !tw-my-1">emacs-lisp</p>
       </button>
 
    <div class="tw-flex">
@@ -389,23 +473,47 @@ C-c C-e时会多一个导出选项:</p>
       tw-overflow-y-hidden
       tw-overflow-x-auto
       tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="cs">#+OPTIONS</span><span class="c">: author:nil ^:{}</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_FRONT_MATTER_FORMAT</span><span class="c">: YAML</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_BASE_DIR</span><span class="c">: 博客的根目录</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_SECTION</span><span class="c">: posts/</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_CUSTOM_FRONT_MATTER</span><span class="c">: :toc true</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_AUTO_SET_LASTMOD</span><span class="c">: t</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_TAGS</span><span class="c">: 标签1 标签2</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_CATEGORIES</span><span class="c">: 类别</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+TITLE</span><span class="c">: 博客名字</span></span></span></code></pre>
+      "><span class="line"><span class="cl"><span class="c1">;; Prettify UI</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">org-modern</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:after</span> <span class="nv">org</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:diminish</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; --- 新增的部分开始 ---</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:custom</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; 这里定义标题层级的图标。列表中的第一个符号对应一级标题，第二个对应二级，以此类推。</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; 我换成了一组兼容性更好的常用符号。</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-modern-star</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;◉&#34;</span> <span class="s">&#34;○&#34;</span> <span class="s">&#34;◈&#34;</span> <span class="s">&#34;◇&#34;</span> <span class="s">&#34;✳&#34;</span> <span class="s">&#34;✚&#34;</span> <span class="s">&#34;✜&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; --- 新增的部分结束 ---</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:autoload</span> <span class="nv">global-org-modern-mode</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:init</span> <span class="p">(</span><span class="nv">global-org-modern-mode</span> <span class="mi">1</span><span class="p">))</span></span></span></code></pre>
 </div>
-<p>这其实是一个重复性的工作, 因此使用Yasnippet模板</p>
+<p>更改前：</p>
+<figure><img src="/ox-hugo/B05AIs.png">
+</figure>
+
+<p>更改后：</p>
+<figure><img src="/ox-hugo/xAJaoO.png">
+</figure>
+
+<h2 id="bookmark" class="headerLink">
+    <a href="#bookmark" class="header-mark"></a>bookmark</h2><ul>
+<li>C-x r l : 列出书签</li>
+<li>C-x r m : 保存书签</li>
+<li>S-x bookmark-save : 可以在书签保存文件中修修改书签</li>
+<li>S-M: mark set</li>
+</ul>
+<!--listend-->
 <ul>
-<li>配置Yasnippet模版(安装使用部分略, 使用的Centaur Emacs贡献者已安装配置好了)</li>
-<li>使用: M-x yas-new-snippet (C-c &amp; C-n) 调出添加模板界面</li>
-<li>添加以下内容, 再保存(起个名字:hugo, 这默认保存在~/.emacs.d/snippets/org-mode/hugo中)
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+<li>Shift-S &gt;: 跳到最后</li>
+</ul>
+<h2 id="org" class="headerLink">
+    <a href="#org" class="header-mark"></a>org</h2><p>Shift-Tab: 循环标题折叠
+C-c C-e: 导出md文件到hugo</p>
+<h2 id="打开shell" class="headerLink">
+    <a href="#%e6%89%93%e5%bc%80shell" class="header-mark"></a>打开shell</h2><p>打开当下目录的shell：F9,打开EggGump的shell: F4</p>
+<h2 id="ox-hugo-安装" class="headerLink">
+    <a href="#ox-hugo-%e5%ae%89%e8%a3%85" class="header-mark"></a>ox-hugo 安装</h2><p>用于导致org文件为hugo适配的markdown格式</p>
+<p>安装完 ox-hugo 后，快捷键 C-c C-e 无法绑定, 需要执行命令</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
     tw-flex 
@@ -424,7 +532,7 @@ C-c C-e时会多一个导出选项:</p>
       aria-hidden="true">
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
-          <p class="tw-select-none !tw-my-1">org</p>
+          <p class="tw-select-none !tw-my-1">emacs-lisp</p>
       </button>
 
    <div class="tw-flex">
@@ -494,26 +602,11 @@ C-c C-e时会多一个导出选项:</p>
       tw-overflow-y-hidden
       tw-overflow-x-auto
       tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="c"># -*- mode: snippet -*-</span>
-</span></span><span class="line"><span class="cl"><span class="c"># name: hugo_blog</span>
-</span></span><span class="line"><span class="cl"><span class="c"># key: &gt;hugo</span>
-</span></span><span class="line"><span class="cl"><span class="c"># --</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+OPTIONS</span><span class="c">: author:nil ^:{}</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+hugo_front_matter_format</span><span class="c">: yaml</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_BASE_DIR</span><span class="c">: ../</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_SECTION</span><span class="c">: posts/</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+DATE</span><span class="c">: `(format-time-string &#34;[%Y-%m-%d %a %H:%M]&#34;)`</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_CUSTOM_FRONT_MATTER</span><span class="c">: :toc true</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_AUTO_SET_LASTMOD</span><span class="c">: t</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_TAGS</span><span class="c">: $1</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_CATEGORIES</span><span class="c">: $2</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+TITLE</span><span class="c">: $3</span></span></span></code></pre>
+      "><span class="line"><span class="cl"><span class="nv">M-x</span> <span class="nv">org-hugo-export-wim-to-md</span></span></span></code></pre>
 </div>
-</li>
-<li>模板解释: 1. key: 后面部分, 这个是所使用的快捷键；2. #&ndash;: 后面的部分是模板</li>
-<li>这时输入在文中 &gt;hugo, 再按TAB后就可以弹出模板内容
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+<p>才可使用快捷銉</p>
+<p>因此需要在配置文件中添加启动命令,如下</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
     tw-flex 
@@ -532,7 +625,7 @@ C-c C-e时会多一个导出选项:</p>
       aria-hidden="true">
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
-          <p class="tw-select-none !tw-my-1">org</p>
+          <p class="tw-select-none !tw-my-1">emacs-lisp</p>
       </button>
 
    <div class="tw-flex">
@@ -602,35 +695,15 @@ C-c C-e时会多一个导出选项:</p>
       tw-overflow-y-hidden
       tw-overflow-x-auto
       tw-scrollbar-thin
-      "><span class="line"><span class="cl"><span class="cs">#+OPTIONS</span><span class="c">: author:nil ^:{}</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+hugo_front_matter_format</span><span class="c">: yaml</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_BASE_DIR</span><span class="c">: ../</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_SECTION</span><span class="c">: posts/</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+DATE</span><span class="c">: [2022-08-05 Fri 00:41]</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_CUSTOM_FRONT_MATTER</span><span class="c">: :toc true</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_AUTO_SET_LASTMOD</span><span class="c">: t</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_TAGS</span><span class="c">:</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_CATEGORIES</span><span class="c">:</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+HUGO_DRAFT</span><span class="c">: false</span>
-</span></span><span class="line"><span class="cl"><span class="cs">#+TITLE</span><span class="c">:</span></span></span></code></pre>
+      "><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">ox-hugo</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:after</span> <span class="nv">ox</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">t</span><span class="p">)</span></span></span></code></pre>
 </div>
-</li>
-</ul>
-<h2 id="部署博客到github" class="headerLink">
-    <a href="#%e9%83%a8%e7%bd%b2%e5%8d%9a%e5%ae%a2%e5%88%b0github" class="header-mark"></a>部署博客到github</h2><p>（这里的要点为：创建一个github名称.github.io的仓库，然后将public里的内容传到这个仓库中即可）</p>
-<ul>
-<li>
-<p>在博客目录下运行 hugo 命令, 这是会更新根目录下public文件夹里的内容</p>
-</li>
-<li>
-<p>申请一个仓库, 这个仓库是需要与用户名同名的:your_name.github.io</p>
-</li>
-<li>
-<p>申请完后会有一些提示教你怎么去将本地仓库提交到github上</p>
-</li>
-<li>
-<p>在本地的public目录下创建git目录</p>
-<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+<h2 id="yasnippet-config" class="headerLink">
+    <a href="#yasnippet-config" class="header-mark"></a>Yasnippet Config</h2><h3 id="调出yasnippet配置" class="headerLink">
+    <a href="#%e8%b0%83%e5%87%bayasnippet%e9%85%8d%e7%bd%ae" class="header-mark"></a>调出yasnippet配置</h3><p>M-x yas-new-snippet</p>
+<h3 id="写配置文件" class="headerLink">
+    <a href="#%e5%86%99%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="header-mark"></a>写配置文件</h3><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
     tw-flex 
@@ -649,7 +722,7 @@ C-c C-e时会多一个导出选项:</p>
       aria-hidden="true">
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
-          <p class="tw-select-none !tw-my-1">shell</p>
+          <p class="tw-select-none !tw-my-1">text</p>
       </button>
 
    <div class="tw-flex">
@@ -719,40 +792,19 @@ C-c C-e时会多一个导出选项:</p>
       tw-overflow-y-hidden
       tw-overflow-x-auto
       tw-scrollbar-thin
-      "><span class="line"><span class="cl">git init
-</span></span><span class="line"><span class="cl">git add *
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;commit 1st&#34;</span>
-</span></span><span class="line"><span class="cl">git remote add origin https://github.com/your_name/your_name.github.io.git
-</span></span><span class="line"><span class="cl">git push -u origin main</span></span></code></pre>
+      "><span class="line"><span class="cl"># -*- mode: snippet -*-
+</span></span><span class="line"><span class="cl"># name: hugo_blog
+</span></span><span class="line"><span class="cl"># key: &gt;hugo
+</span></span><span class="line"><span class="cl"># --
+</span></span><span class="line"><span class="cl">Adding your snippet here!</span></span></code></pre>
 </div>
-</li>
-<li>
-<p>在提交的时候可能需要用到用户名your_name与密码,密码改为申请密钥</p>
-</li>
-<li>
-<p>密钥申请:
-<img class="tw-inline" loading="lazy" src='/ox-hugo/NaZSrm.png'     ></p>
-<p>点setting</p>
-<figure><img src="/ox-hugo/OYNoN9.png">
-    </figure>
-
-<p>选择developer settings</p>
-<figure><img src="/ox-hugo/qtNAxh.png">
-    </figure>
-
-<p>选择第三个 personal access tokens</p>
-<figure><img src="/ox-hugo/q9XEQ8.png">
-    </figure>
-
-<p>点generate new token</p>
-<figure><img src="/ox-hugo/8RKdMQ.png">
-    </figure>
-
-</li>
+<ul>
+<li>name: 你给你的snippet起的名字</li>
+<li>key: 要调出snippet时所需要的快捷键</li>
 </ul>
-<p>对note, expiration 和 scopes进行设置即可. note是你这个token的名字, expiration是这个token的有效时间, select scopes是这个token的作用范围, 如果都不选这个token就一点用都没有</p>
-<h2 id="自动推送脚本" class="headerLink">
-    <a href="#%e8%87%aa%e5%8a%a8%e6%8e%a8%e9%80%81%e8%84%9a%e6%9c%ac" class="header-mark"></a>自动推送脚本</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+<h3 id="在-dot-emacs-dot-d-custom-dot-el中添加配置" class="headerLink">
+    <a href="#%e5%9c%a8-dot-emacs-dot-d-custom-dot-el%e4%b8%ad%e6%b7%bb%e5%8a%a0%e9%85%8d%e7%bd%ae" class="header-mark"></a>在.emacs.d/custom.el中添加配置</h3><p>下面的配置中绑定了扩展快捷键 C-c y</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
   <div class="
     
     tw-flex 
@@ -771,7 +823,7 @@ C-c C-e时会多一个导出选项:</p>
       aria-hidden="true">
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
-          <p class="tw-select-none !tw-my-1">shell</p>
+          <p class="tw-select-none !tw-my-1">emacs-lisp</p>
       </button>
 
    <div class="tw-flex">
@@ -841,23 +893,350 @@ C-c C-e时会多一个导出选项:</p>
       tw-overflow-y-hidden
       tw-overflow-x-auto
       tw-scrollbar-thin
-      "><span class="line"><span class="cl">hugo
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> public
-</span></span><span class="line"><span class="cl">git add .
-</span></span><span class="line"><span class="cl"><span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;rebuilding site `date`&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">1</span> <span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="k">then</span> <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="k">fi</span>
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">git push
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ..</span></span></code></pre>
+      "><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">yasnippet</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:defer</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:bind</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">:map</span> <span class="nv">yas-minor-mode-map</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="s">&#34;C-c y&#34;</span> <span class="o">.</span> <span class="nv">yas-expand</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">yas-snippet-dirs</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;~/.emacs.d/snippets/&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">yas-reload-all</span><span class="p">))</span></span></span></code></pre>
 </div>
-<p>这里会需要输入github的用户名和密码,密码是前面创建的token
-最后等仓库的action页面build完成就行了, 一般就是等一会</p>
-<figure><img src="/ox-hugo/DQj4wI.png">
-</figure>
+<h3 id="使用说明" class="headerLink">
+    <a href="#%e4%bd%bf%e7%94%a8%e8%af%b4%e6%98%8e" class="header-mark"></a>使用说明</h3><ol>
+<li>
+<p>输入&quot;&gt;hugo&quot;</p>
+</li>
+<li>
+<p>正常会弹出扩展提示</p>
+</li>
+<li>
+<p>弹出提示后，按C-c y，即可替换面事先安排好的模板了。 提示示例如下：</p>
+<figure><img src="/ox-hugo/4XbmvO.png">
+    </figure>
 
+</li>
+</ol>
+<h3 id="hugo-的yasnippet配置" class="headerLink">
+    <a href="#hugo-%e7%9a%84yasnippet%e9%85%8d%e7%bd%ae" class="header-mark"></a>hugo 的YASnippet配置</h3><p>这里用截图显示，因为使用文本会被识别导致导出错误
+需要注意的是，迁移文件时，记得修改HUGO_BASE_DIR为自己的文件，</p>
+<p>具体配置可见 <strong>使用emacs写hugo博客</strong> 中</p>
+<h2 id="自定义配置文件修改汇总--centaur-emacs" class="headerLink">
+    <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e4%bf%ae%e6%94%b9%e6%b1%87%e6%80%bb--centaur-emacs" class="header-mark"></a>自定义配置文件修改汇总 (centaur-emacs)</h2><ul>
+<li>.emacs.d/custom.el</li>
+</ul>
+<!--listend-->
+<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    
+    tw-flex 
+    tw-flex-row
+    tw-flex-1 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        code-block-button
+        tw-mx-2 
+        tw-flex
+        tw-flex-row
+        tw-flex-1"
+      aria-hidden="true">
+          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
+          <p class="tw-select-none !tw-my-1">emacs-lisp</p>
+      </button>
+
+   <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-7" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl"><span class="c1">;; ;;自定义截图</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">org-screenshot</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Take a screenshot into a unique-named file in the current buffer file
+</span></span></span><span class="line"><span class="cl"><span class="s">        directory and insert a link to this file.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">filename</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nf">make-temp-name</span> <span class="s">&#34;./images/&#34;</span><span class="p">)</span> <span class="s">&#34;.png&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">dirname</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;./images/&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">file-exists-p</span> <span class="nv">dirname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">make-directory</span> <span class="nv">dirname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">;;(suspend-frame)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">call-process-shell-command</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;screencapture -s \&#34;&#34;</span> <span class="nv">filename</span> <span class="s">&#34;\&#34;&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;[[&#34;</span> <span class="nv">filename</span> <span class="s">&#34;]]&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-display-inline-images</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C-c p&#34;</span><span class="p">)</span> <span class="ss">&#39;org-screenshot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; ;; Yasnippet 配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">yasnippet</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:defer</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:bind</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">:map</span> <span class="nv">yas-minor-mode-map</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="s">&#34;C-c y&#34;</span> <span class="o">.</span> <span class="nv">yas-expand</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">yas-snippet-dirs</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;~/.emacs.d/snippets/&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">yas-reload-all</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; ;; 更改光标为bar</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq-default</span> <span class="nv">cursor-type</span> <span class="ss">&#39;bar</span><span class="p">)</span> <span class="c1">;更改光标为bar</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; ;; 加载 ox-hugo</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">ox-hugo</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:after</span> <span class="nv">ox</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; ;; latex预览变大</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">with-eval-after-load</span> <span class="ss">&#39;org</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-preview-latex-default-process</span> <span class="ss">&#39;dvipng</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; (setq org-preview-latex-image-width 2.0)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-format-latex-options</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">plist-put</span> <span class="nv">org-format-latex-options</span> <span class="nb">:scale</span> <span class="mf">2.5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; ;;设置图片预览大用固定值</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-image-actual-width</span> <span class="mi">600</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; ;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; 循环隐藏shell</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defvar</span> <span class="nv">my-egggump-shell-buffer</span> <span class="s">&#34;*EggGump-Shell*&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Buffer name for the EggGump shell.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">my-toggle-shell-egggump</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Toggle visibility of a shell in /Users/hubing/ExtraLearning/blog/EggGump.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">buf</span> <span class="p">(</span><span class="nf">get-buffer</span> <span class="nv">my-egggump-shell-buffer</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; 如果 buffer 存在且窗口可见 → 隐藏窗口</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">buf</span> <span class="p">(</span><span class="nf">get-buffer-window</span> <span class="nv">buf</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">delete-window</span> <span class="p">(</span><span class="nf">get-buffer-window</span> <span class="nv">buf</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">;; 否则 → 显示/创建 shell buffer</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">progn</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">unless</span> <span class="nv">buf</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">default-directory</span> <span class="s">&#34;/Users/hubing/ExtraLearning/blog/EggGump/&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="nv">shell</span> <span class="nv">my-egggump-shell-buffer</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">pop-to-buffer</span> <span class="nv">my-egggump-shell-buffer</span><span class="p">)))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;&lt;f4&gt;&#34;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">my-toggle-shell-egggump</span><span class="p">)</span></span></span></code></pre>
+</div>
+<h3 id="弃用配置" class="headerLink">
+    <a href="#%e5%bc%83%e7%94%a8%e9%85%8d%e7%bd%ae" class="header-mark"></a>弃用配置</h3><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    
+    tw-flex 
+    tw-flex-row
+    tw-flex-1 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        code-block-button
+        tw-mx-2 
+        tw-flex
+        tw-flex-row
+        tw-flex-1"
+      aria-hidden="true">
+          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
+          <p class="tw-select-none !tw-my-1">emacs-lisp</p>
+      </button>
+
+   <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-8" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl">  <span class="c1">;; ;;使用snipeast 截图</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">defun</span> <span class="nv">org-snipaste</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="s">&#34;Take a screenshot into a unique-named file in the current buffer file
+</span></span></span><span class="line"><span class="cl"><span class="s">            directory and insert a link to this file.&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">setq</span> <span class="nv">filename</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nf">make-temp-name</span> <span class="s">&#34;./images/&#34;</span><span class="p">)</span> <span class="s">&#34;.png&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">setq</span> <span class="nv">dirname</span>
+</span></span><span class="line"><span class="cl">            <span class="s">&#34;./images/&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">file-exists-p</span> <span class="nv">dirname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">make-directory</span> <span class="nv">dirname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">;;(suspend-frame)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">call-process-shell-command</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;/Applications/Snipaste.app/Contents/MacOS/Snipaste snip&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nf">insert</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34;[[&#34;</span> <span class="nv">filename</span> <span class="s">&#34;]]&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">org-display-inline-images</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;C-c y&#34;</span><span class="p">)</span> <span class="ss">&#39;org-snipaste</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">;; ;; 打开shell</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; ;; 按F4打开指定位置的shell</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">my-open-shell-egggump</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Open a shell in /Users/hubing/ExtraLearning/blog/EggGump.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">default-directory</span> <span class="s">&#34;/Users/hubing/ExtraLearning/blog/EggGump/&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">shell</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;&lt;f4&gt;&#34;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">my-open-shell-egggump</span><span class="p">)</span></span></span></code></pre>
+</div>
+<h2 id="git-区" class="headerLink">
+    <a href="#git-%e5%8c%ba" class="header-mark"></a>Git 区</h2><h3 id="git推送到新的github账号" class="headerLink">
+    <a href="#git%e6%8e%a8%e9%80%81%e5%88%b0%e6%96%b0%e7%9a%84github%e8%b4%a6%e5%8f%b7" class="header-mark"></a>Git推送到新的github账号</h3><ol>
+<li>
+<p>修改配置，保证名字和邮箱为新号</p>
+</li>
+<li>
+<p>绑定远程的</p>
+</li>
+<li>
+<p>本地生成key, 并将这个key传到github中</p>
+</li>
+<li>
+<p>即可开始推送</p>
+<p>通过将远程仓库git clone到本地（注意这里要使用ssh，github好像对https限制了），再将内容复制到这个仓库里能更容易地完成往新账号的推送</p>
+</li>
+</ol>
 </div>
 
         <div class="sponsor print:tw-hidden">
@@ -882,31 +1261,31 @@ C-c C-e时会多一个导出选项:</p>
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2025-11-15</span>
+                <span>Updated on 2025-11-24</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line print:!tw-hidden">
             <div class="post-info-md"></div>
-            <div class="post-info-share"><button title="Share on Twitter" data-sharer="twitter" data-url="/posts/org_02_hugo_with_emacs/" data-title="使用emacs写hugo博客" data-hashtags="博客"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></button><button title="Share on 微博" data-sharer="weibo" data-url="/posts/org_02_hugo_with_emacs/" data-title="使用emacs写hugo博客"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z"/></svg></button><button title="Share on Blogger" data-sharer="blogger" data-url="/posts/org_02_hugo_with_emacs/" data-title="使用emacs写hugo博客" data-description=""><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg></button><button title="Share on Evernote" data-sharer="evernote" data-url="/posts/org_02_hugo_with_emacs/" data-title="使用emacs写hugo博客"><svg class="icon"
+            <div class="post-info-share"><button title="Share on Twitter" data-sharer="twitter" data-url="/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/" data-title="Emacs,git 常用技巧总结 " data-hashtags="Emacs"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></button><button title="Share on 微博" data-sharer="weibo" data-url="/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/" data-title="Emacs,git 常用技巧总结 "><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z"/></svg></button><button title="Share on Blogger" data-sharer="blogger" data-url="/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/" data-title="Emacs,git 常用技巧总结 " data-description=""><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M162.4 196c4.8-4.9 6.2-5.1 36.4-5.1 27.2 0 28.1.1 32.1 2.1 5.8 2.9 8.3 7 8.3 13.6 0 5.9-2.4 10-7.6 13.4-2.8 1.8-4.5 1.9-31.1 2.1-16.4.1-29.5-.2-31.5-.8-10.3-2.9-14.1-17.7-6.6-25.3zm61.4 94.5c-53.9 0-55.8.2-60.2 4.1-3.5 3.1-5.7 9.4-5.1 13.9.7 4.7 4.8 10.1 9.2 12 2.2 1 14.1 1.7 56.3 1.2l47.9-.6 9.2-1.5c9-5.1 10.5-17.4 3.1-24.4-5.3-4.7-5-4.7-60.4-4.7zm223.4 130.1c-3.5 28.4-23 50.4-51.1 57.5-7.2 1.8-9.7 1.9-172.9 1.8-157.8 0-165.9-.1-172-1.8-8.4-2.2-15.6-5.5-22.3-10-5.6-3.8-13.9-11.8-17-16.4-3.8-5.6-8.2-15.3-10-22C.1 423 0 420.3 0 256.3 0 93.2 0 89.7 1.8 82.6 8.1 57.9 27.7 39 53 33.4c7.3-1.6 332.1-1.9 340-.3 21.2 4.3 37.9 17.1 47.6 36.4 7.7 15.3 7-1.5 7.3 180.6.2 115.8 0 164.5-.7 170.5zm-85.4-185.2c-1.1-5-4.2-9.6-7.7-11.5-1.1-.6-8-1.3-15.5-1.7-12.4-.6-13.8-.8-17.8-3.1-6.2-3.6-7.9-7.6-8-18.3 0-20.4-8.5-39.4-25.3-56.5-12-12.2-25.3-20.5-40.6-25.1-3.6-1.1-11.8-1.5-39.2-1.8-42.9-.5-52.5.4-67.1 6.2-27 10.7-46.3 33.4-53.4 62.4-1.3 5.4-1.6 14.2-1.9 64.3-.4 62.8 0 72.1 4 84.5 9.7 30.7 37.1 53.4 64.6 58.4 9.2 1.7 122.2 2.1 133.7.5 20.1-2.7 35.9-10.8 50.7-25.9 10.7-10.9 17.4-22.8 21.8-38.5 3.2-10.9 2.9-88.4 1.7-93.9z"/></svg></button><button title="Share on Evernote" data-sharer="evernote" data-url="/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/" data-title="Emacs,git 常用技巧总结 "><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M120.82 132.21c1.6 22.31-17.55 21.59-21.61 21.59-68.93 0-73.64-1-83.58 3.34-.56.22-.74 0-.37-.37L123.79 46.45c.38-.37.6-.22.38.37-4.35 9.99-3.35 15.09-3.35 85.39zm79 308c-14.68-37.08 13-76.93 52.52-76.62 17.49 0 22.6 23.21 7.95 31.42-6.19 3.3-24.95 1.74-25.14 19.2-.05 17.09 19.67 25 31.2 24.89A45.64 45.64 0 0 0 312 393.45v-.08c0-11.63-7.79-47.22-47.54-55.34-7.72-1.54-65-6.35-68.35-50.52-3.74 16.93-17.4 63.49-43.11 69.09-8.74 1.94-69.68 7.64-112.92-36.77 0 0-18.57-15.23-28.23-57.95-3.38-15.75-9.28-39.7-11.14-62 0-18 11.14-30.45 25.07-32.2 81 0 90 2.32 101-7.8 9.82-9.24 7.8-15.5 7.8-102.78 1-8.3 7.79-30.81 53.41-24.14 6 .86 31.91 4.18 37.48 30.64l64.26 11.15c20.43 3.71 70.94 7 80.6 57.94 22.66 121.09 8.91 238.46 7.8 238.46C362.15 485.53 267.06 480 267.06 480c-18.95-.23-54.25-9.4-67.27-39.83zm80.94-204.84c-1 1.92-2.2 6 .85 7 14.09 4.93 39.75 6.84 45.88 5.53 3.11-.25 3.05-4.43 2.48-6.65-3.53-21.85-40.83-26.5-49.24-5.92z"/></svg></button></div>
         </div>
     </div>
 
     <div class="post-info-more">
         <section class="post-tags"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg>&nbsp;<a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a></section>
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg>&nbsp;<a href="/tags/emacs/">Emacs</a></section>
         <section class="print:!tw-hidden">
             <span><button class="tw-text-fgColor-link-muted hover:tw-text-fgColor-link-muted-hover" onclick="window.history.back();">Back</button></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav print:tw-hidden"><a href="/posts/org_26_se/" class="prev" rel="prev" title="Practical Techniques for Searches on Encrypted Data"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>Practical Techniques for Searches on Encrypted Data</a>
-            <a href="/posts/20251123234403-emacs_git_%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/" class="next" rel="next" title="Emacs,git 常用技巧总结 ">Emacs,git 常用技巧总结 <svg class="icon"
+    <div class="post-nav print:tw-hidden"><a href="/posts/org_02_hugo_with_emacs/" class="prev" rel="prev" title="使用emacs写hugo博客"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>使用emacs写hugo博客</a>
+            <a href="/posts/emacs_tip/" class="next" rel="next" title="Emacs,git 常用技巧总结">Emacs,git 常用技巧总结<svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div>
 </div>
 <div id="comments" class="print:!tw-hidden tw-pt-32 tw-pb-8"><div id="utterances"></div><noscript>

@@ -4,13 +4,23 @@
         <link>/tags/%E5%8D%9A%E5%AE%A2/</link>
         <description>博客 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 16 Nov 2025 17:43:00 -0400</lastBuildDate><atom:link href="/tags/%E5%8D%9A%E5%AE%A2/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 24 Nov 2025 13:08:00 -0400</lastBuildDate><atom:link href="/tags/%E5%8D%9A%E5%AE%A2/" rel="self" type="application/rss+xml" /><item>
+    <title>当前主题DoIt问题修改 </title>
+    <link>/posts/20251124130636-hugo%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Mon, 24 Nov 2025 13:08:00 -0400</pubDate><author>
+        <name>胡兵</name>
+    </author><guid>/posts/20251124130636-hugo%E9%97%AE%E9%A2%98/</guid>
+    <description>
+        <![CDATA[<h2 id="problem" class="headerLink">
+    <a href="#problem" class="header-mark"></a>Problem</h2><p>Error: <code>unable to cast []string{&quot;胡兵&quot;} of type []string to string</code>.</p>]]></description>
+</item><item>
     <title>配置自己的域名</title>
     <link>/posts/domain_set/</link>
     <pubDate>Sun, 16 Nov 2025 17:43:00 -0400</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/domain_set/</guid>
-    <description><![CDATA[<h2 id="域名申请" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="域名申请" class="headerLink">
     <a href="#%e5%9f%9f%e5%90%8d%e7%94%b3%e8%af%b7" class="header-mark"></a>域名申请</h2><p>申请个域名，表示域名属于你了</p>
 <h2 id="域名托管" class="headerLink">
     <a href="#%e5%9f%9f%e5%90%8d%e6%89%98%e7%ae%a1" class="header-mark"></a>域名托管</h2><p>将你的域名记录在域名服务器中，让你的域名能被别人找到</p>
@@ -25,7 +35,8 @@
     <pubDate>Wed, 12 Nov 2025 16:45:00 -0400</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_02_hugo_with_emacs/</guid>
-    <description><![CDATA[<h2 id="emacs-ox-hugo" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="emacs-ox-hugo" class="headerLink">
     <a href="#emacs-ox-hugo" class="header-mark"></a>emacs: ox-hugo</h2><p>emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.</p>]]></description>
 </item><item>
     <title>hugo安装与入门</title>
@@ -33,7 +44,8 @@
     <pubDate>Thu, 04 Aug 2022 00:52:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_01_hugo_install/</guid>
-    <description><![CDATA[<h2 id="ubuntu-18-dot-04安装hugo最新稳定版" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="ubuntu-18-dot-04安装hugo最新稳定版" class="headerLink">
     <a href="#ubuntu-18-dot-04%e5%ae%89%e8%a3%85hugo%e6%9c%80%e6%96%b0%e7%a8%b3%e5%ae%9a%e7%89%88" class="header-mark"></a>ubuntu 18.04安装hugo最新稳定版</h2><ol>
 <li>在站上下载安装包
 <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener noreferrer">https://github.com/gohugoio/hugo/releases</a></li>

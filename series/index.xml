@@ -10,20 +10,23 @@
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/series/getting-start/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>Test Series</title>
     <link>/series/test-series/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/series/test-series/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>系列</title>
     <link>/series/_index.zh-cn/</link>
     <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/series/_index.zh-cn/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item></channel>
 </rss>

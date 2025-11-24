@@ -4,75 +4,85 @@
         <link>/tags/</link>
         <description>Tags - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 23 Nov 2025 22:28:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 24 Nov 2025 13:08:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>博客</title>
+    <link>/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <pubDate>Mon, 24 Nov 2025 13:08:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/tags/%E5%8D%9A%E5%AE%A2/</guid>
+    <description>
+        <![CDATA[]]></description>
+</item><item>
     <title>Emacs</title>
     <link>/tags/emacs/</link>
     <pubDate>Sun, 23 Nov 2025 22:28:00 -0400</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/emacs/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>博客</title>
-    <link>/tags/%E5%8D%9A%E5%AE%A2/</link>
-    <pubDate>Sun, 16 Nov 2025 17:43:00 -0400</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/%E5%8D%9A%E5%AE%A2/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>论文阅读</title>
     <link>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link>
     <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>论文写作</title>
     <link>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</link>
     <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>数学</title>
     <link>/tags/%E6%95%B0%E5%AD%A6/</link>
     <pubDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/%E6%95%B0%E5%AD%A6/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>Ovs-Dpdk</title>
     <link>/tags/ovs-dpdk/</link>
     <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/ovs-dpdk/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>Dactyl</title>
     <link>/tags/dactyl/</link>
     <pubDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/dactyl/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>Openssl</title>
     <link>/tags/openssl/</link>
     <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/openssl/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>Ovs</title>
     <link>/tags/ovs/</link>
     <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/ovs/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item><item>
     <title>Idea</title>
     <link>/tags/idea/</link>
     <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/idea/</guid>
-    <description><![CDATA[]]></description>
+    <description>
+        <![CDATA[]]></description>
 </item></channel>
 </rss>

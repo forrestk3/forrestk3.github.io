@@ -10,7 +10,8 @@
     <pubDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_24_elgamal/</guid>
-    <description><![CDATA[<h2 id="算法流程-密钥生成-加密-解密-正确性正明" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="算法流程-密钥生成-加密-解密-正确性正明" class="headerLink">
     <a href="#%e7%ae%97%e6%b3%95%e6%b5%81%e7%a8%8b-%e5%af%86%e9%92%a5%e7%94%9f%e6%88%90-%e5%8a%a0%e5%af%86-%e8%a7%a3%e5%af%86-%e6%ad%a3%e7%a1%ae%e6%80%a7%e6%ad%a3%e6%98%8e" class="header-mark"></a>算法流程: 密钥生成, 加密, 解密, 正确性正明</h2><figure><img src="/ox-hugo/Elgamal.jpg">
 </figure>]]></description>
 </item><item>
@@ -19,7 +20,8 @@
     <pubDate>Mon, 05 Jun 2023 13:56:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_23_rsa/</guid>
-    <description><![CDATA[<h2 id="rsa算法流程" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="rsa算法流程" class="headerLink">
     <a href="#rsa%e7%ae%97%e6%b3%95%e6%b5%81%e7%a8%8b" class="header-mark"></a>rsa算法流程</h2><figure><img src="/ox-hugo/rsa_alg.jpg">
 </figure>
 
@@ -50,7 +52,8 @@
     <pubDate>Tue, 04 Oct 2022 21:44:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_13_markon_decision/</guid>
-    <description><![CDATA[<h2 id="马尔可夫过程" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="马尔可夫过程" class="headerLink">
     <a href="#%e9%a9%ac%e5%b0%94%e5%8f%af%e5%a4%ab%e8%bf%87%e7%a8%8b" class="header-mark"></a>马尔可夫过程</h2><p><a href="https://zhuanlan.zhihu.com/p/494755866" target="_blank" rel="noopener noreferrer">参考自这里</a></p>
 <h3 id="性质--markov-property" class="headerLink">
     <a href="#%e6%80%a7%e8%b4%a8--markov-property" class="header-mark"></a>性质(Markov Property)</h3><p>马尔可夫性质指的是: 未来只与当前状态有关，与过去无关。可以使用以下定义:</p>]]></description>
@@ -60,7 +63,8 @@
     <pubDate>Mon, 26 Sep 2022 23:02:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_12_hoeffding_ineq/</guid>
-    <description><![CDATA[<h2 id="霍夫丁不等式表达" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="霍夫丁不等式表达" class="headerLink">
     <a href="#%e9%9c%8d%e5%a4%ab%e4%b8%81%e4%b8%8d%e7%ad%89%e5%bc%8f%e8%a1%a8%e8%be%be" class="header-mark"></a>霍夫丁不等式表达</h2><figure><img src="/ox-hugo/xO47Lh.png">
 </figure>
 

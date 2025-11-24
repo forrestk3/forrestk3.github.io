@@ -10,7 +10,8 @@
     <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_26_se/</guid>
-    <description><![CDATA[<h2 id="论文信息" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="论文信息" class="headerLink">
     <a href="#%e8%ae%ba%e6%96%87%e4%bf%a1%e6%81%af" class="header-mark"></a>论文信息</h2><ul>
 <li>发表: IEEE Symposium on Security and Privacy (CCF A, 2000)</li>
 <li>阅读目的: 了解它是怎么在密文中搜索的, 找网络数据包传输过程中如何检测被修改的idea.</li>
@@ -24,7 +25,8 @@
     <pubDate>Wed, 22 Feb 2023 14:27:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_21_multi_clustering/</guid>
-    <description><![CDATA[<h2 id="论文信息" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="论文信息" class="headerLink">
     <a href="#%e8%ae%ba%e6%96%87%e4%bf%a1%e6%81%af" class="header-mark"></a>论文信息</h2><p>SigKDD, 2010</p>
 <p>阅读目的: 了解攻击溯源相关知识, 主要是为了扩充知识面.</p>
 <p>结论: 这个文章中提供的是一个数据挖掘的方法, 针对已有的数据样本通过找它们的相似性簇并通过分析来获得结论, 所以这个文章并不是我想要的. 以下总结阅读时做的一些笔记.</p>]]></description>
@@ -34,7 +36,8 @@
     <pubDate>Tue, 06 Dec 2022 13:14:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_18_stackpi/</guid>
-    <description><![CDATA[<h2 id="论文信息" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="论文信息" class="headerLink">
     <a href="#%e8%ae%ba%e6%96%87%e4%bf%a1%e6%81%af" class="header-mark"></a>论文信息</h2><p>发在JSAC上, 作者: <img class="tw-inline" loading="lazy" src='/ox-hugo/E0EPl1.png'     ></p>
 <p>把与我相关的部分做总结</p>
 <h2 id="摘要" class="headerLink">
@@ -45,7 +48,8 @@
     <pubDate>Thu, 01 Dec 2022 22:12:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_17_ifade/</guid>
-    <description><![CDATA[<p>affliation and publication</p>
+    <description>
+        <![CDATA[<p>affliation and publication</p>
 <ul>
 <li>author: Qi Li, Yunpeng Liu, Zhuotao Liu, Peng Zhang, Chunhui Pang</li>
 <li>publication: TPDS</li>
@@ -60,7 +64,8 @@
     <pubDate>Mon, 28 Nov 2022 21:24:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_16_fault_localization/</guid>
-    <description><![CDATA[<p>&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &ldquo;High-Speed Inter-Domain Fault Localization,&rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56.</p>
+    <description>
+        <![CDATA[<p>&gt; C. Basescu, Y. -H. Lin, H. Zhang and A. Perrig, &ldquo;High-Speed Inter-Domain Fault Localization,&rdquo; 2016 IEEE Symposium on Security and Privacy (SP), 2016, pp. 859-877, doi: 10.1109/SP.2016.56.</p>
 <p>文章发在SP上, 但读的时候很不好受, 很难受, 因为里面的英语表达写法很不习惯, 而且读的时候还总给人一种水时长的感觉, 挑与我相关的重点读了一下, 感觉还不错.</p>]]></description>
 </item><item>
     <title>PROOFS OF WORK AND BREAD PUDDING PROTOCOLS (EXTENDED ABSTRACT)</title>
@@ -68,7 +73,8 @@
     <pubDate>Sat, 26 Nov 2022 21:10:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_15_pow/</guid>
-    <description><![CDATA[<h2 id="简单介绍" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="简单介绍" class="headerLink">
     <a href="#%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d" class="header-mark"></a>简单介绍</h2><p>这一篇是讲PoW基础的论文,没有具体说明PoW是什么,但给出了与PoW相关的一些定义和例子, 用于理解PoW还可. 整篇文章看完还是云里雾里的, 但大概理解了PoW其实相当于一个证明, 对于给定的一个hash函数, V知道这个函数的计算结果, 而P要做的是向V证明它知道这个计算结果所对应的原象. 因为hash算逆几乎不可能, 因此若原象是n位, P随便猜的几率为1/2^n.</p>]]></description>
 </item><item>
     <title>EPIC: Every packet is checked in the data plane of a path-aware internet</title>
@@ -76,7 +82,8 @@
     <pubDate>Sat, 26 Nov 2022 19:43:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_14_epic/</guid>
-    <description><![CDATA[<h2 id="简单介绍" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="简单介绍" class="headerLink">
     <a href="#%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d" class="header-mark"></a>简单介绍</h2><p>这是一篇最近NSDI上路径验证相关的论文.看了好几遍但还是没进脑子,因此在此总结一遍.</p>
 <h3 id="路径构建" class="headerLink">
     <a href="#%e8%b7%af%e5%be%84%e6%9e%84%e5%bb%ba" class="header-mark"></a>路径构建</h3><p>终端主机如何根据AS的信息构造包的传输: 终端主机\(H_S\)首先从路径服务器中找到路径path(文中有个beacon的词,翻译为信标,估计跟路径差不多), 并将路径嵌入到数据包中,如下:</p>]]></description>
@@ -86,7 +93,8 @@
     <pubDate>Fri, 16 Sep 2022 23:43:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_10_topo_discover/</guid>
-    <description><![CDATA[<p><strong>affliation and publication</strong></p>
+    <description>
+        <![CDATA[<p><strong>affliation and publication</strong></p>
 <ul>
 <li>author:</li>
 <li>publication:</li>
@@ -103,7 +111,8 @@
     <pubDate>Fri, 16 Sep 2022 22:27:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_09_dyna/</guid>
-    <description><![CDATA[<p><strong>affliation and publication</strong></p>
+    <description>
+        <![CDATA[<p><strong>affliation and publication</strong></p>
 <ul>
 <li>
 <p>author: Qi Li, XiaoyueZou, Qun Huang, Jing Zheng, Patrick P.C.Lee</p>
@@ -123,7 +132,8 @@
     <pubDate>Sun, 21 Aug 2022 22:01:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/org_06_mpc/</guid>
-    <description><![CDATA[<h2 id="文章目的" class="headerLink">
+    <description>
+        <![CDATA[<h2 id="文章目的" class="headerLink">
     <a href="#%e6%96%87%e7%ab%a0%e7%9b%ae%e7%9a%84" class="header-mark"></a>文章目的</h2><p>介绍一个用于在有向无环图（DAG）中进行最小路径覆盖（Minimum Path Cover, MPC）的算法。文中给定了一个场景（交通网络中的运输问题），并将这个场景建模成MPC问题，最后给出了求解方法。</p>]]></description>
 </item></channel>
 </rss>
