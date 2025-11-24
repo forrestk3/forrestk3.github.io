@@ -4,19 +4,19 @@
         <link>/tags/</link>
         <description>Tags - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 16 Nov 2025 17:43:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 23 Nov 2025 22:28:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Emacs</title>
+    <link>/tags/emacs/</link>
+    <pubDate>Sun, 23 Nov 2025 22:28:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/tags/emacs/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>博客</title>
     <link>/tags/%E5%8D%9A%E5%AE%A2/</link>
     <pubDate>Sun, 16 Nov 2025 17:43:00 -0400</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/%E5%8D%9A%E5%AE%A2/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Emacs</title>
-    <link>/tags/emacs/</link>
-    <pubDate>Thu, 13 Nov 2025 00:00:00 -0400</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/emacs/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>论文阅读</title>

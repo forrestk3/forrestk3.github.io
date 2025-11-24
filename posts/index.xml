@@ -4,7 +4,24 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 16 Nov 2025 17:43:00 -0400</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 23 Nov 2025 22:28:00 -0400</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>org-roam 常用快捷键记录 </title>
+    <link>/posts/20251123222632-new_dir_test/</link>
+    <pubDate>Sun, 23 Nov 2025 22:28:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251123222632-new_dir_test/</guid>
+    <description><![CDATA[<h2 id="文件类" class="headerLink">
+    <a href="#%e6%96%87%e4%bb%b6%e7%b1%bb" class="header-mark"></a>文件类</h2><ul>
+<li>C-c n f: 查找或新建，f means find</li>
+<li>C-c n l: 查看反向链接</li>
+<li>C-c n i: 插入某个node</li>
+<li>&ldquo;[[]]&rdquo; :插入某个node，有提示搜索功能</li>
+</ul>
+<h2 id="refile" class="headerLink">
+    <a href="#refile" class="header-mark"></a>refile</h2><ul>
+<li>
+<p>M-x org-roam-refile：</p>]]></description>
+</item><item>
     <title>配置自己的域名</title>
     <link>/posts/domain_set/</link>
     <pubDate>Sun, 16 Nov 2025 17:43:00 -0400</pubDate><author>
@@ -131,15 +148,5 @@
 </figure>
 
 <p>这个项目长这样,是我想要的把轨迹球融合到键盘上,但是没有人体工学设计.</p>]]></description>
-</item><item>
-    <title>On a Multi-criteria Clustering Approachfor Attack Attribution</title>
-    <link>/posts/org_21_multi_clustering/</link>
-    <pubDate>Wed, 22 Feb 2023 14:27:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_21_multi_clustering/</guid>
-    <description><![CDATA[<h2 id="论文信息" class="headerLink">
-    <a href="#%e8%ae%ba%e6%96%87%e4%bf%a1%e6%81%af" class="header-mark"></a>论文信息</h2><p>SigKDD, 2010</p>
-<p>阅读目的: 了解攻击溯源相关知识, 主要是为了扩充知识面.</p>
-<p>结论: 这个文章中提供的是一个数据挖掘的方法, 针对已有的数据样本通过找它们的相似性簇并通过分析来获得结论, 所以这个文章并不是我想要的. 以下总结阅读时做的一些笔记.</p>]]></description>
 </item></channel>
 </rss>

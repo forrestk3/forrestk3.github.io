@@ -4,7 +4,24 @@
         <link>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</link>
         <description>额外学习 - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 16 Nov 2025 17:43:00 -0400</lastBuildDate><atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 23 Nov 2025 22:28:00 -0400</lastBuildDate><atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>org-roam 常用快捷键记录 </title>
+    <link>/posts/20251123222632-new_dir_test/</link>
+    <pubDate>Sun, 23 Nov 2025 22:28:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251123222632-new_dir_test/</guid>
+    <description><![CDATA[<h2 id="文件类" class="headerLink">
+    <a href="#%e6%96%87%e4%bb%b6%e7%b1%bb" class="header-mark"></a>文件类</h2><ul>
+<li>C-c n f: 查找或新建，f means find</li>
+<li>C-c n l: 查看反向链接</li>
+<li>C-c n i: 插入某个node</li>
+<li>&ldquo;[[]]&rdquo; :插入某个node，有提示搜索功能</li>
+</ul>
+<h2 id="refile" class="headerLink">
+    <a href="#refile" class="header-mark"></a>refile</h2><ul>
+<li>
+<p>M-x org-roam-refile：</p>]]></description>
+</item><item>
     <title>配置自己的域名</title>
     <link>/posts/domain_set/</link>
     <pubDate>Sun, 16 Nov 2025 17:43:00 -0400</pubDate><author>
