@@ -4,7 +4,15 @@
         <link>/tags/</link>
         <description>Tags - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 24 Nov 2025 13:08:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 27 Nov 2025 20:08:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>AI</title>
+    <link>/tags/ai/</link>
+    <pubDate>Thu, 27 Nov 2025 20:08:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/tags/ai/</guid>
+    <description>
+        <![CDATA[]]></description>
+</item><item>
     <title>博客</title>
     <link>/tags/%E5%8D%9A%E5%AE%A2/</link>
     <pubDate>Mon, 24 Nov 2025 13:08:00 -0400</pubDate><author>
@@ -74,14 +82,6 @@
     <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/ovs/</guid>
-    <description>
-        <![CDATA[]]></description>
-</item><item>
-    <title>Idea</title>
-    <link>/tags/idea/</link>
-    <pubDate>Tue, 23 Aug 2022 16:09:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/idea/</guid>
     <description>
         <![CDATA[]]></description>
 </item></channel>
