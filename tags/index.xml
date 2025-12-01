@@ -4,7 +4,15 @@
         <link>/tags/</link>
         <description>Tags - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 27 Nov 2025 20:08:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 01 Dec 2025 17:03:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux</title>
+    <link>/tags/linux/</link>
+    <pubDate>Mon, 01 Dec 2025 17:03:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/tags/linux/</guid>
+    <description>
+        <![CDATA[]]></description>
+</item><item>
     <title>AI</title>
     <link>/tags/ai/</link>
     <pubDate>Thu, 27 Nov 2025 20:08:00 -0400</pubDate><author>
@@ -74,14 +82,6 @@
     <pubDate>Thu, 09 Feb 2023 12:35:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/openssl/</guid>
-    <description>
-        <![CDATA[]]></description>
-</item><item>
-    <title>Ovs</title>
-    <link>/tags/ovs/</link>
-    <pubDate>Mon, 19 Sep 2022 21:27:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/ovs/</guid>
     <description>
         <![CDATA[]]></description>
 </item></channel>
