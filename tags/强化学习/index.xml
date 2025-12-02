@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>强化学习 - Tag - 咸蛋超人</title>
+        <link>/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
+        <description>强化学习 - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 01 Dec 2025 22:13:00 -0400</lastBuildDate><atom:link href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>State Values and Bellman Equation </title>
+    <link>/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
+    <pubDate>Mon, 01 Dec 2025 22:13:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</guid>
+    <description>
+        <![CDATA[<h2 id="前置知识" class="headerLink">
+    <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p>从某一个状态出发，获得的return的和即为该状态的状态值v</p>
+<h3 id="return" class="headerLink">
+    <a href="#return" class="header-mark"></a>Return</h3><ul>
+<li>什么是return：沿某一个路径走，所有的discounted reward之和,比如下面这个图，如果不加discount，那第一个图中，从s1出发，return就是2。</li>
+</ul>
+<figure><img src="/ox-hugo/oc4CdO.png">
+</figure>
+
+<ul>
+<li>为什么return 重要？
+上面3个策略中，直观上如果从s1出发，可以看到每一个图策略最好，第二个最差（会进入到黄色的forbiden area），return是用来帮助我们从数学上评估策略的好坏。</li>
+</ul>
+<p>s4是终点，如果会在s4处一直循环，则这3个图的return分别为：</p>]]></description>
+</item></channel>
+</rss>
