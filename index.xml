@@ -4,9 +4,17 @@
         <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 01 Dec 2025 22:13:00 -0400</lastBuildDate>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 01 Dec 2025 23:17:00 -0400</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>bootstraping </title>
+    <link>/posts/20251201220745-bootstraping/</link>
+    <pubDate>Mon, 01 Dec 2025 23:17:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251201220745-bootstraping/</guid>
+    <description>
+        <![CDATA[<p>bootstrap 意思是鞋带，bootstraping原来的意思是说一个人拉自己的鞋带，想给自己拉起来，异想天开的意思，算法里面指的是可以从自己出发找到最优解的意思</p>]]></description>
+</item><item>
     <title>State Values and Bellman Equation </title>
     <link>/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
     <pubDate>Mon, 01 Dec 2025 22:13:00 -0400</pubDate><author>
@@ -147,20 +155,5 @@ Follow all rules below strictly and without deviation.</p>
     <description>
         <![CDATA[<h2 id="emacs-ox-hugo" class="headerLink">
     <a href="#emacs-ox-hugo" class="header-mark"></a>emacs: ox-hugo</h2><p>emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.</p>]]></description>
-</item><item>
-    <title>Practical Techniques for Searches on Encrypted Data</title>
-    <link>/posts/org_26_se/</link>
-    <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_26_se/</guid>
-    <description>
-        <![CDATA[<h2 id="论文信息" class="headerLink">
-    <a href="#%e8%ae%ba%e6%96%87%e4%bf%a1%e6%81%af" class="header-mark"></a>论文信息</h2><ul>
-<li>发表: IEEE Symposium on Security and Privacy (CCF A, 2000)</li>
-<li>阅读目的: 了解它是怎么在密文中搜索的, 找网络数据包传输过程中如何检测被修改的idea.</li>
-<li>作者使用的思想为A XOR B XOR B = A, 但本文是第一篇提出在在密文中搜索. 略过所有数学证明和背景介绍.</li>
-</ul>
-<h2 id="应用场景" class="headerLink">
-    <a href="#%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af" class="header-mark"></a>应用场景</h2><p>Alice 要存储文档到Bob的服务器中, 此时只能存储密文, 因为Alice 并不放心Bob. 但这时, Alice 想要返回所有包含词&rsquo;W&rsquo;的文档, 这时就需要Bob在加密的文档中搜索.</p>]]></description>
 </item></channel>
 </rss>
