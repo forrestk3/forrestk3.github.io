@@ -4,7 +4,19 @@
         <link>/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
         <description>强化学习 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 01 Dec 2025 23:17:00 -0400</lastBuildDate><atom:link href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 02 Dec 2025 23:16:00 -0400</lastBuildDate><atom:link href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>State Values and Bellman Equation (Vector form 与 求解) 2 </title>
+    <link>/posts/20251202221015-state_values_and_bellman_equation_2/</link>
+    <pubDate>Tue, 02 Dec 2025 23:16:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251202221015-state_values_and_bellman_equation_2/</guid>
+    <description>
+        <![CDATA[<h2 id="矩阵向量形式" class="headerLink">
+    <a href="#%e7%9f%a9%e9%98%b5%e5%90%91%e9%87%8f%e5%bd%a2%e5%bc%8f" class="header-mark"></a>矩阵向量形式</h2><p>本节接<a href="/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="">State Values and Bellman Equation 1</a>, 请将上节的前置知识看完再看本节</p>
+<p>完整公式为：</p>
+<p><img class="tw-inline" loading="lazy" src='/ox-hugo/oOhmvN.png'     >
+这里的未知量有2个，\(v_{\pi}(s)\)和\(v_{\pi}(s&rsquo;)\). 一个式子是没法求出2个未知量的，但是因为对每一个状态都有一个式子，因此可以通过联立求得每一个状态的状态值。</p>]]></description>
+</item><item>
     <title>bootstraping </title>
     <link>/posts/20251201220745-bootstraping/</link>
     <pubDate>Mon, 01 Dec 2025 23:17:00 -0400</pubDate><author>

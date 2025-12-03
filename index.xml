@@ -4,9 +4,21 @@
         <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 01 Dec 2025 23:17:00 -0400</lastBuildDate>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 02 Dec 2025 23:16:00 -0400</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>State Values and Bellman Equation (Vector form 与 求解) 2 </title>
+    <link>/posts/20251202221015-state_values_and_bellman_equation_2/</link>
+    <pubDate>Tue, 02 Dec 2025 23:16:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251202221015-state_values_and_bellman_equation_2/</guid>
+    <description>
+        <![CDATA[<h2 id="矩阵向量形式" class="headerLink">
+    <a href="#%e7%9f%a9%e9%98%b5%e5%90%91%e9%87%8f%e5%bd%a2%e5%bc%8f" class="header-mark"></a>矩阵向量形式</h2><p>本节接<a href="/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="">State Values and Bellman Equation 1</a>, 请将上节的前置知识看完再看本节</p>
+<p>完整公式为：</p>
+<p><img class="tw-inline" loading="lazy" src='/ox-hugo/oOhmvN.png'     >
+这里的未知量有2个，\(v_{\pi}(s)\)和\(v_{\pi}(s&rsquo;)\). 一个式子是没法求出2个未知量的，但是因为对每一个状态都有一个式子，因此可以通过联立求得每一个状态的状态值。</p>]]></description>
+</item><item>
     <title>bootstraping </title>
     <link>/posts/20251201220745-bootstraping/</link>
     <pubDate>Mon, 01 Dec 2025 23:17:00 -0400</pubDate><author>
@@ -146,14 +158,5 @@ Follow all rules below strictly and without deviation.</p>
     <a href="#org-roam" class="header-mark"></a>org-roam</h2><p><a href="/posts/20251123222632-new_dir_test/" rel="">org-roam 常用快捷键记录</a></p>
 <h2 id="canlendar-的使用" class="headerLink">
     <a href="#canlendar-%e7%9a%84%e4%bd%bf%e7%94%a8" class="header-mark"></a>canlendar 的使用</h2><p>是个管理办法，但是感觉流程不够清晰</p>]]></description>
-</item><item>
-    <title>使用emacs写hugo博客</title>
-    <link>/posts/org_02_hugo_with_emacs/</link>
-    <pubDate>Wed, 12 Nov 2025 16:45:00 -0400</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/org_02_hugo_with_emacs/</guid>
-    <description>
-        <![CDATA[<h2 id="emacs-ox-hugo" class="headerLink">
-    <a href="#emacs-ox-hugo" class="header-mark"></a>emacs: ox-hugo</h2><p>emacs里面主要是使用ox-hugo这个插件, 将所写的org文件转成md文件, 当然转换中仍有一些问题, 但勉强可以使用.</p>]]></description>
 </item></channel>
 </rss>
