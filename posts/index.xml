@@ -4,7 +4,39 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Wed, 03 Dec 2025 23:28:00 -0400</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 04 Dec 2025 00:11:00 -0400</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>pdf2keynote </title>
+    <link>/posts/20251203235231-pdf2keynote/</link>
+    <pubDate>Thu, 04 Dec 2025 00:11:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251203235231-pdf2keynote/</guid>
+    <description>
+        <![CDATA[<h2 id="作用" class="headerLink">
+    <a href="#%e4%bd%9c%e7%94%a8" class="header-mark"></a>作用</h2><p>将beamer的pdf slides 生成keynote</p>
+<h2 id="安装" class="headerLink">
+    <a href="#%e5%ae%89%e8%a3%85" class="header-mark"></a>安装</h2><p>pip3 install git+<a href="https://github.com/remymuller/pdf2keynote.git" target="_blank" rel="noopener noreferrer">https://github.com/remymuller/pdf2keynote.git</a></p>
+<h2 id="使用" class="headerLink">
+    <a href="#%e4%bd%bf%e7%94%a8" class="header-mark"></a>使用</h2><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    
+    tw-flex 
+    tw-flex-row
+    tw-flex-1 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        code-block-button
+        tw-mx-2 
+        tw-flex
+        tw-flex-row
+        tw-flex-1"
+      aria-hidden="true">
+          <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
+          <p class="tw-select-none !tw-my-1">sh</p>]]></description>
+</item><item>
     <title>Optimal State Values and Bellman Optimality Equation 1 </title>
     <link>/posts/20251203221106-1_optimal_state_values_and_bellman_optimality_equation/</link>
     <pubDate>Wed, 03 Dec 2025 23:28:00 -0400</pubDate><author>
@@ -143,21 +175,5 @@ Follow all rules below strictly and without deviation.</p>
     <a href="#refile" class="header-mark"></a>refile</h2><ul>
 <li>
 <p>M-x org-roam-refile：</p>]]></description>
-</item><item>
-    <title>配置自己的域名</title>
-    <link>/posts/domain_set/</link>
-    <pubDate>Sun, 16 Nov 2025 17:43:00 -0400</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/domain_set/</guid>
-    <description>
-        <![CDATA[<h2 id="域名申请" class="headerLink">
-    <a href="#%e5%9f%9f%e5%90%8d%e7%94%b3%e8%af%b7" class="header-mark"></a>域名申请</h2><p>申请个域名，表示域名属于你了</p>
-<h2 id="域名托管" class="headerLink">
-    <a href="#%e5%9f%9f%e5%90%8d%e6%89%98%e7%ae%a1" class="header-mark"></a>域名托管</h2><p>将你的域名记录在域名服务器中，让你的域名能被别人找到</p>
-<h2 id="github设置" class="headerLink">
-    <a href="#github%e8%ae%be%e7%bd%ae" class="header-mark"></a>github设置</h2><p>在github 的pages里面设置你的自定义域名</p>
-<h2 id="dns设置" class="headerLink">
-    <a href="#dns%e8%ae%be%e7%bd%ae" class="header-mark"></a>DNS设置</h2><p>在域名托管里设置你的DNS，让别人输入你的域名后可能转到你的主页，github的DNS配置如下：
-<img class="tw-inline" loading="lazy" src='/ox-hugo/domain_set.png'     ></p>]]></description>
 </item></channel>
 </rss>
