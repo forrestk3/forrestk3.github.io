@@ -4,7 +4,19 @@
         <link>/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
         <description>强化学习 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 02 Dec 2025 23:54:00 -0400</lastBuildDate><atom:link href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Wed, 03 Dec 2025 23:28:00 -0400</lastBuildDate><atom:link href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>Optimal State Values and Bellman Optimality Equation 1 </title>
+    <link>/posts/20251203221106-1_optimal_state_values_and_bellman_optimality_equation/</link>
+    <pubDate>Wed, 03 Dec 2025 23:28:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251203221106-1_optimal_state_values_and_bellman_optimality_equation/</guid>
+    <description>
+        <![CDATA[<h2 id="前置知识" class="headerLink">
+    <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="">State Values and Bellman Equation (Basic and Definition) 1</a>
+<a href="/posts/20251202221015-state_values_and_bellman_equation_2/" rel="">State Values and Bellman Equation (Vector form 与 求解) 2</a>
+<a href="/posts/20251202232328-state_values_and_bellman_equation_action_value_and_summary_3/" rel="">State Values and Bellman Equation (Action value and Summary) 3</a></p>
+<p>请学会前置知识再看本节</p>]]></description>
+</item><item>
     <title>State Values and Bellman Equation (Action value and Summary) 3 </title>
     <link>/posts/20251202232328-state_values_and_bellman_equation_action_value_and_summary_3/</link>
     <pubDate>Tue, 02 Dec 2025 23:54:00 -0400</pubDate><author>

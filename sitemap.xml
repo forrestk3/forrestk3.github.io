@@ -2,13 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>/categories/</loc><lastmod>2025-12-02T23:54:26-04:00</lastmod></url><url>
-            <loc>/posts/</loc><lastmod>2025-12-02T23:54:26-04:00</lastmod></url><url>
+            <loc>/categories/</loc><lastmod>2025-12-03T23:28:37-04:00</lastmod></url><url>
+            <loc>/posts/20251203221106-1_optimal_state_values_and_bellman_optimality_equation/</loc><lastmod>2025-12-03T23:28:37-04:00</lastmod></url><url>
+            <loc>/posts/</loc><lastmod>2025-12-03T23:28:37-04:00</lastmod></url><url>
+            <loc>/tags/</loc><lastmod>2025-12-03T23:28:37-04:00</lastmod></url><url>
+            <loc>/</loc><lastmod>2025-12-03T23:28:37-04:00</lastmod></url><url>
+            <loc>/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-12-03T23:28:37-04:00</lastmod></url><url>
+            <loc>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-12-03T23:28:37-04:00</lastmod></url><url>
             <loc>/posts/20251202232328-state_values_and_bellman_equation_action_value_and_summary_3/</loc><lastmod>2025-12-02T23:54:26-04:00</lastmod></url><url>
-            <loc>/tags/</loc><lastmod>2025-12-02T23:54:26-04:00</lastmod></url><url>
-            <loc>/</loc><lastmod>2025-12-02T23:54:26-04:00</lastmod></url><url>
-            <loc>/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-12-02T23:54:26-04:00</lastmod></url><url>
-            <loc>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-12-02T23:54:26-04:00</lastmod></url><url>
             <loc>/posts/20251202221015-state_values_and_bellman_equation_2/</loc><lastmod>2025-12-02T23:17:34-04:00</lastmod></url><url>
             <loc>/posts/20251201220745-bootstraping/</loc><lastmod>2025-12-01T23:18:01-04:00</lastmod></url><url>
             <loc>/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-12-02T23:22:38-04:00</lastmod></url><url>

@@ -4,9 +4,21 @@
         <link>/</link>
         <description>咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 02 Dec 2025 23:54:00 -0400</lastBuildDate>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Wed, 03 Dec 2025 23:28:00 -0400</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Optimal State Values and Bellman Optimality Equation 1 </title>
+    <link>/posts/20251203221106-1_optimal_state_values_and_bellman_optimality_equation/</link>
+    <pubDate>Wed, 03 Dec 2025 23:28:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251203221106-1_optimal_state_values_and_bellman_optimality_equation/</guid>
+    <description>
+        <![CDATA[<h2 id="前置知识" class="headerLink">
+    <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="">State Values and Bellman Equation (Basic and Definition) 1</a>
+<a href="/posts/20251202221015-state_values_and_bellman_equation_2/" rel="">State Values and Bellman Equation (Vector form 与 求解) 2</a>
+<a href="/posts/20251202232328-state_values_and_bellman_equation_action_value_and_summary_3/" rel="">State Values and Bellman Equation (Action value and Summary) 3</a></p>
+<p>请学会前置知识再看本节</p>]]></description>
+</item><item>
     <title>State Values and Bellman Equation (Action value and Summary) 3 </title>
     <link>/posts/20251202232328-state_values_and_bellman_equation_action_value_and_summary_3/</link>
     <pubDate>Tue, 02 Dec 2025 23:54:00 -0400</pubDate><author>
@@ -149,15 +161,5 @@ Follow all rules below strictly and without deviation.</p>
 <h2 id="dns设置" class="headerLink">
     <a href="#dns%e8%ae%be%e7%bd%ae" class="header-mark"></a>DNS设置</h2><p>在域名托管里设置你的DNS，让别人输入你的域名后可能转到你的主页，github的DNS配置如下：
 <img class="tw-inline" loading="lazy" src='/ox-hugo/domain_set.png'     ></p>]]></description>
-</item><item>
-    <title>Emacs,git 常用技巧总结</title>
-    <link>/posts/emacs_tip/</link>
-    <pubDate>Thu, 13 Nov 2025 00:00:00 -0400</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/emacs_tip/</guid>
-    <description>
-        <![CDATA[<h2 id="canlendar-的使用" class="headerLink">
-    <a href="#canlendar-%e7%9a%84%e4%bd%bf%e7%94%a8" class="header-mark"></a>canlendar 的使用</h2><p>是个管理办法，但是感觉流程不够清晰</p>
-<p>agenda的一个视图如下：</p>]]></description>
 </item></channel>
 </rss>
