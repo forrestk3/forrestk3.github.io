@@ -37,17 +37,16 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
           <p class="tw-select-none !tw-my-1">sh</p>]]></description>
 </item><item>
-    <title>Optimal State Values and Bellman Optimality Equation 1 </title>
+    <title>2.1 Optimal State Values and Bellman Optimality Equation </title>
     <link>/posts/20251203221106-1_optimal_state_values_and_bellman_optimality_equation/</link>
     <pubDate>Wed, 03 Dec 2025 23:28:00 -0400</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/20251203221106-1_optimal_state_values_and_bellman_optimality_equation/</guid>
     <description>
         <![CDATA[<h2 id="前置知识" class="headerLink">
-    <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="">State Values and Bellman Equation (Basic and Definition) 1</a>
-<a href="/posts/20251202221015-state_values_and_bellman_equation_2/" rel="">State Values and Bellman Equation (Vector form 与 求解) 2</a>
-<a href="/posts/20251202232328-state_values_and_bellman_equation_action_value_and_summary_3/" rel="">State Values and Bellman Equation (Action value and Summary) 3</a></p>
-<p>请学会前置知识再看本节</p>]]></description>
+    <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251201213435-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="">State Values and Bellman Equation (Basic and Definition) 1</a></p>
+<p><a href="/posts/20251202221015-state_values_and_bellman_equation_2/" rel="">State Values and Bellman Equation (Vector form 与 求解) 2</a></p>
+<p><a href="/posts/20251202232328-state_values_and_bellman_equation_action_value_and_summary_3/" rel="">State Values and Bellman Equation (Action value and Summary) 3</a></p>]]></description>
 </item><item>
     <title>State Values and Bellman Equation (Action value and Summary) 3 </title>
     <link>/posts/20251202232328-state_values_and_bellman_equation_action_value_and_summary_3/</link>
