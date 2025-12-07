@@ -72,8 +72,8 @@
             }
         }
       } else { 
-        if ('' === 'light' || '' === 'dark') 
-            setTheme(''), saveTheme(''); 
+        if ('black' === 'light' || 'black' === 'dark') 
+            setTheme('black'), saveTheme('black'); 
         else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');
     }
     let metaColors = {'light': '#f8f8f8','dark': '#161b22'}
