@@ -4,7 +4,19 @@
         <link>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</link>
         <description>额外学习 - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 06 Dec 2025 23:33:00 -0400</lastBuildDate><atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 07 Dec 2025 20:45:00 -0400</lastBuildDate><atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>1 emacs_elist （基本基础） </title>
+    <link>/posts/20251207151134-1_emacs_elist/</link>
+    <pubDate>Sun, 07 Dec 2025 20:45:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251207151134-1_emacs_elist/</guid>
+    <description>
+        <![CDATA[<h2 id="函数规则" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e8%a7%84%e5%88%99" class="header-mark"></a>函数规则</h2><p>格式：(函数 参数1 参数2 &hellip;)
+例如：(+ 1 2) ， 结果为3</p>
+<p>练习：(- (* 5 2) (+ 3 1))
+结果为6</p>]]></description>
+</item><item>
     <title>2.2 Optimal State Values and Bellman Optimality Equality (BoE 求解) </title>
     <link>/posts/20251206205240-2_2_optimal_state_values_and_bellman_optimality_equality/</link>
     <pubDate>Sat, 06 Dec 2025 23:33:00 -0400</pubDate><author>
@@ -158,14 +170,5 @@
 <p>You are an illustration assistant specialized in creating hand-drawn cartoon-style infographics.
 Follow all rules below strictly and without deviation.</p>
 <p>🎨 STYLE RULES（风格规则）</p>]]></description>
-</item><item>
-    <title>当前主题DoIt问题修改 </title>
-    <link>/posts/20251124130636-hugo%E9%97%AE%E9%A2%98/</link>
-    <pubDate>Mon, 24 Nov 2025 13:08:00 -0400</pubDate><author>
-        <name>胡兵</name>
-    </author><guid>/posts/20251124130636-hugo%E9%97%AE%E9%A2%98/</guid>
-    <description>
-        <![CDATA[<h2 id="problem" class="headerLink">
-    <a href="#problem" class="header-mark"></a>Problem</h2><p>Error: <code>unable to cast []string{&quot;胡兵&quot;} of type []string to string</code>.</p>]]></description>
 </item></channel>
 </rss>

@@ -4,7 +4,19 @@
         <link>/tags/emacs/</link>
         <description>Emacs - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 23 Nov 2025 22:28:00 -0400</lastBuildDate><atom:link href="/tags/emacs/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 07 Dec 2025 20:45:00 -0400</lastBuildDate><atom:link href="/tags/emacs/" rel="self" type="application/rss+xml" /><item>
+    <title>1 emacs_elist （基本基础） </title>
+    <link>/posts/20251207151134-1_emacs_elist/</link>
+    <pubDate>Sun, 07 Dec 2025 20:45:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251207151134-1_emacs_elist/</guid>
+    <description>
+        <![CDATA[<h2 id="函数规则" class="headerLink">
+    <a href="#%e5%87%bd%e6%95%b0%e8%a7%84%e5%88%99" class="header-mark"></a>函数规则</h2><p>格式：(函数 参数1 参数2 &hellip;)
+例如：(+ 1 2) ， 结果为3</p>
+<p>练习：(- (* 5 2) (+ 3 1))
+结果为6</p>]]></description>
+</item><item>
     <title>org-roam 常用快捷键记录 </title>
     <link>/posts/20251123222632-new_dir_test/</link>
     <pubDate>Sun, 23 Nov 2025 22:28:00 -0400</pubDate><author>
