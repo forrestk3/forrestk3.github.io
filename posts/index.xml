@@ -4,7 +4,18 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 07 Dec 2025 20:45:00 -0400</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 09 Dec 2025 23:02:00 -0400</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>2.3 Value Iteration and Policy Iteration (值迭代) </title>
+    <link>/posts/20251209222259-2_2_value_iteration_and_policy_iteration/</link>
+    <pubDate>Tue, 09 Dec 2025 23:02:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251209222259-2_2_value_iteration_and_policy_iteration/</guid>
+    <description>
+        <![CDATA[<h2 id="前置知识" class="headerLink">
+    <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251206205240-2_2_optimal_state_values_and_bellman_optimality_equality/" rel="">2.2 Optimal State Values and Bellman Optimality Equality (BoE 求解)</a></p>
+<h2 id="value-iteration-algorithm" class="headerLink">
+    <a href="#value-iteration-algorithm" class="header-mark"></a>Value Iteration Algorithm</h2><p>回忆一下BOE的形式</p>]]></description>
+</item><item>
     <title>1 emacs_elist （基本基础） </title>
     <link>/posts/20251207151134-1_emacs_elist/</link>
     <pubDate>Sun, 07 Dec 2025 20:45:00 -0400</pubDate><author>
@@ -158,17 +169,5 @@
           <div class="group-[.is-open]:tw-rotate-90 tw-transition-[transform] tw-duration-500 tw-ease-in-out print:!tw-hidden tw-w-min tw-h-min tw-my-1 tw-mx-1"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></div>
           <p class="tw-select-none !tw-my-1">bash</p>]]></description>
-</item><item>
-    <title>prompt-collection </title>
-    <link>/posts/20251127200755-prompt_collection/</link>
-    <pubDate>Thu, 27 Nov 2025 20:08:00 -0400</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/20251127200755-prompt_collection/</guid>
-    <description>
-        <![CDATA[<h2 id="将内容变成卡通信息" class="headerLink">
-    <a href="#%e5%b0%86%e5%86%85%e5%ae%b9%e5%8f%98%e6%88%90%e5%8d%a1%e9%80%9a%e4%bf%a1%e6%81%af" class="header-mark"></a>将内容变成卡通信息</h2><div class="note">
-<p>You are an illustration assistant specialized in creating hand-drawn cartoon-style infographics.
-Follow all rules below strictly and without deviation.</p>
-<p>🎨 STYLE RULES（风格规则）</p>]]></description>
 </item></channel>
 </rss>

@@ -4,7 +4,18 @@
         <link>/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
         <description>强化学习 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sat, 06 Dec 2025 23:33:00 -0400</lastBuildDate><atom:link href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 09 Dec 2025 23:02:00 -0400</lastBuildDate><atom:link href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>2.3 Value Iteration and Policy Iteration (值迭代) </title>
+    <link>/posts/20251209222259-2_2_value_iteration_and_policy_iteration/</link>
+    <pubDate>Tue, 09 Dec 2025 23:02:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251209222259-2_2_value_iteration_and_policy_iteration/</guid>
+    <description>
+        <![CDATA[<h2 id="前置知识" class="headerLink">
+    <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251206205240-2_2_optimal_state_values_and_bellman_optimality_equality/" rel="">2.2 Optimal State Values and Bellman Optimality Equality (BoE 求解)</a></p>
+<h2 id="value-iteration-algorithm" class="headerLink">
+    <a href="#value-iteration-algorithm" class="header-mark"></a>Value Iteration Algorithm</h2><p>回忆一下BOE的形式</p>]]></description>
+</item><item>
     <title>2.2 Optimal State Values and Bellman Optimality Equality (BoE 求解) </title>
     <link>/posts/20251206205240-2_2_optimal_state_values_and_bellman_optimality_equality/</link>
     <pubDate>Sat, 06 Dec 2025 23:33:00 -0400</pubDate><author>
