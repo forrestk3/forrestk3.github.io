@@ -2,13 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>/posts/20251216000119-3_1_monte_carlo_learning/</loc><lastmod>2025-12-16T00:17:13-04:00</lastmod></url><url>
+            <loc>/categories/</loc><lastmod>2025-12-16T00:17:13-04:00</lastmod></url><url>
+            <loc>/posts/</loc><lastmod>2025-12-16T00:17:13-04:00</lastmod></url><url>
+            <loc>/tags/</loc><lastmod>2025-12-16T00:17:13-04:00</lastmod></url><url>
+            <loc>/</loc><lastmod>2025-12-16T00:17:13-04:00</lastmod></url><url>
+            <loc>/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-12-16T00:17:13-04:00</lastmod></url><url>
+            <loc>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-12-16T00:17:13-04:00</lastmod></url><url>
             <loc>/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/</loc><lastmod>2025-12-10T23:58:06-04:00</lastmod></url><url>
-            <loc>/categories/</loc><lastmod>2025-12-10T23:58:06-04:00</lastmod></url><url>
-            <loc>/posts/</loc><lastmod>2025-12-10T23:58:06-04:00</lastmod></url><url>
-            <loc>/tags/</loc><lastmod>2025-12-10T23:58:06-04:00</lastmod></url><url>
-            <loc>/</loc><lastmod>2025-12-10T23:58:06-04:00</lastmod></url><url>
-            <loc>/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-12-10T23:58:06-04:00</lastmod></url><url>
-            <loc>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2025-12-10T23:58:06-04:00</lastmod></url><url>
             <loc>/posts/20251209222259-2_2_value_iteration_and_policy_iteration/</loc><lastmod>2025-12-10T13:11:11-04:00</lastmod></url><url>
             <loc>/posts/20251207151134-1_emacs_elist/</loc><lastmod>2025-12-07T20:46:42-04:00</lastmod></url><url>
             <loc>/tags/emacs/</loc><lastmod>2025-12-07T20:46:42-04:00</lastmod></url><url>
