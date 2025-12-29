@@ -4,7 +4,26 @@
         <link>/tags/linux/</link>
         <description>Linux - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 04 Dec 2025 00:11:00 -0400</lastBuildDate><atom:link href="/tags/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Fri, 26 Dec 2025 22:07:00 -0400</lastBuildDate><atom:link href="/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>ssh反向代理连接 </title>
+    <link>/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/</link>
+    <pubDate>Fri, 26 Dec 2025 22:07:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/</guid>
+    <description>
+        <![CDATA[<h2 id="场景" class="headerLink">
+    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>学校的个人机器里将了虚拟机，无法在外网使用ssh连接，但是学校的服务器可连</p>
+<p>所以通过服务器为跳板，实现在外部连自己的虚拟机</p>
+<h2 id="方法" class="headerLink">
+    <a href="#%e6%96%b9%e6%b3%95" class="header-mark"></a>方法</h2><ul>
+<li>首先在虚拟机上运行：
+ssh -NfR 6666:localhost:22 name@school_server</li>
+<li>这时即可通过学校服务器连接到虚拟机：
+ssh -p 6666 name@virtual_machin</li>
+</ul>
+<h2 id="config-文件配置" class="headerLink">
+    <a href="#config-%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae" class="header-mark"></a>config 文件配置</h2><p>前面已经学会配置了config文件了，配置见<a href="/posts/20251201170308-config%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AEssh%E8%BF%9C%E7%A8%8B/" rel="">SSH Config 配置指南</a></p>]]></description>
+</item><item>
     <title>pdf2keynote </title>
     <link>/posts/20251203235231-pdf2keynote/</link>
     <pubDate>Thu, 04 Dec 2025 00:11:00 -0400</pubDate><author>

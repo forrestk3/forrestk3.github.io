@@ -4,7 +4,26 @@
         <link>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</link>
         <description>额外学习 - Category - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 16 Dec 2025 00:15:00 -0400</lastBuildDate><atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Fri, 26 Dec 2025 22:07:00 -0400</lastBuildDate><atom:link href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>ssh反向代理连接 </title>
+    <link>/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/</link>
+    <pubDate>Fri, 26 Dec 2025 22:07:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/</guid>
+    <description>
+        <![CDATA[<h2 id="场景" class="headerLink">
+    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>学校的个人机器里将了虚拟机，无法在外网使用ssh连接，但是学校的服务器可连</p>
+<p>所以通过服务器为跳板，实现在外部连自己的虚拟机</p>
+<h2 id="方法" class="headerLink">
+    <a href="#%e6%96%b9%e6%b3%95" class="header-mark"></a>方法</h2><ul>
+<li>首先在虚拟机上运行：
+ssh -NfR 6666:localhost:22 name@school_server</li>
+<li>这时即可通过学校服务器连接到虚拟机：
+ssh -p 6666 name@virtual_machin</li>
+</ul>
+<h2 id="config-文件配置" class="headerLink">
+    <a href="#config-%e6%96%87%e4%bb%b6%e9%85%8d%e7%bd%ae" class="header-mark"></a>config 文件配置</h2><p>前面已经学会配置了config文件了，配置见<a href="/posts/20251201170308-config%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AEssh%E8%BF%9C%E7%A8%8B/" rel="">SSH Config 配置指南</a></p>]]></description>
+</item><item>
     <title>3.1 Monte Carlo Learning </title>
     <link>/posts/20251216000119-3_1_monte_carlo_learning/</link>
     <pubDate>Tue, 16 Dec 2025 00:15:00 -0400</pubDate><author>
@@ -132,13 +151,5 @@
 <p>完整公式为：</p>
 <p><img class="tw-inline" loading="lazy" src='/ox-hugo/oOhmvN.png'     >
 这里的未知量有2个，\(v_{\pi}(s)\)和\(v_{\pi}(s&rsquo;)\). 一个式子是没法求出2个未知量的，但是因为对每一个状态都有一个式子，因此可以通过联立求得每一个状态的状态值。</p>]]></description>
-</item><item>
-    <title>bootstraping </title>
-    <link>/posts/20251201220745-bootstraping/</link>
-    <pubDate>Mon, 01 Dec 2025 23:17:00 -0400</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/20251201220745-bootstraping/</guid>
-    <description>
-        <![CDATA[<p>bootstrap 意思是鞋带，bootstraping原来的意思是说一个人拉自己的鞋带，想给自己拉起来，异想天开的意思，算法里面指的是可以从自己出发找到最优解的意思</p>]]></description>
 </item></channel>
 </rss>
