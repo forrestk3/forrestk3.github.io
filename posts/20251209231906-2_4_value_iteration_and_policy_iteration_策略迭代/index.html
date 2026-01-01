@@ -8,24 +8,24 @@
   <meta property="og:site_name" content="咸蛋超人">
   <meta property="og:title" content="2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration) ">
   <meta property="og:description" content="前置知识2.3 Value Iteration and Policy Iteration (值迭代)
-值迭代算法流程 第一步：给定一个随机初始策略，计算状态值">
+策略代算法流程 第一步：给定一个随机初始策略，计算状态值">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-12-10T23:57:00-04:00">
-    <meta property="article:modified_time" content="2025-12-10T23:58:06-04:00">
+    <meta property="article:modified_time" content="2025-12-31T22:55:00-04:00">
     <meta property="article:tag" content="强化学习">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration) ">
   <meta name="twitter:description" content="前置知识2.3 Value Iteration and Policy Iteration (值迭代)
-值迭代算法流程 第一步：给定一个随机初始策略，计算状态值">
+策略代算法流程 第一步：给定一个随机初始策略，计算状态值">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
 <meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
-<link rel="canonical" href="/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" /><link rel="prev" href="/posts/20251209222259-2_2_value_iteration_and_policy_iteration/" /><link rel="next" href="/posts/20251216000119-3_1_monte_carlo_learning/" />
+<link rel="canonical" href="/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" /><link rel="prev" href="/posts/20251209222259-2_2_value_iteration_and_policy_iteration/" /><link rel="next" href="/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
         "headline": "2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration) ",
         "inLanguage": "en",
@@ -33,7 +33,7 @@
             "@type": "WebPage",
             "@id": "/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/"
         },"genre": "posts","keywords":["强化学习"],"wordcount":  676 ,
-        "url": "/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/","datePublished": "2025-12-10T23:57:00-04:00","dateModified": "2025-12-10T23:58:06-04:00","publisher": {
+        "url": "/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/","datePublished": "2025-12-10T23:57:00-04:00","dateModified": "2025-12-31T22:55:00-04:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
                 "@type": "Person",
@@ -157,7 +157,7 @@
             <div class="toc-content"><nav id="TableOfContents">
   <ul>
     <li><a href="#前置知识">前置知识</a></li>
-    <li><a href="#值迭代算法流程">值迭代算法流程</a></li>
+    <li><a href="#策略代算法流程">策略代算法流程</a></li>
     <li><a href="#具体实现">具体实现</a></li>
     <li><a href="#truncated-policy-iteration">Truncated policy iteration</a>
       <ul>
@@ -179,7 +179,7 @@
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>额外学习</a></span></div>
             <div class="post-meta-line"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;<time datetime="2025-12-10">2025-12-10</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2025-12-10">2025-12-10</time>&nbsp;<svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2025-12-31">2025-12-31</time>&nbsp;<svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;676 words&nbsp;
                     <svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;3 minutes&nbsp;</div>
@@ -192,7 +192,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#前置知识">前置知识</a></li>
-    <li><a href="#值迭代算法流程">值迭代算法流程</a></li>
+    <li><a href="#策略代算法流程">策略代算法流程</a></li>
     <li><a href="#具体实现">具体实现</a></li>
     <li><a href="#truncated-policy-iteration">Truncated policy iteration</a>
       <ul>
@@ -207,8 +207,8 @@
 </nav></div>
             </div><div class="content" id="content" data-pagefind-body><h2 id="前置知识" class="headerLink">
     <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251209222259-2_2_value_iteration_and_policy_iteration/" rel="">2.3 Value Iteration and Policy Iteration (值迭代)</a></p>
-<h2 id="值迭代算法流程" class="headerLink">
-    <a href="#%e5%80%bc%e8%bf%ad%e4%bb%a3%e7%ae%97%e6%b3%95%e6%b5%81%e7%a8%8b" class="header-mark"></a>值迭代算法流程</h2><ul>
+<h2 id="策略代算法流程" class="headerLink">
+    <a href="#%e7%ad%96%e7%95%a5%e4%bb%a3%e7%ae%97%e6%b3%95%e6%b5%81%e7%a8%8b" class="header-mark"></a>策略代算法流程</h2><ul>
 <li>
 <p>第一步：给定一个随机初始策略，计算状态值
 <img class="tw-inline" loading="lazy" src='/ox-hugo/nsxf3X.png'     ></p>
@@ -296,7 +296,7 @@ Value iteration: \(\quad v_0 \xrightarrow{P U} \pi_1^{\prime} \xrightarrow{V U} 
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2025-12-10</span>
+                <span>Updated on 2025-12-31</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -320,7 +320,7 @@ Value iteration: \(\quad v_0 \xrightarrow{P U} \pi_1^{\prime} \xrightarrow{V U} 
 
     <div class="post-nav print:tw-hidden"><a href="/posts/20251209222259-2_2_value_iteration_and_policy_iteration/" class="prev" rel="prev" title="2.3 Value Iteration and Policy Iteration (值迭代) "><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>2.3 Value Iteration and Policy Iteration (值迭代) </a>
-            <a href="/posts/20251216000119-3_1_monte_carlo_learning/" class="next" rel="next" title="3.1 Monte Carlo Learning ">3.1 Monte Carlo Learning <svg class="icon"
+            <a href="/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/" class="next" rel="next" title="ssh反向代理连接 ">ssh反向代理连接 <svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div>
 </div>
 <div id="comments" class="print:!tw-hidden tw-pt-32 tw-pb-8"><div id="utterances"></div><noscript>

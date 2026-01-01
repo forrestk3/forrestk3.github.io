@@ -4,19 +4,16 @@
         <link>/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
         <description>强化学习 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 16 Dec 2025 00:15:00 -0400</lastBuildDate><atom:link href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Wed, 31 Dec 2025 00:00:00 -0400</lastBuildDate><atom:link href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
     <title>3.1 Monte Carlo Learning </title>
     <link>/posts/20251216000119-3_1_monte_carlo_learning/</link>
-    <pubDate>Tue, 16 Dec 2025 00:15:00 -0400</pubDate><author>
+    <pubDate>Wed, 31 Dec 2025 00:00:00 -0400</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/posts/20251216000119-3_1_monte_carlo_learning/</guid>
     <description>
         <![CDATA[<h2 id="前置知识" class="headerLink">
     <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251209222259-2_2_value_iteration_and_policy_iteration/" rel="">2.3 Value Iteration and Policy Iteration (值迭代)</a></p>
-<h2 id="引例" class="headerLink">
-    <a href="#%e5%bc%95%e4%be%8b" class="header-mark"></a>引例</h2><ul>
-<li>
-<p>对于抛硬币，通过不断重复实验，可以得到哪一面朝上的概率，进而得到其对应的面朝上的期望</p>]]></description>
+<p><a href="/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" rel="">2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration)</a></p>]]></description>
 </item><item>
     <title>2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration) </title>
     <link>/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/</link>
@@ -26,8 +23,8 @@
     <description>
         <![CDATA[<h2 id="前置知识" class="headerLink">
     <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251209222259-2_2_value_iteration_and_policy_iteration/" rel="">2.3 Value Iteration and Policy Iteration (值迭代)</a></p>
-<h2 id="值迭代算法流程" class="headerLink">
-    <a href="#%e5%80%bc%e8%bf%ad%e4%bb%a3%e7%ae%97%e6%b3%95%e6%b5%81%e7%a8%8b" class="header-mark"></a>值迭代算法流程</h2><ul>
+<h2 id="策略代算法流程" class="headerLink">
+    <a href="#%e7%ad%96%e7%95%a5%e4%bb%a3%e7%ae%97%e6%b3%95%e6%b5%81%e7%a8%8b" class="header-mark"></a>策略代算法流程</h2><ul>
 <li>
 <p>第一步：给定一个随机初始策略，计算状态值
 <img class="tw-inline" loading="lazy" src='/ox-hugo/nsxf3X.png'     ></p>]]></description>

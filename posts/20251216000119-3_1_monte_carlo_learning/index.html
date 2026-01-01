@@ -8,32 +8,32 @@
   <meta property="og:site_name" content="咸蛋超人">
   <meta property="og:title" content="3.1 Monte Carlo Learning ">
   <meta property="og:description" content="前置知识2.3 Value Iteration and Policy Iteration (值迭代)
-引例 对于抛硬币，通过不断重复实验，可以得到哪一面朝上的概率，进而得到其对应的面朝上的期望">
+2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration)">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-16T00:15:00-04:00">
-    <meta property="article:modified_time" content="2025-12-16T00:17:13-04:00">
+    <meta property="article:published_time" content="2025-12-31T00:00:00-04:00">
+    <meta property="article:modified_time" content="2025-12-31T23:21:15-04:00">
     <meta property="article:tag" content="强化学习">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="3.1 Monte Carlo Learning ">
   <meta name="twitter:description" content="前置知识2.3 Value Iteration and Policy Iteration (值迭代)
-引例 对于抛硬币，通过不断重复实验，可以得到哪一面朝上的概率，进而得到其对应的面朝上的期望">
+2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration)">
 <meta name="application-name" content="咸蛋超人">
 <meta name="apple-mobile-web-app-title" content="咸蛋超人">
 
 <meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
-<link rel="canonical" href="/posts/20251216000119-3_1_monte_carlo_learning/" /><link rel="prev" href="/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" /><link rel="next" href="/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/" />
+<link rel="canonical" href="/posts/20251216000119-3_1_monte_carlo_learning/" /><link rel="prev" href="/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
         "headline": "3.1 Monte Carlo Learning ",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "/posts/20251216000119-3_1_monte_carlo_learning/"
-        },"genre": "posts","keywords":["强化学习"],"wordcount":  114 ,
-        "url": "/posts/20251216000119-3_1_monte_carlo_learning/","datePublished": "2025-12-16T00:15:00-04:00","dateModified": "2025-12-16T00:17:13-04:00","publisher": {
+        },"genre": "posts","keywords":["强化学习"],"wordcount":  929 ,
+        "url": "/posts/20251216000119-3_1_monte_carlo_learning/","datePublished": "2025-12-31T00:00:00-04:00","dateModified": "2025-12-31T23:21:15-04:00","publisher": {
             "@type": "Organization",
             "name": "SuperEgg"},"author": {
                 "@type": "Person",
@@ -158,21 +158,24 @@
   <ul>
     <li><a href="#前置知识">前置知识</a></li>
     <li><a href="#引例">引例</a></li>
+    <li><a href="#policy-iteration-to-model-free">Policy iteration to Model-free</a></li>
+    <li><a href="#monte-carlo-方法来估计-action-value">Monte Carlo 方法来估计 action value:</a></li>
+    <li><a href="#mc-basic-algorithm">MC basic algorithm</a></li>
   </ul>
 </nav></div>
         </div>
-    </dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class="single-title" data-pagefind-meta="date:2025-12-16" data-pagefind-body>3.1 Monte Carlo Learning </h1><div class="post-meta">
+    </dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class="single-title" data-pagefind-meta="date:2025-12-31" data-pagefind-body>3.1 Monte Carlo Learning </h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><a href="https://github.com/wlchengg" title="Author" target="_blank" rel="noopener noreferrer author" class="author">SuperEgg</a>
                 </span>&nbsp;<span class="post-category">included in </span>&nbsp;<span class="post-category">category <a href="/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/"><svg class="icon"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>额外学习</a></span></div>
             <div class="post-meta-line"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;<time datetime="2025-12-16">2025-12-16</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2025-12-16">2025-12-16</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;114 words&nbsp;
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;<time datetime="2025-12-31">2025-12-31</time>&nbsp;<svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2025-12-31">2025-12-31</time>&nbsp;<svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;929 words&nbsp;
                     <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;One minute&nbsp;</div>
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc print:!tw-block" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -183,10 +186,14 @@
   <ul>
     <li><a href="#前置知识">前置知识</a></li>
     <li><a href="#引例">引例</a></li>
+    <li><a href="#policy-iteration-to-model-free">Policy iteration to Model-free</a></li>
+    <li><a href="#monte-carlo-方法来估计-action-value">Monte Carlo 方法来估计 action value:</a></li>
+    <li><a href="#mc-basic-algorithm">MC basic algorithm</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content" data-pagefind-body><h2 id="前置知识" class="headerLink">
     <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251209222259-2_2_value_iteration_and_policy_iteration/" rel="">2.3 Value Iteration and Policy Iteration (值迭代)</a></p>
+<p><a href="/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" rel="">2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration)</a></p>
 <h2 id="引例" class="headerLink">
     <a href="#%e5%bc%95%e4%be%8b" class="header-mark"></a>引例</h2><ul>
 <li>
@@ -196,6 +203,44 @@
 <p>重复次数越多，得到的结果就越接近真实值，其依据就是大数定律, 证明见<a href="" rel="">Proof: Law of Larg numbers</a>.</p>
 </li>
 </ul>
+<p><code>我理解的，为什么要使用Monte Carlo方法呢，因为它可以允许我们不需要知道，在当前状态采取某个动作时会导致的下个状态的概率，从而求得某个return。</code></p>
+<h2 id="policy-iteration-to-model-free" class="headerLink">
+    <a href="#policy-iteration-to-model-free" class="header-mark"></a>Policy iteration to Model-free</h2><p>策略迭代过程中分2步完成：</p>
+<p>第一步，给定一个初始state value，迭代求得真实的state value： \(v_{\pi_k}=r_{\pi_k}+\gamma P_{\pi_k} v_{\pi_k}\)</p>
+<p>第二步，求得了 state value 后，进行策略提升 \(\pi_{k+1}=\arg \max _\pi\left(r_\pi+\gamma P_\pi v_{\pi_k}\right)\)，而这一步其实是利用state value 来找到每一个状态中 action value 最大的 action 来替换原来策略中的 action，即：</p>
+<p>\(\begin{aligned} \pi_{k+1}(s) &amp; =\arg \max _\pi \sum_a \pi(a \mid s)\left[\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi_k}\left(s^{\prime}\right)\right] \\ &amp; =\arg \max _\pi \sum_a \pi(a \mid s) q_{\pi_k}(s, a), \quad s \in \mathcal{S}\end{aligned}\)</p>
+<p>可以看到在这个过程中最重要的还是要找到最大的 action value \(q_{\pi_{k}}(s,a)\)。</p>
+<p>这个值有两种求法，第一个是依赖模型，利用state value来求，即：\(q_{\pi_k}(s, a)=\sum_r p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi_k}\left(s^{\prime}\right)\)</p>
+<p>第二个是依赖定义，它是一个期望，即：</p>
+<p>\(\begin{aligned} q_{\pi_k}(s, a) &amp; =\mathbb{E}\left[G_t \mid S_t=s, A_t=a\right] \\ &amp; =\mathbb{E}\left[R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\ldots \mid S_t=s, A_t=a\right],\end{aligned}\)</p>
+<p>这个期望的求法即是可以通过采样来完成，不需要模型参与。</p>
+<h2 id="monte-carlo-方法来估计-action-value" class="headerLink">
+    <a href="#monte-carlo-%e6%96%b9%e6%b3%95%e6%9d%a5%e4%bc%b0%e8%ae%a1-action-value" class="header-mark"></a>Monte Carlo 方法来估计 action value:</h2><ul>
+<li>
+<p>对某个状态的某个action (s,a),根据当前策略，生成一个episode</p>
+</li>
+<li>
+<p>这个episode的return \(g(s,a)\) 即为当下的一个采样，即：</p>
+<p>\(q_{\pi_k}(s, a)=\mathbb{E}\left[G_t \mid S_t=s, A_t=a\right]\)</p>
+</li>
+<li>
+<p>如果我有很多个这样的采样，即可以用于估计它的actio value,即：</p>
+<p>\(q_{\pi_k}(s, a)=\mathbb{E}\left[G_t \mid S_t=s, A_t=a\right] \approx \frac{1}{N} \sum_{i=1}^N g^{(i)}(s, a)\).</p>
+</li>
+</ul>
+<h2 id="mc-basic-algorithm" class="headerLink">
+    <a href="#mc-basic-algorithm" class="header-mark"></a>MC basic algorithm</h2><ol>
+<li>
+<p>利用初始策略，采用抽样方法，求得每个状态的action value,</p>
+</li>
+<li>
+<p>利用所有求得的action value，更新当下的策略（使用状态值最大的action替换原策略的action）, 在原来的策略迭代算法中，action value是利用state value及模型来求得的，而在这里是利用多次采样的结果估计的，这就是最本质的区别。正式算法截个图如下：</p>
+<figure><img src="/ox-hugo/sOTqDf.png">
+    </figure>
+
+</li>
+</ol>
+<p>本部分总结： <code>本部分介绍了使用抽样方法来替代模型的根本原理，虽然这个方法其实效率很低，但是却是model free方法最核心的部分</code></p>
 </div>
 
         <div class="sponsor print:tw-hidden">
@@ -220,7 +265,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2025-12-16</span>
+                <span>Updated on 2025-12-31</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -242,10 +287,8 @@
         </section>
     </div>
 
-    <div class="post-nav print:tw-hidden"><a href="/posts/20251209231906-2_4_value_iteration_and_policy_iteration_%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" class="prev" rel="prev" title="2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration) "><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>2.4 Value Iteration and Policy Iteration (策略迭代与truncated iteration) </a>
-            <a href="/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/" class="next" rel="next" title="ssh反向代理连接 ">ssh反向代理连接 <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div>
+    <div class="post-nav print:tw-hidden"><a href="/posts/20251226215516-ssh%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E8%BF%9E%E6%8E%A5/" class="prev" rel="prev" title="ssh反向代理连接 "><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>ssh反向代理连接 </a></div>
 </div>
 <div id="comments" class="print:!tw-hidden tw-pt-32 tw-pb-8"><div id="utterances"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
