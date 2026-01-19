@@ -4,7 +4,16 @@
         <link>/tags/%E6%95%B0%E5%AD%A6/</link>
         <description>数学 - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</lastBuildDate><atom:link href="/tags/%E6%95%B0%E5%AD%A6/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 18 Jan 2026 20:31:00 -0400</lastBuildDate><atom:link href="/tags/%E6%95%B0%E5%AD%A6/" rel="self" type="application/rss+xml" /><item>
+    <title>Proof: Law of Larg numbers </title>
+    <link>/posts/20251216000841-proof_law_of_larg_numbers/</link>
+    <pubDate>Sun, 18 Jan 2026 20:31:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20251216000841-proof_law_of_larg_numbers/</guid>
+    <description>
+        <![CDATA[<figure><img src="/ox-hugo/NvWiCd.png">
+</figure>]]></description>
+</item><item>
     <title>Elgamal算法原理总结</title>
     <link>/posts/org_24_elgamal/</link>
     <pubDate>Fri, 16 Jun 2023 13:00:00 &#43;0800</pubDate><author>
