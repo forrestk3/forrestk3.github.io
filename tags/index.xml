@@ -4,7 +4,15 @@
         <link>/tags/</link>
         <description>Tags - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Sun, 18 Jan 2026 20:31:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 02 Mar 2026 00:00:00 &#43;0000</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>PR</title>
+    <link>/tags/pr/</link>
+    <pubDate>Mon, 02 Mar 2026 00:00:00 &#43;0000</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/tags/pr/</guid>
+    <description>
+        <![CDATA[]]></description>
+</item><item>
     <title>数学</title>
     <link>/tags/%E6%95%B0%E5%AD%A6/</link>
     <pubDate>Sun, 18 Jan 2026 20:31:00 -0400</pubDate><author>
@@ -74,14 +82,6 @@
     <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/ovs-dpdk/</guid>
-    <description>
-        <![CDATA[]]></description>
-</item><item>
-    <title>Dactyl</title>
-    <link>/tags/dactyl/</link>
-    <pubDate>Thu, 23 Feb 2023 18:29:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/dactyl/</guid>
     <description>
         <![CDATA[]]></description>
 </item></channel>
