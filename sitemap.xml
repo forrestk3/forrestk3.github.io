@@ -2,13 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>/categories/</loc><lastmod>2026-03-02T13:02:49-04:00</lastmod></url><url>
-            <loc>/posts/</loc><lastmod>2026-03-02T13:02:49-04:00</lastmod></url><url>
+            <loc>/posts/readme/</loc><lastmod>2026-03-03T22:04:11-04:00</lastmod></url><url>
+            <loc>/categories/</loc><lastmod>2026-03-03T22:04:11-04:00</lastmod></url><url>
+            <loc>/tags/living/</loc><lastmod>2026-03-03T22:04:11-04:00</lastmod></url><url>
+            <loc>/posts/</loc><lastmod>2026-03-03T22:04:11-04:00</lastmod></url><url>
+            <loc>/tags/</loc><lastmod>2026-03-03T22:04:11-04:00</lastmod></url><url>
+            <loc>/</loc><lastmod>2026-03-03T22:04:11-04:00</lastmod></url><url>
+            <loc>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2026-03-03T22:04:11-04:00</lastmod></url><url>
             <loc>/tags/pr/</loc><lastmod>2026-03-02T13:02:49-04:00</lastmod></url><url>
-            <loc>/tags/</loc><lastmod>2026-03-02T13:02:49-04:00</lastmod></url><url>
             <loc>/posts/eca_tutorial/</loc><lastmod>2026-03-02T13:02:49-04:00</lastmod></url><url>
-            <loc>/</loc><lastmod>2026-03-02T13:02:49-04:00</lastmod></url><url>
-            <loc>/categories/%E9%A2%9D%E5%A4%96%E5%AD%A6%E4%B9%A0/</loc><lastmod>2026-03-02T13:02:49-04:00</lastmod></url><url>
             <loc>/posts/20251216000841-proof_law_of_larg_numbers/</loc><lastmod>2026-01-18T20:32:25-04:00</lastmod></url><url>
             <loc>/tags/%E6%95%B0%E5%AD%A6/</loc><lastmod>2026-01-18T20:32:25-04:00</lastmod></url><url>
             <loc>/posts/20251216000119-3_1_monte_carlo_learning/</loc><lastmod>2025-12-31T23:21:15-04:00</lastmod></url><url>

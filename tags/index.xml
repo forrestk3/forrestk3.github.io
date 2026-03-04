@@ -4,7 +4,15 @@
         <link>/tags/</link>
         <description>Tags - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Mon, 02 Mar 2026 00:00:00 &#43;0000</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 03 Mar 2026 22:01:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Living</title>
+    <link>/tags/living/</link>
+    <pubDate>Tue, 03 Mar 2026 22:01:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/tags/living/</guid>
+    <description>
+        <![CDATA[]]></description>
+</item><item>
     <title>PR</title>
     <link>/tags/pr/</link>
     <pubDate>Mon, 02 Mar 2026 00:00:00 &#43;0000</pubDate><author>
@@ -74,14 +82,6 @@
     <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</guid>
-    <description>
-        <![CDATA[]]></description>
-</item><item>
-    <title>Ovs-Dpdk</title>
-    <link>/tags/ovs-dpdk/</link>
-    <pubDate>Mon, 03 Apr 2023 13:25:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/ovs-dpdk/</guid>
     <description>
         <![CDATA[]]></description>
 </item></channel>

@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Living - Tag - 咸蛋超人</title>
+        <link>/tags/living/</link>
+        <description>Living - Tag - 咸蛋超人</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 03 Mar 2026 22:01:00 -0400</lastBuildDate><atom:link href="/tags/living/" rel="self" type="application/rss+xml" /><item>
+    <title></title>
+    <link>/posts/readme/</link>
+    <pubDate>Tue, 03 Mar 2026 22:01:00 -0400</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/readme/</guid>
+    <description>
+        <![CDATA[<h2 id="2025" class="headerLink">
+    <a href="#2025" class="header-mark"></a>2025</h2><ol>
+<li>正常申报所有的税款</li>
+<li>申请全额扣除（抵消收入）</li>
+</ol>
+<p>这是拿到退税最关键的一步。您需要在报税软件中找到 “Additional deductions”（附加扣除额） 或 “Other deductions”（其他扣除额） 的申报入口，它对应的是官方税表的 Line 25600。</p>]]></description>
+</item></channel>
+</rss>
