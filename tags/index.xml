@@ -4,7 +4,15 @@
         <link>/tags/</link>
         <description>Tags - Tag - 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 03 Mar 2026 22:01:00 -0400</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 12 May 2026 20:42:00 -0300</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>English</title>
+    <link>/tags/english/</link>
+    <pubDate>Tue, 12 May 2026 20:42:00 -0300</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/tags/english/</guid>
+    <description>
+        <![CDATA[]]></description>
+</item><item>
     <title>Living</title>
     <link>/tags/living/</link>
     <pubDate>Tue, 03 Mar 2026 22:01:00 -0400</pubDate><author>
@@ -74,14 +82,6 @@
     <pubDate>Sat, 22 Jul 2023 21:13:00 &#43;0800</pubDate><author>
         <name>SuperEgg</name>
     </author><guid>/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</guid>
-    <description>
-        <![CDATA[]]></description>
-</item><item>
-    <title>论文写作</title>
-    <link>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</link>
-    <pubDate>Thu, 06 Jul 2023 15:11:00 &#43;0800</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/tags/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/</guid>
     <description>
         <![CDATA[]]></description>
 </item></channel>
