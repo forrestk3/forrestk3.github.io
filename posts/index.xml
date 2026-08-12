@@ -4,7 +4,57 @@
         <link>/posts/</link>
         <description>All Posts | 咸蛋超人</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hb_688@163.com (SuperEgg)</managingEditor>
-            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Thu, 02 Jul 2026 15:01:00 -0300</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hb_688@163.com (SuperEgg)</webMaster><lastBuildDate>Tue, 11 Aug 2026 23:17:00 -0300</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>IELTS_writing_Task_2 </title>
+    <link>/posts/20260312173955-ielts_writing_1/</link>
+    <pubDate>Tue, 11 Aug 2026 23:17:00 -0300</pubDate><author>
+        <name>SuperEgg</name>
+    </author><guid>/posts/20260312173955-ielts_writing_1/</guid>
+    <description>
+        <![CDATA[<h2 id="under-the-task" class="headerLink">
+    <a href="#under-the-task" class="header-mark"></a>Under the task</h2><ul>
+<li>Write an essay,</li>
+<li>must more than 250 word</li>
+<li>40 minutes</li>
+<li>Universal topics, anything</li>
+<li>4 question types</li>
+<li>score criteris
+<ul>
+<li>task response</li>
+<li>cohenrence and cohesion</li>
+<li>Vocabulary</li>
+<li>Grammar (improve slowly, so improve other aspects)</li>
+</ul>
+</li>
+</ul>
+<h2 id="break-the-task-into-parts" class="headerLink">
+    <a href="#break-the-task-into-parts" class="header-mark"></a>Break the task into parts</h2><ul>
+<li>4 paragraphs</li>
+<li>about 13 sentence</li>
+</ul>
+<h3 id="intro" class="headerLink">
+    <a href="#intro" class="header-mark"></a>Intro</h3><ul>
+<li>2 sentences, more won&rsquo;t improve your score</li>
+</ul>
+<h3 id="two-main-paragraphs" class="headerLink">
+    <a href="#two-main-paragraphs" class="header-mark"></a>Two main paragraphs</h3><ul>
+<li>5 sentences each</li>
+</ul>
+<h3 id="conclusion" class="headerLink">
+    <a href="#conclusion" class="header-mark"></a>Conclusion</h3><ul>
+<li>1 sentence</li>
+</ul>
+<h2 id="method-for-different-parts" class="headerLink">
+    <a href="#method-for-different-parts" class="header-mark"></a>Method for different parts</h2><h3 id="40-minutes" class="headerLink">
+    <a href="#40-minutes" class="header-mark"></a>40 minutes</h3><ul>
+<li>Intro, 5 minutes</li>
+<li>Main body, 20 minutes</li>
+<li>Conslusion: 5 minutes</li>
+<li><code>planning</code>: 10 minutes</li>
+</ul>
+<h3 id="intro" class="headerLink">
+    <a href="#intro" class="header-mark"></a>Intro</h3><p>2 sentences,</p>]]></description>
+</item><item>
     <title>UAV&#43;Satellite&#43;Handover, possibility</title>
     <link>/posts/evidence/</link>
     <pubDate>Thu, 02 Jul 2026 15:01:00 -0300</pubDate><author>
@@ -2651,17 +2701,5 @@ ssh -p 6666 name@virtual_machin</li>
     <a href="#%e5%89%8d%e7%bd%ae%e7%9f%a5%e8%af%86" class="header-mark"></a>前置知识</h2><p><a href="/posts/20251206205240-2_2_optimal_state_values_and_bellman_optimality_equality/" rel="">2.2 Optimal State Values and Bellman Optimality Equality (BoE 求解)</a></p>
 <h2 id="value-iteration-algorithm" class="headerLink">
     <a href="#value-iteration-algorithm" class="header-mark"></a>Value Iteration Algorithm</h2><p>回忆一下BOE的形式</p>]]></description>
-</item><item>
-    <title>1 emacs_elist （基本基础） </title>
-    <link>/posts/20251207151134-1_emacs_elist/</link>
-    <pubDate>Sun, 07 Dec 2025 20:45:00 -0400</pubDate><author>
-        <name>SuperEgg</name>
-    </author><guid>/posts/20251207151134-1_emacs_elist/</guid>
-    <description>
-        <![CDATA[<h2 id="函数规则" class="headerLink">
-    <a href="#%e5%87%bd%e6%95%b0%e8%a7%84%e5%88%99" class="header-mark"></a>函数规则</h2><p>格式：(函数 参数1 参数2 &hellip;)
-例如：(+ 1 2) ， 结果为3</p>
-<p>练习：(- (* 5 2) (+ 3 1))
-结果为6</p>]]></description>
 </item></channel>
 </rss>
